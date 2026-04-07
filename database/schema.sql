@@ -5,8 +5,30 @@
 --   Supabase Dashboard → SQL Editor → New Query → Paste → Run
 -- =============================================================================
 
+-- Drop all tables in reverse-dependency order (safe on fresh setup, clears partial runs)
+DROP TABLE IF EXISTS weekly_summaries      CASCADE;
+DROP TABLE IF EXISTS post_class_feedback   CASCADE;
+DROP TABLE IF EXISTS week_plan_days        CASCADE;
+DROP TABLE IF EXISTS week_plans            CASCADE;
+DROP TABLE IF EXISTS worksheets            CASCADE;
+DROP TABLE IF EXISTS notifications         CASCADE;
+DROP TABLE IF EXISTS quiz_submissions      CASCADE;
+DROP TABLE IF EXISTS student_topic_mastery CASCADE;
+DROP TABLE IF EXISTS study_plans           CASCADE;
+DROP TABLE IF EXISTS taught_topics         CASCADE;
+DROP TABLE IF EXISTS lesson_plans          CASCADE;
+DROP TABLE IF EXISTS sidebars              CASCADE;
+DROP TABLE IF EXISTS exercises             CASCADE;
+DROP TABLE IF EXISTS topic_prerequisites   CASCADE;
+DROP TABLE IF EXISTS topics                CASCADE;
+DROP TABLE IF EXISTS chapters              CASCADE;
+DROP TABLE IF EXISTS books                 CASCADE;
+DROP TABLE IF EXISTS class_students        CASCADE;
+DROP TABLE IF EXISTS classes               CASCADE;
+DROP TABLE IF EXISTS students              CASCADE;
+DROP TABLE IF EXISTS teachers              CASCADE;
+
 -- gen_random_uuid() is built-in on Supabase (PostgreSQL 14+).
--- pgcrypto is only needed on older Postgres; skip it on Supabase.
 
 -- =============================================================================
 -- Core users
