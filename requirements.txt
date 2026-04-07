@@ -12,6 +12,7 @@ google-cloud-discoveryengine
 
 # Supabase
 supabase
+httpx<0.28.0
 
 # Utilities
 requests
