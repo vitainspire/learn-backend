@@ -174,10 +174,23 @@ def _infer_subject(book_name: str) -> str:
     return "General"
 
 
+DATA_DIR = PROJECT_ROOT / "data"
+
+
 def _get_ontology_or_404(db, book_name: str) -> dict:
-    ontology = q.get_ontology_json(db, book_name)
-    if ontology is not None:
-        return ontology
+    # Primary: Supabase
+    try:
+        ontology = q.get_ontology_json(db, book_name)
+        if ontology is not None:
+            return ontology
+    except Exception:
+        pass
+
+    # Fallback: committed data/ files
+    data_file = DATA_DIR / f"{book_name}.json"
+    if data_file.exists():
+        return json.loads(data_file.read_text(encoding="utf-8"))
+
     raise HTTPException(status_code=404, detail=f"Ontology not found for book '{book_name}'")
 
 
@@ -265,7 +278,17 @@ async def get_index():
 
 @app.get("/api/books")
 async def list_books(db = Depends(get_db)):
-    return {"books": sorted(q.list_books(db))}
+    books = []
+    try:
+        books = q.list_books(db)
+    except Exception:
+        pass
+
+    # Fallback: scan data/ for committed ontology files
+    if not books and DATA_DIR.exists():
+        books = [f.stem for f in DATA_DIR.glob("*.json")]
+
+    return {"books": sorted(books)}
 
 @app.get("/api/ontology/{book_name}")
 async def get_ontology(book_name: str, db = Depends(get_db)):
