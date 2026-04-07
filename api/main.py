@@ -6,7 +6,7 @@ from pathlib import Path
 from typing import Optional
 
 from fastapi import FastAPI, HTTPException, Depends
-from fastapi.responses import HTMLResponse, FileResponse, Response
+from fastapi.responses import FileResponse, Response
 from fastapi.staticfiles import StaticFiles
 from pydantic import BaseModel
 from datetime import datetime
@@ -251,23 +251,12 @@ def _serialize_plan(plan: dict) -> dict:
 
 
 # ---------------------------------------------------------------------------
-# Static pages
+# Health / root
 # ---------------------------------------------------------------------------
 
-@app.get("/", response_class=HTMLResponse)
+@app.get("/")
 async def get_index():
-    with open(PROJECT_ROOT / "static" / "index.html", "r", encoding="utf-8") as f:
-        return f.read()
-
-@app.get("/teacher", response_class=HTMLResponse)
-async def get_teacher():
-    with open(PROJECT_ROOT / "static" / "teacher.html", "r", encoding="utf-8") as f:
-        return f.read()
-
-@app.get("/student", response_class=HTMLResponse)
-async def get_student():
-    with open(PROJECT_ROOT / "static" / "student.html", "r", encoding="utf-8") as f:
-        return f.read()
+    return {"status": "ok", "service": "Inspire Education API"}
 
 
 # ---------------------------------------------------------------------------
