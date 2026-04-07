@@ -1,0 +1,26 @@
+# Web framework
+fastapi
+uvicorn[standard]
+pydantic
+
+# Google AI
+google-generativeai
+google-cloud-aiplatform
+google-cloud-documentai
+google-cloud-storage
+google-cloud-discoveryengine
+
+# Supabase
+supabase
+
+# Utilities
+requests
+urllib3
+rich
+json-repair
+python-dotenv
+
+# Document generation
+reportlab
+python-pptx
+PyMuPDF
