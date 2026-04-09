@@ -1,0 +1,2326 @@
+{
+  "subject": "Grade2 Maths",
+  "chapters": [
+    {
+      "chapter_number": 1,
+      "chapter_title": "Numbers from 1 to 20",
+      "topics": [
+        {
+          "topic_name": "Numbers from 1 to 20",
+          "subtopics": [
+            "Counting different things like animals, birds, trees and writing their number",
+            "Saying the sequence of numbers of things and people and writing them",
+            "Saying the number before, after and between the given numbrs upto 20",
+            "Arranging numbers upto 20 in ascending and descending orders and matching them"
+          ],
+          "concept_summary": "This unit focuses on revising numbers from 1 to 20. Activities include counting various objects, sequencing numbers, identifying numbers before, after, and between given numbers, and arranging numbers in ascending and descending order.",
+          "prerequisites": [],
+          "original_exercises": [
+            "Look at the following picture, count the different things in it and write their number.",
+            "How many huts are there?",
+            "How many children are there?",
+            "How many cows are grazing near the palm tree?",
+            "How many mangoes can you see on the tree?",
+            "How many parrots are there on the mango tree?",
+            "Which are more in number, parrots or mangoes?",
+            "Look at the picture given below. Answer the following questions.",
+            "Who is the third student? .................................",
+            "Who is the fifth student? ..................................",
+            "What is the ordinal number of Basha? ....................",
+            "What is the ordinal number of Uma? ........................",
+            "Who is the second student?",
+            "Look at the picture given below. Write the ordinal number of the student shown."
+          ],
+          "status": "untaught",
+          "last_taught_date": null
+        },
+        {
+          "topic_name": "Adding Pairs of Numbers Using Bundles of Sticks",
+          "subtopics": [],
+          "concept_summary": "This exercise focuses on adding pairs of numbers using a visual aid - bundles of sticks. This method helps to understand the concept of addition by representing numbers with physical objects. By combining the bundles and individual sticks, children can visualize the sum of the two numbers.",
+          "prerequisites": [],
+          "original_exercises": [
+            "(A)\n5 2\nG 2 1",
+            "(B)\n2 4\nG 2 2",
+            "(C)\n3 0\nG 2 4",
+            "(D)\n5 2\nG 2 1",
+            "(E)\n1 8\nG 2 1",
+            "(F)\n1 6\nG 3 3",
+            "(G)\n3 7\nG 5 1",
+            "(H)\n1 3\nG 8 1",
+            "(I)\n7 1\nG 2 6",
+            "(J)\n3 0\nG 2 0",
+            "(K)\n6 2\nG 2 5",
+            "(L)\n3 4\nG 4 3",
+            "(M)\n1 2\nG 2 6",
+            "(N)\n1 4\nG 6 3",
+            "(O)\n3 5\nG 2 1",
+            "(P)\n2 5\nG 4 0",
+            "(Q)\n5 5\nG 4 3",
+            "(R)\n4 3\nG 2 1",
+            "(S)\n4 0\nG 3 8",
+            "(T)\n6 0\nG 2 3",
+            "(U)\n1 5\nG 1 2",
+            "(V)\n1 2\nG 5 3",
+            "(W)\n6 6\nG 1 3",
+            "(X)\n5 6\nG 1 2"
+          ],
+          "status": "untaught",
+          "last_taught_date": null
+        },
+        {
+          "topic_name": "Adding Numbers with Tens and Ones",
+          "subtopics": [],
+          "concept_summary": "This exercise involves adding numbers by breaking them down into tens and ones. This method reinforces place value understanding and simplifies the addition process. By adding the tens and ones separately and then combining the results, children can develop a stronger grasp of addition.",
+          "prerequisites": [],
+          "original_exercises": [
+            "A) 45 G 24 R ?",
+            "B) 54 G 24 R ?",
+            "23 G 32 R ?"
+          ],
+          "status": "untaught",
+          "last_taught_date": null
+        },
+        {
+          "topic_name": "Adding Pairs of Numbers",
+          "subtopics": [],
+          "concept_summary": "This is a straightforward exercise in adding pairs of two-digit numbers. It builds upon the previous exercises and provides practice in applying addition skills. The variety of number pairs helps to reinforce addition concepts and improve fluency.",
+          "prerequisites": [],
+          "original_exercises": [
+            "(A) 46 G 23",
+            "(B) 37 G 52",
+            "(C) 30 G 66",
+            "(D) 45 G 54",
+            "(E) 18 G 20",
+            "(F) 26 G 32",
+            "(G) 54 G 25",
+            "(H) 47 G 12",
+            "(I) 34 G 32",
+            "(J) 68 G 21",
+            "(K) 52 G 25",
+            "(L) 16 G 71",
+            "(M)72 G 10",
+            "(N) 84 G 12",
+            "(O) 69 G 20",
+            "(P) 26 G 62"
+          ],
+          "status": "untaught",
+          "last_taught_date": null
+        },
+        {
+          "topic_name": "Adding Numbers and Identifying the Total",
+          "subtopics": [],
+          "concept_summary": "This exercise involves adding numbers and then identifying the correct total from a given set of options. This tests both addition skills and the ability to recognize the correct answer. It encourages careful calculation and attention to detail.",
+          "prerequisites": [],
+          "original_exercises": [
+            "42 G 26",
+            "75 G 24",
+            "22 G 6",
+            "51 G 17",
+            "43 G 6",
+            "25 G 31",
+            "62",
+            "68",
+            "88",
+            "99",
+            "89",
+            "79",
+            "28",
+            "48",
+            "38",
+            "78",
+            "68",
+            "88",
+            "49",
+            "59",
+            "69",
+            "66",
+            "46",
+            "56"
+          ],
+          "status": "untaught",
+          "last_taught_date": null
+        },
+        {
+          "topic_name": "Adding Numbers in Columns and Rows",
+          "subtopics": [],
+          "concept_summary": "This exercise focuses on adding numbers arranged in columns and rows. It reinforces addition skills and introduces the concept of organizing numbers in a structured format. By adding numbers in both directions, children can develop a better understanding of addition and its properties.",
+          "prerequisites": [],
+          "original_exercises": [
+            "A) Add 10",
+            "B) Add 14",
+            "20",
+            "25",
+            "36",
+            "48",
+            "30",
+            "32",
+            "40",
+            "53",
+            "65",
+            "46",
+            "21",
+            "32",
+            "24",
+            "34",
+            "13",
+            "34",
+            "14",
+            "15"
+          ],
+          "status": "untaught",
+          "last_taught_date": null
+        },
+        {
+          "topic_name": "Oral Addition",
+          "subtopics": [],
+          "concept_summary": "This section introduces the concept of oral addition, where numbers are added mentally without the aid of written calculations. It encourages mental math skills and develops number sense. The examples provided demonstrate different strategies for performing oral addition.",
+          "prerequisites": [],
+          "original_exercises": [
+            "(A) 45 G 12",
+            "(B) 45 G 12",
+            "Example:` 25 G 14 R ?"
+          ],
+          "status": "untaught",
+          "last_taught_date": null
+        },
+        {
+          "topic_name": "Identifying Incorrect Sums",
+          "subtopics": [],
+          "concept_summary": "This exercise focuses on identifying pairs of numbers with different sums within a set of options. It reinforces addition skills and encourages critical thinking. By comparing the sums of different pairs, children can develop a better understanding of addition and its properties.",
+          "prerequisites": [],
+          "original_exercises": [
+            "A)\n43 G 3\u2014\n33 G 13\u2014\n23 G 23\u2014\n33 G 14",
+            "B)\n26 G 12\u2014\n21 G 17\u2014\n24 G 34\u2014\n18 G 20",
+            "C)\n52 G 7\u2014\n57 G 2\u2014\n51 G 6\u2014\n50 G 9",
+            "D)\n50 G 10\u2014\n50 G 20\u2014\n30 G 30\u2014\n40 G 20",
+            "16 G 33\u2014\n15 G 34\u2014\n23 G 36\u2014\n17 G 32"
+          ],
+          "status": "untaught",
+          "last_taught_date": null
+        },
+        {
+          "topic_name": "Addition of Numbers (with Regrouping/Carry over)",
+          "subtopics": [],
+          "concept_summary": "This section introduces the concept of addition with regrouping, also known as carrying over. It explains how to handle situations where the sum of digits in a column exceeds 9. The example demonstrates how to regroup ten ones into one ten and add it to the next column.",
+          "prerequisites": [],
+          "original_exercises": [
+            "Say how much they have together."
+          ],
+          "status": "untaught",
+          "last_taught_date": null
+        },
+        {
+          "topic_name": "Addition Game",
+          "subtopics": [],
+          "concept_summary": "This section describes a game designed to reinforce addition skills in a fun and engaging way. The game involves picking number slips and adding the numbers, with the goal of having the lowest total to stay in the game. This encourages mental math, strategic thinking, and error identification.",
+          "prerequisites": [],
+          "original_exercises": [],
+          "status": "untaught",
+          "last_taught_date": null
+        },
+        {
+          "topic_name": "Counting Fingers",
+          "subtopics": [],
+          "concept_summary": "This exercise focuses on understanding the concept of multiplication through repeated addition by counting fingers on hands. It reinforces the relationship between addition and multiplication.",
+          "prerequisites": [],
+          "original_exercises": [
+            "Count the fingers shown below. Fill in the blank boxes with the correct numbers.\nNumber of fingers on one hand R\n              5  R  1  I  5   R  5\nNumber of fingers on two hands R\n      5  G  5  R  2   I  5  R 10\n  Number of fingers on three handsR\n      G       G      R      I     R\nNumber of fingers on four handsR\n   G      G       G      R      I     R\nNumber of fingers on five handsR      G      G      G      G      R      I     R"
+          ],
+          "status": "untaught",
+          "last_taught_date": null
+        },
+        {
+          "topic_name": "Multiplication as Repeated Addition",
+          "subtopics": [],
+          "concept_summary": "This section emphasizes expressing repeated addition in the form of multiplication. It helps students visualize multiplication as a shorthand for adding the same number multiple times.",
+          "prerequisites": [
+            "Counting Fingers"
+          ],
+          "original_exercises": [
+            "Show the following additions in the form of multiplications.\nExample:\n4 G 4 G 4 G 4 G 4\nR\n5\nI\n4\nR\n20\n(a)\n7 G 7 G 7 G 7\nR\nI\nR\n(b)\n3 G 3G 3 G 3 G 3G 3 G 3\nR\nI\nR\n(c)\n6 G 6 G 6 G 6 G 6\nR\nI\nR\n(d)\n2 G 2 G 2 G 2 G 2 G 2\nR\nI\nR"
+          ],
+          "status": "untaught",
+          "last_taught_date": null
+        },
+        {
+          "topic_name": "Repeated Addition as Multiplication",
+          "subtopics": [],
+          "concept_summary": "This section focuses on converting multiplication expressions into repeated addition. This reinforces the understanding that multiplication is a concise way to represent repeated addition.",
+          "prerequisites": [
+            "Multiplication as Repeated Addition"
+          ],
+          "original_exercises": [
+            "Write the following multiplications as repeated additons. One example is given.\nEx:\n7 I 8\nR\n   8   G   8   G   8   G   8   G   8   G   8   G   8\n(a)\n3 I 4\nR\n(b)\n6 I 5\nR\n(c)\n8 I 3\nR\n(d)\n5 I 2\nR\n(e)\n4 I 6\nR"
+          ],
+          "status": "untaught",
+          "last_taught_date": null
+        },
+        {
+          "topic_name": "Multiplication using Rows and Columns",
+          "subtopics": [],
+          "concept_summary": "This exercise uses visual representation of dots arranged in rows and columns to illustrate multiplication. It connects the abstract concept of multiplication to a concrete visual model.",
+          "prerequisites": [
+            "Repeated Addition as Multiplication"
+          ],
+          "original_exercises": [
+            "Count the dots in rows and columns. Fill in the blanks in the table. Write them\nin the form of multiplication.\n\nin rows\nin columns\nForm of\nmultiplication\nDots\n3\n5\n5 I 3 R 15\n5I3 R 3I5 R 15\n5\n3\n..................\n.............\n.............\n..................\n.............\n.............\n.................."
+          ],
+          "status": "untaught",
+          "last_taught_date": null
+        },
+        {
+          "topic_name": "Simple Multiplication",
+          "subtopics": [],
+          "concept_summary": "This section provides direct practice in multiplying single-digit numbers. It aims to build fluency in basic multiplication facts.",
+          "prerequisites": [
+            "Multiplication using Rows and Columns"
+          ],
+          "original_exercises": [
+            "Multiply the numbers given.\n(a) 4 I 5 R\n(b) 3 I 4 R\n(c) 5 I 2 R\n(d) 8 I 6 R"
+          ],
+          "status": "untaught",
+          "last_taught_date": null
+        },
+        {
+          "topic_name": "Multiplication Table Completion",
+          "subtopics": [],
+          "concept_summary": "This exercise involves completing a multiplication table by filling in the products of numbers. It reinforces the understanding of multiplication tables and patterns within them.",
+          "prerequisites": [
+            "Simple Multiplication"
+          ],
+          "original_exercises": [
+            "Multiply the number in the first column by those in the top row. Write their\nproduct in the blank box.\nI\n4\n6\n7\n8\n9\n2\n8\n3\n5\nEx:` 2 I 4 R 8"
+          ],
+          "status": "untaught",
+          "last_taught_date": null
+        },
+        {
+          "topic_name": "Identifying Incorrect Multiplication",
+          "subtopics": [],
+          "concept_summary": "This exercise requires students to identify the multiplication problem with a different answer among a set of similar problems. It enhances critical thinking and reinforces multiplication fact recall.",
+          "prerequisites": [
+            "Multiplication Table Completion"
+          ],
+          "original_exercises": [
+            "Of the three multiplications given in each row, one has a different answer.\nIdentify it and draw \u00aa \u03bc around it. One example is given.\nEx:\n4 I 3\u2014\n6 I 2\u2014\n5 I 4\n(a)\n2 I 8\u2014\n4 I 4\u2014\n3 I4\n(b)\n6 I 6\u2014\n7 I 6\u2014\n9 I 4\n(c)\n8 I 5\u2014\n8 I 3\u2014\n6 I 4"
+          ],
+          "status": "untaught",
+          "last_taught_date": null
+        },
+        {
+          "topic_name": "Commutative Property of Multiplication",
+          "subtopics": [],
+          "concept_summary": "This section introduces the commutative property of multiplication, demonstrating that changing the order of factors does not change the product. It helps students understand the flexibility in multiplication.",
+          "prerequisites": [
+            "Identifying Incorrect Multiplication"
+          ],
+          "original_exercises": [
+            "Fill in the blank boxes with the correct numbers.\nEx:\n3   I   4\nR\n4   I   3\n(a)\n5   I   6\nR\n6   I\n(b)\n2   I   5\nR\n    I\n(c)\n1   I\nR\n8   I   7\n(d)\n3   I\nR\n9   I   3"
+          ],
+          "status": "untaught",
+          "last_taught_date": null
+        },
+        {
+          "topic_name": "Matching Multiplication Expressions",
+          "subtopics": [],
+          "concept_summary": "This exercise involves matching equivalent multiplication expressions and repeated additions. It reinforces the understanding of the relationship between multiplication and repeated addition, and strengthens multiplication fact recall.",
+          "prerequisites": [
+            "Commutative Property of Multiplication"
+          ],
+          "original_exercises": [
+            "Match the following.\n2 G 2 G 2 G 2\n27\n9 I 3\n6 I 3\n2 I 3\n12\n3 G 3 G 3 G 3 G 3 G 3\n5 G 5 G 5\nnumber of wheels of six bicycles\n4 I 2\n3 I 5\n3 I 2\nExample"
+          ],
+          "status": "untaught",
+          "last_taught_date": null
+        },
+        {
+          "topic_name": "Multiplication Game",
+          "subtopics": [],
+          "concept_summary": "This section describes a game that involves rolling dice and multiplying the numbers obtained. It provides a fun and engaging way to practice multiplication skills and reinforce multiplication facts.",
+          "prerequisites": [
+            "Matching Multiplication Expressions"
+          ],
+          "original_exercises": [
+            "Play this game."
+          ],
+          "status": "untaught",
+          "last_taught_date": null
+        },
+        {
+          "topic_name": "Multiplication with 10",
+          "subtopics": [],
+          "concept_summary": "This section focuses on multiplication with the number 10, using chains of beads as a visual aid. It helps students understand the pattern and ease of multiplying by 10.",
+          "prerequisites": [
+            "Multiplication Game"
+          ],
+          "original_exercises": [
+            "Count the beads on the chain. Say how many are there.\nNumber\nof chains Sarala counted the beads in the chains and wrote the numbers as shown below.\n1\n2\n3\n4\n5\n6\n7\n8\n9\n10\n10\n10 G 10\n10 G 10 G 10\n10 G 10 G 10 G 10\n10 G 10 G 10 G 10 G 10\n10 G 10 G 10 G 10 G 10 G 10\n10 G 10 G 10 G 10 G 10 G 10 G 10\n10 G 10 G 10 G 10 G 10 G 10 G 10 G 10\n10 G 10 G 10 G 10 G 10 G 10 G 10 G 10 G 10\n10 G 10 G 10 G 10 G 10 G 10 G 10 G 10 G\n10 G 10\n1 ten\n2 tens\n3 tens\n4 tens\n5 tens\n6 tens\n7 tens\n8 tens\n9 tens\n10 tens\n1 I 10 R 10\n2 I 10 R 20\n3 I 10 R 30\n4 I 10 R 40\n5 I 10 R 50\n6 I 10 R 60\n7 I 10 R 70\n8 I 10 R 80\n9 I 10 R 90\n10 I 10 R 100"
+          ],
+          "status": "untaught",
+          "last_taught_date": null
+        }
+      ]
+    },
+    {
+      "chapter_number": 10,
+      "chapter_title": "Multiplication of  Tables ( 1 to 10)",
+      "topics": [
+        {
+          "topic_name": "Multiplication of Tables ( 1 to 10)",
+          "subtopics": [
+            "Writing multiplication tables (1 to 9) by using the method of successive addition"
+          ],
+          "concept_summary": "This unit focuses on multiplication tables. Activities include writing multiplication tables (1 to 9) using successive addition.",
+          "prerequisites": [
+            "Multiplication of Numbers (I)"
+          ],
+          "original_exercises": [],
+          "status": "untaught",
+          "last_taught_date": null
+        }
+      ]
+    },
+    {
+      "chapter_number": 11,
+      "chapter_title": "Multiplication of  Numbers  (II)",
+      "topics": [
+        {
+          "topic_name": "Multiplication of Numbers (II)",
+          "subtopics": [
+            "Writing the product of multiplying a two-digit number by a single-digit number."
+          ],
+          "concept_summary": "This unit focuses on multiplying numbers. Activities include writing the product of multiplying a two-digit number by a single-digit number.",
+          "prerequisites": [
+            "Multiplication of Tables ( 1 to 10)"
+          ],
+          "original_exercises": [],
+          "status": "untaught",
+          "last_taught_date": null
+        }
+      ]
+    },
+    {
+      "chapter_number": 12,
+      "chapter_title": "Division of one number by another number",
+      "topics": [
+        {
+          "topic_name": "Division of one number by another number",
+          "subtopics": [
+            "Identifying division and the symbol ' \u00f7 ' concerned.",
+            "Distributing a certain number of things among a certain number of people equally."
+          ],
+          "concept_summary": "This unit introduces division. Activities include identifying division and the symbol ' \u00f7 ', and distributing items equally among people.",
+          "prerequisites": [
+            "Multiplication of Numbers (II)"
+          ],
+          "original_exercises": [],
+          "status": "untaught",
+          "last_taught_date": null
+        }
+      ]
+    },
+    {
+      "chapter_number": 13,
+      "chapter_title": "Length of Things",
+      "topics": [
+        {
+          "topic_name": "Length of Things",
+          "subtopics": [
+            "Measuring lengths using nonstandard measuring tools",
+            "Valuing the standard tools of measurment."
+          ],
+          "concept_summary": "This unit focuses on measuring length. Activities include measuring lengths using nonstandard tools and valuing standard measurement tools.",
+          "prerequisites": [
+            "Division of one number by another number"
+          ],
+          "original_exercises": [],
+          "status": "untaught",
+          "last_taught_date": null
+        },
+        {
+          "topic_name": "Division Problems",
+          "subtopics": [],
+          "concept_summary": "The provided text focuses on applying division to solve real-world problems involving distribution. It emphasizes understanding the context of each problem to determine what the result of the division indicates. The examples involve distributing items equally among groups, such as chocolates among friends or sheep among sons.",
+          "prerequisites": [],
+          "original_exercises": [
+            "Ex. Rajani distributed 15 chocolates among her three friends. How many chocolates did she give to each friend.",
+            "Total number of chocolates R",
+            "The number of friend to whom chocolates were distributed R",
+            "To each friends she distributed R",
+            "The division form R \u2122 R",
+            "What does the result of division indicate?",
+            "Distribute in groups. Write the Division form.",
+            "15",
+            "3",
+            "5",
+            "(a) Three pupils can sit on a bench. How many benches are needed for 21 pupils to sit.",
+            "Total number of students R",
+            "Each bench can seat R",
+            "Number of benches needed R",
+            "The division form R \u2122 R",
+            "What does the result of division indicate?",
+            "(b) Ramayya has 48 sheep. He distributed them to his four sons equally. How many did each son get?",
+            "Total number of sheep R",
+            "Number of sons R",
+            "Each son got sheep",
+            "The Division form R \u2122 R",
+            "The result of division shows",
+            "Look at the table given below. Fill in the blank boxes with the correct numbers. Write the Division form for each.",
+            "Match the following divisions and their result.",
+            "Number of notebooks distributed",
+            "Number of pupils who recived the notebooks",
+            "Number of books each pupil received",
+            "The Division form",
+            "Ex:` 8 2 4 8 \u2122 2 R 4",
+            "12 6",
+            "15 5",
+            "18 3",
+            "42 7"
+          ],
+          "status": "untaught",
+          "last_taught_date": null
+        },
+        {
+          "topic_name": "Nonstandard Measurement - Cubits",
+          "subtopics": [],
+          "concept_summary": "The text introduces the concept of nonstandard measurement using cubits. It highlights the variability in measurements obtained by different individuals due to differences in their cubit length. The text encourages discussion on why these differences occur and prompts reflection on standard units of measurement used in games and other contexts.",
+          "prerequisites": [],
+          "original_exercises": [
+            "Look at the pictures given below. Say how garlands of flowers are being measured.",
+            "How did everyone measure the garland with?",
+            "Why did each one get different measurement?",
+            "Among the three whose cubit is more?",
+            "Among the three whose cubit is less?",
+            "In general, what measurements do you use while playing games?"
+          ],
+          "status": "untaught",
+          "last_taught_date": null
+        }
+      ]
+    },
+    {
+      "chapter_number": 14,
+      "chapter_title": "Weight of Things",
+      "topics": [
+        {
+          "topic_name": "Weight of Things",
+          "subtopics": [
+            "Identifying the heavy and light things among things given"
+          ],
+          "concept_summary": "This unit focuses on weight. Activities include identifying heavy and light objects.",
+          "prerequisites": [
+            "Length of Things"
+          ],
+          "original_exercises": [],
+          "status": "untaught",
+          "last_taught_date": null
+        },
+        {
+          "topic_name": "Weight Comparison",
+          "subtopics": [],
+          "concept_summary": "The story illustrates the concept of weight through a donkey carrying salt and cotton bags. The donkey learns that the weight of the load changes depending on the material, especially when exposed to water. This helps to introduce the idea that different materials have different weights and react differently to external factors like water.",
+          "prerequisites": [],
+          "original_exercises": [
+            "Guess the weights of two objects shown in each box.  Put a \u20189\u2019 near the heavier object.",
+            "(a)",
+            "(b)",
+            "(c)",
+            "Guess the weights of two objects given together.  Put a \u20189\u2019near the lighter object.",
+            "(c)",
+            "(a)",
+            "(d)",
+            "(b)"
+          ],
+          "status": "untaught",
+          "last_taught_date": null
+        }
+      ]
+    },
+    {
+      "chapter_number": 15,
+      "chapter_title": "Measure of Liquids",
+      "topics": [
+        {
+          "topic_name": "Measure of Liquids",
+          "subtopics": [
+            "Identifying the more and less size among those given."
+          ],
+          "concept_summary": "This unit focuses on measuring liquids. Activities include identifying larger and smaller quantities of liquids.",
+          "prerequisites": [
+            "Weight of Things"
+          ],
+          "original_exercises": [],
+          "status": "untaught",
+          "last_taught_date": null
+        }
+      ]
+    },
+    {
+      "chapter_number": 16,
+      "chapter_title": "Time",
+      "topics": [
+        {
+          "topic_name": "Time",
+          "subtopics": [
+            "Describing when things are done in a day (morning, afternoon etc)",
+            "Saying the names of days / months in a order"
+          ],
+          "concept_summary": "This unit focuses on time. Activities include describing daily activities (morning, afternoon, etc.) and sequencing days and months.",
+          "prerequisites": [
+            "Measure of Liquids"
+          ],
+          "original_exercises": [],
+          "status": "untaught",
+          "last_taught_date": null
+        }
+      ]
+    },
+    {
+      "chapter_number": 17,
+      "chapter_title": "Money",
+      "topics": [
+        {
+          "topic_name": "Money",
+          "subtopics": [
+            "Identifying currency notes / coins",
+            "Giving change for notes less than Rs. 100"
+          ],
+          "concept_summary": "This unit focuses on money. Activities include identifying currency notes and coins, and giving change for notes less than Rs. 100.",
+          "prerequisites": [
+            "Time"
+          ],
+          "original_exercises": [],
+          "status": "untaught",
+          "last_taught_date": null
+        }
+      ]
+    },
+    {
+      "chapter_number": 18,
+      "chapter_title": "Shapes",
+      "topics": [
+        {
+          "topic_name": "Shapes",
+          "subtopics": [
+            "Identifying different geometrical shapes without mentioning names like circle, square, rectangle, triangle etc. Compares and matches their shapes with things in daily life."
+          ],
+          "concept_summary": "This unit focuses on shapes. Activities include identifying geometrical shapes (circle, square, rectangle, triangle, etc.) and comparing them to objects in daily life.",
+          "prerequisites": [
+            "Money"
+          ],
+          "original_exercises": [],
+          "status": "untaught",
+          "last_taught_date": null
+        },
+        {
+          "topic_name": "Identifying Shapes",
+          "subtopics": [],
+          "concept_summary": "Get your pupils to observe the above picture. Let them discuss the shapes of things.",
+          "prerequisites": [],
+          "original_exercises": [
+            "Now answer the following questions orally.\na) Is the flag and the blackboard in same shape?\nb) Identify the things which are of this shape (inside and outside your class room)."
+          ],
+          "status": "untaught",
+          "last_taught_date": null
+        },
+        {
+          "topic_name": "Matching Shapes",
+          "subtopics": [],
+          "concept_summary": "Get your pupils to understand the instruction for each problem. Let them solve the problems 1 to 7 by themselves.",
+          "prerequisites": [],
+          "original_exercises": [
+            "Match the figures which have the same shape.  Look at the example.",
+            "Match the things on the left with their similar shapes on the right."
+          ],
+          "status": "untaught",
+          "last_taught_date": null
+        },
+        {
+          "topic_name": "Shape Recognition and Counting",
+          "subtopics": [],
+          "concept_summary": "Get your pupils to understand the instruction for each problem. Let them solve the problems by themselves.",
+          "prerequisites": [],
+          "original_exercises": [
+            "Look at the three things in each row.  Mark the one with a different shape \u00aa9\u03bc in the blank box.\n(a)\n(b)",
+            "Look at the shapes.  Count them and write.\nIn this picture                 how many \nare there?\nIn this picture                  how many  \nare there?"
+          ],
+          "status": "untaught",
+          "last_taught_date": null
+        },
+        {
+          "topic_name": "Pattern Recognition with Shapes",
+          "subtopics": [],
+          "concept_summary": "Get your pupils to understand the instruction for each  problem.  Let\nthem solve the problems by themselves.",
+          "prerequisites": [],
+          "original_exercises": [
+            "Observe the first three figures in each row.  Write the next figure.\nEx:-\n(a)\n(b)\n(c)",
+            "Join the dots to draw different shapes.  One is done for you."
+          ],
+          "status": "untaught",
+          "last_taught_date": null
+        },
+        {
+          "topic_name": "Shape Identification and Coloring",
+          "subtopics": [],
+          "concept_summary": "Get your pupils to understand the instruction.  Let them solve the above\nproblems by themselves.",
+          "prerequisites": [],
+          "original_exercises": [
+            "Observe the diagram given below.  Colour the same shaped parts with the same\ncolour. Count the parts which have the same shape.\nWrite the number of parts\nwhich have the following\nshapes."
+          ],
+          "status": "untaught",
+          "last_taught_date": null
+        }
+      ]
+    },
+    {
+      "chapter_number": 19,
+      "chapter_title": "Let us Record",
+      "topics": [
+        {
+          "topic_name": "Let us Record",
+          "subtopics": [
+            "Counting things and recording the number in a table"
+          ],
+          "concept_summary": "This unit focuses on recording data. Activities include counting objects and recording the numbers in a table.",
+          "prerequisites": [
+            "Shapes"
+          ],
+          "original_exercises": [],
+          "status": "untaught",
+          "last_taught_date": null
+        },
+        {
+          "topic_name": "Recording Data with Flowers",
+          "subtopics": [],
+          "concept_summary": "Get your pupils observe the colours of the flowers.  Let them count the\nflowers of each colour.  Ask them to record the correct number in the\ntable.",
+          "prerequisites": [],
+          "original_exercises": [
+            "Look at the colours of flowers.\nRed\nYellow\nWhite\nColour of the flower\nNumber of flowers\n9\nWrite in the following table. How many flowers of each colour are there."
+          ],
+          "status": "untaught",
+          "last_taught_date": null
+        },
+        {
+          "topic_name": "Recording Data with Fruits",
+          "subtopics": [],
+          "concept_summary": "Get your pupils observe the above table of fruits.  Let them count each\ntype of fruit.  Ask them to record the number in the table.",
+          "prerequisites": [],
+          "original_exercises": [
+            "Look at the pictures in the table given below.\nFruits\nTheir number\n6\n5\n4\n3\n2\n1\n0\nCount each type of fruit.  Record the number in the table."
+          ],
+          "status": "untaught",
+          "last_taught_date": null
+        },
+        {
+          "topic_name": "Recording Data with Farm Animals",
+          "subtopics": [],
+          "concept_summary": "Get your pupils to observe the pictures.  Let them count the animals and\nrecord the number in the table.",
+          "prerequisites": [],
+          "original_exercises": [
+            "The details of cows, goats and hens that Ramayya has given in the form of\npictures.  Count them.\nAnimal\nNow record the numbers in the table given below.\nRamayya has the following in his farm.\nTheir number"
+          ],
+          "status": "untaught",
+          "last_taught_date": null
+        },
+        {
+          "topic_name": "Data Recording Exercise",
+          "subtopics": [],
+          "concept_summary": "Get your pupils to understand the instruction given for the problem.  Let\nthem solve the problem by themselves.",
+          "prerequisites": [],
+          "original_exercises": [
+            "Look at the picture.  Count each item. Enter the details in the following\ntable.\nItems\nTheir number\nCows\n5\nEx:-"
+          ],
+          "status": "untaught",
+          "last_taught_date": null
+        }
+      ]
+    },
+    {
+      "chapter_number": 2,
+      "chapter_title": "Numbers from 10 to 99",
+      "topics": [
+        {
+          "topic_name": "Numbers from 10 to 99",
+          "subtopics": [
+            "Counting the things intens and ones. Saying how many tens and ones there are in them",
+            "Writing numbers upto 100 in the expanded form.",
+            "Writing numbers upto 100 in ascending and descending order and matching with things",
+            "Identifying the small and big numbers among the given number writing them.",
+            "Solving certain problems orally",
+            "Identifying numbers small and big relationship among",
+            "Solving puzzles based on certain conditions (More, Less)"
+          ],
+          "concept_summary": "This unit focuses on numbers from 10 to 99. Activities include counting in tens and ones, writing numbers in expanded form, arranging numbers in ascending and descending order, identifying smaller and larger numbers, solving problems orally, and solving puzzles based on conditions like 'More' and 'Less'.",
+          "prerequisites": [
+            "Numbers from 1 to 20"
+          ],
+          "original_exercises": [],
+          "status": "untaught",
+          "last_taught_date": null
+        },
+        {
+          "topic_name": "Tens and Ones",
+          "subtopics": [
+            "Identifying tens",
+            "Identifying ones",
+            "Writing numbers based on tens and ones"
+          ],
+          "concept_summary": "This section focuses on understanding the composition of numbers in terms of tens and ones. It reinforces the concept that a two-digit number is made up of a certain number of tens and a certain number of ones. The exercises aim to help students visualize and represent numbers using this structure.",
+          "prerequisites": [
+            "Counting",
+            "Basic number recognition"
+          ],
+          "original_exercises": [
+            "Look at the number. Write how many tens there are in it?",
+            "Fill in the blank boxes with the correct numbers",
+            "Count the pictures in tens and ones. Write the correct numbers in the boxes.",
+            "Write the correct numbers in the blank boxes.",
+            "Write the correct numbers in the blank boxes."
+          ],
+          "status": "untaught",
+          "last_taught_date": null
+        },
+        {
+          "topic_name": "Comparing Numbers",
+          "subtopics": [
+            "Identifying smaller numbers",
+            "Identifying bigger numbers",
+            "Identifying numbers within a range"
+          ],
+          "concept_summary": "This section introduces the comparison of numbers. Students learn to identify smaller and bigger numbers. They also practice identifying numbers that fall within a specified range. These exercises build a foundation for understanding number order and relative magnitude.",
+          "prerequisites": [
+            "Understanding of tens and ones",
+            "Number recognition"
+          ],
+          "original_exercises": [
+            "Draw a \u00aa \u03bc around the smaller number. Look at the examples.",
+            "Put a \u00aa9\u03bc on the biggest number.",
+            "Draw a \u00aa \u03bc around the smallest number.",
+            "Identify between which numbers the given numbers lie with a \u00aa9\u03bc. Look at the example."
+          ],
+          "status": "untaught",
+          "last_taught_date": null
+        },
+        {
+          "topic_name": "Problem Solving with Numbers",
+          "subtopics": [
+            "Comparing amounts of money",
+            "Arranging numbers in ascending order",
+            "Identifying numbers based on place value",
+            "Creating word problems"
+          ],
+          "concept_summary": "This section applies number concepts to problem-solving scenarios. Students compare amounts of money, arrange numbers in ascending order, and identify numbers based on their place value. They also create their own word problems, encouraging them to think critically about how numbers are used in real-life situations.",
+          "prerequisites": [
+            "Comparing numbers",
+            "Understanding of place value"
+          ],
+          "original_exercises": [
+            "Ramesh has Rs. 50. Sita has Rs. 30. Who has more money? Answer orally.",
+            "Pavan got 45 marks in Mathematics, Janaki got 75, Razia got 65 and Vaani got 59. Say these numbers in ascending order.",
+            "Say the number in which 5 in ones place and 7 in tens place.",
+            "Say a problem which you can solve using the equation 20 + 5 = 25.",
+            "Write 5 numbers wtih 2 digits using 4, 5, 7. Write them as shown in the example.",
+            "Look at the numbers. Draw \u00aa \u03bc around those which are between 20 and 30."
+          ],
+          "status": "untaught",
+          "last_taught_date": null
+        },
+        {
+          "topic_name": "Number Patterns and Games",
+          "subtopics": [
+            "Identifying numbers with a specific digit in the ones place",
+            "Following a path from smallest to largest number",
+            "Extending a sequence of numbers"
+          ],
+          "concept_summary": "This section uses games and patterns to reinforce number concepts. Students identify numbers with a specific digit in the ones place and follow a path from the smallest to the largest number in a grid. These activities encourage strategic thinking and reinforce the understanding of number order.",
+          "prerequisites": [
+            "Number recognition",
+            "Comparing numbers"
+          ],
+          "original_exercises": [
+            "Draw \u00aa \u03bc around the numbers where you see 4 in the ones place.",
+            "Play the Rat's tail game. Extend the rat's tail from the smallest to the biggest number given in the grid.",
+            "Show the way to the top of the hill.\n- Start from the lowest row.\n- Reach the big number from the small one.\n- Go upwards or to sidewards but not downwards.\n- Reach the number 99.\n- Show as many ways as you can."
+          ],
+          "status": "untaught",
+          "last_taught_date": null
+        },
+        {
+          "topic_name": "Addition of Two-Digit Numbers",
+          "subtopics": [
+            "Addition of digits in ones place",
+            "Addition of digits in tens place"
+          ],
+          "concept_summary": "Observe how the two numbers are added. Get your pupils to understand addition of digits in ones place and those in tens place. Let them solve all the problems by themselves.",
+          "prerequisites": [
+            "Basic addition of single-digit numbers",
+            "Understanding of place value (ones and tens)"
+          ],
+          "original_exercises": [
+            "T\nO\n1\n3\nG 4",
+            "T\nO\n3\n8\nG 2",
+            "T\nO\n4\n5\nG 4",
+            "T\nO\n6\n3\nG 2",
+            "Ten  Ones\n2\n8\nG1\n5",
+            "T\nO\n7\n9\nG 1\n8",
+            "T\nO\n2\n7\nG 5\n6",
+            "T\nO\n5\n9\nG 3\n2",
+            "T  O\n1\n2\nG 1\n5",
+            "T  O\n4\n3",
+            "When we add ones\n8 ones  G 5 ones R 13 ones\n13 ones R 1 ten   G 3 ones\nWhen we add tens\n2 tens G 1 ten R  3 tens\n3 tens G 1 ten R  4 tens"
+          ],
+          "status": "untaught",
+          "last_taught_date": null
+        },
+        {
+          "topic_name": "Addition with Carrying",
+          "subtopics": [],
+          "concept_summary": "When we add ones\n8 ones  G 5 ones R 13 ones\n13 ones R 1 ten   G 3 ones\nWhen we add tens\n2 tens G 1 ten R  3 tens\n3 tens G 1 ten R  4 tens",
+          "prerequisites": [
+            "Addition of Two-Digit Numbers",
+            "Understanding of place value (ones and tens)"
+          ],
+          "original_exercises": [],
+          "status": "untaught",
+          "last_taught_date": null
+        },
+        {
+          "topic_name": "Exercise",
+          "subtopics": [],
+          "concept_summary": null,
+          "prerequisites": [
+            "Addition of Two-Digit Numbers"
+          ],
+          "original_exercises": [
+            "Fill in the blank boxes with the correct numbers.",
+            "48 R\ntens\nG\n      ones\n 28 R\ntens\nG\n      ones\ntens\nG\n      ones\n(A) How much is 48 G 28 ?",
+            "24 R\ntens\nG\n       ones\n 49 R\ntens\nG\n       ones\ntens\nG\n       ones\n(B) How much is 24 G 49 ?",
+            "T      O\n4\n8\nG2\n8",
+            "T\nO\n2\n4\nG4\n9",
+            "Add the numbers using bundles of sticks and loose sticks.",
+            "Add the following numbers.",
+            "(a)\n4\n3\nG2\n8",
+            "(b)\n3\n6\nG4\n7",
+            "(c)\n5\n6\nG2\n9",
+            "(d)\n7\n4\nG\n9",
+            "(e)\n4\n5\nG2\n6",
+            "(f)\n5\n4\nG3\n6",
+            "(g)\n2\n7\nG4\n9",
+            "(h)\n5\n3\nG3\n7",
+            "(i)\n6\n1\nG2\n9",
+            "(j)\n2\n7\nG5\n3",
+            "(k)\n7\n3\nG1\n9",
+            "(l)\n2\n9\nG4\n5",
+            "(a) 37 G 28 R",
+            "(b) 58 G 24 R",
+            "(c) 24 G 6 R",
+            "(d) 9 G 76 R",
+            "(e) 46 G 27 R",
+            "(f) 17 G 73 R",
+            "(g) 56 G 14 R",
+            "(g) 49 G 26 R",
+            "Solve the problem orally.",
+            "Ex: There are 68 guava and 24 sweet lime trees in a garden. What is the total number of\ntrees in that garden?\nGuava trees R 68\nSweet lime trees R 24\nTotal trees R 92",
+            "In a cricket match Laxman made 47 runs and Dravid made 26 runs. How many runs did\nthey make together?\nRuns Laxman made R 47\nRuns Dravid made R 26\nThey both made R",
+            "Observe the grid given below. Find out the numbers which add up to 36. Write\nthose pairs as shown in the example.\n.............................................\n.............................................\n.............................................\n.............................................\n22\n18\n10\n19\n17\n15\n21\n32\n12\n39\n18\n33\n26\n14\n34\n31\nExample: 19 G 17 R 36",
+            "Observe the fisrt three numbers on each line. Write the next three numbers in\nthe series. Look at the example.\nEx: 2, 4, 6, 8, 10, 12\n(A) 5, 10, 15, .............,  .............,  .............\n(B) 3, 5, 7, .............,  .............,  .............\n(C) 20, 30, 40, .............,  .............,  .............\n.............................................\n.............................................\n.............................................\n.............................................\n........\n........\n........",
+            "Observe the pairs of numbers in each row. The sum of one pair is different.\nIdentify and draw \u00aa\u00aa\n \u03bc\u03bc around it. One example is given.\nEx: 27 G 46 16 G 67 26 G 57 36 G 47\n(A) 18 G 19 20 G 17 20 G 19 15 G 22\n(B) 27 G 35 30 G 12 40 G 22 38 G 24\n(C) 47 G 35 58 G 24 40 G 48 68 G 14",
+            "Look at the numbers in the first column. Add each pair. Mark the range in which\ntheir sum will lie       .",
+            "30 - 40\n40 - 50\n50 - 60\n60 - 70\n34 G 12\n45 G 20\n27 G 11\n36 G 27\n28 G 25",
+            "Observe how Soni added two numbers. Correct the error / mistake. if any. Write\nthe correct answer in the brackets (        ).",
+            "9\n48\nG24\n612\n(        )",
+            "53\nG22\n85\n(        )",
+            "60\nG30\n80\n(        )",
+            "39\nG17\n416\n(        )",
+            "76\nG15\n61\n(        )"
+          ],
+          "status": "untaught",
+          "last_taught_date": null
+        },
+        {
+          "topic_name": "Measuring Length",
+          "subtopics": [
+            "Length of the table",
+            "Distance between marbles",
+            "Length of garland of flowers",
+            "Length of thread",
+            "Distance in picture 5",
+            "Length of the room"
+          ],
+          "concept_summary": "The pictures illustrate different scenarios where length needs to be measured. These scenarios include measuring the length of a table, the distance between marbles, the length of a garland of flowers, the length of a thread, the distance in a specific picture, and the length of a room. The exercise encourages observation and discussion about non-standard measuring tools used to determine length.",
+          "prerequisites": [],
+          "original_exercises": [
+            "1. How is the length of the table measured?",
+            "2. How is the distance between the marbles measured?",
+            "3. How is the length of garland of flowers measured?",
+            "4. How is the length of the thread measured?",
+            "5. How is the distance measured in picture 5?",
+            "6. How is the length of the room measured?"
+          ],
+          "status": "untaught",
+          "last_taught_date": null
+        },
+        {
+          "topic_name": "Estimation and Measurement",
+          "subtopics": [
+            "Estimation of length using cubit",
+            "Actual length after measuring with cubit"
+          ],
+          "concept_summary": "This exercise focuses on developing the ability to estimate length using a cubit and then comparing the estimation with the actual measured length. Pupils are expected to estimate the length of various objects, such as a table, blackboard, and classroom, using cubits and then measure the actual length to compare their estimations.",
+          "prerequisites": [
+            "Measuring Length"
+          ],
+          "original_exercises": [
+            "Estimate first and then measure and say.",
+            "Measure and write.",
+            "Serial number\nObjects\nEstimation of length using cubit\nActual length after measuring with cubit\n1.\nThe blackboard\n2.\nAA table\n3.\nLength of the classroom",
+            "Serial number\nName of the pupil\nTable\nLength of 4 finger - widths\nLength of handspan\nCubit\n1.\n2.\n3.\n4.\n5."
+          ],
+          "status": "untaught",
+          "last_taught_date": null
+        }
+      ]
+    },
+    {
+      "chapter_number": 3,
+      "chapter_title": "Numbers with Three Digits",
+      "topics": [
+        {
+          "topic_name": "Numbers with Three Digits",
+          "subtopics": [
+            "Counting and saying the numbers as hundreds, tens and ones upto 1000 and writing them below",
+            "Saying the place value and face value of digits in a number and writing",
+            "Writing the 3-digit number in the expand form and writing the number when its expanded form is given",
+            "Saying how many Rs.100's, Rs.10's and Re.1's there are for a given three- digit number",
+            "Writing numbers below 1000 in the correct sequence and also in ascending and descending orders",
+            "Writing the numbers before, after and between given numbers below 1000",
+            "Writing the given number (1000) in words and writing the number when it if given in words.",
+            "Forming numbers using the three digits given and saying between",
+            "Using  >, <, = symbols to show smaller than about two numbers."
+          ],
+          "concept_summary": "This unit focuses on three-digit numbers. Activities include counting in hundreds, tens, and ones up to 1000, identifying place value and face value, writing numbers in expanded form, relating numbers to currency denominations, sequencing numbers, identifying numbers before, after, and between given numbers, writing numbers in words, forming numbers using given digits, and using comparison symbols.",
+          "prerequisites": [
+            "Numbers from 10 to 99"
+          ],
+          "original_exercises": [],
+          "status": "untaught",
+          "last_taught_date": null
+        },
+        {
+          "topic_name": "Observing and Understanding Numbers",
+          "subtopics": [
+            "Numbers before",
+            "Numbers between",
+            "Numbers after"
+          ],
+          "concept_summary": "Get your pupils to observe the above pictures. Help them to observe the method in which the numbers are written in an order. Create the understanding of numbers that come before, between and after.",
+          "prerequisites": [],
+          "original_exercises": [
+            "1. How many animals are there in the above pictures?",
+            "2. How many vehicles can you see?",
+            "3. In which box is the a hen?",
+            "4. How many of the above items do you see in your school?",
+            "5. How many pictures are there between the comb and the key?",
+            "6. What is the number of the box before the slate?",
+            "7. Between which boxes can you see the lock ?\n and",
+            "8. What is the number of the box next to the monkey?",
+            "9. What is the number of the box between those that have a book\n         and the bicycle?"
+          ],
+          "status": "untaught",
+          "last_taught_date": null
+        },
+        {
+          "topic_name": "Number Identification and Circling",
+          "subtopics": [],
+          "concept_summary": "Get your pupils to understand and solve the exercise from questions 1 to 11.",
+          "prerequisites": [
+            "Observing and Understanding Numbers"
+          ],
+          "original_exercises": [
+            "1. Write the correct number in\ngiven box.",
+            "3. Draw a \n around each number\nbetween 10 and 20.  Draw a \naround each number less than 10.",
+            "1. Count the pictures. Circle the correct number as shown in the example."
+          ],
+          "status": "untaught",
+          "last_taught_date": null
+        },
+        {
+          "topic_name": "Number Sequencing",
+          "subtopics": [
+            "Number before",
+            "Number between",
+            "Number after"
+          ],
+          "concept_summary": "Get your pupils to understand the instructions. Let them solve each sum by themselves.",
+          "prerequisites": [
+            "Number Identification and Circling"
+          ],
+          "original_exercises": [
+            "4. Write the number that comes before\nthe given numbers.",
+            "5. Write the number that comes\nbetween the given numbers.",
+            "6. Write the number that comes after the\ngiven numbers.",
+            "7. Write the number that comes before\nand after the given number."
+          ],
+          "status": "untaught",
+          "last_taught_date": null
+        },
+        {
+          "topic_name": "Number Comparison",
+          "subtopics": [
+            "Identifying bigger numbers"
+          ],
+          "concept_summary": "Get your pupils to understand the instructions. Let them solve each sum by themselves.",
+          "prerequisites": [
+            "Number Sequencing"
+          ],
+          "original_exercises": [
+            "8. Identify the bigger number and draw a \u00aa\n\u03bc around it.  Look at the example."
+          ],
+          "status": "untaught",
+          "last_taught_date": null
+        },
+        {
+          "topic_name": "Ordering Numbers",
+          "subtopics": [
+            "Smallest to biggest",
+            "Biggest to smallest"
+          ],
+          "concept_summary": "Get your pupils to understand the instruction and let them solve the sums by themselves.",
+          "prerequisites": [
+            "Number Comparison"
+          ],
+          "original_exercises": [
+            "9. Observe the given sets of numbers.  Write them in the boxes in two ways - one\nfrom the smallest to the biggest and the other from the biggest to the smallest.",
+            "(A) 15, 3, 12, 16, 5, 18\nFrom smallest to biggest :\nFrom biggest to smallest :",
+            "(B) 6, 0, 8, 3, 5, 2",
+            "(C) 12, 18, 10, 14, 19, 17\nFrom smallest to biggest :\nFrom biggest to smallest :",
+            "(D) 2, 17, 13, 14, 8, 5\nFrom smallest to biggest :\nFrom biggest to smallest :",
+            "10. Observe the given sets of numbers.  Write the biggest and the smallest. Look at\nthe example."
+          ],
+          "status": "untaught",
+          "last_taught_date": null
+        },
+        {
+          "topic_name": "Number Sequence Activity",
+          "subtopics": [],
+          "concept_summary": "Get your pupils to understand the instruction. Let them solve the activity / exercise by themselves.",
+          "prerequisites": [
+            "Ordering Numbers"
+          ],
+          "original_exercises": [
+            "11. Show the boy the way to the building.  Join the numbers in the correct order."
+          ],
+          "status": "untaught",
+          "last_taught_date": null
+        },
+        {
+          "topic_name": "Numbers from 10 to 99",
+          "subtopics": [],
+          "concept_summary": "Get your pupils to count the tens and the ones.  Let them write the number in the boxes.",
+          "prerequisites": [],
+          "original_exercises": [
+            "1. Count the bundles of sticks and the loose sticks.  Write the numbers\nfrom 10 to 20 in blank boxes."
+          ],
+          "status": "untaught",
+          "last_taught_date": null
+        },
+        {
+          "topic_name": "Counting Bundles of Sticks",
+          "subtopics": [],
+          "concept_summary": "Get your pupils to count the tens and ones and let them write the numbers in the blank boxes.",
+          "prerequisites": [
+            "Numbers from 10 to 99"
+          ],
+          "original_exercises": [
+            "2. Count the bundles of sticks .  Write the correct numbers in the blank boxes."
+          ],
+          "status": "untaught",
+          "last_taught_date": null
+        },
+        {
+          "topic_name": "Number Ribbon Activity",
+          "subtopics": [],
+          "concept_summary": "Get your pupils to count the tens and ones and let them write the numbers in the blank boxes.",
+          "prerequisites": [
+            "Counting Bundles of Sticks"
+          ],
+          "original_exercises": [
+            "3. Look at the Number Ribbon.  Write the correct number at each DOT (\u2022)"
+          ],
+          "status": "untaught",
+          "last_taught_date": null
+        },
+        {
+          "topic_name": "Numbers from 21 to 30",
+          "subtopics": [],
+          "concept_summary": "Get your pupils to count the tens and ones and let them write the numbers in the blank boxes.",
+          "prerequisites": [
+            "Number Ribbon Activity"
+          ],
+          "original_exercises": [],
+          "status": "untaught",
+          "last_taught_date": null
+        },
+        {
+          "topic_name": "Numbers from 31 to 40",
+          "subtopics": [],
+          "concept_summary": "Get your pupils to count the tens and ones and let them write the numbers in the blank boxes.",
+          "prerequisites": [
+            "Numbers from 21 to 30"
+          ],
+          "original_exercises": [],
+          "status": "untaught",
+          "last_taught_date": null
+        },
+        {
+          "topic_name": "Numbers from 41 to 50",
+          "subtopics": [],
+          "concept_summary": "Get your pupils to count the tens and ones and let them write the correct\nnumbers in the blank boxes.",
+          "prerequisites": [
+            "Numbers from 31 to 40"
+          ],
+          "original_exercises": [],
+          "status": "untaught",
+          "last_taught_date": null
+        },
+        {
+          "topic_name": "Nubmbers from 51 to 60",
+          "subtopics": [],
+          "concept_summary": "Get your pupils to count the tens and ones let them write the correct\nnumbers in the blank boxes.",
+          "prerequisites": [
+            "Numbers from 41 to 50"
+          ],
+          "original_exercises": [],
+          "status": "untaught",
+          "last_taught_date": null
+        },
+        {
+          "topic_name": "Numbers from 61 to 70",
+          "subtopics": [],
+          "concept_summary": "Get your pupils to count the tens and ones and let them write the correct\nnumbers in the blank boxes.",
+          "prerequisites": [
+            "Nubmbers from 51 to 60"
+          ],
+          "original_exercises": [],
+          "status": "untaught",
+          "last_taught_date": null
+        },
+        {
+          "topic_name": "Numbers from 71 to 80",
+          "subtopics": [],
+          "concept_summary": "Get your pupils to count the tens and ones and let them write the correct\nnumbers in the blank boxes.",
+          "prerequisites": [
+            "Numbers from 61 to 70"
+          ],
+          "original_exercises": [],
+          "status": "untaught",
+          "last_taught_date": null
+        },
+        {
+          "topic_name": "Numbers from 81 to 90",
+          "subtopics": [],
+          "concept_summary": "Get your pupils to count the tens and ones and let them write the correct\nnumbers in the blank boxes.",
+          "prerequisites": [
+            "Numbers from 71 to 80"
+          ],
+          "original_exercises": [],
+          "status": "untaught",
+          "last_taught_date": null
+        },
+        {
+          "topic_name": "Numbers from 91 to 100",
+          "subtopics": [],
+          "concept_summary": "Get your pupils to count the tens and ones and let them write the correct\nnumbers in the blank boxes.",
+          "prerequisites": [
+            "Numbers from 81 to 90"
+          ],
+          "original_exercises": [],
+          "status": "untaught",
+          "last_taught_date": null
+        },
+        {
+          "topic_name": "Ascending and Descending Order",
+          "subtopics": [],
+          "concept_summary": "Thus, writing numbers from the smallest to the biggest is known as writing in\nASCENDING  ORDER.\n\nThus, writing numbers from the biggest to the smallest is known as writing in\nDESCENDING  ORDER.",
+          "prerequisites": [
+            "Numbers from 91 to 100"
+          ],
+          "original_exercises": [],
+          "status": "untaught",
+          "last_taught_date": null
+        },
+        {
+          "topic_name": "Matching Pictures with Numbers",
+          "subtopics": [],
+          "concept_summary": "Get your pupils to understand the instructions given for the problems. Help them to do them by themselves.",
+          "prerequisites": [
+            "Ascending and Descending Order"
+          ],
+          "original_exercises": [
+            "1. Match the pictures with the numbers. One example is given."
+          ],
+          "status": "untaught",
+          "last_taught_date": null
+        },
+        {
+          "topic_name": "Introduction to Three-Digit Numbers",
+          "subtopics": [
+            "Understanding 100 as a combination of tens and ones",
+            "Identifying the smallest three-digit number"
+          ],
+          "concept_summary": "This section introduces three-digit numbers, focusing on the number 100. It explains that 100 is the number that comes after 99 and is composed of 10 tens or 100 ones. It also highlights that 100 is the smallest three-digit number, building upon the understanding of two-digit numbers.",
+          "prerequisites": [
+            "Counting up to 99",
+            "Understanding of tens and ones"
+          ],
+          "original_exercises": [
+            "How many tens are there in 100? How many ones are there in 100?",
+            "How much is 99 + 1?"
+          ],
+          "status": "untaught",
+          "last_taught_date": null
+        },
+        {
+          "topic_name": "Counting in Hundreds",
+          "subtopics": [
+            "Recognizing multiples of 100 up to 900"
+          ],
+          "concept_summary": "This section focuses on counting in hundreds, introducing multiples of 100 from 100 to 900. The exercises aim to help students recognize and write these numbers, building a foundation for understanding larger three-digit numbers.",
+          "prerequisites": [
+            "Understanding of 100",
+            "Basic counting skills"
+          ],
+          "original_exercises": [
+            "Count in hundreds. Write the correct number in blank boxes."
+          ],
+          "status": "untaught",
+          "last_taught_date": null
+        },
+        {
+          "topic_name": "Reading Three-Digit Numbers",
+          "subtopics": [
+            "Combining hundreds, tens, and ones",
+            "Reading numbers from 101 to 169"
+          ],
+          "concept_summary": "This section focuses on reading three-digit numbers by combining hundreds, tens, and ones. It provides examples of numbers from 101 to 169, helping students understand how to read and interpret these numbers based on their place value components.",
+          "prerequisites": [
+            "Understanding of hundreds, tens, and ones",
+            "Counting skills"
+          ],
+          "original_exercises": [
+            "Look at the bundles of sticks and the loose sticks. Read the numbers."
+          ],
+          "status": "untaught",
+          "last_taught_date": null
+        },
+        {
+          "topic_name": "Writing Three-Digit Numbers",
+          "subtopics": [
+            "Representing numbers using hundreds, tens, and ones",
+            "Writing numbers from 101 to 999"
+          ],
+          "concept_summary": "This section focuses on writing three-digit numbers by representing them using hundreds, tens, and ones. It aims to help students understand how to write numbers from 101 to 999 based on their place value components.",
+          "prerequisites": [
+            "Understanding of hundreds, tens, and ones",
+            "Reading three-digit numbers"
+          ],
+          "original_exercises": [
+            "Look at the bundles of sticks and the loose sticks. Write the numbers in the blank boxes.",
+            "Look at the bundles of sticks and the loose sticks. Write the correct numbers in the blank boxes."
+          ],
+          "status": "untaught",
+          "last_taught_date": null
+        },
+        {
+          "topic_name": "Place Value and Face Value",
+          "subtopics": [
+            "Identifying the place of a digit in a number",
+            "Determining the place value of a digit",
+            "Determining the face value of a digit",
+            "Understanding the place value of zero"
+          ],
+          "concept_summary": "This section introduces the concepts of place value and face value in three-digit numbers. It explains how to identify the place of a digit (hundreds, tens, or ones), determine its place value (e.g., 7 in the hundreds place has a place value of 700), and determine its face value (the digit itself). It also emphasizes that the place value of 0 is always 0, regardless of its position.",
+          "prerequisites": [
+            "Understanding of hundreds, tens, and ones",
+            "Writing three-digit numbers"
+          ],
+          "original_exercises": [
+            "Look at the following table. Write the place and place value of the digit.",
+            "Now write the place, place value and face value of the digits in 504.",
+            "What is the place of 0?",
+            "What is the place value?"
+          ],
+          "status": "untaught",
+          "last_taught_date": null
+        },
+        {
+          "topic_name": "Currency and Expanded Form",
+          "subtopics": [
+            "Relating numbers to currency notes and coins",
+            "Understanding expanded form of numbers"
+          ],
+          "concept_summary": "This section connects numbers to real-world currency notes and coins. It explains how to represent a given amount using hundred-rupee notes, ten-rupee notes, and one-rupee coins. It also introduces the expanded form of numbers, showing how a number can be broken down into the sum of its place values.",
+          "prerequisites": [
+            "Understanding of place value",
+            "Familiarity with currency notes and coins"
+          ],
+          "original_exercises": [
+            "Observe th following notes and coins. Count in Rs.100, Rs.10 and Re.1.",
+            "Write the given numbers in the expanded form. Look at the example.",
+            "Write the number in the short form."
+          ],
+          "status": "untaught",
+          "last_taught_date": null
+        },
+        {
+          "topic_name": "Introduction to Four-Digit Numbers (1000)",
+          "subtopics": [
+            "Understanding 1000 as 999 + 1",
+            "Understanding 1000 as a combination of hundreds, tens, and ones",
+            "Identifying the smallest four-digit number"
+          ],
+          "concept_summary": "This section introduces four-digit numbers, focusing on the number 1000. It explains that 1000 is the number that comes after 999 and is composed of 10 hundreds, 100 tens, or 1000 ones. It also highlights that 1000 is the smallest four-digit number, building upon the understanding of three-digit numbers.",
+          "prerequisites": [
+            "Counting up to 999",
+            "Understanding of hundreds, tens, and ones"
+          ],
+          "original_exercises": [
+            "Look at the currency notes and coins. Say how much you get if you add one to 999",
+            "How many 100s are there in a thousand?",
+            "How many 10s are there?",
+            "How many ones are there ?"
+          ],
+          "status": "untaught",
+          "last_taught_date": null
+        },
+        {
+          "topic_name": "Number Grid Exercises",
+          "subtopics": [
+            "Filling in missing numbers in a grid",
+            "Identifying number patterns"
+          ],
+          "concept_summary": "This section provides exercises where students fill in missing numbers in a grid. This helps reinforce their understanding of number sequences and patterns. The exercises cover different ranges of three-digit numbers.",
+          "prerequisites": [
+            "Counting",
+            "Number recognition"
+          ],
+          "original_exercises": [
+            "Write the correct numbers in the blank boxes."
+          ],
+          "status": "untaught",
+          "last_taught_date": null
+        },
+        {
+          "topic_name": "Place Value Practice",
+          "subtopics": [
+            "Identifying the place of an underlined digit",
+            "Determining the place value of an underlined digit"
+          ],
+          "concept_summary": "This section provides exercises to practice identifying the place and place value of digits in three-digit numbers. Students are given a number with a digit underlined and asked to identify its place (hundreds, tens, or ones) and its place value (e.g., 200, 40, 7).",
+          "prerequisites": [
+            "Understanding of place value",
+            "Number recognition"
+          ],
+          "original_exercises": [
+            "Write the place and place value of the digit underlined in the number."
+          ],
+          "status": "untaught",
+          "last_taught_date": null
+        },
+        {
+          "topic_name": "Expanded Form Practice",
+          "subtopics": [
+            "Writing numbers in expanded form"
+          ],
+          "concept_summary": "This section provides exercises to practice writing numbers in expanded form. Students are given a three-digit number and asked to break it down into the sum of its place values (e.g., 617 = 600 + 10 + 7).",
+          "prerequisites": [
+            "Understanding of place value",
+            "Expanded form of numbers"
+          ],
+          "original_exercises": [
+            "Write the number in the expanded form."
+          ],
+          "status": "untaught",
+          "last_taught_date": null
+        },
+        {
+          "topic_name": "Comparing Weights",
+          "subtopics": [],
+          "concept_summary": "Not applicable, this section focuses on exercises.",
+          "prerequisites": [],
+          "original_exercises": [
+            "Write numbers 1 to 4 for each object in the order of their increasing weight.",
+            "Mark the heavier of the two girls with a \u20189\u2019"
+          ],
+          "status": "untaught",
+          "last_taught_date": null
+        },
+        {
+          "topic_name": "Non Standard Measurements of Liquids",
+          "subtopics": [],
+          "concept_summary": "Ravi, Raju and Rama receive 2 litres of milk from three different people every day.\nRangamma pours 4 glassful of milk at Ravi\u2019s house. At Raju\u2019s house, milkmaid Vanajamma pours 2 mugful of milk. At Rama\u2019s house milkman Hussain pours 8 small glassful of milk. The three children got a doubt on the milk supplied to each of them. Who is supplying the correct quantity of milk",
+          "prerequisites": [],
+          "original_exercises": [
+            "Look at the pictures given below.  Say which vessels are used to measure milk."
+          ],
+          "status": "untaught",
+          "last_taught_date": null
+        },
+        {
+          "topic_name": "Estimating Liquid Quantities",
+          "subtopics": [],
+          "concept_summary": "Not applicable, this section focuses on a game to understand estimation.",
+          "prerequisites": [],
+          "original_exercises": [
+            "Two children can play this game.\n\u2022 Take a big bucket full of water.  Take a small bucket, a jug and a mug also.\n\u2022 First, one pupil takes the jug and pours water from the big bucket into the small one.\n\u2022 Then the second pupil also pours water with the mug into the small bucket.\n\u2022 The pupils pour water alternatingly.\n\u2022 Continue this till the small bucket is full.\n\u2022 The pupil who fills the small bucket with jug or mug completely is the winner."
+          ],
+          "status": "untaught",
+          "last_taught_date": null
+        },
+        {
+          "topic_name": "Comparing Liquid Volumes",
+          "subtopics": [],
+          "concept_summary": "Not applicable, this section focuses on exercises.",
+          "prerequisites": [],
+          "original_exercises": [
+            "Draw in the box a vessel which holds less water than the vessel shown below.",
+            "Draw in the box a vessel which holds more water than the quality shown below.",
+            "Give rankings to the following vessels according to the quantity of water each can hold.\nMug \nBucket \nPot \nJug \nGlass"
+          ],
+          "status": "untaught",
+          "last_taught_date": null
+        }
+      ]
+    },
+    {
+      "chapter_number": 4,
+      "chapter_title": "Comparing Three-Digit Numbers",
+      "topics": [
+        {
+          "topic_name": "Comparing Three-Digit Numbers",
+          "subtopics": [],
+          "concept_summary": "This unit focuses on comparing three-digit numbers. Activities include using >, <, = symbols to show smaller than about two numbers.",
+          "prerequisites": [
+            "Numbers with Three Digits"
+          ],
+          "original_exercises": [],
+          "status": "untaught",
+          "last_taught_date": null
+        }
+      ]
+    },
+    {
+      "chapter_number": 5,
+      "chapter_title": "Addition of  Numbers",
+      "topics": [
+        {
+          "topic_name": "Addition of Numbers",
+          "subtopics": [
+            "Adding two digit numbers-both in expanded and short forms",
+            "Adding numbers less than 50 orally"
+          ],
+          "concept_summary": "This unit focuses on the addition of numbers. Activities include adding two-digit numbers in both expanded and short forms, and adding numbers less than 50 orally.",
+          "prerequisites": [
+            "Comparing Three-Digit Numbers"
+          ],
+          "original_exercises": [],
+          "status": "untaught",
+          "last_taught_date": null
+        }
+      ]
+    },
+    {
+      "chapter_number": 6,
+      "chapter_title": "Addition of  Numbers (Carry over)",
+      "topics": [
+        {
+          "topic_name": "Addition of Numbers (Carry over)",
+          "subtopics": [
+            "Adding two numbers using the 'carry over' method."
+          ],
+          "concept_summary": "This unit focuses on addition with carry-over. Activities include adding two numbers using the 'carry over' method.",
+          "prerequisites": [
+            "Addition of Numbers"
+          ],
+          "original_exercises": [],
+          "status": "untaught",
+          "last_taught_date": null
+        }
+      ]
+    },
+    {
+      "chapter_number": 7,
+      "chapter_title": "Subtraction",
+      "topics": [
+        {
+          "topic_name": "Subtraction",
+          "subtopics": [],
+          "concept_summary": "This unit introduces subtraction.",
+          "prerequisites": [
+            "Addition of Numbers (Carry over)"
+          ],
+          "original_exercises": [],
+          "status": "untaught",
+          "last_taught_date": null
+        },
+        {
+          "topic_name": "Introduction to Subtraction",
+          "subtopics": [],
+          "concept_summary": "I have Rs. 45\nI must pay Rs. 23\nHow much\nremains?\nWe can show this process like this.\nLook at the notes and coins. How much remains?\nThe symbol for\nsubtraction is  \u2018`\u2019",
+          "prerequisites": [],
+          "original_exercises": [],
+          "status": "untaught",
+          "last_taught_date": null
+        }
+      ]
+    },
+    {
+      "chapter_number": 8,
+      "chapter_title": "Subtraction of  Numbers",
+      "topics": [
+        {
+          "topic_name": "Subtraction of Numbers",
+          "subtopics": [
+            "Subtraction of two digit number-both in expanded and  short forms.",
+            "Subtracting numbers upto 50 orally",
+            "Subtracting two numbers using the 'borrowing' method."
+          ],
+          "concept_summary": "This unit focuses on subtraction of numbers. Activities include subtracting two-digit numbers in both expanded and short forms, subtracting numbers up to 50 orally, and subtracting two numbers using the 'borrowing' method.",
+          "prerequisites": [
+            "Subtraction"
+          ],
+          "original_exercises": [],
+          "status": "untaught",
+          "last_taught_date": null
+        }
+      ]
+    },
+    {
+      "chapter_number": 9,
+      "chapter_title": "Multiplication of  Numbers (I)",
+      "topics": [
+        {
+          "topic_name": "Multiplication of Numbers (I)",
+          "subtopics": [
+            "Understanding that multiplication is nothing but successive addition of the same number",
+            "Saying the product of numbers related to numbers in columns and rows"
+          ],
+          "concept_summary": "This unit introduces multiplication. Activities include understanding multiplication as successive addition and finding the product of numbers in columns and rows.",
+          "prerequisites": [
+            "Subtraction of Numbers"
+          ],
+          "original_exercises": [],
+          "status": "untaught",
+          "last_taught_date": null
+        }
+      ]
+    },
+    {
+      "chapter_number": null,
+      "chapter_title": null,
+      "topics": [
+        {
+          "topic_name": "Expansion",
+          "subtopics": [],
+          "concept_summary": "Help your pupils to understand the instructions and let them solve the\nabove problems by themselves.",
+          "prerequisites": [],
+          "original_exercises": [
+            "7. Expand the given numbers and write each one in words.\n\u00f1<\u00eb: 175 R\n100 G 70 G 5\none hundred and seventy five\n(n)\n782 R\n700 G 80 G 2\n(\u00c4)\n976 R\n(\u00c7)\n999 R\n(\u00e1)\n407 R\n(\u00f1)\n340 R\nExpansion\nIn words"
+          ],
+          "status": "untaught",
+          "last_taught_date": null
+        },
+        {
+          "topic_name": "Short Form",
+          "subtopics": [],
+          "concept_summary": "Help your pupils to understand the instructions and let them solve the\nabove problems by themselves.",
+          "prerequisites": [],
+          "original_exercises": [
+            "8. Write the following numbers given in words using digits.\nEx:\none hundred and forty three\nR\n(a)\ntwo hundred and fifty eight\nR\n(b)\nthree hundred and five\nR\n(c)\nfour hundred and eighty six\nR\n(d)\nnine hundred and seven\nR\n(e)\nfive hundred and twenty eight\nR\n(f)\none hundred and eleven\nR\n(g)\neight hundred and ninty eight\nR\n143",
+            "6. Write the number in the short form.\nExample:-  600G40G9 R 649\n(c)\n400G40G4 R  \n(a)\n700G30G6 R \n(d)\n900G20G4 R  \n(b)\n900G50G4 R \n(e)\n300G10G4 R  "
+          ],
+          "status": "untaught",
+          "last_taught_date": null
+        },
+        {
+          "topic_name": "Three-Digit Number Problems",
+          "subtopics": [],
+          "concept_summary": "Help your pupils to understand the instructions and let them solve the\nabove problems by themselves.",
+          "prerequisites": [],
+          "original_exercises": [
+            "9. Solve the following problems.\n1. Write three digit numbers using 4, 6 and 9.\n 469,  694, 496,  .............,  .............,  .............,",
+            "2. Write three numbers that have 5 in the hundreds place.\n 502,  .............,  .............,  .............,  .............,  .............,",
+            "3. Write 5 numbers between 800 and 900. That have 5 in its tens place.\n 856,  .............,  .............,  .............,  .............,  .............,",
+            "4. Identify between which numbers the given numbers lie, put a \u00aa9\u03bc. Look at\n     the example.\n885\n800\u2013\u2013850\n750\u2013\u2013800\n632\n650\u2013\u2013700\n700\u2013\u2013750\n304\n250\u2013\u2013300 300\u2013\u2013350\n350\u2013\u2013400\n287\n200\u2013\u2013300\n600\u2013\u2013700\n654\n500\u2013\u2013600 400\u2013\u2013500\n600\u2013\u2013700\n707\n600\u2013\u2013700 700\u2013\u2013800\n800\u2013\u2013900\n9\nExample:-\n600\u2013\u2013650\n700\u2013\u2013800\n850\u2013\u2013900"
+          ],
+          "status": "untaught",
+          "last_taught_date": null
+        },
+        {
+          "topic_name": "Number Series",
+          "subtopics": [],
+          "concept_summary": "Help your pupils to understand the instructions and let them solve the\nabove problems by themselves.",
+          "prerequisites": [],
+          "original_exercises": [
+            "10. Observe the numbers in each series.  Write the next 5 numbers for each series.\n   Say the reason.\n(a)  100, 200, 300, .............,  .............,  .............,  .............,  .............,  .............\n(b)  110, 120, 130, ............,  .............,  .............,  .............,  .............,  .............\n(c)  350, 400, 450, .............,  .............,  .............,  .............,  .............,  .............\n(d)  400, 425, 450, ............,  .............,  .............,  .............,  .............,  .............\n(e)  900, 800, 700, ............,  .............,  .............,  .............,  .............,  ............."
+          ],
+          "status": "untaught",
+          "last_taught_date": null
+        },
+        {
+          "topic_name": "Matching",
+          "subtopics": [],
+          "concept_summary": "Help your pupils to understand the instructions and let them solve the\nabove problems by themselves.",
+          "prerequisites": [],
+          "original_exercises": [
+            "11. Match the following.\nthe biggest 2 - digit number\n475\nthe smallest 3 - digit number\n424\na number with 7 in the tens place\n99\nthe place value of 5 in 456\nhundreds\nthe place of 7 in 795\n367\nthe number before 425\n100\nthe face value of 8 in 821\n8\nthe short form of 300 + 60 + 7\n50\nthe place of 8 in 698\n350\nthe place value of 0 in 705\nones\nthe number that indicates 3 hundreds,\n 5 tens and 0 ones\n0"
+          ],
+          "status": "untaught",
+          "last_taught_date": null
+        },
+        {
+          "topic_name": "Place Value Game",
+          "subtopics": [],
+          "concept_summary": "The teacher must make the above sounds - Snap,  Clap and Tap. The pupils must say the\nnumbers based on the sound made by the teacher.\n\nIn this manner the pupils must say the place value and the numbers as per the sounds\nmade - Snap, Clap, Tap.  If any pupil makes a mistake, he is out of the game.  The game\ncontinues.  The one who lasts till the end is declared the winner.",
+          "prerequisites": [],
+          "original_exercises": [
+            "12. Play the game:\nThe teacher must make the above sounds - Snap,  Clap and Tap. The pupils must say the\nnumbers based on the sound made by the teacher.\nExample:-\nTAPS\nCLAPS\nSNAPS\nPlace Value\nNumber\n2\n5\n8\n200\n 50\n     8\n258",
+            "SNAP R one (1)",
+            "CLAP R ten (10)",
+            "TAP R hundred",
+            "CLAP - SNAP - TAP"
+          ],
+          "status": "untaught",
+          "last_taught_date": null
+        },
+        {
+          "topic_name": "Game with Sticks",
+          "subtopics": [],
+          "concept_summary": "Two pupils must play this game.  Take 9 sticks of long, medium and short sticks (9\nsticks each). Have them on your palm, shake them and drop them on the floor.  Pick\neach stick without moving the other sticks. Count the value of sticks that was picked\nas per the values assigned the sticks given above. Say the total value. If, while\npicking sticks, other sticks are moved, the second player gets the chance.  In this\nmanner the two pupils play alternately.  The one who gets a bigger number scores\na point.",
+          "prerequisites": [],
+          "original_exercises": [
+            "13. Play a game with sticks.\nExample: The sticks picked up\n1 long stick     R 100\n1 medium stick R 10\n1 short stick    R 1",
+            "Big sticks\nMedium sticks\nShort sticks\nThe number\nformed\n4\n6\n5\n400 G 60 G 5 R 465"
+          ],
+          "status": "untaught",
+          "last_taught_date": null
+        },
+        {
+          "topic_name": "Comparing Three-Digit Numbers",
+          "subtopics": [],
+          "concept_summary": "One day Rangamma and Sitamma sold vegetables at the weekly market. They got\nthe following notes and coins shown under their names. Who earned more ?\n\nGet your pupils to compare three-digit numbers using notes and coins.\nHelp them to understand the process of comparison.",
+          "prerequisites": [],
+          "original_exercises": [
+            "1. Look at the notes and coins. Say which are of more value and which are\nof less value."
+          ],
+          "status": "untaught",
+          "last_taught_date": null
+        },
+        {
+          "topic_name": "Comparing Three-Digit Numbers (Hundreds)",
+          "subtopics": [],
+          "concept_summary": "In 354 and 321 there are equal number of hundreds.\nNow let us observe the tens.\nIn 354 there are 5 tens.\nIn 321 there are 2 tens.\nThere are more tens in 354 than 321.\nTherefore 354 is bigger.\nWe say 354 is bigger than 321\nWe write     354  >  321\nIn the same manner 321 is less than 354\nWe write it as   321 <  354\nIn 3-digit numbers,\nif the hundreds are\nthe same, the one\nwith more tens is\nbigger.",
+          "prerequisites": [],
+          "original_exercises": [
+            "Look at the notes and coins shown below. Say which are more and which are less."
+          ],
+          "status": "untaught",
+          "last_taught_date": null
+        },
+        {
+          "topic_name": "Comparing Three-Digit Numbers (Ones)",
+          "subtopics": [],
+          "concept_summary": "In both 231 and 235, the hundreds and tens are equal.\nNow observe the ones.\nIn 231 there are 1 ones.\nIn 235 there are 5 ones.\nTherfore 235 is bigger.\nIt means 235 is bigger than 231.   235 > 231\n231 is smaller than 235.           231 < 235\nIn three-digit\nnumbers, if\nhundreds and tens\nare equal, the one\nwith more ones is\nthe bigger number.",
+          "prerequisites": [],
+          "original_exercises": [
+            "Look at the notes and coins shown below. Say which are more and which are less."
+          ],
+          "status": "untaught",
+          "last_taught_date": null
+        },
+        {
+          "topic_name": "Exercise",
+          "subtopics": [],
+          "concept_summary": null,
+          "prerequisites": [],
+          "original_exercises": [
+            "Identify the bigger number and mark\nit \u20189\u2019.\nEx: 294,\n319\n(A) 756,\n432\n(B) 670,\n679\n(C) 550,\n543\n(D) 856,\n851",
+            "Identify the smaller number and\ndraw  \n  around it.\n      Ex:   738,\n769\n(A) 463,\n154\n(B) 537,\n645\n(C) 248,\n264\n(D) 707,\n705",
+            "Write the correct symbol >,  < ,  R in the blank boxes.\n(A)\n(B)\n(C)\n(D)\n(E)\n(F)\n(G)\n(H)\nEx:` 304   >  201\u2014\n475  <  616\u2014\n254  =  254\n620\n580\n937\n975\n763\n746\n864\n953\n520\n520\n987\n965\n736\n746\n864\n864",
+            "Write the following sets of numbers in ascending and descending orders.\nNumbers\nAscending orders\nDescending order\n Ex:`\n367,\n212,\n684, 801 212 367 684 801 801 684 367 212\n(A)\n405,\n408,\n500, 306\n(B)\n684,\n648,\n635, 653\n(C)\n339,\n333,\n337, 335\n(D)\n569,\n575,\n557, 596"
+          ],
+          "status": "untaught",
+          "last_taught_date": null
+        },
+        {
+          "topic_name": "More Exercises",
+          "subtopics": [],
+          "concept_summary": null,
+          "prerequisites": [],
+          "original_exercises": [
+            "Write three-digit numbers using 7, 8 and 9.\nThe smallest of\nthese numbers\nThe biggest is\nThe ascending order\nof these numbers:\nThe descending\norder is:",
+            "Write the 10 three-digit numbers which have 9 in the tens place.",
+            "Write 3 two-digit numbers and 3 three-digit numbers using 7, 4 and 6.\nThe biggest among\nthese numbers is\nThe smallest\nnumber is\nEx:  Two - digit numbers  74, 67, 46, ....., ....., .....\n     Three - digit numbers  476, 467, 674, ....., ....., .....",
+            "Now write numbers correctly in the blank boxes according to the symbol > (or) <\nbetween the boxes.\n(A)\n(C)\n74\n46\n>\n<\n<\n<\n467\n674\nEx:\n Ex:\n(B)\n(D)\n>\n>"
+          ],
+          "status": "untaught",
+          "last_taught_date": null
+        },
+        {
+          "topic_name": "Addition of Numbers",
+          "subtopics": [],
+          "concept_summary": "Sitamma and Ramulamma make candles. One day Sitamma made 34 and Ramulamma made\n25 candles. They wanted to sell them.\nThey counted the candles they made as shown below.\nWe can add the above numbers in a different way also.",
+          "prerequisites": [],
+          "original_exercises": [
+            "How many candles are there?",
+            "Look at the candles. Say what their total is."
+          ],
+          "status": "untaught",
+          "last_taught_date": null
+        },
+        {
+          "topic_name": "Adding Tens and Ones",
+          "subtopics": [],
+          "concept_summary": "On adding tens\n3 tens\n2 tens\nR 30 G 4\nR 20 G 5\nR 50 G 9 R 59\nOn adding ones\n4 ones\n5 ones\n9 ones",
+          "prerequisites": [
+            "Addition of Numbers"
+          ],
+          "original_exercises": [],
+          "status": "untaught",
+          "last_taught_date": null
+        },
+        {
+          "topic_name": "Subtraction of Numbers",
+          "subtopics": [
+            "Method of expansion of numbers",
+            "Bundles of sticks and loose sticks",
+            "Subtraction with inner circle",
+            "Subtraction problems with a specific difference",
+            "Correct symbol in blank boxes",
+            "Filling in the blank boxes with correct numbers",
+            "Subtraction in a grid",
+            "Subtraction of pairs of numbers",
+            "Subtraction of Numbers (Using Regrouping )"
+          ],
+          "concept_summary": "Lata went to a shop with Rs. 45. She\nbought things for Rs. 27. She gave the\nshopkeeper Rs. 45 she had. He gave\nher Rs. 8. She doubted whether he gave\nher the correct amount. She calculated\nas below. You observe her calculation.",
+          "prerequisites": [],
+          "original_exercises": [
+            "1. Subtract numbers using the method of expansion of numbers.\n45 ` 23 R 22\nThis means\n(A)\nT\nO\n3\n9\n`\n8\nR\n(B)\nT\nO\n8\n5\n` 4\n3\nR\n(C)\nT\nO\n9\n5\n` 9\n1\nR\n(E)\nT\nO\n6\n5\n` 3\n5\nR\n(D)\nT\nO\n5\n8\n` 3\n2\nR\n(F)\nT\nO\n6\n5\n` 3\n0\nR",
+            "2. Subtract the numbers using the bundles of sticks and loose sticks.\n4 8\n`2 6\n(a)\n5 9\n`2 4\n(b)\n6 8\n`2 0\n(c)\n9 9\n`6 9\n(d)\n2 9\n` 5\n(e)\n3 7\n`1 5\n(f)\n4 9\n` 4\n(g)\n5 8\n` 1  0\n(h)\n7 9\n`6 9\n(i)\n3 9\n` 3\n(j)\n6 9\n`2 6\n(k)\n7 4\n` 3  4\n(l)\n8 5\n`3 0\n(m)\n6 6\n`2 3\n(n)\n9 7\n` 4 1\n(o)",
+            "3. Subtract the numbers given.\nEx:54 ` 31 R\n35 ` 23 R\n65 ` 24 R\n76 ` 30 R\n49 ` 5 R\n75 ` 15 R\n83 ` 23 R\n66 ` 61 R",
+            "4. Subtract the number in the top row from that in the first column.\n-\n60\n50 40 30\n80\n70\nEx:` 90 ` 60  R 30\n90\n30",
+            "5. Subtract the numbers in the inner circle from 80 shown in the centre.\n60 ` 23\nR\n17 ` 12\nR\n43 ` 11\nR\n19 `\nR\n1 `\nR\n0\nR\n3\n15\nR\n-50\n-30\n-60\n-20\n-10\n-40 80\n35\n12\nR\n23\n47\n13\nR\n60\n88\n22\nR\n66\nExample:\n4\na.",
+            "6. Write the correct symbol ( +  or  - ) in the blank boxes.\n(a)\n30 ` 0  R\n(b)\n95 `\n R  80\n(c)\n12 `  5  R\n(d)\n75 ` 75  R\n(e)\n25 `\n R  25\n(f)\n60 `  5  R",
+            "7. Write subtraction problems such that the difference is 10.\nExample: 20 ` 10 R 10\n(a) .............................\n(b) .............................\n(c) ...........................\n(d) ...........................",
+            "8. Observe the examples. Fill in the blank boxes with the correct numbers.",
+            "9. Subtract the numbers in the first column of the following grid. Then identify\nwhere your answer lies. Observe the example.\nEx.\n20 - 30 30 - 40 40 - 50 50 -60\n39 ` 14\n66 ` 33\n98 ` 50\n57 ` 12\n65 ` 14\n9",
+            "10. Fill in the blank boxes with the correct numbers.\n(A)\n3\n6\n` 1\n2\n3\n(B)\n4\n7\n` 2\n2\n5\n(C)\n(D)\n7\n5\n` 2\n5\n0\n6\n8\n` 3\n0",
+            "11. Fill in the blank boxes with the correct numbers.",
+            "12. Fill in the blank boxes with the correct numbers.\nEx:\n47 ` 30\u2014\n37 ` 20\u2014\n67 ` 50\u2014\n87 ` 40\na)\n36 ` 21\u2014\n67 ` 52\u2014\n46 ` 32\u2014\n26 ` 11\nb)\n59 ` 42\u2014\n77 ` 16\u2014\n47 ` 30\u2014\n38 ` 21\nc)\n48 ` 15\u2014\n77 ` 44\u2014\n68 ` 35\u2014\n76 ` 53\n36\n-\n20\nR\n17\n-\n12\nR\n-\nR",
+            "13. Observe the subtraction of pairs of numbers in each row.\nOne of the answers is different.  Identify and circle it \u00aa\n\u03bc.\nOne example is given.",
+            "14. Observe the series of numbers. Write the next two numbers in each row.\nExample: 10,  8,   6  ,   4  ,   2  ,\na) 9,  7,  5, , \nb) 12,  9,  6, , \nc) 30, 25, 20, , ",
+            "1. Observe the note and coins . Say how much is 45 - 27.",
+            "T\nO\n4\n5\n` 2\n7\n8  Subtraction of Numbers\n(Using Regrouping )\nWe cannot\nsubtract 7 ones\nfrom 5ones.\nThen how to\ndo that?\nT\nO\n4\n5\n` 2\n7\nIt is possible if\nwe change one\nten as 10 ones.\nOne ten = ten ones."
+          ],
+          "status": "untaught",
+          "last_taught_date": null
+        },
+        {
+          "topic_name": "Subtraction by Exchange",
+          "subtopics": [],
+          "concept_summary": "When one ten is changed into ones, 3 tens remain. Now if we add 10 ones and 5 ones,\nIf 27 ( 2 tens and 7 ones ) are subtracted from 45.\nOne ten and 8 ones remain. That is 18 remains.",
+          "prerequisites": [],
+          "original_exercises": [],
+          "status": "untaught",
+          "last_taught_date": null
+        },
+        {
+          "topic_name": "Subtraction with Borrowing",
+          "subtopics": [],
+          "concept_summary": "5 ones are less than 7 ones\nIf we change 1 ten out of 4 tens into ones, and add to 5, we get 15.\n15 ones  - 7 ones  =  8 ones\nIf one of the 4 tens changed into ones, we have 3 tens.\n3 tens -2 tens  =  one ten.\nor\n1 ten  =  10 ones",
+          "prerequisites": [],
+          "original_exercises": [],
+          "status": "untaught",
+          "last_taught_date": null
+        },
+        {
+          "topic_name": "Subtraction Game",
+          "subtopics": [],
+          "concept_summary": null,
+          "prerequisites": [],
+          "original_exercises": [
+            "Two pupils can play this game.",
+            "Make a dice with 0 to 5 on its faces and another with 4 to 9 on its faces.",
+            "Throw them both at a time.",
+            "Write two numbers formed with the two digits you see on the two dice. For example, if the digits on the dice are 4 and 5. The numbers you write are 45 and 54.",
+            "Subtract the smaller number from the bigger one. Ex: 54 ` 45 R 09",
+            "The second pupil also does like this",
+            "The pupil whose result of subtraction is more gets one point.",
+            "The pupils do this five times.",
+            "The pupil who scores more is the winner."
+          ],
+          "status": "untaught",
+          "last_taught_date": null
+        },
+        {
+          "topic_name": "Subtraction Exercises",
+          "subtopics": [],
+          "concept_summary": null,
+          "prerequisites": [],
+          "original_exercises": [
+            "Subtract the numbers given below.",
+            "(a) 3 4 `1 8",
+            "(b) 8 2 `5 7",
+            "(c) 6 4 `3 9",
+            "(d) 9 2 `4 6",
+            "(e) 4 8 `3 9",
+            "(f) 6 5 `4 8",
+            "(g) 7 6 `5 8",
+            "(h) 5 0 `2 8",
+            "(i) 6 0 `4 2",
+            "(j) 7 0 `3 9",
+            "(k) 9 1 `2 3",
+            "(l) 6 4 `2 5",
+            "Do the subtractions.",
+            "(a) 75 ` 29 R",
+            "(b) 87 ` 58 R",
+            "(c) 83 ` 59 R",
+            "(d) 61 ` 25 R",
+            "(e) 84 ` 39 R",
+            "(f) 73 ` 26 R",
+            "(g) 62 ` 38 R",
+            "(h) 55 ` 27 R",
+            "Observe the grid shown below. Identify pairs of numbers whose difference is 25. Subtract those numbers on the lines given.",
+            "Ex: 50 ` 25 R 25"
+          ],
+          "status": "untaught",
+          "last_taught_date": null
+        },
+        {
+          "topic_name": "Subtraction: Identifying Differences",
+          "subtopics": [],
+          "concept_summary": null,
+          "prerequisites": [],
+          "original_exercises": [
+            "Subtract each pair of numbers given below. Mark with \u00aa9\u03bc whose answer is different. One example is given.",
+            "Ex:` 32 ` 18\u2014 30 ` 16\u2014 54 ` 40\u2014 84 ` 54 9",
+            "(a) 76 ` 29\u2014 50 ` 15\u2014 68 ` 33\u2014 71 ` 36",
+            "(b) 55 ` 35\u2014 60 ` 40\u2014 36 ` 16\u2014 68 ` 58"
+          ],
+          "status": "untaught",
+          "last_taught_date": null
+        },
+        {
+          "topic_name": "Error Identification in Subtraction",
+          "subtopics": [],
+          "concept_summary": null,
+          "prerequisites": [],
+          "original_exercises": [
+            "Look at the subtraction done by Madhavi. If there are mistakes, write the correct answer in the brackets (        ).",
+            "(a) 5 4 `3 8 2 4   ( )",
+            "(b) 6 8 `2 9 4 9   ( )",
+            "(c) 3 0 `1 4 2 4   ( )",
+            "(d) 7 6 `5 8 1 8   ( )",
+            "(e) 8 4 `7 9 10 5   ( )"
+          ],
+          "status": "untaught",
+          "last_taught_date": null
+        },
+        {
+          "topic_name": "Subtraction: Range Identification",
+          "subtopics": [],
+          "concept_summary": null,
+          "prerequisites": [],
+          "original_exercises": [
+            "Subtract the numbers in the first column. Mark the range with \u00aa9\u03bc in which your answer lies, in each case. One example is given.",
+            "Example:` 76 \u2013\u2013 28 9",
+            "50 \u2013\u2013 19",
+            "82 \u2013\u2013 23",
+            "73 \u2013\u2013 15",
+            "64 \u2013\u2013 17",
+            "30 \u2013\u2013 40",
+            "40 \u2013\u2013 50",
+            "50 \u2013\u2013 60",
+            "60 \u2013\u2013 70"
+          ],
+          "status": "untaught",
+          "last_taught_date": null
+        },
+        {
+          "topic_name": "Number Series Completion",
+          "subtopics": [],
+          "concept_summary": null,
+          "prerequisites": [],
+          "original_exercises": [
+            "Write the next three numbers in each series.",
+            "(a) 60, 50, 40, , , ",
+            "(b) 85, 80, 75, , , ",
+            "(c) 54, 45, 36, , , "
+          ],
+          "status": "untaught",
+          "last_taught_date": null
+        },
+        {
+          "topic_name": "Multiplication as Repeated Addition",
+          "subtopics": [],
+          "concept_summary": "Adding a number again and again is called repeated addition.\n2 I 6 R 12\u2014\n6 I 2 R 12\nHere we have used a symbol I. It is called the symbol for multiplication.\nMultiplication is repeated addition.\nEx: 3 + 3 + 3 + 3 = 3 I 4 = 12",
+          "prerequisites": [],
+          "original_exercises": [],
+          "status": "untaught",
+          "last_taught_date": null
+        },
+        {
+          "topic_name": "Multiplication of Numbers",
+          "subtopics": [],
+          "concept_summary": null,
+          "prerequisites": [],
+          "original_exercises": [
+            "Look at the pictures of fans. Count the wings. Say how many are there?",
+            "One fan has 3 wings R 1 I 3",
+            "Two fans have 3 G 3 R 6 wings R 2 I 3",
+            "Five fans have 3 G 3 G 3 G 3 G 3 R 15 wings  R ...................................",
+            "Three fans have 3 G 3 G 3 R 9 wings R 3 I 3",
+            "Four fans have 3 G 3 G 3 G 3 R 12 wings R 4 I 3",
+            "If you write the above multiplications in a table,\n       1 I 3 R 3\n2 I 3 R 6\n3 I 3 R 9\n4 I 3 R 12\n5 I 3 R 15\n3, 6, 9, 12, 15 are called the products."
+          ],
+          "status": "untaught",
+          "last_taught_date": null
+        },
+        {
+          "topic_name": "Multiplication Table",
+          "subtopics": [],
+          "concept_summary": null,
+          "prerequisites": [],
+          "original_exercises": [
+            "Look at the leaps of a frog shown below. It leaps two feet at a time. With this information, study the table and fill in the blank boxes with correct numbers.",
+            "Number of leaps",
+            "The number reached",
+            "Shown as multiplication",
+            "Distance covered in feet",
+            "1",
+            "2",
+            "2",
+            "1 I 2 R 2",
+            "2",
+            "2 G 2",
+            "4",
+            "2 I 2 R 4",
+            "3",
+            "2 G 2 G 2",
+            "6",
+            "3 I 2 R",
+            "4",
+            "4 I 2 R",
+            "5",
+            "6",
+            "7",
+            "8",
+            "9",
+            "10"
+          ],
+          "status": "untaught",
+          "last_taught_date": null
+        },
+        {
+          "topic_name": "Multiplication Table of 5",
+          "subtopics": [],
+          "concept_summary": "Look at the repeated addition of 5. Write the Multiplication Table of 5.",
+          "prerequisites": [],
+          "original_exercises": [
+            "Look at the repeated addition of 5. Write the Multiplication Table of 5."
+          ],
+          "status": "untaught",
+          "last_taught_date": null
+        },
+        {
+          "topic_name": "Multiplication Table of 2 and 3",
+          "subtopics": [],
+          "concept_summary": "Look at how the Multiplication Table of 2 is written. In the same way shade the boxes and write the Multiplication Table of 3.",
+          "prerequisites": [],
+          "original_exercises": [
+            "Look at how the Multiplication Table of 2 is written. In the same way shade the boxes and write the Multiplication Table of 3."
+          ],
+          "status": "untaught",
+          "last_taught_date": null
+        },
+        {
+          "topic_name": "Multiplication Table of 4",
+          "subtopics": [],
+          "concept_summary": "Write the Multiplication Table of 4.",
+          "prerequisites": [],
+          "original_exercises": [
+            "Write the Multiplication Table of 4."
+          ],
+          "status": "untaught",
+          "last_taught_date": null
+        },
+        {
+          "topic_name": "Multiplication Table of 6",
+          "subtopics": [],
+          "concept_summary": "Write the Multiplication Table of 6.",
+          "prerequisites": [],
+          "original_exercises": [
+            "Write the Multiplication Table of 6."
+          ],
+          "status": "untaught",
+          "last_taught_date": null
+        },
+        {
+          "topic_name": "Multiplication Table of 7",
+          "subtopics": [],
+          "concept_summary": "Write the Multiplication Table of 7.",
+          "prerequisites": [],
+          "original_exercises": [
+            "Write the Multiplication Table of 7."
+          ],
+          "status": "untaught",
+          "last_taught_date": null
+        },
+        {
+          "topic_name": "Multiplication Table of 9",
+          "subtopics": [],
+          "concept_summary": "Write the Multiplication Table of 9.",
+          "prerequisites": [],
+          "original_exercises": [
+            "Write the Multiplication Table of 9."
+          ],
+          "status": "untaught",
+          "last_taught_date": null
+        },
+        {
+          "topic_name": "Table Completion",
+          "subtopics": [],
+          "concept_summary": "Look at the following table. Identify how table 3 has been written. In the same manner write Table 6.",
+          "prerequisites": [],
+          "original_exercises": [
+            "Look at the following table. Identify how table 3 has been written. In the same manner write Table 6."
+          ],
+          "status": "untaught",
+          "last_taught_date": null
+        },
+        {
+          "topic_name": "Counting Objects",
+          "subtopics": [],
+          "concept_summary": "Count the flowers shown below. Write their number under each flower-pot.",
+          "prerequisites": [],
+          "original_exercises": [
+            "Count the flowers shown below. Write their number under each flower-pot."
+          ],
+          "status": "untaught",
+          "last_taught_date": null
+        },
+        {
+          "topic_name": "Multiplication Table of 0",
+          "subtopics": [],
+          "concept_summary": "Write the Multiplication Table of \u20180\u2019 (zero)",
+          "prerequisites": [],
+          "original_exercises": [
+            "Write the Multiplication Table of \u20180\u2019 (zero)"
+          ],
+          "status": "untaught",
+          "last_taught_date": null
+        },
+        {
+          "topic_name": "Multiplication Grid",
+          "subtopics": [],
+          "concept_summary": null,
+          "prerequisites": [],
+          "original_exercises": [
+            "Complete the Multiplication Grid by writing the correct number in each blank box."
+          ],
+          "status": "untaught",
+          "last_taught_date": null
+        },
+        {
+          "topic_name": "Multiplication by 7 and 9",
+          "subtopics": [],
+          "concept_summary": null,
+          "prerequisites": [],
+          "original_exercises": [
+            "Multiply the numbers in the first chart by 7 and those in the second chart by 9 and write the products in the blank boxes."
+          ],
+          "status": "untaught",
+          "last_taught_date": null
+        },
+        {
+          "topic_name": "Multiplication of Numbers - 2",
+          "subtopics": [],
+          "concept_summary": "Geeta said to Lata, \u201cThere are 15 pencils in each packet.\u201d How many pencils are there in 3 such packets? Lata calculated in the following way. You observe it. Calculate how many pencils there are.\n\nWe can do this in another way also.",
+          "prerequisites": [],
+          "original_exercises": [],
+          "status": "untaught",
+          "last_taught_date": null
+        },
+        {
+          "topic_name": "Multiplication Method",
+          "subtopics": [],
+          "concept_summary": "Observe the following multiplication of numbers. Do the others in the same way.",
+          "prerequisites": [],
+          "original_exercises": [
+            "Fill in the blank boxes with the correct numbers."
+          ],
+          "status": "untaught",
+          "last_taught_date": null
+        },
+        {
+          "topic_name": "Multiplication Practice",
+          "subtopics": [],
+          "concept_summary": null,
+          "prerequisites": [],
+          "original_exercises": [
+            "Multiply each number by 2 and write their product in the blank box.",
+            "Multiply the numbers given below.",
+            "In the grid, multiply the numbers in the first column by each number in the top row and write the product as shown.",
+            "1 I 5",
+            "9 I 5",
+            "2 I 2",
+            "8 I 2",
+            "2 I 3",
+            "4 I 3",
+            "1 I 6",
+            "5 I 6",
+            "3 I 4",
+            "3 I 4",
+            "1 I 2",
+            "9 I 2",
+            "2 I 3",
+            "6 I 3",
+            "1 I 7",
+            "8 I 7"
+          ],
+          "status": "untaught",
+          "last_taught_date": null
+        },
+        {
+          "topic_name": "Identifying Different Numbers",
+          "subtopics": [],
+          "concept_summary": null,
+          "prerequisites": [],
+          "original_exercises": [
+            "Identify the number that is different from the rest. Draw \u00aa \u03bc around it. One example is given.",
+            "5, 10, 15, 21, 25, 30",
+            "8, 16, 24, 32, 38, 48",
+            "6, 12, 18, 24, 30, 32",
+            "7, 14, 21, 25, 35"
+          ],
+          "status": "untaught",
+          "last_taught_date": null
+        },
+        {
+          "topic_name": "Multiplication with Arrows",
+          "subtopics": [],
+          "concept_summary": null,
+          "prerequisites": [],
+          "original_exercises": [
+            "Follow the arrows and mutiply the numbers. Write the product in the blank circles."
+          ],
+          "status": "untaught",
+          "last_taught_date": null
+        },
+        {
+          "topic_name": "Introduction to Division",
+          "subtopics": [],
+          "concept_summary": "How many heaps of mangoes did we get after making heaps of 5 from 20 mangoes?\nWhen 20 mangoes were made into heaps of 5, we got 4 heaps.\nIt means we got 4 after dividing 20 by 5.\nWe write it as 20 \u2122 5 = 4",
+          "prerequisites": [],
+          "original_exercises": [
+            "Count the number of mangoes. Say how many equal heaps are there?"
+          ],
+          "status": "untaught",
+          "last_taught_date": null
+        },
+        {
+          "topic_name": "Equal Distribution and Division",
+          "subtopics": [
+            "Distributing marbles equally",
+            "Division form",
+            "Division as repeated subtraction"
+          ],
+          "concept_summary": "If 15 marbles are distributed equally among equally, each one will get marbles.\nThe division form of this is 15 \u2122 5 R\n15\u00f75=3\nMeans, if we distribute 15 marbles among 5 people, each will get 3 marbles.",
+          "prerequisites": [],
+          "original_exercises": [
+            "Distribute 15 marbles equally among 5 children.\n   Total number of marbles  R  15\n   Distributed first time  R\n   Remaining marbles    R\n   Distributed second timeR \n  Remaining marbles         R \n  Distributed third timeR \n  Remaining marbles       R\nTotal number of marbles R\nHow many people distributed  R \nHow many times did we distribute equally R \nHow many did each one get R",
+            "Look at the pictures given below. Count them. Distribute equally. Write the Division form. One example is given. Fill in the blank boxes and circles.",
+            "Distribute 18 mangoes among 6 people equally.\nTotal number of mangoes\nR   18\nDistribution of mangoes to 6 people for the first time\nR   `6\nRemaining mangoes\nR   12\nDistribution of mangoes to 6 people for the second time R\nRemaining mangoes\nR\nDistribution of mangoes to 6 people for the third time\nR\nRemaining mangoes\nR\nBy distributing equally each one gets\nR \n                         The Division form   \n \u2122 \n R",
+            "Distribute 20 marbles among 5 people equally.\nTotal number of marbles\nR  \nMarbles distributed for the  first time\nR  \nRemaining marbles\nR  \nMarbles distributed for the  second  time\nR  \nRemaining marbles\nR  \nMarbles distributed  for the  third time\nR  \nRemaining marbles\nR  \nMarbles distributed for the  fourth time\nR  \nRemaining marbles\nR  \nBy distributing equally, each one gets\nR  \nThe Division form \n \u2122 \n R "
+          ],
+          "status": "untaught",
+          "last_taught_date": null
+        },
+        {
+          "topic_name": "Measuring Water",
+          "subtopics": [],
+          "concept_summary": "This section focuses on developing estimation and measurement skills using different vessels and water. The activity involves pouring water from one container to another to determine the capacity of each vessel. Students are encouraged to estimate the number of smaller containers of water needed to fill a larger one, and then verify their estimations through actual measurement.",
+          "prerequisites": [],
+          "original_exercises": [
+            "Say how much water does each vessel hold.  Find out by actual measuring.",
+            "Into a \nhow many\nof water can be poured? Estimate. Then measure and\nfind out.",
+            "Into a\n how many\nof water can be poured? Estimate. Then measure\nand find out.",
+            "Into a \nhow many\nof water can be poured? Estimate. Then measure\nand find out.",
+            "Based on the above activity, fill in the table given below.\nSay who has estimated correctly.\nNames of your\nfriend who did the\nabove activity\nEstimated\nmeasures\nActual\nmeasurement\nmade\nEstimation was\ncorrect / wrong\n1.\n3.\n4.\n2.\nSerial\nNumber"
+          ],
+          "status": "untaught",
+          "last_taught_date": null
+        },
+        {
+          "topic_name": "Time",
+          "subtopics": [],
+          "concept_summary": "This section introduces the concept of time and daily activities. It encourages students to observe pictures and discuss their daily routines from morning to night. The aim is to help them understand the sequence of events and associate specific activities with different times of the day.",
+          "prerequisites": [],
+          "original_exercises": [
+            "Say what activities do you do in the morning.",
+            "Say what activities do you do in the afternoon.",
+            "Say what activities do you do in the evening.",
+            "Look at the pictures.  Say what things you do at what time."
+          ],
+          "status": "untaught",
+          "last_taught_date": null
+        },
+        {
+          "topic_name": "Days of the Week",
+          "subtopics": [],
+          "concept_summary": "This section focuses on understanding the days of the week. Students are prompted to observe the names of the days and answer questions related to the sequence and number of days in a week. This helps reinforce their knowledge of the weekly cycle.",
+          "prerequisites": [],
+          "original_exercises": [
+            "(a) What is the day after Sunday?",
+            "(b) What is the day between Monday and Wednesday?",
+            "(c) What is the day after Saturday?",
+            "(d) After how many days does Friday comes\nafter Sunday?",
+            "(e) How many days are there from Monday to\nSunday?",
+            "(f) How many days are there in a week?"
+          ],
+          "status": "untaught",
+          "last_taught_date": null
+        },
+        {
+          "topic_name": "Months of the Year",
+          "subtopics": [],
+          "concept_summary": "This section introduces the months of the year and their sequence. Students are asked to observe the names of the months and answer questions about their order and intervals. This exercise aims to solidify their understanding of the annual cycle and the relative positions of different months.",
+          "prerequisites": [],
+          "original_exercises": [
+            "(a) Which month comes after January?",
+            "(b) Which is the month between April and June?",
+            "(c) Which month comes after July?",
+            "(d) After how many months does December\ncome after September?",
+            "(e) How many months are there ?"
+          ],
+          "status": "untaught",
+          "last_taught_date": null
+        },
+        {
+          "topic_name": "Money",
+          "subtopics": [],
+          "concept_summary": "Understanding money involves identifying different currency notes and coins and recognizing their values. It also includes exploring different ways to provide change for a given amount using various combinations of notes and coins.",
+          "prerequisites": [],
+          "original_exercises": [
+            "Look at the currency notes and coins.  Identify each one.  Say how much each one is.",
+            "Look at the coins shown below.  Say in how many other ways we can give change.",
+            "Look at the coins and notes shown below.  Say in how many other ways we can give change."
+          ],
+          "status": "untaught",
+          "last_taught_date": null
+        }
+      ]
+    }
+  ]
+}
