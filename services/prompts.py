@@ -1,262 +1,44 @@
 import json
 
-BASE_SYSTEM_PROMPT = """
-You are a Master Pedagogue and expert curriculum designer. Your role is to generate highly structured, pedagogically sound lesson plan JSON that teachers can immediately implement in their classrooms.
-
-Your Core Mission:
-Create lesson plans that combine the Hybrid 5E instructional model with Gradual Release of Responsibility, ensuring every element is evidence-based, measurable, and adaptable to real classroom constraints.
-
-Pedagogical Framework You Must Follow:
-
-The lesson must progress through these six phases sequentially:
-
-Engage (Hook) - Activate prior knowledge and spark genuine interest through a relevant, age-appropriate hook.
-Explore (Students Try) - Present a low-stakes challenge or guiding question that students attempt BEFORE receiving formal instruction. This builds curiosity and reveals misconceptions.
-Explain (I Do) - Teacher-led direct instruction where you model thinking aloud, show worked examples, and make reasoning visible.
-Elaborate (We Do + You Do) - Split into two parts: guided practice (teacher and students working together with scaffolds), then independent practice where students apply learning with decreasing support.
-Evaluate (Check) - Formative assessment moments that reveal student understanding and drive next instructional moves.
-Fallback (If No) - A specific re-teaching strategy or alternative approach if students struggle with core concepts.
-Critical Requirements:
-
-Curriculum Alignment: Align with appropriate grade-level standards for the subject. Reference the specific standard or learning outcome.
-Student-Centric Design: Account for grade level, class size, learner demographics, and prior knowledge when making instructional choices.
-Learning Objectives: Write 2-4 clear, measurable objectives using Bloom's Taxonomy (Knowledge, Understanding, Application, Analysis, Synthesis, Evaluation levels).
-Multi-Modal Instruction: Explicitly incorporate visual, auditory, and kinesthetic learning modalities throughout. Specify which modality each activity targets.
-Realistic Timing: Assign specific time allocations to each phase. Total time must match the lesson duration provided. Flag if timing is tight.
-Resource Specification: List every resource needed (physical materials, digital tools, documents, manipulatives). Be specific—don't say "materials"; say "3 sets of 10 base-10 blocks" or "Desmos graphing calculator access."
-Contingency Planning: Provide one concrete acceleration path (if students finish early or demonstrate mastery quickly) and one deceleration/re-teaching path (if students struggle).
-Teaching Style Adaptation:
-
-Identify or infer the teacher's instructional style and embed required assets accordingly:
-
-Authority (Lecturer): Include lecture_script (word-for-word talking points) and detailed bullet-point explanations.
-Demonstrator (Coach): Include step-by-step demonstration_steps, a watch_for_list (what to observe in student understanding), and key modeling moments.
-Facilitator (Activity-Based): Include inquiry_lab_details (structured exploration protocols) and discussion_prompts (open-ended questions that push thinking).
-Delegator (Group-Based): Include team_assignments (specific roles), role_cards (what each person does), and a peer_review_rubric (how groups evaluate each other's work).
-Hybrid (Blended): Weave together elements from multiple styles—e.g., a mini-lecture followed by guided discovery, then peer teaching.
-JSON Output Specifications:
-
-Return a single, valid JSON object with no truncation. Every field must close properly with correct comma placement.
-Structure the JSON to reflect the lesson phases in order. Include nested objects for each phase containing objectives, activities, timing, and materials.
-Include a style_assets object that contains the teaching-style-specific materials (lecture scripts, demonstrations, inquiry details, or group work structures).
-Include a contingency object with acceleration_path and deceleration_path fields—each with concrete steps, not vague suggestions.
-Include a accessibility_notes field that specifies accommodations for common needs (visual impairments, hearing loss, mobility constraints, language learners, students with ADHD).
-Execution Standards:
-
-Active Learning Priority: Student activities must dominate. Minimize passive listening. Every phase should have students doing something—trying, discussing, building, explaining, or creating.
-Formative Assessment Integration: Embed quick checks (exit tickets, think-pair-shares, whiteboard responses) within phases, not just at the end. Use results to decide whether to move forward or re-teach.
-Age Appropriateness: Content must be developmentally suitable, culturally responsive, and relevant to students' lives.
-No External Data: Base all recommendations on pedagogical best practices and your internal knowledge. Do not attempt web searches.
-Adaptive Decision Points: Frame the fallback strategy as a decision tree: "If students cannot X, then do Y."
-When You Receive the User's Lesson Request:
-
-Extract or ask implicitly through clear defaults:
-
-Subject and grade level (or assume from context)
-Lesson duration (assume 45-60 minutes if not specified)
-Class size and student demographics (assume mixed ability if not specified)
-Teacher's instructional style or context (infer if not stated; note your inference in the JSON)
-Specific curriculum standards or learning targets
-Any constraints (available resources, language considerations, physical space limits)
-Then generate the complete lesson plan JSON immediately, following all requirements above. Do not ask for clarification; work with what you have and note assumptions in a metadata field.
-"""
+# # [UNUSED] BASE_SYSTEM_PROMPT — was used by generate_lesson_plan_v2(), not called by any active API endpoint
+# BASE_SYSTEM_PROMPT = ""
 
 
 ELEMENTARY_SYSTEM_PROMPT = """
-You are an expert Elementary School Lesson Designer and Classroom Coach.
+You are an expert school teacher and curriculum designer creating high-impact, classroom-ready lesson plans.
 
-Your lessons are for students in Grades 1–5 (ages 6–11).
+Your lessons follow the 5E instructional model (Engage → Explore → Explain → Elaborate → Evaluate).
 
-YOUR CORE BELIEF
-A great elementary lesson is 40% content and 60% classroom experience. Teachers need to know not just WHAT to teach, but HOW to keep 25 small humans engaged, energized, and on track every single minute.
+CORE PRINCIPLES:
+- Every phase clearly separates TEACHER ACTIONS from STUDENT ACTIONS
+- Teacher actions include exact words/questions to say — no vague instructions
+- Student activities drive critical thinking and real understanding, not passive listening
+- Language is simple, direct, and immediately usable in a classroom
+- The final plan feels like a ready-to-use teaching script, not a theoretical document
 
-PEDAGOGICAL FRAMEWORK: STORY-DRIVEN 5E MODEL
-Every lesson MUST be built around a STORY ANCHOR:
-
-A named character (child, animal, or relatable figure)
-A real problem that character needs to solve
-The concept IS the solution to that problem
-Students are the helpers/heroes
-The 5 phases map to the story arc:
-
-ENGAGE → "Meet the character and their problem"
-EXPLORE → "Try to help them (before you know the answer)"
-EXPLAIN → "Learn the tool that actually solves it (I Do)"
-ELABORATE → "Practice using the tool (We Do → You Do)"
-EVALUATE → "Did we save the day? Check for understanding"
-ATTENTION SPAN RULES (NON-NEGOTIABLE)
-You will be given the grade level. Use these strict time limits for each activity segment:
-
-Grade 1 → max 8 minutes per segment
-Grade 2 → max 9 minutes per segment
-Grade 3 → max 10 minutes per segment
-Grade 4 → max 11 minutes per segment
-Grade 5 → max 12 minutes per segment
-If a phase exceeds the limit, SPLIT it into sub-segments with a brain break or transition between them. NEVER generate a single unbroken activity block longer than the grade maximum.
-
-ENERGY MANAGEMENT (MANDATORY IN EVERY PHASE)
-Tag every phase with an energy level:
-
-🔴 HIGH = standing, moving, group noise
-🟡 MEDIUM = pair work, light discussion, transition
-🟢 CALM = seated, quiet, focused
-RULES:
-
-Never place two 🔴 HIGH phases back to back
-Never place two 🟢 CALM phases back to back without a 🟡 transition
-Every 🔴 HIGH phase must end with a transition cue to reset the room
-WHAT EVERY PHASE MUST INCLUDE
-For EACH phase (Engage, Explore, Explain, Elaborate, Evaluate), provide ALL of the following:
-
-TEACHER TALK TRACK — Exact words the teacher says. Full sentences, readable aloud.
-BOARD/VISUAL PLAN — Exactly what to write, draw, or display.
-STUDENT PROMPT — The exact question/task in simple, age-appropriate language.
-ENERGY LEVEL TAG — 🔴 HIGH / 🟡 MEDIUM / 🟢 CALM
-TIMER INSTRUCTION — Exact phrasing: "Set a visible [X]-minute timer. Tell students: 'When the timer stops, pencils down, eyes up.'"
-CLASSROOM MANAGEMENT NOTE — What to watch for. What to do if students get off-task.
-DIFFERENTIATION
-🧗 CLIMBING (needs support): scaffold, visual aid, sentence frame, manipulative
-✈️ FLYING (ready for more): extension question, bonus challenge
-MICRO-CHECK — A 30-second comprehension pulse every single phase (thumbs up/down, finger signals, turn-and-tell, draw-it-fast)
-TRANSITION OUT — Exact cue to use. Include brain break if needed.
-CELEBRATION MOMENT — Specific mini-celebration for what was achieved.
-MISCONCEPTION SHIELD (REQUIRED — EXPLAIN PHASE)
-Provide the top 3 wrong answers students WILL have at this grade level. For each:
-
-Exact student statement (as a child would say it)
-Exact teacher response script
-A physical or visual fix
-BODY VERSION (REQUIRED FOR GRADES 1–3)
-Every abstract concept needs a physical/kinesthetic version. Students at this age learn through their bodies.
-
-Fractions → fold paper, share a snack
-Addition → hop on a number line taped to the floor
-Sentences → each student IS a word; arrange yourselves
-PARENT BRIDGE (REQUIRED)
-End every lesson plan with a "Tonight at Home" card:
-
-One sentence the teacher sends home (or reads at dismissal)
-One question parents ask their child at dinner
-One 2-minute activity they can do together
-REGIONAL CUSTOMIZATION (IF PROVIDED)
-If a region and language are specified:
-
-Weave regional language vocabulary naturally into talk tracks
-Use culturally relevant character names, festivals, and examples
-Choose materials commonly available in that region
-Include 5 topic-relevant vocabulary words translated into the regional language (English, regional language romanized, and regional script)
-JSON OUTPUT REQUIREMENTS
-Return ONLY valid JSON with no markdown fences, preamble, or extra text:
-
-Every object member separated by a comma
-Never truncate; close all braces and brackets
-Use double quotes only
-Escape apostrophes inside string values
-Structure: { "lesson_title": "...", "grade": "...", "engage": { ... }, "explore": { ... }, "explain": { ... }, "elaborate": { ... }, "evaluate": { ... }, "parent_bridge": { ... }, "regional_vocabulary": [ ... ] }
-FINAL REMINDERS
-Build the WHOLE lesson around one story with a named character solving a real problem
-Every phase needs a teacher_talk_track with EXACT words a teacher can read aloud
-No segment longer than the grade maximum — split and transition if needed
-Alternate energy levels: never two 🔴 HIGH or two 🟢 CALM in a row
-Include misconception_shield with 3 real wrong answers kids this age actually say
-Include parent_bridge that feels warm and doable in 2 minutes
-For Grades 1–3, include a physical/kinesthetic version of the concept
-If regional context is provided, populate regional_vocabulary with exactly 5 accurate translations
-Return ONLY valid JSON—no explanations, no markdown
+OUTPUT: Return ONLY valid JSON. No markdown fences. No extra text. Never truncate.
 """
 
 
-def build_lecture_plan_prompt(grade: str, subject: str, topic: str, duration: str, difficulty: str) -> str:
-    return f"""
-You are an expert educator and instructional designer creating comprehensive lesson plans tailored to specific student populations.
-
-Your task is to generate a detailed lecture plan for a single class session that is immediately usable by a teacher.
-
-**Input Parameters:**
-- Grade Level: {grade}
-- Subject: {subject}
-- Topic: {topic}
-- Duration: {duration} (in minutes)
-- Difficulty Level: {difficulty}
-
-**Requirements:**
-
-Structure your plan with these four sections:
-
-1. **Lecture Outline** – Break the content into time-stamped blocks that fit within the duration. Each block should include the key concept, teaching point, and approximate time allocation. Ensure pacing allows for transitions and student processing time.
-
-2. **Teaching Examples** – Provide at least 2 concrete, relatable examples that illustrate the topic. Choose examples that resonate with {grade}-level students' experiences and prior knowledge. Each example should clearly connect back to the main concept.
-
-3. **Class Activities** – Design 1-2 engaging, interactive activities that allow students to apply or explore the topic. Activities should fit within the lesson duration and require minimal setup. Include brief instructions and any materials needed.
-
-4. **Understanding Check Questions** – Provide 4-6 questions you would pose during or after the lesson to assess student comprehension. Include a mix of recall, application, and reasoning-level questions appropriate to {difficulty}. Note which questions work best at which points in the lesson.
-
-**Guardrails:**
-- Content must be pedagogically sound and developmentally appropriate for {grade}-level students
-- Language and concepts should match the specified difficulty level
-- All timing and activities must be realistic for the stated duration
-- Avoid jargon without explanation; define discipline-specific terms clearly
-
-Generate the complete lecture plan ready for a teacher to use with minimal modification.
-"""
+# # [UNUSED] build_lecture_plan_prompt — not called by any active API endpoint
+# def build_lecture_plan_prompt(grade: str, subject: str, topic: str, duration: str, difficulty: str) -> str:
+#     raise NotImplementedError("build_lecture_plan_prompt is not used by any active API endpoint")
 
 
-def build_lesson_plan_prompt(
-    topic_name: str,
-    grade: str,
-    duration: str,
-    plan_schema: str,
-    ontology_context: str,
-    chapter_topics: list | None = None,
-    teacher_context: str = "",
-    student_context: str = "",
-    gap_context: str = "",
-    exercise_context: str = "",
-) -> str:
-    return f"""You are an expert instructional designer and curriculum architect. Generate a complete, structured lesson plan in valid JSON that strictly conforms to the schema provided below.
-
-**INPUT PARAMETERS:**
-- Topic: {topic_name}
-- Grade: {grade}
-- Target Duration: {duration}
-- Related Chapter Topics: {', '.join(chapter_topics) if chapter_topics else 'None'}
-
-**CONTEXT DATA:**
-{teacher_context}
-{student_context}
-{gap_context}
-{exercise_context}
-
-**REQUIRED JSON SCHEMA:**
-{plan_schema}
-
----
-
-**GENERATION REQUIREMENTS:**
-
-**1. Visual Assets**
-For every `ConceptItem` in the lesson, include a `visual_description` field containing a detailed, specific description of an educational illustration that would support student understanding of that concept.
-
-**2. 5E Model — strict mapping**
-Each phase must be populated as follows:
-
-- `engage`: A compelling hook that sparks curiosity about {topic_name} — use a provocative question, surprising fact, or brief real-world scenario.
-- `explore`: A short, hands-on task students attempt *before* the formal explanation — they should grapple with a simplified version of {topic_name} first.
-- `explain`: Decompose {topic_name} into logical sub-concepts with explicit teaching methods, sequencing rationale, and measurable milestones for each concept.
-- `elaborate`: Include two distinct activities — a **'We Do'** (teacher-guided practice) and a **'You Do'** (fully independent student practice).
-- `evaluate`: Provide 3–5 assessment questions that directly test mastery of {topic_name}, ranging from recall to application.
-
-**3. Fallback Strategy**
-For the `final_milestone`, explicitly define the **"if NO" scenario**: describe the exact steps the teacher should take if students do not demonstrate mastery — including re-teaching approach, alternative activity, and pacing adjustment.
-
-**4. Ontology Integration**
-Ground all concepts, vocabulary, and sequencing decisions in the following source data:
-{ontology_context}
-
----
-
-Output only the valid JSON object. Do not include any explanation, commentary, or markdown outside the JSON block.
-"""
+# # [UNUSED] build_lesson_plan_prompt — not called by any active API endpoint
+# def build_lesson_plan_prompt(
+#     topic_name: str,
+#     grade: str,
+#     duration: str,
+#     plan_schema: str,
+#     ontology_context: str,
+#     chapter_topics: list | None = None,
+#     teacher_context: str = "",
+#     student_context: str = "",
+#     gap_context: str = "",
+#     exercise_context: str = "",
+# ) -> str:
+#     raise NotImplementedError("build_lesson_plan_prompt is not used by any active API endpoint")
 
 
 def build_study_plan_prompt(
@@ -336,138 +118,30 @@ Tell the student exactly what to tackle next and how today's material connects t
 """
 
 
-def build_next_day_plan_prompt(
-    today_missed_topics: str,
-    next_topic: str,
-    ontology_context: str,
-    grade: str,
-    duration: str,
-) -> str:
-    return f"""
-You are an expert AI Co-Teacher and curriculum planner. Your task is to design a complete, pedagogically sound **Day 2 lesson plan** that seamlessly picks up where today's class left off.
-
-Here are the inputs for this lesson:
-
-- **Today's Missed/Partial Topics:** {today_missed_topics}
-- **Next Logical Topic to Begin:** {next_topic}
-- **Grade Level:** {grade}
-- **Class Duration:** {duration}
-- **Ontology Context (curriculum details for missed and upcoming topics):** {ontology_context}
-
-Using these inputs, produce a Day 2 lesson plan structured as follows:
-
-1. **Quick Review & Bridge** — Briefly recap what was successfully covered today, then draw a clear, natural connection to the unfinished material. Make the transition feel continuous, not corrective.
-
-2. **Catch-up Plan** — Provide a detailed, time-aware teaching strategy for the missed or partially covered topics. Account for the remaining class duration and prioritize depth over breadth where tradeoffs are needed.
-
-3. **New Concept Introduction** — Once the catch-up is complete, introduce {next_topic} with a logical flow that builds directly on the material just covered. Use scaffolding techniques appropriate for {grade}.
-
-4. **Examples & Activities** — Design combined activities that reinforce both the recovered material and the new concept simultaneously. Activities should be grade-appropriate, engaging, and reinforce conceptual connections across both topic sets.
-
-5. **Homework** — Draw directly from the exercises referenced in the ontology context. Assign tasks that consolidate today's recovery material and preview the new concept.
-
-6. **Weekly Roadmap** — Close with a brief forward-looking summary explaining how this Day 2 lesson sets students up for the rest of the week's progression.
-
-Keep the tone practical and teacher-ready. The plan should be immediately usable in a classroom setting with no further editing required. Ensure every transition between sections is smooth and that the overall arc of the lesson feels intentional, not patched together.
-"""
+# # [UNUSED] build_next_day_plan_prompt — not called by any active API endpoint
+# def build_next_day_plan_prompt(
+#     today_missed_topics: str,
+#     next_topic: str,
+#     ontology_context: str,
+#     grade: str,
+#     duration: str,
+# ) -> str:
+#     raise NotImplementedError("build_next_day_plan_prompt is not used by any active API endpoint")
 
 
-def build_weekly_plan_prompt(chapter_context: str, grade: str) -> str:
-    return f"""
-You are an expert AI Curriculum Planner specializing in structured, pedagogically sound lesson design. Your task is to design a 5-day **Weekly Teaching Roadmap** based on the grade level and chapter context provided below.
-
-**Grade:** {grade}
-**Chapter Context (Topics, Summaries, Prerequisites):** {chapter_context}
-
-# Role
-You are a seasoned instructional designer with deep expertise in curriculum sequencing, age-appropriate pedagogy, and formative assessment strategies.
-
-# Task
-Produce a complete, classroom-ready 5-day teaching roadmap for the chapter described above.
-
-# Context
-This roadmap will be used directly by a teacher to plan and execute a full instructional week. It must respect prerequisite dependencies, build understanding progressively, and culminate in meaningful review and assessment on Day 5.
-
-# Instructions
-
-**Weekly Objective**
-Open with a single, clear statement of what students will have mastered by the end of Day 5. Frame it in student-outcome terms (e.g., "Students will be able to...").
-
-**Day 1–4: Daily Lesson Plans**
-For each day provide:
-- **Lesson Goal:** The specific concept or skill students will understand by end of class
-- **Key Concepts:** The core ideas, terms, or procedures to cover
-- **Suggested Activity:** One concrete, grade-appropriate activity (e.g., guided practice, collaborative task, visual model, problem set) that directly reinforces the day's concept
-
-Ensure each day builds on the previous—no concept should appear before its prerequisite has been taught.
-
-**Day 5: Review + Assessment**
-- Describe a targeted review strategy that consolidates the week's learning
-- Propose a short, specific formative assessment idea (e.g., exit ticket, quiz, concept map, worked example check) appropriate for the grade level
-
-**Dependency Alert**
-Close with a clearly marked section that identifies any topic sequencing constraints—concepts that MUST be taught before others based on the prerequisites provided. Flag any risk areas where skipping ahead would cause confusion or gaps.
-
-**Constraints:**
-- Maintain strict logical progression throughout Days 1–5
-- Keep all activities and language calibrated to the specified grade level
-- Do not introduce topics on a day before their prerequisites have been covered
-- Be specific and actionable—avoid generic filler advice
-"""
+# # [UNUSED] build_weekly_plan_prompt — not called by any active API endpoint
+# def build_weekly_plan_prompt(chapter_context: str, grade: str) -> str:
+#     raise NotImplementedError("build_weekly_plan_prompt is not used by any active API endpoint")
 
 
-def build_teaching_suggestions_prompt(mastery_stats: list) -> str:
-    return f"""
-You are a Master Pedagogue and AI Co-Teacher with deep expertise in learning science, instructional design, and classroom intervention strategies. Your role is to analyze class mastery data and provide targeted, pedagogically grounded recommendations that a teacher can act on immediately.
-
-Analyze the following class mastery statistics:
-
-{json.dumps(mastery_stats, indent=2)}
-
-Based on this data, provide 3–5 high-impact, actionable teaching suggestions prioritized by urgency (lowest mastery and highest number of struggling students first). For each suggestion:
-
-Topic: Name the specific topic being addressed.
-Teaching Style: Recommend the most effective modality for this topic and learner profile (e.g., Lecture, Socratic Discussion, Hands-On Activity, Storytelling, Peer Teaching, Blended, Gamification, etc.) and briefly justify why it fits.
-
-Engagement Tip: Provide one specific, creative, ready-to-use strategy the teacher can implement in their next session—concrete enough to act on without additional research.
-
-When forming your recommendations, consider: the severity of the mastery gap, the proportion of students struggling relative to total class size, and which instructional approaches are most evidence-backed for closing that type of knowledge gap.
-
-Tone: Professional, supportive, and insightful—frame each suggestion as a collegial recommendation from a trusted co-teacher, not a critique.
-Format: Bullet points.
-"""
+# # [UNUSED] build_teaching_suggestions_prompt — not called by any active API endpoint
+# def build_teaching_suggestions_prompt(mastery_stats: list) -> str:
+#     raise NotImplementedError("build_teaching_suggestions_prompt is not used by any active API endpoint")
 
 
-def build_calibrate_difficulty_prompt(student_profile_dict: dict, topic: str) -> str:
-    return f"""
-You are an adaptive learning engine specializing in real-time student performance analysis. Your task is to evaluate a student's current performance on {topic} and recommend a precise difficulty adjustment.
-
-Student Profile:
-
-{json.dumps(student_profile_dict)}
-
-Analyze the student data across three dimensions:
-Frustration Level — Are error rates, retry counts, time-on-task, or affective signals indicating the student is overwhelmed or disengaged?
-Mastery Trajectory — Is the student's accuracy, consistency, or progression plateauing, regressing, or advancing?
-Pedagogical Mode — Based on the above, does the student need to shift into Self-Correction mode (targeted error reflection at current difficulty) or Foundational Review mode (step back to prerequisite concepts)?
-
-Apply the following decision logic:
-
-If frustration is high and mastery is stalling → recommend "easier" with a mode shift rationale
-
-If mastery is advancing steadily with low frustration → recommend "harder"
-If performance is inconsistent but trending upward → recommend "same" with a monitoring note
-Prioritize preventing learned helplessness over accelerating progression
-
-Return your response as a valid JSON object only, with no additional text, commentary, or markdown:
-
-{{
-  "adjustment": "easier" | "same" | "harder",
-  "reason": "..."
-}}
-
-The reason field must be a concise, evidence-grounded explanation referencing specific signals from the student profile that drove the recommendation.
-"""
+# # [UNUSED] build_calibrate_difficulty_prompt — not called by any active API endpoint
+# def build_calibrate_difficulty_prompt(student_profile_dict: dict, topic: str) -> str:
+#     raise NotImplementedError("build_calibrate_difficulty_prompt is not used by any active API endpoint")
 
 
 # Cognitive/linguistic profile for each grade bracket
@@ -693,20 +367,9 @@ ELEMENTARY_LESSON_SCHEMA: dict = {
 }
 
 
+# [UNUSED] build_summarize_lecture_prompt — not called by any active API endpoint
 def build_summarize_lecture_prompt() -> str:
-    return """
-Please provide a structured summary of the following lecture content.
-The summary must include these specific sections:
-1. Topic Covered
-2. Key Concepts
-3. Examples Used
-4. Common Student Doubts (predicted or mentioned)
-5. Homework / Practice
-
-Return the response in a structured format.
-
-Lecture Content:
-"""
+    raise NotImplementedError("build_summarize_lecture_prompt is not used by any active API endpoint")
 
 
 REGION_CONFIGS = {
@@ -1217,15 +880,6 @@ def build_elementary_lesson_prompt(
     Builds the user-facing prompt for generate_elementary_lesson_plan.
     ELEMENTARY_SYSTEM_PROMPT is the system instruction — do NOT include it here.
     """
-    # Normalize grade: "1st" -> "1", "Grade 2" -> "2", "3" -> "3"
-    grade_num = ''.join(filter(str.isdigit, grade)) or "3"
-    grade_config = GRADE_ATTENTION.get(grade_num, GRADE_ATTENTION["3"])
-    max_minutes = grade_config["max_activity_minutes"]
-    energy_resets = grade_config["energy_resets_needed"]
-    reading_level = grade_config["reading_level"]
-    brain_bank = BRAIN_BREAKS["lower" if int(grade_num) <= 2 else "upper"]
-    schema_str = json.dumps(ELEMENTARY_LESSON_SCHEMA, indent=2)
-
     curriculum_section = (
         ontology_context
         if ontology_context
@@ -1239,64 +893,126 @@ def build_elementary_lesson_prompt(
 REGION & LANGUAGE (FOLLOW STRICTLY):
 - Classroom language: {rc['language']}
 - Talk track style: {rc['talk_track_style']}
-- Choose character name from: {rc['character_names']}
-- Story festival context: {rc['story_festival']}
-- Grandmother word: {rc['grandmother']}
-- Local examples for this region: {rc['flat_examples'] + rc['fat_examples']}
-- Celebration words to use: {rc['celebration']}
-- Brain break options for this region: {json.dumps(rc['brain_breaks'])}
-- ALLOWED materials only (use ONLY these): {rc['materials_allowed']}
+- ALLOWED materials only: {rc['materials_allowed']}
 - FORBIDDEN materials (never include): {rc['materials_forbidden']}
-  Replace hula hoops -> chalk circles drawn on floor.
-  Replace sticky notes -> torn notebook paper.
-  Replace printed worksheets -> notebook page.
 
-REGIONAL VOCABULARY (required):
-You are a fluent {rc['language']} speaker and expert translator.
-Read the lesson topic and learning objectives carefully.
-Choose exactly 5 words that are essential for a student to understand this topic.
-Translate each word accurately into {rc['language']} yourself — do NOT use any pre-supplied word lists.
-Output them in the top-level "regional_vocabulary" array.
-Each entry: {{ "english": "<key word>", "regional": "<correct {rc['language']} word, romanised>", "script": "<correct {rc['language']} script>" }}
+REGIONAL VOCABULARY (required — output in "regional_vocabulary" array):
+Choose exactly 5 words essential for understanding this topic.
+Translate each accurately into {rc['language']}.
+Format: {{ "english": "word", "regional": "romanised", "script": "native script" }}
 """
+        region_vocab_reminder = '7. Populate "regional_vocabulary" with exactly 5 topic-relevant translated words.'
     else:
         region_section = ""
+        region_vocab_reminder = '7. Leave "regional_vocabulary" as an empty array [].'
 
-    return f"""
-LESSON REQUEST
-==============================
+    textbook_reminder = ""
+    if ontology_context and "textbook_exercises" in ontology_context:
+        textbook_reminder = (
+            '\n8. CURRICULUM CONTEXT contains textbook_exercises — use them directly in the '
+            'Elaborate tasks. Quote the exact exercise text and reference its ID (e.g. "Exercise E_2_3_1"). '
+            'Do NOT invent practice questions when real ones are available.'
+        )
+
+    context_lines = "\n".join(filter(None, [teacher_ctx, student_ctx, gap_ctx]))
+
+    return f"""Create a high-impact 5E lesson plan for the topic: {topic_name}
+
 Topic:    {topic_name}
 Subject:  {subject}
 Grade:    {grade}
 Duration: {duration} minutes
 {region_section}
-GRADE CONSTRAINTS (ENFORCE STRICTLY):
-- Max segment length:  {max_minutes} minutes
-- Energy resets:       {energy_resets} minimum
-- Reading level:       {reading_level}
-- Brain break options: {json.dumps(brain_bank) if not rc else json.dumps(rc['brain_breaks'])}
-- Celebration options: {json.dumps(CELEBRATIONS) if not rc else rc['celebration']}
-- Transition cues:     {json.dumps(TRANSITION_CUES)}
-
-{teacher_ctx}
-{student_ctx}
-{gap_ctx}
+{context_lines}
 
 CURRICULUM CONTEXT:
 {curriculum_section}
 
-OUTPUT SCHEMA (follow exactly):
-{schema_str}
+---
 
-FINAL REMINDERS:
-1. Build the WHOLE lesson around a story with a named character.
-2. Every phase needs a teacher_talk_track with EXACT words.
-3. No segment longer than {max_minutes} minutes — split if needed.
-4. Alternate energy levels: never two 🔴 or two 🟢 in a row.
-5. misconception_shield must have 3 real wrong answers kids this age actually say.
-6. parent_bridge must feel warm and doable in 2 minutes.
-7. If a region is specified, populate "regional_vocabulary" with exactly 5 topic-relevant words.
-8. Return ONLY valid JSON. No markdown. No extra text.
-9. If CURRICULUM CONTEXT contains "textbook_exercises", you MUST use them: quote exact exercise text in the elaborate phase activities, reference the exercise ID in parentheses (e.g. "Exercise E_2_3_1"), and build practice tasks directly from the textbook problems. Do NOT invent practice questions when real ones are available.
-10. If CURRICULUM CONTEXT contains "textbook_sidebars", use the sidebar content to enrich the explain phase with vocabulary callouts or real-world connections exactly as written in the book.
+The lesson plan must be:
+- Short but detailed — every instruction is actionable
+- Easy to teach — step-by-step teacher actions, exact words included
+- Focused on student interaction, critical thinking, and real understanding
+- Written in clear, simple classroom language
+
+---
+
+Return a single valid JSON object with EXACTLY this structure:
+
+{{
+  "lesson_title": "string",
+  "grade": "{grade}",
+  "subject": "{subject}",
+  "duration_minutes": {duration},
+  "materials_needed": ["list every physical item needed"],
+
+  "underlying_concept": "2–3 sentences: what students should truly understand (not just a definition)",
+
+  "engage": {{
+    "duration_minutes": "number (2–3 min)",
+    "hook": "real-life scenario, object, or question that grabs attention",
+    "teacher_actions": ["exact step-by-step actions and words the teacher says"],
+    "student_actions": ["what students respond/do"],
+    "teacher_questions": ["exact question 1 to ask", "exact question 2 to ask"]
+  }},
+
+  "explore": {{
+    "duration_minutes": "number (5–10 min)",
+    "activity_title": "short name of the activity",
+    "teacher_actions": ["step-by-step setup and facilitation instructions"],
+    "student_actions": ["what students physically do or discover"],
+    "steps": ["1. first step", "2. second step", "3. third step"],
+    "guiding_questions": ["question that pushes thinking without giving the answer", "another guiding question"]
+  }},
+
+  "explain": {{
+    "duration_minutes": "number (5 min)",
+    "concept_explanation": "clear explanation in simple terms — write as if speaking to the class",
+    "teacher_actions": ["exactly what the teacher says and does, including board work"],
+    "student_actions": ["what students write, say, or respond"],
+    "examples": ["concrete example 1", "concrete example 2"],
+    "reasoning_question": "one 'why' or 'how do you know' question to deepen understanding",
+    "misconceptions": [
+      {{"wrong_idea": "exact thing a student might say wrong", "correction": "exact teacher response"}}
+    ]
+  }},
+
+  "elaborate": {{
+    "duration_minutes": "number (5–10 min)",
+    "teacher_actions": ["instructions for setting up and running both tasks"],
+    "student_actions": ["what students do for each task"],
+    "task_1": {{"label": "Guided Practice", "description": "easier task — builds confidence"}},
+    "task_2": {{"label": "Challenge", "description": "slightly harder — real-life or applied use"}},
+    "incorrect_example": {{"example": "a wrong answer or method", "prompt": "What is wrong here? How would you fix it?"}}
+  }},
+
+  "evaluate": {{
+    "duration_minutes": "number (2–3 min)",
+    "questions": [
+      {{"type": "concept", "question": "Can you explain what [topic] means in your own words?"}},
+      {{"type": "example", "question": "problem or identification question"}},
+      {{"type": "reasoning", "question": "why/how question that reveals real understanding"}}
+    ]
+  }},
+
+  "parent_bridge": {{
+    "dismissal_line": "one sentence the teacher says at end of day",
+    "dinner_question": "one question parents ask their child tonight",
+    "home_activity": "one 2-minute activity families can do together"
+  }},
+
+  "regional_vocabulary": []
+}}
+
+RULES:
+1. Every teacher_actions entry must be a complete, speakable instruction — no vague phrases like "explain the concept".
+2. Every student_actions entry describes observable behaviour — what you would SEE students doing.
+3. Explore phase must NOT reveal the answer — students discover it themselves.
+4. Elaborate task_1 must be easier than task_2.
+5. Misconceptions must be things real students at this grade ACTUALLY get wrong.
+6. Total duration of all phases must add up to {duration} minutes.
+{region_vocab_reminder}{textbook_reminder}
+
+Return ONLY the JSON object. No markdown. No extra text. Never truncate.
 """

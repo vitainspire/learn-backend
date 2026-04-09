@@ -5,31 +5,24 @@ Vertex AI setup, model caching, JSON repair, and retry logic live in ai_client.
 Prompt strings live in prompts.
 This module wires them together and is the public API for the rest of the backend.
 """
-import json
-
-from core.lesson_models import LessonPlan
 from services.ai_client import get_model, safe_generate_content
 from services.prompts import (
-    BASE_SYSTEM_PROMPT,
     ELEMENTARY_SYSTEM_PROMPT,
-    build_summarize_lecture_prompt,
-    build_lecture_plan_prompt,
-    build_lesson_plan_prompt,
-    build_study_plan_prompt,
-    build_next_day_plan_prompt,
-    build_weekly_plan_prompt,
     build_elementary_lesson_prompt,
-    build_teaching_suggestions_prompt,
-    build_calibrate_difficulty_prompt,
+    build_study_plan_prompt,
     build_worksheet_prompt,
+    # Unused — not called by any active API endpoint:
+    # BASE_SYSTEM_PROMPT,
+    # build_summarize_lecture_prompt,
+    # build_lecture_plan_prompt,
+    # build_lesson_plan_prompt,
+    # build_next_day_plan_prompt,
+    # build_weekly_plan_prompt,
+    # build_teaching_suggestions_prompt,
+    # build_calibrate_difficulty_prompt,
 )
 
-# Lesson-plan model: "quality" tier + BASE_SYSTEM_PROMPT as a system instruction.
-# This saves ~600 tokens per call vs. prepending it to every user prompt.
-_lesson_plan_model = get_model("quality", system_instruction=BASE_SYSTEM_PROMPT)
-
-# Elementary lesson model: same quality tier, but a completely different pedagogical
-# framework focused on attention spans, energy management, and story-first design.
+# Elementary lesson model: story-driven, energy-managed lesson plans for Grades 1–5.
 _elementary_lesson_model = get_model("quality", system_instruction=ELEMENTARY_SYSTEM_PROMPT)
 
 
@@ -37,83 +30,15 @@ _elementary_lesson_model = get_model("quality", system_instruction=ELEMENTARY_SY
 # Public generators
 # ---------------------------------------------------------------------------
 
-def summarize_lecture(content, is_uri=False):
-    """Summarizes a lecture transcript or media file."""
-    if is_uri:
-        source = Part.from_uri(mime_type="video/mp4", uri=content)
-        prompt_parts = [build_summarize_lecture_prompt(), source]
-    else:
-        prompt_parts = [build_summarize_lecture_prompt(), content]
-
-    return safe_generate_content(
-        prompt_parts,
-        config={"max_output_tokens": 2048, "temperature": 0.2},
-        tier="fast",
-    )
-
-
-def generate_lecture_plan(grade, subject, topic, duration, difficulty):
-    """Generates a custom lecture plan based on teacher requirements."""
-    return safe_generate_content(
-        build_lecture_plan_prompt(grade, subject, topic, duration, difficulty),
-        config={"max_output_tokens": 2048, "temperature": 0.7},
-        tier="fast",
-    )
-
-
-def generate_lesson_plan_v2(
-    topic_name,
-    ontology_context,
-    chapter_topics,
-    grade,
-    duration,
-    teacher_profile=None,
-    student_profile=None,
-    learning_gaps=None,
-    selected_exercises=None,
-):
-    """Advanced lesson plan generator using ontology context and adaptive profiles."""
-    teacher_context = ""
-    if teacher_profile:
-        teacher_context = (
-            f"TEACHER PROFILE:\n"
-            f"- Style: {teacher_profile.get('teaching_style')}\n"
-            f"- Preference: {teacher_profile.get('activity_preference')}\n"
-            f"- Difficulty: {teacher_profile.get('difficulty_preference')}"
-        )
-
-    student_context = ""
-    if student_profile:
-        student_context = (
-            f"STUDENT PROFILE:\n"
-            f"- Style: {student_profile.get('learning_style')}\n"
-            f"- Attention: {student_profile.get('attention_span')}\n"
-            f"- Level: {student_profile.get('learning_level')}"
-        )
-
-    gap_context = f"Learning Gaps for Review: {', '.join(learning_gaps)}" if learning_gaps else ""
-    exercise_context = f"Available Exercises: {json.dumps(selected_exercises)}" if selected_exercises else ""
-
-    plan_schema = json.dumps(LessonPlan.model_json_schema(), indent=2)
-    prompt = build_lesson_plan_prompt(
-        topic_name=topic_name,
-        grade=grade,
-        duration=duration,
-        plan_schema=plan_schema,
-        ontology_context=ontology_context,
-        chapter_topics=chapter_topics,
-        teacher_context=teacher_context,
-        student_context=student_context,
-        gap_context=gap_context,
-        exercise_context=exercise_context,
-    )
-
-    return safe_generate_content(
-        prompt,
-        is_json=True,
-        config={"max_output_tokens": 8192, "temperature": 0.5},
-        model=_lesson_plan_model,
-    )
+# --- UNUSED (not called by any active API endpoint) ---
+# def summarize_lecture(content, is_uri=False): ...
+# def generate_lecture_plan(grade, subject, topic, duration, difficulty): ...
+# def generate_lesson_plan_v2(topic_name, ontology_context, ...): ...
+# def generate_next_day_plan(today_missed_topics, next_topic, ...): ...
+# def generate_weekly_plan(chapter_context, grade): ...
+# def generate_teaching_suggestions(mastery_stats): ...
+# def calibrate_difficulty_ai(student_profile_dict, topic): ...
+# ------------------------------------------------------
 
 
 def generate_study_plan(
@@ -144,39 +69,39 @@ def generate_study_plan(
     )
 
 
-def generate_next_day_plan(today_missed_topics, next_topic, ontology_context, grade, duration):
-    """Generates a lesson plan for the next day covering missed material."""
-    return safe_generate_content(
-        build_next_day_plan_prompt(today_missed_topics, next_topic, ontology_context, grade, duration),
-        config={"max_output_tokens": 4096, "temperature": 0.4},
-        tier="fast",
-    )
+# def generate_next_day_plan(today_missed_topics, next_topic, ontology_context, grade, duration):
+#     """Generates a lesson plan for the next day covering missed material."""
+#     return safe_generate_content(
+#         build_next_day_plan_prompt(today_missed_topics, next_topic, ontology_context, grade, duration),
+#         config={"max_output_tokens": 4096, "temperature": 0.4},
+#         tier="fast",
+#     )
 
 
-def generate_weekly_plan(chapter_context, grade):
-    """Generates a 5-day weekly teaching plan."""
-    return safe_generate_content(
-        build_weekly_plan_prompt(chapter_context, grade),
-        config={"max_output_tokens": 4096, "temperature": 0.4},
-        tier="fast",
-    )
+# def generate_weekly_plan(chapter_context, grade):
+#     """Generates a 5-day weekly teaching plan."""
+#     return safe_generate_content(
+#         build_weekly_plan_prompt(chapter_context, grade),
+#         config={"max_output_tokens": 4096, "temperature": 0.4},
+#         tier="fast",
+#     )
 
 
-def generate_teaching_suggestions(mastery_stats: list):
-    """AI-driven pedagogical suggestions based on class mastery statistics."""
-    return safe_generate_content(
-        build_teaching_suggestions_prompt(mastery_stats),
-        tier="fast",
-    )
+# def generate_teaching_suggestions(mastery_stats: list):
+#     """AI-driven pedagogical suggestions based on class mastery statistics."""
+#     return safe_generate_content(
+#         build_teaching_suggestions_prompt(mastery_stats),
+#         tier="fast",
+#     )
 
 
-def calibrate_difficulty_ai(student_profile_dict: dict, topic: str):
-    """Uses AI to predict if difficulty should be adjusted based on student history."""
-    return safe_generate_content(
-        build_calibrate_difficulty_prompt(student_profile_dict, topic),
-        is_json=True,
-        tier="fast",
-    )
+# def calibrate_difficulty_ai(student_profile_dict: dict, topic: str):
+#     """Uses AI to predict if difficulty should be adjusted based on student history."""
+#     return safe_generate_content(
+#         build_calibrate_difficulty_prompt(student_profile_dict, topic),
+#         is_json=True,
+#         tier="fast",
+#     )
 
 
 def generate_elementary_lesson_plan(
