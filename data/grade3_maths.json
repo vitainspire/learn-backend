@@ -1,0 +1,4142 @@
+{
+  "subject": "Grade3 Maths",
+  "chapters": [
+    {
+      "chapter_number": 1,
+      "chapter_title": "SHAPES AND SPATIAL UNDERSTANDING",
+      "topics": [
+        {
+          "topic_name": "Different Views of a Chair",
+          "concept_summary": "One day a teacher asked her students to draw pictures of chairs in their homes.\nNext day Shalini brought the two pictures that she had drawn.\nRajni looked at one of the pictures and said, \"This is not a chair\".\nShalini said, \"It is a chair.\"",
+          "details_and_sidebars": [],
+          "prerequisites": [],
+          "original_exercises": [],
+          "status": "untaught",
+          "last_taught_date": null
+        },
+        {
+          "topic_name": "Identifying Objects from Different Views",
+          "concept_summary": "The teacher said, \"This is a chair. It is how the chair looks when you look at it from the top.\"\nPooja and Reena had drawn pictures of chair like this.\nHave you looked at a chair from different sides?\nDo they look the same or different?",
+          "details_and_sidebars": [],
+          "prerequisites": [],
+          "original_exercises": [
+            "Look at the pictures of a house drawn here. Can you say which is drawn\nfrom the top, which is from the front and which is from the side. Write in\nthe boxes given below.",
+            "Some pictures of objects are given here. These pictures show their side\nview. Write the names of the objects in the boxes given below them.",
+            "Some pictures of objects are given here. These pictures show their top\nview. Write the names of the objects in the boxes given below them.",
+            "Draw the picture of a table to show how it will look like from the top and\nthe side."
+          ],
+          "status": "untaught",
+          "last_taught_date": null
+        },
+        {
+          "topic_name": "Tracing Objects and Identifying Shapes",
+          "concept_summary": "Take a match-box, put it on a paper and draw\nas shown here. Observe the shapes formed.\nTake a bangle and trace it. Observe the shape formed.",
+          "details_and_sidebars": [],
+          "prerequisites": [],
+          "original_exercises": [
+            "Trace the following objects on a paper. Identify the shapes and draw in\nthe table."
+          ],
+          "status": "untaught",
+          "last_taught_date": null
+        },
+        {
+          "topic_name": "Shapes of Opened Objects",
+          "concept_summary": "Take a match-box. Open it as shown in the figure.\nSee how it looks.",
+          "details_and_sidebars": [],
+          "prerequisites": [],
+          "original_exercises": [
+            "Now see these objects. How will they appear when they are opened up?\nTick (9 ) the correct answer.",
+            "Collect a toothpaste box, a soap wrapper, a chalk box and\na biscuit packet wrapper. Open them and draw their shapes."
+          ],
+          "status": "untaught",
+          "last_taught_date": null
+        },
+        {
+          "topic_name": "Observing Shapes in a Rangoli",
+          "concept_summary": "Sita and Gita are very interested in making a rangoli. They make rangolis on the\nday of a festival. Observe this lovely rangoli.\nIdentify these shapes \n, \n, \n, \n, \n, \n in the Rangoli.",
+          "details_and_sidebars": [],
+          "prerequisites": [],
+          "original_exercises": [
+            "Fill the colour according to the given shape.\nBlack,  \n Green,   \n Red,  \n Yellow,   \n Blue\nIdentify different shapes in the picture and colour as given above."
+          ],
+          "status": "untaught",
+          "last_taught_date": null
+        },
+        {
+          "topic_name": "Playing with Match-sticks",
+          "concept_summary": "Suresh made these shapes using match-sticks.\nUsing 4 sticks\nUsing 6 sticks\n     Using 3 sticks",
+          "details_and_sidebars": [],
+          "prerequisites": [],
+          "original_exercises": [
+            "Make shapes using match-sticks",
+            "How many different types of shapes can be formed using 8\nsticks?",
+            "How many different types of shapes can be formed using\n5 sticks?",
+            "How many different types of shapes can be formed using\n12 sticks?",
+            "How many different types of shapes can be formed using\n6 sticks?"
+          ],
+          "status": "untaught",
+          "last_taught_date": null
+        },
+        {
+          "topic_name": "Identifying Shapes in Flooring",
+          "concept_summary": "See the three types of flooring in different houses.  Identify the shapes in\nit. Draw the shapes in the given blanks.",
+          "details_and_sidebars": [],
+          "prerequisites": [],
+          "original_exercises": [
+            "This floor is formed using _____ shapes.",
+            "This floor is formed using _____  shapes.",
+            "This floor is formed using _____ shapes."
+          ],
+          "status": "untaught",
+          "last_taught_date": null
+        },
+        {
+          "topic_name": "Tiling Activities",
+          "concept_summary": "Pooja and her brother started arranging some match-boxes on a paper.\nCan they arrange them without leaving any gap?\nNow they took some bangles and placed\nthem on a white paper. Is it possible to\narrange them without any gaps on the\npaper.",
+          "details_and_sidebars": [],
+          "prerequisites": [],
+          "original_exercises": [],
+          "status": "untaught",
+          "last_taught_date": null
+        },
+        {
+          "topic_name": "Paper Folding Activities",
+          "concept_summary": "Take a paper. Fold it as shown in the picture and make a boat.",
+          "details_and_sidebars": [],
+          "prerequisites": [],
+          "original_exercises": [
+            "Take a piece of paper and try making a boat yourself. Then, try to make a\nrocket."
+          ],
+          "status": "untaught",
+          "last_taught_date": null
+        },
+        {
+          "topic_name": "Do This - Shape Identification and Counting",
+          "concept_summary": "Some shapes are given below with different colours. Colour the shapes\nin the picture with the same colour as shown below.",
+          "details_and_sidebars": [],
+          "prerequisites": [],
+          "original_exercises": [
+            "Look at the picture of the peacock and answer the following.",
+            "How many \n are there in each picture? Count them and write in the\nblank.",
+            "How many \n are there in each picture? Count them and write in the\nblank.",
+            "Count and write."
+          ],
+          "status": "untaught",
+          "last_taught_date": null
+        },
+        {
+          "topic_name": "Tracing Objects",
+          "concept_summary": "Take a match-box, put it on a paper and draw as shown here. Observe the shapes formed.\n\nTake a bangle and trace it. Observe the shape formed.\n\nTrace the following objects on a paper. Identify the shapes and draw in the table.",
+          "details_and_sidebars": [],
+          "prerequisites": [],
+          "original_exercises": [],
+          "status": "untaught",
+          "last_taught_date": null
+        },
+        {
+          "topic_name": "Shapes in Rangoli",
+          "concept_summary": "Sita and Gita are very interested in making a rangoli. They make rangolis on the day of a festival. Observe this lovely rangoli.\n\nIdentify these shapes , , , , , in the Rangoli.\n\nFill the colour according to the given shape.\nBlack, Green, Red, Yellow, Blue\n\nIdentify different shapes in the picture and colour as given above.",
+          "details_and_sidebars": [],
+          "prerequisites": [],
+          "original_exercises": [],
+          "status": "untaught",
+          "last_taught_date": null
+        },
+        {
+          "topic_name": "Shapes with Matchsticks",
+          "concept_summary": "Suresh made these shapes using match-sticks.\n\nUsing 4 sticks\nUsing 6 sticks\nUsing 3 sticks\n\nMake shapes using match-sticks",
+          "details_and_sidebars": [],
+          "prerequisites": [],
+          "original_exercises": [],
+          "status": "untaught",
+          "last_taught_date": null
+        },
+        {
+          "topic_name": "Flooring Patterns",
+          "concept_summary": "See the three types of flooring in different houses. Identify the shapes in it. Draw the shapes in the given blanks.\n\nThis floor is formed using _____ shapes.\nThis floor is formed using _____ shapes.\n\nThis floor is formed using _____ shapes.",
+          "details_and_sidebars": [],
+          "prerequisites": [],
+          "original_exercises": [],
+          "status": "untaught",
+          "last_taught_date": null
+        },
+        {
+          "topic_name": "Tiling with Matchboxes and Bangles",
+          "concept_summary": "Pooja and her brother started arranging some match-boxes on a paper.\n\nCan they arrange them without leaving any gap?\n\nNow they took some bangles and placed them on a white paper. Is it possible to arrange them without any gaps on the paper.",
+          "details_and_sidebars": [],
+          "prerequisites": [],
+          "original_exercises": [],
+          "status": "untaught",
+          "last_taught_date": null
+        },
+        {
+          "topic_name": "Paper Folding",
+          "concept_summary": "Take a paper. Fold it as shown in the picture and make a boat.\n\nTake a piece of paper and try making a boat yourself. Then, try to make a rocket.",
+          "details_and_sidebars": [],
+          "prerequisites": [],
+          "original_exercises": [],
+          "status": "untaught",
+          "last_taught_date": null
+        },
+        {
+          "topic_name": "Shape Identification and Counting",
+          "concept_summary": "Some shapes are given below with different colours. Colour the shapes in the picture with the same colour as shown below.\n\nLook at the picture of the peacock and answer the following.\n\nHow many are there in each picture? Count them and write in the blank.\n\nCount and write.",
+          "details_and_sidebars": [],
+          "prerequisites": [],
+          "original_exercises": [],
+          "status": "untaught",
+          "last_taught_date": null
+        },
+        {
+          "topic_name": "Shape Identification and Counting Exercises",
+          "concept_summary": "Some shapes are given below with different colours. Colour the shapes in the picture with the same colour as shown below. Look at the picture of the peacock and answer the following. How many are there ? How many are there ? How many are there ? How many are there ? How many are there in each picture? Count them and write in the blank. How many are there in each picture? Count them and write in the blank. Count and write. How many are there? How many are there? How many are there ?",
+          "details_and_sidebars": [],
+          "prerequisites": [],
+          "original_exercises": [],
+          "status": "untaught",
+          "last_taught_date": null
+        },
+        {
+          "topic_name": "Shapes in a Rangoli",
+          "concept_summary": "Sita and Gita are very interested in making a rangoli. They make rangolis on the day of a festival. Observe this lovely rangoli.\n\nIdentify these shapes , , , , , in the Rangoli.\n\nFill the colour according to the given shape.\n\nBlack, Green, Red, Yellow, Blue\n\nIdentify different shapes in the picture and colour as given above.",
+          "details_and_sidebars": [],
+          "prerequisites": [],
+          "original_exercises": [],
+          "status": "untaught",
+          "last_taught_date": null
+        },
+        {
+          "topic_name": "Making Shapes with Match-sticks",
+          "concept_summary": "Suresh made these shapes using match-sticks.\n\nUsing 4 sticks\nUsing 6 sticks\nUsing 3 sticks\n\nMake shapes using match-sticks",
+          "details_and_sidebars": [],
+          "prerequisites": [],
+          "original_exercises": [
+            "Make a  using 8 sticks",
+            "Make a  using 8 sticks",
+            "Make a  using 5 sticks",
+            "Make a  using 12 sticks",
+            "Make a  using 12 sticks",
+            "Make a  using 12 sticks",
+            "How many different types of shapes can be formed using 8 sticks?",
+            "How many different types of shapes can be formed using 5 sticks?",
+            "How many different types of shapes can be formed using 12 sticks?",
+            "How many different types of shapes can be formed using 6 sticks?"
+          ],
+          "status": "untaught",
+          "last_taught_date": null
+        },
+        {
+          "topic_name": "Shapes in Flooring",
+          "concept_summary": "See the three types of flooring in different houses. Identify the shapes in it. Draw the shapes in the given blanks.\n\nThis floor is formed using _____ shapes.\nThis floor is formed using _____ shapes.\nThis floor is formed using _____ shapes.",
+          "details_and_sidebars": [],
+          "prerequisites": [],
+          "original_exercises": [],
+          "status": "untaught",
+          "last_taught_date": null
+        },
+        {
+          "topic_name": "Coloring Shapes",
+          "concept_summary": "Some shapes are given below with different colours. Colour the shapes in the picture with the same colour as shown below.",
+          "details_and_sidebars": [],
+          "prerequisites": [],
+          "original_exercises": [],
+          "status": "untaught",
+          "last_taught_date": null
+        },
+        {
+          "topic_name": "Counting Shapes in Pictures",
+          "concept_summary": "Look at the picture of the peacock and answer the following.\n\nHow many are there ? \u2014\u2014\u2014\u2014\n\nHow many are there ? \u2014\u2014\u2014\u2014\n\nHow many are there ? \u2014\u2014\u2014\u2014\n\nHow many are there ? \u2014\u2014\u2014\u2014",
+          "details_and_sidebars": [],
+          "prerequisites": [],
+          "original_exercises": [
+            "How many  are there in each picture? Count them and write in the blank.",
+            "How many  are there in each picture? Count them and write in the blank.",
+            "How many  are there? \u2014\u2014",
+            "How many  are there? \u2014\u2014",
+            "How many  are there ? \u2014\u2014"
+          ],
+          "status": "untaught",
+          "last_taught_date": null
+        },
+        {
+          "topic_name": "Different Perspectives of Objects",
+          "concept_summary": "One day a teacher asked her students to draw\npictures of chairs in their homes.\n\nNext day Shalini brought the two pictures that\nshe had drawn.\n\nRajni looked at one of the pictures and said,\n\"This is not a chair\".\n\nShalini said, \"It is a chair.\"\n\nThe teacher asked, \"What are you talking\nabout?\"\n\nRajni showed the picture to the teacher.\n\nWhat do you think? Has Shalini drawn the picture of  a\nchair?\n\nThe teacher said, \"This is a chair. It is how the chair looks when you look at it\nfrom the top.\"",
+          "details_and_sidebars": [],
+          "prerequisites": [],
+          "original_exercises": [
+            "Look at the pictures of a house drawn here. Can you say which is drawn\nfrom the top, which is from the front and which is from the side. Write in\nthe boxes given below.",
+            "Identify these objects.\n\n(i)\nSome pictures of objects are given here. These pictures show their side\nview. Write the names of the objects in the boxes given below them.",
+            "(ii)\nSome pictures of objects are given here. These pictures show their top\nview. Write the names of the objects in the boxes given below them.",
+            "(iii)\nDraw the picture of a table to show how it will look like from the top and\nthe side."
+          ],
+          "status": "untaught",
+          "last_taught_date": null
+        },
+        {
+          "topic_name": "Nets of Cuboids",
+          "concept_summary": "Take a match-box. Open it as shown in the figure.\n\nSee how it looks.",
+          "details_and_sidebars": [],
+          "prerequisites": [],
+          "original_exercises": [
+            "Now see these objects. How will they appear when they are opened up?\nTick (9 ) the correct answer.",
+            "Collect a toothpaste box, a soap wrapper, a chalk box and\na biscuit packet wrapper. Open them and draw their shapes."
+          ],
+          "status": "untaught",
+          "last_taught_date": null
+        },
+        {
+          "topic_name": "Playing with Matchsticks",
+          "concept_summary": "Suresh made these shapes using match-sticks.\n\nUsing 4 sticks\nUsing 6 sticks\n     Using 3 sticks",
+          "details_and_sidebars": [],
+          "prerequisites": [],
+          "original_exercises": [
+            "Make shapes using match-sticks\n\n(A)\nMake a \n using 8 sticks\n\n(B)\nMake a \n using 8 sticks\n\n(C)\nMake a \n using 5 sticks\n\n(D)\nMake a \n using 12 sticks\n\n(E)\nMake a \n using 12 sticks\n\n(F)\nMake a \n using 12 sticks",
+            "(A)\nHow many different types of shapes can be formed using 8\nsticks?\n\n(B)\nHow many different types of shapes can be formed using\n5 sticks?\n\n(C)\nHow many different types of shapes can be formed using\n12 sticks?\n\n(D)\nHow many different types of shapes can be formed using\n6 sticks?"
+          ],
+          "status": "untaught",
+          "last_taught_date": null
+        },
+        {
+          "topic_name": "Tiling",
+          "concept_summary": "See the three types of flooring in different houses.  Identify the shapes in\nit. Draw the shapes in the given blanks.",
+          "details_and_sidebars": [],
+          "prerequisites": [],
+          "original_exercises": [
+            "This floor is formed using _____ shapes.\nThis floor is formed using _____  shapes.",
+            "This floor is formed using _____ shapes."
+          ],
+          "status": "untaught",
+          "last_taught_date": null
+        },
+        {
+          "topic_name": "Do This (Shapes Review)",
+          "concept_summary": "",
+          "details_and_sidebars": [],
+          "prerequisites": [],
+          "original_exercises": [
+            "Some shapes are given below with different colours. Colour the shapes\nin the picture with the same colour as shown below.",
+            "Look at the picture of the peacock and answer the following.\n\n(A)\nHow many \n are there ? \u2014\u2014\u2014\u2014\n\n(B)\nHow many \n are there ? \u2014\u2014\u2014\u2014\n\n(C)\nHow many \n are there ? \u2014\u2014\u2014\u2014\n\n(D)\nHow many \n are there ? \u2014\u2014\u2014\u2014",
+            "How many \n are there in each picture? Count them and write in the\nblank.",
+            "How many \n are there in each picture? Count them and write in the\nblank.",
+            "Count and write.\n\n(A)\nHow many \n are there? \u2014\u2014\n\n(B)\nHow many \n are there?     \u2014\u2014\n\n(C)\nHow many \n are there ?    \u2014\u2014"
+          ],
+          "status": "untaught",
+          "last_taught_date": null
+        },
+        {
+          "topic_name": "Views of a House",
+          "concept_summary": "Look at the pictures of a house drawn here. Can you say which is drawn from the top, which is from the front and which is from the side. Write in the boxes given below.",
+          "details_and_sidebars": [],
+          "prerequisites": [],
+          "original_exercises": [],
+          "status": "untaught",
+          "last_taught_date": null
+        },
+        {
+          "topic_name": "Identifying Objects from Side View",
+          "concept_summary": "Some pictures of objects are given here. These pictures show their side view. Write the names of the objects in the boxes given below them.",
+          "details_and_sidebars": [],
+          "prerequisites": [],
+          "original_exercises": [],
+          "status": "untaught",
+          "last_taught_date": null
+        },
+        {
+          "topic_name": "Identifying Objects from Top View",
+          "concept_summary": "Some pictures of objects are given here. These pictures show their top view. Write the names of the objects in the boxes given below them.",
+          "details_and_sidebars": [],
+          "prerequisites": [],
+          "original_exercises": [],
+          "status": "untaught",
+          "last_taught_date": null
+        },
+        {
+          "topic_name": "Drawing Table from Top and Side View",
+          "concept_summary": "Draw the picture of a table to show how it will look like from the top and the side.",
+          "details_and_sidebars": [],
+          "prerequisites": [],
+          "original_exercises": [],
+          "status": "untaught",
+          "last_taught_date": null
+        },
+        {
+          "topic_name": "Tracing Objects - Matchbox",
+          "concept_summary": "Take a match-box, put it on a paper and draw as shown here. Observe the shapes formed.",
+          "details_and_sidebars": [],
+          "prerequisites": [],
+          "original_exercises": [],
+          "status": "untaught",
+          "last_taught_date": null
+        },
+        {
+          "topic_name": "Tracing Objects - Bangle",
+          "concept_summary": "Take a bangle and trace it. Observe the shape formed.",
+          "details_and_sidebars": [],
+          "prerequisites": [],
+          "original_exercises": [],
+          "status": "untaught",
+          "last_taught_date": null
+        },
+        {
+          "topic_name": "Tracing Objects - Table",
+          "concept_summary": "Trace the following objects on a paper. Identify the shapes and draw in the table.",
+          "details_and_sidebars": [],
+          "prerequisites": [],
+          "original_exercises": [],
+          "status": "untaught",
+          "last_taught_date": null
+        },
+        {
+          "topic_name": "Identifying Shapes in Rangoli",
+          "concept_summary": "Sita and Gita are very interested in making a rangoli. They make rangolis on the day of a festival. Observe this lovely rangoli.\nIdentify these shapes \n, \n, \n, \n, \n, \n in the Rangoli.",
+          "details_and_sidebars": [],
+          "prerequisites": [],
+          "original_exercises": [],
+          "status": "untaught",
+          "last_taught_date": null
+        },
+        {
+          "topic_name": "Coloring Shapes in Rangoli",
+          "concept_summary": "Fill the colour according to the given shape.\nBlack,  \n Green,   \n Red,  \n Yellow,   \n Blue\nIdentify different shapes in the picture and colour as given above.",
+          "details_and_sidebars": [],
+          "prerequisites": [],
+          "original_exercises": [],
+          "status": "untaught",
+          "last_taught_date": null
+        },
+        {
+          "topic_name": "Arranging Matchboxes",
+          "concept_summary": "Pooja and her brother started arranging some match-boxes on a paper.\nCan they arrange them without leaving any gap?\nNow they took some bangles and placed\nthem on a white paper. Is it possible to\narrange them without any gaps on the\npaper.",
+          "details_and_sidebars": [],
+          "prerequisites": [],
+          "original_exercises": [],
+          "status": "untaught",
+          "last_taught_date": null
+        },
+        {
+          "topic_name": "Paper Boat Activity",
+          "concept_summary": "Take a paper. Fold it as shown in the picture and make a boat.",
+          "details_and_sidebars": [],
+          "prerequisites": [],
+          "original_exercises": [],
+          "status": "untaught",
+          "last_taught_date": null
+        },
+        {
+          "topic_name": "Counting Shapes in a Peacock Picture",
+          "concept_summary": "Look at the picture of the peacock and answer the following.",
+          "details_and_sidebars": [],
+          "prerequisites": [],
+          "original_exercises": [],
+          "status": "untaught",
+          "last_taught_date": null
+        },
+        {
+          "topic_name": "Counting Triangles",
+          "concept_summary": "How many \n are there in each picture? Count them and write in the\nblank.",
+          "details_and_sidebars": [],
+          "prerequisites": [],
+          "original_exercises": [],
+          "status": "untaught",
+          "last_taught_date": null
+        },
+        {
+          "topic_name": "Counting Rectangles",
+          "concept_summary": "How many \n are there in each picture? Count them and write in the\nblank.",
+          "details_and_sidebars": [],
+          "prerequisites": [],
+          "original_exercises": [],
+          "status": "untaught",
+          "last_taught_date": null
+        },
+        {
+          "topic_name": "Counting Shapes",
+          "concept_summary": "Count and write.",
+          "details_and_sidebars": [],
+          "prerequisites": [],
+          "original_exercises": [],
+          "status": "untaught",
+          "last_taught_date": null
+        },
+        {
+          "topic_name": "Tracing a Bangle",
+          "concept_summary": "(ii)\nTake a bangle and trace it. Observe the shape formed.",
+          "details_and_sidebars": [],
+          "prerequisites": [],
+          "original_exercises": [],
+          "status": "untaught",
+          "last_taught_date": null
+        },
+        {
+          "topic_name": "Tracing Various Objects and Identifying Shapes",
+          "concept_summary": "(iii)\nTrace the following objects on a paper. Identify the shapes and draw in\nthe table.",
+          "details_and_sidebars": [],
+          "prerequisites": [],
+          "original_exercises": [],
+          "status": "untaught",
+          "last_taught_date": null
+        },
+        {
+          "topic_name": "Identifying Opened Shapes",
+          "concept_summary": "(i)\nNow see these objects. How will they appear when they are opened up?\nTick (9 ) the correct answer.",
+          "details_and_sidebars": [],
+          "prerequisites": [],
+          "original_exercises": [
+            "Collect a toothpaste box, a soap wrapper, a chalk box and\na biscuit packet wrapper. Open them and draw their shapes."
+          ],
+          "status": "untaught",
+          "last_taught_date": null
+        },
+        {
+          "topic_name": "Making Shapes with Matchsticks",
+          "concept_summary": "(i)\nMake shapes using match-sticks",
+          "details_and_sidebars": [],
+          "prerequisites": [],
+          "original_exercises": [
+            "(A)\nMake a \n using 8 sticks",
+            "(B)\nMake a \n using 8 sticks",
+            "(C)\nMake a \n using 5 sticks",
+            "(D)\nMake a \n using 12 sticks",
+            "(E)\nMake a \n using 12 sticks",
+            "(F)\nMake a \n using 12 sticks",
+            "(ii)\n(A)\nHow many different types of shapes can be formed using 8\nsticks?",
+            "(B)\nHow many different types of shapes can be formed using\n5 sticks?",
+            "(C)\nHow many different types of shapes can be formed using\n12 sticks?",
+            "(D)\nHow many different types of shapes can be formed using\n6 sticks?"
+          ],
+          "status": "untaught",
+          "last_taught_date": null
+        },
+        {
+          "topic_name": "Counting Various Shapes",
+          "concept_summary": "5. Count and write.",
+          "details_and_sidebars": [],
+          "prerequisites": [],
+          "original_exercises": [
+            "(A)\nHow many \n are there? \u2014\u2014",
+            "(B)\nHow many \n are there?     \u2014\u2014",
+            "(C)\nHow many \n are there ?    \u2014\u2014"
+          ],
+          "status": "untaught",
+          "last_taught_date": null
+        },
+        {
+          "topic_name": "Opened Objects - Identification",
+          "concept_summary": "Now see these objects. How will they appear when they are opened up?\nTick (9 ) the correct answer.",
+          "details_and_sidebars": [],
+          "prerequisites": [],
+          "original_exercises": [],
+          "status": "untaught",
+          "last_taught_date": null
+        },
+        {
+          "topic_name": "Opened Objects - Drawing",
+          "concept_summary": "Collect a toothpaste box, a soap wrapper, a chalk box and\na biscuit packet wrapper. Open them and draw their shapes.",
+          "details_and_sidebars": [],
+          "prerequisites": [],
+          "original_exercises": [],
+          "status": "untaught",
+          "last_taught_date": null
+        },
+        {
+          "topic_name": "Rangoli Colouring",
+          "concept_summary": "Fill the colour according to the given shape.\nBlack,  \n Green,   \n Red,  \n Yellow,   \n Blue\nIdentify different shapes in the picture and colour as given above.",
+          "details_and_sidebars": [],
+          "prerequisites": [],
+          "original_exercises": [],
+          "status": "untaught",
+          "last_taught_date": null
+        },
+        {
+          "topic_name": "Matchstick Shape Questions",
+          "concept_summary": null,
+          "details_and_sidebars": [],
+          "prerequisites": [],
+          "original_exercises": [
+            "(A)\nHow many different types of shapes can be formed using 8\nsticks?",
+            "(B)\nHow many different types of shapes can be formed using\n5 sticks?",
+            "(C)\nHow many different types of shapes can be formed using\n12 sticks?",
+            "(D)\nHow many different types of shapes can be formed using\n6 sticks?"
+          ],
+          "status": "untaught",
+          "last_taught_date": null
+        },
+        {
+          "topic_name": "Flooring Shapes",
+          "concept_summary": "See the three types of flooring in different houses.  Identify the shapes in\nit. Draw the shapes in the given blanks.",
+          "details_and_sidebars": [],
+          "prerequisites": [],
+          "original_exercises": [],
+          "status": "untaught",
+          "last_taught_date": null
+        },
+        {
+          "topic_name": "Matchbox Arrangement",
+          "concept_summary": "Pooja and her brother started arranging some match-boxes on a paper.\nCan they arrange them without leaving any gap?",
+          "details_and_sidebars": [],
+          "prerequisites": [],
+          "original_exercises": [],
+          "status": "untaught",
+          "last_taught_date": null
+        },
+        {
+          "topic_name": "Bangle Arrangement",
+          "concept_summary": "Now they took some bangles and placed\nthem on a white paper. Is it possible to\narrange them without any gaps on the\npaper.",
+          "details_and_sidebars": [],
+          "prerequisites": [],
+          "original_exercises": [],
+          "status": "untaught",
+          "last_taught_date": null
+        },
+        {
+          "topic_name": "Paper Rocket Activity",
+          "concept_summary": "Take a piece of paper and try making a boat yourself. Then, try to make a\nrocket.",
+          "details_and_sidebars": [],
+          "prerequisites": [],
+          "original_exercises": [],
+          "status": "untaught",
+          "last_taught_date": null
+        },
+        {
+          "topic_name": "Colouring Shapes",
+          "concept_summary": "Some shapes are given below with different colours. Colour the shapes\nin the picture with the same colour as shown below.",
+          "details_and_sidebars": [],
+          "prerequisites": [],
+          "original_exercises": [],
+          "status": "untaught",
+          "last_taught_date": null
+        },
+        {
+          "topic_name": "Peacock Shape Counting",
+          "concept_summary": "Look at the picture of the peacock and answer the following.",
+          "details_and_sidebars": [],
+          "prerequisites": [],
+          "original_exercises": [
+            "(A)\nHow many  are there ? \u2014\u2014\u2014\u2014",
+            "(B)\nHow many  are there ? \u2014\u2014\u2014\u2014",
+            "(C)\nHow many  are there ? \u2014\u2014\u2014\u2014",
+            "(D)\nHow many  are there ? \u2014\u2014\u2014\u2014"
+          ],
+          "status": "untaught",
+          "last_taught_date": null
+        },
+        {
+          "topic_name": "Triangle Counting",
+          "concept_summary": "How many  are there in each picture? Count them and write in the\nblank.",
+          "details_and_sidebars": [],
+          "prerequisites": [],
+          "original_exercises": [],
+          "status": "untaught",
+          "last_taught_date": null
+        },
+        {
+          "topic_name": "Rectangle Counting",
+          "concept_summary": "How many  are there in each picture? Count them and write in the\nblank.",
+          "details_and_sidebars": [],
+          "prerequisites": [],
+          "original_exercises": [],
+          "status": "untaught",
+          "last_taught_date": null
+        },
+        {
+          "topic_name": "Shape Counting",
+          "concept_summary": "Count and write.",
+          "details_and_sidebars": [],
+          "prerequisites": [],
+          "original_exercises": [
+            "(A)\nHow many  are there? \u2014\u2014",
+            "(B)\nHow many  are there?     \u2014\u2014",
+            "(C)\nHow many  are there ?    \u2014\u2014"
+          ],
+          "status": "untaught",
+          "last_taught_date": null
+        },
+        {
+          "topic_name": "Tracing Objects and Identifying Shapes (continued)",
+          "concept_summary": null,
+          "details_and_sidebars": [],
+          "prerequisites": [],
+          "original_exercises": [
+            "Trace the following objects on a paper. Identify the shapes and draw in\nthe table.\n\nObject\n    Shape of the object"
+          ],
+          "status": "untaught",
+          "last_taught_date": null
+        },
+        {
+          "topic_name": "Shapes of Opened Objects (continued)",
+          "concept_summary": null,
+          "details_and_sidebars": [],
+          "prerequisites": [],
+          "original_exercises": [
+            "Now see these objects. How will they appear when they are opened up?\nTick (9 ) the correct answer.\n\nBook\nMatch-box tray",
+            "Collect a toothpaste box, a soap wrapper, a chalk box and\na biscuit packet wrapper. Open them and draw their shapes."
+          ],
+          "status": "untaught",
+          "last_taught_date": null
+        },
+        {
+          "topic_name": "Observing Shapes in Rangoli",
+          "concept_summary": "Sita and Gita are very interested in making a rangoli. They make rangolis on the\nday of a festival. Observe this lovely rangoli.\n\nIdentify these shapes \n, \n, \n, \n, \n, \n in the Rangoli.",
+          "details_and_sidebars": [],
+          "prerequisites": [],
+          "original_exercises": [],
+          "status": "untaught",
+          "last_taught_date": null
+        },
+        {
+          "topic_name": "Coloring Shapes in a Picture",
+          "concept_summary": null,
+          "details_and_sidebars": [],
+          "prerequisites": [],
+          "original_exercises": [
+            "Fill the colour according to the given shape.\n\nBlack,  \n Green,   \n Red,  \n Yellow,   \n Blue\n\nIdentify different shapes in the picture and colour as given above."
+          ],
+          "status": "untaught",
+          "last_taught_date": null
+        },
+        {
+          "topic_name": "Arranging Objects Without Gaps",
+          "concept_summary": "Pooja and her brother started arranging some match-boxes on a paper.\n\nCan they arrange them without leaving any gap?\n\nNow they took some bangles and placed\nthem on a white paper. Is it possible to\narrange them without any gaps on the\npaper.",
+          "details_and_sidebars": [],
+          "prerequisites": [],
+          "original_exercises": [],
+          "status": "untaught",
+          "last_taught_date": null
+        },
+        {
+          "topic_name": "Paper Folding Activities (continued)",
+          "concept_summary": null,
+          "details_and_sidebars": [],
+          "prerequisites": [],
+          "original_exercises": [
+            "Take a piece of paper and try making a boat yourself. Then, try to make a\nrocket.",
+            "Some shapes are given below with different colours. Colour the shapes\nin the picture with the same colour as shown below."
+          ],
+          "status": "untaught",
+          "last_taught_date": null
+        },
+        {
+          "topic_name": "Counting Shapes in a Picture",
+          "concept_summary": null,
+          "details_and_sidebars": [],
+          "prerequisites": [],
+          "original_exercises": [
+            "Look at the picture of the peacock and answer the following.\n\n(A)\nHow many \n are there ? \u2014\u2014\u2014\u2014\n\n(B)\nHow many \n are there ? \u2014\u2014\u2014\u2014\n\n(C)\nHow many \n are there ? \u2014\u2014\u2014\u2014\n\n(D)\nHow many \n are there ? \u2014\u2014\u2014\u2014",
+            "How many \n are there in each picture? Count them and write in the\nblank.",
+            "How many \n are there in each picture? Count them and write in the\nblank.",
+            "Count and write.\n\n(A)\nHow many \n are there? \u2014\u2014\n\n(B)\nHow many \n are there?     \u2014\u2014\n\n(C)\nHow many \n are there ?    \u2014\u2014"
+          ],
+          "status": "untaught",
+          "last_taught_date": null
+        },
+        {
+          "topic_name": "Drawing a Table from Top and Side View",
+          "concept_summary": "Draw the picture of a table to show how it will look like from the top and the side.",
+          "details_and_sidebars": [],
+          "prerequisites": [],
+          "original_exercises": [],
+          "status": "untaught",
+          "last_taught_date": null
+        },
+        {
+          "topic_name": "Tracing Objects - Identifying Shapes",
+          "concept_summary": "Trace the following objects on a paper. Identify the shapes and draw in the table.",
+          "details_and_sidebars": [],
+          "prerequisites": [],
+          "original_exercises": [],
+          "status": "untaught",
+          "last_taught_date": null
+        },
+        {
+          "topic_name": "Collecting and Drawing Opened Shapes",
+          "concept_summary": "Collect a toothpaste box, a soap wrapper, a chalk box and\na biscuit packet wrapper. Open them and draw their shapes.",
+          "details_and_sidebars": [],
+          "prerequisites": [],
+          "original_exercises": [],
+          "status": "untaught",
+          "last_taught_date": null
+        },
+        {
+          "topic_name": "Questions about Shapes Formed with Matchsticks",
+          "concept_summary": "",
+          "details_and_sidebars": [],
+          "prerequisites": [],
+          "original_exercises": [
+            "(ii) (A) How many different types of shapes can be formed using 8\nsticks?",
+            "(B) How many different types of shapes can be formed using\n5 sticks?",
+            "(C) How many different types of shapes can be formed using\n12 sticks?",
+            "(D) How many different types of shapes can be formed using\n6 sticks?"
+          ],
+          "status": "untaught",
+          "last_taught_date": null
+        },
+        {
+          "topic_name": "Arranging Matchboxes and Bangles",
+          "concept_summary": "Pooja and her brother started arranging some match-boxes on a paper.\n\nCan they arrange them without leaving any gap?\n\nNow they took some bangles and placed\nthem on a white paper. Is it possible to\narrange them without any gaps on the\npaper.",
+          "details_and_sidebars": [],
+          "prerequisites": [],
+          "original_exercises": [],
+          "status": "untaught",
+          "last_taught_date": null
+        },
+        {
+          "topic_name": "Making a Paper Boat",
+          "concept_summary": "Take a paper. Fold it as shown in the picture and make a boat.",
+          "details_and_sidebars": [],
+          "prerequisites": [],
+          "original_exercises": [],
+          "status": "untaught",
+          "last_taught_date": null
+        },
+        {
+          "topic_name": "Making a Paper Rocket",
+          "concept_summary": "Take a piece of paper and try making a boat yourself. Then, try to make a rocket.",
+          "details_and_sidebars": [],
+          "prerequisites": [],
+          "original_exercises": [],
+          "status": "untaught",
+          "last_taught_date": null
+        },
+        {
+          "topic_name": "Counting Shapes - Mixed",
+          "concept_summary": "Count and write.",
+          "details_and_sidebars": [],
+          "prerequisites": [],
+          "original_exercises": [
+            "(A) How many  are there? \u2014\u2014",
+            "(B) How many  are there? \u2014\u2014",
+            "(C) How many  are there ? \u2014\u2014"
+          ],
+          "status": "untaught",
+          "last_taught_date": null
+        },
+        {
+          "topic_name": "Coloring Rangoli Shapes",
+          "concept_summary": "Fill the colour according to the given shape.\nBlack,  \n Green,   \n Red,  \n Yellow,   \n Blue\nIdentify different shapes in the picture and colour as given above.",
+          "details_and_sidebars": [],
+          "prerequisites": [],
+          "original_exercises": [],
+          "status": "untaught",
+          "last_taught_date": null
+        },
+        {
+          "topic_name": "Paper Folding - Making a Boat",
+          "concept_summary": "Take a paper. Fold it as shown in the picture and make a boat.\n\n(1)\n(2)\n(3)\n(4)\n\n(5)\n(6)\n(7)",
+          "details_and_sidebars": [],
+          "prerequisites": [],
+          "original_exercises": [],
+          "status": "untaught",
+          "last_taught_date": null
+        },
+        {
+          "topic_name": "Paper Folding - Making a Rocket",
+          "concept_summary": "Take a piece of paper and try making a boat yourself. Then, try to make a\nrocket.",
+          "details_and_sidebars": [],
+          "prerequisites": [],
+          "original_exercises": [],
+          "status": "untaught",
+          "last_taught_date": null
+        },
+        {
+          "topic_name": "Counting Triangles in Pictures",
+          "concept_summary": "How many  are there in each picture? Count them and write in the\nblank.",
+          "details_and_sidebars": [],
+          "prerequisites": [],
+          "original_exercises": [],
+          "status": "untaught",
+          "last_taught_date": null
+        },
+        {
+          "topic_name": "Counting Rectangles in Pictures",
+          "concept_summary": "How many  are there in each picture? Count them and write in the\nblank.",
+          "details_and_sidebars": [],
+          "prerequisites": [],
+          "original_exercises": [],
+          "status": "untaught",
+          "last_taught_date": null
+        },
+        {
+          "topic_name": "Identifying Views of a House",
+          "concept_summary": "Look at the pictures of a house drawn here. Can you say which is drawn from the top, which is from the front and which is from the side. Write in the boxes given below.",
+          "details_and_sidebars": [],
+          "prerequisites": [],
+          "original_exercises": [],
+          "status": "untaught",
+          "last_taught_date": null
+        },
+        {
+          "topic_name": "Drawing Top and Side Views of a Table",
+          "concept_summary": "Draw the picture of a table to show how it will look like from the top and the side.",
+          "details_and_sidebars": [],
+          "prerequisites": [],
+          "original_exercises": [],
+          "status": "untaught",
+          "last_taught_date": null
+        },
+        {
+          "topic_name": "Tracing Objects: Matchbox",
+          "concept_summary": "Take a match-box, put it on a paper and draw as shown here. Observe the shapes formed.",
+          "details_and_sidebars": [],
+          "prerequisites": [],
+          "original_exercises": [],
+          "status": "untaught",
+          "last_taught_date": null
+        },
+        {
+          "topic_name": "Tracing Objects: Bangle",
+          "concept_summary": "Take a bangle and trace it. Observe the shape formed.",
+          "details_and_sidebars": [],
+          "prerequisites": [],
+          "original_exercises": [],
+          "status": "untaught",
+          "last_taught_date": null
+        },
+        {
+          "topic_name": "Identifying Shapes in Opened Objects",
+          "concept_summary": "Now see these objects. How will they appear when they are opened up?\nTick (9 ) the correct answer.",
+          "details_and_sidebars": [],
+          "prerequisites": [],
+          "original_exercises": [],
+          "status": "untaught",
+          "last_taught_date": null
+        },
+        {
+          "topic_name": "Drawing Shapes of Opened Boxes",
+          "concept_summary": "Collect a toothpaste box, a soap wrapper, a chalk box and a biscuit packet wrapper. Open them and draw their shapes.",
+          "details_and_sidebars": [],
+          "prerequisites": [],
+          "original_exercises": [],
+          "status": "untaught",
+          "last_taught_date": null
+        },
+        {
+          "topic_name": "Questions on Shapes Formed with Matchsticks",
+          "concept_summary": null,
+          "details_and_sidebars": [],
+          "prerequisites": [],
+          "original_exercises": [
+            "(A)\nHow many different types of shapes can be formed using 8\nsticks?",
+            "(B)\nHow many different types of shapes can be formed using\n5 sticks?",
+            "(C)\nHow many different types of shapes can be formed using\n12 sticks?",
+            "(D)\nHow many different types of shapes can be formed using\n6 sticks?"
+          ],
+          "status": "untaught",
+          "last_taught_date": null
+        }
+      ]
+    },
+    {
+      "chapter_number": 2,
+      "chapter_title": "NUMBERS",
+      "topics": [
+        {
+          "topic_name": "Cricket Scores Analysis",
+          "concept_summary": "Ravi and his friends are playing cricket.\nSee the following table and answer the following questions:",
+          "details_and_sidebars": [],
+          "prerequisites": [],
+          "original_exercises": [
+            "How many runs did Ravi score?",
+            "What is the highest score given in\nthe table?",
+            "How many players  made runs\nabove 50?",
+            "How many players made runs\nbelow 50?",
+            "How many players scored the\nleast?",
+            "How many players scored\nbetween 20 and 40?"
+          ],
+          "status": "untaught",
+          "last_taught_date": null
+        },
+        {
+          "topic_name": "Forming and Ordering Two-Digit Numbers",
+          "concept_summary": null,
+          "details_and_sidebars": [],
+          "prerequisites": [],
+          "original_exercises": [
+            "Write any 5, two-digit numbers that can be formed using 6, 8 and 9.",
+            "Write the largest number?",
+            "Write the smallest number?",
+            "Write the above numbers in ascending order (from smallest to\nbiggest)."
+          ],
+          "status": "untaught",
+          "last_taught_date": null
+        },
+        {
+          "topic_name": "Rounding to the Nearest Ten",
+          "concept_summary": null,
+          "details_and_sidebars": [],
+          "prerequisites": [],
+          "original_exercises": [
+            "Circle the number nearest to the given number."
+          ],
+          "status": "untaught",
+          "last_taught_date": null
+        },
+        {
+          "topic_name": "Expanded Form of Two-Digit Numbers",
+          "concept_summary": null,
+          "details_and_sidebars": [],
+          "prerequisites": [],
+          "original_exercises": [
+            "Write the following numbers in expanded form."
+          ],
+          "status": "untaught",
+          "last_taught_date": null
+        },
+        {
+          "topic_name": "Writing Numbers from Expanded Form",
+          "concept_summary": null,
+          "details_and_sidebars": [],
+          "prerequisites": [],
+          "original_exercises": [
+            "Write the correct number for given expanded form."
+          ],
+          "status": "untaught",
+          "last_taught_date": null
+        },
+        {
+          "topic_name": "Counting Bricks in Groups",
+          "concept_summary": "Mayuri's father told her to count the bricks in their yard. She started\ncounting ... one, two, three ...\nSoon she made a mistake and she had to begin again.\nFather\n:\nWhy did you not count in groups?\nMayuri\n:\nWhat do you mean?\nFather\n:\nTake 5 at one time and count like 5, 10, 15 ......",
+          "details_and_sidebars": [],
+          "prerequisites": [],
+          "original_exercises": [],
+          "status": "untaught",
+          "last_taught_date": null
+        },
+        {
+          "topic_name": "Introduction to Three-Digit Numbers",
+          "concept_summary": "If we add 1 to 99 we get 100.\nHow many tens are there in 100?\n100 = 10 tens\nHow many ones are there in 100?\n100 = 100 ones\n99 is the biggest two-digit number.",
+          "details_and_sidebars": [],
+          "prerequisites": [],
+          "original_exercises": [],
+          "status": "untaught",
+          "last_taught_date": null
+        },
+        {
+          "topic_name": "Numbers After 100",
+          "concept_summary": "The first number with 3 digits is 100. This means that 100 is the smallest\nnumber with 3 digits.\nHow much we get, if 1 is added to 100?\nHow much we get, if 10 is added to 100?\nHow much we get, if 100 is added to 100?",
+          "details_and_sidebars": [],
+          "prerequisites": [],
+          "original_exercises": [
+            "Fill the empty boxes according to the pictures.",
+            "Fill the empty boxes according to the pictures.",
+            "Count the hundreds.",
+            "Count the hundreds, tens and ones and write the correct number in the boxes below the\npictures."
+          ],
+          "status": "untaught",
+          "last_taught_date": null
+        },
+        {
+          "topic_name": "Identifying One-Digit, Two-Digit, and Three-Digit Numbers",
+          "concept_summary": null,
+          "details_and_sidebars": [
+            "42 is 2 digit number.\n4 and 2 are the digits.\nSo this number is formed\nby 4 tens and 2 ones."
+          ],
+          "prerequisites": [],
+          "original_exercises": [
+            "Identify the one-digit, two-digit and three-digit numbers in the grid given\nbelow and write them in the table."
+          ],
+          "status": "untaught",
+          "last_taught_date": null
+        },
+        {
+          "topic_name": "Number Sequence",
+          "concept_summary": null,
+          "details_and_sidebars": [],
+          "prerequisites": [],
+          "original_exercises": [
+            "Write the correct number in the blank boxes.",
+            "See the table above and answer the following questions. Write your\nanswer in both words and numbers."
+          ],
+          "status": "untaught",
+          "last_taught_date": null
+        },
+        {
+          "topic_name": "Place Value",
+          "concept_summary": "Ones place\n9 ones\nPlace value = 9 x 1 = 9\nTens place\n4 tens\nPlace value = 4 x 10 = 40\nHundreds place\n3 hundreds\nPlace value = 3 x 100 = 300",
+          "details_and_sidebars": [
+            "If a number\nhas zero at\nany place\nwhat will be\nthe place\nvalue of\nzero?"
+          ],
+          "prerequisites": [],
+          "original_exercises": [
+            "Circle the correct numbers.",
+            "Write the place value of the underlined digit.",
+            "Write the numbers.",
+            "Bicku and Lata are playing with the numbers table in\nquestion 6 in page 21. You can also join."
+          ],
+          "status": "untaught",
+          "last_taught_date": null
+        },
+        {
+          "topic_name": "Bricks in Groups (Hundreds, Tens, Ones)",
+          "concept_summary": "Bricks have been brought to Mayuri's house by truck and arranged in rows of\n10, as given below-\nMayuri started counting the bricks in groups. She first counted 100 bricks in\neach of the two bottom most groups. In the other groups she found 70 bricks,\nwith 10 bricks in each group. 4 bricks were left lying on top. She counted the\nbricks in the following way :",
+          "details_and_sidebars": [],
+          "prerequisites": [],
+          "original_exercises": [
+            "The bricks are arranged in groups as shown above. Count the total\nnumber of bricks.",
+            "See the following table. Arrange the total number of bricks in groups as\nshown in example."
+          ],
+          "status": "untaught",
+          "last_taught_date": null
+        },
+        {
+          "topic_name": "Expanded Form of Three-Digit Numbers",
+          "concept_summary": "In Thimmapur school four children have written the number 237 on a black\nboard in different ways-\nVenu\n \u2192  2 hundreds + 3 tens + 7 ones.\nSoni\n \u2192  200 + 37\nSangeeta \u2192  200 + 30 + 7\nRaziya  \u2192  100 + 100 + 30 + 7",
+          "details_and_sidebars": [],
+          "prerequisites": [],
+          "original_exercises": [
+            "Write the correct digit of the place mentioned in the blank boxes.",
+            "Write the following numbers in expanded form.",
+            "Circle the correct number as shown in the example."
+          ],
+          "status": "untaught",
+          "last_taught_date": null
+        },
+        {
+          "topic_name": "Comparing Numbers (Greater Than, Less Than, Equal To)",
+          "concept_summary": "Mayuri arranges bricks like this. See and tell, which is greater and which is\nlesser.\n5 bricks   7 bricks\n5 bricks are less than 7 bricks.\nIt means 5 is less than 7.\nIt is shown as 5 < 7.",
+          "details_and_sidebars": [],
+          "prerequisites": [],
+          "original_exercises": [
+            "Write the correct symbol >, <, = in the blank boxes.",
+            "The three-digit numbers formed using 2, 6 and 7 are 267, 276, 627,\n672, 726, 762. Can you write the hundreds, tens, ones in these numbers?",
+            "Write which is greater, which is lesser.",
+            "Write the correct symbol >, <, = in the blank boxes.",
+            "Circle the greatest number in the following.",
+            "Arrange the following numbers in ascending order.",
+            "Arrange the following numbers in descending order.",
+            "Some numbers are given here. Circle the range that the number lies in.",
+            "Do the following.",
+            "Form the greatest and smallest 3-digit number using the digits given\nbelow.",
+            "Write the correct numbers in the blanks.",
+            "Write the following numbers as shown in the example.",
+            "Write the following numbers in words."
+          ],
+          "status": "untaught",
+          "last_taught_date": null
+        },
+        {
+          "topic_name": "Cricket Scores",
+          "concept_summary": "Ravi and his friends are playing cricket.\n\nSee the following table and answer the following questions:\n\nPlayer Runs\nRavi 45\nNeelima 24\nGeetha 34\nSaleem 20\nKeshav 20\nMahesh 95\nMadhu 84\nRama 17",
+          "details_and_sidebars": [],
+          "prerequisites": [],
+          "original_exercises": [],
+          "status": "untaught",
+          "last_taught_date": null
+        },
+        {
+          "topic_name": "Two-Digit Number Formation",
+          "concept_summary": null,
+          "details_and_sidebars": [],
+          "prerequisites": [],
+          "original_exercises": [
+            "(A)\tWrite any 5, two-digit numbers that can be formed using 6, 8 and 9.",
+            "(B)\tWrite the largest number?",
+            "(C)\tWrite the smallest number?",
+            "(D)\tWrite the above numbers in ascending order (from smallest to\nbiggest)."
+          ],
+          "status": "untaught",
+          "last_taught_date": null
+        },
+        {
+          "topic_name": "Number Rounding",
+          "concept_summary": null,
+          "details_and_sidebars": [],
+          "prerequisites": [],
+          "original_exercises": [
+            "Circle the number nearest to the given number.\nExample : 62 60 70 80\n(A) 49 20 50 60\n(B) 32 30 10 40\n(C) 89 80 90 60\n(D) 74 60 70 80"
+          ],
+          "status": "untaught",
+          "last_taught_date": null
+        },
+        {
+          "topic_name": "Expanded Form",
+          "concept_summary": null,
+          "details_and_sidebars": [],
+          "prerequisites": [],
+          "original_exercises": [
+            "Write the following numbers in expanded form.\nExample : 35 = 30 + 5\n(A) 25 =\n(B) 49 =\n(C) 34 =\n(D) 48 ="
+          ],
+          "status": "untaught",
+          "last_taught_date": null
+        },
+        {
+          "topic_name": "Three-Digit Numbers",
+          "concept_summary": "If we add 1 to 99 we get 100.\n\nHow many tens are there in 100?\n\n100 = 10 tens\n\nHow many ones are there in 100?\n\n100 = 100 ones\n\n99 is the biggest two-digit number.\n\nThe first number with 3 digits is 100. This means that 100 is the smallest number with 3 digits.",
+          "details_and_sidebars": [],
+          "prerequisites": [],
+          "original_exercises": [],
+          "status": "untaught",
+          "last_taught_date": null
+        },
+        {
+          "topic_name": "Counting Hundreds",
+          "concept_summary": null,
+          "details_and_sidebars": [],
+          "prerequisites": [],
+          "original_exercises": [],
+          "status": "untaught",
+          "last_taught_date": null
+        },
+        {
+          "topic_name": "Counting Hundreds, Tens, and Ones",
+          "concept_summary": null,
+          "details_and_sidebars": [],
+          "prerequisites": [],
+          "original_exercises": [],
+          "status": "untaught",
+          "last_taught_date": null
+        },
+        {
+          "topic_name": "Circling Correct Numbers Based on Place Value",
+          "concept_summary": null,
+          "details_and_sidebars": [],
+          "prerequisites": [],
+          "original_exercises": [],
+          "status": "untaught",
+          "last_taught_date": null
+        },
+        {
+          "topic_name": "Writing Place Value of Underlined Digits",
+          "concept_summary": null,
+          "details_and_sidebars": [],
+          "prerequisites": [],
+          "original_exercises": [],
+          "status": "untaught",
+          "last_taught_date": null
+        },
+        {
+          "topic_name": "Writing Numbers Based on Place Value Descriptions",
+          "concept_summary": null,
+          "details_and_sidebars": [],
+          "prerequisites": [],
+          "original_exercises": [],
+          "status": "untaught",
+          "last_taught_date": null
+        },
+        {
+          "topic_name": "Number Table Game",
+          "concept_summary": null,
+          "details_and_sidebars": [],
+          "prerequisites": [],
+          "original_exercises": [],
+          "status": "untaught",
+          "last_taught_date": null
+        },
+        {
+          "topic_name": "Bricks in Groups",
+          "concept_summary": "Bricks have been brought to Mayuri's house by truck and arranged in rows of\n10, as given below-\n\nMayuri started counting the bricks in groups. She first counted 100 bricks in\neach of the two bottom most groups. In the other groups she found 70 bricks,\nwith 10 bricks in each group. 4 bricks were left lying on top. She counted the\nbricks in the following way :",
+          "details_and_sidebars": [],
+          "prerequisites": [],
+          "original_exercises": [],
+          "status": "untaught",
+          "last_taught_date": null
+        },
+        {
+          "topic_name": "Arranging Bricks in Groups",
+          "concept_summary": null,
+          "details_and_sidebars": [],
+          "prerequisites": [],
+          "original_exercises": [],
+          "status": "untaught",
+          "last_taught_date": null
+        },
+        {
+          "topic_name": "Expanded Form of 237",
+          "concept_summary": "In Thimmapur school four children have written the number 237 on a black\nboard in different ways-\n\nVenu \u2192 2 hundreds + 3 tens + 7 ones.\n\nSoni \u2192 200 + 37\n\nSangeeta \u2192 200 + 30 + 7\n\nRaziya \u2192 100 + 100 + 30 + 7\n\nHave all the four children written correctly?\n\nExample :\n237 = 2 hundreds + 3 tens + 7 ones\n= 2 x 100 + 3 x 10 + 7 x 1\n= 200 + 30 + 7\n\nThis is called the expanded form of 237.",
+          "details_and_sidebars": [],
+          "prerequisites": [],
+          "original_exercises": [],
+          "status": "untaught",
+          "last_taught_date": null
+        },
+        {
+          "topic_name": "Writing Digits in Place Value",
+          "concept_summary": null,
+          "details_and_sidebars": [],
+          "prerequisites": [],
+          "original_exercises": [],
+          "status": "untaught",
+          "last_taught_date": null
+        },
+        {
+          "topic_name": "Writing Numbers in Expanded Form",
+          "concept_summary": null,
+          "details_and_sidebars": [],
+          "prerequisites": [],
+          "original_exercises": [],
+          "status": "untaught",
+          "last_taught_date": null
+        },
+        {
+          "topic_name": "Circling Correct Number",
+          "concept_summary": null,
+          "details_and_sidebars": [],
+          "prerequisites": [],
+          "original_exercises": [],
+          "status": "untaught",
+          "last_taught_date": null
+        },
+        {
+          "topic_name": "Comparing Numbers",
+          "concept_summary": "Mayuri arranges bricks like this. See and tell, which is greater and which is\nlesser.\n\n5 bricks 7 bricks\n\n5 bricks are less than 7 bricks.\n\nIt means 5 is less than 7.\n\nIt is shown as 5 < 7.\n\n7 bricks 5 bricks\n\n7 bricks are more than 5 bricks.\n\nIt means 7 is greater than 5.\n\nIt is shown as 7 > 5.",
+          "details_and_sidebars": [],
+          "prerequisites": [],
+          "original_exercises": [],
+          "status": "untaught",
+          "last_taught_date": null
+        },
+        {
+          "topic_name": "Using Symbols >, <, =",
+          "concept_summary": null,
+          "details_and_sidebars": [
+            "> is greater than",
+            "< is less than",
+            "= is equal to"
+          ],
+          "prerequisites": [],
+          "original_exercises": [],
+          "status": "untaught",
+          "last_taught_date": null
+        },
+        {
+          "topic_name": "Writing Hundreds, Tens, Ones",
+          "concept_summary": null,
+          "details_and_sidebars": [],
+          "prerequisites": [],
+          "original_exercises": [],
+          "status": "untaught",
+          "last_taught_date": null
+        },
+        {
+          "topic_name": "Identifying Greater and Lesser Numbers",
+          "concept_summary": null,
+          "details_and_sidebars": [],
+          "prerequisites": [],
+          "original_exercises": [],
+          "status": "untaught",
+          "last_taught_date": null
+        },
+        {
+          "topic_name": "Using Symbols >, <, = in Three-Digit Numbers",
+          "concept_summary": null,
+          "details_and_sidebars": [],
+          "prerequisites": [],
+          "original_exercises": [],
+          "status": "untaught",
+          "last_taught_date": null
+        },
+        {
+          "topic_name": "Circling the Greatest Number",
+          "concept_summary": null,
+          "details_and_sidebars": [],
+          "prerequisites": [],
+          "original_exercises": [],
+          "status": "untaught",
+          "last_taught_date": null
+        },
+        {
+          "topic_name": "Arranging Numbers in Ascending Order",
+          "concept_summary": null,
+          "details_and_sidebars": [
+            "Ascending order\nmeans arranging\nnumbers from\nsmallest to biggest"
+          ],
+          "prerequisites": [],
+          "original_exercises": [],
+          "status": "untaught",
+          "last_taught_date": null
+        },
+        {
+          "topic_name": "Arranging Numbers in Descending Order",
+          "concept_summary": null,
+          "details_and_sidebars": [
+            "Descending order\nmeans arranging\nnumbers from\nbiggest to smallest"
+          ],
+          "prerequisites": [],
+          "original_exercises": [],
+          "status": "untaught",
+          "last_taught_date": null
+        },
+        {
+          "topic_name": "Circling the Range",
+          "concept_summary": null,
+          "details_and_sidebars": [],
+          "prerequisites": [],
+          "original_exercises": [],
+          "status": "untaught",
+          "last_taught_date": null
+        },
+        {
+          "topic_name": "Creating Numbers",
+          "concept_summary": null,
+          "details_and_sidebars": [],
+          "prerequisites": [],
+          "original_exercises": [],
+          "status": "untaught",
+          "last_taught_date": null
+        },
+        {
+          "topic_name": "Forming Greatest and Smallest 3-Digit Numbers",
+          "concept_summary": null,
+          "details_and_sidebars": [],
+          "prerequisites": [],
+          "original_exercises": [],
+          "status": "untaught",
+          "last_taught_date": null
+        },
+        {
+          "topic_name": "Writing Numbers in Figures",
+          "concept_summary": null,
+          "details_and_sidebars": [],
+          "prerequisites": [],
+          "original_exercises": [],
+          "status": "untaught",
+          "last_taught_date": null
+        },
+        {
+          "topic_name": "Writing Numbers in Words",
+          "concept_summary": null,
+          "details_and_sidebars": [],
+          "prerequisites": [],
+          "original_exercises": [],
+          "status": "untaught",
+          "last_taught_date": null
+        },
+        {
+          "topic_name": "Cricket Scores and Number Recognition",
+          "concept_summary": "Ravi and his friends are playing cricket. See the following table and answer the following questions: Player Runs Ravi 45 Neelima 24 Geetha 34 Saleem 20 Keshav 20 Mahesh 95 Madhu 84 Rama 17",
+          "details_and_sidebars": [],
+          "prerequisites": [],
+          "original_exercises": [
+            "(A) How many runs did Ravi score?",
+            "(B) What is the highest score given in the table?",
+            "(C) How many players made runs above 50?",
+            "(D) How many players made runs below 50?",
+            "(F) How many players scored the least?",
+            "(G) How many players scored between 20 and 40?"
+          ],
+          "status": "untaught",
+          "last_taught_date": null
+        },
+        {
+          "topic_name": "Two-Digit Number Formation and Ordering",
+          "concept_summary": "(A) Write any 5, two-digit numbers that can be formed using 6, 8 and 9. (B) Write the largest number? (C) Write the smallest number? (D) Write the above numbers in ascending order (from smallest to biggest).",
+          "details_and_sidebars": [],
+          "prerequisites": [],
+          "original_exercises": [
+            "Circle the number nearest to the given number. Example : 62 60 70 80 (A) 49 20 50 60 (B) 32 30 10 40 (C) 89 80 90 60 (D) 74 60 70 80",
+            "Write the following numbers in expanded form. Example : 35 = 30 + 5 (A) 25 = (B) 49 = (C) 34 = (D) 48 =",
+            "Write the correct number for given expanded form. Example : 20 + 9 = 29 (A) 50 + 4 = (B) 30 + 0 = (C) 20 + 6 = (D) 60 + 7 ="
+          ],
+          "status": "untaught",
+          "last_taught_date": null
+        },
+        {
+          "topic_name": "Number Sequencing",
+          "concept_summary": "Write the correct number in the blank boxes. See the table above and answer the following questions. Write your answer in both words and numbers.",
+          "details_and_sidebars": [],
+          "prerequisites": [],
+          "original_exercises": [
+            "(A) What is the starting number in the table? ...................................",
+            "(B) What is the number after 197? ....................................................",
+            "(C) What is the number before 161? .................................................",
+            "(D) What is the number between 149 and 151? ............................",
+            "(E) What is the last number in the table? ........................................."
+          ],
+          "status": "untaught",
+          "last_taught_date": null
+        },
+        {
+          "topic_name": "Number Table Games",
+          "concept_summary": "Bicku and Lata are playing with the numbers table in question 6 in page 21. You can also join. Bicku : What is the first number in second row? Lata : What is the number between 144 and 146? Biku : What is the number after 177? Lata : What is the number before 200. Bicku : What is the number 5 boxes after 162. Lata : What is the number 4 boxes before 165. Bicku : What is the number in the box above 155. Lata : What is the number in the box below 186. Bicku : From where should you start, if you reach 138 on counting 3 boxes.",
+          "details_and_sidebars": [],
+          "prerequisites": [],
+          "original_exercises": [],
+          "status": "untaught",
+          "last_taught_date": null
+        },
+        {
+          "topic_name": "Counting Bricks in Groups (Continued)",
+          "concept_summary": "The bricks are arranged in groups as shown above. Count the total number of bricks. Groups of Groups of Remaining Total number of 100 bricks 10 bricks bricks bricks 5 8 9 6 0 2 7 5 0 See the following table. Arrange the total number of bricks in groups as shown in example. Total number Groups of Groups of Bricks of bricks 100 bricks 10 bricks left 185 1 8 5 625 378 209 430",
+          "details_and_sidebars": [],
+          "prerequisites": [],
+          "original_exercises": [],
+          "status": "untaught",
+          "last_taught_date": null
+        },
+        {
+          "topic_name": "Expanded Form of Numbers",
+          "concept_summary": "In Thimmapur school four children have written the number 237 on a black board in different ways- Venu \u2192 2 hundreds + 3 tens + 7 ones. Soni \u2192 200 + 37 Sangeeta \u2192 200 + 30 + 7 Raziya \u2192 100 + 100 + 30 + 7 Have all the four children written correctly? Example : 237 = 2 hundreds + 3 tens + 7 ones = 2 x 100 + 3 x 10 + 7 x 1 = 200 + 30 + 7 This is called the expanded form of 237. Can you write 198 in all these different ways?",
+          "details_and_sidebars": [],
+          "prerequisites": [],
+          "original_exercises": [],
+          "status": "untaught",
+          "last_taught_date": null
+        },
+        {
+          "topic_name": "Expanded Form Exercises",
+          "concept_summary": "Write the correct digit of the place mentioned in the blank boxes. Example : 927 = 9 Hundreds + 2 Tens + 7 Ones (A) 769 = Hundreds + Tens + Ones (B) 126 = Hundreds + Tens + Ones (C) 407 = Hundreds + Tens + Ones (D) 679 = Hundreds + Tens + Ones (E) 223 = Hundreds + Tens + Ones Write the following numbers in expanded form. Example : 126 = 100 + 20 + 6 (A) 325 = _________ + _________ + _________ (B) 446 = _________ + _________ + _________ (C) 609 = _________ + _________ + _________ (D) 518 = _________ + _________ + _________ (E) 720 = _________ + _________ + _________",
+          "details_and_sidebars": [],
+          "prerequisites": [],
+          "original_exercises": [],
+          "status": "untaught",
+          "last_taught_date": null
+        },
+        {
+          "topic_name": "Number Recognition and Expanded Form",
+          "concept_summary": "Circle the correct number as shown in the example. Example : 200 + 4 24 42 204 (A) 400+20+3 324 423 420 (B) 500+60 506 650 560 (C) 800+80+8 850 888 880 (D) 700+5 705 750 570 (E) 40+0 440 44 40",
+          "details_and_sidebars": [],
+          "prerequisites": [],
+          "original_exercises": [],
+          "status": "untaught",
+          "last_taught_date": null
+        },
+        {
+          "topic_name": "Comparing Two-Digit Numbers",
+          "concept_summary": "Write the correct symbol >, <, = in the blank boxes. Example : 35 < 53 53 = 53 53 > 35 (A) 86 68 (B) 27 72 (C) 68 68 (D) 89 75 > is greater than < is less than = is equal to",
+          "details_and_sidebars": [
+            "> is greater than",
+            "< is less than",
+            "= is equal to"
+          ],
+          "prerequisites": [],
+          "original_exercises": [],
+          "status": "untaught",
+          "last_taught_date": null
+        },
+        {
+          "topic_name": "Comparing Three-Digit Numbers",
+          "concept_summary": "The three-digit numbers formed using 2, 6 and 7 are 267, 276, 627, 672, 726, 762. Can you write the hundreds, tens, ones in these numbers? (A) 267 = Hundreds Tens Ones (B) 276 = Hundreds Tens Ones (C) 627 = Hundreds Tens Ones (D) 672 = Hundreds Tens Ones (E) 726 = Hundreds Tens Ones (F) 762 = Hundreds Tens Ones Write which is greater, which is lesser. (A) Between 267 and 276, which is lesser (B) Between 627 and 672, which is greater (C) Between 726 and 762, which is lesser (D) Between 267 and 627, which is greater (E) Between 762 and 672, which is lesser",
+          "details_and_sidebars": [],
+          "prerequisites": [],
+          "original_exercises": [],
+          "status": "untaught",
+          "last_taught_date": null
+        },
+        {
+          "topic_name": "Comparing Three-Digit Numbers with Symbols",
+          "concept_summary": "Write the correct symbol >, <, = in the blank boxes. Example : 189 < 678 205 = 205 126 > 75 (A) 275 725 (B) 853 624 (C) 47 374 (D) 605 506 (E) 137 73 (F) 199 199 Circle the greatest number in the following. Example : 57 67 97 (A) 35 43 102 (B) 404 444 440 (C) 820 822 828 (D) 42 24 41 (E) 147 141 174",
+          "details_and_sidebars": [],
+          "prerequisites": [],
+          "original_exercises": [],
+          "status": "untaught",
+          "last_taught_date": null
+        },
+        {
+          "topic_name": "Ascending and Descending Order",
+          "concept_summary": "Arrange the following numbers in ascending order. Example : 64, 35, 79, 84 Ascending order : 35, 64, 79, 84 (A) 84, 79, 85, 105 (B) 106, 110, 155, 143 (C) 89, 178, 254, 675 Arrange the following numbers in descending order. Example : 48, 57, 95, 34 Descending order : 95, 57, 48, 34 (A) 77, 156, 198, 256 (B) 184, 295, 154, 695 (C) 259, 654, 794, 385",
+          "details_and_sidebars": [
+            "Ascending order means arranging numbers from smallest to biggest",
+            "Descending order means arranging numbers from biggest to smallest"
+          ],
+          "prerequisites": [],
+          "original_exercises": [],
+          "status": "untaught",
+          "last_taught_date": null
+        },
+        {
+          "topic_name": "Number Ranges",
+          "concept_summary": "Some numbers are given here. Circle the range that the number lies in. Example : 885 : 800\u2013850 850\u2013900 750\u2013800 98 : 80\u201390 90\u2013100 100\u2013110 632 : 600\u2013650 650\u2013700 700\u2013750 304 : 250\u2013300 300\u2013350 350\u2013400 287 : 200\u2013250 250\u2013300 300\u2013350 945 : 800\u2013900 900\u2013999 400\u2013500",
+          "details_and_sidebars": [],
+          "prerequisites": [],
+          "original_exercises": [],
+          "status": "untaught",
+          "last_taught_date": null
+        },
+        {
+          "topic_name": "Number Formation",
+          "concept_summary": "Do the following. (A) Write all the possible three-digit numbers using 4, 6, 9. (B) Write all the possible numbers with 5 in the units place between 50 and 150. (C) Write all the possible numbers between 800 and 900 which have 6 in the tens place. Form the greatest and smallest 3-digit number using the digits given below. Greatest number Smallest number (A) 9, 3, 2 ______________ ______________ (B) 1, 4, 2 ______________ ______________ (C) 2, 3, 9 ______________ ______________ (D) 5, 6 ,1 ______________ ______________ (E) 1, 0 ,8 ______________ ______________",
+          "details_and_sidebars": [],
+          "prerequisites": [],
+          "original_exercises": [],
+          "status": "untaught",
+          "last_taught_date": null
+        },
+        {
+          "topic_name": "Number Sequencing",
+          "concept_summary": "Write the correct numbers in the blanks. (A) 127, 128, 129, _____, _____ (B) 497, 498, 499, _____, _____ (C) 699, _____, _____, 702, 703 (D) 99, _____, _____, _____, 103 (E) 997, 996, 995, _____, _____",
+          "details_and_sidebars": [],
+          "prerequisites": [],
+          "original_exercises": [],
+          "status": "untaught",
+          "last_taught_date": null
+        },
+        {
+          "topic_name": "Numbers in Words and Figures",
+          "concept_summary": "Write the following numbers as shown in the example. Example : Four hundred and twenty five : 425 (A) Nine hundred and seven : ________ (B) Eight hundred and forty two : ________ (C) Six hundred and thirty : ________ (D) Two hundred and ninety four : ________ (E) Five hundred and fifty five : ________ Write the following numbers in words. Example : 549 : Five hundred and forty nine (A) 604 :________________________________________ (B) 858 :________________________________________ (C) 985 :________________________________________ (D) 684 :________________________________________ (E) 450 :________________________________________",
+          "details_and_sidebars": [],
+          "prerequisites": [],
+          "original_exercises": [],
+          "status": "untaught",
+          "last_taught_date": null
+        },
+        {
+          "topic_name": "Reading and Interpreting Data from a Table",
+          "concept_summary": "Ravi and his friends are playing cricket.\n\nSee the following table and answer the following questions:\n\nPlayer Runs\nRavi 45\nNeelima 24\nGeetha 34\nSaleem 20\nKeshav 20\nMahesh 95\nMadhu 84\nRama 17",
+          "details_and_sidebars": [],
+          "prerequisites": [],
+          "original_exercises": [
+            "How many runs did Ravi score?",
+            "What is the highest score given in the table?",
+            "How many players made runs above 50?",
+            "How many players made runs below 50?",
+            "How many players scored the least?",
+            "How many players scored between 20 and 40?"
+          ],
+          "status": "untaught",
+          "last_taught_date": null
+        },
+        {
+          "topic_name": "Counting in Groups",
+          "concept_summary": "Mayuri's father told her to count the bricks in their yard. She started counting ... one, two, three ...\n\nSoon she made a mistake and she had to begin again.\n\nFather : Why did you not count in groups?\n\nMayuri : What do you mean?\n\nFather : Take 5 at one time and count like 5, 10, 15 ......",
+          "details_and_sidebars": [],
+          "prerequisites": [],
+          "original_exercises": [],
+          "status": "untaught",
+          "last_taught_date": null
+        },
+        {
+          "topic_name": "Identifying Place Value",
+          "concept_summary": "Circle the correct numbers.\n\nExample : 5 in the tens place 574 456 235 165",
+          "details_and_sidebars": [],
+          "prerequisites": [],
+          "original_exercises": [],
+          "status": "untaught",
+          "last_taught_date": null
+        },
+        {
+          "topic_name": "Writing Numbers Based on Place Value",
+          "concept_summary": "Write the numbers.\n\nA number with 5 in ones place, 2 in tens place and 7 in hundreds place.\n\nA number with 8 in tens place, 0 in ones place and 4 in hundreds place",
+          "details_and_sidebars": [],
+          "prerequisites": [],
+          "original_exercises": [],
+          "status": "untaught",
+          "last_taught_date": null
+        },
+        {
+          "topic_name": "Circling the Correct Number",
+          "concept_summary": "Circle the correct number as shown in the example.\n\nExample : 200 + 4 24 42 204",
+          "details_and_sidebars": [],
+          "prerequisites": [],
+          "original_exercises": [],
+          "status": "untaught",
+          "last_taught_date": null
+        },
+        {
+          "topic_name": "Using Symbols to Compare Numbers",
+          "concept_summary": "Write the correct symbol >, <, = in the blank boxes.\n\nExample : 35 < 53\n53 = 53\n53 > 35",
+          "details_and_sidebars": [
+            "> is greater than",
+            "< is less than",
+            "= is equal to"
+          ],
+          "prerequisites": [],
+          "original_exercises": [],
+          "status": "untaught",
+          "last_taught_date": null
+        },
+        {
+          "topic_name": "Writing Hundreds, Tens, and Ones",
+          "concept_summary": "The three-digit numbers formed using 2, 6 and 7 are 267, 276, 627, 672, 726, 762. Can you write the hundreds, tens, ones in these numbers?",
+          "details_and_sidebars": [],
+          "prerequisites": [],
+          "original_exercises": [],
+          "status": "untaught",
+          "last_taught_date": null
+        },
+        {
+          "topic_name": "Using Symbols to Compare Three-Digit Numbers",
+          "concept_summary": "Write the correct symbol >, <, = in the blank boxes.\n\nExample : 189 < 678 205 = 205\n126 > 75",
+          "details_and_sidebars": [],
+          "prerequisites": [],
+          "original_exercises": [],
+          "status": "untaught",
+          "last_taught_date": null
+        },
+        {
+          "topic_name": "Identifying Number Ranges",
+          "concept_summary": "Some numbers are given here. Circle the range that the number lies in.\n\nExample : 885 : 800\u2013850 850\u2013900 750\u2013800",
+          "details_and_sidebars": [],
+          "prerequisites": [],
+          "original_exercises": [],
+          "status": "untaught",
+          "last_taught_date": null
+        },
+        {
+          "topic_name": "Forming Numbers with Given Digits",
+          "concept_summary": "Do the following.\n\nWrite all the possible three-digit numbers using 4, 6, 9.\n\nWrite all the possible numbers with 5 in the units place between 50 and 150.",
+          "details_and_sidebars": [],
+          "prerequisites": [],
+          "original_exercises": [],
+          "status": "untaught",
+          "last_taught_date": null
+        },
+        {
+          "topic_name": "Forming Greatest and Smallest Numbers",
+          "concept_summary": "Form the greatest and smallest 3-digit number using the digits given below.",
+          "details_and_sidebars": [],
+          "prerequisites": [],
+          "original_exercises": [],
+          "status": "untaught",
+          "last_taught_date": null
+        },
+        {
+          "topic_name": "Completing Number Sequences",
+          "concept_summary": "Write the correct numbers in the blanks.",
+          "details_and_sidebars": [],
+          "prerequisites": [],
+          "original_exercises": [],
+          "status": "untaught",
+          "last_taught_date": null
+        },
+        {
+          "topic_name": "Writing Numbers in Numerals",
+          "concept_summary": "Write the following numbers as shown in the example.\n\nExample : Four hundred and twenty five : 425",
+          "details_and_sidebars": [],
+          "prerequisites": [],
+          "original_exercises": [],
+          "status": "untaught",
+          "last_taught_date": null
+        },
+        {
+          "topic_name": "Runs Scored in Cricket",
+          "concept_summary": "Ravi and his friends are playing cricket.\n\nSee the following table and answer the following questions:",
+          "details_and_sidebars": [],
+          "prerequisites": [],
+          "original_exercises": [
+            "(A)\nHow many runs did Ravi score?",
+            "(B)\nWhat is the highest score given in\nthe table?",
+            "(C)\nHow many players  made runs\nabove 50?",
+            "(D)\nHow many players made runs\nbelow 50?",
+            "(F)\nHow many players scored the\nleast?",
+            "(G)\nHow many players scored\nbetween 20 and 40?"
+          ],
+          "status": "untaught",
+          "last_taught_date": null
+        },
+        {
+          "topic_name": "Two-Digit Numbers",
+          "concept_summary": "",
+          "details_and_sidebars": [],
+          "prerequisites": [],
+          "original_exercises": [
+            "(A)\nWrite any 5, two-digit numbers that can be formed using 6, 8 and 9.\n\n(B)\nWrite the largest number?\n\n(C)\nWrite the smallest number?\n\n(D)\nWrite the above numbers in ascending order (from smallest to\nbiggest).",
+            "Circle the number nearest to the given number.",
+            "Write the following numbers in expanded form.",
+            "Write the correct number for given expanded form."
+          ],
+          "status": "untaught",
+          "last_taught_date": null
+        },
+        {
+          "topic_name": "Numbers Table",
+          "concept_summary": "",
+          "details_and_sidebars": [],
+          "prerequisites": [],
+          "original_exercises": [
+            "Write the correct number in the blank boxes.",
+            "See the table above and answer the following questions. Write your\nanswer in both words and numbers."
+          ],
+          "status": "untaught",
+          "last_taught_date": null
+        },
+        {
+          "topic_name": "Bricks in Groups (Expanded Form)",
+          "concept_summary": "Bricks have been brought to Mayuri's house by truck and arranged in rows of\n10, as given below-\n\nMayuri started counting the bricks in groups. She first counted 100 bricks in\neach of the two bottom most groups. In the other groups she found 70 bricks,\nwith 10 bricks in each group. 4 bricks were left lying on top. She counted the\nbricks in the following way :",
+          "details_and_sidebars": [],
+          "prerequisites": [],
+          "original_exercises": [
+            "The bricks are arranged in groups as shown above. Count the total\nnumber of bricks.",
+            "See the following table. Arrange the total number of bricks in groups as\nshown in example.",
+            "Write the correct digit of the place mentioned in the blank boxes.",
+            "Write the following numbers in expanded form.",
+            "Circle the correct number as shown in the example."
+          ],
+          "status": "untaught",
+          "last_taught_date": null
+        },
+        {
+          "topic_name": "Understanding Hundreds",
+          "concept_summary": "If we add 1 to 99 we get 100.\n\nHow many tens are there in 100?\n\n100 = 10 tens\n\nHow many ones are there in 100?\n\n100 = 100 ones\n\n99 is the biggest two-digit number.\n\nThe first number with 3 digits is 100. This means that 100 is the smallest\nnumber with 3 digits.",
+          "details_and_sidebars": [],
+          "prerequisites": [],
+          "original_exercises": [],
+          "status": "untaught",
+          "last_taught_date": null
+        },
+        {
+          "topic_name": "Hundreds, Tens, and Ones",
+          "concept_summary": "",
+          "details_and_sidebars": [],
+          "prerequisites": [],
+          "original_exercises": [
+            "Count the hundreds, tens and ones and write the correct number in the boxes below the\npictures."
+          ],
+          "status": "untaught",
+          "last_taught_date": null
+        },
+        {
+          "topic_name": "Greater Than, Less Than, Equal To",
+          "concept_summary": "7 bricks   5 bricks\n\n7 bricks are more than 5 bricks.\n\nIt means 7 is greater than 5.\n\nIt is shown as 7 > 5.\n\n2 bricks          2 bricks\n\nHere, the number of bricks are equal.\n\nIt means 2 is equal to 2.\n\nIt is shown as 2 = 2.",
+          "details_and_sidebars": [],
+          "prerequisites": [],
+          "original_exercises": [],
+          "status": "untaught",
+          "last_taught_date": null
+        },
+        {
+          "topic_name": "Comparing Numbers Exercises",
+          "concept_summary": "",
+          "details_and_sidebars": [
+            "> is greater than\n< is less than\n= is equal to"
+          ],
+          "prerequisites": [],
+          "original_exercises": [
+            "Write the correct symbol >, <, = in the blank boxes.",
+            "The three-digit numbers formed using 2, 6 and 7 are 267, 276, 627,\n672, 726, 762. Can you write the hundreds, tens, ones in these numbers?",
+            "Write which is greater, which is lesser.",
+            "Write the correct symbol >, <, = in the blank boxes.",
+            "Circle the greatest number in the following.",
+            "Arrange the following numbers in ascending order.",
+            "Arrange the following numbers in descending order.",
+            "Some numbers are given here. Circle the range that the number lies in.",
+            "Do the following.",
+            "Form the greatest and smallest 3-digit number using the digits given\nbelow.",
+            "Write the correct numbers in the blanks.",
+            "Write the following numbers as shown in the example.",
+            "Write the following numbers in words."
+          ],
+          "status": "untaught",
+          "last_taught_date": null
+        },
+        {
+          "topic_name": "Forming Two-Digit Numbers",
+          "concept_summary": "Write any 5, two-digit numbers that can be formed using 6, 8 and 9.",
+          "details_and_sidebars": [],
+          "prerequisites": [],
+          "original_exercises": [],
+          "status": "untaught",
+          "last_taught_date": null
+        },
+        {
+          "topic_name": "Circling Nearest Number",
+          "concept_summary": "Circle the number nearest to the given number.",
+          "details_and_sidebars": [],
+          "prerequisites": [],
+          "original_exercises": [],
+          "status": "untaught",
+          "last_taught_date": null
+        },
+        {
+          "topic_name": "Writing Number from Expanded Form",
+          "concept_summary": "Write the correct number for given expanded form.",
+          "details_and_sidebars": [],
+          "prerequisites": [],
+          "original_exercises": [],
+          "status": "untaught",
+          "last_taught_date": null
+        },
+        {
+          "topic_name": "Number Table",
+          "concept_summary": "Write the correct number in the blank boxes.",
+          "details_and_sidebars": [],
+          "prerequisites": [],
+          "original_exercises": [],
+          "status": "untaught",
+          "last_taught_date": null
+        },
+        {
+          "topic_name": "Writing Place Value of Underlined Digit",
+          "concept_summary": "Write the place value of the underlined digit.",
+          "details_and_sidebars": [],
+          "prerequisites": [],
+          "original_exercises": [],
+          "status": "untaught",
+          "last_taught_date": null
+        },
+        {
+          "topic_name": "Writing Numbers Based on Place Value Description",
+          "concept_summary": "Write the numbers.",
+          "details_and_sidebars": [],
+          "prerequisites": [],
+          "original_exercises": [],
+          "status": "untaught",
+          "last_taught_date": null
+        },
+        {
+          "topic_name": "Playing with Numbers Table",
+          "concept_summary": "Bicku and Lata are playing with the numbers table in\nquestion 6 in page 21. You can also join.",
+          "details_and_sidebars": [],
+          "prerequisites": [],
+          "original_exercises": [],
+          "status": "untaught",
+          "last_taught_date": null
+        },
+        {
+          "topic_name": "Arranging Total Number of Bricks in Groups",
+          "concept_summary": "See the following table. Arrange the total number of bricks in groups as\nshown in example.",
+          "details_and_sidebars": [],
+          "prerequisites": [],
+          "original_exercises": [],
+          "status": "untaught",
+          "last_taught_date": null
+        },
+        {
+          "topic_name": "Writing Digits of Place Value",
+          "concept_summary": "Write the correct digit of the place mentioned in the blank boxes.",
+          "details_and_sidebars": [],
+          "prerequisites": [],
+          "original_exercises": [],
+          "status": "untaught",
+          "last_taught_date": null
+        },
+        {
+          "topic_name": "Circling Correct Number from Expanded Form",
+          "concept_summary": "Circle the correct number as shown in the example.",
+          "details_and_sidebars": [],
+          "prerequisites": [],
+          "original_exercises": [],
+          "status": "untaught",
+          "last_taught_date": null
+        },
+        {
+          "topic_name": "Hundreds, Tens, Ones",
+          "concept_summary": "The three-digit numbers formed using 2, 6 and 7 are 267, 276, 627,\n672, 726, 762. Can you write the hundreds, tens, ones in these numbers?",
+          "details_and_sidebars": [],
+          "prerequisites": [],
+          "original_exercises": [],
+          "status": "untaught",
+          "last_taught_date": null
+        },
+        {
+          "topic_name": "Using Symbols >, <, = with Three-Digit Numbers",
+          "concept_summary": "Write the correct symbol >, <, = in the blank boxes.",
+          "details_and_sidebars": [],
+          "prerequisites": [],
+          "original_exercises": [],
+          "status": "untaught",
+          "last_taught_date": null
+        },
+        {
+          "topic_name": "Circling Greatest Number",
+          "concept_summary": "Circle the greatest number in the following.",
+          "details_and_sidebars": [],
+          "prerequisites": [],
+          "original_exercises": [],
+          "status": "untaught",
+          "last_taught_date": null
+        },
+        {
+          "topic_name": "Ascending Order",
+          "concept_summary": "Arrange the following numbers in ascending order.",
+          "details_and_sidebars": [
+            "Ascending order\nmeans arranging\nnumbers from\nsmallest to biggest"
+          ],
+          "prerequisites": [],
+          "original_exercises": [],
+          "status": "untaught",
+          "last_taught_date": null
+        },
+        {
+          "topic_name": "Descending Order",
+          "concept_summary": "Arrange the following numbers in descending order.",
+          "details_and_sidebars": [
+            "Descending order\nmeans arranging\nnumbers from\nbiggest to smallest"
+          ],
+          "prerequisites": [],
+          "original_exercises": [],
+          "status": "untaught",
+          "last_taught_date": null
+        },
+        {
+          "topic_name": "Number Range",
+          "concept_summary": "Some numbers are given here. Circle the range that the number lies in.",
+          "details_and_sidebars": [],
+          "prerequisites": [],
+          "original_exercises": [],
+          "status": "untaught",
+          "last_taught_date": null
+        },
+        {
+          "topic_name": "Possible Three-Digit Numbers",
+          "concept_summary": "Do the following.",
+          "details_and_sidebars": [],
+          "prerequisites": [],
+          "original_exercises": [],
+          "status": "untaught",
+          "last_taught_date": null
+        },
+        {
+          "topic_name": "Greatest and Smallest 3-Digit Numbers",
+          "concept_summary": "Form the greatest and smallest 3-digit number using the digits given\nbelow.",
+          "details_and_sidebars": [],
+          "prerequisites": [],
+          "original_exercises": [],
+          "status": "untaught",
+          "last_taught_date": null
+        },
+        {
+          "topic_name": "Filling in Blanks in Number Sequences",
+          "concept_summary": "Write the correct numbers in the blanks.",
+          "details_and_sidebars": [],
+          "prerequisites": [],
+          "original_exercises": [],
+          "status": "untaught",
+          "last_taught_date": null
+        },
+        {
+          "topic_name": "Cricket Score Analysis",
+          "concept_summary": "Ravi and his friends are playing cricket.\nSee the following table and answer the following questions:",
+          "details_and_sidebars": [],
+          "prerequisites": [],
+          "original_exercises": [
+            "(A)\nHow many runs did Ravi score?",
+            "(B)\nWhat is the highest score given in\nthe table?",
+            "(C)\nHow many players  made runs\nabove 50?",
+            "(D)\nHow many players made runs\nbelow 50?",
+            "(F)\nHow many players scored the\nleast?",
+            "(G)\nHow many players scored\nbetween 20 and 40?"
+          ],
+          "status": "untaught",
+          "last_taught_date": null
+        },
+        {
+          "topic_name": "Nearest Number",
+          "concept_summary": null,
+          "details_and_sidebars": [],
+          "prerequisites": [],
+          "original_exercises": [
+            "(A)\n49\n20\n  50\n60",
+            "(B)\n32\n30\n  10\n40",
+            "(C)\n89\n80\n  90\n60",
+            "(D)\n74\n60\n  70\n80"
+          ],
+          "status": "untaught",
+          "last_taught_date": null
+        },
+        {
+          "topic_name": "Numbers after 100 - Filling Boxes",
+          "concept_summary": null,
+          "details_and_sidebars": [],
+          "prerequisites": [],
+          "original_exercises": [],
+          "status": "untaught",
+          "last_taught_date": null
+        },
+        {
+          "topic_name": "Number Table Questions",
+          "concept_summary": null,
+          "details_and_sidebars": [],
+          "prerequisites": [],
+          "original_exercises": [
+            "(A)\nWhat is the starting number in the table? ...................................",
+            "(B)\nWhat is the number after 197? ....................................................",
+            "(C)\nWhat is the number before 161? .................................................",
+            "(D)\nWhat is the number between 149 and 151? .........................",
+            "(E)\nWhat is the last number in the table? ........................................."
+          ],
+          "status": "untaught",
+          "last_taught_date": null
+        },
+        {
+          "topic_name": "Circling Numbers with Specific Place Values",
+          "concept_summary": null,
+          "details_and_sidebars": [],
+          "prerequisites": [],
+          "original_exercises": [
+            "(A)\n6 in the ones place\n: 128      761      621      176",
+            "(B)\n3 in the hundreds place\n:  27        461      399      939",
+            "(C)\n8 in the tens place\n:  828     108       811      880"
+          ],
+          "status": "untaught",
+          "last_taught_date": null
+        },
+        {
+          "topic_name": "Writing Numbers from Place Values",
+          "concept_summary": null,
+          "details_and_sidebars": [],
+          "prerequisites": [],
+          "original_exercises": [
+            "(A)A number with 5 in ones place, 2 in tens place and 7 in hundreds\nplace.",
+            "(B) A number with 8 in tens place, 0 in ones place and 4 in hundreds\nplace",
+            "(C)A number with 7 in hundreds place, 1 in tens place and 0 in ones\nplace.",
+            "(D)A number with 7 in ones place, 2 in hundreds place and 5 in tens\nplace."
+          ],
+          "status": "untaught",
+          "last_taught_date": null
+        },
+        {
+          "topic_name": "Bricks in Groups - Counting",
+          "concept_summary": "Bricks have been brought to Mayuri's house by truck and arranged in rows of\n10, as given below-\nMayuri started counting the bricks in groups. She first counted 100 bricks in\neach of the two bottom most groups. In the other groups she found 70 bricks,\nwith 10 bricks in each group. 4 bricks were left lying on top. She counted the\nbricks in the following way :",
+          "details_and_sidebars": [],
+          "prerequisites": [],
+          "original_exercises": [],
+          "status": "untaught",
+          "last_taught_date": null
+        },
+        {
+          "topic_name": "Counting Bricks in Groups - Table",
+          "concept_summary": null,
+          "details_and_sidebars": [],
+          "prerequisites": [],
+          "original_exercises": [],
+          "status": "untaught",
+          "last_taught_date": null
+        },
+        {
+          "topic_name": "Writing Digit of Place",
+          "concept_summary": null,
+          "details_and_sidebars": [],
+          "prerequisites": [],
+          "original_exercises": [
+            "(A)\n769 =\nHundreds\n +\nTens +\nOnes",
+            "(B)\n126 =\nHundreds\n +\nTens +\nOnes",
+            "(C)\n407 =\nHundreds\n +\nTens +\nOnes",
+            "(D)\n679 =\nHundreds\n +\nTens +\nOnes",
+            "(E)\n223 =\nHundreds\n +\nTens +\nOnes"
+          ],
+          "status": "untaught",
+          "last_taught_date": null
+        },
+        {
+          "topic_name": "Greater, Lesser, Equal",
+          "concept_summary": "Mayuri arranges bricks like this. See and tell, which is greater and which is\nlesser.\n5 bricks   7 bricks\n5 bricks are less than 7 bricks.\nIt means 5 is less than 7.\nIt is shown as 5 < 7.\n7 bricks   5 bricks\n7 bricks are more than 5 bricks.\nIt means 7 is greater than 5.\nIt is shown as 7 > 5.",
+          "details_and_sidebars": [],
+          "prerequisites": [],
+          "original_exercises": [],
+          "status": "untaught",
+          "last_taught_date": null
+        },
+        {
+          "topic_name": "Symbol Filling",
+          "concept_summary": null,
+          "details_and_sidebars": [
+            "> is greater than\n< is less than\n= is equal to"
+          ],
+          "prerequisites": [],
+          "original_exercises": [
+            "(A)\n86\n68",
+            "(B)\n27\n72",
+            "(C)\n68\n68",
+            "(D)\n89\n75"
+          ],
+          "status": "untaught",
+          "last_taught_date": null
+        },
+        {
+          "topic_name": "Greater, Lesser",
+          "concept_summary": null,
+          "details_and_sidebars": [],
+          "prerequisites": [],
+          "original_exercises": [
+            "(A)\nBetween 267 and 276, which is lesser",
+            "(B)\nBetween 627 and 672, which is greater",
+            "(C)\nBetween 726 and 762, which is lesser",
+            "(D)\nBetween 267 and 627, which is greater",
+            "(E)\nBetween 762 and 672, which is lesser"
+          ],
+          "status": "untaught",
+          "last_taught_date": null
+        },
+        {
+          "topic_name": "Symbol Filling - Three Digit Numbers",
+          "concept_summary": null,
+          "details_and_sidebars": [],
+          "prerequisites": [],
+          "original_exercises": [
+            "(A)\n275\n725",
+            "(B)\n853\n624",
+            "(C)\n47\n374",
+            "(D)\n605\n506",
+            "(E)\n137\n73",
+            "(F)\n199\n199"
+          ],
+          "status": "untaught",
+          "last_taught_date": null
+        },
+        {
+          "topic_name": "Writing Numbers",
+          "concept_summary": null,
+          "details_and_sidebars": [],
+          "prerequisites": [],
+          "original_exercises": [
+            "(A)\nNine hundred and seven\n: ________",
+            "(B)\nEight hundred and forty two\n: ________",
+            "(C)\nSix hundred and thirty\n: ________",
+            "(D)\nTwo hundred and ninety four\n: ________",
+            "(E)\nFive hundred and fifty five\n: ________"
+          ],
+          "status": "untaught",
+          "last_taught_date": null
+        },
+        {
+          "topic_name": "Counting Bricks in Groups of Ten",
+          "concept_summary": "Mayuri  grouped bricks into 10's and started counting .... 10, 20, 30, 40, 50,\n60, 70, 80, 90. She said \"Papa there are 90 here and 9 more, a total of 99\nbricks. If you give me one more brick, then the last column would also contain\nten bricks\".\n\nThen how many bricks will be there?  There would be hundred  bricks.",
+          "details_and_sidebars": [],
+          "prerequisites": [],
+          "original_exercises": [],
+          "status": "untaught",
+          "last_taught_date": null
+        },
+        {
+          "topic_name": "Place Value (continued)",
+          "concept_summary": "As we move to the left in a number, the place value keeps on increasing.",
+          "details_and_sidebars": [],
+          "prerequisites": [],
+          "original_exercises": [
+            "Circle the correct numbers.\n\nExample :  5 in the tens place   574     456      235      165",
+            "6 in the ones place\n: 128      761      621      176",
+            "3 in the hundreds place\n:  27        461      399      939",
+            "8 in the tens place\n:  828     108       811      880"
+          ],
+          "status": "untaught",
+          "last_taught_date": null
+        },
+        {
+          "topic_name": "Place Value Exercises",
+          "concept_summary": null,
+          "details_and_sidebars": [],
+          "prerequisites": [],
+          "original_exercises": [
+            "Write the place value of the underlined digit.\n\nExample : 674 : 6 x 100 = 600",
+            "256 : ____________",
+            "390 : ____________",
+            "786 : ____________",
+            "626 : ____________",
+            "301 : ____________",
+            "691 : ____________",
+            "Write the numbers.\n\n(A)A number with 5 in ones place, 2 in tens place and 7 in hundreds\nplace.",
+            "(B) A number with 8 in tens place, 0 in ones place and 4 in hundreds\nplace",
+            "(C)A number with 7 in hundreds place, 1 in tens place and 0 in ones\nplace.",
+            "(D)A number with 7 in ones place, 2 in hundreds place and 5 in tens\nplace.",
+            "Bicku and Lata are playing with the numbers table in\nquestion 6 in page 21. You can also join.\n\nBicku : What is the first number in second row?\n\nLata\n: What is the number between 144 and 146?\n\nBiku : What is the number after 177?\n\nLata\n: What is the number before 200.\n\nBicku : What is the number 5 boxes after 162.\n\nLata\n: What is the number 4 boxes before 165.\n\nBicku : What is the number in the box above 155.\n\nLata\n: What is the number in the box below 186.\n\nBicku : From where should you start, if you reach 138 on\n  counting 3 boxes."
+          ],
+          "status": "untaught",
+          "last_taught_date": null
+        },
+        {
+          "topic_name": "Counting Bricks in Groups (Exercises)",
+          "concept_summary": null,
+          "details_and_sidebars": [],
+          "prerequisites": [],
+          "original_exercises": [
+            "The bricks are arranged in groups as shown above. Count the total\nnumber of bricks.",
+            "See the following table. Arrange the total number of bricks in groups as\nshown in example."
+          ],
+          "status": "untaught",
+          "last_taught_date": null
+        },
+        {
+          "topic_name": "Expanded Form of Three-Digit Numbers (Bricks)",
+          "concept_summary": "In Thimmapur school four children have written the number 237 on a black\nboard in different ways-\n\nVenu\n \u2192  2 hundreds + 3 tens + 7 ones.\n\nSoni\n \u2192  200 + 37\n\nSangeeta \u2192  200 + 30 + 7\n\nRaziya  \u2192  100 + 100 + 30 + 7\n\nHave all the four children written correctly?\n\nSee the following example\n\nExample :\n237\n= 2 hundreds + 3 tens +  7 ones\n\n= 2 x 100 + 3 x 10 + 7 x 1\n\n= 200 + 30 + 7\n\nThis is called the expanded form of 237.",
+          "details_and_sidebars": [],
+          "prerequisites": [],
+          "original_exercises": [],
+          "status": "untaught",
+          "last_taught_date": null
+        },
+        {
+          "topic_name": "Comparing Numbers (continued)",
+          "concept_summary": "Mayuri asked her friend to form 2 two-digit numbers using 5 and 7. She\nasked which is greater, which is lesser ? Can you help Mayuri's friend?\n\nThe numbers formed using the digits 5 and 7 are 57 and 75\n\n57\n=\ntens and\nones\n\n75\n=\ntens and\nones\n\nNow, put the appropriate symbol-\n57\n  75",
+          "details_and_sidebars": [],
+          "prerequisites": [],
+          "original_exercises": [],
+          "status": "untaught",
+          "last_taught_date": null
+        },
+        {
+          "topic_name": "Questions based on the Number Table",
+          "concept_summary": "",
+          "details_and_sidebars": [],
+          "prerequisites": [],
+          "original_exercises": [
+            "See the table above and answer the following questions. Write your\nanswer in both words and numbers.",
+            "(A) What is the starting number in the table? ...................................",
+            "(B) What is the number after 197? ....................................................",
+            "(C) What is the number before 161? .................................................",
+            "(D) What is the number between 149 and 151? ............................",
+            "(E) What is the last number in the table? ........................................."
+          ],
+          "status": "untaught",
+          "last_taught_date": null
+        },
+        {
+          "topic_name": "Circling Numbers based on Place Value",
+          "concept_summary": "",
+          "details_and_sidebars": [],
+          "prerequisites": [],
+          "original_exercises": [
+            "Circle the correct numbers.",
+            "Example : 5 in the tens place 574 456 235 165",
+            "(A) 6 in the ones place : 128 761 621 176",
+            "(B) 3 in the hundreds place : 27 461 399 939",
+            "(C) 8 in the tens place : 828 108 811 880"
+          ],
+          "status": "untaught",
+          "last_taught_date": null
+        },
+        {
+          "topic_name": "Counting Bricks in Groups - Exercise",
+          "concept_summary": "",
+          "details_and_sidebars": [],
+          "prerequisites": [],
+          "original_exercises": [],
+          "status": "untaught",
+          "last_taught_date": null
+        },
+        {
+          "topic_name": "Writing Numbers in Expanded Form - Exercise",
+          "concept_summary": "",
+          "details_and_sidebars": [],
+          "prerequisites": [],
+          "original_exercises": [
+            "Write the following numbers in expanded form.",
+            "Example : 126 = 100 + 20 + 6",
+            "(A) 325 = _________ + _________ + _________",
+            "(B) 446 = _________ + _________ + _________",
+            "(C) 609 = _________ + _________ + _________",
+            "(D) 518 = _________ + _________ + _________",
+            "(E) 720 = _________ + _________ + _________"
+          ],
+          "status": "untaught",
+          "last_taught_date": null
+        },
+        {
+          "topic_name": "Comparing Three-Digit Numbers - Exercise",
+          "concept_summary": "",
+          "details_and_sidebars": [],
+          "prerequisites": [],
+          "original_exercises": [
+            "Write which is greater, which is lesser.",
+            "(A) Between 267 and 276, which is lesser",
+            "(B) Between 627 and 672, which is greater",
+            "(C) Between 726 and 762, which is lesser",
+            "(D) Between 267 and 627, which is greater",
+            "(E) Between 762 and 672, which is lesser"
+          ],
+          "status": "untaught",
+          "last_taught_date": null
+        },
+        {
+          "topic_name": "Using Symbols >, <, = - Exercise",
+          "concept_summary": "",
+          "details_and_sidebars": [],
+          "prerequisites": [],
+          "original_exercises": [
+            "Write the correct symbol >, <, = in the blank boxes.",
+            "Example : 189 < 678 205 = 205",
+            "126 > 75",
+            "(A) 275 725",
+            "(B) 853 624",
+            "(C) 47 374",
+            "(D) 605 506",
+            "(E) 137 73",
+            "(F) 199 199"
+          ],
+          "status": "untaught",
+          "last_taught_date": null
+        },
+        {
+          "topic_name": "Do the Following - Numbers",
+          "concept_summary": "",
+          "details_and_sidebars": [],
+          "prerequisites": [],
+          "original_exercises": [
+            "(A) Write all the possible three-digit numbers using 4, 6, 9.",
+            "(B) Write all the possible numbers with 5 in the units place between 50\nand 150.",
+            "(C) Write all the possible numbers between 800 and\n900 which have 6 in the tens place."
+          ],
+          "status": "untaught",
+          "last_taught_date": null
+        },
+        {
+          "topic_name": "Filling in the Blanks - Number Sequences",
+          "concept_summary": "",
+          "details_and_sidebars": [],
+          "prerequisites": [],
+          "original_exercises": [
+            "Write the correct numbers in the blanks.",
+            "(A) 127, 128, 129, _____, _____",
+            "(B) 497, 498, 499, _____, _____",
+            "(C) 699, _____, _____, 702, 703",
+            "(D) 99, _____, _____, _____, 103",
+            "(E) 997, 996, 995, _____, _____"
+          ],
+          "status": "untaught",
+          "last_taught_date": null
+        },
+        {
+          "topic_name": "Writing Numbers as Shown in the Example",
+          "concept_summary": "",
+          "details_and_sidebars": [],
+          "prerequisites": [],
+          "original_exercises": [
+            "Write the following numbers as shown in the example.",
+            "Example : Four hundred and twenty five : 425",
+            "(A) Nine hundred and seven : ________",
+            "(B) Eight hundred and forty two : ________",
+            "(C) Six hundred and thirty : ________",
+            "(D) Two hundred and ninety four : ________",
+            "(E) Five hundred and fifty five : ________"
+          ],
+          "status": "untaught",
+          "last_taught_date": null
+        },
+        {
+          "topic_name": "Counting Hundreds, Tens and Ones",
+          "concept_summary": "Count the hundreds, tens and ones and write the correct number in the boxes below the\npictures.\n\nExample :\n\n100\n10\n1\nNumber\n\n1\n2\n5\n125",
+          "details_and_sidebars": [],
+          "prerequisites": [],
+          "original_exercises": [],
+          "status": "untaught",
+          "last_taught_date": null
+        },
+        {
+          "topic_name": "Identifying One-Digit, Two-Digit and Three-Digit Numbers",
+          "concept_summary": "Identify the one-digit, two-digit and three-digit numbers in the grid given\nbelow and write them in the table.\n\n42\n315\n9\n54\n165\n240\n\n26\n8\n143\n7\n289\n20\n\n462\n34\n88\n96\n15\n431\n\n3\n73\n102\n4\n66\n1",
+          "details_and_sidebars": [
+            "42 is 2 digit number.\n4 and 2 are the digits.\nSo this number is formed\nby 4 tens and 2 ones."
+          ],
+          "prerequisites": [],
+          "original_exercises": [],
+          "status": "untaught",
+          "last_taught_date": null
+        },
+        {
+          "topic_name": "Comparing Number of Bricks",
+          "concept_summary": "Mayuri arranges bricks like this. See and tell, which is greater and which is\nlesser.\n\n5 bricks   7 bricks\n\n5 bricks are less than 7 bricks.\nIt means 5 is less than 7.\nIt is shown as 5 < 7.",
+          "details_and_sidebars": [],
+          "prerequisites": [],
+          "original_exercises": [],
+          "status": "untaught",
+          "last_taught_date": null
+        },
+        {
+          "topic_name": "Circling the Range of a Number",
+          "concept_summary": "Some numbers are given here. Circle the range that the number lies in.\n\nExample :\n885\n:\n800\u2013850\n850\u2013900\n750\u2013800",
+          "details_and_sidebars": [],
+          "prerequisites": [],
+          "original_exercises": [],
+          "status": "untaught",
+          "last_taught_date": null
+        },
+        {
+          "topic_name": "Creating Numbers with Given Digits",
+          "concept_summary": "Do the following.\n\n(A)\nWrite all the possible three-digit numbers using 4, 6, 9.\n\n(B)\nWrite all the possible numbers with 5 in the units place between 50\nand 150.\n\n(C)\nWrite all the possible numbers between 800 and\n900 which have 6 in the tens place.",
+          "details_and_sidebars": [],
+          "prerequisites": [],
+          "original_exercises": [],
+          "status": "untaught",
+          "last_taught_date": null
+        },
+        {
+          "topic_name": "Questions about Numbers Table",
+          "concept_summary": null,
+          "details_and_sidebars": [],
+          "prerequisites": [],
+          "original_exercises": [
+            "(A)\nWhat is the starting number in the table? ...................................",
+            "(B)\nWhat is the number after 197? ....................................................",
+            "(C)\nWhat is the number before 161? .................................................",
+            "(D)\nWhat is the number between 149 and 151? ............................",
+            "(E)\nWhat is the last number in the table? ........................................."
+          ],
+          "status": "untaught",
+          "last_taught_date": null
+        },
+        {
+          "topic_name": "Counting Bricks in Groups (Exercise)",
+          "concept_summary": null,
+          "details_and_sidebars": [],
+          "prerequisites": [],
+          "original_exercises": [],
+          "status": "untaught",
+          "last_taught_date": null
+        },
+        {
+          "topic_name": "Writing Correct Digit of Place Value",
+          "concept_summary": null,
+          "details_and_sidebars": [],
+          "prerequisites": [],
+          "original_exercises": [],
+          "status": "untaught",
+          "last_taught_date": null
+        },
+        {
+          "topic_name": "Writing Numbers in Expanded Form (Exercise)",
+          "concept_summary": null,
+          "details_and_sidebars": [],
+          "prerequisites": [],
+          "original_exercises": [],
+          "status": "untaught",
+          "last_taught_date": null
+        },
+        {
+          "topic_name": "Writing Correct Symbol",
+          "concept_summary": null,
+          "details_and_sidebars": [],
+          "prerequisites": [],
+          "original_exercises": [],
+          "status": "untaught",
+          "last_taught_date": null
+        },
+        {
+          "topic_name": "Writing Greater or Lesser",
+          "concept_summary": null,
+          "details_and_sidebars": [],
+          "prerequisites": [],
+          "original_exercises": [],
+          "status": "untaught",
+          "last_taught_date": null
+        },
+        {
+          "topic_name": "Writing Correct Symbol (Exercise)",
+          "concept_summary": null,
+          "details_and_sidebars": [],
+          "prerequisites": [],
+          "original_exercises": [],
+          "status": "untaught",
+          "last_taught_date": null
+        },
+        {
+          "topic_name": "Doing the Following",
+          "concept_summary": null,
+          "details_and_sidebars": [],
+          "prerequisites": [],
+          "original_exercises": [
+            "(A)\nWrite all the possible three-digit numbers using 4, 6, 9.",
+            "(B)\nWrite all the possible numbers with 5 in the units place between 50\nand 150.",
+            "(C)\nWrite all the possible numbers between 800 and\n900 which have 6 in the tens place."
+          ],
+          "status": "untaught",
+          "last_taught_date": null
+        },
+        {
+          "topic_name": "Writing Correct Numbers in Blanks",
+          "concept_summary": null,
+          "details_and_sidebars": [],
+          "prerequisites": [],
+          "original_exercises": [],
+          "status": "untaught",
+          "last_taught_date": null
+        },
+        {
+          "topic_name": "Writing Numbers as Shown in Example",
+          "concept_summary": null,
+          "details_and_sidebars": [],
+          "prerequisites": [],
+          "original_exercises": [],
+          "status": "untaught",
+          "last_taught_date": null
+        }
+      ]
+    },
+    {
+      "chapter_number": 3,
+      "chapter_title": "ADDITION",
+      "topics": [
+        {
+          "topic_name": "Introduction to Addition",
+          "concept_summary": "Sita and Geeta were playing in the school ground. Sita saw birds on the wall\nand asked Geeta, \"How many birds are there?\" Help Geeta to count the number\nof birds on the wall.",
+          "details_and_sidebars": [],
+          "prerequisites": [],
+          "original_exercises": [],
+          "status": "untaught",
+          "last_taught_date": null
+        },
+        {
+          "topic_name": "Addition of Two-Digit Numbers",
+          "concept_summary": "The table given below provides information about the number of students in classes\nI to V in Kondur school. Find out how many students are there in each class.",
+          "details_and_sidebars": [],
+          "prerequisites": [],
+          "original_exercises": [],
+          "status": "untaught",
+          "last_taught_date": null
+        },
+        {
+          "topic_name": "Mental Math Addition",
+          "concept_summary": null,
+          "details_and_sidebars": [],
+          "prerequisites": [],
+          "original_exercises": [
+            "Now workout the steps in your mind. Write the answers in the boxes."
+          ],
+          "status": "untaught",
+          "last_taught_date": null
+        },
+        {
+          "topic_name": "Addition with Carrying",
+          "concept_summary": null,
+          "details_and_sidebars": [],
+          "prerequisites": [],
+          "original_exercises": [
+            "Try These"
+          ],
+          "status": "untaught",
+          "last_taught_date": null
+        },
+        {
+          "topic_name": "Addition of Three-Digit Numbers",
+          "concept_summary": null,
+          "details_and_sidebars": [],
+          "prerequisites": [],
+          "original_exercises": [
+            "Try These"
+          ],
+          "status": "untaught",
+          "last_taught_date": null
+        },
+        {
+          "topic_name": "More Addition Problems",
+          "concept_summary": null,
+          "details_and_sidebars": [],
+          "prerequisites": [],
+          "original_exercises": [
+            "Do This"
+          ],
+          "status": "untaught",
+          "last_taught_date": null
+        },
+        {
+          "topic_name": "Word Problems on Addition",
+          "concept_summary": null,
+          "details_and_sidebars": [],
+          "prerequisites": [],
+          "original_exercises": [
+            "Try This",
+            "How many laddoos do you need?",
+            "Try These",
+            "How many chalk boxes?"
+          ],
+          "status": "untaught",
+          "last_taught_date": null
+        },
+        {
+          "topic_name": "More Addition Practice",
+          "concept_summary": null,
+          "details_and_sidebars": [],
+          "prerequisites": [],
+          "original_exercises": [
+            "Do This"
+          ],
+          "status": "untaught",
+          "last_taught_date": null
+        },
+        {
+          "topic_name": "Adding Birds",
+          "concept_summary": "Sita and Geeta were playing in the school ground. Sita saw birds on the wall\nand asked Geeta, \"How many birds are there?\" Help Geeta to count the number\nof birds on the wall.\n\nNumber of birds\non the wall\nHow many are\njoining them\nAll together\nhow many\n\nWe can write the above as",
+          "details_and_sidebars": [],
+          "prerequisites": [],
+          "original_exercises": [],
+          "status": "untaught",
+          "last_taught_date": null
+        },
+        {
+          "topic_name": "Adding Beads",
+          "concept_summary": "Shafi has 9 beeds and Sanjeev has 6 beeds. How many beeds are there in all?\nCount and write.\n\nShafi\nhas\nSanjeev\nhas\nAll\ntogether\n\nWe can write the above as",
+          "details_and_sidebars": [],
+          "prerequisites": [],
+          "original_exercises": [],
+          "status": "untaught",
+          "last_taught_date": null
+        },
+        {
+          "topic_name": "Adding Students",
+          "concept_summary": "How many students are there in Kondur school?\n\nThe table given below provides information about the number of students in classes\nI to V in Kondur school. Find out how many students are there in each class.\n\nClass I Class II Class III Class IV Class V Total\nBoys 12 13 14 16 13 68\nGirls 14 15 15 14 21 79\nTotal",
+          "details_and_sidebars": [
+            "How did she\nadd 12 and\n14 so fast?"
+          ],
+          "prerequisites": [],
+          "original_exercises": [],
+          "status": "untaught",
+          "last_taught_date": null
+        },
+        {
+          "topic_name": "Adding Mentally",
+          "concept_summary": null,
+          "details_and_sidebars": [],
+          "prerequisites": [],
+          "original_exercises": [],
+          "status": "untaught",
+          "last_taught_date": null
+        },
+        {
+          "topic_name": "Adding Boys and Girls",
+          "concept_summary": "Carefully look at the table again.\n\nThe total number of boys in Kondur school is 68 and the total number of girls\nis 79. What is total number of students in Kondur school? Let us add the\nnumber of boys and girls.",
+          "details_and_sidebars": [],
+          "prerequisites": [],
+          "original_exercises": [],
+          "status": "untaught",
+          "last_taught_date": null
+        },
+        {
+          "topic_name": "Addition Practice",
+          "concept_summary": null,
+          "details_and_sidebars": [],
+          "prerequisites": [],
+          "original_exercises": [],
+          "status": "untaught",
+          "last_taught_date": null
+        },
+        {
+          "topic_name": "Adding Students in Thimmapur School",
+          "concept_summary": "How many students are there in Thimmapur school?\nThere are 125 boys and 144 girls in Thimmapur school. What is the total\nnumber of students in the school?\n\nLet us find the total number of students in the school.",
+          "details_and_sidebars": [],
+          "prerequisites": [],
+          "original_exercises": [],
+          "status": "untaught",
+          "last_taught_date": null
+        },
+        {
+          "topic_name": "Adding Fans",
+          "concept_summary": null,
+          "details_and_sidebars": [],
+          "prerequisites": [],
+          "original_exercises": [],
+          "status": "untaught",
+          "last_taught_date": null
+        },
+        {
+          "topic_name": "Adding Marbles",
+          "concept_summary": null,
+          "details_and_sidebars": [],
+          "prerequisites": [],
+          "original_exercises": [],
+          "status": "untaught",
+          "last_taught_date": null
+        },
+        {
+          "topic_name": "Adding Students in Both Schools",
+          "concept_summary": "How many students are there in both schools?\nWe know that the total number of students in Kondur school is 147. We also\nknow that the total number of students in Thimmapur school is 269.\n\nLet us find the total number of students in the two schools.",
+          "details_and_sidebars": [],
+          "prerequisites": [],
+          "original_exercises": [],
+          "status": "untaught",
+          "last_taught_date": null
+        },
+        {
+          "topic_name": "Adding Story Books",
+          "concept_summary": null,
+          "details_and_sidebars": [],
+          "prerequisites": [],
+          "original_exercises": [],
+          "status": "untaught",
+          "last_taught_date": null
+        },
+        {
+          "topic_name": "Adding Oranges and Apples",
+          "concept_summary": null,
+          "details_and_sidebars": [],
+          "prerequisites": [],
+          "original_exercises": [],
+          "status": "untaught",
+          "last_taught_date": null
+        },
+        {
+          "topic_name": "Addition Practice",
+          "concept_summary": null,
+          "details_and_sidebars": [],
+          "prerequisites": [],
+          "original_exercises": [],
+          "status": "untaught",
+          "last_taught_date": null
+        },
+        {
+          "topic_name": "Adding Bricks",
+          "concept_summary": "How many bricks?\n\nA kitchen is being constructed in Thimmapur school. 475 bricks are available.\nThe mason brings 220 more bricks to complete the construction. A total of\nhow many bricks are used to construct the kitchen?",
+          "details_and_sidebars": [
+            "Think!\nIs 475 + 220\nmore than 600\nor less than\n600?"
+          ],
+          "prerequisites": [],
+          "original_exercises": [],
+          "status": "untaught",
+          "last_taught_date": null
+        },
+        {
+          "topic_name": "Adding Pebbles",
+          "concept_summary": null,
+          "details_and_sidebars": [
+            "Think!\nIs 163 + 125 more\nthan 200 or less\nthan 200?"
+          ],
+          "prerequisites": [],
+          "original_exercises": [],
+          "status": "untaught",
+          "last_taught_date": null
+        },
+        {
+          "topic_name": "Adding Laddoos",
+          "concept_summary": "How many laddoos do you need?\n\nIt was decided to distribute a laddoo to each person on Independence Day in\nPalasa school. There were 245 students and 13 teachers. Two girls Laxmi and\nRani calculated the number of laddoos required for distribution, as given below-",
+          "details_and_sidebars": [],
+          "prerequisites": [],
+          "original_exercises": [],
+          "status": "untaught",
+          "last_taught_date": null
+        },
+        {
+          "topic_name": "Adding Rupees",
+          "concept_summary": null,
+          "details_and_sidebars": [
+            "Think!\nIs 125 + 45 more\nthan 100 or less\nthan 100"
+          ],
+          "prerequisites": [],
+          "original_exercises": [],
+          "status": "untaught",
+          "last_taught_date": null
+        },
+        {
+          "topic_name": "Adding Story Books and Story Cards",
+          "concept_summary": null,
+          "details_and_sidebars": [],
+          "prerequisites": [],
+          "original_exercises": [],
+          "status": "untaught",
+          "last_taught_date": null
+        },
+        {
+          "topic_name": "Adding Chalk Boxes",
+          "concept_summary": "How many chalk boxes?\n\nIn Salur school, children make chalks and distribute to other schools. In one\nmonth they made 175 chalk boxes and in the next month they made 127 chalk\nboxes. After the two months Gopi asked his friend Rafi, \"how many chalk\nboxes have we made?\"",
+          "details_and_sidebars": [],
+          "prerequisites": [],
+          "original_exercises": [],
+          "status": "untaught",
+          "last_taught_date": null
+        },
+        {
+          "topic_name": "Addition Practice",
+          "concept_summary": null,
+          "details_and_sidebars": [],
+          "prerequisites": [],
+          "original_exercises": [],
+          "status": "untaught",
+          "last_taught_date": null
+        },
+        {
+          "topic_name": "Word Problems",
+          "concept_summary": null,
+          "details_and_sidebars": [],
+          "prerequisites": [],
+          "original_exercises": [],
+          "status": "untaught",
+          "last_taught_date": null
+        },
+        {
+          "topic_name": "Addition by Combining Objects",
+          "concept_summary": "Sita and Geeta were playing in the school ground. Sita saw birds on the wall and asked Geeta, \"How many birds are there?\" Help Geeta to count the number of birds on the wall.\n\nNumber of birds on the wall\n\nHow many are joining them\n\nAll together how many",
+          "details_and_sidebars": [],
+          "prerequisites": [],
+          "original_exercises": [],
+          "status": "untaught",
+          "last_taught_date": null
+        },
+        {
+          "topic_name": "Addition by Breaking Numbers",
+          "concept_summary": "The table given below provides information about the number of students in classes I to V in Kondur school. Find out how many students are there in each class.\n\nClass I Class II Class III Class IV Class V Total\nBoys 12 13 14 16 13 68\nGirls 14 15 15 14 21 79\nTotal",
+          "details_and_sidebars": [
+            "How did she\nadd 12 and\n14 so fast?"
+          ],
+          "prerequisites": [],
+          "original_exercises": [],
+          "status": "untaught",
+          "last_taught_date": null
+        },
+        {
+          "topic_name": "Mental Addition",
+          "concept_summary": "Now workout the steps in your mind. Write the answers in the boxes.",
+          "details_and_sidebars": [],
+          "prerequisites": [],
+          "original_exercises": [],
+          "status": "untaught",
+          "last_taught_date": null
+        },
+        {
+          "topic_name": "Addition with Carry Over",
+          "concept_summary": "The total number of boys in Kondur school is 68 and the total number of girls is 79. What is total number of students in Kondur school? Let us add the number of boys and girls.",
+          "details_and_sidebars": [],
+          "prerequisites": [],
+          "original_exercises": [],
+          "status": "untaught",
+          "last_taught_date": null
+        },
+        {
+          "topic_name": "Addition Word Problems",
+          "concept_summary": "It was decided to distribute a laddoo to each person on Independence Day in Palasa school. There were 245 students and 13 teachers. Two girls Laxmi and Rani calculated the number of laddoos required for distribution, as given below-",
+          "details_and_sidebars": [],
+          "prerequisites": [],
+          "original_exercises": [],
+          "status": "untaught",
+          "last_taught_date": null
+        },
+        {
+          "topic_name": "Addition Word Problems (Continued)",
+          "concept_summary": "A teacher kept a note of the number of story books and story cards were read by boys and girls in the school. This is what she found:\n\nStudents Story books Story cards\nGirls 129 237\nBoys 75 150",
+          "details_and_sidebars": [],
+          "prerequisites": [],
+          "original_exercises": [],
+          "status": "untaught",
+          "last_taught_date": null
+        },
+        {
+          "topic_name": "Identifying Mistakes in Addition",
+          "concept_summary": "In Salur school, children make chalks and distribute to other schools. In one month they made 175 chalk boxes and in the next month they made 127 chalk boxes. After the two months Gopi asked his friend Rafi, \"how many chalk boxes have we made?\"",
+          "details_and_sidebars": [],
+          "prerequisites": [],
+          "original_exercises": [],
+          "status": "untaught",
+          "last_taught_date": null
+        },
+        {
+          "topic_name": "Addition Word Problems",
+          "concept_summary": "Answer the following.\n\nThere were 215 students in Kanala school. After it was reopened in June, 67 more students joined. How many students are there in the school now?",
+          "details_and_sidebars": [],
+          "prerequisites": [],
+          "original_exercises": [],
+          "status": "untaught",
+          "last_taught_date": null
+        },
+        {
+          "topic_name": "Adding Birds and Beads",
+          "concept_summary": "Sita and Geeta were playing in the school ground. Sita saw birds on the wall\nand asked Geeta, \"How many birds are there?\" Help Geeta to count the number\nof birds on the wall.\n\nNumber of birds\non the wall\n\nHow many are\njoining them\n\nAll together\nhow many\n\n+\n=\n\nWe can write the above as",
+          "details_and_sidebars": [],
+          "prerequisites": [],
+          "original_exercises": [],
+          "status": "untaught",
+          "last_taught_date": null
+        },
+        {
+          "topic_name": "Adding Students in Kondur School",
+          "concept_summary": "The table given below provides information about the number of students in classes\nI to V in Kondur school. Find out how many students are there in each class.",
+          "details_and_sidebars": [],
+          "prerequisites": [],
+          "original_exercises": [],
+          "status": "untaught",
+          "last_taught_date": null
+        },
+        {
+          "topic_name": "Try These (Mental Math)",
+          "concept_summary": "",
+          "details_and_sidebars": [],
+          "prerequisites": [],
+          "original_exercises": [
+            "Now workout the steps in your mind. Write the answers in the boxes."
+          ],
+          "status": "untaught",
+          "last_taught_date": null
+        },
+        {
+          "topic_name": "Adding Boys and Girls in Kondur School",
+          "concept_summary": "The total number of boys in Kondur school is 68 and the total number of girls\nis 79. What is total number of students in Kondur school? Let us add the\nnumber of boys and girls.",
+          "details_and_sidebars": [],
+          "prerequisites": [],
+          "original_exercises": [],
+          "status": "untaught",
+          "last_taught_date": null
+        },
+        {
+          "topic_name": "Try These (Addition)",
+          "concept_summary": "",
+          "details_and_sidebars": [],
+          "prerequisites": [],
+          "original_exercises": [
+            "7    5\n        +  2    6",
+            "2    7\n        +  4    8",
+            "6    8\n        +  2    3",
+            "3    9\n        +       8"
+          ],
+          "status": "untaught",
+          "last_taught_date": null
+        },
+        {
+          "topic_name": "Try These (Word Problems)",
+          "concept_summary": "",
+          "details_and_sidebars": [],
+          "prerequisites": [],
+          "original_exercises": [
+            "A factory produced 214 fans in the first week and 165 fans in the second\nweek. How many fans did the factory produce in the two weeks altogether?",
+            "Raju have 125 marbles and Kishore have 63 marbles. How many marbles\naltogether they have?"
+          ],
+          "status": "untaught",
+          "last_taught_date": null
+        },
+        {
+          "topic_name": "Try These (More Word Problems)",
+          "concept_summary": "",
+          "details_and_sidebars": [],
+          "prerequisites": [],
+          "original_exercises": [
+            "Thimmapur school library has 265 Telugu story books and 176 English\nstory books. How many story books does the school have altogether?",
+            "A fruit-seller sold 136 oranges and 185 apples in one day. How many\nfruits did the fruit seller sell in the day?"
+          ],
+          "status": "untaught",
+          "last_taught_date": null
+        },
+        {
+          "topic_name": "Do This (Addition Practice)",
+          "concept_summary": "",
+          "details_and_sidebars": [],
+          "prerequisites": [],
+          "original_exercises": [
+            "2    7     5\n        + 1    0     6",
+            "1    6     8\n        + 2    4     0",
+            "3    9     3\n        + 1    8     7",
+            "7    2     6\n        +      7      5",
+            "6    0     9\n        +       9     8",
+            "5    4     7\n        + 2    7     5",
+            "145 + 22\n=",
+            "365 + 103\n=",
+            "263 + 210\n=",
+            "103 + 425\n=",
+            "320 + 46\n=",
+            "85 + 104\n="
+          ],
+          "status": "untaught",
+          "last_taught_date": null
+        },
+        {
+          "topic_name": "Bricks for a Kitchen",
+          "concept_summary": "A kitchen is being constructed in Thimmapur school. 475 bricks are available.\nThe mason brings 220 more bricks to complete the construction. A total of\nhow many bricks are used to construct the kitchen?",
+          "details_and_sidebars": [],
+          "prerequisites": [],
+          "original_exercises": [],
+          "status": "untaught",
+          "last_taught_date": null
+        },
+        {
+          "topic_name": "Try This (Pebbles)",
+          "concept_summary": "",
+          "details_and_sidebars": [],
+          "prerequisites": [],
+          "original_exercises": [
+            "John and Gopi are playing with pebbles. John has 163 pebbles. He wins\n125 more pebbles. How many pebbles does John have now?"
+          ],
+          "status": "untaught",
+          "last_taught_date": null
+        },
+        {
+          "topic_name": "Laddoos for Independence Day",
+          "concept_summary": "It was decided to distribute a laddoo to each person on Independence Day in\nPalasa school. There were 245 students and 13 teachers. Two girls Laxmi and\nRani calculated the number of laddoos required for distribution, as given below-",
+          "details_and_sidebars": [],
+          "prerequisites": [],
+          "original_exercises": [],
+          "status": "untaught",
+          "last_taught_date": null
+        },
+        {
+          "topic_name": "Try These (Rupees)",
+          "concept_summary": "",
+          "details_and_sidebars": [],
+          "prerequisites": [],
+          "original_exercises": [
+            "Ravi had ` 125. His father gave ` 45 to him. How many rupees does\nRavi have now?"
+          ],
+          "status": "untaught",
+          "last_taught_date": null
+        },
+        {
+          "topic_name": "Story Books and Story Cards",
+          "concept_summary": "",
+          "details_and_sidebars": [],
+          "prerequisites": [],
+          "original_exercises": [
+            "A teacher kept a note of the number of story books and story cards\nwere read by boys and girls in the school. This is what she found:\n\nFind out:\n\n(A)\nHow many total story books and story cards were read\nby girls?\n\n(B)\nHow many total story books and story cards were read\nby boys?\n\n(C)\nHow many total story books were read by the students?\n\n(D)\nHow many total story cards were read by the students?"
+          ],
+          "status": "untaught",
+          "last_taught_date": null
+        },
+        {
+          "topic_name": "Chalk Boxes",
+          "concept_summary": "In Salur school, children make chalks and distribute to other schools. In one\nmonth they made 175 chalk boxes and in the next month they made 127 chalk\nboxes. After the two months Gopi asked his friend Rafi, \"how many chalk\nboxes have we made?\"",
+          "details_and_sidebars": [],
+          "prerequisites": [],
+          "original_exercises": [],
+          "status": "untaught",
+          "last_taught_date": null
+        },
+        {
+          "topic_name": "Do This (More Addition Practice)",
+          "concept_summary": "",
+          "details_and_sidebars": [],
+          "prerequisites": [],
+          "original_exercises": [
+            "2    7     6\n        +  3    1     3",
+            "6    0     3\n        +  2    5     6",
+            "5    2     0\n        +  3    0     7",
+            "3    4     9\n        +        2     4",
+            "2    6     3\n        +        8     4",
+            "1    4     9\n        +        6     5",
+            "3    2     5\n        +  4    9     8",
+            "3    9     4\n        +  1    0     8",
+            "2    0     9\n        +        8     4",
+            "5    4     9\n        +   2   6     5",
+            "3    0     9\n        +  4    0     8",
+            "6    1     4\n        +  1    0     8"
+          ],
+          "status": "untaught",
+          "last_taught_date": null
+        },
+        {
+          "topic_name": "Do This (Word Problems)",
+          "concept_summary": "",
+          "details_and_sidebars": [],
+          "prerequisites": [],
+          "original_exercises": [
+            "There were 215 students in Kanala school. After it was reopened\nin June, 67 more students joined. How many students are there in\nthe school now?",
+            "There are 135 mango trees and 145 guava trees in a garden. How\nmany trees are there in all in the garden?",
+            "Rama's age is 37 years. Sita's age is 18 years more than Rama's\nage. What is Sita's age?",
+            "Keerthi travelled 45 km by car and 176 km by bus. What is the\ntotal distance travelled by Keerthi?",
+            "Ravi has 2 hundred rupee notes, 6 ten rupee notes and 5 one\nrupee notes. Sita has 3 hundred rupee notes and 5 ten rupee notes.\nHow much money do both have altogether?"
+          ],
+          "status": "untaught",
+          "last_taught_date": null
+        },
+        {
+          "topic_name": "Addition Concept",
+          "concept_summary": "Sita and Geeta were playing in the school ground. Sita saw birds on the wall\nand asked Geeta, \"How many birds are there?\" Help Geeta to count the number\nof birds on the wall.",
+          "details_and_sidebars": [],
+          "prerequisites": [],
+          "original_exercises": [],
+          "status": "untaught",
+          "last_taught_date": null
+        },
+        {
+          "topic_name": "Addition with Beads",
+          "concept_summary": "Shafi has 9 beeds and Sanjeev has 6 beeds. How many beeds are there in all?\nCount and write.",
+          "details_and_sidebars": [],
+          "prerequisites": [],
+          "original_exercises": [],
+          "status": "untaught",
+          "last_taught_date": null
+        },
+        {
+          "topic_name": "Adding Two-Digit Numbers",
+          "concept_summary": "The table given below provides information about the number of students in classes\nI to V in Kondur school. Find out how many students are there in each class.",
+          "details_and_sidebars": [],
+          "prerequisites": [],
+          "original_exercises": [],
+          "status": "untaught",
+          "last_taught_date": null
+        },
+        {
+          "topic_name": "Breaking Numbers for Addition",
+          "concept_summary": "Janu saw the table and said that in class I there are -\n\nHow did she\nadd 12 and\n14 so fast?\n\n12 Boys \u2192 12 means 10 + 2\n\n14 Girls  \u2192 14 means 10 + 4\n\nTotal students = 12 + 14 = 26.",
+          "details_and_sidebars": [],
+          "prerequisites": [],
+          "original_exercises": [],
+          "status": "untaught",
+          "last_taught_date": null
+        },
+        {
+          "topic_name": "Addition Exercises",
+          "concept_summary": "",
+          "details_and_sidebars": [],
+          "prerequisites": [],
+          "original_exercises": [
+            "Now workout the steps in your mind. Write the answers in the boxes."
+          ],
+          "status": "untaught",
+          "last_taught_date": null
+        },
+        {
+          "topic_name": "Adding Two-Digit Numbers with Carrying",
+          "concept_summary": "The total number of boys in Kondur school is 68 and the total number of girls\nis 79. What is total number of students in Kondur school? Let us add the\nnumber of boys and girls.",
+          "details_and_sidebars": [],
+          "prerequisites": [],
+          "original_exercises": [],
+          "status": "untaught",
+          "last_taught_date": null
+        },
+        {
+          "topic_name": "Addition Exercises with Carrying",
+          "concept_summary": "",
+          "details_and_sidebars": [],
+          "prerequisites": [],
+          "original_exercises": [
+            "7    5\n        +  2    6",
+            "2    7\n        +  4    8",
+            "6    8\n        +  2    3",
+            "3    9\n        +       8"
+          ],
+          "status": "untaught",
+          "last_taught_date": null
+        },
+        {
+          "topic_name": "Adding Three-Digit Numbers",
+          "concept_summary": "There are 125 boys and 144 girls in Thimmapur school. What is the total\nnumber of students in the school?",
+          "details_and_sidebars": [],
+          "prerequisites": [],
+          "original_exercises": [],
+          "status": "untaught",
+          "last_taught_date": null
+        },
+        {
+          "topic_name": "Adding Three-Digit Numbers with Carrying (Continued)",
+          "concept_summary": "We know that the total number of students in Kondur school is 147. We also\nknow that the total number of students in Thimmapur school is 269.\n\nLet us find the total number of students in the two schools.",
+          "details_and_sidebars": [],
+          "prerequisites": [],
+          "original_exercises": [],
+          "status": "untaught",
+          "last_taught_date": null
+        },
+        {
+          "topic_name": "More Addition Word Problems",
+          "concept_summary": "",
+          "details_and_sidebars": [],
+          "prerequisites": [],
+          "original_exercises": [
+            "Thimmapur school library has 265 Telugu story books and 176 English\nstory books. How many story books does the school have altogether?",
+            "A fruit-seller sold 136 oranges and 185 apples in one day. How many\nfruits did the fruit seller sell in the day?"
+          ],
+          "status": "untaught",
+          "last_taught_date": null
+        },
+        {
+          "topic_name": "Additional Addition Exercises",
+          "concept_summary": "",
+          "details_and_sidebars": [],
+          "prerequisites": [],
+          "original_exercises": [
+            "2    7     5\n        + 1    0     6",
+            "1    6     8\n        + 2    4     0",
+            "3    9     3\n        + 1    8     7",
+            "7    2     6\n        +      7      5",
+            "6    0     9\n        +       9     8",
+            "5    4     7\n        + 2    7     5",
+            "145 + 22 = ",
+            "365 + 103 = ",
+            "263 + 210 = ",
+            "103 + 425 = ",
+            "320 + 46 = ",
+            "85 + 104 = "
+          ],
+          "status": "untaught",
+          "last_taught_date": null
+        },
+        {
+          "topic_name": "Addition in Real-Life Contexts",
+          "concept_summary": "A kitchen is being constructed in Thimmapur school. 475 bricks are available.\nThe mason brings 220 more bricks to complete the construction. A total of\nhow many bricks are used to construct the kitchen?",
+          "details_and_sidebars": [
+            "Is 475 + 220\nmore than 600\nor less than\n600?"
+          ],
+          "prerequisites": [],
+          "original_exercises": [],
+          "status": "untaught",
+          "last_taught_date": null
+        },
+        {
+          "topic_name": "More Addition Word Problems",
+          "concept_summary": "",
+          "details_and_sidebars": [
+            "Is 163 + 125 more\nthan 200 or less\nthan 200?"
+          ],
+          "prerequisites": [],
+          "original_exercises": [
+            "John and Gopi are playing with pebbles. John has 163 pebbles. He wins\n125 more pebbles. How many pebbles does John have now?"
+          ],
+          "status": "untaught",
+          "last_taught_date": null
+        },
+        {
+          "topic_name": "Addition in Real-Life Contexts (Continued)",
+          "concept_summary": "It was decided to distribute a laddoo to each person on Independence Day in\nPalasa school. There were 245 students and 13 teachers. Two girls Laxmi and\nRani calculated the number of laddoos required for distribution, as given below-",
+          "details_and_sidebars": [],
+          "prerequisites": [],
+          "original_exercises": [],
+          "status": "untaught",
+          "last_taught_date": null
+        },
+        {
+          "topic_name": "Addition in Real-Life Contexts (Continued)",
+          "concept_summary": "",
+          "details_and_sidebars": [],
+          "prerequisites": [],
+          "original_exercises": [
+            "A teacher kept a note of the number of story books and story cards\nwere read by boys and girls in the school. This is what she found:",
+            "Find out:\n\n(A) How many total story books and story cards were read\nby girls?\n\n(B) How many total story books and story cards were read\nby boys?\n\n(C) How many total story books were read by the students?\n\n(D) How many total story cards were read by the students?"
+          ],
+          "status": "untaught",
+          "last_taught_date": null
+        },
+        {
+          "topic_name": "Final Addition Exercises",
+          "concept_summary": "",
+          "details_and_sidebars": [],
+          "prerequisites": [],
+          "original_exercises": [
+            "2    7     6\n        +  3    1     3",
+            "6    0     3\n        +  2    5     6",
+            "5    2     0\n        +  3    0     7",
+            "3    4     9\n        +        2     4",
+            "2    6     3\n        +        8     4",
+            "1    4     9\n        +        6     5",
+            "3    2     5\n        +  4    9     8",
+            "3    9     4\n        +  1    0     8",
+            "2    0     9\n        +        8     4",
+            "5    4     9\n        +   2   6     5",
+            "3    0     9\n        +  4    0     8",
+            "6    1     4\n        +  1    0     8"
+          ],
+          "status": "untaught",
+          "last_taught_date": null
+        },
+        {
+          "topic_name": "Final Addition Word Problems",
+          "concept_summary": "",
+          "details_and_sidebars": [],
+          "prerequisites": [],
+          "original_exercises": [
+            "There were 215 students in Kanala school. After it was reopened\nin June, 67 more students joined. How many students are there in\nthe school now?",
+            "There are 135 mango trees and 145 guava trees in a garden. How\nmany trees are there in all in the garden?",
+            "Rama's age is 37 years. Sita's age is 18 years more than Rama's\nage. What is Sita's age?",
+            "Keerthi travelled 45 km by car and 176 km by bus. What is the\ntotal distance travelled by Keerthi?",
+            "Ravi has 2 hundred rupee notes, 6 ten rupee notes and 5 one\nrupee notes. Sita has 3 hundred rupee notes and 5 ten rupee notes.\nHow much money do both have altogether?"
+          ],
+          "status": "untaught",
+          "last_taught_date": null
+        },
+        {
+          "topic_name": "Students in Kondur School",
+          "concept_summary": "How many students are there in Kondur school?\nThe table given below provides information about the number of students in classes\nI to V in Kondur school. Find out how many students are there in each class.",
+          "details_and_sidebars": [],
+          "prerequisites": [],
+          "original_exercises": [],
+          "status": "untaught",
+          "last_taught_date": null
+        },
+        {
+          "topic_name": "Two-Digit Addition",
+          "concept_summary": "Try These",
+          "details_and_sidebars": [],
+          "prerequisites": [],
+          "original_exercises": [],
+          "status": "untaught",
+          "last_taught_date": null
+        },
+        {
+          "topic_name": "Students in Thimmapur School",
+          "concept_summary": "How many students are there in Thimmapur school?\nThere are 125 boys and 144 girls in Thimmapur school. What is the total\nnumber of students in the school?",
+          "details_and_sidebars": [],
+          "prerequisites": [],
+          "original_exercises": [],
+          "status": "untaught",
+          "last_taught_date": null
+        },
+        {
+          "topic_name": "Factory Production",
+          "concept_summary": "A factory produced 214 fans in the first week and 165 fans in the second\nweek. How many fans did the factory produce in the two weeks altogether?",
+          "details_and_sidebars": [],
+          "prerequisites": [],
+          "original_exercises": [],
+          "status": "untaught",
+          "last_taught_date": null
+        },
+        {
+          "topic_name": "Marbles",
+          "concept_summary": "Raju have 125 marbles and Kishore have 63 marbles. How many marbles\naltogether they have?",
+          "details_and_sidebars": [],
+          "prerequisites": [],
+          "original_exercises": [],
+          "status": "untaught",
+          "last_taught_date": null
+        },
+        {
+          "topic_name": "Students in Both Schools",
+          "concept_summary": "How many students are there in both schools?\nWe know that the total number of students in Kondur school is 147. We also\nknow that the total number of students in Thimmapur school is 269.",
+          "details_and_sidebars": [],
+          "prerequisites": [],
+          "original_exercises": [],
+          "status": "untaught",
+          "last_taught_date": null
+        },
+        {
+          "topic_name": "Story Books",
+          "concept_summary": "Thimmapur school library has 265 Telugu story books and 176 English\nstory books. How many story books does the school have altogether?",
+          "details_and_sidebars": [],
+          "prerequisites": [],
+          "original_exercises": [],
+          "status": "untaught",
+          "last_taught_date": null
+        },
+        {
+          "topic_name": "Fruits",
+          "concept_summary": "A fruit-seller sold 136 oranges and 185 apples in one day. How many\nfruits did the fruit seller sell in the day?",
+          "details_and_sidebars": [],
+          "prerequisites": [],
+          "original_exercises": [],
+          "status": "untaught",
+          "last_taught_date": null
+        },
+        {
+          "topic_name": "Three-Digit Addition",
+          "concept_summary": "Do This",
+          "details_and_sidebars": [],
+          "prerequisites": [],
+          "original_exercises": [],
+          "status": "untaught",
+          "last_taught_date": null
+        },
+        {
+          "topic_name": "Bricks",
+          "concept_summary": "A kitchen is being constructed in Thimmapur school. 475 bricks are available.\nThe mason brings 220 more bricks to complete the construction. A total of\nhow many bricks are used to construct the kitchen?",
+          "details_and_sidebars": [
+            "Think!\nIs 475 + 220\nmore than 600\nor less than\n600?"
+          ],
+          "prerequisites": [],
+          "original_exercises": [],
+          "status": "untaught",
+          "last_taught_date": null
+        },
+        {
+          "topic_name": "Pebbles",
+          "concept_summary": "John and Gopi are playing with pebbles. John has 163 pebbles. He wins\n125 more pebbles. How many pebbles does John have now?",
+          "details_and_sidebars": [
+            "Think!\nIs 163 + 125 more\nthan 200 or less\nthan 200?"
+          ],
+          "prerequisites": [],
+          "original_exercises": [],
+          "status": "untaught",
+          "last_taught_date": null
+        },
+        {
+          "topic_name": "Laddoos",
+          "concept_summary": "It was decided to distribute a laddoo to each person on Independence Day in\nPalasa school. There were 245 students and 13 teachers. Two girls Laxmi and\nRani calculated the number of laddoos required for distribution, as given below-",
+          "details_and_sidebars": [],
+          "prerequisites": [],
+          "original_exercises": [],
+          "status": "untaught",
+          "last_taught_date": null
+        },
+        {
+          "topic_name": "Rupees",
+          "concept_summary": "Ravi had ` 125. His father gave ` 45 to him. How many rupees does\nRavi have now?",
+          "details_and_sidebars": [
+            "Think!\nIs 125 + 45 more\nthan 100 or less\nthan 100"
+          ],
+          "prerequisites": [],
+          "original_exercises": [],
+          "status": "untaught",
+          "last_taught_date": null
+        },
+        {
+          "topic_name": "Three-Digit Addition",
+          "concept_summary": "Add the following.",
+          "details_and_sidebars": [],
+          "prerequisites": [],
+          "original_exercises": [],
+          "status": "untaught",
+          "last_taught_date": null
+        }
+      ]
+    },
+    {
+      "chapter_number": 4,
+      "chapter_title": "SUBTRACTION",
+      "topics": [
+        {
+          "topic_name": "Introduction to Subtraction",
+          "concept_summary": "Raghu and Divya pluck 39 roses in the garden. 27 roses are red and the remaining\nare yellow. How many yellow roses did they pluck?",
+          "details_and_sidebars": [],
+          "prerequisites": [],
+          "original_exercises": [
+            "Try These"
+          ],
+          "status": "untaught",
+          "last_taught_date": null
+        },
+        {
+          "topic_name": "Subtraction Word Problems",
+          "concept_summary": null,
+          "details_and_sidebars": [],
+          "prerequisites": [],
+          "original_exercises": [
+            "How much money did Rangamma earn?",
+            "Try This",
+            "Do This"
+          ],
+          "status": "untaught",
+          "last_taught_date": null
+        },
+        {
+          "topic_name": "Subtraction with Borrowing",
+          "concept_summary": null,
+          "details_and_sidebars": [],
+          "prerequisites": [],
+          "original_exercises": [
+            "How much did Pinki spend ?",
+            "Try These"
+          ],
+          "status": "untaught",
+          "last_taught_date": null
+        },
+        {
+          "topic_name": "More Subtraction Practice",
+          "concept_summary": null,
+          "details_and_sidebars": [],
+          "prerequisites": [],
+          "original_exercises": [
+            "Do This"
+          ],
+          "status": "untaught",
+          "last_taught_date": null
+        },
+        {
+          "topic_name": "Subtraction in Cricket",
+          "concept_summary": null,
+          "details_and_sidebars": [],
+          "prerequisites": [],
+          "original_exercises": [
+            "Who is the winner?",
+            "How much electricity is being used?",
+            "Try This"
+          ],
+          "status": "untaught",
+          "last_taught_date": null
+        },
+        {
+          "topic_name": "Correcting Subtraction Errors",
+          "concept_summary": null,
+          "details_and_sidebars": [],
+          "prerequisites": [],
+          "original_exercises": [
+            "Can you solve them correctly?",
+            "Do This"
+          ],
+          "status": "untaught",
+          "last_taught_date": null
+        },
+        {
+          "topic_name": "Subtracting Roses",
+          "concept_summary": "Raghu and Divya pluck 39 roses in the garden. 27 roses are red and the remaining\nare yellow. How many yellow roses did they pluck?",
+          "details_and_sidebars": [],
+          "prerequisites": [],
+          "original_exercises": [],
+          "status": "untaught",
+          "last_taught_date": null
+        },
+        {
+          "topic_name": "Subtracting Books",
+          "concept_summary": null,
+          "details_and_sidebars": [],
+          "prerequisites": [],
+          "original_exercises": [],
+          "status": "untaught",
+          "last_taught_date": null
+        },
+        {
+          "topic_name": "Subtracting Mangoes",
+          "concept_summary": null,
+          "details_and_sidebars": [],
+          "prerequisites": [],
+          "original_exercises": [],
+          "status": "untaught",
+          "last_taught_date": null
+        },
+        {
+          "topic_name": "Subtracting Money",
+          "concept_summary": "How much money did Rangamma earn?\n\nRangamma sells mangoes. She purchased mangoes for ` 245 and sold them\nfor ` 379. How much money did she earn?",
+          "details_and_sidebars": [],
+          "prerequisites": [],
+          "original_exercises": [],
+          "status": "untaught",
+          "last_taught_date": null
+        },
+        {
+          "topic_name": "Subtracting Marks",
+          "concept_summary": null,
+          "details_and_sidebars": [],
+          "prerequisites": [],
+          "original_exercises": [],
+          "status": "untaught",
+          "last_taught_date": null
+        },
+        {
+          "topic_name": "Subtraction Practice",
+          "concept_summary": null,
+          "details_and_sidebars": [],
+          "prerequisites": [],
+          "original_exercises": [],
+          "status": "untaught",
+          "last_taught_date": null
+        },
+        {
+          "topic_name": "Subtracting Money",
+          "concept_summary": "How much did Pinki spend ?\n\nPinki wanted to buy fruits. One day\nshe went to Rangamma and bought\nsome fruits for ` 245. The next day\nshe bought fruits for ` 28 less than the\nprevious day. How much money did\nPinki spend on the second day?",
+          "details_and_sidebars": [],
+          "prerequisites": [],
+          "original_exercises": [],
+          "status": "untaught",
+          "last_taught_date": null
+        },
+        {
+          "topic_name": "Subtracting Money",
+          "concept_summary": null,
+          "details_and_sidebars": [],
+          "prerequisites": [],
+          "original_exercises": [],
+          "status": "untaught",
+          "last_taught_date": null
+        },
+        {
+          "topic_name": "Subtracting Years",
+          "concept_summary": null,
+          "details_and_sidebars": [
+            "Think!\nIs 160 \u2013 47 more\nthan 100 or less than\n100?"
+          ],
+          "prerequisites": [],
+          "original_exercises": [],
+          "status": "untaught",
+          "last_taught_date": null
+        },
+        {
+          "topic_name": "Subtracting Pages",
+          "concept_summary": null,
+          "details_and_sidebars": [
+            "Think!\nIs 194 \u2013 128 less\nthan 100 or more\nthan 100"
+          ],
+          "prerequisites": [],
+          "original_exercises": [],
+          "status": "untaught",
+          "last_taught_date": null
+        },
+        {
+          "topic_name": "Subtraction Practice",
+          "concept_summary": null,
+          "details_and_sidebars": [],
+          "prerequisites": [],
+          "original_exercises": [],
+          "status": "untaught",
+          "last_taught_date": null
+        },
+        {
+          "topic_name": "Subtracting Runs",
+          "concept_summary": "Who is the winner?\n\nIn a cricket match Bhawani's team made 324 runs. Ikram's team is batting and\nhas made 198 runs. How many more runs does Ikram's team need to win?\n\nLet us find out -",
+          "details_and_sidebars": [],
+          "prerequisites": [],
+          "original_exercises": [],
+          "status": "untaught",
+          "last_taught_date": null
+        },
+        {
+          "topic_name": "Subtracting Electricity Units",
+          "concept_summary": "How much electricity is being used?\n\nShalini and Shameem note the electricity meter's reading every month of their\nschool. Last month the reading was 168 units. This month the reading is 250\nunits. How much electricity did the school use in this month?",
+          "details_and_sidebars": [],
+          "prerequisites": [],
+          "original_exercises": [],
+          "status": "untaught",
+          "last_taught_date": null
+        },
+        {
+          "topic_name": "Subtracting Money",
+          "concept_summary": null,
+          "details_and_sidebars": [
+            "Think!\n328 \u2013 139\nIs the difference about 200\nor about 100?"
+          ],
+          "prerequisites": [],
+          "original_exercises": [],
+          "status": "untaught",
+          "last_taught_date": null
+        },
+        {
+          "topic_name": "Correcting Subtraction Problems",
+          "concept_summary": "Can you solve them correctly?\n\nGowri gave four problems to her brother Madhu. He did the problems in his\nnote book. Gowri said out of the four only two are correct. Help Madhu to\nfind the wrong answers and correct them.",
+          "details_and_sidebars": [],
+          "prerequisites": [],
+          "original_exercises": [],
+          "status": "untaught",
+          "last_taught_date": null
+        },
+        {
+          "topic_name": "Subtraction Practice",
+          "concept_summary": null,
+          "details_and_sidebars": [],
+          "prerequisites": [],
+          "original_exercises": [],
+          "status": "untaught",
+          "last_taught_date": null
+        },
+        {
+          "topic_name": "Yellow Roses",
+          "concept_summary": "Raghu and Divya pluck 39 roses in the garden. 27 roses are red and the remaining\nare yellow. How many yellow roses did they pluck?",
+          "details_and_sidebars": [],
+          "prerequisites": [],
+          "original_exercises": [],
+          "status": "untaught",
+          "last_taught_date": null
+        },
+        {
+          "topic_name": "Try These (Books)",
+          "concept_summary": "",
+          "details_and_sidebars": [],
+          "prerequisites": [],
+          "original_exercises": [
+            "Jangu had 55 books. He kept 34 books in the almirah. How many more\nbooks does he need to keep in the almirah?",
+            "Mary bought two baskets of mangoes. In one basket there are 36\nmangoes. In the other basket there are 12 mangoes less than the previous\none. How many mangoes are there in the other basket?"
+          ],
+          "status": "untaught",
+          "last_taught_date": null
+        },
+        {
+          "topic_name": "Rangamma's Earnings",
+          "concept_summary": "Rangamma sells mangoes. She purchased mangoes for ` 245 and sold them\nfor ` 379. How much money did she earn?",
+          "details_and_sidebars": [],
+          "prerequisites": [],
+          "original_exercises": [],
+          "status": "untaught",
+          "last_taught_date": null
+        },
+        {
+          "topic_name": "Try This (Shirisha's Marks)",
+          "concept_summary": "",
+          "details_and_sidebars": [],
+          "prerequisites": [],
+          "original_exercises": [
+            "Shirisha got 364 marks in her half-yearly exam. She got 487 marks in her\nannual exam. How many more marks did Shirisha get in the annual exam?"
+          ],
+          "status": "untaught",
+          "last_taught_date": null
+        },
+        {
+          "topic_name": "Do This (Subtraction Practice)",
+          "concept_summary": "",
+          "details_and_sidebars": [],
+          "prerequisites": [],
+          "original_exercises": [
+            "6    7\n      _     3",
+            "9    7\n  _   2    1",
+            "4    9\n  _   2    1",
+            "2    7     5\n        _  1    4     3",
+            "4    2     9\n        _  1    2     3",
+            "3    4     8\n        _  1    2     6",
+            "2    7     5\n        _  1    4     3",
+            "4    1     7\n        _  2    0     6"
+          ],
+          "status": "untaught",
+          "last_taught_date": null
+        },
+        {
+          "topic_name": "Pinki's Fruit Spending",
+          "concept_summary": "Pinki wanted to buy fruits. One day\nshe went to Rangamma and bought\nsome fruits for  ` 245. The next day\nshe bought fruits for ` 28 less than the\nprevious day. How much money did\nPinki spend on the second day?",
+          "details_and_sidebars": [],
+          "prerequisites": [],
+          "original_exercises": [],
+          "status": "untaught",
+          "last_taught_date": null
+        },
+        {
+          "topic_name": "Try These (Akhila's Money)",
+          "concept_summary": "",
+          "details_and_sidebars": [],
+          "prerequisites": [],
+          "original_exercises": [
+            "Rani has ` 342. Akhila has ` 125 less than Rani. How much money\ndoes Akhila have?"
+          ],
+          "status": "untaught",
+          "last_taught_date": null
+        },
+        {
+          "topic_name": "Try These (Tortoise Age)",
+          "concept_summary": "",
+          "details_and_sidebars": [],
+          "prerequisites": [],
+          "original_exercises": [
+            "Baby tortoise is 47 year old.\nMother tortoise is 160 years old.\nBy how many years is baby\ntortoise younger than the mother\ntortoise?",
+            "Gowry has read 194 pages of a story book. Swetha has read 128 pages\nof the story book. Who has read more pages? How many more?"
+          ],
+          "status": "untaught",
+          "last_taught_date": null
+        },
+        {
+          "topic_name": "Do This (More Subtraction Practice)",
+          "concept_summary": "",
+          "details_and_sidebars": [],
+          "prerequisites": [],
+          "original_exercises": [
+            "2    7     4\n        _        2     9",
+            "3    4     5\n        _  1    2     7",
+            "2    4     3\n        _  1    9     2",
+            "4    1     9\n        _        2     8",
+            "3    1     9\n        _  1    7     9",
+            "5    9     3\n        _  2    6     9"
+          ],
+          "status": "untaught",
+          "last_taught_date": null
+        },
+        {
+          "topic_name": "Runs Needed to Win",
+          "concept_summary": "In a cricket match Bhawani's team made 324 runs. Ikram's team is batting and\nhas made 198 runs. How many more runs does Ikram's team need to win?",
+          "details_and_sidebars": [],
+          "prerequisites": [],
+          "original_exercises": [],
+          "status": "untaught",
+          "last_taught_date": null
+        },
+        {
+          "topic_name": "Electricity Usage",
+          "concept_summary": "Shalini and Shameem note the electricity meter's reading every month of their\nschool. Last month the reading was 168 units. This month the reading is 250\nunits. How much electricity did the school use in this month?",
+          "details_and_sidebars": [],
+          "prerequisites": [],
+          "original_exercises": [],
+          "status": "untaught",
+          "last_taught_date": null
+        },
+        {
+          "topic_name": "Try This (Anil's Money)",
+          "concept_summary": "",
+          "details_and_sidebars": [],
+          "prerequisites": [],
+          "original_exercises": [
+            "Anil had ` 328. After purchasing a story book he is left with ` 139. How much\nmoney did he spend on the story book?"
+          ],
+          "status": "untaught",
+          "last_taught_date": null
+        },
+        {
+          "topic_name": "Gowri's Corrections",
+          "concept_summary": "Gowri gave four problems to her brother Madhu. He did the problems in his\nnote book. Gowri said out of the four only two are correct. Help Madhu to\nfind the wrong answers and correct them.",
+          "details_and_sidebars": [],
+          "prerequisites": [],
+          "original_exercises": [],
+          "status": "untaught",
+          "last_taught_date": null
+        },
+        {
+          "topic_name": "Do This (Final Subtraction Practice)",
+          "concept_summary": "",
+          "details_and_sidebars": [],
+          "prerequisites": [],
+          "original_exercises": [
+            "4    8     2\n        _  1    2     9",
+            "6    0     4\n        _  2    8     9",
+            "5    1     7\n        _  2    8     9",
+            "3    0     0\n        _  1    2     9",
+            "1    6     1\n        _        4     7",
+            "2    5     3\n        _  1    2     5"
+          ],
+          "status": "untaught",
+          "last_taught_date": null
+        }
+      ]
+    },
+    {
+      "chapter_number": 5,
+      "chapter_title": "USING ADDITION AND SUBTRACTION",
+      "topics": [
+        {
+          "topic_name": "Relationship Between Addition and Subtraction",
+          "concept_summary": "Kittu feels that addition and subtraction are related. Can you help Kittu solve\nthe following problems.",
+          "details_and_sidebars": [],
+          "prerequisites": [],
+          "original_exercises": [],
+          "status": "untaught",
+          "last_taught_date": null
+        },
+        {
+          "topic_name": "Using Addition to Check Subtraction",
+          "concept_summary": null,
+          "details_and_sidebars": [],
+          "prerequisites": [],
+          "original_exercises": [
+            "Try These"
+          ],
+          "status": "untaught",
+          "last_taught_date": null
+        },
+        {
+          "topic_name": "Missing Digits",
+          "concept_summary": null,
+          "details_and_sidebars": [],
+          "prerequisites": [],
+          "original_exercises": [
+            "Check your answer yourself.",
+            "Fill the missing digits."
+          ],
+          "status": "untaught",
+          "last_taught_date": null
+        },
+        {
+          "topic_name": "Number Patterns",
+          "concept_summary": null,
+          "details_and_sidebars": [],
+          "prerequisites": [],
+          "original_exercises": [
+            "Do This"
+          ],
+          "status": "untaught",
+          "last_taught_date": null
+        },
+        {
+          "topic_name": "Word Problems",
+          "concept_summary": null,
+          "details_and_sidebars": [],
+          "prerequisites": [],
+          "original_exercises": [
+            "Indra has 16 pencils and Keshav has\n7 pencils. Who have less? How many\nless?",
+            "Ask a shopkeeper or your parents.",
+            "Saleem sells colour charts in the school. In two days he sold some red,\nblue and white colour charts as given below.",
+            "Karuna has ` 125. Her mother gave her some more money. Now Karuna\nhas ` 275. How much money did Karuna's mother give her?",
+            "Srujana has some books. Her brother gave her 136 books. Now she has\n245 books. How many books did Srujana have at first?",
+            "In a one-day cricket match, India made 326 runs. Sri Lanka made 179\nruns less than India. How many runs did Sri Lanka make?",
+            "Rajesh has 235 toys. Mahesh has 26 toys more than Rajesh. How many\ntoys does Mahesh have?",
+            "Aman travelled 320 km in two days. He travelled 175 km on the first\nday. How many kilometres did he travel on the second day?"
+          ],
+          "status": "untaught",
+          "last_taught_date": null
+        },
+        {
+          "topic_name": "Creating Addition and Subtraction Problems",
+          "concept_summary": "Joseph and Riyaz went to a shop. They wanted to buy some articles. They saw\nthe prices on the articles as shown below.",
+          "details_and_sidebars": [],
+          "prerequisites": [],
+          "original_exercises": [
+            "Now you make similar questions with the information given below-"
+          ],
+          "status": "untaught",
+          "last_taught_date": null
+        }
+      ]
+    },
+    {
+      "chapter_number": 6,
+      "chapter_title": "MULTIPLICATION",
+      "topics": [
+        {
+          "topic_name": "Equal Groups",
+          "concept_summary": null,
+          "details_and_sidebars": [],
+          "prerequisites": [],
+          "original_exercises": [
+            "Tick ( \u0016 ) the groups which have equal number of objects."
+          ],
+          "status": "untaught",
+          "last_taught_date": null
+        },
+        {
+          "topic_name": "Counting in Groups",
+          "concept_summary": null,
+          "details_and_sidebars": [],
+          "prerequisites": [],
+          "original_exercises": [
+            "Count in groups and find total.",
+            "Write the sum of the following."
+          ],
+          "status": "untaught",
+          "last_taught_date": null
+        },
+        {
+          "topic_name": "Introduction to Multiplication",
+          "concept_summary": "Here we are adding 4 groups of children and there are 3 students in each\ngroup. The total number of students are 12.\nWe can also say  \"4 times 3 is 12\". This is written as 4 x 3 = 12.\n'x' is the symbol of multiplication",
+          "details_and_sidebars": [],
+          "prerequisites": [],
+          "original_exercises": [],
+          "status": "untaught",
+          "last_taught_date": null
+        },
+        {
+          "topic_name": "Multiplication Practice",
+          "concept_summary": null,
+          "details_and_sidebars": [],
+          "prerequisites": [],
+          "original_exercises": [
+            "Do This",
+            "Express the following in the form of multiplication.",
+            "Match the locks to their keys."
+          ],
+          "status": "untaught",
+          "last_taught_date": null
+        },
+        {
+          "topic_name": "Multiplication as Step Counting",
+          "concept_summary": "Multiplication can also be seen in step counting.\nA frog jumped 3 steps in a single jump. It jumped 6 times.\nThis can be written as 6 times 3 or 6 x 3 = 18",
+          "details_and_sidebars": [],
+          "prerequisites": [],
+          "original_exercises": [
+            "Express the following using multiplication-"
+          ],
+          "status": "untaught",
+          "last_taught_date": null
+        },
+        {
+          "topic_name": "Multiplication in the Market",
+          "concept_summary": "Raju went to a vegetable market. His mother told him to buy 3 kg of tomatoes.\nHe calculated the money he had to pay for the tomatoes in the following way-",
+          "details_and_sidebars": [],
+          "prerequisites": [],
+          "original_exercises": [
+            "Read the rate chart in above example and answer the following questions-"
+          ],
+          "status": "untaught",
+          "last_taught_date": null
+        },
+        {
+          "topic_name": "Multiplication and Tiles",
+          "concept_summary": "Tanisha started counting the tiles on her classroom floor, one by one. Her elder\nbrother saw her doing so. He asked her, \"Are the tiles in each row equal?\"\nTanisha answered, \"Yes, there are 6 tiles in each row.\"",
+          "details_and_sidebars": [],
+          "prerequisites": [],
+          "original_exercises": [],
+          "status": "untaught",
+          "last_taught_date": null
+        },
+        {
+          "topic_name": "Table of 10",
+          "concept_summary": null,
+          "details_and_sidebars": [],
+          "prerequisites": [],
+          "original_exercises": [],
+          "status": "untaught",
+          "last_taught_date": null
+        },
+        {
+          "topic_name": "Table of 4",
+          "concept_summary": null,
+          "details_and_sidebars": [],
+          "prerequisites": [],
+          "original_exercises": [],
+          "status": "untaught",
+          "last_taught_date": null
+        },
+        {
+          "topic_name": "Buzz Game",
+          "concept_summary": null,
+          "details_and_sidebars": [],
+          "prerequisites": [],
+          "original_exercises": [],
+          "status": "untaught",
+          "last_taught_date": null
+        },
+        {
+          "topic_name": "Multiplication with Zero and One",
+          "concept_summary": null,
+          "details_and_sidebars": [],
+          "prerequisites": [],
+          "original_exercises": [],
+          "status": "untaught",
+          "last_taught_date": null
+        },
+        {
+          "topic_name": "Multiplying Bigger Numbers",
+          "concept_summary": "Let us multiply 3 x 21.\n21 means = 20 + 1\nThere are 2 tens and one 1\n3 x 21 = 21 + 21 + 21",
+          "details_and_sidebars": [],
+          "prerequisites": [],
+          "original_exercises": [],
+          "status": "untaught",
+          "last_taught_date": null
+        },
+        {
+          "topic_name": "Multiplying Bigger Numbers - Practice",
+          "concept_summary": null,
+          "details_and_sidebars": [],
+          "prerequisites": [],
+          "original_exercises": [
+            "Do These"
+          ],
+          "status": "untaught",
+          "last_taught_date": null
+        },
+        {
+          "topic_name": "Multiplication in Daily Life",
+          "concept_summary": null,
+          "details_and_sidebars": [],
+          "prerequisites": [],
+          "original_exercises": [
+            "There are 5 autos. In each auto there are 4 people. How many people are\nthere in the 5 autos?",
+            "7 cotton seeds are planted in each row. There are 8 such rows in the\nfield. How many total seeds are planted in the field?",
+            "Roja spends ` 5 each day. How much money does she spend in a week?",
+            "Surya's age is twice that of Ramya.",
+            "Try These"
+          ],
+          "status": "untaught",
+          "last_taught_date": null
+        }
+      ]
+    },
+    {
+      "chapter_number": 7,
+      "chapter_title": "DIVISION",
+      "topics": [
+        {
+          "topic_name": "Division as Grouping",
+          "concept_summary": "Let us play a game- How many\nladdoo's has Mama given you?\nAsk children to  stand in\na circle. Then\nask them to run in the circle. Teacher\nsays aloud \"How many laddoo's has\nMama given you?\" Students answer\"\nas many as you say.\" Teacher  calls\nout \"four.\" Then children run around\nto make groups of 4. The groups\nhaving more or less than 4 children\nwill be out of the game. One should keep number of children in mind when\ncalling out the number.",
+          "details_and_sidebars": [],
+          "prerequisites": [],
+          "original_exercises": [],
+          "status": "untaught",
+          "last_taught_date": null
+        },
+        {
+          "topic_name": "Division as Equal Sharing",
+          "concept_summary": null,
+          "details_and_sidebars": [],
+          "prerequisites": [],
+          "original_exercises": [
+            "How many in each group?",
+            "Laddoos and plates",
+            "I have 20 toffees. I want to distribute them equally among my 5 friends.\nHow many toffees does each friend get?"
+          ],
+          "status": "untaught",
+          "last_taught_date": null
+        },
+        {
+          "topic_name": "Division - How Many Groups?",
+          "concept_summary": null,
+          "details_and_sidebars": [],
+          "prerequisites": [],
+          "original_exercises": [
+            "How many groups?",
+            "Dharmendra has 15 toys. He wants to keep them in boxes. If he puts 3\ntoys in each box, how many boxes are needed?",
+            "Radha has 24 flowers. She gives 6 flowers to each of her friends.\nThen to how many friends does she give?"
+          ],
+          "status": "untaught",
+          "last_taught_date": null
+        },
+        {
+          "topic_name": "Division",
+          "concept_summary": "Division means distributing into equal parts. Distribute the 20 marbles given in\nthe circle equally among 4 friends.",
+          "details_and_sidebars": [],
+          "prerequisites": [],
+          "original_exercises": [
+            "Try This",
+            "How can you distribute 12 marbles among 3 children? Also write this\nusing the ' \u00f7 ' symbol.",
+            "Do these divisions using marbles."
+          ],
+          "status": "untaught",
+          "last_taught_date": null
+        },
+        {
+          "topic_name": "Division as Repeated Subtraction",
+          "concept_summary": "We can also repeatedly subtract to divide equally-\nIf we are distributing 8 balls into equal groups of 4, we will continue to subtract\n4 balls till, all the balls are distributed-",
+          "details_and_sidebars": [],
+          "prerequisites": [],
+          "original_exercises": [
+            "Try This",
+            "Ramaiah brought 32 plants to plant in his garden. If he plants 8 in each row,\nhow many rows are formed?"
+          ],
+          "status": "untaught",
+          "last_taught_date": null
+        },
+        {
+          "topic_name": "Division Using Units and Tens",
+          "concept_summary": "Now let us use units and tens to divide-\nLet us divide 48 marbles among 4 people.\nNow 48 means 40 + 8  i.e. 4 tens and 8 ones.\nWhen we divide 4 tens by 4 we get 1 ten =\n10",
+          "details_and_sidebars": [],
+          "prerequisites": [],
+          "original_exercises": [
+            "Do This"
+          ],
+          "status": "untaught",
+          "last_taught_date": null
+        },
+        {
+          "topic_name": "Relation Between Division and Multiplication",
+          "concept_summary": null,
+          "details_and_sidebars": [],
+          "prerequisites": [],
+          "original_exercises": [
+            "Try These",
+            "Observe the picture and write division and multiplication statements.",
+            "Do This",
+            "Fill the blanks.",
+            "Fill the empty boxes and make two more.",
+            "Do these divisions",
+            "Do This"
+          ],
+          "status": "untaught",
+          "last_taught_date": null
+        }
+      ]
+    }
+  ]
+}
