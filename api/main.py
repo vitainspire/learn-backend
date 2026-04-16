@@ -5,7 +5,7 @@ import tempfile
 from pathlib import Path
 from typing import Optional
 
-from fastapi import FastAPI, HTTPException, Depends
+from fastapi import FastAPI, HTTPException, Depends, Header
 from fastapi.responses import FileResponse, Response
 from fastapi.staticfiles import StaticFiles
 from pydantic import BaseModel
@@ -177,6 +177,75 @@ class PostClassFeedbackRequest(BaseModel):
 
 class UpdateDayRequest(BaseModel):
     concept_name: str
+
+
+class SignupRequest(BaseModel):
+    email: str
+    password: str
+    name: str
+    role: str                                     # "teacher" or "student"
+    # Teacher profile fields (ignored when role == "student")
+    teaching_style: Optional[str]       = "activity"
+    lesson_duration: Optional[str]      = "45 minutes"
+    language: Optional[str]             = "English"
+    activity_preference: Optional[str]  = "worksheets"
+    assessment_style: Optional[str]     = "quizzes"
+    difficulty_preference: Optional[str]= "medium"
+    # Student profile fields (ignored when role == "teacher")
+    learning_level: Optional[str]       = "intermediate"
+    learning_style: Optional[str]       = "visual"
+    attention_span: Optional[str]       = "medium"
+    language_proficiency: Optional[str] = "native"
+
+
+class LoginRequest(BaseModel):
+    email: str
+    password: str
+
+
+# ---------------------------------------------------------------------------
+# Auth helpers
+# ---------------------------------------------------------------------------
+
+def _bearer_token(authorization: Optional[str] = Header(None)) -> Optional[str]:
+    """Extract raw JWT from 'Authorization: Bearer <token>' header."""
+    if authorization and authorization.startswith("Bearer "):
+        return authorization[7:]
+    return None
+
+
+def get_current_user(
+    token: Optional[str] = Depends(_bearer_token),
+    db=Depends(get_db),
+) -> Optional[dict]:
+    """
+    Soft auth dependency — returns a user dict or None.
+    Use ``require_auth`` when the endpoint must be protected.
+    """
+    if not token:
+        return None
+    try:
+        resp = db.auth.get_user(token)
+        auth_user = resp.user if resp else None
+        if not auth_user:
+            return None
+        email = auth_user.email
+        teacher = q.get_teacher_by_email(db, email)
+        if teacher:
+            return {"id": teacher["id"], "email": email, "role": "teacher", "profile": teacher}
+        student = q.get_student_by_email(db, email)
+        if student:
+            return {"id": student["id"], "email": email, "role": "student", "profile": student}
+        return None
+    except Exception:
+        return None
+
+
+def require_auth(user: Optional[dict] = Depends(get_current_user)) -> dict:
+    """Hard auth dependency — raises 401 when no valid token is present."""
+    if not user:
+        raise HTTPException(status_code=401, detail="Authentication required. Include 'Authorization: Bearer <token>' header.")
+    return user
 
 
 # ---------------------------------------------------------------------------
@@ -386,6 +455,133 @@ async def get_index():
 
 
 # ---------------------------------------------------------------------------
+# Auth
+# ---------------------------------------------------------------------------
+
+@app.post("/api/auth/signup", status_code=201)
+async def auth_signup(req: SignupRequest, db=Depends(get_db)):
+    """
+    Register a new teacher or student.
+    Creates a Supabase Auth account and a matching row in teachers/students.
+    Returns an access_token when Supabase email confirmation is disabled;
+    otherwise returns a confirmation_required message.
+    """
+    if req.role not in ("teacher", "student"):
+        raise HTTPException(status_code=400, detail="role must be 'teacher' or 'student'")
+
+    # 1. Create the Supabase Auth user
+    try:
+        auth_resp = db.auth.sign_up({"email": req.email, "password": req.password})
+    except Exception as e:
+        raise HTTPException(status_code=400, detail=f"Auth sign-up failed: {e}")
+
+    if not auth_resp.user:
+        raise HTTPException(status_code=400, detail="Sign-up failed — no user returned")
+
+    # 2. Create the profile row
+    try:
+        if req.role == "teacher":
+            profile = q.create_teacher(
+                db,
+                name=req.name,
+                email=req.email,
+                teaching_style=req.teaching_style,
+                lesson_duration=req.lesson_duration,
+                language=req.language,
+                activity_preference=req.activity_preference,
+                assessment_style=req.assessment_style,
+                difficulty_preference=req.difficulty_preference,
+            )
+        else:
+            profile = q.create_student(
+                db,
+                name=req.name,
+                email=req.email,
+                learning_level=req.learning_level,
+                learning_style=req.learning_style,
+                attention_span=req.attention_span,
+                language_proficiency=req.language_proficiency,
+            )
+    except Exception as e:
+        raise HTTPException(status_code=400, detail=f"Profile creation failed: {e}")
+
+    session = auth_resp.session
+    response = {
+        "role": req.role,
+        "user_id": profile["id"],
+        "email": req.email,
+        "name": req.name,
+    }
+    if session:
+        response["access_token"] = session.access_token
+        response["token_type"]   = "bearer"
+    else:
+        response["message"] = "Confirmation email sent — please verify your email before logging in"
+
+    return response
+
+
+@app.post("/api/auth/login")
+async def auth_login(req: LoginRequest, db=Depends(get_db)):
+    """
+    Sign in with email + password.
+    Returns an access_token to include as 'Authorization: Bearer <token>' on subsequent requests.
+    """
+    try:
+        auth_resp = db.auth.sign_in_with_password({"email": req.email, "password": req.password})
+    except Exception as e:
+        raise HTTPException(status_code=401, detail=f"Login failed: {e}")
+
+    if not auth_resp.user or not auth_resp.session:
+        raise HTTPException(status_code=401, detail="Invalid email or password")
+
+    email = auth_resp.user.email
+
+    # Identify role by looking up the profile tables
+    teacher = q.get_teacher_by_email(db, email)
+    if teacher:
+        return {
+            "access_token": auth_resp.session.access_token,
+            "token_type":   "bearer",
+            "role":         "teacher",
+            "user_id":      teacher["id"],
+            "name":         teacher.get("name"),
+            "email":        email,
+        }
+
+    student = q.get_student_by_email(db, email)
+    if student:
+        return {
+            "access_token": auth_resp.session.access_token,
+            "token_type":   "bearer",
+            "role":         "student",
+            "user_id":      student["id"],
+            "name":         student.get("name"),
+            "email":        email,
+        }
+
+    raise HTTPException(status_code=404, detail="Authenticated but no teacher/student profile found")
+
+
+@app.get("/api/auth/me")
+async def auth_me(current_user: dict = Depends(require_auth)):
+    """Returns the authenticated user's profile."""
+    return current_user
+
+
+@app.get("/api/my/lesson-plans")
+async def my_lesson_plans(
+    current_user: dict = Depends(require_auth),
+    db=Depends(get_db),
+):
+    """Returns all lesson plans saved by the authenticated teacher."""
+    if current_user["role"] != "teacher":
+        raise HTTPException(status_code=403, detail="Only teachers have lesson plans")
+    plans = q.get_lesson_plans_for_teacher(db, current_user["id"])
+    return {"lesson_plans": plans, "count": len(plans)}
+
+
+# ---------------------------------------------------------------------------
 # Teacher CRUD
 # ---------------------------------------------------------------------------
 
@@ -580,7 +776,11 @@ async def search_ontology_topics(
 # ---------------------------------------------------------------------------
 
 @app.post("/api/generate-lesson-plan")
-async def api_generate_lesson_plan(req: LessonPlanRequest, db = Depends(get_db)):
+async def api_generate_lesson_plan(
+    req: LessonPlanRequest,
+    db=Depends(get_db),
+    current_user: Optional[dict] = Depends(get_current_user),
+):
     ontology = _get_ontology_or_404(db, req.book)
 
     try:
@@ -619,11 +819,19 @@ async def api_generate_lesson_plan(req: LessonPlanRequest, db = Depends(get_db))
         plan = _inject_exercise_content(plan, ontology)
 
     db_topic = q.get_topic_by_index(db, req.book, req.chapter_idx, req.topic_idx)
-    teacher  = q.get_default_teacher_db(db)
+
+    # Resolve teacher_id: authenticated user > request body > first teacher in DB
+    if current_user and current_user["role"] == "teacher":
+        teacher_id = current_user["id"]
+    elif req.teacher_id and _UUID_RE.match(req.teacher_id):
+        teacher_id = req.teacher_id
+    else:
+        fallback = q.get_default_teacher_db(db)
+        teacher_id = fallback["id"] if fallback else None
 
     lp = q.save_lesson_plan(
         db,
-        teacher_id=teacher["id"] if teacher else None,
+        teacher_id=teacher_id,
         topic_id=db_topic["id"] if db_topic else None,
         topic_name=topic["topic_name"],
         grade=req.grade,
@@ -640,7 +848,11 @@ async def api_generate_lesson_plan(req: LessonPlanRequest, db = Depends(get_db))
 
 
 @app.post("/api/generate-elementary-lesson-plan")
-async def api_generate_elementary_lesson_plan(req: ElementaryLessonRequest, db = Depends(get_db)):
+async def api_generate_elementary_lesson_plan(
+    req: ElementaryLessonRequest,
+    db=Depends(get_db),
+    current_user: Optional[dict] = Depends(get_current_user),
+):
     ontology_context = ""
     ontology_for_exercises: dict = {}
     if req.book and req.chapter_idx is not None and req.topic_idx is not None:
@@ -668,11 +880,19 @@ async def api_generate_elementary_lesson_plan(req: ElementaryLessonRequest, db =
         plan = _inject_exercise_content(plan, ontology_for_exercises)
 
     db_topic = q.get_topic_by_index(db, req.book, req.chapter_idx, req.topic_idx) if req.book else None
-    teacher  = q.get_default_teacher_db(db)
+
+    # Resolve teacher_id: authenticated user > request body > first teacher in DB
+    if current_user and current_user["role"] == "teacher":
+        teacher_id = current_user["id"]
+    elif req.teacher_id and _UUID_RE.match(req.teacher_id):
+        teacher_id = req.teacher_id
+    else:
+        fallback = q.get_default_teacher_db(db)
+        teacher_id = fallback["id"] if fallback else None
 
     lp = q.save_lesson_plan(
         db,
-        teacher_id=teacher["id"] if teacher else None,
+        teacher_id=teacher_id,
         topic_id=db_topic["id"] if db_topic else None,
         topic_name=req.topic,
         grade=req.grade,

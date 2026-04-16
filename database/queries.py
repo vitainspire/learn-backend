@@ -57,6 +57,11 @@ def get_teacher(db, teacher_id: str) -> Optional[dict]:
     return resp.data if resp else None
 
 
+def get_teacher_by_email(db, email: str) -> Optional[dict]:
+    resp = db.table("teachers").select("*").eq("email", email).maybe_single().execute()
+    return resp.data if resp else None
+
+
 def get_default_teacher_db(db) -> Optional[dict]:
     resp = db.table("teachers").select("*").limit(1).execute()
     return resp.data[0] if resp.data else None
@@ -109,6 +114,11 @@ def build_teacher_profile_dict(db, teacher_id: str) -> Optional[dict]:
 
 def get_student(db, student_id: str) -> Optional[dict]:
     resp = db.table("students").select("*").eq("id", student_id).maybe_single().execute()
+    return resp.data if resp else None
+
+
+def get_student_by_email(db, email: str) -> Optional[dict]:
+    resp = db.table("students").select("*").eq("email", email).maybe_single().execute()
     return resp.data if resp else None
 
 
@@ -320,6 +330,17 @@ def save_lesson_plan(
         "plan_json": plan_json,
     }).execute()
     return resp.data[0] if resp and resp.data else {}
+
+
+def get_lesson_plans_for_teacher(db, teacher_id: str) -> list:
+    resp = (
+        db.table("lesson_plans")
+        .select("id, topic_name, grade, subject, duration_minutes, created_at")
+        .eq("teacher_id", teacher_id)
+        .order("created_at", desc=True)
+        .execute()
+    )
+    return resp.data if resp and resp.data else []
 
 
 # ---------------------------------------------------------------------------
