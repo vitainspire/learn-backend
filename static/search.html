@@ -1,0 +1,352 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Topic Search — Inspire Education</title>
+  <style>
+    *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+
+    :root {
+      --accent:   #4f6ef7;
+      --accent-lt:#eef0fe;
+      --text:     #1a1a2e;
+      --muted:    #6b7280;
+      --border:   #e5e7eb;
+      --bg:       #f9fafb;
+      --card:     #ffffff;
+      --pill-bg:  #e0e7ff;
+      --pill-txt: #3730a3;
+      --radius:   10px;
+    }
+
+    body {
+      font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif;
+      background: var(--bg);
+      color: var(--text);
+      min-height: 100vh;
+    }
+
+    /* ── Header ── */
+    header {
+      background: var(--accent);
+      color: #fff;
+      padding: 18px 24px;
+      display: flex;
+      align-items: center;
+      gap: 12px;
+    }
+    header svg { flex-shrink: 0; }
+    header h1  { font-size: 1.2rem; font-weight: 700; letter-spacing: -0.3px; }
+    header p   { font-size: 0.82rem; opacity: 0.85; margin-top: 1px; }
+
+    /* ── Controls ── */
+    .controls {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 12px;
+      padding: 20px 24px 0;
+      max-width: 860px;
+      margin: 0 auto;
+    }
+
+    select, input[type="search"] {
+      height: 44px;
+      border: 1.5px solid var(--border);
+      border-radius: var(--radius);
+      padding: 0 14px;
+      font-size: 0.95rem;
+      outline: none;
+      background: var(--card);
+      color: var(--text);
+      transition: border-color .15s;
+    }
+    select:focus, input[type="search"]:focus {
+      border-color: var(--accent);
+      box-shadow: 0 0 0 3px var(--accent-lt);
+    }
+    select          { min-width: 190px; cursor: pointer; }
+    input[type="search"] { flex: 1; min-width: 220px; }
+
+    /* ── Status bar ── */
+    .status {
+      max-width: 860px;
+      margin: 10px auto 0;
+      padding: 0 24px;
+      font-size: 0.82rem;
+      color: var(--muted);
+      min-height: 20px;
+    }
+
+    /* ── Results ── */
+    .results {
+      max-width: 860px;
+      margin: 12px auto 40px;
+      padding: 0 24px;
+      display: flex;
+      flex-direction: column;
+      gap: 10px;
+    }
+
+    .card {
+      background: var(--card);
+      border: 1px solid var(--border);
+      border-radius: var(--radius);
+      padding: 14px 16px;
+      transition: box-shadow .15s;
+    }
+    .card:hover { box-shadow: 0 2px 12px rgba(79,110,247,.12); }
+
+    .card-header {
+      display: flex;
+      align-items: flex-start;
+      justify-content: space-between;
+      gap: 12px;
+    }
+
+    .topic-name {
+      font-weight: 600;
+      font-size: 0.97rem;
+      line-height: 1.4;
+    }
+
+    .chapter-tag {
+      display: inline-flex;
+      align-items: center;
+      gap: 4px;
+      background: var(--accent-lt);
+      color: var(--accent);
+      font-size: 0.75rem;
+      font-weight: 600;
+      padding: 3px 9px;
+      border-radius: 999px;
+      white-space: nowrap;
+      flex-shrink: 0;
+    }
+
+    .summary {
+      font-size: 0.84rem;
+      color: var(--muted);
+      margin-top: 6px;
+      line-height: 1.55;
+    }
+
+    .pages-row {
+      margin-top: 10px;
+      display: flex;
+      flex-wrap: wrap;
+      align-items: center;
+      gap: 6px;
+    }
+
+    .pages-label {
+      font-size: 0.78rem;
+      font-weight: 600;
+      color: var(--muted);
+      text-transform: uppercase;
+      letter-spacing: .5px;
+    }
+
+    .page-pill {
+      display: inline-block;
+      background: var(--pill-bg);
+      color: var(--pill-txt);
+      font-size: 0.78rem;
+      font-weight: 700;
+      padding: 2px 9px;
+      border-radius: 999px;
+      cursor: pointer;
+      transition: background .12s;
+    }
+    .page-pill:hover { background: #c7d2fe; }
+
+    .no-pages {
+      font-size: 0.78rem;
+      color: #9ca3af;
+      font-style: italic;
+    }
+
+    /* ── Empty / loading states ── */
+    .placeholder {
+      text-align: center;
+      padding: 60px 0;
+      color: var(--muted);
+    }
+    .placeholder svg { opacity: .3; margin-bottom: 12px; }
+    .placeholder p   { font-size: 0.92rem; }
+
+    .spinner {
+      display: inline-block;
+      width: 18px; height: 18px;
+      border: 2.5px solid var(--border);
+      border-top-color: var(--accent);
+      border-radius: 50%;
+      animation: spin .6s linear infinite;
+      vertical-align: middle;
+      margin-right: 6px;
+    }
+    @keyframes spin { to { transform: rotate(360deg); } }
+
+    /* ── Highlight matching text ── */
+    mark {
+      background: #fef08a;
+      color: inherit;
+      border-radius: 2px;
+      padding: 0 1px;
+    }
+  </style>
+</head>
+<body>
+
+<header>
+  <svg width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+    <circle cx="11" cy="11" r="8"/><line x1="21" y1="21" x2="16.65" y2="16.65"/>
+  </svg>
+  <div>
+    <h1>Topic Search</h1>
+    <p>Find textbook pages for any topic</p>
+  </div>
+</header>
+
+<div class="controls">
+  <select id="bookSelect">
+    <option value="">Select grade / book…</option>
+    <option value="grade1_maths">Grade 1 — Maths</option>
+    <option value="grade2_maths">Grade 2 — Maths</option>
+    <option value="grade3_maths">Grade 3 — Maths</option>
+  </select>
+  <input type="search" id="searchInput" placeholder="Search topics…" disabled />
+</div>
+
+<div class="status" id="status"></div>
+
+<div class="results" id="results">
+  <div class="placeholder">
+    <svg width="48" height="48" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round">
+      <path d="M4 19.5A2.5 2.5 0 0 1 6.5 17H20"/><path d="M6.5 2H20v20H6.5A2.5 2.5 0 0 1 4 19.5v-15A2.5 2.5 0 0 1 6.5 2z"/>
+    </svg>
+    <p>Select a grade to begin</p>
+  </div>
+</div>
+
+<script>
+  const bookSel   = document.getElementById("bookSelect");
+  const searchIn  = document.getElementById("searchInput");
+  const resultsEl = document.getElementById("results");
+  const statusEl  = document.getElementById("status");
+
+  let debounceTimer = null;
+  let allTopics     = [];   // cached full list for the chosen book
+  let currentBook   = "";
+
+  // ── Helpers ──────────────────────────────────────────────────────────────────
+
+  function setStatus(msg) { statusEl.textContent = msg; }
+
+  function highlight(text, needle) {
+    if (!needle) return escHtml(text);
+    const re = new RegExp(`(${escRe(needle)})`, "gi");
+    return escHtml(text).replace(re, "<mark>$1</mark>");
+  }
+
+  function escHtml(s) {
+    return String(s)
+      .replace(/&/g,"&amp;").replace(/</g,"&lt;")
+      .replace(/>/g,"&gt;").replace(/"/g,"&quot;");
+  }
+
+  function escRe(s) {
+    return s.replace(/[.*+?^${}()|[\]\\]/g, "\\$&");
+  }
+
+  // ── Render ───────────────────────────────────────────────────────────────────
+
+  function renderResults(topics, needle) {
+    if (!topics.length) {
+      resultsEl.innerHTML = `
+        <div class="placeholder">
+          <svg width="48" height="48" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round">
+            <circle cx="11" cy="11" r="8"/><line x1="21" y1="21" x2="16.65" y2="16.65"/>
+          </svg>
+          <p>No topics match "<strong>${escHtml(needle)}</strong>"</p>
+        </div>`;
+      return;
+    }
+
+    const html = topics.map(t => {
+      const pagesHtml = t.pages.length
+        ? t.pages.map(p => `<span class="page-pill" title="Page ${p}">p.${p}</span>`).join("")
+        : `<span class="no-pages" title="No exercises linked to this topic in the ontology">— no exercises</span>`;
+
+      return `
+        <div class="card">
+          <div class="card-header">
+            <span class="topic-name">${highlight(t.topic_name, needle)}</span>
+            <span class="chapter-tag">Ch.${t.chapter_num} &middot; ${highlight(t.chapter_title, needle)}</span>
+          </div>
+          ${t.summary ? `<div class="summary">${highlight(t.summary, needle)}</div>` : ""}
+          <div class="pages-row">
+            <span class="pages-label">Pages</span>
+            ${pagesHtml}
+          </div>
+        </div>`;
+    }).join("");
+
+    resultsEl.innerHTML = html;
+  }
+
+  // ── Filter cached topics client-side ─────────────────────────────────────────
+
+  function filterAndRender(needle) {
+    const n = needle.trim().toLowerCase();
+    const filtered = n
+      ? allTopics.filter(t =>
+          t.topic_name.toLowerCase().includes(n) ||
+          (t.summary || "").toLowerCase().includes(n) ||
+          t.chapter_title.toLowerCase().includes(n)
+        )
+      : allTopics;
+
+    setStatus(`${filtered.length} topic${filtered.length !== 1 ? "s" : ""} found`);
+    renderResults(filtered, needle.trim());
+  }
+
+  // ── Load book ────────────────────────────────────────────────────────────────
+
+  async function loadBook(book) {
+    currentBook = book;
+    allTopics   = [];
+    searchIn.value   = "";
+    searchIn.disabled = true;
+    setStatus('<span class="spinner"></span> Loading…');
+    resultsEl.innerHTML = `<div class="placeholder"><p><span class="spinner"></span> Loading topics…</p></div>`;
+
+    try {
+      const res = await fetch(`/api/ontology/${encodeURIComponent(book)}/search?q=`);
+      if (!res.ok) throw new Error(`HTTP ${res.status}`);
+      const data = await res.json();
+      allTopics = data.results || [];
+      searchIn.disabled = false;
+      searchIn.focus();
+      filterAndRender("");
+    } catch (err) {
+      setStatus("Failed to load book: " + err.message);
+      resultsEl.innerHTML = `<div class="placeholder"><p>Could not load ontology. Is the server running?</p></div>`;
+    }
+  }
+
+  // ── Events ───────────────────────────────────────────────────────────────────
+
+  bookSel.addEventListener("change", () => {
+    const book = bookSel.value;
+    if (!book) return;
+    loadBook(book);
+  });
+
+  searchIn.addEventListener("input", () => {
+    clearTimeout(debounceTimer);
+    debounceTimer = setTimeout(() => filterAndRender(searchIn.value), 220);
+  });
+</script>
+</body>
+</html>

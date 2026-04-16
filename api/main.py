@@ -32,8 +32,11 @@ PROJECT_ROOT = Path(__file__).resolve().parent.parent
 STATIC_DIR = PROJECT_ROOT / "static"
 STATIC_DIR.mkdir(exist_ok=True)
 app.mount("/static", StaticFiles(directory=str(STATIC_DIR)), name="static")
+
 OUTPUT_DIR = PROJECT_ROOT / "output"
 OUTPUT_DIR.mkdir(exist_ok=True)
+app.mount("/output", StaticFiles(directory=str(OUTPUT_DIR)), name="output")
+
 
 
 # ---------------------------------------------------------------------------
@@ -210,10 +213,26 @@ def _enrich_topic_context(ontology: dict, topic: dict) -> str:
     return json.dumps(enriched, indent=2)
 
 
+def _recursive_substitute_exercises(data, lookup):
+    """Recursively walk through the plan and replace E_X_Y_Z IDs with their full text."""
+    if isinstance(data, dict):
+        return {k: _recursive_substitute_exercises(v, lookup) for k, v in data.items()}
+    elif isinstance(data, list):
+        return [_recursive_substitute_exercises(i, lookup) for i in data]
+    elif isinstance(data, str):
+        ids = re.findall(r"E_\d+_\d+_\d+", data)
+        for eid in ids:
+            if eid in lookup:
+                # Use only the text as requested by the user
+                data = data.replace(eid, lookup[eid].get("text", eid))
+        return data
+    return data
+
+
 def _inject_exercise_content(plan: dict, ontology: dict) -> dict:
     """Scan generated lesson plan for exercise notation IDs (E_X_Y_Z),
     look them up in the ontology, and embed their full content in the plan
-    under an 'exercises' key."""
+    under an 'exercises' key. Also replaces inline IDs with actual text."""
     plan_text = json.dumps(plan)
     notation_ids = list(dict.fromkeys(re.findall(r"E_\d+_\d+_\d+", plan_text)))
     if not notation_ids:
@@ -232,9 +251,13 @@ def _inject_exercise_content(plan: dict, ontology: dict) -> dict:
             ex = exercise_lookup[eid]
             resolved[eid] = {"id": eid, "text": ex.get("text", ""), "topic_id": ex.get("topic_id", "")}
 
+    # Perform recursive substitution in the dictionary itself
+    substituted_plan = _recursive_substitute_exercises(plan, resolved)
+
     if resolved:
-        plan["exercises"] = resolved
-    return plan
+        substituted_plan["exercises"] = resolved
+    return substituted_plan
+
 
 
 def _infer_subject(book_name: str) -> str:
@@ -463,6 +486,95 @@ async def get_ontology(book_name: str, db = Depends(get_db)):
     return _get_ontology_or_404(db, book_name)
 
 
+@app.get("/api/ontology/{book_name}/search")
+async def search_ontology_topics(
+    book_name: str,
+    q: str = "",
+    db=Depends(get_db),
+):
+    """
+    Search topics within a book's ontology by keyword.
+
+    Returns matching topics with their chapter title and textbook page numbers
+    decoded from exercise IDs using the E_{chapter}_{page}_{seq} convention.
+    ``q`` is matched case-insensitively against topic name and summary.
+    An empty ``q`` returns every topic (browse mode).
+    """
+    ontology = _get_ontology_or_404(db, book_name)
+    entities = ontology.get("entities", {})
+
+    chapters  = entities.get("chapters", [])
+    topics    = entities.get("topics", [])
+    exercises = entities.get("exercises", [])
+
+    chapter_title = {c["id"]: c["title"]  for c in chapters}
+    chapter_num   = {c["id"]: c["number"] for c in chapters}
+
+    # Build topic_id → sorted unique real page numbers from exercise IDs.
+    # Exercise ID format:  E_{chapter_num}_{page_num}_{sequence}
+    # Some chapters encode page=1 as a placeholder (not a real textbook page);
+    # we skip page values of 1 unless the chapter genuinely starts at page 1
+    # (heuristic: keep page=1 only when it's the sole page for that chapter).
+    chapter_raw_pages: dict = {}   # chapter_num_str → set of pages from IDs
+    topic_pages: dict = {}
+    for ex in exercises:
+        tid   = ex.get("topic_id", "")
+        parts = ex.get("id", "").split("_")
+        if len(parts) == 4 and parts[0] == "E":
+            try:
+                page = int(parts[2])
+                chapter_raw_pages.setdefault(parts[1], set()).add(page)
+                topic_pages.setdefault(tid, set()).add(page)
+            except ValueError:
+                pass
+
+    # Drop page=1 placeholder for chapters whose only page entry is 1
+    # (a real chapter-1 page would also appear alongside higher page numbers)
+    placeholder_chapters = {
+        ch for ch, pages in chapter_raw_pages.items()
+        if pages == {1}
+    }
+    for tid, pages in topic_pages.items():
+        chap_part = tid.split("_")[1] if "_" in tid else ""
+        if chap_part in placeholder_chapters:
+            topic_pages[tid] = set()
+
+    needle = q.strip().lower()
+    results = []
+    for t in topics:
+        name    = t.get("name", "")
+        summary = t.get("summary", "")
+        if needle and needle not in name.lower() and needle not in summary.lower():
+            continue
+        cid = t.get("chapter_id", "")
+
+        # Resolve chapter — fall back to parsing from topic ID (T_{chap}_{seq})
+        # when the chapter_id isn't present in the chapters list.
+        chap_num_val   = chapter_num.get(cid)
+        chap_title_val = chapter_title.get(cid, "")
+        if chap_num_val is None:
+            tid_parts = t["id"].split("_")
+            if len(tid_parts) >= 2:
+                try:
+                    chap_num_val   = int(tid_parts[1])
+                    chap_title_val = chap_title_val or f"Chapter {chap_num_val}"
+                except ValueError:
+                    pass
+
+        results.append({
+            "topic_id":      t["id"],
+            "topic_name":    name,
+            "summary":       summary,
+            "chapter_id":    cid,
+            "chapter_num":   chap_num_val,
+            "chapter_title": chap_title_val,
+            "pages":         sorted(topic_pages.get(t["id"], set())),
+        })
+
+    results.sort(key=lambda r: (r["chapter_num"] or 0, r["topic_id"]))
+    return {"book": book_name, "query": q, "count": len(results), "results": results}
+
+
 # ---------------------------------------------------------------------------
 # Lesson plan generation
 # ---------------------------------------------------------------------------
@@ -637,6 +749,22 @@ async def api_generate_study_plan(req: StudyPlanRequest, db = Depends(get_db)):
         daily_commitment=req.daily_commitment or "",
     )
 
+    # Perform exercise notation replacement if ontology was loaded
+    if ontology:
+        exercise_lookup = {}
+        if "entities" in ontology:
+            for ex in ontology["entities"].get("exercises", []):
+                ex_id = ex.get("id", "")
+                if ex_id:
+                    exercise_lookup[ex_id] = ex.get("text", ex_id)
+        
+        # Simple string replacement for all IDs found in the markdown
+        ids_found = re.findall(r"E_\d+_\d+_\d+", plan_md)
+        for eid in ids_found:
+            if eid in exercise_lookup:
+                plan_md = plan_md.replace(eid, exercise_lookup[eid])
+
+
     student_id = req.student_id or (student_profile or {}).get("student_id", "")
     db_topic   = q.get_topic_by_index(db, req.book, req.chapter_idx, req.topic_idx)
 
@@ -800,7 +928,7 @@ async def api_generate_worksheet(req: WorksheetRequest, db = Depends(get_db)):
             num_questions=req.num_questions,
             worksheet_json=worksheet,
         )
-        return {"success": True, "worksheet": worksheet}
+        return {"success": True, "worksheet": worksheet, "debug_marker": "v2026-04-16-1335"}
     except Exception as e:
         raise HTTPException(status_code=500, detail=f"Worksheet generation failed: {str(e)}")
 
@@ -1175,4 +1303,12 @@ async def get_week_summary(plan_id: str, db = Depends(get_db)):
 
 if __name__ == "__main__":
     import uvicorn
-    uvicorn.run("main:app", host="0.0.0.0", port=8000, reload=True)
+    # Added reload_dirs so changes in 'services' and 'database' are detected
+    uvicorn.run(
+        "main:app", 
+        host="0.0.0.0", 
+        port=8000, 
+        reload=True, 
+        reload_dirs=["api", "services", "database", "core", "engines"]
+    )
+

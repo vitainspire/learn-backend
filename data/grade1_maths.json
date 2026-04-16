@@ -86,6 +86,21 @@
         "id": "C_17",
         "number": 17,
         "title": "Length - Weight - Size"
+      },
+      {
+        "id": "C_18",
+        "number": 18,
+        "title": "Numbers from 96 to 100"
+      },
+      {
+        "id": "C_19",
+        "number": 19,
+        "title": "Comparing and Ordering Numbers"
+      },
+      {
+        "id": "C_20",
+        "number": 20,
+        "title": "Measurement"
       }
     ],
     "topics": [
