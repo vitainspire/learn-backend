@@ -107,16 +107,17 @@ def generate_worksheet() -> dict:
         "difficulty":     "mixed",
         "worksheet_type": "practice",
     }
-    print("➤  POST /api/generate-worksheet …")
+    print(">  POST /api/generate-worksheet ...")
     r = requests.post(f"{BASE_URL}/api/generate-worksheet", json=payload, timeout=600)
     if not r.ok:
-        print(f"  ✗  HTTP {r.status_code}: {r.text[:400]}")
+        print(f"  [X]  HTTP {r.status_code}: {r.text[:400]}")
         sys.exit(1)
 
     data = r.json()
     worksheet = data.get("worksheet", {})
-    print(f"  ✓  Worksheet received — {worksheet.get('total_marks')} marks, "
-          f"{len(worksheet.get('sections', []))} sections")
+    marker = data.get("debug_marker", "NONE")
+    print(f"  [OK]  Worksheet received -- {worksheet.get('total_marks')} marks, "
+          f"{len(worksheet.get('sections', []))} sections (Backend: {marker})")
 
     # Report which questions got AI images
     image_qs = [
@@ -126,24 +127,24 @@ def generate_worksheet() -> dict:
         if q.get("image_path")
     ]
     if image_qs:
-        print(f"  ✓  AI images generated for question(s): {image_qs}")
+        print(f"  [OK]  AI images generated for question(s): {image_qs}")
     else:
-        print("  ·  No AI images (model unavailable or no image_prompt in questions)")
+        print("  [-]  No AI images (model unavailable or no image_prompt in questions)")
 
     return worksheet
 
 
 def download_pdf(worksheet: dict) -> bytes:
-    print("➤  POST /api/download-worksheet …")
+    print(">  POST /api/download-worksheet ...")
     r = requests.post(
         f"{BASE_URL}/api/download-worksheet",
         json={"worksheet": worksheet},
         timeout=60,
     )
     if not r.ok:
-        print(f"  ✗  HTTP {r.status_code}: {r.text[:400]}")
+        print(f"  [X]  HTTP {r.status_code}: {r.text[:400]}")
         sys.exit(1)
-    print(f"  ✓  PDF received — {len(r.content):,} bytes")
+    print(f"  [OK]  PDF received -- {len(r.content):,} bytes")
     return r.content
 
 
@@ -153,7 +154,7 @@ def save_and_open(pdf_bytes: bytes):
     out_path = os.path.join(out_dir, "test_worksheet.pdf")
     with open(out_path, "wb") as f:
         f.write(pdf_bytes)
-    print(f"  ✓  Saved → {out_path}")
+    print(f"  [OK]  Saved -> {out_path}")
     # Open with the system default PDF viewer
     try:
         os.startfile(out_path)
@@ -169,7 +170,7 @@ if __name__ == "__main__":
     os.makedirs(os.path.dirname(json_path), exist_ok=True)
     with open(json_path, "w", encoding="utf-8") as f:
         json.dump(worksheet, f, indent=2)
-    print(f"  ·  Worksheet JSON → {json_path}")
+    print(f"  [-]  Worksheet JSON -> {json_path}")
 
     pdf_bytes = download_pdf(worksheet)
     save_and_open(pdf_bytes)

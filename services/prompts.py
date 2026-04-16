@@ -464,7 +464,7 @@ WORKSHEET_SCHEMA: dict = {
                         "number_line fields": "start: number, end: number, marks: number[] (optional red dots), label: string (optional caption)",
                         "direction_turn fields": "direction: left|right, steps: number",
                     },
-                    "image_prompt": "string — ONLY include when the question asks students to look at a REAL illustration or scene (e.g. 'Count the mangoes in the picture', 'Name the animal shown'). Write a short, child-safe image-generation prompt describing exactly what should appear in the picture. Omit this field for purely text-based or geometry questions. Do NOT include both diagram and image_prompt on the same question.",
+                    "image_prompt": "string — Describe a simple educational illustration for this question. USE FOR: Animals, real-world objects, or 'What do you see' questions. STYLE: 'clean line art, white background, flat colors, children's book style'. Omit if purely text-based.",
                 }
             ],
         }
@@ -474,49 +474,43 @@ WORKSHEET_SCHEMA: dict = {
 
 def extract_worksheet_context(lesson_plan: dict) -> str:
     """
-    Pull only the pedagogically relevant fields from a lesson plan dict
+    Pull only the pedagogically relevant fields from a 5E lesson plan dict
     and return a compact, token-efficient string for the worksheet prompt.
-
-    Drops teacher talk tracks, timing notes, and energy tags — noise that
-    burns tokens without improving question quality.
     """
-    meta = lesson_plan.get("meta", {}) or lesson_plan.get("lesson_meta", {})
-    objectives = (
-        lesson_plan.get("objective", [])
-        or lesson_plan.get("objectives", [])
-        or meta.get("objectives", [])
-    )
-
-    explain_raw = lesson_plan.get("explain", []) or []
-    concepts = []
-    for c in explain_raw:
-        if not isinstance(c, dict):
-            continue
-        teaching = c.get("teaching", {}) or {}
-        concepts.append({
-            "name": c.get("name", ""),
-            "method_summary": (teaching.get("method", "") or "")[:200],
-            "key_examples": (teaching.get("examples", []) or [])[:3],
-            "common_misconception": c.get("common_misconception", ""),
-        })
-
+    # 5E Keys: engage, explore, explain, elaborate, evaluate
+    explain   = lesson_plan.get("explain", {}) or {}
     elaborate = lesson_plan.get("elaborate", {}) or {}
-    evaluate = lesson_plan.get("evaluate", {}) or {}
-    closure = lesson_plan.get("closure", {}) or {}
-    fallback = lesson_plan.get("fallback_strategy", "") or ""
+    evaluate  = lesson_plan.get("evaluate", {}) or {}
+    
+    # Extract from Explain
+    explain_ctx = {
+        "concept": (explain.get("concept_explanation", "") or "")[:400],
+        "key_examples": (explain.get("examples", []) or [])[:3],
+    }
+    
+    # Extract from Elaborate (Practice tasks)
+    elaborate_ctx = {
+        "guided_task": elaborate.get("task_1", {}).get("description", "")[:200],
+        "challenge_task": elaborate.get("task_2", {}).get("description", "")[:200],
+    }
+    
+    # Extract from Evaluate (Assessment questions)
+    evaluate_ctx = {
+        "sample_questions": [q.get("question", "") for q in evaluate.get("questions", [])][:5]
+    }
 
     context = {
-        "objectives": objectives,
-        "core_concepts": concepts,
-        "student_practised": {
-            "we_do": (elaborate.get("we_do", "") or "")[:300],
-            "you_do": (elaborate.get("you_do", "") or "")[:300],
-        },
-        "teacher_eval_questions": (evaluate.get("questions", []) or [])[:5],
-        "lesson_summary": (closure.get("summary", "") or "")[:400],
-        "common_fallback": fallback[:300],
+        "title": lesson_plan.get("lesson_title", "Topic"),
+        "grade": lesson_plan.get("grade", ""),
+        "subject": lesson_plan.get("subject", ""),
+        "pedagogy": {
+            "core_content": explain_ctx,
+            "class_practice": elaborate_ctx,
+            "assessment_targets": evaluate_ctx
+        }
     }
     return json.dumps(context, indent=2)
+
 
 
 def _bloom_distribution(grade_int: int, num_questions: int) -> str:
@@ -732,158 +726,42 @@ def build_worksheet_prompt(
     time_limit_mins = max(10, min(40, num_questions))
 
     return f"""
-You are an expert school worksheet designer with deep knowledge of Bloom's Taxonomy
-and formative assessment best practices.
-
-Create a complete, printable worksheet for the lesson described below.
-The worksheet must assess what was ACTUALLY TAUGHT — every question must map
-to a concept, example, or activity from the lesson.
+Generate an age-appropriate printable worksheet for Grade {grade}.
+Base all questions strictly on the LESSON CONTEXT below.
 
 ────────────────────────────────────────────────────
-WORKSHEET TYPE — READ THIS FIRST
-────────────────────────────────────────────────────
-{type_guide}
-
-────────────────────────────────────────────────────
-WORKSHEET PARAMETERS
+PARAMETERS
 ────────────────────────────────────────────────────
 Topic:           {topic_name}
-Subject:         {subject}
 Grade:           {grade}
-Total questions: {num_questions}  (distribute across sections)
-Difficulty:      {difficulty}
+Total questions: {num_questions} (STRICT REQUIREMENT)
 Time limit:      {time_limit_mins} minutes
 
 ────────────────────────────────────────────────────
-GRADE-LEVEL MENTAL MODEL — TARGET THIS STUDENT
-────────────────────────────────────────────────────
-{mental_model}
-
-────────────────────────────────────────────────────
-DIFFICULTY GUIDE
-────────────────────────────────────────────────────
-{difficulty_guide}
-
-────────────────────────────────────────────────────
-SECTION STRUCTURE — MANDATORY FOR GRADE {grade}
-────────────────────────────────────────────────────
-{section_guide}
-
-────────────────────────────────────────────────────
-BLOOM'S TAXONOMY DISTRIBUTION (ENFORCE STRICTLY)
-────────────────────────────────────────────────────
-{bloom_rule}
-Tag every question with its bloom_level field.
-
-────────────────────────────────────────────────────
-LESSON CONTEXT (what was taught — base ALL questions on this)
+LESSON CONTEXT
 ────────────────────────────────────────────────────
 {plan_context}
 
 ────────────────────────────────────────────────────
-RULES — FOLLOW EVERY ONE
+CORE REQUIREMENTS — FOLLOW STRICTLY
 ────────────────────────────────────────────────────
-1.  AT LEAST TWO SECTIONS: The worksheet must start with Section A (mcq)
-    and proceed with one or more subjective sections (B, C, etc.).
-    Do not use true_false or match if they don't fit the topic, but prioritize
-    variety and thinking-based questions.
-
-3.  LESSON ALIGNMENT: Every question must test a concept, example, or activity
-    from the lesson context above. Do not invent off-topic questions.
-
-4.  AGE-APPROPRIATE LANGUAGE: Vocabulary and sentence complexity must suit
-    Grade {grade} students.
-
-5.  MCQ FORMAT: Exactly 4 options (A, B, C, D). Exactly one correct.
-    Distractors must be plausible (common misconceptions), not obviously wrong.
-    Vary question stems — do NOT start more than 2 questions with the same phrase.
-
-6.  WRITTEN ANSWER FORMAT: Questions must ask students to explain, describe,
-    complete a sentence, or show their thinking — not just circle or tick.
-    State clearly in the question what the student must write.
-    Include partial_marks for short_answer questions worth >1 mark.
-
-7.  HINTS (SCAFFOLDING): Each section must include at least one question
-    with a hint field — a short nudge for students who are stuck.
-
-8.  DIAGRAMS — RENDERED AS REAL VECTOR GRAPHICS:
-    Use "diagram" ONLY for purely mathematical / geometric visuals.
-    NEVER use diagram for questions that ask students to count or identify
-    everyday objects (fruits, animals, toys, stars, etc.) — those go in rule 9.
-
-    • shapes_2d  — questions about 2-D shape names or properties
-                   (circle, square, triangle, rectangle, pentagon, hexagon, diamond).
-      Example: {{"type":"shapes_2d","shapes":["triangle","circle","square"],
-                "labels":["Triangle","Circle","Square"]}}
-
-    • shapes_3d  — questions about 3-D solid names (cube, sphere, cylinder, cone).
-      Example: {{"type":"shapes_3d","shapes":["cube","sphere"],
-                "labels":["Cube","Sphere"]}}
-
-    • spatial_position — one object positioned ABOVE / BELOW / INSIDE / NEXT TO
-                         / LEFT OF / RIGHT OF / IN FRONT OF / BEHIND another.
-      Example: {{"type":"spatial_position","subject":"apple","reference":"basket",
-                "position":"above"}}
-
-    • object_row — ONLY when the question asks which named item is to the LEFT or
-                   RIGHT of a specific reference item in a labelled sequence.
-                   Do NOT use this just to show a row of identical objects to count.
-      Example: {{"type":"object_row","objects":["cat","dog","bird","fish"],
-                "labels":["Cat","Dog","Bird","Fish"],"highlight":"dog"}}
-
-    • number_line — number-line or ordering questions.
-      Example: {{"type":"number_line","start":0,"end":10,"marks":[5],
-                "label":"Where is 5?"}}
-
-    • direction_turn — turning / direction questions (left / right).
-      Example: {{"type":"direction_turn","direction":"right","steps":2}}
-
-    TARGET: at least 2 diagram questions where the topic naturally calls for one.
-    Write the question text so it says "Look at the diagram below".
-
-9.  AI-GENERATED IMAGES (image_prompt field) — USE THIS FOR ALL COUNTING / OBJECT QUESTIONS:
-    Whenever a question asks students to count objects, identify an animal, name a
-    fruit or everyday item, or describe a scene, you MUST use "image_prompt" instead
-    of "diagram". This produces a real illustration — far more engaging than abstract boxes.
-
-    Decision rule:
-      • "Count the stars / apples / toffees / animals …"  → image_prompt  ✓  (NOT object_row)
-      • "What shape is this?"  → diagram (shapes_2d)  ✓
-      • "Where is the ball relative to the box?"  → diagram (spatial_position)  ✓
-      • "Name the animal in the picture"  → image_prompt  ✓
-
-    Rules:
-    - Do NOT put both image_prompt and diagram on the same question — pick one.
-    - Max {max(2, num_questions // 4)} questions in the worksheet may have image_prompt.
-    - Write the prompt as a concise visual description (child-safe, no text in image):
-        "5 red apples arranged on a white background, flat cartoon style, no text"
-        "A group of 3 yellow bananas on a white background, simple illustration"
-        "4 cartoon stars on a white background, simple flat illustration, no text"
-    - The question text MUST say "Look at the picture below" so the student knows
-      an image will appear.
-
-10. NO REPETITION: No two questions may test the exact same fact.
-
-11. ANSWER KEY: Every question must have an answer field. For written answers,
-    the answer field should contain the model answer or key points.
-
-12. SECTION INSTRUCTIONS: Every section must have an instructions field
-    with a clear student-facing direction line.
-
-13. MARKS ACCOUNTING: total_marks = sum of (marks_per_question × number of
-    questions) across ALL sections. Double-check arithmetic before returning.
-
-14. GENERAL INSTRUCTIONS: The top-level instructions field must contain
-    2–3 sentences a student reads at the top of the paper.
-
-15. OUTPUT FORMAT: Return ONLY valid JSON. No markdown fences. No preamble.
-    No trailing text. Every brace and bracket must be closed.
+1. EXACT COUNT: You MUST generate exactly {num_questions} questions across the sections.
+2. NO PLACEHOLDERS: Do NOT use '.' or empty strings or 'NaN'. Every question must be a full, descriptive sentence (e.g., "Which animal is bigger?").
+3. MANDATORY ANSWERS: Every single question MUST have a populated "answer" field. No exceptions.
+4. VISUALS & IMAGES (GRADE 1-5):
+   - For early grades (1-3) or visual topics (Animals, Plants, Shapes), use the "image_prompt" field for at least 3-4 questions.
+   - Example image_prompt: "A simple, friendly cartoon elephant standing on grass, white background, flat illustration".
+   - If a question asks "What animal is this?", you MUST provide a descriptive image_prompt.
+   - Do NOT include both "diagram" and "image_prompt" on the same question.
+5. STRUCTURE: {section_guide}
+6. VALID JSON: Return ONLY the JSON object. No preamble, no markdown fences.
 
 ────────────────────────────────────────────────────
-OUTPUT SCHEMA (follow exactly — add no extra top-level keys)
+OUTPUT SCHEMA
 ────────────────────────────────────────────────────
 {schema_str}
 """
+
 
 
 def build_elementary_lesson_prompt(

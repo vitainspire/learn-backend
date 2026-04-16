@@ -9,6 +9,8 @@ Section types supported: mcq, fill_blank, true_false, short_answer, match.
 Includes a detachable answer-key page at the end.
 """
 
+import base64
+import io
 import math
 import os
 
@@ -690,34 +692,58 @@ class _ImagePlaceholder(Flowable):
 
 def _add_image(q: dict, page_w: float, story: list):
     """
-    Embed an AI-generated image when q['image_path'] points to a readable file.
-    If generation was requested (image_prompt present) but failed, render a
-    dashed placeholder box so the layout still shows where the image belongs.
+    Embed an AI-generated image for the question.
+
+    Priority:
+      1. q['image_data'] — base64-encoded PNG embedded in the worksheet JSON.
+         Most reliable: no filesystem dependency, works across server restarts
+         and when the worksheet is stored/re-sent by the frontend.
+      2. q['image_path'] — server-side file path (fallback for older data).
+      3. _ImagePlaceholder — shown only when both of the above are absent or broken.
     """
-    path   = q.get("image_path")
-    prompt = q.get("image_prompt", "")
-    img_w  = page_w * 0.55
-    img_h  = img_w  * 0.65
+    image_data = q.get("image_data")   # base64 string
+    path       = q.get("image_path")
+    prompt     = q.get("image_prompt", "")
+    img_w      = page_w * 0.55
+    img_h      = img_w  * 0.65
 
     story.append(Spacer(1, 0.18 * cm))
 
-    if path and os.path.isfile(path):
+    # ── 1. Embedded base64 ────────────────────────────────────────────────────
+    if image_data:
         try:
-            img = RLImage(path, width=img_w, height=img_h)
+            img_bytes = base64.b64decode(image_data)
+            img = RLImage(io.BytesIO(img_bytes), width=img_w, height=img_h)
             img.hAlign = "CENTER"
             story.append(img)
+            story.append(Spacer(1, 0.12 * cm))
+            return
         except Exception as e:
-            print(f"[PDF] Could not embed image '{path}': {e}")
-            if prompt:
-                story.append(_ImagePlaceholder(prompt, img_w, img_h))
-    elif prompt:
-        # Image was requested but generation was unavailable — show placeholder
-        story.append(_ImagePlaceholder(prompt, img_w, img_h))
-    else:
-        story.pop()   # remove the Spacer we already added — nothing to show
-        return
+            print(f"[PDF] Could not decode embedded image data: {e}")
 
-    story.append(Spacer(1, 0.12 * cm))
+    # ── 2. Filesystem path ────────────────────────────────────────────────────
+    if path:
+        if path.startswith("/output/"):
+            from pathlib import Path as _Path
+            project_root = _Path(__file__).resolve().parent.parent
+            path = str(project_root / path.lstrip("/"))
+
+        if os.path.isfile(path):
+            try:
+                img = RLImage(path, width=img_w, height=img_h)
+                img.hAlign = "CENTER"
+                story.append(img)
+                story.append(Spacer(1, 0.12 * cm))
+                return
+            except Exception as e:
+                print(f"[PDF] Could not embed image '{path}': {e}")
+
+    # ── 3. Placeholder / nothing ──────────────────────────────────────────────
+    if prompt:
+        story.append(_ImagePlaceholder(prompt, img_w, img_h))
+        story.append(Spacer(1, 0.12 * cm))
+    else:
+        story.pop()  # remove the Spacer added at the top — nothing to show
 
 
 def _render_mcq(section: dict, styles: dict, page_w: float, story: list):

@@ -16,12 +16,14 @@ from collections import defaultdict
 
 def list_books(db) -> list[str]:
     resp = db.table("books").select("name").order("name").execute()
+    if not resp or not resp.data:
+        return []
     return [r["name"] for r in resp.data]
 
 
 def get_book(db, book_name: str) -> Optional[dict]:
     resp = db.table("books").select("*").eq("name", book_name).maybe_single().execute()
-    return resp.data
+    return resp.data if resp else None
 
 
 def get_ontology_json(db, book_name: str) -> Optional[dict]:
@@ -31,7 +33,7 @@ def get_ontology_json(db, book_name: str) -> Optional[dict]:
 
 def get_topic_by_index(db, book_name: str, chap_idx: int, topic_idx: int) -> Optional[dict]:
     book_resp = db.table("books").select("id").eq("name", book_name).maybe_single().execute()
-    if not book_resp.data:
+    if not book_resp or not book_resp.data:
         return None
     book_id = book_resp.data["id"]
 
@@ -52,7 +54,7 @@ def get_topic_by_index(db, book_name: str, chap_idx: int, topic_idx: int) -> Opt
 
 def get_teacher(db, teacher_id: str) -> Optional[dict]:
     resp = db.table("teachers").select("*").eq("id", teacher_id).maybe_single().execute()
-    return resp.data
+    return resp.data if resp else None
 
 
 def get_default_teacher_db(db) -> Optional[dict]:
@@ -107,7 +109,7 @@ def build_teacher_profile_dict(db, teacher_id: str) -> Optional[dict]:
 
 def get_student(db, student_id: str) -> Optional[dict]:
     resp = db.table("students").select("*").eq("id", student_id).maybe_single().execute()
-    return resp.data
+    return resp.data if resp else None
 
 
 def get_default_student_db(db) -> Optional[dict]:
@@ -157,13 +159,14 @@ def build_student_profile_dict(db, student_id: str) -> Optional[dict]:
     attempts: dict[str, int] = {}
     hint_usage: dict[str, int] = {}
 
-    for r in mastery_resp.data:
-        topic_name = (r.get("topics") or {}).get("name")
-        if topic_name:
-            concept_mastery[topic_name] = r["mastery"]
-            time_spent[topic_name] = r.get("time_spent_seconds", 0)
-            attempts[topic_name] = r.get("attempt_count", 0)
-            hint_usage[topic_name] = r.get("hint_usage", 0)
+    if mastery_resp and mastery_resp.data:
+        for r in mastery_resp.data:
+            topic_name = (r.get("topics") or {}).get("name")
+            if topic_name:
+                concept_mastery[topic_name] = r["mastery"]
+                time_spent[topic_name] = r.get("time_spent_seconds", 0)
+                attempts[topic_name] = r.get("attempt_count", 0)
+                hint_usage[topic_name] = r.get("hint_usage", 0)
 
     return {
         "student_id": student["id"],
@@ -183,6 +186,8 @@ def build_student_profile_dict(db, student_id: str) -> Optional[dict]:
 
 def get_student_mastery_dict(db, student_id: str) -> dict[str, float]:
     resp = db.table("student_topic_mastery").select("mastery, topics(name)").eq("student_id", student_id).execute()
+    if not resp or not resp.data:
+        return {}
     return {
         r["topics"]["name"]: r["mastery"]
         for r in resp.data
@@ -205,7 +210,7 @@ def upsert_student_mastery(
     existing = None
     if topic_id:
         resp = db.table("student_topic_mastery").select("*").eq("student_id", student_id).eq("topic_id", topic_id).maybe_single().execute()
-        existing = resp.data
+        existing = resp.data if resp else None
 
     if existing:
         final_mastery = round((new_mastery * 0.7) + (existing["mastery"] * 0.3), 2)
@@ -253,6 +258,8 @@ def update_student_frustration(db, student_id: str, frustration: float) -> None:
 
 def get_notifications(db, student_id: str) -> list[dict]:
     resp = db.table("notifications").select("*").eq("student_id", student_id).eq("is_read", False).order("created_at", desc=True).execute()
+    if not resp or not resp.data:
+        return []
     return [
         {
             "id": r["id"],
@@ -312,7 +319,7 @@ def save_lesson_plan(
         "duration_minutes": duration_minutes,
         "plan_json": plan_json,
     }).execute()
-    return resp.data[0]
+    return resp.data[0] if resp and resp.data else {}
 
 
 # ---------------------------------------------------------------------------
@@ -352,7 +359,7 @@ def save_study_plan(
         "context_type": context_type,
         "plan_markdown": plan_markdown,
     }).execute()
-    return resp.data[0]
+    return resp.data[0] if resp and resp.data else {}
 
 
 # ---------------------------------------------------------------------------
@@ -380,7 +387,7 @@ def save_worksheet(
         "num_questions": num_questions,
         "worksheet_json": worksheet_json,
     }).execute()
-    return resp.data[0]
+    return resp.data[0] if resp and resp.data else {}
 
 
 # ---------------------------------------------------------------------------
@@ -390,10 +397,11 @@ def save_worksheet(
 def get_class_mastery_stats(db, class_id: Optional[str] = None) -> list[dict]:
     resp = db.table("student_topic_mastery").select("mastery, topics(name)").execute()
     by_topic: dict[str, list] = defaultdict(list)
-    for r in resp.data:
-        name = (r.get("topics") or {}).get("name")
-        if name:
-            by_topic[name].append(r["mastery"])
+    if resp and resp.data:
+        for r in resp.data:
+            name = (r.get("topics") or {}).get("name")
+            if name:
+                by_topic[name].append(r["mastery"])
     return [
         {
             "topic": topic,
@@ -409,22 +417,24 @@ def get_at_risk_students(db, class_id: Optional[str] = None) -> list[dict]:
     mastery_resp = db.table("student_topic_mastery").select("student_id, mastery").execute()
 
     by_student: dict[str, list] = defaultdict(list)
-    for r in mastery_resp.data:
-        by_student[r["student_id"]].append(r["mastery"])
+    if mastery_resp and mastery_resp.data:
+        for r in mastery_resp.data:
+            by_student[r["student_id"]].append(r["mastery"])
 
     results = []
-    for s in students_resp.data:
-        sid = s["id"]
-        masteries = by_student.get(sid, [])
-        avg = sum(masteries) / len(masteries) if masteries else 0.0
-        frustration = s.get("frustration_level") or 0.0
-        if avg < 0.6 or frustration > 0.6:
-            results.append({
-                "student_id": sid,
-                "name": s["name"],
-                "avg_mastery": round(avg, 2),
-                "frustration": frustration,
-            })
+    if students_resp and students_resp.data:
+        for s in students_resp.data:
+            sid = s["id"]
+            masteries = by_student.get(sid, [])
+            avg = sum(masteries) / len(masteries) if masteries else 0.0
+            frustration = s.get("frustration_level") or 0.0
+            if avg < 0.6 or frustration > 0.6:
+                results.append({
+                    "student_id": sid,
+                    "name": s["name"],
+                    "avg_mastery": round(avg, 2),
+                    "frustration": frustration,
+                })
     return results
 
 
@@ -436,7 +446,7 @@ def _fetch_plan_with_days(db, plan_id: str) -> Optional[dict]:
     resp = db.table("week_plans").select(
         "*, week_plan_days(*, post_class_feedback(*))"
     ).eq("id", plan_id).maybe_single().execute()
-    if not resp.data:
+    if not resp or not resp.data:
         return None
     plan = resp.data
     plan["week_plan_days"] = sorted(
@@ -470,6 +480,8 @@ def create_week_plan(
         "status": "draft",
         "reasoning": reasoning,
     }).execute()
+    if not plan_resp or not plan_resp.data:
+        return {}
     plan = plan_resp.data[0]
 
     days_data = [
@@ -491,12 +503,13 @@ def get_week_plans_for_teacher(db, teacher_id: str) -> list[dict]:
         "*, week_plan_days(*, post_class_feedback(*))"
     ).eq("teacher_id", teacher_id).order("week_start_date", desc=True).execute()
     plans = []
-    for plan in resp.data:
-        plan["week_plan_days"] = sorted(
-            plan.get("week_plan_days") or [],
-            key=lambda d: d["day_of_week"],
-        )
-        plans.append(plan)
+    if resp and resp.data:
+        for plan in resp.data:
+            plan["week_plan_days"] = sorted(
+                plan.get("week_plan_days") or [],
+                key=lambda d: d["day_of_week"],
+            )
+            plans.append(plan)
     return plans
 
 
@@ -512,7 +525,7 @@ def unlock_week_plan(db, plan_id: str) -> Optional[dict]:
 
 def delete_week_plan(db, plan_id: str) -> bool:
     resp = db.table("week_plans").select("id").eq("id", plan_id).maybe_single().execute()
-    if not resp.data:
+    if not resp or not resp.data:
         return False
     db.table("week_plan_days").delete().eq("week_plan_id", plan_id).execute()
     db.table("week_plans").delete().eq("id", plan_id).execute()
@@ -528,13 +541,13 @@ def reorder_week_plan_days(db, plan_id: str, day_order: list[dict]) -> list[dict
 
 def get_week_plan_day(db, day_id: str) -> Optional[dict]:
     resp = db.table("week_plan_days").select("*, post_class_feedback(*)").eq("id", day_id).maybe_single().execute()
-    return resp.data
+    return resp.data if resp else None
 
 
 def update_day_concept(db, day_id: str, concept_name: str) -> Optional[dict]:
     db.table("week_plan_days").update({"concept_name": concept_name}).eq("id", day_id).execute()
     resp = db.table("week_plan_days").select("*").eq("id", day_id).maybe_single().execute()
-    return resp.data
+    return resp.data if resp else None
 
 
 def save_post_class_feedback(
@@ -554,6 +567,8 @@ def save_post_class_feedback(
         "needs_revisit": needs_revisit,
         "revisit_concept": revisit_concept,
     }).execute()
+    if not fb_resp or not fb_resp.data:
+        return {}
     fb = fb_resp.data[0]
 
     new_status = "partial" if carry_forward else "taught"
@@ -567,12 +582,13 @@ def inject_carry_forward(db, week_plan_id: str, from_day: int, concept: str) -> 
         return None
 
     resp = db.table("week_plan_days").select("id, day_of_week").eq("week_plan_id", week_plan_id).eq("status", "pending").gte("day_of_week", next_slot).order("day_of_week", desc=True).execute()
-    for d in resp.data:
-        new_slot = d["day_of_week"] + 1
-        if new_slot > 4:
-            db.table("week_plan_days").delete().eq("id", d["id"]).execute()
-        else:
-            db.table("week_plan_days").update({"day_of_week": new_slot}).eq("id", d["id"]).execute()
+    if resp and resp.data:
+        for d in resp.data:
+            new_slot = d["day_of_week"] + 1
+            if new_slot > 4:
+                db.table("week_plan_days").delete().eq("id", d["id"]).execute()
+            else:
+                db.table("week_plan_days").update({"day_of_week": new_slot}).eq("id", d["id"]).execute()
 
     new_resp = db.table("week_plan_days").insert({
         "week_plan_id": week_plan_id,
@@ -580,12 +596,12 @@ def inject_carry_forward(db, week_plan_id: str, from_day: int, concept: str) -> 
         "concept_name": concept,
         "status": "carried_forward",
     }).execute()
-    return new_resp.data[0]
+    return new_resp.data[0] if new_resp and new_resp.data else {}
 
 
 def add_recap_note_to_next_day(db, week_plan_id: str, after_day: int, recap_concept: str) -> None:
     resp = db.table("week_plan_days").select("id, notes").eq("week_plan_id", week_plan_id).eq("status", "pending").gt("day_of_week", after_day).order("day_of_week").limit(1).execute()
-    if not resp.data:
+    if not resp or not resp.data:
         return
     next_day = resp.data[0]
     prefix = f"[RECAP] Start with a 5-minute recap of '{recap_concept}' before today's concept."
@@ -600,9 +616,9 @@ def save_weekly_summary(db, week_plan_id: str, summary_json: dict) -> dict:
         "summary_json": summary_json,
         "generated_at": datetime.now(timezone.utc).isoformat(),
     }, on_conflict="week_plan_id").execute()
-    return resp.data[0]
+    return resp.data[0] if resp and resp.data else {}
 
 
 def get_weekly_summary(db, week_plan_id: str) -> Optional[dict]:
     resp = db.table("weekly_summaries").select("*").eq("week_plan_id", week_plan_id).maybe_single().execute()
-    return resp.data
+    return resp.data if resp else None

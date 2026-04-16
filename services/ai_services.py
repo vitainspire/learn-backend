@@ -5,6 +5,8 @@ Vertex AI setup, model caching, JSON repair, and retry logic live in ai_client.
 Prompt strings live in prompts.
 This module wires them together and is the public API for the rest of the backend.
 """
+import json
+import re
 from services.ai_client import get_model, safe_generate_content
 from services.prompts import (
     ELEMENTARY_SYSTEM_PROMPT,
@@ -191,7 +193,7 @@ def _validate_and_fix_worksheet(worksheet: dict) -> dict:
 
     - Missing bloom_level  → defaults to "remember"
     - Missing difficulty_tag → defaults to "medium"
-    - Missing answer field  → raises ValueError (cannot be guessed)
+    - Missing answer field  → Question is removed from the worksheet
     - Wrong total_marks     → recalculated and silently corrected
     """
     if not isinstance(worksheet, dict):
@@ -200,27 +202,61 @@ def _validate_and_fix_worksheet(worksheet: dict) -> dict:
     if not sections or not isinstance(sections, list):
         raise ValueError("Worksheet has no 'sections' array.")
 
-    total = 0
+    final_total_marks = 0
+    valid_sections = []
+
     for sec in sections:
-        mpq = sec.get("marks_per_question", 1)
-        for q in sec.get("questions", []):
+        # Robustly handle marks_per_question (default to 1 if it's "NaN" or missing)
+        try:
+            mpq_val = sec.get("marks_per_question", 1)
+            mpq = int(float(mpq_val)) if mpq_val is not None else 1
+        except (ValueError, TypeError):
+            mpq = 1
+        
+        # Update it in the dict so the frontend sees a clean number
+        sec["marks_per_question"] = mpq
+            
+        original_questions = sec.get("questions", [])
+        valid_questions = []
+
+        for q in original_questions:
+            # Skip questions with no answer or invalid text
+            q_text = q.get("question", "").strip()
+            # Drop questions that are empty, just a dot, or too short to be real
+            if not q_text or len(re.sub(r'[^a-zA-Z0-9]', '', q_text)) < 2:
+                print(f"[WORKSHEET] Dropping malformed Question {q.get('number', '?')} (junk: '{q_text}')")
+                continue
+
+            if q.get("answer") in (None, "", []):
+                print(f"[WORKSHEET] Dropping Question {q.get('number', '?')} (missing answer, text: '{q_text[:30]}...')")
+                continue
+
+            
+            # Apply defaults
             if not q.get("bloom_level"):
                 q["bloom_level"] = "remember"
             if not q.get("difficulty_tag"):
                 q["difficulty_tag"] = "medium"
-            if q.get("answer") in (None, "", []):
-                raise ValueError(
-                    f"Question {q.get('number', '?')} in section "
-                    f"'{sec.get('title', '?')}' has no answer field."
-                )
-        total += mpq * len(sec.get("questions", []))
+            
+            valid_questions.append(q)
 
-    declared = worksheet.get("total_marks", 0)
-    if declared != total:
-        print(f"[WORKSHEET] total_marks corrected: declared={declared}, calculated={total}")
-        worksheet["total_marks"] = total
+        if valid_questions:
+            sec["questions"] = valid_questions
+            final_total_marks += mpq * len(valid_questions)
+            valid_sections.append(sec)
+        else:
+            print(f"[WORKSHEET] Dropping empty section '{sec.get('title', '?')}'")
 
+    if not valid_sections:
+        print(f"[WORKSHEET] CRITICAL: No valid sections after filtering. Raw AI Output was:")
+        print(json.dumps(worksheet, indent=2))
+        raise ValueError("Worksheet generation failed: no valid content produced.")
+
+    worksheet["sections"] = valid_sections
+    worksheet["total_marks"] = final_total_marks
     return worksheet
+
+
 
 
 def generate_worksheet(
@@ -255,9 +291,10 @@ def generate_worksheet(
     raw = safe_generate_content(
         prompt,
         is_json=True,
-        config={"max_output_tokens": 12288, "temperature": 0.4},
+        config={"max_output_tokens": 12288, "temperature": 0.3},
         tier="quality",
     )
+
     worksheet = _validate_and_fix_worksheet(raw)
 
     if output_dir:

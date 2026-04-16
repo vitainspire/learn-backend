@@ -139,29 +139,73 @@ def generate_image(prompt: str, save_path: Path) -> bool:
     Try Gemini first, fall back to Pollinations.ai.
     Returns True if an image was saved at save_path, False otherwise.
     """
-    return _gemini_generate(prompt, save_path) or _pollinations_generate(prompt, save_path)
+    print(f"[IMAGE] Attempting generation for prompt: {prompt[:50]}...")
+    
+    if _gemini_generate(prompt, save_path):
+        print(f"[IMAGE] SUCCESS: Gemini generated {save_path.name}")
+        return True
+    
+    print(f"[IMAGE] Gemini failed or unavailable. Trying Pollinations fallback...")
+    if _pollinations_generate(prompt, save_path):
+        print(f"[IMAGE] SUCCESS: Pollinations generated {save_path.name}")
+        return True
+        
+    print(f"[IMAGE] CRITICAL: Both image providers failed for: {prompt[:50]}")
+    return False
 
 
 def enrich_worksheet_with_images(worksheet: dict, output_dir: Path) -> dict:
     """
     For every question that carries an ``image_prompt`` field, generate an
     image and add ``image_path`` pointing to the saved file.
-
-    Failures are logged and skipped — the worksheet is always returned intact.
     """
+    print(f"[IMAGE] enrich_worksheet_with_images called with output_dir: {output_dir}")
     output_dir = Path(output_dir)
-    image_questions = [
-        q
-        for section in worksheet.get("sections", [])
-        for q in section.get("questions", [])
-        if q.get("image_prompt", "").strip()
-    ]
+    output_dir.mkdir(parents=True, exist_ok=True)
+    
+    # Determine the project root to create relative web paths
+    project_root = Path(__file__).resolve().parent.parent
+    
+    image_questions = []
+    for section in worksheet.get("sections", []):
+        for q in section.get("questions", []):
+            if q.get("image_prompt", "").strip():
+                image_questions.append(q)
+    
+    if not image_questions:
+        print("[IMAGE] No questions found that have an 'image_prompt'.")
+        return worksheet
+
+    print(f"[IMAGE] Processing {len(image_questions)} image prompts...")
+    
     for idx, q in enumerate(image_questions):
-        prompt    = q["image_prompt"].strip()
-        save_path = output_dir / f"q{q.get('number', idx)}.png"
+        prompt = q["image_prompt"].strip()
+        # Use a safe filename
+        safe_num = q.get("number", f"unk{idx}")
+        save_path = output_dir / f"q{safe_num}.png"
+        
+        print(f"[IMAGE] Question {safe_num}: Generating image for prompt: {prompt[:40]}...")
         if generate_image(prompt, save_path):
-            q["image_path"] = str(save_path)
+            try:
+                rel_path = save_path.relative_to(project_root)
+                web_path = "/" + str(rel_path).replace("\\", "/")
+                q["image_path"] = web_path
+                # Embed the image as base64 so the PDF renderer doesn't depend
+                # on the server-side file being present at download time.
+                with open(save_path, "rb") as fh:
+                    q["image_data"] = base64.b64encode(fh.read()).decode("utf-8")
+                print(f"[IMAGE] SUCCESS: Set image_path to {web_path} (base64 embedded)")
+            except ValueError as ve:
+                print(f"[IMAGE] Path warning (not under root): {ve}")
+                q["image_path"] = str(save_path)
+                with open(save_path, "rb") as fh:
+                    q["image_data"] = base64.b64encode(fh.read()).decode("utf-8")
+        else:
+            print(f"[IMAGE] FAILURE: Could not generate image for Question {safe_num}")
+            
         # Brief pause between requests to avoid rate-limiting
         if idx < len(image_questions) - 1:
-            time.sleep(2)
+            time.sleep(1)
+
     return worksheet
+
