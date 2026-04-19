@@ -23,12 +23,12 @@ from engines.class_engine import ClassEngine
 from engines.week_planner import sequence_concepts_for_week, generate_weekly_summary, validate_concept_order, explain_concept_sequence
 from services.pptx_service import pptx_service
 
-from database.connection import get_db
+from database.connection import get_db, get_admin_db
 import database.queries as q
 
 app = FastAPI(title="Inspire Education API")
 
-PROJECT_ROOT = Path(__file__).resolve().parent.parent
+PROJECT_ROOT = Path(__file__).resolve().parent
 STATIC_DIR = PROJECT_ROOT / "static"
 STATIC_DIR.mkdir(exist_ok=True)
 app.mount("/static", StaticFiles(directory=str(STATIC_DIR)), name="static")
@@ -174,10 +174,18 @@ def _infer_subject(book_name: str) -> str:
     return "General"
 
 
+DATA_DIR = PROJECT_ROOT / "data"
+
 def _get_ontology_or_404(db, book_name: str) -> dict:
-    ontology = q.get_ontology_json(db, book_name)
-    if ontology is not None:
-        return ontology
+    try:
+        ontology = q.get_ontology_json(db, book_name)
+        if ontology is not None:
+            return ontology
+    except Exception:
+        pass
+    data_file = DATA_DIR / f"{book_name}.json"
+    if data_file.exists():
+        return json.loads(data_file.read_text(encoding="utf-8"))
     raise HTTPException(status_code=404, detail=f"Ontology not found for book '{book_name}'")
 
 
@@ -269,6 +277,11 @@ async def get_student():
     with open(PROJECT_ROOT / "static" / "student.html", "r", encoding="utf-8") as f:
         return f.read()
 
+@app.get("/search", response_class=HTMLResponse)
+async def get_search():
+    with open(PROJECT_ROOT / "static" / "search.html", "r", encoding="utf-8") as f:
+        return f.read()
+
 
 # ---------------------------------------------------------------------------
 # Books / ontology
@@ -282,13 +295,80 @@ async def list_books(db = Depends(get_db)):
 async def get_ontology(book_name: str, db = Depends(get_db)):
     return _get_ontology_or_404(db, book_name)
 
+@app.get("/api/ontology/{book_name}/search")
+async def search_ontology_topics(book_name: str, q: str = "", db=Depends(get_db)):
+    ontology = _get_ontology_or_404(db, book_name)
+    entities = ontology.get("entities", {})
+
+    chapters  = entities.get("chapters", [])
+    topics    = entities.get("topics", [])
+    exercises = entities.get("exercises", [])
+
+    chapter_title = {c["id"]: c["title"]  for c in chapters}
+    chapter_num   = {c["id"]: c["number"] for c in chapters}
+
+    # Build topic_id → sorted unique real page numbers from exercise IDs.
+    # Exercise ID format: E_{chapter_num}_{page_num}_{sequence}
+    # Drop page=1 when it's the only page for a chapter (placeholder convention).
+    chapter_raw_pages: dict = {}
+    topic_pages: dict = {}
+    for ex in exercises:
+        tid   = ex.get("topic_id", "")
+        parts = ex.get("id", "").split("_")
+        if len(parts) == 4 and parts[0] == "E":
+            try:
+                page = int(parts[2])
+                chapter_raw_pages.setdefault(parts[1], set()).add(page)
+                topic_pages.setdefault(tid, set()).add(page)
+            except ValueError:
+                pass
+
+    placeholder_chapters = {ch for ch, pages in chapter_raw_pages.items() if pages == {1}}
+    for tid, pages in topic_pages.items():
+        chap_part = tid.split("_")[1] if "_" in tid else ""
+        if chap_part in placeholder_chapters:
+            topic_pages[tid] = set()
+
+    needle = q.strip().lower()
+    results = []
+    for t in topics:
+        name    = t.get("name", "")
+        summary = t.get("summary", "")
+        if needle and needle not in name.lower() and needle not in summary.lower():
+            continue
+        cid = t.get("chapter_id", "")
+
+        chap_num_val   = chapter_num.get(cid)
+        chap_title_val = chapter_title.get(cid, "")
+        if chap_num_val is None:
+            tid_parts = t["id"].split("_")
+            if len(tid_parts) >= 2:
+                try:
+                    chap_num_val   = int(tid_parts[1])
+                    chap_title_val = chap_title_val or f"Chapter {chap_num_val}"
+                except ValueError:
+                    pass
+
+        results.append({
+            "topic_id":      t["id"],
+            "topic_name":    name,
+            "summary":       summary,
+            "chapter_id":    cid,
+            "chapter_num":   chap_num_val,
+            "chapter_title": chap_title_val,
+            "pages":         sorted(topic_pages.get(t["id"], set())),
+        })
+
+    results.sort(key=lambda r: (r["chapter_num"] or 0, r["topic_id"]))
+    return {"book": book_name, "query": q, "count": len(results), "results": results}
+
 
 # ---------------------------------------------------------------------------
 # Lesson plan generation
 # ---------------------------------------------------------------------------
 
 @app.post("/api/generate-lesson-plan")
-async def api_generate_lesson_plan(req: LessonPlanRequest, db = Depends(get_db)):
+async def api_generate_lesson_plan(req: LessonPlanRequest, db = Depends(get_admin_db)):
     ontology = _get_ontology_or_404(db, req.book)
 
     try:
@@ -340,7 +420,7 @@ async def api_generate_lesson_plan(req: LessonPlanRequest, db = Depends(get_db))
 
 
 @app.post("/api/generate-elementary-lesson-plan")
-async def api_generate_elementary_lesson_plan(req: ElementaryLessonRequest, db = Depends(get_db)):
+async def api_generate_elementary_lesson_plan(req: ElementaryLessonRequest, db = Depends(get_admin_db)):
     ontology_context = ""
     if req.book and req.chapter_idx is not None and req.topic_idx is not None:
         try:
@@ -579,7 +659,7 @@ async def get_teacher_dashboard(db = Depends(get_db)):
 # ---------------------------------------------------------------------------
 
 @app.post("/api/generate-worksheet")
-async def api_generate_worksheet(req: WorksheetRequest, db = Depends(get_db)):
+async def api_generate_worksheet(req: WorksheetRequest, admin_db = Depends(get_admin_db)):
     try:
         worksheet = generate_worksheet(
             lesson_plan=req.lesson_plan,
@@ -590,17 +670,20 @@ async def api_generate_worksheet(req: WorksheetRequest, db = Depends(get_db)):
             difficulty=req.difficulty,
             worksheet_type=req.worksheet_type,
         )
-        q.save_worksheet(
-            db,
-            lesson_plan_id=None,
-            topic_name=req.topic_name,
-            grade=req.grade,
-            subject=req.subject,
-            difficulty=req.difficulty,
-            worksheet_type=req.worksheet_type,
-            num_questions=req.num_questions,
-            worksheet_json=worksheet,
-        )
+        try:
+            q.save_worksheet(
+                admin_db,
+                lesson_plan_id=None,
+                topic_name=req.topic_name,
+                grade=req.grade,
+                subject=req.subject,
+                difficulty=req.difficulty,
+                worksheet_type=req.worksheet_type,
+                num_questions=req.num_questions,
+                worksheet_json=worksheet,
+            )
+        except Exception as save_err:
+            print(f"[generate-worksheet] DB save skipped: {save_err}")
         return {"success": True, "worksheet": worksheet}
     except Exception as e:
         raise HTTPException(status_code=500, detail=f"Worksheet generation failed: {str(e)}")

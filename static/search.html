@@ -20,252 +20,375 @@
       --radius:   10px;
     }
 
-    body {
+    html, body {
+      height: 100%;
       font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif;
-      background: var(--bg);
       color: var(--text);
-      min-height: 100vh;
+      background: var(--bg);
     }
+    body { display: flex; flex-direction: column; overflow: hidden; }
 
     /* ── Header ── */
     header {
       background: var(--accent);
       color: #fff;
-      padding: 18px 24px;
+      padding: 13px 20px;
       display: flex;
       align-items: center;
       gap: 12px;
+      flex-shrink: 0;
     }
-    header svg { flex-shrink: 0; }
-    header h1  { font-size: 1.2rem; font-weight: 700; letter-spacing: -0.3px; }
-    header p   { font-size: 0.82rem; opacity: 0.85; margin-top: 1px; }
+    header h1 { font-size: 1.1rem; font-weight: 700; letter-spacing: -.3px; }
+    header p  { font-size: 0.79rem; opacity: .85; margin-top: 1px; }
 
-    /* ── Controls ── */
-    .controls {
+    /* ── Two-panel body ── */
+    .app-body {
       display: flex;
-      flex-wrap: wrap;
-      gap: 12px;
-      padding: 20px 24px 0;
-      max-width: 860px;
-      margin: 0 auto;
+      flex: 1;
+      overflow: hidden;
+    }
+
+    /* ── Left: search panel ── */
+    .search-panel {
+      width: 400px;
+      min-width: 300px;
+      flex-shrink: 0;
+      display: flex;
+      flex-direction: column;
+      overflow: hidden;
+      border-right: 1px solid var(--border);
+    }
+
+    .controls {
+      padding: 14px 14px 0;
+      display: flex;
+      flex-direction: column;
+      gap: 9px;
     }
 
     select, input[type="search"] {
-      height: 44px;
+      height: 42px;
       border: 1.5px solid var(--border);
       border-radius: var(--radius);
-      padding: 0 14px;
-      font-size: 0.95rem;
+      padding: 0 12px;
+      font-size: 0.92rem;
       outline: none;
       background: var(--card);
       color: var(--text);
+      width: 100%;
       transition: border-color .15s;
     }
     select:focus, input[type="search"]:focus {
       border-color: var(--accent);
       box-shadow: 0 0 0 3px var(--accent-lt);
     }
-    select          { min-width: 190px; cursor: pointer; }
-    input[type="search"] { flex: 1; min-width: 220px; }
 
-    /* ── Status bar ── */
     .status {
-      max-width: 860px;
-      margin: 10px auto 0;
-      padding: 0 24px;
-      font-size: 0.82rem;
+      padding: 5px 14px 0;
+      font-size: 0.79rem;
       color: var(--muted);
-      min-height: 20px;
+      min-height: 22px;
     }
 
-    /* ── Results ── */
     .results {
-      max-width: 860px;
-      margin: 12px auto 40px;
-      padding: 0 24px;
+      flex: 1;
+      overflow-y: auto;
+      padding: 8px 12px 16px;
       display: flex;
       flex-direction: column;
-      gap: 10px;
+      gap: 8px;
     }
 
+    /* Cards */
     .card {
       background: var(--card);
       border: 1px solid var(--border);
       border-radius: var(--radius);
-      padding: 14px 16px;
+      padding: 11px 13px;
       transition: box-shadow .15s;
     }
-    .card:hover { box-shadow: 0 2px 12px rgba(79,110,247,.12); }
-
-    .card-header {
-      display: flex;
-      align-items: flex-start;
-      justify-content: space-between;
-      gap: 12px;
-    }
-
-    .topic-name {
-      font-weight: 600;
-      font-size: 0.97rem;
-      line-height: 1.4;
-    }
-
+    .card:hover { box-shadow: 0 2px 10px rgba(79,110,247,.1); }
+    .card-header { display: flex; align-items: flex-start; justify-content: space-between; gap: 10px; }
+    .topic-name  { font-weight: 600; font-size: 0.92rem; line-height: 1.4; }
     .chapter-tag {
       display: inline-flex;
       align-items: center;
-      gap: 4px;
       background: var(--accent-lt);
       color: var(--accent);
-      font-size: 0.75rem;
+      font-size: 0.72rem;
       font-weight: 600;
-      padding: 3px 9px;
+      padding: 3px 8px;
       border-radius: 999px;
       white-space: nowrap;
       flex-shrink: 0;
     }
-
-    .summary {
-      font-size: 0.84rem;
-      color: var(--muted);
-      margin-top: 6px;
-      line-height: 1.55;
-    }
-
-    .pages-row {
-      margin-top: 10px;
-      display: flex;
-      flex-wrap: wrap;
-      align-items: center;
-      gap: 6px;
-    }
-
+    .summary    { font-size: 0.81rem; color: var(--muted); margin-top: 5px; line-height: 1.5; }
+    .pages-row  { margin-top: 8px; display: flex; flex-wrap: wrap; align-items: center; gap: 5px; }
     .pages-label {
-      font-size: 0.78rem;
-      font-weight: 600;
-      color: var(--muted);
-      text-transform: uppercase;
-      letter-spacing: .5px;
+      font-size: 0.74rem; font-weight: 600; color: var(--muted);
+      text-transform: uppercase; letter-spacing: .5px;
     }
-
     .page-pill {
       display: inline-block;
       background: var(--pill-bg);
       color: var(--pill-txt);
-      font-size: 0.78rem;
+      font-size: 0.76rem;
       font-weight: 700;
-      padding: 2px 9px;
+      padding: 3px 10px;
       border-radius: 999px;
       cursor: pointer;
-      transition: background .12s;
+      border: none;
+      font-family: inherit;
+      transition: background .12s, transform .1s;
     }
-    .page-pill:hover { background: #c7d2fe; }
+    .page-pill:hover  { background: #c7d2fe; transform: translateY(-1px); }
+    .page-pill.active { background: var(--accent); color: #fff; }
+    .no-pages { font-size: 0.76rem; color: #9ca3af; font-style: italic; }
 
-    .no-pages {
-      font-size: 0.78rem;
-      color: #9ca3af;
-      font-style: italic;
-    }
-
-    /* ── Empty / loading states ── */
-    .placeholder {
-      text-align: center;
-      padding: 60px 0;
-      color: var(--muted);
-    }
-    .placeholder svg { opacity: .3; margin-bottom: 12px; }
-    .placeholder p   { font-size: 0.92rem; }
+    .placeholder { text-align: center; padding: 40px 0; color: var(--muted); }
+    .placeholder svg { opacity: .25; margin-bottom: 10px; }
+    .placeholder p   { font-size: 0.88rem; }
 
     .spinner {
       display: inline-block;
-      width: 18px; height: 18px;
-      border: 2.5px solid var(--border);
+      width: 15px; height: 15px;
+      border: 2px solid var(--border);
       border-top-color: var(--accent);
       border-radius: 50%;
       animation: spin .6s linear infinite;
       vertical-align: middle;
-      margin-right: 6px;
+      margin-right: 5px;
     }
     @keyframes spin { to { transform: rotate(360deg); } }
 
-    /* ── Highlight matching text ── */
-    mark {
-      background: #fef08a;
-      color: inherit;
-      border-radius: 2px;
-      padding: 0 1px;
+    mark { background: #fef08a; color: inherit; border-radius: 2px; padding: 0 1px; }
+
+    /* ── Right: PDF panel ── */
+    .pdf-panel {
+      flex: 1;
+      display: flex;
+      flex-direction: column;
+      overflow: hidden;
+      background: #3d3d3d;
     }
+
+    /* PDF idle / status zone */
+    .pdf-idle-zone {
+      flex: 1;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      padding: 32px;
+    }
+    .pdf-idle-box {
+      text-align: center;
+      color: #999;
+    }
+    .pdf-idle-box svg { opacity: .3; margin-bottom: 14px; }
+    .pdf-idle-box p   { font-size: .88rem; line-height: 1.6; }
+
+    /* PDF toolbar */
+    .pdf-toolbar {
+      display: flex;
+      align-items: center;
+      gap: 6px;
+      padding: 7px 10px;
+      background: #2a2a2a;
+      color: #ccc;
+      font-size: .81rem;
+      flex-shrink: 0;
+    }
+    .pdf-toolbar button {
+      background: rgba(255,255,255,.1);
+      border: none;
+      color: #ddd;
+      border-radius: 5px;
+      padding: 4px 10px;
+      font-size: .79rem;
+      cursor: pointer;
+      font-family: inherit;
+      transition: background .12s;
+      white-space: nowrap;
+    }
+    .pdf-toolbar button:hover:not(:disabled) { background: rgba(255,255,255,.2); }
+    .pdf-toolbar button:disabled { opacity: .3; cursor: default; }
+    #pageInfo { font-weight: 700; color: #eee; min-width: 80px; text-align: center; }
+    #pdfFileName {
+      flex: 1;
+      overflow: hidden;
+      text-overflow: ellipsis;
+      white-space: nowrap;
+      opacity: .55;
+      font-size: .73rem;
+      min-width: 0;
+    }
+    .hlabel {
+      background: rgba(255,235,59,.18);
+      color: #fef08a;
+      border-radius: 4px;
+      padding: 2px 8px;
+      font-size: .73rem;
+      max-width: 160px;
+      overflow: hidden;
+      text-overflow: ellipsis;
+      white-space: nowrap;
+      flex-shrink: 0;
+    }
+    .jump-row { display: flex; align-items: center; gap: 4px; margin-left: auto; flex-shrink: 0; }
+    .jump-row input {
+      width: 46px; height: 24px;
+      padding: 0 5px;
+      border: 1px solid rgba(255,255,255,.18);
+      border-radius: 4px;
+      background: rgba(255,255,255,.07);
+      color: #eee;
+      font-size: .78rem;
+      text-align: center;
+      outline: none;
+      font-family: inherit;
+    }
+    .jump-row span { opacity: .7; }
+
+    /* PDF canvas wrapper */
+    .pdf-canvas-wrapper {
+      flex: 1;
+      overflow: auto;
+      display: flex;
+      justify-content: center;
+      align-items: flex-start;
+      padding: 16px;
+    }
+    .pdf-canvas-wrapper canvas {
+      display: block;
+      box-shadow: 0 4px 28px rgba(0,0,0,.55);
+      border-radius: 2px;
+    }
+
+    #pdfViewerArea { display: flex; flex-direction: column; flex: 1; overflow: hidden; }
   </style>
 </head>
 <body>
 
 <header>
-  <svg width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+  <svg width="26" height="26" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"
+       stroke-linecap="round" stroke-linejoin="round">
     <circle cx="11" cy="11" r="8"/><line x1="21" y1="21" x2="16.65" y2="16.65"/>
   </svg>
   <div>
     <h1>Topic Search</h1>
-    <p>Find textbook pages for any topic</p>
+    <p>Find topics in your textbook — click any page number to open it and highlight the topic</p>
   </div>
 </header>
 
-<div class="controls">
-  <select id="bookSelect">
-    <option value="">Select grade / book…</option>
-    <option value="grade1_maths">Grade 1 — Maths</option>
-    <option value="grade2_maths">Grade 2 — Maths</option>
-    <option value="grade3_maths">Grade 3 — Maths</option>
-  </select>
-  <input type="search" id="searchInput" placeholder="Search topics…" disabled />
-</div>
+<div class="app-body">
 
-<div class="status" id="status"></div>
+  <!-- ── Left: search panel ── -->
+  <div class="search-panel">
+    <div class="controls">
+      <select id="bookSelect">
+        <option value="">Select grade / book…</option>
+        <option value="grade1_maths">Grade 1 — Maths</option>
+        <option value="grade2_maths">Grade 2 — Maths</option>
+        <option value="grade3_maths">Grade 3 — Maths</option>
+      </select>
+      <input type="search" id="searchInput" placeholder="Search topics…" disabled />
+    </div>
+    <div class="status" id="status"></div>
+    <div class="results" id="results">
+      <div class="placeholder">
+        <svg width="44" height="44" viewBox="0 0 24 24" fill="none" stroke="currentColor"
+             stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round">
+          <path d="M4 19.5A2.5 2.5 0 0 1 6.5 17H20"/>
+          <path d="M6.5 2H20v20H6.5A2.5 2.5 0 0 1 4 19.5v-15A2.5 2.5 0 0 1 6.5 2z"/>
+        </svg>
+        <p>Select a grade to begin</p>
+      </div>
+    </div>
+  </div>
 
-<div class="results" id="results">
-  <div class="placeholder">
-    <svg width="48" height="48" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round">
-      <path d="M4 19.5A2.5 2.5 0 0 1 6.5 17H20"/><path d="M6.5 2H20v20H6.5A2.5 2.5 0 0 1 4 19.5v-15A2.5 2.5 0 0 1 6.5 2z"/>
-    </svg>
-    <p>Select a grade to begin</p>
+  <!-- ── Right: PDF panel ── -->
+  <div class="pdf-panel">
+
+    <!-- Shown before a grade is selected -->
+    <div class="pdf-idle-zone" id="pdfIdleZone">
+      <div class="pdf-idle-box">
+        <svg width="52" height="52" viewBox="0 0 24 24" fill="none" stroke="currentColor"
+             stroke-width="1.2" stroke-linecap="round" stroke-linejoin="round">
+          <path d="M4 19.5A2.5 2.5 0 0 1 6.5 17H20"/>
+          <path d="M6.5 2H20v20H6.5A2.5 2.5 0 0 1 4 19.5v-15A2.5 2.5 0 0 1 6.5 2z"/>
+        </svg>
+        <p id="pdfIdleMsg">Select a grade to load the textbook</p>
+      </div>
+    </div>
+
+    <!-- Shown after PDF is loaded -->
+    <div id="pdfViewerArea" hidden>
+      <div class="pdf-toolbar">
+        <button id="prevPage" disabled onclick="changePage(-1)">‹ Prev</button>
+        <span id="pageInfo">— / —</span>
+        <button id="nextPage" disabled onclick="changePage(1)">Next ›</button>
+        <span id="pdfFileName"></span>
+        <span class="hlabel" id="hlabel" hidden></span>
+        <div class="jump-row">
+          <span>p.</span>
+          <input type="number" id="pageJumpInput" min="1" placeholder="…" title="Jump to page, press Enter">
+        </div>
+      </div>
+      <div class="pdf-canvas-wrapper" id="pdfCanvasWrapper">
+        <canvas id="pdfCanvas"></canvas>
+      </div>
+    </div>
+
   </div>
 </div>
 
+<!-- PDF.js from CDN -->
+<script src="https://cdnjs.cloudflare.com/ajax/libs/pdf.js/3.11.174/pdf.min.js"></script>
 <script>
-  const bookSel   = document.getElementById("bookSelect");
-  const searchIn  = document.getElementById("searchInput");
-  const resultsEl = document.getElementById("results");
-  const statusEl  = document.getElementById("status");
+  pdfjsLib.GlobalWorkerOptions.workerSrc =
+    'https://cdnjs.cloudflare.com/ajax/libs/pdf.js/3.11.174/pdf.worker.min.js';
+
+  // ── Search state ─────────────────────────────────────────────────────────────
+  const bookSel   = document.getElementById('bookSelect');
+  const searchIn  = document.getElementById('searchInput');
+  const resultsEl = document.getElementById('results');
+  const statusEl  = document.getElementById('status');
 
   let debounceTimer = null;
-  let allTopics     = [];   // cached full list for the chosen book
-  let currentBook   = "";
+  let allTopics     = [];
+  let activePill    = null;
 
-  // ── Helpers ──────────────────────────────────────────────────────────────────
+  // ── PDF state ─────────────────────────────────────────────────────────────────
+  let pdfDoc         = null;
+  let currentPage    = 1;
+  let currentQuery   = '';
+  let renderTask     = null;
 
-  function setStatus(msg) { statusEl.textContent = msg; }
+  // ── Helpers ───────────────────────────────────────────────────────────────────
 
-  function highlight(text, needle) {
-    if (!needle) return escHtml(text);
-    const re = new RegExp(`(${escRe(needle)})`, "gi");
-    return escHtml(text).replace(re, "<mark>$1</mark>");
-  }
+  function setStatus(msg) { statusEl.innerHTML = msg; }
 
   function escHtml(s) {
     return String(s)
-      .replace(/&/g,"&amp;").replace(/</g,"&lt;")
-      .replace(/>/g,"&gt;").replace(/"/g,"&quot;");
+      .replace(/&/g,'&amp;').replace(/</g,'&lt;')
+      .replace(/>/g,'&gt;').replace(/"/g,'&quot;');
+  }
+  function escRe(s) { return s.replace(/[.*+?^${}()|[\]\\]/g,'\\$&'); }
+
+  function hlText(text, needle) {
+    if (!needle) return escHtml(text);
+    const re = new RegExp(`(${escRe(needle)})`,'gi');
+    return escHtml(text).replace(re,'<mark>$1</mark>');
   }
 
-  function escRe(s) {
-    return s.replace(/[.*+?^${}()|[\]\\]/g, "\\$&");
-  }
-
-  // ── Render ───────────────────────────────────────────────────────────────────
+  // ── Render search results ─────────────────────────────────────────────────────
 
   function renderResults(topics, needle) {
     if (!topics.length) {
       resultsEl.innerHTML = `
         <div class="placeholder">
-          <svg width="48" height="48" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round">
+          <svg width="44" height="44" viewBox="0 0 24 24" fill="none" stroke="currentColor"
+               stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round">
             <circle cx="11" cy="11" r="8"/><line x1="21" y1="21" x2="16.65" y2="16.65"/>
           </svg>
           <p>No topics match "<strong>${escHtml(needle)}</strong>"</p>
@@ -273,54 +396,64 @@
       return;
     }
 
-    const html = topics.map(t => {
+    resultsEl.innerHTML = topics.map(t => {
       const pagesHtml = t.pages.length
-        ? t.pages.map(p => `<span class="page-pill" title="Page ${p}">p.${p}</span>`).join("")
-        : `<span class="no-pages" title="No exercises linked to this topic in the ontology">— no exercises</span>`;
+        ? t.pages.map(p =>
+            `<button class="page-pill" data-page="${p}" data-topic="${escHtml(t.topic_name)}">p.${p}</button>`
+          ).join('')
+        : `<span class="no-pages">— no exercises</span>`;
 
       return `
         <div class="card">
           <div class="card-header">
-            <span class="topic-name">${highlight(t.topic_name, needle)}</span>
-            <span class="chapter-tag">Ch.${t.chapter_num} &middot; ${highlight(t.chapter_title, needle)}</span>
+            <span class="topic-name">${hlText(t.topic_name, needle)}</span>
+            <span class="chapter-tag">Ch.${t.chapter_num} &middot; ${hlText(t.chapter_title, needle)}</span>
           </div>
-          ${t.summary ? `<div class="summary">${highlight(t.summary, needle)}</div>` : ""}
+          ${t.summary ? `<div class="summary">${hlText(t.summary, needle)}</div>` : ''}
           <div class="pages-row">
             <span class="pages-label">Pages</span>
             ${pagesHtml}
           </div>
         </div>`;
-    }).join("");
-
-    resultsEl.innerHTML = html;
+    }).join('');
   }
 
-  // ── Filter cached topics client-side ─────────────────────────────────────────
+  // Event delegation — page pill clicks
+  resultsEl.addEventListener('click', e => {
+    const pill = e.target.closest('.page-pill');
+    if (!pill) return;
+    if (activePill) activePill.classList.remove('active');
+    activePill = pill;
+    pill.classList.add('active');
+    // Prefer the live search query as the highlight needle — it matches PDF text
+    // more directly than the full ontology topic name.
+    const needle = searchIn.value.trim() || pill.dataset.topic;
+    openPdfPage(parseInt(pill.dataset.page, 10), needle);
+  });
+
+  // ── Filter & render ───────────────────────────────────────────────────────────
 
   function filterAndRender(needle) {
     const n = needle.trim().toLowerCase();
     const filtered = n
       ? allTopics.filter(t =>
           t.topic_name.toLowerCase().includes(n) ||
-          (t.summary || "").toLowerCase().includes(n) ||
+          (t.summary || '').toLowerCase().includes(n) ||
           t.chapter_title.toLowerCase().includes(n)
         )
       : allTopics;
-
-    setStatus(`${filtered.length} topic${filtered.length !== 1 ? "s" : ""} found`);
+    setStatus(`${filtered.length} topic${filtered.length !== 1 ? 's' : ''} found`);
     renderResults(filtered, needle.trim());
   }
 
-  // ── Load book ────────────────────────────────────────────────────────────────
+  // ── Load book from API ────────────────────────────────────────────────────────
 
   async function loadBook(book) {
-    currentBook = book;
-    allTopics   = [];
-    searchIn.value   = "";
+    allTopics         = [];
+    searchIn.value    = '';
     searchIn.disabled = true;
     setStatus('<span class="spinner"></span> Loading…');
     resultsEl.innerHTML = `<div class="placeholder"><p><span class="spinner"></span> Loading topics…</p></div>`;
-
     try {
       const res = await fetch(`/api/ontology/${encodeURIComponent(book)}/search?q=`);
       if (!res.ok) throw new Error(`HTTP ${res.status}`);
@@ -328,24 +461,179 @@
       allTopics = data.results || [];
       searchIn.disabled = false;
       searchIn.focus();
-      filterAndRender("");
+      filterAndRender('');
     } catch (err) {
-      setStatus("Failed to load book: " + err.message);
-      resultsEl.innerHTML = `<div class="placeholder"><p>Could not load ontology. Is the server running?</p></div>`;
+      setStatus('Failed to load: ' + err.message);
+      resultsEl.innerHTML = `<div class="placeholder"><p>Could not load ontology — is the server running?</p></div>`;
+    }
+
+    // Auto-load textbook PDF for this grade
+    await loadPdfForBook(book);
+  }
+
+  bookSel.addEventListener('change', () => { if (bookSel.value) loadBook(bookSel.value); });
+
+  searchIn.addEventListener('input', () => {
+    clearTimeout(debounceTimer);
+    debounceTimer = setTimeout(() => {
+      filterAndRender(searchIn.value);
+      // Re-highlight the open PDF page with the updated search term
+      if (pdfDoc) {
+        currentQuery = searchIn.value.trim();
+        renderPage(currentPage, currentQuery);
+      }
+    }, 220);
+  });
+
+  // ── PDF: auto-load textbook for selected grade ───────────────────────────────
+
+  async function loadPdfForBook(book) {
+    const url      = `/static/textbooks/${book}.pdf`;
+    const idleZone = document.getElementById('pdfIdleZone');
+    const idleMsg  = document.getElementById('pdfIdleMsg');
+    const viewArea = document.getElementById('pdfViewerArea');
+
+    idleZone.hidden = false;
+    viewArea.hidden = true;
+    idleMsg.innerHTML = '<span class="spinner"></span> Loading textbook…';
+    pdfDoc = null;
+
+    try {
+      // HEAD check first so we get a clean "not found" error rather than a PDF.js parse error
+      const check = await fetch(url, { method: 'HEAD' });
+      if (!check.ok) {
+        idleMsg.textContent = 'Textbook PDF not available for this grade.';
+        return;
+      }
+      pdfDoc = await pdfjsLib.getDocument({ url }).promise;
+      document.getElementById('pdfFileName').textContent = `${book}.pdf`;
+      document.getElementById('pageJumpInput').max = pdfDoc.numPages;
+      idleZone.hidden = true;
+      viewArea.hidden = false;
+      await renderPage(1, '');
+    } catch (err) {
+      idleMsg.textContent = 'Could not load textbook: ' + err.message;
     }
   }
 
-  // ── Events ───────────────────────────────────────────────────────────────────
+  // ── PDF: navigate to page from pill ──────────────────────────────────────────
 
-  bookSel.addEventListener("change", () => {
-    const book = bookSel.value;
-    if (!book) return;
-    loadBook(book);
+  async function openPdfPage(pageNum, needle) {
+    if (!pdfDoc) return;   // PDF not available for this grade — silently ignore
+    currentPage  = Math.max(1, Math.min(pageNum, pdfDoc.numPages));
+    currentQuery = needle;
+    await renderPage(currentPage, needle);
+  }
+
+  // ── PDF: render page + highlight ─────────────────────────────────────────────
+
+  async function renderPage(pageNum, query) {
+    const page    = await pdfDoc.getPage(pageNum);
+    const wrapper = document.getElementById('pdfCanvasWrapper');
+    const maxW    = wrapper.clientWidth - 32;
+    const vpBase  = page.getViewport({ scale: 1 });
+    const scale   = Math.min(maxW / vpBase.width, 2.5);
+    const vp      = page.getViewport({ scale });
+
+    const canvas  = document.getElementById('pdfCanvas');
+    const ctx     = canvas.getContext('2d');
+    canvas.width  = Math.floor(vp.width);
+    canvas.height = Math.floor(vp.height);
+
+    if (renderTask) { renderTask.cancel(); renderTask = null; }
+
+    renderTask = page.render({ canvasContext: ctx, viewport: vp });
+    try {
+      await renderTask.promise;
+    } catch (err) {
+      if (err?.name === 'RenderingCancelledException') return;
+      throw err;
+    }
+
+    // Update toolbar
+    document.getElementById('pageInfo').textContent   = `${pageNum} / ${pdfDoc.numPages}`;
+    document.getElementById('prevPage').disabled      = pageNum <= 1;
+    document.getElementById('nextPage').disabled      = pageNum >= pdfDoc.numPages;
+
+    const hlLabel = document.getElementById('hlabel');
+    if (query) {
+      hlLabel.textContent = query;
+      hlLabel.hidden = false;
+    } else {
+      hlLabel.hidden = true;
+    }
+
+    if (query) await drawHighlights(page, vp, ctx, query);
+
+    wrapper.scrollTop = 0;
+  }
+
+  // ── PDF: draw highlight boxes over matching text ──────────────────────────────
+
+  async function drawHighlights(page, viewport, ctx, needle) {
+    const tc = await page.getTextContent();
+
+    // Split needle into significant words (>2 chars) for matching
+    const words = needle
+      .toLowerCase()
+      .replace(/[()[\]{}/\\]/g, ' ')
+      .split(/\s+/)
+      .filter(w => w.length > 2);
+
+    if (!words.length) return;
+
+    ctx.save();
+    ctx.fillStyle   = 'rgba(255, 235, 59, 0.42)';
+    ctx.strokeStyle = 'rgba(245, 158, 11, 0.75)';
+    ctx.lineWidth   = 1;
+
+    for (const item of tc.items) {
+      if (!item.str || !item.str.trim()) continue;
+      if (!words.some(w => item.str.toLowerCase().includes(w))) continue;
+
+      // item.transform = [a, b, c, d, tx, ty] — tx/ty are PDF user-space coords
+      const tx = item.transform[4];
+      const ty = item.transform[5];
+      const [vx, vy] = viewport.convertToViewportPoint(tx, ty);
+
+      // Font height: use item.height if available, otherwise abs(yscale) from matrix
+      const fontH = (item.height > 0 ? item.height : Math.abs(item.transform[3])) * viewport.scale;
+      const w     = item.width * viewport.scale;
+      if (w <= 0 || fontH <= 0) continue;
+
+      // vy is the text baseline; draw the box above it
+      ctx.fillRect(vx,  vy - fontH,       w, fontH * 1.2);
+      ctx.strokeRect(vx, vy - fontH,      w, fontH * 1.2);
+    }
+
+    ctx.restore();
+  }
+
+  // ── PDF: toolbar navigation ───────────────────────────────────────────────────
+
+  function changePage(delta) {
+    if (!pdfDoc) return;
+    const np = currentPage + delta;
+    if (np < 1 || np > pdfDoc.numPages) return;
+    currentPage = np;
+    renderPage(np, currentQuery);
+  }
+
+  document.getElementById('pageJumpInput').addEventListener('keydown', e => {
+    if (e.key !== 'Enter') return;
+    const n = parseInt(e.target.value, 10);
+    e.target.value = '';
+    if (pdfDoc && n >= 1 && n <= pdfDoc.numPages) {
+      currentPage = n;
+      renderPage(n, currentQuery);
+    }
   });
 
-  searchIn.addEventListener("input", () => {
-    clearTimeout(debounceTimer);
-    debounceTimer = setTimeout(() => filterAndRender(searchIn.value), 220);
+  // Arrow-key navigation when not typing in an input
+  document.addEventListener('keydown', e => {
+    if (e.target.tagName === 'INPUT' || e.target.tagName === 'SELECT') return;
+    if (e.key === 'ArrowRight' || e.key === 'ArrowDown') changePage(1);
+    if (e.key === 'ArrowLeft'  || e.key === 'ArrowUp')   changePage(-1);
   });
 </script>
 </body>

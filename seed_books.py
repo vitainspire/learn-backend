@@ -16,7 +16,7 @@ from pathlib import Path
 
 sys.path.insert(0, str(Path(__file__).parent))
 
-from database.connection import get_db
+from database.connection import get_admin_db
 
 DATA_DIR = Path(__file__).parent / "data"
 
@@ -28,7 +28,7 @@ BOOKS = [
 
 
 def seed():
-    db = get_db()
+    db = get_admin_db()
     seeded = 0
 
     for book in BOOKS:

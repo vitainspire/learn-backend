@@ -23,7 +23,7 @@ from engines.class_engine import ClassEngine
 from engines.week_planner import sequence_concepts_for_week, generate_weekly_summary, validate_concept_order, explain_concept_sequence
 from services.pptx_service import pptx_service
 
-from database.connection import get_db
+from database.connection import get_db, get_admin_db
 import database.queries as q
 
 app = FastAPI(title="Inspire Education API")
@@ -530,6 +530,12 @@ async def auth_login(req: LoginRequest, db=Depends(get_db)):
     try:
         auth_resp = db.auth.sign_in_with_password({"email": req.email, "password": req.password})
     except Exception as e:
+        err = str(e).lower()
+        if "invalid" in err or "credentials" in err or "not found" in err:
+            raise HTTPException(
+                status_code=401,
+                detail="No account found for that email/password. Use POST /api/auth/signup to register first.",
+            )
         raise HTTPException(status_code=401, detail=f"Login failed: {e}")
 
     if not auth_resp.user or not auth_resp.session:
@@ -561,6 +567,40 @@ async def auth_login(req: LoginRequest, db=Depends(get_db)):
         }
 
     raise HTTPException(status_code=404, detail="Authenticated but no teacher/student profile found")
+
+
+@app.post("/api/auth/set-password")
+async def auth_set_password(req: LoginRequest, admin_db=Depends(get_admin_db)):
+    """
+    Creates a Supabase Auth account (or updates the password) for an existing
+    teacher/student profile. Use this once for users seeded without going through
+    /api/auth/signup.
+    """
+    teacher = q.get_teacher_by_email(admin_db, req.email)
+    student = q.get_student_by_email(admin_db, req.email) if not teacher else None
+    if not teacher and not student:
+        raise HTTPException(status_code=404, detail="No teacher or student profile found for that email")
+
+    try:
+        admin_db.auth.admin.create_user({
+            "email": req.email,
+            "password": req.password,
+            "email_confirm": True,
+        })
+    except Exception as e:
+        if "already" in str(e).lower():
+            try:
+                existing = admin_db.auth.admin.list_users()
+                uid = next((u.id for u in existing if u.email == req.email), None)
+                if uid:
+                    admin_db.auth.admin.update_user_by_id(uid, {"password": req.password})
+                    return {"status": "password_updated", "email": req.email}
+            except Exception:
+                pass
+        raise HTTPException(status_code=400, detail=f"Failed to create auth account: {e}")
+
+    role = "teacher" if teacher else "student"
+    return {"status": "created", "email": req.email, "role": role}
 
 
 @app.get("/api/auth/me")
@@ -778,7 +818,7 @@ async def search_ontology_topics(
 @app.post("/api/generate-lesson-plan")
 async def api_generate_lesson_plan(
     req: LessonPlanRequest,
-    db=Depends(get_db),
+    db=Depends(get_admin_db),
     current_user: Optional[dict] = Depends(get_current_user),
 ):
     ontology = _get_ontology_or_404(db, req.book)
@@ -850,7 +890,7 @@ async def api_generate_lesson_plan(
 @app.post("/api/generate-elementary-lesson-plan")
 async def api_generate_elementary_lesson_plan(
     req: ElementaryLessonRequest,
-    db=Depends(get_db),
+    db=Depends(get_admin_db),
     current_user: Optional[dict] = Depends(get_current_user),
 ):
     ontology_context = ""
@@ -1123,7 +1163,7 @@ async def get_teacher_dashboard(db = Depends(get_db)):
 # ---------------------------------------------------------------------------
 
 @app.post("/api/generate-worksheet")
-async def api_generate_worksheet(req: WorksheetRequest, db = Depends(get_db)):
+async def api_generate_worksheet(req: WorksheetRequest, admin_db = Depends(get_admin_db)):
     try:
         topic_slug = req.topic_name.replace(" ", "_").lower()
         img_dir = str(OUTPUT_DIR / "worksheet_images" / topic_slug)
@@ -1137,17 +1177,20 @@ async def api_generate_worksheet(req: WorksheetRequest, db = Depends(get_db)):
             worksheet_type=req.worksheet_type,
             output_dir=img_dir,
         )
-        q.save_worksheet(
-            db,
-            lesson_plan_id=None,
-            topic_name=req.topic_name,
-            grade=req.grade,
-            subject=req.subject,
-            difficulty=req.difficulty,
-            worksheet_type=req.worksheet_type,
-            num_questions=req.num_questions,
-            worksheet_json=worksheet,
-        )
+        try:
+            q.save_worksheet(
+                admin_db,
+                lesson_plan_id=None,
+                topic_name=req.topic_name,
+                grade=req.grade,
+                subject=req.subject,
+                difficulty=req.difficulty,
+                worksheet_type=req.worksheet_type,
+                num_questions=req.num_questions,
+                worksheet_json=worksheet,
+            )
+        except Exception as save_err:
+            print(f"[generate-worksheet] DB save skipped: {save_err}")
         return {"success": True, "worksheet": worksheet, "debug_marker": "v2026-04-16-1335"}
     except Exception as e:
         raise HTTPException(status_code=500, detail=f"Worksheet generation failed: {str(e)}")
