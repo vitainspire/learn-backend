@@ -181,8 +181,8 @@ async def enrich_worksheet_with_images(worksheet: dict, output_dir: Path) -> dic
         safe_num = q.get("number", f"unk{idx}")
         save_path = output_dir / f"q{safe_num}.png"
         
-        # Stagger starts slightly to avoid hitting rate limits simultaneously
-        await asyncio.sleep(idx * 0.5)
+        # Stagger starts to avoid hitting Pollinations AI rate limits (increased from 0.5s to 3s)
+        await asyncio.sleep(idx * 3.0)
         
         print(f"[IMAGE] Question {safe_num}: Generating image...")
         start_q = time.time()
@@ -191,8 +191,14 @@ async def enrich_worksheet_with_images(worksheet: dict, output_dir: Path) -> dic
         
         if success:
             try:
-                rel_path = save_path.relative_to(project_root)
-                web_path = "/" + str(rel_path).replace("\\", "/")
+                # Try to create relative path, fallback to absolute if it fails
+                try:
+                    rel_path = save_path.relative_to(project_root)
+                    web_path = "/" + str(rel_path).replace("\\", "/")
+                except ValueError:
+                    # If save_path is not relative to project_root, use absolute path
+                    web_path = "/" + str(save_path.name)
+                
                 q["image_path"] = web_path
                 # Embed the image as base64 so the PDF renderer doesn't depend
                 # on the server-side file being present at download time.
@@ -200,8 +206,8 @@ async def enrich_worksheet_with_images(worksheet: dict, output_dir: Path) -> dic
                     q["image_data"] = base64.b64encode(fh.read()).decode("utf-8")
                 print(f"[IMAGE] SUCCESS: Question {safe_num} took {q_duration:.2f}s")
             except Exception as ve:
-                print(f"[IMAGE] Path warning/error for Question {safe_num}: {ve}")
-                q["image_path"] = str(save_path)
+                print(f"[IMAGE] Path error for Question {safe_num}: {ve}")
+                # Still mark as failed but don't crash
         else:
             print(f"[IMAGE] FAILURE: Question {safe_num} failed after {q_duration:.2f}s")
 
