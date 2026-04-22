@@ -13,8 +13,9 @@ import os
 import base64
 import hashlib
 import time
+import asyncio
 import urllib.parse
-import requests
+import httpx
 from pathlib import Path
 
 try:
@@ -39,17 +40,18 @@ _gemini_available: bool | None = None
 
 # ── Gemini ────────────────────────────────────────────────────────────────────
 
-def _gemini_probe() -> bool:
+async def _gemini_probe() -> bool:
     global _gemini_available
     if _gemini_available is not None:
         return _gemini_available
     url = f"{_G_BASE}/{_G_MODEL}:generateContent?key={_API_KEY}"
     try:
-        r = requests.post(url, json={
-            "contents": [{"parts": [{"text": "red apple"}]}],
-            "generationConfig": {"responseModalities": ["IMAGE"]},
-        }, timeout=15)
-        _gemini_available = r.status_code not in (404, 403)
+        async with httpx.AsyncClient() as client:
+            r = await client.post(url, json={
+                "contents": [{"parts": [{"text": "red apple"}]}],
+                "generationConfig": {"responseModalities": ["IMAGE"]},
+            }, timeout=15)
+            _gemini_available = r.status_code not in (404, 403)
     except Exception:
         _gemini_available = False
     if _gemini_available:
@@ -59,8 +61,8 @@ def _gemini_probe() -> bool:
     return _gemini_available
 
 
-def _gemini_generate(prompt: str, save_path: Path) -> bool:
-    if not _gemini_probe():
+async def _gemini_generate(prompt: str, save_path: Path) -> bool:
+    if not await _gemini_probe():
         return False
     url = f"{_G_BASE}/{_G_MODEL}:generateContent?key={_API_KEY}"
     body = {
@@ -68,15 +70,16 @@ def _gemini_generate(prompt: str, save_path: Path) -> bool:
         "generationConfig": {"responseModalities": ["IMAGE"]},
     }
     try:
-        r = requests.post(url, json=body, timeout=45)
-        if not r.ok:
-            return False
-        for part in (r.json().get("candidates") or [{}])[0].get("content", {}).get("parts", []):
-            if "inlineData" in part:
-                save_path.parent.mkdir(parents=True, exist_ok=True)
-                with open(save_path, "wb") as f:
-                    f.write(base64.b64decode(part["inlineData"]["data"]))
-                return True
+        async with httpx.AsyncClient() as client:
+            r = await client.post(url, json=body, timeout=45)
+            if r.status_code != 200:
+                return False
+            for part in (r.json().get("candidates") or [{}])[0].get("content", {}).get("parts", []):
+                if "inlineData" in part:
+                    save_path.parent.mkdir(parents=True, exist_ok=True)
+                    with open(save_path, "wb") as f:
+                        f.write(base64.b64decode(part["inlineData"]["data"]))
+                    return True
         return False
     except Exception:
         return False
@@ -84,18 +87,11 @@ def _gemini_generate(prompt: str, save_path: Path) -> bool:
 
 # ── Pollinations.ai ───────────────────────────────────────────────────────────
 
-def _pollinations_generate(prompt: str, save_path: Path, retries: int = 3) -> bool:
+async def _pollinations_generate(prompt: str, save_path: Path, retries: int = 3) -> bool:
     """
     Pollinations.ai — completely free, no API key, powered by Flux.
-
-    - Uses a prompt-derived seed so each unique prompt always gets its own
-      image (avoids the server returning the same cached result for seed=42).
-    - Retries up to `retries` times with a short back-off to survive
-      transient rate-limits between sequential worksheet questions.
     """
     full_prompt = f"{prompt}, {_STYLE}"
-    # Deterministic seed from the prompt so the same question always produces
-    # the same image, but different questions get different seeds.
     seed = int(hashlib.md5(prompt.encode()).hexdigest()[:8], 16) % 100_000
     encoded = urllib.parse.quote(full_prompt)
     url = (
@@ -103,30 +99,31 @@ def _pollinations_generate(prompt: str, save_path: Path, retries: int = 3) -> bo
         f"?model=flux&width=512&height=384&nologo=true&seed={seed}"
     )
 
-    for attempt in range(1, retries + 1):
-        try:
-            r = requests.get(url, timeout=90)
-            if not r.ok:
-                print(f"[IMAGE] Pollinations HTTP {r.status_code} (attempt {attempt}/{retries})")
-                time.sleep(3 * attempt)
-                continue
-            # Reject HTML error pages
-            if r.content[:5].lower().lstrip() == b"<html" or b"<html" in r.content[:120].lower():
-                print(f"[IMAGE] Pollinations returned HTML (attempt {attempt}/{retries})")
-                time.sleep(3 * attempt)
-                continue
-            if len(r.content) < 1000:
-                print(f"[IMAGE] Pollinations response too small ({len(r.content)} B) — retrying")
-                time.sleep(3 * attempt)
-                continue
-            save_path.parent.mkdir(parents=True, exist_ok=True)
-            with open(save_path, "wb") as f:
-                f.write(r.content)
-            print(f"[IMAGE] Generated via Pollinations: {save_path.name} (attempt {attempt})")
-            return True
-        except Exception as e:
-            print(f"[IMAGE] Pollinations attempt {attempt}/{retries} failed: {e}")
-            time.sleep(3 * attempt)
+    async with httpx.AsyncClient() as client:
+        for attempt in range(1, retries + 1):
+            try:
+                r = await client.get(url, timeout=45)
+                if r.status_code != 200:
+                    print(f"[IMAGE] Pollinations HTTP {r.status_code} (attempt {attempt}/{retries})")
+                    await asyncio.sleep(2 * attempt)
+                    continue
+                # Reject HTML error pages
+                if r.content[:5].lower().lstrip() == b"<html" or b"<html" in r.content[:120].lower():
+                    print(f"[IMAGE] Pollinations returned HTML (attempt {attempt}/{retries})")
+                    await asyncio.sleep(2 * attempt)
+                    continue
+                if len(r.content) < 1000:
+                    print(f"[IMAGE] Pollinations response too small ({len(r.content)} B) — retrying")
+                    await asyncio.sleep(2 * attempt)
+                    continue
+                save_path.parent.mkdir(parents=True, exist_ok=True)
+                with open(save_path, "wb") as f:
+                    f.write(r.content)
+                print(f"[IMAGE] Generated via Pollinations: {save_path.name} (attempt {attempt})")
+                return True
+            except Exception as e:
+                print(f"[IMAGE] Pollinations attempt {attempt}/{retries} failed: {e}")
+                await asyncio.sleep(2 * attempt)
 
     print(f"[IMAGE] Pollinations gave up after {retries} attempts for: {prompt[:60]}")
     return False
@@ -134,27 +131,28 @@ def _pollinations_generate(prompt: str, save_path: Path, retries: int = 3) -> bo
 
 # ── Public API ────────────────────────────────────────────────────────────────
 
-def generate_image(prompt: str, save_path: Path) -> bool:
+async def generate_image(prompt: str, save_path: Path) -> bool:
     """
-    Try Gemini first, fall back to Pollinations.ai.
+    Use Pollinations.ai only (Gemini image generation commented out).
     Returns True if an image was saved at save_path, False otherwise.
     """
     print(f"[IMAGE] Attempting generation for prompt: {prompt[:50]}...")
     
-    if _gemini_generate(prompt, save_path):
-        print(f"[IMAGE] SUCCESS: Gemini generated {save_path.name}")
-        return True
+    # COMMENTED OUT: Gemini image generation disabled, using only Pollinations AI
+    # if await _gemini_generate(prompt, save_path):
+    #     print(f"[IMAGE] SUCCESS: Gemini generated {save_path.name}")
+    #     return True
     
-    print(f"[IMAGE] Gemini failed or unavailable. Trying Pollinations fallback...")
-    if _pollinations_generate(prompt, save_path):
+    print(f"[IMAGE] Using Pollinations.ai for image generation...")
+    if await _pollinations_generate(prompt, save_path):
         print(f"[IMAGE] SUCCESS: Pollinations generated {save_path.name}")
         return True
         
-    print(f"[IMAGE] CRITICAL: Both image providers failed for: {prompt[:50]}")
+    print(f"[IMAGE] CRITICAL: Pollinations.ai failed for: {prompt[:50]}")
     return False
 
 
-def enrich_worksheet_with_images(worksheet: dict, output_dir: Path) -> dict:
+async def enrich_worksheet_with_images(worksheet: dict, output_dir: Path) -> dict:
     """
     For every question that carries an ``image_prompt`` field, generate an
     image and add ``image_path`` pointing to the saved file.
@@ -176,16 +174,22 @@ def enrich_worksheet_with_images(worksheet: dict, output_dir: Path) -> dict:
         print("[IMAGE] No questions found that have an 'image_prompt'.")
         return worksheet
 
-    print(f"[IMAGE] Processing {len(image_questions)} image prompts...")
-    
-    for idx, q in enumerate(image_questions):
+    print(f"[IMAGE] Processing {len(image_questions)} image prompts in parallel...")
+
+    async def _process_one(idx, q):
         prompt = q["image_prompt"].strip()
-        # Use a safe filename
         safe_num = q.get("number", f"unk{idx}")
         save_path = output_dir / f"q{safe_num}.png"
         
-        print(f"[IMAGE] Question {safe_num}: Generating image for prompt: {prompt[:40]}...")
-        if generate_image(prompt, save_path):
+        # Stagger starts slightly to avoid hitting rate limits simultaneously
+        await asyncio.sleep(idx * 0.5)
+        
+        print(f"[IMAGE] Question {safe_num}: Generating image...")
+        start_q = time.time()
+        success = await generate_image(prompt, save_path)
+        q_duration = time.time() - start_q
+        
+        if success:
             try:
                 rel_path = save_path.relative_to(project_root)
                 web_path = "/" + str(rel_path).replace("\\", "/")
@@ -194,18 +198,12 @@ def enrich_worksheet_with_images(worksheet: dict, output_dir: Path) -> dict:
                 # on the server-side file being present at download time.
                 with open(save_path, "rb") as fh:
                     q["image_data"] = base64.b64encode(fh.read()).decode("utf-8")
-                print(f"[IMAGE] SUCCESS: Set image_path to {web_path} (base64 embedded)")
-            except ValueError as ve:
-                print(f"[IMAGE] Path warning (not under root): {ve}")
+                print(f"[IMAGE] SUCCESS: Question {safe_num} took {q_duration:.2f}s")
+            except Exception as ve:
+                print(f"[IMAGE] Path warning/error for Question {safe_num}: {ve}")
                 q["image_path"] = str(save_path)
-                with open(save_path, "rb") as fh:
-                    q["image_data"] = base64.b64encode(fh.read()).decode("utf-8")
         else:
-            print(f"[IMAGE] FAILURE: Could not generate image for Question {safe_num}")
-            
-        # Brief pause between requests to avoid rate-limiting
-        if idx < len(image_questions) - 1:
-            time.sleep(1)
+            print(f"[IMAGE] FAILURE: Question {safe_num} failed after {q_duration:.2f}s")
 
+    await asyncio.gather(*(_process_one(i, q) for i, q in enumerate(image_questions)))
     return worksheet
-

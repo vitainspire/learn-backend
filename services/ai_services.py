@@ -277,8 +277,8 @@ async def generate_worksheet(
     AI-generated image saved there and an 'image_path' field added to the question.
     """
     from pathlib import Path
-    # COMMENTED OUT: Image service temporarily disabled
-    # from services.image_service import enrich_worksheet_with_images
+    # RE-ENABLED: Using Pollinations AI only (Gemini image generation disabled)
+    from services.image_service import enrich_worksheet_with_images
     import time
 
     print(f"[WORKSHEET] Starting generation for {topic_name} (Grade {grade})...")
@@ -306,13 +306,13 @@ async def generate_worksheet(
 
     worksheet = _validate_and_fix_worksheet(raw)
 
-    # COMMENTED OUT: Image enrichment temporarily disabled
-    # if output_dir:
-    #     start_img = time.time()
-    #     print(f"[WORKSHEET] Starting parallel image enrichment...")
-    #     worksheet = await enrich_worksheet_with_images(worksheet, Path(output_dir))
-    #     img_duration = time.time() - start_img
-    #     print(f"[WORKSHEET] Image enrichment took {img_duration:.2f}s")
+    # RE-ENABLED: Using Pollinations AI for image generation
+    if output_dir:
+        start_img = time.time()
+        print(f"[WORKSHEET] Starting parallel image enrichment with Pollinations AI...")
+        worksheet = await enrich_worksheet_with_images(worksheet, Path(output_dir))
+        img_duration = time.time() - start_img
+        print(f"[WORKSHEET] Image enrichment took {img_duration:.2f}s")
 
     total_duration = time.time() - start_all
     print(f"[WORKSHEET] Total generation took {total_duration:.2f}s")
