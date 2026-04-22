@@ -259,7 +259,7 @@ def _validate_and_fix_worksheet(worksheet: dict) -> dict:
 
 
 
-def generate_worksheet(
+async def generate_worksheet(
     lesson_plan: dict,
     topic_name: str,
     grade: str,
@@ -277,7 +277,12 @@ def generate_worksheet(
     AI-generated image saved there and an 'image_path' field added to the question.
     """
     from pathlib import Path
-    from services.image_service import enrich_worksheet_with_images
+    # COMMENTED OUT: Image service temporarily disabled
+    # from services.image_service import enrich_worksheet_with_images
+    import time
+
+    print(f"[WORKSHEET] Starting generation for {topic_name} (Grade {grade})...")
+    start_all = time.time()
 
     prompt = build_worksheet_prompt(
         lesson_plan=lesson_plan,
@@ -288,18 +293,29 @@ def generate_worksheet(
         difficulty=difficulty,
         worksheet_type=worksheet_type,
     )
+    
+    start_llm = time.time()
     raw = safe_generate_content(
         prompt,
         is_json=True,
         config={"max_output_tokens": 12288, "temperature": 0.3},
         tier="quality",
     )
+    llm_duration = time.time() - start_llm
+    print(f"[WORKSHEET] LLM generation took {llm_duration:.2f}s")
 
     worksheet = _validate_and_fix_worksheet(raw)
 
-    if output_dir:
-        worksheet = enrich_worksheet_with_images(worksheet, Path(output_dir))
+    # COMMENTED OUT: Image enrichment temporarily disabled
+    # if output_dir:
+    #     start_img = time.time()
+    #     print(f"[WORKSHEET] Starting parallel image enrichment...")
+    #     worksheet = await enrich_worksheet_with_images(worksheet, Path(output_dir))
+    #     img_duration = time.time() - start_img
+    #     print(f"[WORKSHEET] Image enrichment took {img_duration:.2f}s")
 
+    total_duration = time.time() - start_all
+    print(f"[WORKSHEET] Total generation took {total_duration:.2f}s")
     return worksheet
 
 
