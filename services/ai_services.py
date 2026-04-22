@@ -259,7 +259,7 @@ def _validate_and_fix_worksheet(worksheet: dict) -> dict:
 
 
 
-async def generate_worksheet(
+def generate_worksheet(
     lesson_plan: dict,
     topic_name: str,
     grade: str,
@@ -275,6 +275,8 @@ async def generate_worksheet(
 
     If output_dir is provided, questions with an 'image_prompt' field will have an
     AI-generated image saved there and an 'image_path' field added to the question.
+    
+    NOTE: Changed from async to sync since image service is disabled.
     """
     from pathlib import Path
     # COMMENTED OUT: Image service disabled

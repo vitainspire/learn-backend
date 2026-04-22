@@ -1167,6 +1167,7 @@ async def api_generate_worksheet(req: WorksheetRequest, admin_db = Depends(get_a
     try:
         topic_slug = req.topic_name.replace(" ", "_").lower()
         img_dir = str(OUTPUT_DIR / "worksheet_images" / topic_slug)
+        # Changed from await to direct call since generate_worksheet is now sync
         worksheet = generate_worksheet(
             lesson_plan=req.lesson_plan,
             topic_name=req.topic_name,
@@ -1570,7 +1571,7 @@ if __name__ == "__main__":
     uvicorn.run(
         "main:app", 
         host="0.0.0.0", 
-        port=8000, 
+        port=8001, 
         reload=True, 
         reload_dirs=["api", "services", "database", "core", "engines"]
     )
