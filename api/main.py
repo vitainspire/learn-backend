@@ -1462,7 +1462,7 @@ async def api_mark_submission_reviewed(submission_id: str, db = Depends(get_db))
 # ---------------------------------------------------------------------------
 
 @app.post("/api/generate-recovery-worksheet")
-async def api_generate_recovery_worksheet(req: RecoveryWorksheetRequest, db = Depends(get_db)):
+async def api_generate_recovery_worksheet(req: RecoveryWorksheetRequest, db = Depends(get_db), admin_db = Depends(get_admin_db)):
     try:
         # Get student profile
         student_profile = q.build_student_profile_dict(db, req.student_id) if req.student_id else None
@@ -1483,7 +1483,7 @@ async def api_generate_recovery_worksheet(req: RecoveryWorksheetRequest, db = De
         # Save to database (optional)
         try:
             q.save_worksheet(
-                db,
+                admin_db,
                 lesson_plan_id=None,
                 topic_name=req.topic_name,
                 grade=req.grade,
@@ -1803,6 +1803,7 @@ async def submit_post_class_feedback(
     day_id: str,
     req: PostClassFeedbackRequest,
     db = Depends(get_db),
+    admin_db = Depends(get_admin_db),
 ):
     plan = q.get_week_plan(db, plan_id)
     if not plan:
@@ -1859,7 +1860,7 @@ async def submit_post_class_feedback(
                 output_dir=img_dir,
             )
             q.save_worksheet(
-                db,
+                admin_db,
                 lesson_plan_id=None,
                 topic_name=req.revisit_concept,
                 grade=plan["grade"],

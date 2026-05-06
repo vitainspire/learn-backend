@@ -247,6 +247,7 @@ CREATE INDEX IF NOT EXISTS idx_notifications_student_unread ON notifications(stu
 CREATE TABLE IF NOT EXISTS worksheets (
     id             UUID PRIMARY KEY DEFAULT gen_random_uuid(),
     lesson_plan_id UUID REFERENCES lesson_plans(id) ON DELETE SET NULL,
+    teacher_id     UUID REFERENCES teachers(id) ON DELETE SET NULL,
     topic_name     TEXT NOT NULL,
     grade          TEXT,
     subject        TEXT,
@@ -256,6 +257,7 @@ CREATE TABLE IF NOT EXISTS worksheets (
     worksheet_json JSONB       NOT NULL,
     created_at     TIMESTAMPTZ NOT NULL DEFAULT NOW()
 );
+CREATE INDEX IF NOT EXISTS idx_worksheets_teacher ON worksheets(teacher_id);
 CREATE INDEX IF NOT EXISTS idx_worksheets_lesson_plan ON worksheets(lesson_plan_id);
 
 -- =============================================================================
