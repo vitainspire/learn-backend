@@ -190,11 +190,11 @@
           "concept_summary": "This exercise focuses on identifying pairs of numbers with different sums within a set of options. It reinforces addition skills and encourages critical thinking. By comparing the sums of different pairs, children can develop a better understanding of addition and its properties.",
           "prerequisites": [],
           "original_exercises": [
-            "A)\n43 G 3\u2014\n33 G 13\u2014\n23 G 23\u2014\n33 G 14",
-            "B)\n26 G 12\u2014\n21 G 17\u2014\n24 G 34\u2014\n18 G 20",
-            "C)\n52 G 7\u2014\n57 G 2\u2014\n51 G 6\u2014\n50 G 9",
-            "D)\n50 G 10\u2014\n50 G 20\u2014\n30 G 30\u2014\n40 G 20",
-            "16 G 33\u2014\n15 G 34\u2014\n23 G 36\u2014\n17 G 32"
+            "A)\n43 G 3—\n33 G 13—\n23 G 23—\n33 G 14",
+            "B)\n26 G 12—\n21 G 17—\n24 G 34—\n18 G 20",
+            "C)\n52 G 7—\n57 G 2—\n51 G 6—\n50 G 9",
+            "D)\n50 G 10—\n50 G 20—\n30 G 30—\n40 G 20",
+            "16 G 33—\n15 G 34—\n23 G 36—\n17 G 32"
           ],
           "status": "untaught",
           "last_taught_date": null
@@ -303,7 +303,7 @@
             "Multiplication Table Completion"
           ],
           "original_exercises": [
-            "Of the three multiplications given in each row, one has a different answer.\nIdentify it and draw \u00aa \u03bc around it. One example is given.\nEx:\n4 I 3\u2014\n6 I 2\u2014\n5 I 4\n(a)\n2 I 8\u2014\n4 I 4\u2014\n3 I4\n(b)\n6 I 6\u2014\n7 I 6\u2014\n9 I 4\n(c)\n8 I 5\u2014\n8 I 3\u2014\n6 I 4"
+            "Of the three multiplications given in each row, one has a different answer.\nIdentify it and draw ª μ around it. One example is given.\nEx:\n4 I 3—\n6 I 2—\n5 I 4\n(a)\n2 I 8—\n4 I 4—\n3 I4\n(b)\n6 I 6—\n7 I 6—\n9 I 4\n(c)\n8 I 5—\n8 I 3—\n6 I 4"
           ],
           "status": "untaught",
           "last_taught_date": null
@@ -407,10 +407,10 @@
         {
           "topic_name": "Division of one number by another number",
           "subtopics": [
-            "Identifying division and the symbol ' \u00f7 ' concerned.",
+            "Identifying division and the symbol ' ÷ ' concerned.",
             "Distributing a certain number of things among a certain number of people equally."
           ],
-          "concept_summary": "This unit introduces division. Activities include identifying division and the symbol ' \u00f7 ', and distributing items equally among people.",
+          "concept_summary": "This unit introduces division. Activities include identifying division and the symbol ' ÷ ', and distributing items equally among people.",
           "prerequisites": [
             "Multiplication of Numbers (II)"
           ],
@@ -448,7 +448,7 @@
             "Total number of chocolates R",
             "The number of friend to whom chocolates were distributed R",
             "To each friends she distributed R",
-            "The division form R \u2122 R",
+            "The division form R ™ R",
             "What does the result of division indicate?",
             "Distribute in groups. Write the Division form.",
             "15",
@@ -458,13 +458,13 @@
             "Total number of students R",
             "Each bench can seat R",
             "Number of benches needed R",
-            "The division form R \u2122 R",
+            "The division form R ™ R",
             "What does the result of division indicate?",
             "(b) Ramayya has 48 sheep. He distributed them to his four sons equally. How many did each son get?",
             "Total number of sheep R",
             "Number of sons R",
             "Each son got sheep",
-            "The Division form R \u2122 R",
+            "The Division form R ™ R",
             "The result of division shows",
             "Look at the table given below. Fill in the blank boxes with the correct numbers. Write the Division form for each.",
             "Match the following divisions and their result.",
@@ -472,7 +472,7 @@
             "Number of pupils who recived the notebooks",
             "Number of books each pupil received",
             "The Division form",
-            "Ex:` 8 2 4 8 \u2122 2 R 4",
+            "Ex:` 8 2 4 8 ™ 2 R 4",
             "12 6",
             "15 5",
             "18 3",
@@ -522,11 +522,11 @@
           "concept_summary": "The story illustrates the concept of weight through a donkey carrying salt and cotton bags. The donkey learns that the weight of the load changes depending on the material, especially when exposed to water. This helps to introduce the idea that different materials have different weights and react differently to external factors like water.",
           "prerequisites": [],
           "original_exercises": [
-            "Guess the weights of two objects shown in each box.  Put a \u20189\u2019 near the heavier object.",
+            "Guess the weights of two objects shown in each box.  Put a ‘9’ near the heavier object.",
             "(a)",
             "(b)",
             "(c)",
-            "Guess the weights of two objects given together.  Put a \u20189\u2019near the lighter object.",
+            "Guess the weights of two objects given together.  Put a ‘9’near the lighter object.",
             "(c)",
             "(a)",
             "(d)",
@@ -642,7 +642,7 @@
           "concept_summary": "Get your pupils to understand the instruction for each problem. Let them solve the problems by themselves.",
           "prerequisites": [],
           "original_exercises": [
-            "Look at the three things in each row.  Mark the one with a different shape \u00aa9\u03bc in the blank box.\n(a)\n(b)",
+            "Look at the three things in each row.  Mark the one with a different shape ª9μ in the blank box.\n(a)\n(b)",
             "Look at the shapes.  Count them and write.\nIn this picture                 how many \nare there?\nIn this picture                  how many  \nare there?"
           ],
           "status": "untaught",
@@ -794,10 +794,10 @@
             "Number recognition"
           ],
           "original_exercises": [
-            "Draw a \u00aa \u03bc around the smaller number. Look at the examples.",
-            "Put a \u00aa9\u03bc on the biggest number.",
-            "Draw a \u00aa \u03bc around the smallest number.",
-            "Identify between which numbers the given numbers lie with a \u00aa9\u03bc. Look at the example."
+            "Draw a ª μ around the smaller number. Look at the examples.",
+            "Put a ª9μ on the biggest number.",
+            "Draw a ª μ around the smallest number.",
+            "Identify between which numbers the given numbers lie with a ª9μ. Look at the example."
           ],
           "status": "untaught",
           "last_taught_date": null
@@ -821,7 +821,7 @@
             "Say the number in which 5 in ones place and 7 in tens place.",
             "Say a problem which you can solve using the equation 20 + 5 = 25.",
             "Write 5 numbers wtih 2 digits using 4, 5, 7. Write them as shown in the example.",
-            "Look at the numbers. Draw \u00aa \u03bc around those which are between 20 and 30."
+            "Look at the numbers. Draw ª μ around those which are between 20 and 30."
           ],
           "status": "untaught",
           "last_taught_date": null
@@ -839,7 +839,7 @@
             "Comparing numbers"
           ],
           "original_exercises": [
-            "Draw \u00aa \u03bc around the numbers where you see 4 in the ones place.",
+            "Draw ª μ around the numbers where you see 4 in the ones place.",
             "Play the Rat's tail game. Extend the rat's tail from the smallest to the biggest number given in the grid.",
             "Show the way to the top of the hill.\n- Start from the lowest row.\n- Reach the big number from the small one.\n- Go upwards or to sidewards but not downwards.\n- Reach the number 99.\n- Show as many ways as you can."
           ],
@@ -925,7 +925,7 @@
             "In a cricket match Laxman made 47 runs and Dravid made 26 runs. How many runs did\nthey make together?\nRuns Laxman made R 47\nRuns Dravid made R 26\nThey both made R",
             "Observe the grid given below. Find out the numbers which add up to 36. Write\nthose pairs as shown in the example.\n.............................................\n.............................................\n.............................................\n.............................................\n22\n18\n10\n19\n17\n15\n21\n32\n12\n39\n18\n33\n26\n14\n34\n31\nExample: 19 G 17 R 36",
             "Observe the fisrt three numbers on each line. Write the next three numbers in\nthe series. Look at the example.\nEx: 2, 4, 6, 8, 10, 12\n(A) 5, 10, 15, .............,  .............,  .............\n(B) 3, 5, 7, .............,  .............,  .............\n(C) 20, 30, 40, .............,  .............,  .............\n.............................................\n.............................................\n.............................................\n.............................................\n........\n........\n........",
-            "Observe the pairs of numbers in each row. The sum of one pair is different.\nIdentify and draw \u00aa\u00aa\n \u03bc\u03bc around it. One example is given.\nEx: 27 G 46 16 G 67 26 G 57 36 G 47\n(A) 18 G 19 20 G 17 20 G 19 15 G 22\n(B) 27 G 35 30 G 12 40 G 22 38 G 24\n(C) 47 G 35 58 G 24 40 G 48 68 G 14",
+            "Observe the pairs of numbers in each row. The sum of one pair is different.\nIdentify and draw ªª\n μμ around it. One example is given.\nEx: 27 G 46 16 G 67 26 G 57 36 G 47\n(A) 18 G 19 20 G 17 20 G 19 15 G 22\n(B) 27 G 35 30 G 12 40 G 22 38 G 24\n(C) 47 G 35 58 G 24 40 G 48 68 G 14",
             "Look at the numbers in the first column. Add each pair. Mark the range in which\ntheir sum will lie       .",
             "30 - 40\n40 - 50\n50 - 60\n60 - 70\n34 G 12\n45 G 20\n27 G 11\n36 G 27\n28 G 25",
             "Observe how Soni added two numbers. Correct the error / mistake. if any. Write\nthe correct answer in the brackets (        ).",
@@ -1075,7 +1075,7 @@
             "Number Sequencing"
           ],
           "original_exercises": [
-            "8. Identify the bigger number and draw a \u00aa\n\u03bc around it.  Look at the example."
+            "8. Identify the bigger number and draw a ª\nμ around it.  Look at the example."
           ],
           "status": "untaught",
           "last_taught_date": null
@@ -1146,7 +1146,7 @@
             "Counting Bundles of Sticks"
           ],
           "original_exercises": [
-            "3. Look at the Number Ribbon.  Write the correct number at each DOT (\u2022)"
+            "3. Look at the Number Ribbon.  Write the correct number at each DOT (•)"
           ],
           "status": "untaught",
           "last_taught_date": null
@@ -1451,7 +1451,7 @@
           "prerequisites": [],
           "original_exercises": [
             "Write numbers 1 to 4 for each object in the order of their increasing weight.",
-            "Mark the heavier of the two girls with a \u20189\u2019"
+            "Mark the heavier of the two girls with a ‘9’"
           ],
           "status": "untaught",
           "last_taught_date": null
@@ -1459,7 +1459,7 @@
         {
           "topic_name": "Non Standard Measurements of Liquids",
           "subtopics": [],
-          "concept_summary": "Ravi, Raju and Rama receive 2 litres of milk from three different people every day.\nRangamma pours 4 glassful of milk at Ravi\u2019s house. At Raju\u2019s house, milkmaid Vanajamma pours 2 mugful of milk. At Rama\u2019s house milkman Hussain pours 8 small glassful of milk. The three children got a doubt on the milk supplied to each of them. Who is supplying the correct quantity of milk",
+          "concept_summary": "Ravi, Raju and Rama receive 2 litres of milk from three different people every day.\nRangamma pours 4 glassful of milk at Ravi’s house. At Raju’s house, milkmaid Vanajamma pours 2 mugful of milk. At Rama’s house milkman Hussain pours 8 small glassful of milk. The three children got a doubt on the milk supplied to each of them. Who is supplying the correct quantity of milk",
           "prerequisites": [],
           "original_exercises": [
             "Look at the pictures given below.  Say which vessels are used to measure milk."
@@ -1473,7 +1473,7 @@
           "concept_summary": "Not applicable, this section focuses on a game to understand estimation.",
           "prerequisites": [],
           "original_exercises": [
-            "Two children can play this game.\n\u2022 Take a big bucket full of water.  Take a small bucket, a jug and a mug also.\n\u2022 First, one pupil takes the jug and pours water from the big bucket into the small one.\n\u2022 Then the second pupil also pours water with the mug into the small bucket.\n\u2022 The pupils pour water alternatingly.\n\u2022 Continue this till the small bucket is full.\n\u2022 The pupil who fills the small bucket with jug or mug completely is the winner."
+            "Two children can play this game.\n• Take a big bucket full of water.  Take a small bucket, a jug and a mug also.\n• First, one pupil takes the jug and pours water from the big bucket into the small one.\n• Then the second pupil also pours water with the mug into the small bucket.\n• The pupils pour water alternatingly.\n• Continue this till the small bucket is full.\n• The pupil who fills the small bucket with jug or mug completely is the winner."
           ],
           "status": "untaught",
           "last_taught_date": null
@@ -1567,7 +1567,7 @@
         {
           "topic_name": "Introduction to Subtraction",
           "subtopics": [],
-          "concept_summary": "I have Rs. 45\nI must pay Rs. 23\nHow much\nremains?\nWe can show this process like this.\nLook at the notes and coins. How much remains?\nThe symbol for\nsubtraction is  \u2018`\u2019",
+          "concept_summary": "I have Rs. 45\nI must pay Rs. 23\nHow much\nremains?\nWe can show this process like this.\nLook at the notes and coins. How much remains?\nThe symbol for\nsubtraction is  ‘`’",
           "prerequisites": [],
           "original_exercises": [],
           "status": "untaught",
@@ -1626,7 +1626,7 @@
           "concept_summary": "Help your pupils to understand the instructions and let them solve the\nabove problems by themselves.",
           "prerequisites": [],
           "original_exercises": [
-            "7. Expand the given numbers and write each one in words.\n\u00f1<\u00eb: 175 R\n100 G 70 G 5\none hundred and seventy five\n(n)\n782 R\n700 G 80 G 2\n(\u00c4)\n976 R\n(\u00c7)\n999 R\n(\u00e1)\n407 R\n(\u00f1)\n340 R\nExpansion\nIn words"
+            "7. Expand the given numbers and write each one in words.\nñ<ë: 175 R\n100 G 70 G 5\none hundred and seventy five\n(n)\n782 R\n700 G 80 G 2\n(Ä)\n976 R\n(Ç)\n999 R\n(á)\n407 R\n(ñ)\n340 R\nExpansion\nIn words"
           ],
           "status": "untaught",
           "last_taught_date": null
@@ -1652,7 +1652,7 @@
             "9. Solve the following problems.\n1. Write three digit numbers using 4, 6 and 9.\n 469,  694, 496,  .............,  .............,  .............,",
             "2. Write three numbers that have 5 in the hundreds place.\n 502,  .............,  .............,  .............,  .............,  .............,",
             "3. Write 5 numbers between 800 and 900. That have 5 in its tens place.\n 856,  .............,  .............,  .............,  .............,  .............,",
-            "4. Identify between which numbers the given numbers lie, put a \u00aa9\u03bc. Look at\n     the example.\n885\n800\u2013\u2013850\n750\u2013\u2013800\n632\n650\u2013\u2013700\n700\u2013\u2013750\n304\n250\u2013\u2013300 300\u2013\u2013350\n350\u2013\u2013400\n287\n200\u2013\u2013300\n600\u2013\u2013700\n654\n500\u2013\u2013600 400\u2013\u2013500\n600\u2013\u2013700\n707\n600\u2013\u2013700 700\u2013\u2013800\n800\u2013\u2013900\n9\nExample:-\n600\u2013\u2013650\n700\u2013\u2013800\n850\u2013\u2013900"
+            "4. Identify between which numbers the given numbers lie, put a ª9μ. Look at\n     the example.\n885\n800––850\n750––800\n632\n650––700\n700––750\n304\n250––300 300––350\n350––400\n287\n200––300\n600––700\n654\n500––600 400––500\n600––700\n707\n600––700 700––800\n800––900\n9\nExample:-\n600––650\n700––800\n850––900"
           ],
           "status": "untaught",
           "last_taught_date": null
@@ -1745,9 +1745,9 @@
           "concept_summary": null,
           "prerequisites": [],
           "original_exercises": [
-            "Identify the bigger number and mark\nit \u20189\u2019.\nEx: 294,\n319\n(A) 756,\n432\n(B) 670,\n679\n(C) 550,\n543\n(D) 856,\n851",
+            "Identify the bigger number and mark\nit ‘9’.\nEx: 294,\n319\n(A) 756,\n432\n(B) 670,\n679\n(C) 550,\n543\n(D) 856,\n851",
             "Identify the smaller number and\ndraw  \n  around it.\n      Ex:   738,\n769\n(A) 463,\n154\n(B) 537,\n645\n(C) 248,\n264\n(D) 707,\n705",
-            "Write the correct symbol >,  < ,  R in the blank boxes.\n(A)\n(B)\n(C)\n(D)\n(E)\n(F)\n(G)\n(H)\nEx:` 304   >  201\u2014\n475  <  616\u2014\n254  =  254\n620\n580\n937\n975\n763\n746\n864\n953\n520\n520\n987\n965\n736\n746\n864\n864",
+            "Write the correct symbol >,  < ,  R in the blank boxes.\n(A)\n(B)\n(C)\n(D)\n(E)\n(F)\n(G)\n(H)\nEx:` 304   >  201—\n475  <  616—\n254  =  254\n620\n580\n937\n975\n763\n746\n864\n953\n520\n520\n987\n965\n736\n746\n864\n864",
             "Write the following sets of numbers in ascending and descending orders.\nNumbers\nAscending orders\nDescending order\n Ex:`\n367,\n212,\n684, 801 212 367 684 801 801 684 367 212\n(A)\n405,\n408,\n500, 306\n(B)\n684,\n648,\n635, 653\n(C)\n339,\n333,\n337, 335\n(D)\n569,\n575,\n557, 596"
           ],
           "status": "untaught",
@@ -1817,8 +1817,8 @@
             "9. Subtract the numbers in the first column of the following grid. Then identify\nwhere your answer lies. Observe the example.\nEx.\n20 - 30 30 - 40 40 - 50 50 -60\n39 ` 14\n66 ` 33\n98 ` 50\n57 ` 12\n65 ` 14\n9",
             "10. Fill in the blank boxes with the correct numbers.\n(A)\n3\n6\n` 1\n2\n3\n(B)\n4\n7\n` 2\n2\n5\n(C)\n(D)\n7\n5\n` 2\n5\n0\n6\n8\n` 3\n0",
             "11. Fill in the blank boxes with the correct numbers.",
-            "12. Fill in the blank boxes with the correct numbers.\nEx:\n47 ` 30\u2014\n37 ` 20\u2014\n67 ` 50\u2014\n87 ` 40\na)\n36 ` 21\u2014\n67 ` 52\u2014\n46 ` 32\u2014\n26 ` 11\nb)\n59 ` 42\u2014\n77 ` 16\u2014\n47 ` 30\u2014\n38 ` 21\nc)\n48 ` 15\u2014\n77 ` 44\u2014\n68 ` 35\u2014\n76 ` 53\n36\n-\n20\nR\n17\n-\n12\nR\n-\nR",
-            "13. Observe the subtraction of pairs of numbers in each row.\nOne of the answers is different.  Identify and circle it \u00aa\n\u03bc.\nOne example is given.",
+            "12. Fill in the blank boxes with the correct numbers.\nEx:\n47 ` 30—\n37 ` 20—\n67 ` 50—\n87 ` 40\na)\n36 ` 21—\n67 ` 52—\n46 ` 32—\n26 ` 11\nb)\n59 ` 42—\n77 ` 16—\n47 ` 30—\n38 ` 21\nc)\n48 ` 15—\n77 ` 44—\n68 ` 35—\n76 ` 53\n36\n-\n20\nR\n17\n-\n12\nR\n-\nR",
+            "13. Observe the subtraction of pairs of numbers in each row.\nOne of the answers is different.  Identify and circle it ª\nμ.\nOne example is given.",
             "14. Observe the series of numbers. Write the next two numbers in each row.\nExample: 10,  8,   6  ,   4  ,   2  ,\na) 9,  7,  5, , \nb) 12,  9,  6, , \nc) 30, 25, 20, , ",
             "1. Observe the note and coins . Say how much is 45 - 27.",
             "T\nO\n4\n5\n` 2\n7\n8  Subtraction of Numbers\n(Using Regrouping )\nWe cannot\nsubtract 7 ones\nfrom 5ones.\nThen how to\ndo that?\nT\nO\n4\n5\n` 2\n7\nIt is possible if\nwe change one\nten as 10 ones.\nOne ten = ten ones."
@@ -1903,10 +1903,10 @@
           "concept_summary": null,
           "prerequisites": [],
           "original_exercises": [
-            "Subtract each pair of numbers given below. Mark with \u00aa9\u03bc whose answer is different. One example is given.",
-            "Ex:` 32 ` 18\u2014 30 ` 16\u2014 54 ` 40\u2014 84 ` 54 9",
-            "(a) 76 ` 29\u2014 50 ` 15\u2014 68 ` 33\u2014 71 ` 36",
-            "(b) 55 ` 35\u2014 60 ` 40\u2014 36 ` 16\u2014 68 ` 58"
+            "Subtract each pair of numbers given below. Mark with ª9μ whose answer is different. One example is given.",
+            "Ex:` 32 ` 18— 30 ` 16— 54 ` 40— 84 ` 54 9",
+            "(a) 76 ` 29— 50 ` 15— 68 ` 33— 71 ` 36",
+            "(b) 55 ` 35— 60 ` 40— 36 ` 16— 68 ` 58"
           ],
           "status": "untaught",
           "last_taught_date": null
@@ -1933,16 +1933,16 @@
           "concept_summary": null,
           "prerequisites": [],
           "original_exercises": [
-            "Subtract the numbers in the first column. Mark the range with \u00aa9\u03bc in which your answer lies, in each case. One example is given.",
-            "Example:` 76 \u2013\u2013 28 9",
-            "50 \u2013\u2013 19",
-            "82 \u2013\u2013 23",
-            "73 \u2013\u2013 15",
-            "64 \u2013\u2013 17",
-            "30 \u2013\u2013 40",
-            "40 \u2013\u2013 50",
-            "50 \u2013\u2013 60",
-            "60 \u2013\u2013 70"
+            "Subtract the numbers in the first column. Mark the range with ª9μ in which your answer lies, in each case. One example is given.",
+            "Example:` 76 –– 28 9",
+            "50 –– 19",
+            "82 –– 23",
+            "73 –– 15",
+            "64 –– 17",
+            "30 –– 40",
+            "40 –– 50",
+            "50 –– 60",
+            "60 –– 70"
           ],
           "status": "untaught",
           "last_taught_date": null
@@ -1964,7 +1964,7 @@
         {
           "topic_name": "Multiplication as Repeated Addition",
           "subtopics": [],
-          "concept_summary": "Adding a number again and again is called repeated addition.\n2 I 6 R 12\u2014\n6 I 2 R 12\nHere we have used a symbol I. It is called the symbol for multiplication.\nMultiplication is repeated addition.\nEx: 3 + 3 + 3 + 3 = 3 I 4 = 12",
+          "concept_summary": "Adding a number again and again is called repeated addition.\n2 I 6 R 12—\n6 I 2 R 12\nHere we have used a symbol I. It is called the symbol for multiplication.\nMultiplication is repeated addition.\nEx: 3 + 3 + 3 + 3 = 3 I 4 = 12",
           "prerequisites": [],
           "original_exercises": [],
           "status": "untaught",
@@ -2113,10 +2113,10 @@
         {
           "topic_name": "Multiplication Table of 0",
           "subtopics": [],
-          "concept_summary": "Write the Multiplication Table of \u20180\u2019 (zero)",
+          "concept_summary": "Write the Multiplication Table of ‘0’ (zero)",
           "prerequisites": [],
           "original_exercises": [
-            "Write the Multiplication Table of \u20180\u2019 (zero)"
+            "Write the Multiplication Table of ‘0’ (zero)"
           ],
           "status": "untaught",
           "last_taught_date": null
@@ -2146,7 +2146,7 @@
         {
           "topic_name": "Multiplication of Numbers - 2",
           "subtopics": [],
-          "concept_summary": "Geeta said to Lata, \u201cThere are 15 pencils in each packet.\u201d How many pencils are there in 3 such packets? Lata calculated in the following way. You observe it. Calculate how many pencils there are.\n\nWe can do this in another way also.",
+          "concept_summary": "Geeta said to Lata, “There are 15 pencils in each packet.” How many pencils are there in 3 such packets? Lata calculated in the following way. You observe it. Calculate how many pencils there are.\n\nWe can do this in another way also.",
           "prerequisites": [],
           "original_exercises": [],
           "status": "untaught",
@@ -2198,7 +2198,7 @@
           "concept_summary": null,
           "prerequisites": [],
           "original_exercises": [
-            "Identify the number that is different from the rest. Draw \u00aa \u03bc around it. One example is given.",
+            "Identify the number that is different from the rest. Draw ª μ around it. One example is given.",
             "5, 10, 15, 21, 25, 30",
             "8, 16, 24, 32, 38, 48",
             "6, 12, 18, 24, 30, 32",
@@ -2221,7 +2221,7 @@
         {
           "topic_name": "Introduction to Division",
           "subtopics": [],
-          "concept_summary": "How many heaps of mangoes did we get after making heaps of 5 from 20 mangoes?\nWhen 20 mangoes were made into heaps of 5, we got 4 heaps.\nIt means we got 4 after dividing 20 by 5.\nWe write it as 20 \u2122 5 = 4",
+          "concept_summary": "How many heaps of mangoes did we get after making heaps of 5 from 20 mangoes?\nWhen 20 mangoes were made into heaps of 5, we got 4 heaps.\nIt means we got 4 after dividing 20 by 5.\nWe write it as 20 ™ 5 = 4",
           "prerequisites": [],
           "original_exercises": [
             "Count the number of mangoes. Say how many equal heaps are there?"
@@ -2236,13 +2236,13 @@
             "Division form",
             "Division as repeated subtraction"
           ],
-          "concept_summary": "If 15 marbles are distributed equally among equally, each one will get marbles.\nThe division form of this is 15 \u2122 5 R\n15\u00f75=3\nMeans, if we distribute 15 marbles among 5 people, each will get 3 marbles.",
+          "concept_summary": "If 15 marbles are distributed equally among equally, each one will get marbles.\nThe division form of this is 15 ™ 5 R\n15÷5=3\nMeans, if we distribute 15 marbles among 5 people, each will get 3 marbles.",
           "prerequisites": [],
           "original_exercises": [
             "Distribute 15 marbles equally among 5 children.\n   Total number of marbles  R  15\n   Distributed first time  R\n   Remaining marbles    R\n   Distributed second timeR \n  Remaining marbles         R \n  Distributed third timeR \n  Remaining marbles       R\nTotal number of marbles R\nHow many people distributed  R \nHow many times did we distribute equally R \nHow many did each one get R",
             "Look at the pictures given below. Count them. Distribute equally. Write the Division form. One example is given. Fill in the blank boxes and circles.",
-            "Distribute 18 mangoes among 6 people equally.\nTotal number of mangoes\nR   18\nDistribution of mangoes to 6 people for the first time\nR   `6\nRemaining mangoes\nR   12\nDistribution of mangoes to 6 people for the second time R\nRemaining mangoes\nR\nDistribution of mangoes to 6 people for the third time\nR\nRemaining mangoes\nR\nBy distributing equally each one gets\nR \n                         The Division form   \n \u2122 \n R",
-            "Distribute 20 marbles among 5 people equally.\nTotal number of marbles\nR  \nMarbles distributed for the  first time\nR  \nRemaining marbles\nR  \nMarbles distributed for the  second  time\nR  \nRemaining marbles\nR  \nMarbles distributed  for the  third time\nR  \nRemaining marbles\nR  \nMarbles distributed for the  fourth time\nR  \nRemaining marbles\nR  \nBy distributing equally, each one gets\nR  \nThe Division form \n \u2122 \n R "
+            "Distribute 18 mangoes among 6 people equally.\nTotal number of mangoes\nR   18\nDistribution of mangoes to 6 people for the first time\nR   `6\nRemaining mangoes\nR   12\nDistribution of mangoes to 6 people for the second time R\nRemaining mangoes\nR\nDistribution of mangoes to 6 people for the third time\nR\nRemaining mangoes\nR\nBy distributing equally each one gets\nR \n                         The Division form   \n ™ \n R",
+            "Distribute 20 marbles among 5 people equally.\nTotal number of marbles\nR  \nMarbles distributed for the  first time\nR  \nRemaining marbles\nR  \nMarbles distributed for the  second  time\nR  \nRemaining marbles\nR  \nMarbles distributed  for the  third time\nR  \nRemaining marbles\nR  \nMarbles distributed for the  fourth time\nR  \nRemaining marbles\nR  \nBy distributing equally, each one gets\nR  \nThe Division form \n ™ \n R "
           ],
           "status": "untaught",
           "last_taught_date": null
@@ -2322,5 +2322,17 @@
         }
       ]
     }
-  ]
+  ],
+  "entities": {
+    "chapters": [],
+    "topics": [],
+    "subtopics": [],
+    "exercises": [],
+    "sidebars": []
+  },
+  "graphs": {
+    "chapter_structure": [],
+    "exercise_mapping": [],
+    "concept_dependencies": []
+  }
 }

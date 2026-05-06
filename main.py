@@ -3,10 +3,11 @@ import json
 import re
 import tempfile
 from pathlib import Path
-from typing import Optional
+from typing import Optional, Union
 
-from fastapi import FastAPI, HTTPException, Depends
+from fastapi import FastAPI, HTTPException, Depends, Request
 from fastapi.responses import HTMLResponse, FileResponse, Response
+from fastapi.exceptions import RequestValidationError
 from fastapi.staticfiles import StaticFiles
 from pydantic import BaseModel
 from datetime import datetime
@@ -14,7 +15,7 @@ from datetime import datetime
 import sys
 sys.path.insert(0, os.path.dirname(os.path.dirname(__file__)))
 
-from services.ai_services import generate_elementary_lesson_plan, generate_study_plan, generate_worksheet
+from services.ai_services import generate_elementary_lesson_plan, generate_study_plan, generate_worksheet, generate_recovery_worksheet, generate_quiz
 from services.visual_guide_service import generate_visual_guide_from_plan, generate_picture_book
 from core.models import StudentProfile, get_default_student
 from engines.progress_engine import calculate_mastery
@@ -27,6 +28,12 @@ from database.connection import get_db, get_admin_db
 import database.queries as q
 
 app = FastAPI(title="Inspire Education API")
+
+@app.exception_handler(RequestValidationError)
+async def validation_exception_handler(request: Request, exc: RequestValidationError):
+    print(f"[422] {request.method} {request.url.path} — {exc.errors()}")
+    from fastapi.exception_handlers import request_validation_exception_handler
+    return await request_validation_exception_handler(request, exc)
 
 PROJECT_ROOT = Path(__file__).resolve().parent
 STATIC_DIR = PROJECT_ROOT / "static"
@@ -94,7 +101,7 @@ class ElementaryLessonRequest(BaseModel):
     learning_gaps: Optional[list] = None
 
 class WorksheetRequest(BaseModel):
-    lesson_plan: dict
+    lesson_plan: Union[dict, str]
     topic_name: str
     grade: str
     subject: str
@@ -104,6 +111,30 @@ class WorksheetRequest(BaseModel):
 
 class DownloadWorksheetRequest(BaseModel):
     worksheet: dict
+
+
+class RecoveryWorksheetRequest(BaseModel):
+    student_id: Optional[str] = None
+    student_profile: Optional[dict] = None
+    topic_name: str
+    grade: str
+    subject: str
+    learning_gaps: Optional[list[str]] = None
+    num_questions: Optional[int] = 10
+    difficulty: Optional[str] = "easy"
+    focus_areas: Optional[list[str]] = None
+
+
+class QuizRequest(BaseModel):
+    topic_name: str
+    grade: str
+    subject: str
+    lesson_plan: Optional[dict] = None
+    ontology_context: Optional[str] = None
+    num_questions: Optional[int] = 10
+    difficulty: Optional[str] = "mixed"
+    quiz_type: Optional[str] = "assessment"
+    time_limit: Optional[int] = 300
 
 
 # --- Week planning ---
@@ -264,8 +295,16 @@ def _serialize_plan(plan: dict) -> dict:
 
 @app.get("/", response_class=HTMLResponse)
 async def get_index():
-    with open(PROJECT_ROOT / "static" / "index.html", "r", encoding="utf-8") as f:
-        return f.read()
+    # Return simple API info instead of static HTML (file doesn't exist)
+    return """
+    <html>
+        <head><title>EduLearn API</title></head>
+        <body>
+            <h1>EduLearn API</h1>
+            <p>API is running. Visit <a href="/docs">/docs</a> for API documentation.</p>
+        </body>
+    </html>
+    """
 
 @app.get("/teacher", response_class=HTMLResponse)
 async def get_teacher():
@@ -659,17 +698,29 @@ async def get_teacher_dashboard(db = Depends(get_db)):
 # ---------------------------------------------------------------------------
 
 @app.post("/api/generate-worksheet")
-async def api_generate_worksheet(req: WorksheetRequest, admin_db = Depends(get_admin_db)):
+async def api_generate_worksheet(
+    req: WorksheetRequest, 
+    admin_db = Depends(get_admin_db),
+    format: str = "json"  # "json" or "pdf"
+):
     try:
-        worksheet = generate_worksheet(
-            lesson_plan=req.lesson_plan,
+        lesson_plan = req.lesson_plan if isinstance(req.lesson_plan, dict) else {"explain": {"teacher_explanation": req.lesson_plan}}
+        
+        # Set output directory for images
+        output_dir = PROJECT_ROOT / "output" / "worksheet_images"
+        
+        worksheet = await generate_worksheet(
+            lesson_plan=lesson_plan,
             topic_name=req.topic_name,
             grade=req.grade,
             subject=req.subject,
             num_questions=req.num_questions,
             difficulty=req.difficulty,
             worksheet_type=req.worksheet_type,
+            output_dir=str(output_dir),
         )
+        
+        # Save to database
         try:
             q.save_worksheet(
                 admin_db,
@@ -684,7 +735,36 @@ async def api_generate_worksheet(req: WorksheetRequest, admin_db = Depends(get_a
             )
         except Exception as save_err:
             print(f"[generate-worksheet] DB save skipped: {save_err}")
-        return {"success": True, "worksheet": worksheet}
+        
+        # Return PDF if requested, otherwise return JSON
+        if format.lower() == "pdf":
+            from services.worksheet_pdf_renderer import render_worksheet_pdf
+            from fastapi.responses import FileResponse
+            import time
+            
+            # Create unique PDF filename
+            timestamp = int(time.time())
+            topic_slug = req.topic_name.replace(" ", "_").lower()
+            pdf_filename = f"worksheet_{topic_slug}_{timestamp}.pdf"
+            pdf_path = PROJECT_ROOT / "output" / "pdfs" / pdf_filename
+            pdf_path.parent.mkdir(parents=True, exist_ok=True)
+            
+            # Render PDF
+            render_worksheet_pdf(worksheet, str(pdf_path))
+            
+            # Return PDF file
+            return FileResponse(
+                path=str(pdf_path),
+                media_type="application/pdf",
+                filename=pdf_filename,
+                headers={
+                    "Content-Disposition": f'attachment; filename="{pdf_filename}"'
+                }
+            )
+        else:
+            # Return JSON (default for backward compatibility)
+            return {"success": True, "worksheet": worksheet}
+            
     except Exception as e:
         raise HTTPException(status_code=500, detail=f"Worksheet generation failed: {str(e)}")
 
@@ -707,6 +787,61 @@ async def api_download_worksheet(req: DownloadWorksheetRequest):
         )
     except Exception as e:
         raise HTTPException(status_code=500, detail=f"PDF generation failed: {str(e)}")
+
+
+@app.post("/api/generate-recovery-worksheet")
+async def api_generate_recovery_worksheet(req: RecoveryWorksheetRequest, admin_db = Depends(get_admin_db)):
+    try:
+        student_profile = req.student_profile or {}
+        if not student_profile and req.student_id:
+            student_profile = q.build_student_profile_dict(admin_db, req.student_id) or {}
+        worksheet = generate_recovery_worksheet(
+            student_profile=student_profile,
+            topic_name=req.topic_name,
+            grade=req.grade,
+            subject=req.subject,
+            learning_gaps=req.learning_gaps or [],
+            num_questions=req.num_questions,
+            difficulty=req.difficulty,
+            focus_areas=req.focus_areas,
+        )
+        try:
+            q.save_worksheet(
+                admin_db,
+                lesson_plan_id=None,
+                topic_name=req.topic_name,
+                grade=req.grade,
+                subject=req.subject,
+                difficulty=req.difficulty,
+                worksheet_type="recovery",
+                num_questions=req.num_questions,
+                worksheet_json=worksheet,
+            )
+        except Exception as save_err:
+            print(f"[generate-recovery-worksheet] DB save skipped: {save_err}")
+        return {"success": True, "worksheet": worksheet}
+    except Exception as e:
+        raise HTTPException(status_code=500, detail=f"Recovery worksheet generation failed: {str(e)}")
+
+
+@app.post("/api/generate-quiz")
+async def api_generate_quiz(req: QuizRequest, admin_db = Depends(get_admin_db)):
+    try:
+        quiz = generate_quiz(
+            topic_name=req.topic_name,
+            grade=req.grade,
+            subject=req.subject,
+            lesson_plan=req.lesson_plan,
+            ontology_context=req.ontology_context,
+            num_questions=req.num_questions,
+            difficulty=req.difficulty,
+            quiz_type=req.quiz_type,
+            time_limit=req.time_limit,
+        )
+        # Note: You might want to add a save_quiz function to database.queries if you want to persist quizzes
+        return {"success": True, "quiz": quiz}
+    except Exception as e:
+        raise HTTPException(status_code=500, detail=f"Quiz generation failed: {str(e)}")
 
 
 # ---------------------------------------------------------------------------
@@ -1001,7 +1136,10 @@ async def submit_post_class_feedback(
 
     if req.needs_revisit and req.revisit_concept:
         try:
-            worksheet = generate_worksheet(
+            # Set output directory for images
+            output_dir = PROJECT_ROOT / "output" / "worksheet_images"
+            
+            worksheet = await generate_worksheet(
                 lesson_plan={"topic": req.revisit_concept, "grade": plan["grade"], "subject": plan["subject"]},
                 topic_name=req.revisit_concept,
                 grade=plan["grade"],
@@ -1009,6 +1147,7 @@ async def submit_post_class_feedback(
                 num_questions=10,
                 difficulty="easy",
                 worksheet_type="revision",
+                output_dir=str(output_dir),
             )
             q.save_worksheet(
                 db,

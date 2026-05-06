@@ -6,8 +6,14 @@ from datetime import datetime
 import google.generativeai as genai
 import sys, os
 sys.path.insert(0, os.path.dirname(os.path.dirname(__file__)))
-from services.ai_services import generate_lesson_plan_v2, generate_next_day_plan, generate_study_plan
-from core.models import TeacherProfile, StudentProfile, get_default_teacher, get_default_student
+try:
+    from services.ai_services import generate_lesson_plan_v2, generate_next_day_plan, generate_study_plan
+except ImportError:
+    generate_lesson_plan_v2 = generate_next_day_plan = generate_study_plan = None
+try:
+    from core.models import get_default_teacher, get_default_student
+except ImportError:
+    get_default_teacher = get_default_student = None
 
 # ── Config ────────────────────────────────────────────────────────────────────
 try:
@@ -163,6 +169,8 @@ You are an expert educational architect.
 Analyze the provided textbook text and extract ONLY the top-level Chapter information.
 You MUST follow a STRICT SCHEMA with UNIQUE IDs.
 
+The text contains page markers like "--- Page X ---". Use these to identify the page_start for each chapter.
+
 ID SCHEMA:
 - Chapters: C_X (e.g., C_1, C_2)
 
@@ -173,7 +181,7 @@ The JSON must follow this exact structure:
 {{
     "entities": {{
         "chapters": [
-            {{"id": "C_1", "number": 1, "title": "Chapter 1"}}
+            {{"id": "C_1", "number": 1, "title": "Chapter 1", "page_start": 5, "page_end": 20}}
         ]
     }},
     "graphs": {{
@@ -187,11 +195,14 @@ TEXTBOOK CONTENT:
 
 STAGE2_PROMPT = """
 You are an expert educational architect.
-Analyze the provided textbook text and extract ONLY Topics and their learning dependencies (prerequisites).
+Analyze the provided textbook text and extract Topics, Subtopics, and their learning dependencies (prerequisites).
 You MUST follow a STRICT SCHEMA with UNIQUE IDs. Assume the chapter ID is derived from the context.
+
+The text contains page markers like "--- Page X ---". Use these to identify page_start and page_end for each topic and subtopic.
 
 ID SCHEMA:
 - Topics: T_X_Y (e.g., T_1_1, T_1_2)
+- Subtopics: ST_X_Y_Z (e.g., ST_1_1_1, ST_1_1_2)
 
 CONTEXT:
 {chapter_context}
@@ -201,11 +212,22 @@ The JSON must follow this exact structure:
     "entities": {{
         "topics": [
             {{
-                "id": "T_1_1", 
-                "name": "Topic A", 
-                "summary": "Detailed summary...", 
-                "chapter_id": "C_1", 
-                "prerequisites": []
+                "id": "T_1_1",
+                "name": "Topic A",
+                "summary": "Detailed summary...",
+                "chapter_id": "C_1",
+                "page_start": 5,
+                "page_end": 12,
+                "prerequisites": [],
+                "subtopics": [
+                    {{
+                        "id": "ST_1_1_1",
+                        "name": "Subtopic A1",
+                        "summary": "Brief summary of subtopic...",
+                        "page_start": 5,
+                        "page_end": 8
+                    }}
+                ]
             }}
         ]
     }},
@@ -225,9 +247,12 @@ TEXTBOOK CONTENT:
 
 STAGE3_PROMPT = """
 You are an expert educational architect.
-Analyze the provided textbook text and extract ONLY Exercises, Questions, and Sidebars/Margin Notes.
+Analyze the provided textbook text and extract Exercises, Questions, and Sidebars/Margin Notes.
 Map them to the appropriate Topic IDs identified in previous stages (best effort).
+Include the page number where each exercise/sidebar appears.
 You MUST follow a STRICT SCHEMA with UNIQUE IDs.
+
+The text contains page markers like "--- Page X ---". Use these to identify page numbers.
 
 ID SCHEMA:
 - Exercises: E_X_Y_Z (e.g., E_1_1_1)
@@ -240,10 +265,10 @@ The JSON must follow this exact structure:
 {{
     "entities": {{
         "exercises": [
-            {{"id": "E_1_1_1", "text": "Question text...", "topic_id": "T_1_1"}}
+            {{"id": "E_1_1_1", "text": "Question text...", "topic_id": "T_1_1", "page": 7}}
         ],
         "sidebars": [
-            {{"id": "S_1_1_1", "text": "Margin note text...", "topic_id": "T_1_1"}}
+            {{"id": "S_1_1_1", "text": "Margin note text...", "topic_id": "T_1_1", "page": 6}}
         ]
     }},
     "graphs": {{
@@ -325,31 +350,55 @@ def rebuild_legacy_chapters(ontology):
         chapters_map[c['id']] = {
             "chapter_number": c.get('number'),
             "chapter_title": c.get('title'),
+            "page_start": c.get('page_start'),
+            "page_end": c.get('page_end'),
             "topics": []
         }
-    
+
     # Map exercises and sidebars for easy lookup
-    exercises_map = {e['id']: e['text'] for e in ontology['entities']['exercises']}
-    sidebars_map = {s['id']: s['text'] for s in ontology['entities']['sidebars']}
-    
+    exercises_map = {e['id']: e for e in ontology['entities']['exercises']}
+    sidebars_map = {s['id']: s for s in ontology['entities']['sidebars']}
+    # Map subtopics by topic_id
+    subtopics_by_topic = {}
+    for st in ontology['entities'].get('subtopics', []):
+        tid = st.get('topic_id')
+        subtopics_by_topic.setdefault(tid, []).append(st)
+
     for t in ontology['entities']['topics']:
         chap_id = t.get('chapter_id')
         if chap_id in chapters_map:
-            # Flatten exercise and sidebar texts for legacy topics
-            topic_exercises = [exercises_map[eid] for eid in t.get('exercise_ids', []) if eid in exercises_map]
-            topic_sidebars = [sidebars_map[sid] for sid in t.get('sidebar_ids', []) if sid in sidebars_map]
-            
+            topic_exercises = [
+                {"text": exercises_map[eid]['text'], "page": exercises_map[eid].get('page')}
+                for eid in t.get('exercise_ids', []) if eid in exercises_map
+            ]
+            topic_sidebars = [
+                {"text": sidebars_map[sid]['text'], "page": sidebars_map[sid].get('page')}
+                for sid in t.get('sidebar_ids', []) if sid in sidebars_map
+            ]
+            legacy_subtopics = [
+                {
+                    "subtopic_name": st.get('name'),
+                    "summary": st.get('summary'),
+                    "page_start": st.get('page_start'),
+                    "page_end": st.get('page_end')
+                }
+                for st in subtopics_by_topic.get(t.get('id'), [])
+            ]
+
             legacy_topic = {
                 "topic_name": t.get('name'),
                 "concept_summary": t.get('summary'),
+                "page_start": t.get('page_start'),
+                "page_end": t.get('page_end'),
+                "subtopics": legacy_subtopics,
                 "details_and_sidebars": topic_sidebars,
-                "prerequisites": t.get('prerequisites', []), # these are now IDs
+                "prerequisites": t.get('prerequisites', []),
                 "original_exercises": topic_exercises,
                 "status": t.get('status', 'untaught'),
                 "last_taught_date": t.get('last_taught_date')
             }
             chapters_map[chap_id]['topics'].append(legacy_topic)
-    
+
     ontology['chapters'] = list(chapters_map.values())
 
 def generate_ontology(pdf_path: str, output_dir: str = "output"):
@@ -358,7 +407,6 @@ def generate_ontology(pdf_path: str, output_dir: str = "output"):
     job_dir = Path(output_dir) / pdf_name
     job_dir.mkdir(parents=True, exist_ok=True)
     
-    doc = fitz.open(pdf_path)
     detected_chapters = detect_chapters(pdf_path)
     
     if not detected_chapters:
@@ -379,6 +427,7 @@ def generate_ontology(pdf_path: str, output_dir: str = "output"):
         "entities": {
             "chapters": [],
             "topics": [],
+            "subtopics": [],
             "exercises": [],
             "sidebars": []
         },
@@ -405,7 +454,7 @@ def generate_ontology(pdf_path: str, output_dir: str = "output"):
                         prompt_template.format(text=chunk['text'], chapter_context=chap_ctx),
                         generation_config={
                             "response_mime_type": "application/json",
-                            "max_output_tokens": 8192,
+                            "max_output_tokens": 65536,
                             "temperature": 0.2
                         }
                     )
@@ -421,14 +470,30 @@ def generate_ontology(pdf_path: str, output_dir: str = "output"):
 
         def merge_data(chunk_data):
             chunk_entities = chunk_data.get('entities', {})
-            # Merge Entities
+            # Merge Entities (lift subtopics out of topics into their own list)
             for key in ["chapters", "topics", "exercises", "sidebars"]:
                 existing_ids = {e['id'] for e in full_ontology['entities'][key]}
                 for entity in chunk_entities.get(key, []):
                     if entity.get('id') not in existing_ids:
+                        # Extract inline subtopics before storing the topic
+                        if key == "topics":
+                            inline_subtopics = entity.pop("subtopics", [])
+                            st_existing = {e['id'] for e in full_ontology['entities']['subtopics']}
+                            for st in inline_subtopics:
+                                st['topic_id'] = entity['id']
+                                if st.get('id') not in st_existing:
+                                    full_ontology['entities']['subtopics'].append(st)
+                                    st_existing.add(st.get('id'))
                         full_ontology['entities'][key].append(entity)
                         existing_ids.add(entity.get('id'))
-            
+
+            # Also handle top-level subtopics if AI returns them separately
+            st_existing = {e['id'] for e in full_ontology['entities']['subtopics']}
+            for st in chunk_entities.get('subtopics', []):
+                if st.get('id') not in st_existing:
+                    full_ontology['entities']['subtopics'].append(st)
+                    st_existing.add(st.get('id'))
+
             # Merge Graphs
             new_graphs = chunk_data.get('graphs', {})
             for graph_key in ["chapter_structure", "exercise_mapping", "concept_dependencies"]:

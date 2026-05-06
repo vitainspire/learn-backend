@@ -308,6 +308,31 @@ CREATE TABLE IF NOT EXISTS weekly_summaries (
 CREATE INDEX IF NOT EXISTS idx_weekly_summaries_plan ON weekly_summaries(week_plan_id);
 
 -- =============================================================================
+-- Recovery worksheet submissions (auto-graded, visible to teacher)
+-- =============================================================================
+
+DROP TABLE IF EXISTS recovery_worksheet_submissions CASCADE;
+CREATE TABLE IF NOT EXISTS recovery_worksheet_submissions (
+    id              UUID        PRIMARY KEY DEFAULT gen_random_uuid(),
+    student_id      UUID        NOT NULL REFERENCES students(id) ON DELETE CASCADE,
+    teacher_id      UUID        REFERENCES teachers(id) ON DELETE SET NULL,
+    topic_name      TEXT        NOT NULL,
+    grade           TEXT,
+    subject         TEXT,
+    worksheet_json  JSONB       NOT NULL,
+    student_answers JSONB       NOT NULL DEFAULT '{}'::JSONB,
+    grading_result  JSONB       NOT NULL DEFAULT '{}'::JSONB,
+    score_pct       FLOAT       NOT NULL DEFAULT 0.0,
+    total_marks     INTEGER     NOT NULL DEFAULT 0,
+    earned_marks    FLOAT       NOT NULL DEFAULT 0.0,
+    is_reviewed     BOOLEAN     NOT NULL DEFAULT FALSE,
+    attempted_at    TIMESTAMPTZ NOT NULL DEFAULT NOW()
+);
+CREATE INDEX IF NOT EXISTS idx_rws_student    ON recovery_worksheet_submissions(student_id);
+CREATE INDEX IF NOT EXISTS idx_rws_teacher    ON recovery_worksheet_submissions(teacher_id);
+CREATE INDEX IF NOT EXISTS idx_rws_unreviewed ON recovery_worksheet_submissions(teacher_id) WHERE NOT is_reviewed;
+
+-- =============================================================================
 -- Auto-update updated_at
 -- =============================================================================
 

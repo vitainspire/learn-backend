@@ -112,7 +112,13 @@ def build_teacher_profile_dict(db, teacher_id: str) -> Optional[dict]:
 # Students
 # ---------------------------------------------------------------------------
 
+_UUID_RE = __import__('re').compile(
+    r'^[0-9a-f]{8}-[0-9a-f]{4}-[0-9a-f]{4}-[0-9a-f]{4}-[0-9a-f]{12}$', __import__('re').I
+)
+
 def get_student(db, student_id: str) -> Optional[dict]:
+    if not student_id or not _UUID_RE.match(student_id):
+        return None
     resp = db.table("students").select("*").eq("id", student_id).maybe_single().execute()
     return resp.data if resp else None
 
@@ -397,8 +403,18 @@ def save_worksheet(
     worksheet_type: Optional[str],
     num_questions: Optional[int],
     worksheet_json: dict,
+    teacher_id: Optional[str] = None,
 ) -> dict:
-    resp = db.table("worksheets").insert({
+    # Strip image_data (base64 PNGs) before persisting — they can be hundreds of KB
+    # each and cause silent 413 failures on Supabase. image_path references the file
+    # on disk and is sufficient for later retrieval.
+    import copy
+    lean = copy.deepcopy(worksheet_json)
+    for sec in lean.get("sections", []):
+        for q in sec.get("questions", []):
+            q.pop("image_data", None)
+
+    row: dict = {
         "lesson_plan_id": lesson_plan_id,
         "topic_name": topic_name,
         "grade": grade,
@@ -406,9 +422,18 @@ def save_worksheet(
         "difficulty": difficulty,
         "worksheet_type": worksheet_type,
         "num_questions": num_questions,
-        "worksheet_json": worksheet_json,
-    }).execute()
-    return resp.data[0] if resp and resp.data else {}
+        "worksheet_json": lean,
+    }
+    if teacher_id:
+        row["teacher_id"] = teacher_id
+    resp = db.table("worksheets").insert(row).execute()
+    if resp and getattr(resp, "data", None):
+        return resp.data[0]
+    # Log any API-level error returned by Supabase (it doesn't always raise)
+    err = getattr(resp, "error", None) or getattr(resp, "message", None)
+    if err:
+        print(f"[DB] save_worksheet failed: {err}")
+    return {}
 
 
 # ---------------------------------------------------------------------------
@@ -643,3 +668,111 @@ def save_weekly_summary(db, week_plan_id: str, summary_json: dict) -> dict:
 def get_weekly_summary(db, week_plan_id: str) -> Optional[dict]:
     resp = db.table("weekly_summaries").select("*").eq("week_plan_id", week_plan_id).maybe_single().execute()
     return resp.data if resp else None
+
+
+# ---------------------------------------------------------------------------
+# Study Plans & Quiz History
+# ---------------------------------------------------------------------------
+
+def get_student_study_plans(db, student_id: str) -> list[dict]:
+    """Get all study plans for a specific student."""
+    resp = db.table("study_plans").select("*").eq("student_id", student_id).order("created_at", desc=True).execute()
+    if not resp or not resp.data:
+        return []
+    return resp.data
+
+
+def get_student_quiz_history(db, student_id: str, limit: int = 50) -> list[dict]:
+    """Get quiz submission history for a specific student."""
+    resp = (
+        db.table("quiz_submissions")
+        .select("*, topics(name)")
+        .eq("student_id", student_id)
+        .order("created_at", desc=True)
+        .limit(limit)
+        .execute()
+    )
+    if not resp or not resp.data:
+        return []
+    
+    # Format the response to include topic names
+    history = []
+    for submission in resp.data:
+        formatted = dict(submission)
+        if submission.get("topics") and len(submission["topics"]) > 0:
+            formatted["topic_name"] = submission["topics"][0]["name"]
+        history.append(formatted)
+
+    return history
+
+
+# ---------------------------------------------------------------------------
+# Recovery worksheet submissions
+# ---------------------------------------------------------------------------
+
+def save_recovery_worksheet_submission(
+    db,
+    student_id: str,
+    teacher_id: Optional[str],
+    topic_name: str,
+    grade: str,
+    subject: str,
+    worksheet_json: dict,
+    student_answers: dict,
+    grading_result: dict,
+) -> dict:
+    import copy
+    lean = copy.deepcopy(worksheet_json)
+    for sec in lean.get("sections", []):
+        for q in sec.get("questions", []):
+            q.pop("image_data", None)
+
+    row = {
+        "student_id":      student_id,
+        "teacher_id":      teacher_id,
+        "topic_name":      topic_name,
+        "grade":           grade,
+        "subject":         subject,
+        "worksheet_json":  lean,
+        "student_answers": student_answers,
+        "grading_result":  grading_result.get("results", {}),
+        "score_pct":       grading_result.get("score_pct", 0.0),
+        "total_marks":     grading_result.get("total_marks", 0),
+        "earned_marks":    grading_result.get("earned_marks", 0.0),
+    }
+    resp = db.table("recovery_worksheet_submissions").insert(row).execute()
+    return resp.data[0] if resp and resp.data else {}
+
+
+def get_recovery_submissions_for_teacher(
+    db,
+    teacher_id: str,
+    unreviewed_only: bool = False,
+    limit: int = 50,
+) -> list[dict]:
+    query = (
+        db.table("recovery_worksheet_submissions")
+        .select("*, students(id, name, email)")
+        .eq("teacher_id", teacher_id)
+        .order("attempted_at", desc=True)
+        .limit(limit)
+    )
+    if unreviewed_only:
+        query = query.eq("is_reviewed", False)
+    resp = query.execute()
+    if not resp or not resp.data:
+        return []
+
+    results = []
+    for row in resp.data:
+        student = row.pop("students", None) or {}
+        results.append({
+            **row,
+            "student_name":  student.get("name", "Unknown"),
+            "student_email": student.get("email", ""),
+        })
+    return results
+
+
+def mark_recovery_submission_reviewed(db, submission_id: str) -> None:
+    db.table("recovery_worksheet_submissions").update({"is_reviewed": True}).eq("id", submission_id).execute()
