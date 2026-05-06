@@ -134,6 +134,15 @@ class SubmitRecoveryWorksheetRequest(BaseModel):
     worksheet:      dict   # original recovery worksheet JSON
     student_answers: dict  # {str(question_number): student_answer}
 
+class AssignWorksheetRequest(BaseModel):
+    worksheet_id: str
+    student_ids:  list[str]
+    teacher_id:   Optional[str] = None
+    due_date:     Optional[str] = None   # ISO date string e.g. "2026-05-10"
+
+class WorksheetAssignmentStatusRequest(BaseModel):
+    status: str   # assigned | in_progress | submitted | graded
+
 class AnswerFeedbackRequest(BaseModel):
     question:        str
     question_type:   str          # mcq, fill_blank, short_answer, true_false, match
@@ -1367,6 +1376,52 @@ async def api_worksheet_answer_feedback(req: AnswerFeedbackRequest):
         return {"success": True, **feedback}
     except Exception as e:
         raise HTTPException(status_code=500, detail=f"Feedback generation failed: {str(e)}")
+
+
+@app.post("/api/assign-worksheet")
+async def api_assign_worksheet(req: AssignWorksheetRequest, admin_db = Depends(get_admin_db)):
+    """Assign an existing worksheet to one or more students."""
+    if not req.student_ids:
+        raise HTTPException(status_code=400, detail="student_ids must not be empty")
+    try:
+        assignments = q.assign_worksheet_to_students(
+            admin_db,
+            worksheet_id=req.worksheet_id,
+            student_ids=req.student_ids,
+            teacher_id=req.teacher_id,
+            due_date=req.due_date,
+        )
+        return {"success": True, "assigned": len(assignments), "assignments": assignments}
+    except Exception as e:
+        raise HTTPException(status_code=500, detail=f"Assignment failed: {str(e)}")
+
+
+@app.get("/api/student/{student_id}/worksheets")
+async def api_get_student_worksheets(student_id: str, admin_db = Depends(get_admin_db)):
+    """Returns all worksheets assigned to a student, with full worksheet JSON."""
+    worksheets = q.get_worksheets_for_student(admin_db, student_id)
+    return {"success": True, "worksheets": worksheets, "count": len(worksheets)}
+
+
+@app.patch("/api/worksheet-assignment/{assignment_id}/status")
+async def api_update_assignment_status(
+    assignment_id: str,
+    req: WorksheetAssignmentStatusRequest,
+    admin_db = Depends(get_admin_db),
+):
+    """Update assignment status: assigned → in_progress → submitted → graded."""
+    valid = {"assigned", "in_progress", "submitted", "graded"}
+    if req.status not in valid:
+        raise HTTPException(status_code=400, detail=f"status must be one of {valid}")
+    q.update_worksheet_assignment_status(admin_db, assignment_id, req.status)
+    return {"success": True, "status": req.status}
+
+
+@app.get("/api/teacher/{teacher_id}/worksheets")
+async def api_get_teacher_worksheets(teacher_id: str, admin_db = Depends(get_admin_db)):
+    """Returns all worksheets created by a teacher (without full JSON for performance)."""
+    worksheets = q.get_worksheets_for_teacher(admin_db, teacher_id)
+    return {"success": True, "worksheets": worksheets, "count": len(worksheets)}
 
 
 @app.post("/api/submit-recovery-worksheet")

@@ -442,11 +442,79 @@ def save_worksheet(
     resp = db.table("worksheets").insert(row).execute()
     if resp and getattr(resp, "data", None):
         return resp.data[0]
-    # Log any API-level error returned by Supabase (it doesn't always raise)
     err = getattr(resp, "error", None) or getattr(resp, "message", None)
     if err:
         print(f"[DB] save_worksheet failed: {err}")
     return {}
+
+
+def assign_worksheet_to_students(
+    db,
+    worksheet_id: str,
+    student_ids: list[str],
+    teacher_id: Optional[str] = None,
+    due_date: Optional[str] = None,
+) -> list[dict]:
+    """Assign a worksheet to one or more students. Skips duplicates via ON CONFLICT DO NOTHING."""
+    rows = [
+        {
+            "worksheet_id": worksheet_id,
+            "student_id":   sid,
+            "teacher_id":   teacher_id,
+            "due_date":     due_date,
+        }
+        for sid in student_ids
+    ]
+    resp = db.table("worksheet_assignments").upsert(rows, on_conflict="worksheet_id,student_id").execute()
+    return resp.data if resp and resp.data else []
+
+
+def get_worksheets_for_student(db, student_id: str) -> list[dict]:
+    """Returns all worksheets assigned to a student, newest first, with worksheet JSON included."""
+    resp = (
+        db.table("worksheet_assignments")
+        .select("*, worksheets(*)")
+        .eq("student_id", student_id)
+        .order("assigned_at", desc=True)
+        .execute()
+    )
+    if not resp or not resp.data:
+        return []
+
+    results = []
+    for row in resp.data:
+        ws = row.pop("worksheets", None) or {}
+        results.append({
+            "assignment_id":  row["id"],
+            "worksheet_id":   row["worksheet_id"],
+            "status":         row["status"],
+            "due_date":       row.get("due_date"),
+            "assigned_at":    row["assigned_at"],
+            "topic_name":     ws.get("topic_name"),
+            "grade":          ws.get("grade"),
+            "subject":        ws.get("subject"),
+            "difficulty":     ws.get("difficulty"),
+            "worksheet_type": ws.get("worksheet_type"),
+            "num_questions":  ws.get("num_questions"),
+            "worksheet_json": ws.get("worksheet_json"),
+        })
+    return results
+
+
+def update_worksheet_assignment_status(db, assignment_id: str, status: str) -> None:
+    db.table("worksheet_assignments").update({"status": status}).eq("id", assignment_id).execute()
+
+
+def get_worksheets_for_teacher(db, teacher_id: str) -> list[dict]:
+    """Returns all worksheets created by a teacher."""
+    resp = (
+        db.table("worksheets")
+        .select("id, topic_name, grade, subject, difficulty, worksheet_type, num_questions, created_at")
+        .eq("teacher_id", teacher_id)
+        .order("created_at", desc=True)
+        .execute()
+    )
+    return resp.data if resp and resp.data else []
 
 
 # ---------------------------------------------------------------------------

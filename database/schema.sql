@@ -260,6 +260,22 @@ CREATE TABLE IF NOT EXISTS worksheets (
 CREATE INDEX IF NOT EXISTS idx_worksheets_teacher ON worksheets(teacher_id);
 CREATE INDEX IF NOT EXISTS idx_worksheets_lesson_plan ON worksheets(lesson_plan_id);
 
+DROP TABLE IF EXISTS worksheet_assignments CASCADE;
+CREATE TABLE IF NOT EXISTS worksheet_assignments (
+    id           UUID        PRIMARY KEY DEFAULT gen_random_uuid(),
+    worksheet_id UUID        NOT NULL REFERENCES worksheets(id) ON DELETE CASCADE,
+    student_id   UUID        NOT NULL REFERENCES students(id)  ON DELETE CASCADE,
+    teacher_id   UUID        REFERENCES teachers(id) ON DELETE SET NULL,
+    status       TEXT        NOT NULL DEFAULT 'assigned'
+                             CHECK (status IN ('assigned','in_progress','submitted','graded')),
+    due_date     DATE,
+    assigned_at  TIMESTAMPTZ NOT NULL DEFAULT NOW(),
+    UNIQUE (worksheet_id, student_id)
+);
+CREATE INDEX IF NOT EXISTS idx_wa_student ON worksheet_assignments(student_id);
+CREATE INDEX IF NOT EXISTS idx_wa_teacher ON worksheet_assignments(teacher_id);
+CREATE INDEX IF NOT EXISTS idx_wa_status  ON worksheet_assignments(student_id, status);
+
 -- =============================================================================
 -- Weekly planning
 -- =============================================================================
