@@ -265,10 +265,10 @@ CREATE INDEX IF NOT EXISTS idx_worksheets_lesson_plan ON worksheets(lesson_plan_
 DROP TABLE IF EXISTS worksheet_assignments CASCADE;
 CREATE TABLE IF NOT EXISTS worksheet_assignments (
     id             UUID        PRIMARY KEY DEFAULT gen_random_uuid(),
-    class_id       UUID        NOT NULL REFERENCES classes(id)    ON DELETE CASCADE,
-    worksheet_id   UUID        NOT NULL REFERENCES worksheets(id) ON DELETE CASCADE,
+    class_id       UUID        NOT NULL,
+    worksheet_id   UUID        NOT NULL,
     pass_threshold INTEGER     NOT NULL DEFAULT 60,
-    due_date       DATE,
+    due_date       TIMESTAMPTZ,
     created_at     TIMESTAMPTZ NOT NULL DEFAULT NOW(),
     UNIQUE (class_id, worksheet_id)
 );
