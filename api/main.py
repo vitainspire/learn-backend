@@ -191,6 +191,7 @@ class UpdateTeacherRequest(BaseModel):
 class CreateStudentRequest(BaseModel):
     name: str
     email: str
+    teacher_id: Optional[str] = None
     learning_level: Optional[str] = "intermediate"
     learning_style: Optional[str] = "visual"
     attention_span: Optional[str] = "medium"
@@ -201,6 +202,7 @@ class CreateStudentRequest(BaseModel):
 class UpdateStudentRequest(BaseModel):
     name: Optional[str] = None
     email: Optional[str] = None
+    teacher_id: Optional[str] = None
     learning_level: Optional[str] = None
     learning_style: Optional[str] = None
     attention_span: Optional[str] = None
@@ -246,6 +248,7 @@ class SignupRequest(BaseModel):
     assessment_style: Optional[str]     = "quizzes"
     difficulty_preference: Optional[str]= "medium"
     # Student profile fields (ignored when role == "teacher")
+    teacher_id: Optional[str]           = None
     learning_level: Optional[str]       = "intermediate"
     learning_style: Optional[str]       = "visual"
     attention_span: Optional[str]       = "medium"
@@ -559,6 +562,7 @@ async def auth_signup(req: SignupRequest, db=Depends(get_db)):
                 db,
                 name=req.name,
                 email=req.email,
+                teacher_id=req.teacher_id,
                 learning_level=req.learning_level,
                 learning_style=req.learning_style,
                 attention_span=req.attention_span,
@@ -733,6 +737,7 @@ async def create_student(req: CreateStudentRequest, db = Depends(get_db)):
             db,
             name=req.name,
             email=req.email,
+            teacher_id=req.teacher_id,
             learning_level=req.learning_level,
             learning_style=req.learning_style,
             attention_span=req.attention_span,
@@ -1187,14 +1192,24 @@ async def clear_student_notifications(student_id: Optional[str] = None, db = Dep
 # Teacher dashboard
 # ---------------------------------------------------------------------------
 
+@app.get("/api/teacher/{teacher_id}/students")
+async def get_teacher_students(teacher_id: str, admin_db = Depends(get_admin_db)):
+    """Returns all students linked to this teacher."""
+    students = q.get_students_for_teacher(admin_db, teacher_id)
+    return {"students": students, "count": len(students)}
+
+
 @app.get("/api/teacher/dashboard")
-async def get_teacher_dashboard(db = Depends(get_db)):
-    db_students = db.table("students").select("*").execute().data
+async def get_teacher_dashboard(teacher_id: Optional[str] = None, admin_db = Depends(get_admin_db)):
+    if teacher_id:
+        db_students = q.get_students_for_teacher(admin_db, teacher_id)
+    else:
+        db_students = admin_db.table("students").select("*").execute().data
 
     if db_students:
         student_objects = []
         for s in db_students:
-            mastery = q.get_student_mastery_dict(db, s["id"])
+            mastery = q.get_student_mastery_dict(admin_db, s["id"])
             sp = get_default_student()
             sp.student_id        = s["id"]
             sp.frustration_level = s.get("frustration_level") or 0.0
@@ -1209,7 +1224,7 @@ async def get_teacher_dashboard(db = Depends(get_db)):
         engine = ClassEngine([s1, s2, s3])
         total  = 3
 
-    at_risk_db = q.get_at_risk_students(db)
+    at_risk_db = q.get_at_risk_students(admin_db)
 
     return {
         "class_name":     "Grade 1 - Section A",

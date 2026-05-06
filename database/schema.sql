@@ -57,6 +57,8 @@ CREATE TABLE IF NOT EXISTS students (
     name             TEXT        NOT NULL,
     password_hash    TEXT,
 
+    teacher_id           UUID  REFERENCES teachers(id) ON DELETE SET NULL,
+
     learning_level       TEXT  NOT NULL DEFAULT 'intermediate' CHECK (learning_level IN ('beginner','intermediate','advanced')),
     learning_style       TEXT  NOT NULL DEFAULT 'visual'       CHECK (learning_style IN ('visual','story','examples','auditory')),
     attention_span       TEXT  NOT NULL DEFAULT 'medium'       CHECK (attention_span IN ('short','medium','long')),
@@ -68,6 +70,7 @@ CREATE TABLE IF NOT EXISTS students (
     created_at  TIMESTAMPTZ NOT NULL DEFAULT NOW(),
     updated_at  TIMESTAMPTZ NOT NULL DEFAULT NOW()
 );
+CREATE INDEX IF NOT EXISTS idx_students_teacher ON students(teacher_id);
 
 -- =============================================================================
 -- Classroom management

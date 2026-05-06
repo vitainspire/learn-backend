@@ -144,13 +144,26 @@ def create_student(db, name: str, email: str, **profile_fields) -> dict:
         "frustration_level": profile_fields.get("frustration_level", 0.0),
         "mistake_patterns": profile_fields.get("mistake_patterns", []),
     }
+    if profile_fields.get("teacher_id"):
+        data["teacher_id"] = profile_fields["teacher_id"]
     resp = db.table("students").insert(data).execute()
     return resp.data[0]
 
 
+def get_students_for_teacher(db, teacher_id: str) -> list[dict]:
+    resp = (
+        db.table("students")
+        .select("*")
+        .eq("teacher_id", teacher_id)
+        .order("created_at", desc=False)
+        .execute()
+    )
+    return resp.data if resp and resp.data else []
+
+
 def update_student(db, student_id: str, fields: dict) -> Optional[dict]:
     allowed = {"name", "email", "learning_level", "learning_style", "attention_span",
-               "language_proficiency", "mistake_patterns"}
+               "language_proficiency", "mistake_patterns", "teacher_id"}
     update_data = {k: v for k, v in fields.items() if k in allowed and v is not None}
     if update_data:
         db.table("students").update(update_data).eq("id", student_id).execute()
