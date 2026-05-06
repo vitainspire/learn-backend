@@ -146,6 +146,8 @@ def create_student(db, name: str, email: str, **profile_fields) -> dict:
     }
     if profile_fields.get("teacher_id"):
         data["teacher_id"] = profile_fields["teacher_id"]
+    if profile_fields.get("roll_number"):
+        data["roll_number"] = profile_fields["roll_number"]
     resp = db.table("students").insert(data).execute()
     return resp.data[0]
 
@@ -163,7 +165,7 @@ def get_students_for_teacher(db, teacher_id: str) -> list[dict]:
 
 def update_student(db, student_id: str, fields: dict) -> Optional[dict]:
     allowed = {"name", "email", "learning_level", "learning_style", "attention_span",
-               "language_proficiency", "mistake_patterns", "teacher_id"}
+               "language_proficiency", "mistake_patterns", "teacher_id", "roll_number"}
     update_data = {k: v for k, v in fields.items() if k in allowed and v is not None}
     if update_data:
         db.table("students").update(update_data).eq("id", student_id).execute()

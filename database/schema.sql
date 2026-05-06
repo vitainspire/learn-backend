@@ -58,6 +58,7 @@ CREATE TABLE IF NOT EXISTS students (
     password_hash    TEXT,
 
     teacher_id           UUID  REFERENCES teachers(id) ON DELETE SET NULL,
+    roll_number          TEXT,
 
     learning_level       TEXT  NOT NULL DEFAULT 'intermediate' CHECK (learning_level IN ('beginner','intermediate','advanced')),
     learning_style       TEXT  NOT NULL DEFAULT 'visual'       CHECK (learning_style IN ('visual','story','examples','auditory')),

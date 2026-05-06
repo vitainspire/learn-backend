@@ -201,6 +201,7 @@ class CreateStudentRequest(BaseModel):
     name: str
     email: str
     teacher_id: Optional[str] = None
+    roll_number: Optional[str] = None
     learning_level: Optional[str] = "intermediate"
     learning_style: Optional[str] = "visual"
     attention_span: Optional[str] = "medium"
@@ -212,6 +213,7 @@ class UpdateStudentRequest(BaseModel):
     name: Optional[str] = None
     email: Optional[str] = None
     teacher_id: Optional[str] = None
+    roll_number: Optional[str] = None
     learning_level: Optional[str] = None
     learning_style: Optional[str] = None
     attention_span: Optional[str] = None
@@ -258,6 +260,7 @@ class SignupRequest(BaseModel):
     difficulty_preference: Optional[str]= "medium"
     # Student profile fields (ignored when role == "teacher")
     teacher_id: Optional[str]           = None
+    roll_number: Optional[str]          = None
     learning_level: Optional[str]       = "intermediate"
     learning_style: Optional[str]       = "visual"
     attention_span: Optional[str]       = "medium"
@@ -572,6 +575,7 @@ async def auth_signup(req: SignupRequest, db=Depends(get_db)):
                 name=req.name,
                 email=req.email,
                 teacher_id=req.teacher_id,
+                roll_number=req.roll_number,
                 learning_level=req.learning_level,
                 learning_style=req.learning_style,
                 attention_span=req.attention_span,
@@ -747,6 +751,7 @@ async def create_student(req: CreateStudentRequest, db = Depends(get_db)):
             name=req.name,
             email=req.email,
             teacher_id=req.teacher_id,
+            roll_number=req.roll_number,
             learning_level=req.learning_level,
             learning_style=req.learning_style,
             attention_span=req.attention_span,
