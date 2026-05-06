@@ -135,13 +135,10 @@ class SubmitRecoveryWorksheetRequest(BaseModel):
     student_answers: dict  # {str(question_number): student_answer}
 
 class AssignWorksheetRequest(BaseModel):
-    worksheet_id: str
-    student_ids:  list[str]
-    teacher_id:   Optional[str] = None
-    due_date:     Optional[str] = None   # ISO date string e.g. "2026-05-10"
-
-class WorksheetAssignmentStatusRequest(BaseModel):
-    status: str   # assigned | in_progress | submitted | graded
+    worksheet_id:   str
+    class_id:       str
+    pass_threshold: int           = 60
+    due_date:       Optional[str] = None   # ISO date string e.g. "2026-05-10"
 
 class AnswerFeedbackRequest(BaseModel):
     question:        str
@@ -1275,8 +1272,9 @@ async def api_generate_worksheet(
         )
         
         # Save to database
+        saved_worksheet_id = None
         try:
-            q.save_worksheet(
+            saved = q.save_worksheet(
                 admin_db,
                 lesson_plan_id=None,
                 topic_name=req.topic_name,
@@ -1288,6 +1286,7 @@ async def api_generate_worksheet(
                 worksheet_json=worksheet,
                 teacher_id=req.teacher_id,
             )
+            saved_worksheet_id = saved.get("id")
         except Exception as save_err:
             print(f"[generate-worksheet] DB save skipped: {save_err}")
         
@@ -1317,7 +1316,7 @@ async def api_generate_worksheet(
             )
         else:
             # Return JSON (default for backward compatibility)
-            return {"success": True, "worksheet": worksheet, "debug_marker": "v2026-04-16-1335"}
+            return {"success": True, "worksheet": worksheet, "worksheet_id": saved_worksheet_id, "debug_marker": "v2026-04-16-1335"}
             
     except Exception as e:
         raise HTTPException(status_code=500, detail=f"Worksheet generation failed: {str(e)}")
@@ -1385,41 +1384,25 @@ async def api_worksheet_answer_feedback(req: AnswerFeedbackRequest):
 
 @app.post("/api/assign-worksheet")
 async def api_assign_worksheet(req: AssignWorksheetRequest, admin_db = Depends(get_admin_db)):
-    """Assign an existing worksheet to one or more students."""
-    if not req.student_ids:
-        raise HTTPException(status_code=400, detail="student_ids must not be empty")
+    """Assign a worksheet to a class."""
     try:
-        assignments = q.assign_worksheet_to_students(
+        assignment = q.assign_worksheet_to_class(
             admin_db,
+            class_id=req.class_id,
             worksheet_id=req.worksheet_id,
-            student_ids=req.student_ids,
-            teacher_id=req.teacher_id,
+            pass_threshold=req.pass_threshold,
             due_date=req.due_date,
         )
-        return {"success": True, "assigned": len(assignments), "assignments": assignments}
+        return {"success": True, "assignment": assignment}
     except Exception as e:
         raise HTTPException(status_code=500, detail=f"Assignment failed: {str(e)}")
 
 
 @app.get("/api/student/{student_id}/worksheets")
 async def api_get_student_worksheets(student_id: str, admin_db = Depends(get_admin_db)):
-    """Returns all worksheets assigned to a student, with full worksheet JSON."""
+    """Returns all worksheets assigned to a student via their class memberships."""
     worksheets = q.get_worksheets_for_student(admin_db, student_id)
     return {"success": True, "worksheets": worksheets, "count": len(worksheets)}
-
-
-@app.patch("/api/worksheet-assignment/{assignment_id}/status")
-async def api_update_assignment_status(
-    assignment_id: str,
-    req: WorksheetAssignmentStatusRequest,
-    admin_db = Depends(get_admin_db),
-):
-    """Update assignment status: assigned → in_progress → submitted → graded."""
-    valid = {"assigned", "in_progress", "submitted", "graded"}
-    if req.status not in valid:
-        raise HTTPException(status_code=400, detail=f"status must be one of {valid}")
-    q.update_worksheet_assignment_status(admin_db, assignment_id, req.status)
-    return {"success": True, "status": req.status}
 
 
 @app.get("/api/teacher/{teacher_id}/worksheets")

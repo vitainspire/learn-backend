@@ -256,6 +256,7 @@ CREATE TABLE IF NOT EXISTS worksheets (
     worksheet_type TEXT,
     num_questions  INTEGER,
     worksheet_json JSONB       NOT NULL,
+    status         TEXT        NOT NULL DEFAULT 'draft',
     created_at     TIMESTAMPTZ NOT NULL DEFAULT NOW()
 );
 CREATE INDEX IF NOT EXISTS idx_worksheets_teacher ON worksheets(teacher_id);
@@ -263,19 +264,16 @@ CREATE INDEX IF NOT EXISTS idx_worksheets_lesson_plan ON worksheets(lesson_plan_
 
 DROP TABLE IF EXISTS worksheet_assignments CASCADE;
 CREATE TABLE IF NOT EXISTS worksheet_assignments (
-    id           UUID        PRIMARY KEY DEFAULT gen_random_uuid(),
-    worksheet_id UUID        NOT NULL REFERENCES worksheets(id) ON DELETE CASCADE,
-    student_id   UUID        NOT NULL REFERENCES students(id)  ON DELETE CASCADE,
-    teacher_id   UUID        REFERENCES teachers(id) ON DELETE SET NULL,
-    status       TEXT        NOT NULL DEFAULT 'assigned'
-                             CHECK (status IN ('assigned','in_progress','submitted','graded')),
-    due_date     DATE,
-    assigned_at  TIMESTAMPTZ NOT NULL DEFAULT NOW(),
-    UNIQUE (worksheet_id, student_id)
+    id             UUID        PRIMARY KEY DEFAULT gen_random_uuid(),
+    class_id       UUID        NOT NULL REFERENCES classes(id)    ON DELETE CASCADE,
+    worksheet_id   UUID        NOT NULL REFERENCES worksheets(id) ON DELETE CASCADE,
+    pass_threshold INTEGER     NOT NULL DEFAULT 60,
+    due_date       DATE,
+    created_at     TIMESTAMPTZ NOT NULL DEFAULT NOW(),
+    UNIQUE (class_id, worksheet_id)
 );
-CREATE INDEX IF NOT EXISTS idx_wa_student ON worksheet_assignments(student_id);
-CREATE INDEX IF NOT EXISTS idx_wa_teacher ON worksheet_assignments(teacher_id);
-CREATE INDEX IF NOT EXISTS idx_wa_status  ON worksheet_assignments(student_id, status);
+CREATE INDEX IF NOT EXISTS idx_wa_class     ON worksheet_assignments(class_id);
+CREATE INDEX IF NOT EXISTS idx_wa_worksheet ON worksheet_assignments(worksheet_id);
 
 -- =============================================================================
 -- Weekly planning

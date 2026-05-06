@@ -438,6 +438,7 @@ def save_worksheet(
         "worksheet_type": worksheet_type,
         "num_questions": num_questions,
         "worksheet_json": lean,
+        "status": "draft",
     }
     if teacher_id:
         row["teacher_id"] = teacher_id
@@ -450,34 +451,36 @@ def save_worksheet(
     return {}
 
 
-def assign_worksheet_to_students(
+def assign_worksheet_to_class(
     db,
+    class_id: str,
     worksheet_id: str,
-    student_ids: list[str],
-    teacher_id: Optional[str] = None,
+    pass_threshold: int = 60,
     due_date: Optional[str] = None,
-) -> list[dict]:
-    """Assign a worksheet to one or more students. Skips duplicates via ON CONFLICT DO NOTHING."""
-    rows = [
-        {
-            "worksheet_id": worksheet_id,
-            "student_id":   sid,
-            "teacher_id":   teacher_id,
-            "due_date":     due_date,
-        }
-        for sid in student_ids
-    ]
-    resp = db.table("worksheet_assignments").upsert(rows, on_conflict="worksheet_id,student_id").execute()
-    return resp.data if resp and resp.data else []
+) -> dict:
+    """Assign a worksheet to a class. Upserts on (class_id, worksheet_id)."""
+    row = {
+        "class_id":       class_id,
+        "worksheet_id":   worksheet_id,
+        "pass_threshold": pass_threshold,
+        "due_date":       due_date,
+    }
+    resp = db.table("worksheet_assignments").upsert(row, on_conflict="class_id,worksheet_id").execute()
+    return (resp.data or [{}])[0]
 
 
-def get_worksheets_for_student(db, student_id: str) -> list[dict]:
-    """Returns all worksheets assigned to a student, newest first, with worksheet JSON included."""
+def get_worksheets_for_student(db, student_user_id: str) -> list[dict]:
+    """Returns all worksheets assigned to a student via their class memberships."""
+    memberships = db.table("class_memberships").select("class_id").eq("student_user_id", student_user_id).execute()
+    if not memberships or not memberships.data:
+        return []
+    class_ids = [m["class_id"] for m in memberships.data]
+
     resp = (
         db.table("worksheet_assignments")
         .select("*, worksheets(*)")
-        .eq("student_id", student_id)
-        .order("assigned_at", desc=True)
+        .in_("class_id", class_ids)
+        .order("created_at", desc=True)
         .execute()
     )
     if not resp or not resp.data:
@@ -488,10 +491,11 @@ def get_worksheets_for_student(db, student_id: str) -> list[dict]:
         ws = row.pop("worksheets", None) or {}
         results.append({
             "assignment_id":  row["id"],
+            "class_id":       row["class_id"],
             "worksheet_id":   row["worksheet_id"],
-            "status":         row["status"],
+            "pass_threshold": row.get("pass_threshold"),
             "due_date":       row.get("due_date"),
-            "assigned_at":    row["assigned_at"],
+            "created_at":     row.get("created_at"),
             "topic_name":     ws.get("topic_name"),
             "grade":          ws.get("grade"),
             "subject":        ws.get("subject"),
@@ -501,10 +505,6 @@ def get_worksheets_for_student(db, student_id: str) -> list[dict]:
             "worksheet_json": ws.get("worksheet_json"),
         })
     return results
-
-
-def update_worksheet_assignment_status(db, assignment_id: str, status: str) -> None:
-    db.table("worksheet_assignments").update({"status": status}).eq("id", assignment_id).execute()
 
 
 def get_worksheets_for_teacher(db, teacher_id: str) -> list[dict]:
