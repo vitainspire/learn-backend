@@ -3,7 +3,7 @@ import json
 import re
 import tempfile
 from pathlib import Path
-from typing import Optional
+from typing import Optional, Union
 
 from fastapi import FastAPI, HTTPException, Depends, Header, Request
 from fastapi.responses import FileResponse, Response
@@ -109,7 +109,7 @@ class ElementaryLessonRequest(BaseModel):
     learning_gaps: Optional[list] = None
 
 class WorksheetRequest(BaseModel):
-    lesson_plan: dict
+    lesson_plan: Union[dict, str]
     topic_name: str
     grade: str
     subject: str
