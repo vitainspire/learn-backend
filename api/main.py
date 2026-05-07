@@ -1065,6 +1065,7 @@ async def api_teach_topic(req: TeachTopicRequest, db = Depends(get_db)):
 
 @app.post("/api/generate-study-plan")
 async def api_generate_study_plan(req: StudyPlanRequest, db = Depends(get_db)):
+    ontology = None
     try:
         ontology = _get_ontology_or_404(db, req.book)
         chapter, topic = _get_topic_data(ontology, req.chapter_idx, req.topic_idx)
