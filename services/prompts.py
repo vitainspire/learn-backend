@@ -472,11 +472,15 @@ WORKSHEET_SCHEMA: dict = {
 }
 
 
-def extract_worksheet_context(lesson_plan: dict) -> str:
+def extract_worksheet_context(lesson_plan) -> str:
     """
     Pull only the pedagogically relevant fields from a 5E lesson plan dict
     and return a compact, token-efficient string for the worksheet prompt.
+    Accepts a plain string as a passthrough for frontends that send text context.
     """
+    if isinstance(lesson_plan, str):
+        return lesson_plan
+
     # 5E Keys: engage, explore, explain, elaborate, evaluate
     explain   = lesson_plan.get("explain", {}) or {}
     elaborate = lesson_plan.get("elaborate", {}) or {}
