@@ -122,6 +122,7 @@ def generate_elementary_lesson_plan(
     student_profile: dict | None = None,
     learning_gaps: list | None = None,
     region: str = "",
+    lesson_type: str = "activity",
 ):
     """
     Generates a story-driven, energy-managed lesson plan for Grades 1–5.
@@ -181,6 +182,7 @@ def generate_elementary_lesson_plan(
         student_ctx=student_ctx,
         gap_ctx=gap_ctx,
         region=region,
+        lesson_type=lesson_type,
     )
 
     return safe_generate_content(

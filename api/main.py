@@ -65,6 +65,7 @@ class LessonPlanRequest(_GradeCoerceMixin):
     duration: str
     subject: Optional[str] = None
     region: Optional[str] = None
+    lesson_type: Optional[str] = "activity"  # "lecture" | "activity" | "storytelling"
     teacher_id: Optional[str] = None       # fetch profile from DB
     student_id: Optional[str] = None       # fetch profile from DB
     teacher_profile: Optional[dict] = None  # inline fallback
@@ -107,6 +108,7 @@ class ElementaryLessonRequest(_GradeCoerceMixin):
     book: Optional[str] = None
     chapter_idx: Optional[int] = None
     topic_idx: Optional[int] = None
+    lesson_type: Optional[str] = "activity"  # "lecture" | "activity" | "storytelling"
     teacher_id: Optional[str] = None       # fetch profile from DB
     student_id: Optional[str] = None       # fetch profile from DB
     teacher_profile: Optional[dict] = None  # inline fallback
@@ -1001,6 +1003,7 @@ async def api_generate_lesson_plan(
         student_profile=student_profile,
         learning_gaps=gaps,
         region=req.region or "",
+        lesson_type=req.lesson_type or "activity",
     )
     if isinstance(plan, dict) and req.region:
         plan["region"] = req.region
@@ -1064,6 +1067,7 @@ async def api_generate_elementary_lesson_plan(
         teacher_profile=teacher_profile,
         student_profile=student_profile,
         learning_gaps=req.learning_gaps,
+        lesson_type=req.lesson_type or "activity",
     )
     if isinstance(plan, dict) and ontology_for_exercises:
         plan = _inject_exercise_content(plan, ontology_for_exercises)

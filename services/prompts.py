@@ -778,9 +778,15 @@ def build_elementary_lesson_prompt(
     student_ctx: str = "",
     gap_ctx: str = "",
     region: str = "",
+    lesson_type: str = "activity",
 ) -> str:
     """
     Builds the user-facing prompt for generate_elementary_lesson_plan.
+    All types use the 5E framework (Engage→Explore→Explain→Elaborate→Evaluate)
+    but the content of each phase is shaped by lesson_type:
+      "lecture"      — teacher-led direct instruction and scripted explanation
+      "activity"     — hands-on student discovery and manipulation
+      "storytelling" — narrative arc; concept embedded in a story
     ELEMENTARY_SYSTEM_PROMPT is the system instruction — do NOT include it here.
     """
     curriculum_section = (
@@ -789,7 +795,6 @@ def build_elementary_lesson_prompt(
         else "Use your internal knowledge for this topic and grade."
     )
 
-    # Build region-specific section if a known region is provided
     rc = REGION_CONFIGS.get(region, None)
     if rc:
         region_section = f"""
@@ -819,12 +824,86 @@ Format: {{ "english": "word", "regional": "romanised", "script": "native script"
 
     context_lines = "\n".join(filter(None, [teacher_ctx, student_ctx, gap_ctx]))
 
-    return f"""Create a high-impact 5E lesson plan for the topic: {topic_name}
+    # Per-type phase guidance injected into the prompt
+    if lesson_type == "lecture":
+        type_label = "LECTURE"
+        phase_guidance = """
+HOW TO FILL EACH 5E PHASE FOR A LECTURE LESSON:
+
+ENGAGE — Open with a thought-provoking question or a surprising real-world fact.
+  Teacher activates prior knowledge through direct Q&A with the class.
+  The hook is a question or statement that the teacher poses verbally — no props or experiments.
+
+EXPLORE — Teacher-led structured observation, NOT free hands-on discovery.
+  Teacher demonstrates or shows examples on the board; students observe, take notes, answer
+  targeted questions. Students are guided step by step — they do not self-discover.
+
+EXPLAIN — The heart of a lecture lesson. Teacher delivers a clear, scripted direct explanation.
+  Include exact board work (what to write/draw), worked examples with think-alouds,
+  and precise definitions. Students write definitions or copy key points.
+
+ELABORATE — Guided practice: teacher works through problems WITH the class.
+  Students solve on slates or paper following the teacher's model.
+  Teacher calls on individuals, corrects errors immediately, and narrates the solution process.
+
+EVALUATE — Quick written exit check: 2–3 problems students solve independently at their desks.
+  Teacher circulates and collects data on understanding before dismissal.
+"""
+    elif lesson_type == "storytelling":
+        type_label = "STORYTELLING"
+        phase_guidance = """
+HOW TO FILL EACH 5E PHASE FOR A STORYTELLING LESSON:
+
+ENGAGE — Open with a vivid story scene: introduce a character, a setting, and a problem.
+  The hook is the opening lines of the story read aloud by the teacher.
+  Students are drawn in emotionally; they predict what will happen.
+
+EXPLORE — Continue the narrative. Characters encounter the concept in action within the story —
+  without naming it yet. Students follow the plot, make predictions, and notice patterns.
+  Use "pause and ask" questions mid-story to keep students active.
+  The teacher_actions describe how to narrate/perform the story; student_actions are predictions and reactions.
+
+EXPLAIN — Teacher pauses the story at the "aha moment" and bridges the narrative to the real concept.
+  Name the concept explicitly. Say: "What [character] just discovered is called..."
+  Connect each story event to the real-world meaning of the concept.
+
+ELABORATE — Students extend or retell the story, or solve a problem inside the story world.
+  Example tasks: "Write the next scene," "Draw what happens if the character uses [concept] again,"
+  or "Solve the problem the character faces next." The concept is applied through the story context.
+
+EVALUATE — Students reflect on what the character learned = what they learned.
+  Closing question connects the story resolution to the real concept.
+  Exit prompt: "The story taught me that ___."
+"""
+    else:  # activity (default)
+        type_label = "ACTIVITY"
+        phase_guidance = """
+HOW TO FILL EACH 5E PHASE FOR AN ACTIVITY LESSON:
+
+ENGAGE — Use a physical object, a short demo, or a provocative "what do you think will happen?"
+  question to spark curiosity. Students predict or touch the object before any explanation.
+
+EXPLORE — Students physically DO something: manipulate materials, measure, sort, build, or experiment.
+  They work in pairs or small groups. The teacher circulates and asks guiding questions
+  WITHOUT revealing the answer. Students discover the concept through the activity itself.
+
+EXPLAIN — Only AFTER students have done the activity, the teacher names what they discovered.
+  Connect the hands-on experience to the concept formally. Students share what they noticed first.
+
+ELABORATE — Students apply the concept in a new hands-on context: a different scenario, a challenge task,
+  or a real-world problem. This is harder than the Explore activity and requires independent thinking.
+
+EVALUATE — Students demonstrate understanding through an observable product or performance:
+  draw a diagram, act it out, sort cards, or respond to an exit question grounded in the activity.
+"""
+
+    return f"""Create a high-impact 5E lesson plan ({type_label} style) for the topic: {topic_name}
 
 Topic:    {topic_name}
 Subject:  {subject}
 Grade:    {grade}
 Duration: {duration} minutes
+Lesson Type: {lesson_type}
 {region_section}
 {context_lines}
 
@@ -832,12 +911,15 @@ CURRICULUM CONTEXT:
 {curriculum_section}
 
 ---
+{phase_guidance}
+---
 
 The lesson plan must be:
 - Short but detailed — every instruction is actionable
 - Easy to teach — step-by-step teacher actions, exact words included
 - Focused on student interaction, critical thinking, and real understanding
 - Written in clear, simple classroom language
+- Distinctly shaped by the lesson type above — the content of each phase must reflect the {type_label} approach
 
 ---
 
@@ -845,6 +927,7 @@ Return a single valid JSON object with EXACTLY this structure:
 
 {{
   "lesson_title": "string",
+  "lesson_type": "{lesson_type}",
   "grade": "{grade}",
   "subject": "{subject}",
   "duration_minutes": {duration},
@@ -854,7 +937,7 @@ Return a single valid JSON object with EXACTLY this structure:
 
   "engage": {{
     "duration_minutes": "number (2–3 min)",
-    "hook": "real-life scenario, object, or question that grabs attention",
+    "hook": "the opening moment — shaped by the lesson type (question/fact for lecture, object/demo for activity, story opening for storytelling)",
     "teacher_actions": ["exact step-by-step actions and words the teacher says"],
     "student_actions": ["what students respond/do"],
     "teacher_questions": ["exact question 1 to ask", "exact question 2 to ask"]
@@ -862,9 +945,9 @@ Return a single valid JSON object with EXACTLY this structure:
 
   "explore": {{
     "duration_minutes": "number (5–10 min)",
-    "activity_title": "short name of the activity",
-    "teacher_actions": ["step-by-step setup and facilitation instructions"],
-    "student_actions": ["what students physically do or discover"],
+    "activity_title": "short name — for lecture: 'Structured Observation', for activity: hands-on task name, for storytelling: story arc title",
+    "teacher_actions": ["step-by-step facilitation instructions shaped by lesson type"],
+    "student_actions": ["what students physically do — shaped by lesson type"],
     "steps": ["1. first step", "2. second step", "3. third step"],
     "guiding_questions": ["question that pushes thinking without giving the answer", "another guiding question"]
   }},
@@ -872,7 +955,7 @@ Return a single valid JSON object with EXACTLY this structure:
   "explain": {{
     "duration_minutes": "number (5 min)",
     "concept_explanation": "clear explanation in simple terms — write as if speaking to the class",
-    "teacher_actions": ["exactly what the teacher says and does, including board work"],
+    "teacher_actions": ["exactly what the teacher says and does, including board work — shaped by lesson type"],
     "student_actions": ["what students write, say, or respond"],
     "examples": ["concrete example 1", "concrete example 2"],
     "reasoning_question": "one 'why' or 'how do you know' question to deepen understanding",
@@ -883,10 +966,10 @@ Return a single valid JSON object with EXACTLY this structure:
 
   "elaborate": {{
     "duration_minutes": "number (5–10 min)",
-    "teacher_actions": ["instructions for setting up and running both tasks"],
+    "teacher_actions": ["instructions for setting up and running both tasks — shaped by lesson type"],
     "student_actions": ["what students do for each task"],
-    "task_1": {{"label": "Guided Practice", "description": "easier task — builds confidence"}},
-    "task_2": {{"label": "Challenge", "description": "slightly harder — real-life or applied use"}},
+    "task_1": {{"label": "Guided Practice", "description": "easier task shaped by lesson type — builds confidence"}},
+    "task_2": {{"label": "Challenge", "description": "harder task shaped by lesson type — real-life or applied use"}},
     "incorrect_example": {{"example": "a wrong answer or method", "prompt": "What is wrong here? How would you fix it?"}}
   }},
 
@@ -894,7 +977,7 @@ Return a single valid JSON object with EXACTLY this structure:
     "duration_minutes": "number (2–3 min)",
     "questions": [
       {{"type": "concept", "question": "Can you explain what [topic] means in your own words?"}},
-      {{"type": "example", "question": "problem or identification question"}},
+      {{"type": "example", "question": "problem or identification question shaped by lesson type"}},
       {{"type": "reasoning", "question": "why/how question that reveals real understanding"}}
     ]
   }},
@@ -911,7 +994,7 @@ Return a single valid JSON object with EXACTLY this structure:
 RULES:
 1. Every teacher_actions entry must be a complete, speakable instruction — no vague phrases like "explain the concept".
 2. Every student_actions entry describes observable behaviour — what you would SEE students doing.
-3. Explore phase must NOT reveal the answer — students discover it themselves.
+3. Explore phase content must match the {type_label} approach described above — do NOT default to generic hands-on discovery for a lecture lesson or generic Q&A for an activity lesson.
 4. Elaborate task_1 must be easier than task_2.
 5. Misconceptions must be things real students at this grade ACTUALLY get wrong.
 6. Total duration of all phases must add up to {duration} minutes.
