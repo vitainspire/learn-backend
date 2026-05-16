@@ -9,7 +9,10 @@ from fastapi import FastAPI, HTTPException, Depends, Request
 from fastapi.responses import HTMLResponse, FileResponse, Response
 from fastapi.exceptions import RequestValidationError
 from fastapi.staticfiles import StaticFiles
-from pydantic import BaseModel
+from pydantic import BaseModel, BeforeValidator
+from typing import Annotated
+
+GradeStr = Annotated[str, BeforeValidator(str)]
 from datetime import datetime
 
 import sys
@@ -48,7 +51,7 @@ OUTPUT_DIR.mkdir(exist_ok=True)
 # ---------------------------------------------------------------------------
 
 class LessonPlanRequest(BaseModel):
-    grade: str
+    grade: GradeStr
     book: str
     chapter_idx: int
     topic_idx: int
@@ -65,11 +68,11 @@ class TeachTopicRequest(BaseModel):
     teacher_id: str = "00000000-0000-0000-0000-000000000001"
 
 class StudyPlanRequest(BaseModel):
-    grade: str
+    grade: GradeStr
     book: str
     chapter_idx: int
     topic_idx: int
-    student_profile: dict
+    student_profile: Optional[dict] = None
     topic_name: Optional[str] = None
     context_type: Optional[str] = None
     duration: Optional[str] = ""
@@ -89,7 +92,7 @@ class VisualGuideRequest(BaseModel):
     lesson_plan: dict
 
 class ElementaryLessonRequest(BaseModel):
-    grade: str
+    grade: GradeStr
     subject: str
     topic: str
     duration: int
@@ -103,7 +106,7 @@ class ElementaryLessonRequest(BaseModel):
 class WorksheetRequest(BaseModel):
     lesson_plan: Union[dict, str]
     topic_name: str
-    grade: str
+    grade: GradeStr
     subject: str
     num_questions: Optional[int] = 15
     difficulty: Optional[str] = "mixed"
@@ -117,7 +120,7 @@ class RecoveryWorksheetRequest(BaseModel):
     student_id: Optional[str] = None
     student_profile: Optional[dict] = None
     topic_name: str
-    grade: str
+    grade: GradeStr
     subject: str
     learning_gaps: Optional[list[str]] = None
     num_questions: Optional[int] = 10
@@ -127,7 +130,7 @@ class RecoveryWorksheetRequest(BaseModel):
 
 class QuizRequest(BaseModel):
     topic_name: str
-    grade: str
+    grade: GradeStr
     subject: str
     lesson_plan: Optional[dict] = None
     ontology_context: Optional[str] = None
@@ -140,7 +143,7 @@ class QuizRequest(BaseModel):
 # --- Week planning ---
 
 class WeekPlanCreateRequest(BaseModel):
-    grade: str
+    grade: GradeStr
     subject: str
     week_start_date: str          # "YYYY-MM-DD" (must be a Monday)
     concepts: list[str]           # unordered list; AI will sequence them
@@ -207,21 +210,87 @@ def _infer_subject(book_name: str) -> str:
 
 DATA_DIR = PROJECT_ROOT / "data"
 
-def _get_ontology_or_404(db, book_name: str) -> dict:
+_resolved_book_cache: dict = {}   # requested -> canonical seeded name
+
+
+def _list_seeded_books(db) -> list[str]:
+    names: set[str] = set()
     try:
-        ontology = q.get_ontology_json(db, book_name)
+        names.update(q.list_books(db) or [])
+    except Exception:
+        pass
+    if DATA_DIR.exists():
+        names.update(f.stem for f in DATA_DIR.glob("*.json"))
+    return sorted(names)
+
+
+def _resolve_book_name(db, requested: str) -> Optional[str]:
+    """Map a requested book name to an actual seeded one.
+
+    Tries exact match, then normalised variants (lowercase, spaces→_),
+    then common subject-language suffixes (_fl, fl, _sl, sl), then prefix match.
+    """
+    if requested in _resolved_book_cache:
+        return _resolved_book_cache[requested]
+
+    all_books = _list_seeded_books(db)
+    by_lower = {b.lower(): b for b in all_books}
+
+    def _try(name: str) -> Optional[str]:
+        if name in all_books:
+            return name
+        return by_lower.get(name.lower())
+
+    hit = _try(requested)
+    if hit:
+        _resolved_book_cache[requested] = hit
+        return hit
+
+    base = requested.strip().lower().replace("%20", " ").replace(" ", "_")
+    base = re.sub(r"_+", "_", base)
+    hit = _try(base)
+    if hit:
+        _resolved_book_cache[requested] = hit
+        return hit
+
+    for suffix in ("_fl", "fl", "_sl", "sl", "_first_language", "_second_language"):
+        hit = _try(f"{base}{suffix}")
+        if hit:
+            _resolved_book_cache[requested] = hit
+            return hit
+
+    prefix_hits = [b for b in all_books if b.lower().startswith(base)]
+    if prefix_hits:
+        for pref_suffix in ("_fl", "fl"):
+            for b in prefix_hits:
+                if b.lower().endswith(pref_suffix):
+                    _resolved_book_cache[requested] = b
+                    return b
+        _resolved_book_cache[requested] = prefix_hits[0]
+        return prefix_hits[0]
+
+    return None
+
+
+def _get_ontology_or_404(db, book_name: str) -> dict:
+    resolved = _resolve_book_name(db, book_name) or book_name
+    try:
+        ontology = q.get_ontology_json(db, resolved)
         if ontology is not None:
             return ontology
     except Exception:
         pass
-    data_file = DATA_DIR / f"{book_name}.json"
+    data_file = DATA_DIR / f"{resolved}.json"
     if data_file.exists():
         return json.loads(data_file.read_text(encoding="utf-8"))
-    raise HTTPException(status_code=404, detail=f"Ontology not found for book '{book_name}'")
+    raise HTTPException(
+        status_code=404,
+        detail=f"Ontology not found for book '{book_name}' (resolved to '{resolved}')",
+    )
 
 
 def _get_topic_data(ontology: dict, chap_idx: int, topic_idx: int):
-    if "entities" in ontology:
+    if "entities" in ontology and ontology["entities"].get("chapters"):
         chapters = ontology["entities"].get("chapters", [])
         chapter  = chapters[chap_idx]
         chap_id  = chapter.get("id")
@@ -550,7 +619,7 @@ async def api_generate_study_plan(req: StudyPlanRequest, db = Depends(get_db)):
         ontology_context = json.dumps({"topic_name": topic_name, "grade": req.grade}, indent=2)
 
     plan_md = generate_study_plan(
-        student_profile=req.student_profile,
+        student_profile=req.student_profile or {},
         ontology_context=ontology_context,
         topic_name=topic_name,
         grade=req.grade,
@@ -560,7 +629,7 @@ async def api_generate_study_plan(req: StudyPlanRequest, db = Depends(get_db)):
         daily_commitment=req.daily_commitment or "",
     )
 
-    student_id = req.student_profile.get("student_id", "")
+    student_id = (req.student_profile or {}).get("student_id", "")
     db_topic   = q.get_topic_by_index(db, req.book, req.chapter_idx, req.topic_idx)
 
     student = q.get_student(db, student_id) if student_id else q.get_default_student_db(db)

@@ -1,0 +1,4461 @@
+{
+  "subject": "Grade3 Hindifl",
+  "language": "Hindi",
+  "entities": {
+    "chapters": [
+      {
+        "id": "C_1",
+        "number": 1,
+        "title": "कक्कू",
+        "page_start": 1,
+        "page_end": 6,
+        "confidence": 1.0,
+        "status": "verified"
+      },
+      {
+        "id": "C_2",
+        "number": 2,
+        "title": "शेखीबाज़ मक्खी",
+        "page_start": 7,
+        "page_end": 14,
+        "confidence": 1.0,
+        "status": "verified"
+      },
+      {
+        "id": "C_3",
+        "number": 3,
+        "title": "चाँद वाली अम्मा",
+        "page_start": 15,
+        "page_end": 24,
+        "confidence": 1.0,
+        "status": "verified"
+      },
+      {
+        "id": "C_4",
+        "number": 4,
+        "title": "मन करता है",
+        "page_start": 25,
+        "page_end": 29,
+        "confidence": 1.0,
+        "status": "verified"
+      },
+      {
+        "id": "C_5",
+        "number": 5,
+        "title": "बहादुर बित्तो",
+        "page_start": 30,
+        "page_end": 41,
+        "confidence": 1.0,
+        "status": "verified"
+      },
+      {
+        "id": "C_6",
+        "number": 6,
+        "title": "हमसे सब कहते",
+        "page_start": 42,
+        "page_end": 48,
+        "confidence": 1.0,
+        "status": "verified"
+      },
+      {
+        "id": "C_7",
+        "number": 7,
+        "title": "टिपटिपवा",
+        "page_start": 49,
+        "page_end": 56,
+        "confidence": 1.0,
+        "status": "verified"
+      },
+      {
+        "id": "C_8",
+        "number": 8,
+        "title": "बंदर-बाँट",
+        "page_start": 57,
+        "page_end": 69,
+        "confidence": 0.7,
+        "status": "partial"
+      },
+      {
+        "id": "C_9",
+        "number": 9,
+        "title": "अक्ल बड़ी या भैंस",
+        "page_start": 70,
+        "page_end": 72,
+        "confidence": 1.0,
+        "status": "verified"
+      },
+      {
+        "id": "C_10",
+        "number": 10,
+        "title": "क्योंजीमल और कैसे कैसलिया",
+        "page_start": 73,
+        "page_end": 93,
+        "confidence": 0.7,
+        "status": "partial"
+      },
+      {
+        "id": "C_12",
+        "number": 11,
+        "title": "कहानी की कहानी",
+        "page_start": 94,
+        "page_end": 96,
+        "confidence": 1.0,
+        "status": "verified"
+      },
+      {
+        "id": "C_13",
+        "number": 12,
+        "title": "जब मुझको साँप ने काटा",
+        "page_start": 97,
+        "page_end": 119,
+        "confidence": 1.0,
+        "status": "verified"
+      },
+      {
+        "id": "C_14",
+        "number": 13,
+        "title": "बच्चों के पत्र",
+        "page_start": 120,
+        "page_end": 120,
+        "confidence": 1.0,
+        "status": "verified"
+      },
+      {
+        "id": "C_15",
+        "number": 14,
+        "title": "मिर्च का मज़ा",
+        "page_start": 0,
+        "page_end": 0,
+        "confidence": 1.0,
+        "status": "verified"
+      }
+    ],
+    "topics": [
+      {
+        "id": "T_1_1",
+        "name": "अध्याय परिचय और प्रारंभिक प्रश्न",
+        "summary": "This topic introduces Chapter 1, \"कक्कू\", with an illustrative image of a flower and a set of questions designed to engage students and encourage imaginative thinking. It also provides general instructions for students on how to approach the chapter's content.",
+        "chapter_id": "C_1",
+        "page_start": 1,
+        "page_end": 1,
+        "prerequisites": []
+      },
+      {
+        "id": "T_1_2",
+        "name": "कक्कू (कविता)",
+        "summary": "This topic presents the main poem \"कक्कू\", which describes a boy named कक्कू. The poem playfully compares him to a cuckoo bird (कोयल) but highlights his contrasting traits like crying, getting angry, and not singing well, leading to him being called by various nicknames like सक्कू, भक्कू, and झक्कू.",
+        "chapter_id": "C_1",
+        "page_start": 2,
+        "page_end": 3,
+        "prerequisites": []
+      },
+      {
+        "id": "T_1_3",
+        "name": "कविता पर आधारित अभ्यास",
+        "summary": "This topic includes a variety of exercises based on the poem \"कक्कू\", covering listening, speaking, reading comprehension, writing, vocabulary building, and creative expression. Students are asked to reflect on their own names, analyze the poem's characters, and understand new words.",
+        "chapter_id": "C_1",
+        "page_start": 4,
+        "page_end": 4,
+        "prerequisites": [
+          "T_1_2"
+        ]
+      },
+      {
+        "id": "T_1_4",
+        "name": "प्रशंसा और भाषा कौशल",
+        "summary": "This topic focuses on developing appreciation, language skills, and self-assessment. It includes an exercise on writing about the importance of not teasing others, activities related to Hindi grammar (compound letters and alphabetical order), and a checklist for students to evaluate their learning outcomes from the chapter.",
+        "chapter_id": "C_1",
+        "page_start": 5,
+        "page_end": 5,
+        "prerequisites": [
+          "T_1_2"
+        ]
+      },
+      {
+        "id": "T_1_5",
+        "name": "गेंद का मन",
+        "summary": "This topic presents a short, illustrated story titled \"गेंद का मन\" (The Ball's Mind). It depicts a boy trying to hit a ball and the ball's humorous internal monologue about not understanding why the boy wants to hit it straight. This serves as a light reading or visual comprehension piece.",
+        "chapter_id": "C_1",
+        "page_start": 6,
+        "page_end": 6,
+        "prerequisites": []
+      },
+      {
+        "id": "T_2_1",
+        "name": "पाठ परिचय और पूर्व-पठन गतिविधियाँ",
+        "summary": "Introduction to the chapter and pre-reading activities based on an illustration.",
+        "chapter_id": "C_2",
+        "page_start": 7,
+        "page_end": 7,
+        "prerequisites": []
+      },
+      {
+        "id": "T_2_2",
+        "name": "कहानी: शेखीबाज़ मक्खी - भाग 1",
+        "summary": "The story begins with a lion resting and a fly irritating it.",
+        "chapter_id": "C_2",
+        "page_start": 8,
+        "page_end": 8,
+        "prerequisites": []
+      },
+      {
+        "id": "T_2_3",
+        "name": "कहानी: शेखीबाज़ मक्खी - भाग 2",
+        "summary": "The fly continues to annoy the lion, causing it to hurt itself.",
+        "chapter_id": "C_2",
+        "page_start": 9,
+        "page_end": 9,
+        "prerequisites": []
+      },
+      {
+        "id": "T_2_4",
+        "name": "कहानी: शेखीबाज़ मक्खी - भाग 3",
+        "summary": "The fly defeats the lion, encounters an elephant, and then a cunning fox.",
+        "chapter_id": "C_2",
+        "page_start": 10,
+        "page_end": 10,
+        "prerequisites": []
+      },
+      {
+        "id": "T_2_5",
+        "name": "कहानी: शेखीबाज़ मक्खी - भाग 4",
+        "summary": "The fly gets trapped in a spider's web, outsmarted by the fox.",
+        "chapter_id": "C_2",
+        "page_start": 11,
+        "page_end": 11,
+        "prerequisites": []
+      },
+      {
+        "id": "T_2_6",
+        "name": "कहानी के बाद की गतिविधियाँ",
+        "summary": "Post-reading activities including oral discussion, reading comprehension, and creative writing.",
+        "chapter_id": "C_2",
+        "page_start": 12,
+        "page_end": 12,
+        "prerequisites": []
+      },
+      {
+        "id": "T_2_7",
+        "name": "शब्द भंडार, सृजनात्मक अभिव्यक्ति, प्रशंसा और भाषा की बात",
+        "summary": "Activities focusing on vocabulary (antonyms, idioms), creative expression (role-play), and discussion on values (humility).",
+        "chapter_id": "C_2",
+        "page_start": 13,
+        "page_end": 13,
+        "prerequisites": []
+      },
+      {
+        "id": "T_2_8",
+        "name": "भूलभुलैया और स्व-मूल्यांकन",
+        "summary": "A maze activity and a self-assessment checklist for students.",
+        "chapter_id": "C_2",
+        "page_start": 14,
+        "page_end": 14,
+        "prerequisites": []
+      },
+      {
+        "id": "T_3_placeholder_15",
+        "name": "[Page 15 — content not extracted]",
+        "summary": "Page 15 content was not successfully extracted.",
+        "chapter_id": "C_3",
+        "page_start": 15,
+        "page_end": 15,
+        "prerequisites": []
+      },
+      {
+        "id": "T_3_placeholder_16",
+        "name": "[Page 16 — content not extracted]",
+        "summary": "Page 16 content was not successfully extracted.",
+        "chapter_id": "C_3",
+        "page_start": 16,
+        "page_end": 16,
+        "prerequisites": []
+      },
+      {
+        "id": "T_3_placeholder_17",
+        "name": "[Page 17 — content not extracted]",
+        "summary": "Page 17 content was not successfully extracted.",
+        "chapter_id": "C_3",
+        "page_start": 17,
+        "page_end": 17,
+        "prerequisites": []
+      },
+      {
+        "id": "T_3_placeholder_18",
+        "name": "[Page 18 — content not extracted]",
+        "summary": "Page 18 content was not successfully extracted.",
+        "chapter_id": "C_3",
+        "page_start": 18,
+        "page_end": 18,
+        "prerequisites": []
+      },
+      {
+        "id": "T_3_placeholder_19",
+        "name": "[Page 19 — content not extracted]",
+        "summary": "Page 19 content was not successfully extracted.",
+        "chapter_id": "C_3",
+        "page_start": 19,
+        "page_end": 19,
+        "prerequisites": []
+      },
+      {
+        "id": "T_3_placeholder_20",
+        "name": "[Page 20 — content not extracted]",
+        "summary": "Page 20 content was not successfully extracted.",
+        "chapter_id": "C_3",
+        "page_start": 20,
+        "page_end": 20,
+        "prerequisites": []
+      },
+      {
+        "id": "T_3_placeholder_21",
+        "name": "[Page 21 — content not extracted]",
+        "summary": "Page 21 content was not successfully extracted.",
+        "chapter_id": "C_3",
+        "page_start": 21,
+        "page_end": 21,
+        "prerequisites": []
+      },
+      {
+        "id": "T_3_placeholder_22",
+        "name": "[Page 22 — content not extracted]",
+        "summary": "Page 22 content was not successfully extracted.",
+        "chapter_id": "C_3",
+        "page_start": 22,
+        "page_end": 22,
+        "prerequisites": []
+      },
+      {
+        "id": "T_3_9",
+        "name": "चाँद में क्या दिखाई देता है?",
+        "summary": "Students are prompted to observe an image of the moon and stars and describe what they see, encouraging observation and oral communication skills.",
+        "chapter_id": "C_3",
+        "page_start": 23,
+        "page_end": 23,
+        "prerequisites": []
+      },
+      {
+        "id": "T_3_10",
+        "name": "सूरज और चाँद ऊपर क्यों गए?",
+        "summary": "A story explaining why the Sun and Moon went up into the sky, based on their interaction with Water.",
+        "chapter_id": "C_3",
+        "page_start": 24,
+        "page_end": 24,
+        "prerequisites": []
+      },
+      {
+        "id": "T_4_1",
+        "name": "मन करता है कविता का पठन और समझ",
+        "summary": "This topic focuses on reading and understanding the Hindi poem \"मन करता है\" by Surendra Vikram. It includes pre-reading activities, comprehension questions, vocabulary building, creative expression exercises, and a craft project related to the poem's themes.",
+        "chapter_id": "C_4",
+        "page_start": 25,
+        "page_end": 29,
+        "prerequisites": []
+      },
+      {
+        "id": "T_5_1",
+        "name": "अध्याय परिचय और पूर्व-पठन गतिविधियाँ",
+        "summary": "Introduction to the chapter \"बहादुर बित्तो\" with an illustrative image and pre-reading questions and instructions for students.",
+        "chapter_id": "C_5",
+        "page_start": 30,
+        "page_end": 30,
+        "prerequisites": []
+      },
+      {
+        "id": "T_5_2",
+        "name": "कहानी: बहादुर बित्तो",
+        "summary": "The main story of Bitto, a brave farmer's wife who outsmarts a lion and a wolf. This topic spans the narrative pages.",
+        "chapter_id": "C_5",
+        "page_start": 31,
+        "page_end": 34,
+        "prerequisites": []
+      },
+      {
+        "id": "T_5_3",
+        "name": "कहानी पर आधारित प्रश्न और शब्द ढूँढ़ो",
+        "summary": "Activities based on the story, including oral comprehension questions and a word search activity.",
+        "chapter_id": "C_5",
+        "page_start": 35,
+        "page_end": 35,
+        "prerequisites": []
+      },
+      {
+        "id": "T_5_4",
+        "name": "रचनात्मक लेखन और वर्गीकरण",
+        "summary": "Writing activities that encourage critical thinking, creative expression, and word categorization.",
+        "chapter_id": "C_5",
+        "page_start": 36,
+        "page_end": 36,
+        "prerequisites": []
+      },
+      {
+        "id": "T_5_5",
+        "name": "शब्द भंडार और सृजनात्मक अभिव्यक्ति",
+        "summary": "Vocabulary building activities focusing on specific letter sounds and creative dialogue writing.",
+        "chapter_id": "C_5",
+        "page_start": 37,
+        "page_end": 37,
+        "prerequisites": []
+      },
+      {
+        "id": "T_5_6",
+        "name": "प्रशंसा और भाषा की बात",
+        "summary": "This topic focuses on expressing praise and practicing gender-related vocabulary changes in Hindi.",
+        "chapter_id": "C_5",
+        "page_start": 38,
+        "page_end": 38,
+        "prerequisites": [
+          "T_5_2"
+        ]
+      },
+      {
+        "id": "T_5_7",
+        "name": "क्या मैं ये कर सकता/सकती हूँ?",
+        "summary": "This topic presents a self-assessment checklist for students to evaluate their comprehension and skills related to the chapter \"बहादुर बित्तो\".",
+        "chapter_id": "C_5",
+        "page_start": 38,
+        "page_end": 38,
+        "prerequisites": [
+          "T_5_2",
+          "T_5_3",
+          "T_5_4"
+        ]
+      },
+      {
+        "id": "T_5_8",
+        "name": "मूस की मज़दूरी",
+        "summary": "This topic introduces and presents a Naga folktale titled \"The Mouse's Wages\" for students to read and enjoy.",
+        "chapter_id": "C_5",
+        "page_start": 39,
+        "page_end": 41,
+        "prerequisites": []
+      },
+      {
+        "id": "T_6_1",
+        "name": "हमसे सब कहते",
+        "summary": "This topic introduces the poem \"हमसे सब कहते\" (Everyone tells us) which describes how children are often told what not to do by adults (mother, father, elder brother), contrasting this with natural elements like the sun, moon, wind, and clouds, which are not given such instructions. It includes pre-reading activities and the full poem.",
+        "chapter_id": "C_6",
+        "page_start": 42,
+        "page_end": 44,
+        "prerequisites": []
+      },
+      {
+        "id": "T_6_2",
+        "name": "कविता से संबंधित अभ्यास",
+        "summary": "This topic includes a variety of exercises designed to enhance comprehension, vocabulary, creative expression, and grammar skills related to the poem \"हमसे सब कहते\". Activities range from oral discussion and reading comprehension to writing, drawing, and self-assessment.",
+        "chapter_id": "C_6",
+        "page_start": 45,
+        "page_end": 46,
+        "prerequisites": [
+          "T_6_1"
+        ]
+      },
+      {
+        "id": "T_6_3",
+        "name": "परियोजना कार्य: कौआ और लोमड़ी",
+        "summary": "This topic presents the classic fable of \"The Crow and the Fox\" as a project work, using a sequence of illustrated panels with accompanying text. It then challenges students to create their own new story based on a similar set of images.",
+        "chapter_id": "C_6",
+        "page_start": 47,
+        "page_end": 48,
+        "prerequisites": []
+      },
+      {
+        "id": "T_7_1",
+        "name": "पाठ परिचय और पूर्व-पठन गतिविधियाँ",
+        "summary": "Introduction to the chapter \"Tiptipwa\" with pre-reading questions and instructions for students.",
+        "chapter_id": "C_7",
+        "page_start": 49,
+        "page_end": 49,
+        "prerequisites": []
+      },
+      {
+        "id": "T_7_2",
+        "name": "टिपटिपवा कहानी - भाग 1",
+        "summary": "The beginning of the folktale \"Tiptipwa\" from Uttar Pradesh, introducing the grandmother, grandson, and the mystery of \"Tiptipwa\" during heavy rain.",
+        "chapter_id": "C_7",
+        "page_start": 50,
+        "page_end": 50,
+        "prerequisites": []
+      },
+      {
+        "id": "T_7_3",
+        "name": "टिपटिपवा कहानी - भाग 2",
+        "summary": "Continuation of the story where a tiger, scared of the rain, overhears the grandmother's words about \"Tiptipwa\" and flees. Introduction of the washerman looking for his donkey.",
+        "chapter_id": "C_7",
+        "page_start": 51,
+        "page_end": 51,
+        "prerequisites": []
+      },
+      {
+        "id": "T_7_4",
+        "name": "टिपटिपवा कहानी - भाग 3",
+        "summary": "The washerman consults Pandit ji about his lost donkey. He then mistakes the hiding tiger for his donkey and starts beating it, while the tiger believes the washerman is \"Tiptipwa\".",
+        "chapter_id": "C_7",
+        "page_start": 52,
+        "page_end": 52,
+        "prerequisites": []
+      },
+      {
+        "id": "T_7_5",
+        "name": "टिपटिपवा कहानी - निष्कर्ष",
+        "summary": "The conclusion of the story where the terrified tiger allows the washerman to drag him home and tie him up, much to the villagers' astonishment the next morning.",
+        "chapter_id": "C_7",
+        "page_start": 53,
+        "page_end": 53,
+        "prerequisites": []
+      },
+      {
+        "id": "T_7_6",
+        "name": "पठन के बाद की गतिविधियाँ",
+        "summary": "Post-reading activities including listening, speaking, comprehension questions, and personal reflection writing.",
+        "chapter_id": "C_7",
+        "page_start": 54,
+        "page_end": 54,
+        "prerequisites": []
+      },
+      {
+        "id": "T_7_7",
+        "name": "शब्द भंडार, सृजनात्मक अभिव्यक्ति और प्रशंसा",
+        "summary": "Activities focusing on vocabulary, creative writing based on story modification, and critical thinking about the disappearance of folktales.",
+        "chapter_id": "C_7",
+        "page_start": 55,
+        "page_end": 55,
+        "prerequisites": []
+      },
+      {
+        "id": "T_7_8",
+        "name": "भाषा की बात और स्व-मूल्यांकन",
+        "summary": "Grammar activity on singular and plural forms, followed by a self-assessment checklist for learning outcomes.",
+        "chapter_id": "C_7",
+        "page_start": 56,
+        "page_end": 56,
+        "prerequisites": []
+      },
+      {
+        "id": "T_8_1",
+        "name": "बंदर-बाँट (नाटक)",
+        "summary": "This topic covers the play \"बंदर-बाँट\" (The Monkey's Share) which tells the story of two hungry cats fighting over a piece of bread and a clever monkey who tricks them into giving him all the bread under the guise of arbitration.",
+        "chapter_id": "C_8",
+        "page_start": 57,
+        "page_end": 64,
+        "prerequisites": []
+      },
+      {
+        "id": "T_9_1",
+        "name": "अक्ल बड़ी या भैंस",
+        "summary": "This topic presents a story about a wrestler who boasts about his strength and Aafanti who demonstrates that wisdom is superior to brute force. Aafanti challenges the wrestler to throw a handkerchief over a wall, which the wrestler fails to do. Aafanti then ties a small stone to the handkerchief and easily throws it over, proving his point.",
+        "chapter_id": "C_9",
+        "page_start": 70,
+        "page_end": 72,
+        "prerequisites": []
+      },
+      {
+        "id": "T_9_2",
+        "name": "कट्टो बिल्ली की पहचान",
+        "summary": "Activity to identify a specific cat (Katto) from a group of cats based on a story, followed by a self-assessment.",
+        "chapter_id": "C_9",
+        "page_start": 70,
+        "page_end": 70,
+        "prerequisites": []
+      },
+      {
+        "id": "T_9_3",
+        "name": "सर्दी आई (कविता)",
+        "summary": "A poem about the arrival of winter, describing its effects and feelings associated with it.",
+        "chapter_id": "C_9",
+        "page_start": 70,
+        "page_end": 70,
+        "prerequisites": []
+      },
+      {
+        "id": "T_9_4",
+        "name": "मुखौटे बनाना और अभिनय",
+        "summary": "Instructions and illustration for making animal masks (specifically cat masks) and using them for role-playing.",
+        "chapter_id": "C_9",
+        "page_start": 70,
+        "page_end": 70,
+        "prerequisites": []
+      },
+      {
+        "id": "T_10_1",
+        "name": "कब आऊँ - कहानी और अभ्यास",
+        "summary": "This topic covers the story \"कब आऊँ\" (When Shall I Come?) and all related comprehension, vocabulary, grammar, and creative writing exercises across pages 73 to 79. The story is about a clever dyer named Avanti and a jealous rich man (Seth).",
+        "chapter_id": "C_10",
+        "page_start": 73,
+        "page_end": 79,
+        "prerequisites": []
+      },
+      {
+        "id": "T_11_1",
+        "name": "अध्याय परिचय: क्योंजीमल और कैसे-कौसलिया",
+        "summary": "This topic introduces the new unit/chapter \"क्योंजीमल और कैसे-कौसलिया\" with an illustration of a flour mill and pre-reading questions and instructions for students.",
+        "chapter_id": "C_15",
+        "page_start": 80,
+        "page_end": 80,
+        "prerequisites": []
+      },
+      {
+        "id": "T_11_2",
+        "name": "कहानी: क्योंजीमल और कैसे-कौसलिया",
+        "summary": "This topic covers the main story/dialogue featuring Kyonjimal and Kaise-Kausaliya, who constantly ask 'why' and 'how' questions, particularly in a conversation with a Guru ji about grinding wheat and making roti.",
+        "chapter_id": "C_15",
+        "page_start": 81,
+        "page_end": 83,
+        "prerequisites": []
+      },
+      {
+        "id": "T_11_3",
+        "name": "अभ्यास और गतिविधियाँ",
+        "summary": "This topic includes various post-reading exercises and activities such as listening and speaking, writing, vocabulary building, creative expression, appreciation, language work, project work, and self-assessment.",
+        "chapter_id": "C_15",
+        "page_start": 84,
+        "page_end": 86,
+        "prerequisites": []
+      },
+      {
+        "id": "T_12_1",
+        "name": "कहानी की कहानी",
+        "summary": "This topic introduces students to the concept of stories, the joy of listening to them, how they are passed down through generations, and various methods of storytelling.",
+        "chapter_id": "C_12",
+        "page_start": 94,
+        "page_end": 94,
+        "prerequisites": []
+      },
+      {
+        "id": "T_12_2",
+        "name": "मीरा बहन और बाघ",
+        "summary": "This topic introduces the story of Mira Behan and a tiger, including pre-reading questions and activities, and the narrative of the story itself.",
+        "chapter_id": "C_12",
+        "page_start": 94,
+        "page_end": 94,
+        "prerequisites": []
+      },
+      {
+        "id": "T_12_3",
+        "name": "शब्द भंडार",
+        "summary": "Vocabulary building activities including categorization and matching animals with their sounds.",
+        "chapter_id": "C_12",
+        "page_start": 94,
+        "page_end": 94,
+        "prerequisites": []
+      },
+      {
+        "id": "T_12_4",
+        "name": "सृजनात्मक अभिव्यक्ति",
+        "summary": "Creative expression activities, including story extension and reflection on lessons learned.",
+        "chapter_id": "C_12",
+        "page_start": 94,
+        "page_end": 94,
+        "prerequisites": []
+      },
+      {
+        "id": "T_12_5",
+        "name": "भाषा की बात",
+        "summary": "Grammar activity focused on correcting sentences.",
+        "chapter_id": "C_12",
+        "page_start": 94,
+        "page_end": 94,
+        "prerequisites": []
+      },
+      {
+        "id": "T_12_6",
+        "name": "परियोजना कार्य",
+        "summary": "Project work involving collecting and presenting stories related to tigers.",
+        "chapter_id": "C_12",
+        "page_start": 94,
+        "page_end": 94,
+        "prerequisites": []
+      },
+      {
+        "id": "T_12_7",
+        "name": "क्या मैं से कर सकता/सकती हूँ?",
+        "summary": "Self-assessment checklist for students to evaluate their understanding and skills related to the chapter.",
+        "chapter_id": "C_12",
+        "page_start": 94,
+        "page_end": 94,
+        "prerequisites": []
+      },
+      {
+        "id": "T_12_8",
+        "name": "कहानियों को कैसे लिखा गया",
+        "summary": "Students learn about the historical methods and materials used for writing stories, the origin of Panchatantra, and its widespread influence and translation into various languages. They also learn about the preservation of old manuscripts.",
+        "chapter_id": "C_12",
+        "page_start": 95,
+        "page_end": 96,
+        "prerequisites": [
+          "T_12_1"
+        ]
+      },
+      {
+        "id": "T_13_1",
+        "name": "जब मुझको साँप ने काटा",
+        "summary": "This topic introduces the story \"जब मुझको साँप ने काटा\" (When the snake bit me), which narrates a boy's encounter with a snake and a wasp, leading to a misunderstanding about a snakebite and a traditional healer's intervention. It includes pre-reading activities, the story text, and post-reading exercises covering comprehension, vocabulary, grammar, and critical thinking about superstitions.",
+        "chapter_id": "C_13",
+        "page_start": 97,
+        "page_end": 104,
+        "prerequisites": []
+      },
+      {
+        "id": "T_13_2",
+        "name": "क्या आप जानते हैं?",
+        "summary": "This topic presents interesting facts about snakes, covering their eating habits, growth, sensory organs, behavior, diet, and types of poisonous snakes found in India.",
+        "chapter_id": "C_13",
+        "page_start": 105,
+        "page_end": 105,
+        "prerequisites": []
+      },
+      {
+        "id": "T_13_3",
+        "name": "बच्चों के पत्र",
+        "summary": "Reading and understanding children's letters.",
+        "chapter_id": "C_13",
+        "page_start": 106,
+        "page_end": 107,
+        "prerequisites": []
+      },
+      {
+        "id": "T_14_1",
+        "name": "मिर्च का मज़ा",
+        "summary": "This topic introduces the poem/story \"मिर्च का मज़ा\" (The Fun of Chili) through an illustration, initial questions, and then presents the poem itself, followed by comprehension and writing exercises.",
+        "chapter_id": "C_14",
+        "page_start": 120,
+        "page_end": 120,
+        "prerequisites": []
+      },
+      {
+        "id": "T_14_2",
+        "name": "शब्द भंडार",
+        "summary": "This topic focuses on vocabulary, including idioms and words with multiple meanings (homonyms).",
+        "chapter_id": "C_14",
+        "page_start": 120,
+        "page_end": 120,
+        "prerequisites": []
+      },
+      {
+        "id": "T_14_3",
+        "name": "सृजनात्मक अभिव्यक्ति",
+        "summary": "This topic encourages creative writing through poem composition.",
+        "chapter_id": "C_14",
+        "page_start": 120,
+        "page_end": 120,
+        "prerequisites": []
+      },
+      {
+        "id": "T_14_4",
+        "name": "प्रशंसा",
+        "summary": "This topic presents a moral lesson about the importance of moderation in consuming food items.",
+        "chapter_id": "C_14",
+        "page_start": 120,
+        "page_end": 120,
+        "prerequisites": []
+      },
+      {
+        "id": "T_14_5",
+        "name": "भाषा की बात",
+        "summary": "This topic covers language-related activities, including sentence restructuring, understanding old currency, and a self-assessment checklist for language skills.",
+        "chapter_id": "C_14",
+        "page_start": 120,
+        "page_end": 120,
+        "prerequisites": []
+      },
+      {
+        "id": "T_14_6",
+        "name": "घिस-घिस",
+        "summary": "This topic describes an art activity where students create impressions of tree bark using paper and wax colors.",
+        "chapter_id": "C_14",
+        "page_start": 120,
+        "page_end": 120,
+        "prerequisites": []
+      },
+      {
+        "id": "T_15_1",
+        "name": "सबसे अच्छा पेड़",
+        "summary": "This topic introduces the story \"The Best Tree\" about three brothers and their search for a home, each choosing a different type of tree (mango, banana, coconut). It includes pre-reading questions, the story itself, and various post-reading activities focusing on comprehension, vocabulary, creative writing, comparison of trees, and a project on making greeting cards.",
+        "chapter_id": "C_15",
+        "page_start": 116,
+        "page_end": 123,
+        "prerequisites": []
+      },
+      {
+        "id": "T_15_2",
+        "name": "पत्तियों का चिड़ियाघर",
+        "summary": "A poem about different types of leaves, their shapes, and how to create a 'leaves' zoo' by collecting and arranging them. It encourages observation and creativity with natural elements.",
+        "chapter_id": "C_15",
+        "page_start": 124,
+        "page_end": 124,
+        "prerequisites": []
+      },
+      {
+        "id": "T_15_3",
+        "name": "शब्दकोश",
+        "summary": "A glossary providing Hindi words with their Hindi definitions and English translations, covering terms like courtyard, jealous, sad, search, news, cover, proud, wounded, moonlight, water bearing, joke, coward, expedient, roast, roaring, pond, book, verdict, vapour, haggard, nauseate, trouble, scheme, way, right, and art.",
+        "chapter_id": "C_15",
+        "page_start": 125,
+        "page_end": 126,
+        "prerequisites": []
+      },
+      {
+        "id": "T_15_4",
+        "name": "सीखने के प्रतिफल",
+        "summary": "A list of learning outcomes for Hindi (HINDI FL) for Class-III, focusing on listening comprehension, expressive recitation, discussion, personal experience sharing, creative story addition, critical reading, vocabulary acquisition, language nuance identification, and purposeful writing.",
+        "chapter_id": "C_15",
+        "page_start": 127,
+        "page_end": 127,
+        "prerequisites": []
+      },
+      {
+        "id": "T_15_5",
+        "name": "पाठ्यपुस्तक विकास समूह - 2012",
+        "summary": "Information about the Textbook Development Group for 2012, listing editors, advisors, coordinators, participating members, and the textbook publication committee. This section details the individuals and organizations involved in the creation of the textbook.",
+        "chapter_id": "C_15",
+        "page_start": 127,
+        "page_end": 128,
+        "prerequisites": []
+      },
+      {
+        "id": "T_15_6",
+        "name": "Notes",
+        "summary": "Blank lined pages provided for students to take notes or write down important information.",
+        "chapter_id": "C_15",
+        "page_start": 129,
+        "page_end": 130,
+        "prerequisites": []
+      }
+    ],
+    "subtopics": [
+      {
+        "id": "ST_1_1_1",
+        "topic_id": "T_1_1",
+        "name": "अध्याय का परिचय",
+        "summary": "Introduction to the chapter and its theme through an image and initial questions.",
+        "skill_type": "general_skill",
+        "page_start": 1,
+        "page_end": 1
+      },
+      {
+        "id": "ST_1_1_2",
+        "topic_id": "T_1_1",
+        "name": "छात्रों के लिए सूचनाएँ",
+        "summary": "General instructions for students on how to engage with the chapter, including observing pictures, reading, underlining new words, discussing with friends, and looking up meanings.",
+        "skill_type": "general_skill",
+        "page_start": 1,
+        "page_end": 1
+      },
+      {
+        "id": "ST_1_2_1",
+        "topic_id": "T_1_2",
+        "name": "कविता पाठ",
+        "summary": "Reading and understanding the poem \"कक्कू\".",
+        "skill_type": "reading_skill",
+        "page_start": 2,
+        "page_end": 3
+      },
+      {
+        "id": "ST_1_2_2",
+        "topic_id": "T_1_2",
+        "name": "कक्कू का चरित्र चित्रण",
+        "summary": "Understanding the characteristics and nicknames of the boy कक्कू as described in the poem.",
+        "skill_type": "comprehension_skill",
+        "page_start": 2,
+        "page_end": 3
+      },
+      {
+        "id": "ST_1_3_1",
+        "topic_id": "T_1_3",
+        "name": "सुनिए-बोलिए",
+        "summary": "Oral discussion questions about personal names and feelings related to being teased.",
+        "skill_type": "oral_communication",
+        "page_start": 4,
+        "page_end": 4
+      },
+      {
+        "id": "ST_1_3_2",
+        "topic_id": "T_1_3",
+        "name": "पढ़िए",
+        "summary": "Reading comprehension questions based on the poem \"कक्कू\".",
+        "skill_type": "comprehension_skill",
+        "page_start": 4,
+        "page_end": 4
+      },
+      {
+        "id": "ST_1_3_3",
+        "topic_id": "T_1_3",
+        "name": "लिखिए",
+        "summary": "Writing exercises to explain the nicknames of कक्कू, describe the sound of a cuckoo, and write about one's own name and its meaning.",
+        "skill_type": "writing_skill",
+        "page_start": 4,
+        "page_end": 4
+      },
+      {
+        "id": "ST_1_3_4",
+        "topic_id": "T_1_3",
+        "name": "शब्द भंडार",
+        "summary": "Vocabulary exercise to find the meaning of underlined words in given sentences.",
+        "skill_type": "vocabulary_skill",
+        "page_start": 4,
+        "page_end": 4
+      },
+      {
+        "id": "ST_1_3_5",
+        "topic_id": "T_1_3",
+        "name": "सृजनात्मक अभिव्यक्ति",
+        "summary": "Creative writing activity where students write about themselves after learning about कक्कू.",
+        "skill_type": "writing_skill",
+        "page_start": 4,
+        "page_end": 4
+      },
+      {
+        "id": "ST_1_4_1",
+        "topic_id": "T_1_4",
+        "name": "प्रशंसा (नैतिक मूल्य)",
+        "summary": "An exercise promoting empathy and discouraging teasing, based on the character of कक्कू.",
+        "skill_type": "general_skill",
+        "page_start": 5,
+        "page_end": 5
+      },
+      {
+        "id": "ST_1_4_2",
+        "topic_id": "T_1_4",
+        "name": "भाषा की बात (द्वित्वाक्षर और वर्णमाला)",
+        "summary": "Activities to identify compound letters (द्वित्वाक्षर) and arrange names in alphabetical order (वर्णमाला).",
+        "skill_type": "recognition_skill",
+        "page_start": 5,
+        "page_end": 5
+      },
+      {
+        "id": "ST_1_4_3",
+        "topic_id": "T_1_4",
+        "name": "क्या मैं ये कर सकता/सकती हूँ?",
+        "summary": "A self-assessment checklist for students to evaluate their understanding and skills acquired from the chapter.",
+        "skill_type": "general_skill",
+        "page_start": 5,
+        "page_end": 5
+      },
+      {
+        "id": "ST_1_5_1",
+        "topic_id": "T_1_5",
+        "name": "कहानी पढ़ना",
+        "summary": "Reading and understanding the short story \"गेंद का मन\".",
+        "skill_type": "reading_skill",
+        "page_start": 6,
+        "page_end": 6
+      },
+      {
+        "id": "ST_1_5_2",
+        "topic_id": "T_1_5",
+        "name": "चित्र कथा का विश्लेषण",
+        "summary": "Analyzing the visual narrative and dialogue of the comic strip.",
+        "skill_type": "comprehension_skill",
+        "page_start": 6,
+        "page_end": 6
+      },
+      {
+        "id": "ST_3_9_1",
+        "topic_id": "T_3_9",
+        "name": "चाँद का अवलोकन और चर्चा",
+        "summary": "Students engage in an oral discussion about their observations of the moon and stars depicted in the image.",
+        "skill_type": "oral_communication",
+        "page_start": 23,
+        "page_end": 23
+      },
+      {
+        "id": "ST_5_6_1",
+        "topic_id": "T_5_6",
+        "name": "प्रशंसा",
+        "summary": "Students are asked to write sentences praising Bitto based on the story they have read.",
+        "skill_type": "writing_skill",
+        "page_start": 38,
+        "page_end": 38
+      },
+      {
+        "id": "ST_5_6_2",
+        "topic_id": "T_5_6",
+        "name": "खाली जगह में क्या आएगा?",
+        "summary": "This subtopic introduces the concept of gender change in Hindi nouns, using 'मोर' (peacock) and 'मोरनी' (peahen) as an example.",
+        "skill_type": "vocabulary_skill",
+        "page_start": 38,
+        "page_end": 38
+      },
+      {
+        "id": "ST_5_6_3",
+        "topic_id": "T_5_6",
+        "name": "मोर-मोरनी की तरह नीचे लिखे शब्दों के भी रूप बदलिए।",
+        "summary": "Students practice changing the gender of given Hindi nouns, similar to the example of peacock and peahen.",
+        "skill_type": "vocabulary_skill",
+        "page_start": 38,
+        "page_end": 38
+      },
+      {
+        "id": "ST_5_7_1",
+        "topic_id": "T_5_7",
+        "name": "आत्म-मूल्यांकन",
+        "summary": "Students review their ability to discuss the story, understand its meaning, summarize it, form sentences, and write a short story based on the chapter's words.",
+        "skill_type": "comprehension_skill",
+        "page_start": 38,
+        "page_end": 38
+      },
+      {
+        "id": "ST_5_8_1",
+        "topic_id": "T_5_8",
+        "name": "कहानी का परिचय",
+        "summary": "Introduction to the story \"मूस की मज़दूरी\" (The Mouse's Wages), identified as a Naga folktale, with an instruction to read and enjoy.",
+        "skill_type": "reading_skill",
+        "page_start": 39,
+        "page_end": 39
+      },
+      {
+        "id": "ST_5_8_2",
+        "topic_id": "T_5_8",
+        "name": "मूस की मज़दूरी (कहानी)",
+        "summary": "The full text of the Naga folktale \"मूस की मज़दूरी\" (The Mouse's Wages) is presented across multiple pages for students to read.",
+        "skill_type": "reading_skill",
+        "page_start": 39,
+        "page_end": 41
+      },
+      {
+        "id": "ST_6_1_1",
+        "topic_id": "T_6_1",
+        "name": "अध्याय परिचय और पूर्व-पठन प्रश्न",
+        "summary": "This subtopic introduces the chapter with an image and asks students to discuss the image and predict the content of the poem, along with instructions for reading and vocabulary identification.",
+        "skill_type": "general_skill",
+        "page_start": 42,
+        "page_end": 42
+      },
+      {
+        "id": "ST_6_1_2",
+        "topic_id": "T_6_1",
+        "name": "कविता का पाठ: हमसे सब कहते",
+        "summary": "This subtopic presents the full poem \"हमसे सब कहते\" by Nirankar Dev Sevak, which explores the theme of children being constantly instructed by adults, unlike elements of nature.",
+        "skill_type": "reading_skill",
+        "page_start": 43,
+        "page_end": 44
+      },
+      {
+        "id": "ST_6_2_1",
+        "topic_id": "T_6_2",
+        "name": "सुनिए-बोलिए",
+        "summary": "Students engage in oral discussion based on their personal experiences with adult instructions and restrictions, relating it to the poem's theme.",
+        "skill_type": "oral_communication",
+        "page_start": 45,
+        "page_end": 45
+      },
+      {
+        "id": "ST_6_2_2",
+        "topic_id": "T_6_2",
+        "name": "निम्न वाक्य पढ़िए और बताइए",
+        "summary": "Students read sentences about natural elements and discuss which element is more powerful, fostering critical thinking and comprehension.",
+        "skill_type": "comprehension_skill",
+        "page_start": 45,
+        "page_end": 45
+      },
+      {
+        "id": "ST_6_2_3",
+        "topic_id": "T_6_2",
+        "name": "पढ़िए",
+        "summary": "Students answer comprehension questions about the poem, focusing on why natural elements are mentioned and why adults scold children.",
+        "skill_type": "comprehension_skill",
+        "page_start": 45,
+        "page_end": 45
+      },
+      {
+        "id": "ST_6_2_4",
+        "topic_id": "T_6_2",
+        "name": "लिखिए",
+        "summary": "Students complete a writing activity by listing things they are told to do and not to do at home and school in a provided table.",
+        "skill_type": "writing_skill",
+        "page_start": 45,
+        "page_end": 45
+      },
+      {
+        "id": "ST_6_2_5",
+        "topic_id": "T_6_2",
+        "name": "शब्द भंडार",
+        "summary": "Students identify and categorize people, things, and places mentioned in the poem \"हमसे सब कहते\" into a table, enhancing their vocabulary.",
+        "skill_type": "vocabulary_skill",
+        "page_start": 46,
+        "page_end": 46
+      },
+      {
+        "id": "ST_6_2_6",
+        "topic_id": "T_6_2",
+        "name": "सृजनात्मक अभिव्यक्ति",
+        "summary": "Students engage in a creative activity by drawing pictures of the moon and clouds and writing about them.",
+        "skill_type": "art_skill",
+        "page_start": 46,
+        "page_end": 46
+      },
+      {
+        "id": "ST_6_2_7",
+        "topic_id": "T_6_2",
+        "name": "प्रशंसा",
+        "summary": "Students discuss and list ten ways in which elders always think about their well-being, promoting appreciation and understanding of family values.",
+        "skill_type": "general_skill",
+        "page_start": 46,
+        "page_end": 46
+      },
+      {
+        "id": "ST_6_2_8",
+        "topic_id": "T_6_2",
+        "name": "भाषा की बात",
+        "summary": "Students learn about the use of Anunasik (चंद्र बिंदु) in Hindi words and are asked to write five more words that use it.",
+        "skill_type": "writing_skill",
+        "page_start": 46,
+        "page_end": 46
+      },
+      {
+        "id": "ST_6_2_9",
+        "topic_id": "T_6_2",
+        "name": "क्या मैं ये कर सकता/सकती हूँ?",
+        "summary": "A self-assessment checklist for students to evaluate their ability to understand, recite, explain, and create sentences/rhymes based on the poem.",
+        "skill_type": "general_skill",
+        "page_start": 46,
+        "page_end": 46
+      },
+      {
+        "id": "ST_6_3_1",
+        "topic_id": "T_6_3",
+        "name": "कौआ और लोमड़ी कहानी",
+        "summary": "Students read the well-known story of \"The Crow and the Fox\" presented through a series of images and short descriptive sentences.",
+        "skill_type": "reading_skill",
+        "page_start": 47,
+        "page_end": 47
+      },
+      {
+        "id": "ST_6_3_2",
+        "topic_id": "T_6_3",
+        "name": "चित्रों से नई कहानी बनाएँ",
+        "summary": "Students are tasked with creating a new story using a given set of images, encouraging creative writing and narrative development.",
+        "skill_type": "writing_skill",
+        "page_start": 48,
+        "page_end": 48
+      },
+      {
+        "id": "ST_8_1_1",
+        "topic_id": "T_8_1",
+        "name": "परिचय और पूर्व-पठन गतिविधियाँ",
+        "summary": "Students are introduced to the chapter through an illustrative image and engage in discussion and pre-reading tasks to prepare for the play.",
+        "skill_type": "general_skill",
+        "page_start": 57,
+        "page_end": 57
+      },
+      {
+        "id": "ST_8_1_2",
+        "topic_id": "T_8_1",
+        "name": "नाटक की तैयारी और पहला दृश्य (बिल्लियों का झगड़ा)",
+        "summary": "This subtopic describes the setting, characters, costumes, and props required for the play, and introduces the first scene where two hungry cats find a piece of bread and begin to argue over who has the right to it.",
+        "skill_type": "comprehension_skill",
+        "page_start": 58,
+        "page_end": 60
+      },
+      {
+        "id": "ST_8_1_3",
+        "topic_id": "T_8_1",
+        "name": "दूसरा दृश्य - बंदर की कचहरी",
+        "summary": "The two cats are fighting over the bread when a monkey enters, offering to arbitrate their dispute. He sets up a court, listens to their claims, and proceeds to trick them by eating the bread himself under the guise of balancing it.",
+        "skill_type": "comprehension_skill",
+        "page_start": 61,
+        "page_end": 64
+      },
+      {
+        "id": "ST_8_1_4",
+        "topic_id": "T_8_1",
+        "name": "कहानी का नैतिक",
+        "summary": "The cats realize the monkey's trickery too late, as he eats all the bread, teaching them a lesson about the consequences of fighting and losing wisdom.",
+        "skill_type": "comprehension_skill",
+        "page_start": 64,
+        "page_end": 64
+      },
+      {
+        "id": "ST_9_1_1",
+        "topic_id": "T_9_1",
+        "name": "कहानी: अक्ल बड़ी या भैंस",
+        "summary": "Students read and comprehend the story of Aafanti and the wrestler, understanding the moral that intelligence and wit can overcome brute strength.",
+        "skill_type": "comprehension_skill",
+        "page_start": 70,
+        "page_end": 72
+      },
+      {
+        "id": "ST_12_1_1",
+        "topic_id": "T_12_1",
+        "name": "कहानियाँ सुनने का आनंद और कहानी कहने के तरीके",
+        "summary": "This subtopic describes the pleasure of listening to stories, the tradition of stories being passed down from elders to children, and different creative ways people tell stories, such as changing voices, using hand gestures, singing, and dancing. It also mentions Panchatantra stories.",
+        "skill_type": "reading_skill",
+        "page_start": 94,
+        "page_end": 94
+      },
+      {
+        "id": "ST_12_2_1",
+        "topic_id": "T_12_2",
+        "name": "मीरा बहन और बाघ की कहानी",
+        "summary": "The narrative of Mira Behan's life, her work in a village, the threat of tigers, and the villagers' attempt to catch a tiger.",
+        "skill_type": "general_skill",
+        "page_start": 94,
+        "page_end": 89
+      },
+      {
+        "id": "ST_12_8_1",
+        "topic_id": "T_12_8",
+        "name": "प्राचीन लेखन विधियाँ और सामग्री",
+        "summary": "Students learn about ancient writing methods, including writing on leaves, stones, tree bark, and palm leaves, and how pens were made from bird feathers or sharpened bamboo.",
+        "skill_type": "comprehension_skill",
+        "page_start": 95,
+        "page_end": 95
+      },
+      {
+        "id": "ST_12_8_2",
+        "topic_id": "T_12_8",
+        "name": "पंचतंत्र की कहानियाँ और उनका प्रसार",
+        "summary": "Students learn that Panchatantra stories were written hundreds of years ago, are popular worldwide, and have been translated into many Indian languages like Odia, Bengali, Marathi, Malayalam, and Kannada.",
+        "skill_type": "comprehension_skill",
+        "page_start": 96,
+        "page_end": 96
+      },
+      {
+        "id": "ST_12_8_3",
+        "topic_id": "T_12_8",
+        "name": "सिंह-शृगाल-कथा: बहुभाषी उदाहरण",
+        "summary": "Students are presented with an excerpt of a story (Lion-Jackal Story) written in multiple scripts to illustrate the concept of translation and different languages.",
+        "skill_type": "recognition_skill",
+        "page_start": 96,
+        "page_end": 96
+      },
+      {
+        "id": "ST_12_8_4",
+        "topic_id": "T_12_8",
+        "name": "पुरानी पोथियों का संरक्षण",
+        "summary": "Students learn about the importance of preserving old manuscripts and how these cherished stories are still heard, read, and passed down through generations.",
+        "skill_type": "comprehension_skill",
+        "page_start": 96,
+        "page_end": 96
+      },
+      {
+        "id": "ST_13_1_1",
+        "topic_id": "T_13_1",
+        "name": "Story Introduction and Pre-reading",
+        "summary": "Students are introduced to the chapter with an illustration and asked to observe it, imagine the scenario, and discuss initial thoughts. They are also given instructions for reading the story, identifying new words, discussing them, and looking up their meanings.",
+        "skill_type": "comprehension_skill",
+        "page_start": 97,
+        "page_end": 97
+      },
+      {
+        "id": "ST_13_1_2",
+        "topic_id": "T_13_1",
+        "name": "The Narrative of \"जब मुझको साँप ने काटा\"",
+        "summary": "The main story where a boy catches a small snake in a coconut shell, his grandmother's reaction, his grandfather's intervention, and a subsequent wasp sting that is mistaken for a snakebite, leading to a visit to a traditional healer.",
+        "skill_type": "reading_skill",
+        "page_start": 98,
+        "page_end": 101
+      },
+      {
+        "id": "ST_13_1_3",
+        "topic_id": "T_13_1",
+        "name": "Oral Comprehension and Discussion",
+        "summary": "Students engage in oral discussion about their fears of crawling animals and personal experiences with snakes, followed by comprehension questions about the story's events and the traditional healer's actions.",
+        "skill_type": "oral_communication",
+        "page_start": 102,
+        "page_end": 102
+      },
+      {
+        "id": "ST_13_1_4",
+        "topic_id": "T_13_1",
+        "name": "Written Comprehension and Expression",
+        "summary": "Students answer questions in writing about the grandfather's reasons for taking the boy to the healer, describe a crawling animal, and discuss the appropriate course of action for a snakebite.",
+        "skill_type": "writing_skill",
+        "page_start": 102,
+        "page_end": 102
+      },
+      {
+        "id": "ST_13_1_5",
+        "topic_id": "T_13_1",
+        "name": "Vocabulary Building - Home-related Words",
+        "summary": "Students identify and circle words related to 'घर' (home) from a given list, expanding their vocabulary.",
+        "skill_type": "vocabulary_skill",
+        "page_start": 102,
+        "page_end": 102
+      },
+      {
+        "id": "ST_13_1_6",
+        "topic_id": "T_13_1",
+        "name": "Understanding Expression and Punctuation",
+        "summary": "Students learn how different punctuation marks and expressions convey meaning in sentences and practice applying correct marks to given sentences, then read them aloud.",
+        "skill_type": "comprehension_skill",
+        "page_start": 103,
+        "page_end": 103
+      },
+      {
+        "id": "ST_13_1_7",
+        "topic_id": "T_13_1",
+        "name": "Creative Expression and Superstition Awareness",
+        "summary": "Students engage in a conversation based on the lesson and are encouraged to raise awareness among their peers about superstitions.",
+        "skill_type": "oral_communication",
+        "page_start": 103,
+        "page_end": 103
+      },
+      {
+        "id": "ST_13_1_8",
+        "topic_id": "T_13_1",
+        "name": "Language Analysis and Character Traits",
+        "summary": "Students analyze the boy's character from the story and describe him using appropriate adjectives, providing reasons for their choice.",
+        "skill_type": "comprehension_skill",
+        "page_start": 103,
+        "page_end": 103
+      },
+      {
+        "id": "ST_13_1_9",
+        "topic_id": "T_13_1",
+        "name": "Self-Assessment and Maze Activity",
+        "summary": "Students self-assess their ability to discuss the story, understand similar texts, summarize, form sentences, and speak against superstitions. An image-based maze activity is also included.",
+        "skill_type": "general_skill",
+        "page_start": 104,
+        "page_end": 104
+      },
+      {
+        "id": "ST_13_2_1",
+        "topic_id": "T_13_2",
+        "name": "साँप के बारे में रोचक तथ्य",
+        "summary": "Students learn various facts about snakes, including that they swallow food whole, never stop growing, use their tongue for smelling, lack ears, do not drink milk (and forced milk can be fatal), and that only 4 out of approximately 50 poisonous snake types in India are dangerous to humans.",
+        "skill_type": "comprehension_skill",
+        "page_start": 105,
+        "page_end": 105
+      },
+      {
+        "id": "ST_14_1_1",
+        "topic_id": "T_14_1",
+        "name": "मिर्च का मज़ा (कविता - भाग 1)",
+        "summary": "The first part of the poem describing a Kabuliwala mistaking chilies for sweet fruit and buying them.",
+        "skill_type": "general_skill",
+        "page_start": 120,
+        "page_end": 109
+      },
+      {
+        "id": "ST_14_1_2",
+        "topic_id": "T_14_1",
+        "name": "मिर्च का मज़ा (कविता - भाग 2)",
+        "summary": "The second part of the poem detailing the Kabuliwala's painful experience of eating chilies and his encounter with a soldier.",
+        "skill_type": "general_skill",
+        "page_start": 120,
+        "page_end": 110
+      },
+      {
+        "id": "ST_15_2_1",
+        "topic_id": "T_15_2",
+        "name": "कविता वाचन",
+        "summary": "Students read and enjoy the poem 'पत्तियों का चिड़ियाघर'.",
+        "skill_type": "reading_skill",
+        "page_start": 124,
+        "page_end": 124
+      },
+      {
+        "id": "ST_15_3_1",
+        "topic_id": "T_15_3",
+        "name": "शब्दार्थ",
+        "summary": "Students learn the meanings of various Hindi words through their definitions and English equivalents.",
+        "skill_type": "vocabulary_skill",
+        "page_start": 125,
+        "page_end": 126
+      },
+      {
+        "id": "ST_15_4_1",
+        "topic_id": "T_15_4",
+        "name": "अधिगम उद्देश्य",
+        "summary": "Students understand the educational objectives and expected competencies in Hindi language learning.",
+        "skill_type": "general_skill",
+        "page_start": 127,
+        "page_end": 127
+      },
+      {
+        "id": "ST_15_5_1",
+        "topic_id": "T_15_5",
+        "name": "पाठ्यपुस्तक निर्माण टीम",
+        "summary": "Students are introduced to the team responsible for developing the textbook.",
+        "skill_type": "general_skill",
+        "page_start": 127,
+        "page_end": 128
+      },
+      {
+        "id": "ST_15_6_1",
+        "topic_id": "T_15_6",
+        "name": "नोट्स लिखने का स्थान",
+        "summary": "Students use the provided blank pages for note-taking.",
+        "skill_type": "writing_skill",
+        "page_start": 129,
+        "page_end": 130
+      }
+    ],
+    "exercises": [
+      {
+        "id": "E_1_1_1",
+        "text": "प्रश्न 1. चित्र में क्या-क्या दिखाई दे रहा है? 2. आप इस फूल को क्या नाम देना चाहेंगे? 3. अगर यह फूल बोलने लगा तो आप उससे क्या कहना चाहेंगे?",
+        "topic_id": "T_1_1",
+        "page": 1,
+        "exercise_type": "oral_communication",
+        "confidence": "high"
+      },
+      {
+        "id": "E_1_1_2",
+        "text": "छात्रों के लिए सूचनाएँ 1. पाठ के चित्र देखिए। चित्र के आधार पर कल्पना कीजिए कि पाठ में क्या बताया गया होगा? 2. पाठ पढ़िए। नये शब्द और वाक्य रेखांकित कीजिए। 3. नए शब्दों और वाक्यों के बारे में मित्रों से चर्चा कीजिए। 4. नए शब्दों के अर्थ शब्दकोश में ढूँढ़िए।",
+        "topic_id": "T_1_1",
+        "page": 1,
+        "exercise_type": "general_activity",
+        "confidence": "high"
+      },
+      {
+        "id": "E_1_3_1",
+        "text": "सुनिए-बोलिए 1. लोग आपको किन-किन नामों से बुलाते हैं? आपको उनमें से कौनसा नाम पसंद है,क्यों? 2. आपको किसी नाम से कोई चिढ़ाता है तो कैसा लगता है? बताइए।",
+        "topic_id": "T_1_3",
+        "page": 4,
+        "exercise_type": "oral_communication",
+        "confidence": "high"
+      },
+      {
+        "id": "E_1_3_2",
+        "text": "पढ़िए 1. कविता पढ़कर बतलाइए कि कक्कू के क्या-क्या नाम हैं? 2. कक्कू दिन भर क्या-क्या करता है?",
+        "topic_id": "T_1_3",
+        "page": 4,
+        "exercise_type": "comprehension",
+        "confidence": "high"
+      },
+      {
+        "id": "E_1_3_3",
+        "text": "लिखिए 1. कविता के आधार पर लिखिए कि कक्कू के नाम-झक्कू, भक्कू और सक्कू क्यों हैं? 2. कोयल की आवाज़ तुम्हें कैसी लगती है? 3. अपना नाम लिखिए और बताइए कि आपके नाम का क्या मतलब है?",
+        "topic_id": "T_1_3",
+        "page": 4,
+        "exercise_type": "writing_practice",
+        "confidence": "high"
+      },
+      {
+        "id": "E_1_3_4",
+        "text": "शब्द भंडार रेखांकित शब्द का अर्थ लिखिए। 1. रानी छोटी-छोटी बात पर मुँह फुला लेती है। 2. सुनीता को ठिठोली करना बिल्कुल अच्छा नहीं लगता है। 3. रमेश छोटी-छोटी बात पर भड़क जाता है।",
+        "topic_id": "T_1_3",
+        "page": 4,
+        "exercise_type": "vocabulary",
+        "confidence": "high"
+      },
+      {
+        "id": "E_1_3_5",
+        "text": "सृजनात्मक अभिव्यक्ति अभी तक आपने कक्कू के बारे में पढ़ा। अब आप अपने बारे में लिखिए।",
+        "topic_id": "T_1_3",
+        "page": 4,
+        "exercise_type": "writing_practice",
+        "confidence": "high"
+      },
+      {
+        "id": "E_1_4_1",
+        "text": "प्रशंसा हमें किसी को चिढ़ाना नहीं चाहिए। इस आधार पर कक्कू के बारे में दस वाक्य लिखिए।",
+        "topic_id": "T_1_4",
+        "page": 5,
+        "exercise_type": "writing_practice",
+        "confidence": "high"
+      },
+      {
+        "id": "E_1_4_2",
+        "text": "भाषा की बात इस कविता में प्रयुक्त द्वित्वाक्षरों की सूची बनाइए। जैसे : कक्कू",
+        "topic_id": "T_1_4",
+        "page": 5,
+        "exercise_type": "writing_practice",
+        "confidence": "high"
+      },
+      {
+        "id": "E_1_4_3",
+        "text": "भाषा की बात पाँच-पाँच बच्चों की टोली बना लीजिए। अब अपनी-अपनी टोलियों के बच्चों के नाम रेल के डिब्बों में लिखिए।",
+        "topic_id": "T_1_4",
+        "page": 5,
+        "exercise_type": "general_activity",
+        "confidence": "high"
+      },
+      {
+        "id": "E_1_4_4",
+        "text": "भाषा की बात वर्णमाला याद है न? चलो, अब इन नामों को वर्णमाला के हिसाब से क्रम में लगाते हैं।",
+        "topic_id": "T_1_4",
+        "page": 5,
+        "exercise_type": "writing_practice",
+        "confidence": "high"
+      },
+      {
+        "id": "E_1_4_5",
+        "text": "क्या मैं ये कर सकता/सकती हूँ? 1. कविता लय के साथ सुना सकता/सकती हूँ। भाव बता सकता/सकती हूँ। 2. इस स्तर की कविताओं का भाव पढ़कर समझ सकता/सकती हूँ। 3. इस स्तर की कविताओं की भाव सहित व्याख्या कर सकता/सकती हूँ। 4. कविता के शब्दों से वाक्य बना सकता/सकती हूँ। 5. कविता के शब्दों से तुकबंद वाक्य लिख सकता/सकती हूँ।",
+        "topic_id": "T_1_4",
+        "page": 5,
+        "exercise_type": "general_activity",
+        "confidence": "high"
+      },
+      {
+        "id": "E_1_5_1",
+        "text": "Image-based story: A boy is trying to hit a ball with a bat. The ball is bouncing away. A speech bubble from the ball says: \"मैं तो गेंद को सीधा मारने की कोशिश कर रहा हूँ, लेकिन पता नहीं क्यों, गेंद को यह बात समझ में नहीं आती...\" (I am trying to hit the ball straight, but I don't know why, the ball doesn't understand this...).",
+        "topic_id": "T_1_5",
+        "page": 6,
+        "exercise_type": "reading_exercise",
+        "confidence": "high"
+      },
+      {
+        "id": "E_2_1_1",
+        "text": "चित्र में क्या दिखाई दे रहा है? लड़के क्या कर रहे हैं? लड़कों को देखने पर आपको क्या लगता है?",
+        "topic_id": "T_2_1",
+        "page": 7,
+        "exercise_type": "observation_activity",
+        "confidence": "high"
+      },
+      {
+        "id": "E_2_1_2",
+        "text": "पाठ के चित्र देखिए। चित्र के आधार पर कल्पना कीजिए कि पाठ में क्या बताया होगा? पाठ पढ़िए। नए शब्द और वाक्य रेखांकित कीजिए। नए शब्दों और वाक्यों के बारे में मित्रों से चर्चा कीजिए। नए शब्दों के अर्थ शब्दकोश में ढूँढिए।",
+        "topic_id": "T_2_1",
+        "page": 7,
+        "exercise_type": "reading_comprehension",
+        "confidence": "high"
+      },
+      {
+        "id": "E_2_2_1",
+        "text": "कहानी 'शेखीबाज़ मक्खी' का पहला भाग पढ़ें।",
+        "topic_id": "T_2_2",
+        "page": 8,
+        "exercise_type": "reading_activity",
+        "confidence": "high"
+      },
+      {
+        "id": "E_2_3_1",
+        "text": "कहानी 'शेखीबाज़ मक्खी' का दूसरा भाग पढ़ें।",
+        "topic_id": "T_2_3",
+        "page": 9,
+        "exercise_type": "reading_activity",
+        "confidence": "high"
+      },
+      {
+        "id": "E_2_4_1",
+        "text": "कहानी 'शेखीबाज़ मक्खी' का तीसरा भाग पढ़ें।",
+        "topic_id": "T_2_4",
+        "page": 10,
+        "exercise_type": "reading_activity",
+        "confidence": "high"
+      },
+      {
+        "id": "E_2_5_1",
+        "text": "कहानी 'शेखीबाज़ मक्खी' का चौथा भाग पढ़ें।",
+        "topic_id": "T_2_5",
+        "page": 11,
+        "exercise_type": "reading_activity",
+        "confidence": "high"
+      },
+      {
+        "id": "E_2_6_1",
+        "text": "कहानी पर आधारित प्रश्नों के उत्तर दें: तुम्हें कहानी में कौन सबसे अच्छा लगा और क्यों? मक्खी मकड़ी के जाल में फँस गई थी। आगे क्या हुआ होगा? इस कहानी के क्या-क्या नाम हो सकते हैं? आप चुटकी बजाकर क्या-क्या काम कर सकते हैं?",
+        "topic_id": "T_2_6",
+        "page": 12,
+        "exercise_type": "oral_activity",
+        "confidence": "high"
+      },
+      {
+        "id": "E_2_6_2",
+        "text": "वाक्य पढ़िए और बताइए कि किसने किससे कहा: चुप हो जा वरना अभी... हिम्मत हो तो आ जाओ...! धन्य हो मक्खी रानी धन्य हो! अरे हाथी ... मुझे प्रणाम कर...",
+        "topic_id": "T_2_6",
+        "page": 12,
+        "exercise_type": "reading_comprehension",
+        "confidence": "high"
+      },
+      {
+        "id": "E_2_6_3",
+        "text": "कहानी पढ़िए और उचित शब्द ढूँढकर लिखिए: घमंडी, डरपोक, चतुर, सबसे चतुर, समझदार, आलसी।",
+        "topic_id": "T_2_6",
+        "page": 12,
+        "exercise_type": "vocabulary_activity",
+        "confidence": "high"
+      },
+      {
+        "id": "E_2_6_4",
+        "text": "शेर ने भोजन में क्या खाया होगा?",
+        "topic_id": "T_2_6",
+        "page": 12,
+        "exercise_type": "creative_writing",
+        "confidence": "high"
+      },
+      {
+        "id": "E_2_6_5",
+        "text": "शेर तो भोजन करके आराम कर रहा था। आप खाना खाकर क्या करते हैं?",
+        "topic_id": "T_2_6",
+        "page": 12,
+        "exercise_type": "creative_writing",
+        "confidence": "high"
+      },
+      {
+        "id": "E_2_6_6",
+        "text": "शेर की जगह आप होते तो क्या करते? अपने शब्दों में लिखिए। (सुबह, दोपहर, रात)",
+        "topic_id": "T_2_6",
+        "page": 12,
+        "exercise_type": "creative_writing",
+        "confidence": "high"
+      },
+      {
+        "id": "E_2_7_1",
+        "text": "रेखांकित शब्दों के विलोम लिखिए और उनसे वाक्य बनाइए: मुश्किल, हारा, धीरे।",
+        "topic_id": "T_2_7",
+        "page": 13,
+        "exercise_type": "vocabulary_activity",
+        "confidence": "high"
+      },
+      {
+        "id": "E_2_7_2",
+        "text": "पाठ के आधार पर पात्रों का पात्राभिनय कक्षा में करिए।",
+        "topic_id": "T_2_7",
+        "page": 13,
+        "exercise_type": "role_play",
+        "confidence": "high"
+      },
+      {
+        "id": "E_2_7_3",
+        "text": "पाठ में घमंडी मक्खी के बारे में बताया गया है। घमंड न करने से क्या-क्या लाभ हैं?",
+        "topic_id": "T_2_7",
+        "page": 13,
+        "exercise_type": "discussion_activity",
+        "confidence": "high"
+      },
+      {
+        "id": "E_2_7_4",
+        "text": "निम्न मुहावरों का अर्थ लिखिए: आग बबूला होना, खबर लेना, चुटकी बजाना, शोभा न देना, मंद-मंद मुस्कुराना।",
+        "topic_id": "T_2_7",
+        "page": 13,
+        "exercise_type": "language_activity",
+        "confidence": "high"
+      },
+      {
+        "id": "E_2_8_1",
+        "text": "मक्खी को सबसे ज्यादा जाल मिलने वाला रास्ता बताइए।",
+        "topic_id": "T_2_8",
+        "page": 14,
+        "exercise_type": "puzzle_activity",
+        "confidence": "high"
+      },
+      {
+        "id": "E_2_8_2",
+        "text": "स्व-मूल्यांकन करें: पाठ के बारे में बातचीत कर सकता/सकती हूँ। इस तरह के पाठ पढ़कर समझ सकता/सकती हूँ। पाठ का सारांश अपने शब्दों में लिख सकता/सकती हूँ। पाठ के शब्दों से वाक्य बना सकता/सकती हूँ। पाठ के आधार पर पात्राभिनय कर सकता/सकती हूँ।",
+        "topic_id": "T_2_8",
+        "page": 14,
+        "exercise_type": "self_assessment",
+        "confidence": "high"
+      },
+      {
+        "id": "E_3_placeholder_15_1",
+        "text": "[Activity on page 15 — see textbook]",
+        "topic_id": "T_3_placeholder_15",
+        "page": 15,
+        "exercise_type": "general_activity",
+        "confidence": "unextracted"
+      },
+      {
+        "id": "E_3_placeholder_16_1",
+        "text": "[Activity on page 16 — see textbook]",
+        "topic_id": "T_3_placeholder_16",
+        "page": 16,
+        "exercise_type": "general_activity",
+        "confidence": "unextracted"
+      },
+      {
+        "id": "E_3_placeholder_17_1",
+        "text": "[Activity on page 17 — see textbook]",
+        "topic_id": "T_3_placeholder_17",
+        "page": 17,
+        "exercise_type": "general_activity",
+        "confidence": "unextracted"
+      },
+      {
+        "id": "E_3_placeholder_18_1",
+        "text": "[Activity on page 18 — see textbook]",
+        "topic_id": "T_3_placeholder_18",
+        "page": 18,
+        "exercise_type": "general_activity",
+        "confidence": "unextracted"
+      },
+      {
+        "id": "E_3_placeholder_19_1",
+        "text": "[Activity on page 19 — see textbook]",
+        "topic_id": "T_3_placeholder_19",
+        "page": 19,
+        "exercise_type": "general_activity",
+        "confidence": "unextracted"
+      },
+      {
+        "id": "E_3_placeholder_20_1",
+        "text": "[Activity on page 20 — see textbook]",
+        "topic_id": "T_3_placeholder_20",
+        "page": 20,
+        "exercise_type": "general_activity",
+        "confidence": "unextracted"
+      },
+      {
+        "id": "E_3_placeholder_21_1",
+        "text": "[Activity on page 21 — see textbook]",
+        "topic_id": "T_3_placeholder_21",
+        "page": 21,
+        "exercise_type": "general_activity",
+        "confidence": "unextracted"
+      },
+      {
+        "id": "E_3_placeholder_22_1",
+        "text": "[Activity on page 22 — see textbook]",
+        "topic_id": "T_3_placeholder_22",
+        "page": 22,
+        "exercise_type": "general_activity",
+        "confidence": "unextracted"
+      },
+      {
+        "id": "E_3_9_1",
+        "text": "आपको चाँद में क्या दिखाई देता है? बताइए।",
+        "topic_id": "T_3_9",
+        "page": 23,
+        "exercise_type": "oral_communication",
+        "confidence": "high"
+      },
+      {
+        "id": "E_3_10_10",
+        "text": "पढ़िए - आनंद लीजिए: सूरज और चाँद ऊपर क्यों गए? (Read - Enjoy: Why did the Sun and Moon go up?)",
+        "topic_id": "T_3_10",
+        "page": 24,
+        "exercise_type": "reading_comprehension",
+        "confidence": "high"
+      },
+      {
+        "id": "E_4_1_1",
+        "text": "चित्र में क्या दिखाई दे रहा है?",
+        "topic_id": "T_4_1",
+        "page": 25,
+        "exercise_type": "observation",
+        "confidence": "medium"
+      },
+      {
+        "id": "E_4_1_2",
+        "text": "अनुमान लगाइए कि बच्चा क्या सोच रहा होगा?",
+        "topic_id": "T_4_1",
+        "page": 25,
+        "exercise_type": "inference",
+        "confidence": "medium"
+      },
+      {
+        "id": "E_4_1_3",
+        "text": "अनुमान लगाइए कि चिड़िया क्या कहना चाहती है?",
+        "topic_id": "T_4_1",
+        "page": 25,
+        "exercise_type": "inference",
+        "confidence": "medium"
+      },
+      {
+        "id": "E_4_1_4",
+        "text": "आपका मन क्या-क्या करने को कहता है?",
+        "topic_id": "T_4_1",
+        "page": 27,
+        "exercise_type": "oral_comprehension",
+        "confidence": "medium"
+      },
+      {
+        "id": "E_4_1_5",
+        "text": "आप अपने घर में किसकी नकल करना पसंद करते हो?",
+        "topic_id": "T_4_1",
+        "page": 27,
+        "exercise_type": "oral_discussion",
+        "confidence": "medium"
+      },
+      {
+        "id": "E_4_1_6",
+        "text": "ऐसे दो काम बताइए जो आप कर सकते हैं मगर बड़े नहीं?",
+        "topic_id": "T_4_1",
+        "page": 27,
+        "exercise_type": "oral_discussion",
+        "confidence": "medium"
+      },
+      {
+        "id": "E_4_1_7",
+        "text": "चिड़ियाँ शोर क्यों मचाती होंगी?",
+        "topic_id": "T_4_1",
+        "page": 27,
+        "exercise_type": "oral_discussion",
+        "confidence": "medium"
+      },
+      {
+        "id": "E_4_1_8",
+        "text": "कौन क्या करता है, जोड़ी बनाइए। (सूरज, चाँद, तितली, कोयल, चिड़िया को उनके कार्यों से मिलाएँ: आसमान में दौड़ लगाता है, तारों पर अकड़ दिखाता है, दूर-दूर तक उड़ती है, मीठे गीत सुनाती है, शोर मचाती है।)",
+        "topic_id": "T_4_1",
+        "page": 27,
+        "exercise_type": "matching",
+        "confidence": "medium"
+      },
+      {
+        "id": "E_4_1_9",
+        "text": "बच्चे का मन क्या-क्या बनने को कहता है? कविता के आधार पर लिखिए।",
+        "topic_id": "T_4_1",
+        "page": 27,
+        "exercise_type": "writing_comprehension",
+        "confidence": "medium"
+      },
+      {
+        "id": "E_4_1_10",
+        "text": "आपका मन क्या-क्या नहीं करने को कहता है?",
+        "topic_id": "T_4_1",
+        "page": 27,
+        "exercise_type": "writing_reflection",
+        "confidence": "medium"
+      },
+      {
+        "id": "E_4_1_11",
+        "text": "बड़ों का मन क्या-क्या करने को करता होगा?",
+        "topic_id": "T_4_1",
+        "page": 27,
+        "exercise_type": "writing_imagination",
+        "confidence": "medium"
+      },
+      {
+        "id": "E_4_1_12",
+        "text": "एक मिनट के लिए आँखें बंद करके बिल्कुल चुपचाप बैठ जाइए। ध्यान से आसपास की आवाजें सुनिए। अब आँखें खोलिए। क्या याद है, आपने किस-किस की आवाज सुनी? नीचे उनके नाम लिखिए।",
+        "topic_id": "T_4_1",
+        "page": 27,
+        "exercise_type": "listening_activity",
+        "confidence": "medium"
+      },
+      {
+        "id": "E_4_1_13",
+        "text": "पहेली: कागज़ का घोड़ा, धागे की लगाम, छोड़ दो भागा, तो करे सलाम।",
+        "topic_id": "T_4_1",
+        "page": 28,
+        "exercise_type": "riddle",
+        "confidence": "medium"
+      },
+      {
+        "id": "E_4_1_14",
+        "text": "इन शब्दों को समझिए और ऐसे पाँच शब्द लिखिए। दूर-दूर, मीठे-मीठे, चीं-चीं, चूँ-चूँ, अच्छे-अच्छे",
+        "topic_id": "T_4_1",
+        "page": 28,
+        "exercise_type": "vocabulary_building",
+        "confidence": "medium"
+      },
+      {
+        "id": "E_4_1_15",
+        "text": "कविता आगे बढ़ाइए। मन करता है चिड़िया बनकर चीं-चीं चूँ-चूँ शोर मचाऊँ। मन करता है चरखी लेकर पीली-लाल पतंग उड़ाऊँ। मन करता है पेड़ बनकर ... मन करता है फूल बनकर ...",
+        "topic_id": "T_4_1",
+        "page": 28,
+        "exercise_type": "creative_writing",
+        "confidence": "medium"
+      },
+      {
+        "id": "E_4_1_16",
+        "text": "अच्छी भावनाओं से जीवन सफल होता है। ऐसी कौनसी भावनाएँ हैं जो आपको पसंद हैं?",
+        "topic_id": "T_4_1",
+        "page": 29,
+        "exercise_type": "discussion_emotional_intelligence",
+        "confidence": "medium"
+      },
+      {
+        "id": "E_4_1_17",
+        "text": "रिक्त स्थान सही शब्दों से भरिए। जैसे घोड़े की तरह दौड़ लगाऊँ। क. हवाई जहाज की तरह .................... ख. कोयल की तरह .................... ग. मछली की तरह .................... घ. मोर की तरह ....................",
+        "topic_id": "T_4_1",
+        "page": 29,
+        "exercise_type": "language_activity",
+        "confidence": "medium"
+      },
+      {
+        "id": "E_4_1_18",
+        "text": "चलिए, पतंग बनाएँ (सामान और तरीका सहित)",
+        "topic_id": "T_4_1",
+        "page": 29,
+        "exercise_type": "craft_project",
+        "confidence": "medium"
+      },
+      {
+        "id": "E_5_1_1",
+        "text": "चित्र में क्या दिखाई दे रहा है? लड़की क्या कर रही है? लड़की ने रेल रोकने का प्रयास क्यों किया होगा? (Questions based on the introductory image, prompting observation and inference.)",
+        "topic_id": "T_5_1",
+        "page": 30,
+        "exercise_type": "comprehension_activity",
+        "confidence": "high"
+      },
+      {
+        "id": "E_5_1_2",
+        "text": "छात्रों के लिए सूचनाएँ: पाठ के चित्र देखिए। चित्र के आधार पर कल्पना कीजिए कि पाठ में क्या बताया गया होगा? पाठ पढ़िए। नए शब्द और वाक्य रेखांकित कीजिए। नए शब्दों और वाक्यों के बारे में मित्रों से चर्चा कीजिए। नए शब्दों के अर्थ शब्दकोश में ढूँढ़िए। (Instructions for students on how to approach reading the chapter, identifying new words, and discussing meanings.)",
+        "topic_id": "T_5_1",
+        "page": 30,
+        "exercise_type": "general_activity",
+        "confidence": "high"
+      },
+      {
+        "id": "E_5_1_3",
+        "text": "सुनिए-बोलिए: भेड़िए ने शेर को भोले महाराज क्यों कहा? क्या शेर सचमुच भोला था? शेर ने भेड़िए की पूँछ के साथ अपनी पूँछ क्यों बाँध ली? क्या शेर फिर कभी बित्तो के खेत की तरफ़ गया होगा? हाँ, तो क्यों? नहीं, तो क्यों? बित्तो की हिम्मत आपको कैसी लगी? अगर आप बित्तो की जगह होते तो शेर से कैसे निपटते? (Four questions for discussion and oral response related to the story.)",
+        "topic_id": "T_5_3",
+        "page": 35,
+        "exercise_type": "oral_activity",
+        "confidence": "high"
+      },
+      {
+        "id": "E_5_1_4",
+        "text": "पढ़िए: किसान ने बित्तो से क्या कहा? (A question requiring recall of a specific detail from the story.)",
+        "topic_id": "T_5_3",
+        "page": 35,
+        "exercise_type": "comprehension_activity",
+        "confidence": "high"
+      },
+      {
+        "id": "E_5_1_5",
+        "text": "कहानी में आपने दर्रांती का चित्र देखा। नीचे ऐसे ही कुछ और शब्द दिए गए हैं। उन्हें ढूँढ़कर लिखिए। (A word search grid activity to find given words.)",
+        "topic_id": "T_5_3",
+        "page": 35,
+        "exercise_type": "word_activity",
+        "confidence": "high"
+      },
+      {
+        "id": "E_5_1_6",
+        "text": "लिखिए: अगर आप शेर की जगह होते तो क्या करते? अगर आप बित्तो की जगह होते तो शेर से कैसे निपटते? (Two questions prompting students to imagine themselves in the story characters' places and write their responses.)",
+        "topic_id": "T_5_4",
+        "page": 36,
+        "exercise_type": "creative_writing",
+        "confidence": "high"
+      },
+      {
+        "id": "E_5_1_7",
+        "text": "नीचे दिए गए शब्दों को सही तालिका में लिखिए। (Categorizing a list of words into 'जानवर' (Animals), 'चीजें' (Things), and 'नाम' (Names).)",
+        "topic_id": "T_5_4",
+        "page": 36,
+        "exercise_type": "word_activity",
+        "confidence": "high"
+      },
+      {
+        "id": "E_5_1_8",
+        "text": "शब्द भंडार: शेर जंगल पर राज करता था। मेरा राज किसी से न कहना। राज और राज को बोलकर देखकर। दोनों के बोलने में फ़र्क है न? कहानी में से ऐसे ही ज़ पर लगे नुक्ते वाले शब्द ढूँढ़िए। अब अपने मन से सोचकर ज़ पर लगे नुक्ते वाले पाँच शब्द लिखिए। (Activities to understand the difference between similar-sounding words (राज/राज़), identify words with 'nukta' on 'z' from the story, and generate new ones.)",
+        "topic_id": "T_5_5",
+        "page": 37,
+        "exercise_type": "vocabulary_activity",
+        "confidence": "high"
+      },
+      {
+        "id": "E_5_1_9",
+        "text": "सृजनात्मक अभिव्यक्ति: शेर ने बित्तो को राक्षसी समझ लिया। वह खेत में नहीं जाना चाहता था पर भेड़िए के समझाने पर वह राजी हो गया। सोचिए, शेर और भेड़िए के बीच क्या बातचीत हुई होगी? (A dialogue completion activity imagining a conversation between the lion and the wolf.)",
+        "topic_id": "T_5_5",
+        "page": 37,
+        "exercise_type": "creative_writing",
+        "confidence": "high"
+      },
+      {
+        "id": "E_5_6_1",
+        "text": "अभी तक पाठ में तुमने पढ़ा कि बित्तो ने अपने साहस के बल पर किस तरह से शेर को मज़ा चखाया। अब आप बित्तो की प्रशंसा करते हुए दस वाक्य लिखिए।",
+        "topic_id": "T_5_6",
+        "page": 38,
+        "exercise_type": "writing_practice",
+        "confidence": "high"
+      },
+      {
+        "id": "E_5_6_2",
+        "text": "मेरी छत पर मोर आया। मेरी छत पर मोरनी आई।",
+        "topic_id": "T_5_6",
+        "page": 38,
+        "exercise_type": "fill_in_the_blank",
+        "confidence": "high"
+      },
+      {
+        "id": "E_5_6_3",
+        "text": "मोर-मोरनी की तरह नीचे लिखे शब्दों के भी रूप बदलिए। शेर - ........................ बच्चा - ........................ घोड़ा - ........................ मदछुआरा - ........................ राजा - ........................",
+        "topic_id": "T_5_6",
+        "page": 38,
+        "exercise_type": "writing_practice",
+        "confidence": "high"
+      },
+      {
+        "id": "E_5_7_1",
+        "text": "क्या मैं ये कर सकता/सकती हूँ? हाँ (✓) नहीं (X) 1. पाठ के बारे में बातचीत कर सकता/सकती हूँ। भाव बता सकता/सकती हूँ। 2. इस तरह के पाठ पढ़कर समझ सकता/सकती हूँ। 3. पाठ का सारांश अपने शब्दों में लिख सकता/सकती हूँ। 4. पाठ के शब्दों से वाक्य बना सकता/सकती हूँ। 5. पाठ के आधार पर छोटी कहानी लिख सकता/सकती हूँ।",
+        "topic_id": "T_5_7",
+        "page": 38,
+        "exercise_type": "general_activity",
+        "confidence": "high"
+      },
+      {
+        "id": "E_5_8_1",
+        "text": "पढ़िए - आनंद लीजिए",
+        "topic_id": "T_5_8",
+        "page": 39,
+        "exercise_type": "reading_exercise",
+        "confidence": "high"
+      },
+      {
+        "id": "E_6_1_1",
+        "text": "प्रश्न 1. चित्र में कौन-कौन दिखाई दे रहे हैं? 2. बच्चा अध्यापिका को क्या बता रहा होगा? 3. आपसे आपके घर के बड़े लोग क्या-क्या नहीं करने को कहते हैं?",
+        "topic_id": "T_6_1",
+        "page": 42,
+        "exercise_type": "oral_communication",
+        "confidence": "high"
+      },
+      {
+        "id": "E_6_1_2",
+        "text": "छात्रों के लिए सूचनाएँ: 1. पाठ के चित्र देखिए। चित्र के आधार पर कल्पना कीजिए कि पाठ में क्या बताया गया होगा? 2. पाठ पढ़िए। नए शब्द और वाक्य रेखांकित कीजिए। 3. नए शब्दों और वाक्यों के बारे में मित्रों से चर्चा कीजिए। 4. नए शब्दों के अर्थ शब्दकोश में ढूँढ़िए।",
+        "topic_id": "T_6_1",
+        "page": 42,
+        "exercise_type": "general_activity",
+        "confidence": "high"
+      },
+      {
+        "id": "E_6_2_1",
+        "text": "सुनिए-बोलिए 1. बच्चों को बड़ों के द्वारा किस प्रकार की डाँट डपट मिलती रहती है? 2. घर और पाठशाला में आपको क्या-क्या करने के लिए मना किया जाता है?",
+        "topic_id": "T_6_2",
+        "page": 45,
+        "exercise_type": "oral_communication",
+        "confidence": "high"
+      },
+      {
+        "id": "E_6_2_2",
+        "text": "निम्न वाक्य पढ़िए और बताइए – • सूरज चाँद की रोशनी को भगा देता है। • बादल सूरज की रोशनी को भगा देता है। • हवा बादल को भगा देती है। बताओ, कौन किससे ज़्यादा ताकतवर है?",
+        "topic_id": "T_6_2",
+        "page": 45,
+        "exercise_type": "comprehension",
+        "confidence": "high"
+      },
+      {
+        "id": "E_6_2_3",
+        "text": "पढ़िए 1. सूर्य, चाँद, हवा और बादल के बारे में पाठ में क्यों बताया गया है? 2. अम्मा, पापा, भैया क्यों डाँटते रहते हैं?",
+        "topic_id": "T_6_2",
+        "page": 45,
+        "exercise_type": "comprehension",
+        "confidence": "high"
+      },
+      {
+        "id": "E_6_2_4",
+        "text": "लिखिए पाठशाला और घर में आपको क्या-क्या करने के लिए कहा जाता है और क्या-क्या करने के लिए मना किया जाता है। नीचे वाली तालिका में लिखिए। [Table with columns: कीजिए, मत कीजिए]",
+        "topic_id": "T_6_2",
+        "page": 45,
+        "exercise_type": "writing_practice",
+        "confidence": "high"
+      },
+      {
+        "id": "E_6_2_5",
+        "text": "शब्द भंडार ‘हमसे सब कहते’ कविता में जिन लोगों, चीज़ों और जगहों के नाम आए हैं, उन्हें नीचे दी गई तालिका में लिखिए। [Table with columns: लोग, चीज़, जगह]",
+        "topic_id": "T_6_2",
+        "page": 46,
+        "exercise_type": "writing_practice",
+        "confidence": "high"
+      },
+      {
+        "id": "E_6_2_6",
+        "text": "सृजनात्मक अभिव्यक्ति चाँद और बादलों का चित्र बनाइए। उनके बारे में लिखिए।",
+        "topic_id": "T_6_2",
+        "page": 46,
+        "exercise_type": "art_activity",
+        "confidence": "high"
+      },
+      {
+        "id": "E_6_2_7",
+        "text": "प्रशंसा बड़े लोग सदा हमारी भलाई के बारे में सोचते हैं। ऐसी कोई दस बातें बताइए।",
+        "topic_id": "T_6_2",
+        "page": 46,
+        "exercise_type": "oral_communication",
+        "confidence": "high"
+      },
+      {
+        "id": "E_6_2_8",
+        "text": "भाषा की बात इस कविता में चाँद, डाँट जैसे शब्दों में अनुनासिक (चंद्र बिंदु) का प्रयोग हुआ है। ऐसे अन्य पाँच शब्द लिखिए।",
+        "topic_id": "T_6_2",
+        "page": 46,
+        "exercise_type": "writing_practice",
+        "confidence": "high"
+      },
+      {
+        "id": "E_6_2_9",
+        "text": "क्या मैं ये कर सकता/सकती हूँ? 1. कविता के लय के साथ सुन सकता/सकती हूँ। भाव बता सकता/सकती हूँ। 2. इस स्तर की कविताओं का भाव पढ़कर समझ सकता/सकती हूँ। 3. इस स्तर की कविताओं की भाव सहित व्याख्या कर सकता/सकती हूँ। 4. कविता के शब्दों से वाक्य बना सकता/सकती हूँ। 5. कविता के शब्दों से तुकबंद वाक्य लिख सकता/सकती हूँ।",
+        "topic_id": "T_6_2",
+        "page": 46,
+        "exercise_type": "general_activity",
+        "confidence": "high"
+      },
+      {
+        "id": "E_6_3_1",
+        "text": "परियोजना कार्य यह कहानी आपने कई बार सुनी होगी। • कौआ और लोमड़ी [Story text accompanying images]: एक बार एक कौए को एक रोटी मिली। लोमड़ी ने सोचा क्यों न मैं इस कौए को मूर्ख बनाकर रोटी ले लूँ। लोमड़ी बोली – “कौए भाई तुम इतना अच्छा गाते हो! मुझे भी एक गाना सुनाओ।” कौए ने जैसे ही गाने के लिए मुँह खोला, रोटी नीचे गिर गई। लोमड़ी रोटी लेकर चलती गई।",
+        "topic_id": "T_6_3",
+        "page": 47,
+        "exercise_type": "reading_exercise",
+        "confidence": "high"
+      },
+      {
+        "id": "E_6_3_2",
+        "text": "आइए, अब इन्हीं चित्रों से एक नई कहानी बनाएँ। [Six images with blank lines below each for writing a story]",
+        "topic_id": "T_6_3",
+        "page": 48,
+        "exercise_type": "writing_practice",
+        "confidence": "high"
+      },
+      {
+        "id": "E_7_1_1",
+        "text": "चित्र पर आधारित प्रश्न: चित्र में क्या दिखाई दे रहा है? लड़का क्यों भाग रहा होगा? बरसात के समय वातावरण कैसा होता है?",
+        "topic_id": "T_7_1",
+        "page": 49,
+        "exercise_type": "comprehension_questions",
+        "confidence": "high"
+      },
+      {
+        "id": "E_7_1_2",
+        "text": "छात्रों के लिए सूचनाएँ: पाठ के चित्र देखकर कल्पना करना, पाठ पढ़ना, नए शब्द और वाक्य रेखांकित करना, चर्चा करना और शब्दकोश में अर्थ ढूँढना।",
+        "topic_id": "T_7_1",
+        "page": 49,
+        "exercise_type": "reading_instructions",
+        "confidence": "high"
+      },
+      {
+        "id": "E_7_2_1",
+        "text": "चित्र में दादी और पोते को बारिश के दौरान कहानी सुनते हुए दिखाया गया है।",
+        "topic_id": "T_7_2",
+        "page": 50,
+        "exercise_type": "art_activity",
+        "confidence": "high"
+      },
+      {
+        "id": "E_7_3_1",
+        "text": "चित्र में बारिश से डरा हुआ बाघ और धोबी व उसकी पत्नी को दिखाया गया है।",
+        "topic_id": "T_7_3",
+        "page": 51,
+        "exercise_type": "art_activity",
+        "confidence": "high"
+      },
+      {
+        "id": "E_7_4_1",
+        "text": "चित्र में धोबी को पंडित जी से बात करते हुए और बाद में बाघ को पीटते हुए दिखाया गया है।",
+        "topic_id": "T_7_4",
+        "page": 52,
+        "exercise_type": "art_activity",
+        "confidence": "high"
+      },
+      {
+        "id": "E_7_5_1",
+        "text": "चित्र में धोबी को बाघ का कान पकड़कर उसे घर की ओर खींचते हुए दिखाया गया है।",
+        "topic_id": "T_7_5",
+        "page": 53,
+        "exercise_type": "art_activity",
+        "confidence": "high"
+      },
+      {
+        "id": "E_7_6_1",
+        "text": "सुनिए-बोलिए: बारिश के अनुभव और पसंदीदा जानवरों पर मौखिक प्रश्न।",
+        "topic_id": "T_7_6",
+        "page": 54,
+        "exercise_type": "oral_questions",
+        "confidence": "high"
+      },
+      {
+        "id": "E_7_6_2",
+        "text": "पढ़िए: 'कौन-किससे परेशान?' कहानी के पात्रों की परेशानियों को पहचानना और लिखना।",
+        "topic_id": "T_7_6",
+        "page": 54,
+        "exercise_type": "comprehension_table",
+        "confidence": "high"
+      },
+      {
+        "id": "E_7_6_3",
+        "text": "लिखिए: 'याद कीजिए' - पोते की तरह अपनी पसंदीदा चीज़ों के लिए मचलने का अनुभव लिखना।",
+        "topic_id": "T_7_6",
+        "page": 54,
+        "exercise_type": "writing_activity",
+        "confidence": "high"
+      },
+      {
+        "id": "E_7_7_1",
+        "text": "शब्द भंडार: कहानी के वाक्यों को अपने शब्दों में लिखना।",
+        "topic_id": "T_7_7",
+        "page": 55,
+        "exercise_type": "vocabulary_rewriting",
+        "confidence": "high"
+      },
+      {
+        "id": "E_7_7_2",
+        "text": "सृजनात्मक अभिव्यक्ति: कहानी में बारिश की तीव्रता बदलने पर क्या होता, इस पर आधारित रचनात्मक लेखन।",
+        "topic_id": "T_7_7",
+        "page": 55,
+        "exercise_type": "creative_writing",
+        "confidence": "high"
+      },
+      {
+        "id": "E_7_7_3",
+        "text": "प्रशंसा: लोककथाओं के लुप्त होने और समाज पर उनके प्रभाव पर विचार करना।",
+        "topic_id": "T_7_7",
+        "page": 55,
+        "exercise_type": "critical_thinking",
+        "confidence": "high"
+      },
+      {
+        "id": "E_7_8_1",
+        "text": "भाषा की बात: 'एक से ज़्यादा' - एकवचन और बहुवचन शब्दों को पूरा करना।",
+        "topic_id": "T_7_8",
+        "page": 56,
+        "exercise_type": "grammar_activity",
+        "confidence": "high"
+      },
+      {
+        "id": "E_7_8_2",
+        "text": "क्या मैं ये कर सकता/सकती हूँ?: पाठ से संबंधित विभिन्न कौशलों का स्व-मूल्यांकन (बातचीत, समझ, सारांश लेखन, वाक्य निर्माण, कहानी लेखन)।",
+        "topic_id": "T_7_8",
+        "page": 56,
+        "exercise_type": "self_assessment",
+        "confidence": "high"
+      },
+      {
+        "id": "E_8_1_1",
+        "text": "प्रश्न: 1. चित्र में क्या दिखाई दे रहा है? 2. बंदर क्या कर रहे हैं? 3. लड़की घंटा लेकर क्यों भाग रही होगी?",
+        "topic_id": "T_8_1",
+        "page": 57,
+        "exercise_type": "oral_communication",
+        "confidence": "high"
+      },
+      {
+        "id": "E_8_1_2",
+        "text": "छात्रों के लिए सूचनाएँ: 1. पाठ के चित्र देखिए। चित्र के आधार पर कल्पना कीजिए कि पाठ में क्या बताया गया होगा? 2. पाठ पढ़िए। नए शब्द और वाक्य रेखांकित कीजिए। 3. नए शब्दों और वाक्यों के बारे में मित्रों से चर्चा कीजिए। 4. नए शब्दों के अर्थ शब्दकोश में ढूँढिए।",
+        "topic_id": "T_8_1",
+        "page": 57,
+        "exercise_type": "reading_exercise",
+        "confidence": "high"
+      },
+      {
+        "id": "E_9_2_1",
+        "text": "तस्वीर देखकर बताइए इनमें से कट्टो बिल्ली कौन-सी है?",
+        "topic_id": "T_9_2",
+        "page": 67,
+        "exercise_type": "observation_activity",
+        "confidence": "high"
+      },
+      {
+        "id": "E_9_2_2",
+        "text": "क्यों मैं ये कर सकता/सकती हूँ? (Self-assessment table for reading, writing, and understanding the chapter).",
+        "topic_id": "T_9_2",
+        "page": 67,
+        "exercise_type": "self_assessment",
+        "confidence": "high"
+      },
+      {
+        "id": "E_9_3_1",
+        "text": "पढ़िए - आनंद लीजिए (Read and enjoy the poem \"सर्दी आई\").",
+        "topic_id": "T_9_3",
+        "page": 68,
+        "exercise_type": "reading_comprehension",
+        "confidence": "high"
+      },
+      {
+        "id": "E_9_4_1",
+        "text": "बच्चों से ऐसा ही मुखौटा बनाने के लिए कहो। इसी प्रकार से अन्य जानवरों के मुखौटे बनाए जा सकते हैं। इन मुखौटों को पहनाकर उनसे अभिनय करवाएँ। (Make masks and use them for acting).",
+        "topic_id": "T_9_4",
+        "page": 69,
+        "exercise_type": "craft_activity",
+        "confidence": "high"
+      },
+      {
+        "id": "E_10_1_1",
+        "text": "चित्र पर आधारित प्रश्न: चित्र में क्या दिखाई दे रहा है? बच्चे क्या कर रहे हैं? आप बाज़ार किस दिन जाते हैं और क्यों?",
+        "topic_id": "T_10_1",
+        "page": 73,
+        "exercise_type": "pre_reading_activity",
+        "confidence": "high"
+      },
+      {
+        "id": "E_10_1_2",
+        "text": "छात्रों के लिए पाठ-पठन सूचनाएँ: पाठ के चित्र देखिए, पाठ पढ़िए, नए शब्द और वाक्य रेखांकित कीजिए, मित्रों से चर्चा कीजिए, नए शब्दों के अर्थ शब्दकोश में ढूँढ़िए।",
+        "topic_id": "T_10_1",
+        "page": 73,
+        "exercise_type": "general_activity",
+        "confidence": "high"
+      },
+      {
+        "id": "E_10_1_3",
+        "text": "कहानी का पठन: अवंती की छोटी-सी रंगाई की दुकान और सेठ की ईर्ष्या का आरंभ।",
+        "topic_id": "T_10_1",
+        "page": 74,
+        "exercise_type": "reading_comprehension",
+        "confidence": "high"
+      },
+      {
+        "id": "E_10_1_4",
+        "text": "कहानी का पठन: सेठ द्वारा अवंती को परेशान करने का प्रयास और अवंती की चतुराई से समस्या का समाधान।",
+        "topic_id": "T_10_1",
+        "page": 75,
+        "exercise_type": "reading_comprehension",
+        "confidence": "high"
+      },
+      {
+        "id": "E_10_1_5",
+        "text": "सुनिए-बोलिए: आपको कौनसा रंग पसंद है और क्यों? आप रविवार के दिन क्या करते हैं?",
+        "topic_id": "T_10_1",
+        "page": 76,
+        "exercise_type": "speaking_activity",
+        "confidence": "high"
+      },
+      {
+        "id": "E_10_1_6",
+        "text": "पढ़िए: सेठ ने किस रंग में कपड़ा रंगने को कहा? अवंती ने कपड़ा अलमारी में बंद कर दिया। क्यों? सेठ कपड़ा लेने किस दिन आया होगा? नीचे के वाक्यों में छुपे सब्ज़ियों के नाम ढूँढ़िए।",
+        "topic_id": "T_10_1",
+        "page": 76,
+        "exercise_type": "reading_comprehension",
+        "confidence": "high"
+      },
+      {
+        "id": "E_10_1_7",
+        "text": "लिखिए: सेठ भोला था या अवंती? अपने विचार लिखिए। आप अवंती की जगह होते तो क्या करते?",
+        "topic_id": "T_10_1",
+        "page": 76,
+        "exercise_type": "writing_activity",
+        "confidence": "high"
+      },
+      {
+        "id": "E_10_1_8",
+        "text": "शब्द भंडार: मात्रा बदलने से अर्थ बदलने वाले शब्दों के जोड़े बनाइए (जैसे दिन-दीन, मैला-मेला)।",
+        "topic_id": "T_10_1",
+        "page": 76,
+        "exercise_type": "vocabulary_activity",
+        "confidence": "high"
+      },
+      {
+        "id": "E_10_1_9",
+        "text": "फालतू शब्द पहचानिए: दिए गए वाक्यों में से अनावश्यक शब्दों को ढूँढ़कर अलग कीजिए।",
+        "topic_id": "T_10_1",
+        "page": 77,
+        "exercise_type": "vocabulary_activity",
+        "confidence": "high"
+      },
+      {
+        "id": "E_10_1_10",
+        "text": "सृजनात्मक अभिव्यक्ति: दिए गए शब्दों (विद्यालय, गुरुजी, छुट्टी, बंदर, डंडा, पेड़, केला, ताली, बच्चे, भूख) का उपयोग करके एक छोटी कहानी बनाइए।",
+        "topic_id": "T_10_1",
+        "page": 77,
+        "exercise_type": "creative_writing",
+        "confidence": "high"
+      },
+      {
+        "id": "E_10_1_11",
+        "text": "प्रशंसा: अवंती के कपड़ों, शक्ल-सूरत, पालतू पशु, बुद्धि आदि के बारे में कुछ वाक्य लिखिए।",
+        "topic_id": "T_10_1",
+        "page": 77,
+        "exercise_type": "writing_activity",
+        "confidence": "high"
+      },
+      {
+        "id": "E_10_1_12",
+        "text": "भाषा की बात - मुहावरे: चित्रों को देखकर उनसे संबंधित मुहावरे या कहावतें लिखिए (जैसे अँधेरा, आरसी, आस्तीन, ग्यारह)।",
+        "topic_id": "T_10_1",
+        "page": 78,
+        "exercise_type": "language_activity",
+        "confidence": "high"
+      },
+      {
+        "id": "E_10_1_13",
+        "text": "समझ-समझदारी - शब्द निर्माण: 'रंग' से 'रंगाई' की तरह 'साफ़', 'चढ़', 'बुन' से नए शब्द बनाइए।",
+        "topic_id": "T_10_1",
+        "page": 78,
+        "exercise_type": "word_formation",
+        "confidence": "high"
+      },
+      {
+        "id": "E_10_1_14",
+        "text": "रेखांकित शब्दों का अर्थ बताइए: दिए गए वाक्यों में रेखांकित शब्दों (जैसे कतई, मंसूबा, भाँप लिया, हुनर, बुलंद, ईर्ष्या, ख़ास) का अर्थ स्पष्ट कीजिए।",
+        "topic_id": "T_10_1",
+        "page": 79,
+        "exercise_type": "vocabulary_activity",
+        "confidence": "high"
+      },
+      {
+        "id": "E_10_1_15",
+        "text": "क्या मैं ये कर सकता/सकती हूँ? - स्व-मूल्यांकन: पाठ के बारे में बातचीत, पाठ समझना, सारांश लिखना, वाक्य बनाना, कहानी का अभिनय करने की क्षमता का मूल्यांकन।",
+        "topic_id": "T_10_1",
+        "page": 79,
+        "exercise_type": "self_assessment",
+        "confidence": "high"
+      },
+      {
+        "id": "E_11_1_1",
+        "text": "प्रश्न: 1. यह दृश्य कहाँ का है? 2. औरतें क्या कर रही हैं? 3. क्या आप ऐसी जगह गए हो और क्यों?",
+        "topic_id": "T_11_1",
+        "page": 80,
+        "exercise_type": "comprehension_questions",
+        "confidence": "high"
+      },
+      {
+        "id": "E_11_1_2",
+        "text": "छात्रों के लिए सूचनाएँ: 1. पाठ के चित्र देखिए। चित्र के आधार पर कल्पना कीजिए कि पाठ में क्या बताया गया होगा? 2. पाठ पढ़िए। नए शब्द और वाक्य रेखांकित कीजिए। 3. नए शब्दों और वाक्यों के बारे में मित्रों से चर्चा कीजिए। 4. नए शब्दों के अर्थ शब्दकोश में ढूँढ़िए।",
+        "topic_id": "T_11_1",
+        "page": 80,
+        "exercise_type": "pre_reading_activity",
+        "confidence": "high"
+      },
+      {
+        "id": "E_11_3_1",
+        "text": "सुनिए-बोलिए: 1. आपके मन में अपने वातावरण के प्रति क्या जिज्ञासा होती है? 2. रोटी कैसे बनायी जाती है? अपने शब्दों में लिखिए। 3. बच्चों के सवालों से बड़े किस तरह तंग होते हैं? 4. हम गेहूँ पिसवाने आटा-चक्की पर जाते हैं। हम इन कामों के लिए कहाँ जाते हैं? (आटा खरीदने, पंचर बनवाने, दूध खरीदने, जूते की मरम्मत करवाने, सुराही खरीदने, कॉपी-किताब खरीदने, बाल कटवाने)",
+        "topic_id": "T_11_3",
+        "page": 84,
+        "exercise_type": "listen_and_speak",
+        "confidence": "high"
+      },
+      {
+        "id": "E_11_3_2",
+        "text": "अपने घर के पास की आटा-चक्की पर जाइए और पता कीजिए कि - - वहाँ क्या-क्या पिसता है? - आटा-चक्की किस चीज़ से चलती है? - दिन में चक्की को कितनी बार रोका जाता है?",
+        "topic_id": "T_11_3",
+        "page": 84,
+        "exercise_type": "field_activity",
+        "confidence": "high"
+      },
+      {
+        "id": "E_11_3_3",
+        "text": "पढ़िए: 1. क्योंजीमल और कैसेलिया का नाम कहाँ तक सार्थक है? 2. गुरुजी कहाँ जा रहे थे?",
+        "topic_id": "T_11_3",
+        "page": 85,
+        "exercise_type": "comprehension_questions",
+        "confidence": "high"
+      },
+      {
+        "id": "E_11_3_4",
+        "text": "लिखिए: 1. कहा जाता है कि काम पर जाते समय टोकना नहीं चाहिए। ऐसा क्यों कहा जाता होगा? 2. आप गुरुजी की जगह होते तो क्या करते?",
+        "topic_id": "T_11_3",
+        "page": 85,
+        "exercise_type": "writing_activity",
+        "confidence": "high"
+      },
+      {
+        "id": "E_11_3_5",
+        "text": "शब्द भंडार: 1. आपके घर में आटा सानने को क्या कहते हैं? 2. रोटी बनाने के लिए किन-किन चीज़ों की आवश्यकता पड़ती है?",
+        "topic_id": "T_11_3",
+        "page": 85,
+        "exercise_type": "vocabulary_building",
+        "confidence": "high"
+      },
+      {
+        "id": "E_11_3_6",
+        "text": "सृजनात्मक अभिव्यक्ति: 1. रोटी पर कविता बनाइए। जैसे: छोटी-छोटी रोटी गोल-गोल रोटी.......",
+        "topic_id": "T_11_3",
+        "page": 85,
+        "exercise_type": "creative_writing",
+        "confidence": "high"
+      },
+      {
+        "id": "E_11_3_7",
+        "text": "प्रशंसा: जीवन में कई प्रकार के कार्य करने पड़ते हैं। कोई कार्य छोटा या बड़ा नहीं होता। हर कार्य का अपना-अपना महत्त्व होता है। ऐसे किसी दो कार्यों की प्रशंसा करते हुए अपने विचार लिखिए।",
+        "topic_id": "T_11_3",
+        "page": 85,
+        "exercise_type": "reflection_activity",
+        "confidence": "high"
+      },
+      {
+        "id": "E_11_3_8",
+        "text": "भाषा की बात: निम्नलिखित वाक्यों के प्रश्नवाचक वाक्य बनाइए। 1. चुटकी भर नमक डालती है। 2. हमारे घर आज दाल बनती है। 3. आटे से रोटी बनती है।",
+        "topic_id": "T_11_3",
+        "page": 85,
+        "exercise_type": "grammar_activity",
+        "confidence": "high"
+      },
+      {
+        "id": "E_11_3_9",
+        "text": "परियोजना कार्य: नीचे रसोई की कुछ चीज़ों के चित्र बने हैं उन्हें देखकर बताइए कि रोटी बनाने में कौन-कौन सी चीज़ इस्तेमाल नहीं होती। तो ऐसी चीज़ों का इस्तेमाल किस काम के लिए किया जाएगा? लिखिए! (Includes a table for \"सामान का नाम\" and \"इस्तेमाल\")",
+        "topic_id": "T_11_3",
+        "page": 86,
+        "exercise_type": "project_work",
+        "confidence": "high"
+      },
+      {
+        "id": "E_11_3_10",
+        "text": "क्या मैं ये कर सकता/सकती हूँ? (Self-assessment checklist): 1. पाठ के बारे में बातचीत कर सकता/सकती हूँ। भाव बता सकता/सकती हूँ। 2. इस तरह के पाठ पढ़कर समझ सकता/सकती हूँ। 3. पाठ का सारांश अपने शब्दों में लिख सकता/सकती हूँ। 4. पाठ के शब्दों से वाक्य बना सकता/सकती हूँ। 5. पाठ के आधार पर संवाद लिख सकता/सकती हूँ।",
+        "topic_id": "T_11_3",
+        "page": 86,
+        "exercise_type": "self_assessment",
+        "confidence": "high"
+      },
+      {
+        "id": "E_12_2_1",
+        "text": "चित्र में क्या दिखाई दे रहा है? हमारे देश के कुछ राष्ट्रीय चिह्न बताइए। बाघ राष्ट्रीय पशु क्यों कहलाता है?",
+        "topic_id": "T_12_2",
+        "page": 87,
+        "exercise_type": "comprehension_questions",
+        "confidence": "high"
+      },
+      {
+        "id": "E_12_2_2",
+        "text": "पाठ के चित्र देखिए। चित्र के आधार पर कल्पना कीजिए कि पाठ में क्या बताया गया होगा? पाठ पढ़िए। नर शब्द और वाक्य रेखांकित कीजिए। नए शब्दों और वाक्यों के बारे में मित्रों से चर्चा कीजिए। नए शब्दों के अर्थ शब्दकोश में ढूँढिए।",
+        "topic_id": "T_12_2",
+        "page": 87,
+        "exercise_type": "pre_reading_activity",
+        "confidence": "high"
+      },
+      {
+        "id": "E_12_2_3",
+        "text": "विभिन्न जानवरों की बोलियों में तुम्हें कौन-सी बोली अच्छी लगती है और क्यों? जानवरों को पकड़ने के (जैसे शेर और चूहा) कौन से तरीके हैं? जंगल के पास गाँववाले जानवरों से बचने के क्या उपाय करते हैं?",
+        "topic_id": "T_12_2",
+        "page": 90,
+        "exercise_type": "speaking_activity",
+        "confidence": "high"
+      },
+      {
+        "id": "E_12_2_4",
+        "text": "मीरा बहन कौन थी? गेंवली गाँव में क्या हुआ था? मीरा ने पिंजड़ा बंद करने का क्या कारण बताया?",
+        "topic_id": "T_12_2",
+        "page": 90,
+        "exercise_type": "reading_comprehension",
+        "confidence": "high"
+      },
+      {
+        "id": "E_12_2_5",
+        "text": "आप पाठशाला या घर में किससे अधिक प्रभावित होते हैं और क्यों? यदि आपके गाँव या शहर में अचानक बाघ आ जाए तो आप क्या करेंगे?",
+        "topic_id": "T_12_2",
+        "page": 90,
+        "exercise_type": "writing_activity",
+        "confidence": "high"
+      },
+      {
+        "id": "E_12_3_1",
+        "text": "बाघ, गाय, बकरी, हाथी और हिरण जानवर हैं। नीचे लिखी हुई चीजें क्या हैं? खाली जगहों में लिखिए। (Lists of places, sweets, rivers, trees, clothes, grains to categorize).",
+        "topic_id": "T_12_3",
+        "page": 91,
+        "exercise_type": "categorization",
+        "confidence": "high"
+      },
+      {
+        "id": "E_12_3_2",
+        "text": "जानवरों की बोलियाँ तो तुमने सुनी ही होंगी। कोयल की बोली को जैसे कूकना कहते हैं और मक्खी की बोली को भिनभिनाना, वैसे ही अन्य जानवरों की बोलियों के भी नाम हैं। नीचे दिए गए खाने में एक तरफ जानवरों के नाम हैं, दूसरी तरफ बोलियाँ के। ढूँढ़ निकालिए कौन-सी बोली किसकी है?",
+        "topic_id": "T_12_3",
+        "page": 91,
+        "exercise_type": "matching",
+        "confidence": "high"
+      },
+      {
+        "id": "E_12_4_1",
+        "text": "गाँववालों ने बाघ को पकड़ने के लिए एक योजना बनाई थी। कक्कू के घर में रोज़ बिल्ली आकर दूध पी जाती है। कक्कू की मदद करने के लिए कोई योजना बनाइए। इस घटना को आगे बढ़ाइए।",
+        "topic_id": "T_12_4",
+        "page": 92,
+        "exercise_type": "creative_writing",
+        "confidence": "high"
+      },
+      {
+        "id": "E_12_4_2",
+        "text": "इस पाठ से हमें क्या सीख मिलती है, अपने विचार लिखिए।",
+        "topic_id": "T_12_4",
+        "page": 92,
+        "exercise_type": "reflection_writing",
+        "confidence": "high"
+      },
+      {
+        "id": "E_12_5_1",
+        "text": "हवाई जहाज़ आसमान उड़ रहा है। आपको यह वाक्य कुछ अटपटा लग रहा होगा। इस वाक्य को फिर से पढ़िए। हवाई जहाज़ आसमान में उड़ रहा है। अब इसी तरह इन वाक्यों को ठीक कीजिए: धूप बैठकर ढोकला खाया। पुतुल काम करने मना कर दिया। लता सब मूँगफली खिलाई। पहाड़ी गाँवों बाघ डर रहता है। अब वे सभी शब्द फिर से लिखो जिन्हें तुमने जोड़ा है।",
+        "topic_id": "T_12_5",
+        "page": 92,
+        "exercise_type": "grammar_correction",
+        "confidence": "high"
+      },
+      {
+        "id": "E_12_6_1",
+        "text": "बाघ से जुड़ी और कुछ कहानियाँ इकट्ठी कीजिए। कक्षा में प्रदर्शित कीजिए। मित्रों को सुनाइए!",
+        "topic_id": "T_12_6",
+        "page": 93,
+        "exercise_type": "project",
+        "confidence": "high"
+      },
+      {
+        "id": "E_12_7_1",
+        "text": "पाठ के बारे में बातचीत कर सकता/सकती हूँ। भाव बता सकता/सकती हूँ। इस तरह के पाठ पढ़कर समझ सकता/सकती हूँ। पाठ का सारांश अपने शब्दों में लिख सकता/सकती हूँ। पाठ के शब्दों से वाक्य बना सकता/सकती हूँ। पाठ के आधार पर मीरा बहन और बाघ का समूह में अभिनय कर सकता/सकती हूँ।",
+        "topic_id": "T_12_7",
+        "page": 93,
+        "exercise_type": "self_assessment",
+        "confidence": "high"
+      },
+      {
+        "id": "E_12_7_2",
+        "text": "Illustration of a charkha (spinning wheel) and related tools, likely a cultural reference related to Mira Behan's association with Gandhi.",
+        "topic_id": "T_12_7",
+        "page": 93,
+        "exercise_type": "art_activity",
+        "confidence": "low"
+      },
+      {
+        "id": "E_12_8_1",
+        "text": "सोचो, कहानियों को कैसे लिखा होगा?",
+        "topic_id": "T_12_8",
+        "page": 95,
+        "exercise_type": "oral_communication",
+        "confidence": "high"
+      },
+      {
+        "id": "E_12_8_2",
+        "text": "इनमें से आप कौन-सी भाषा पहचान पाए?",
+        "topic_id": "T_12_8",
+        "page": 96,
+        "exercise_type": "oral_communication",
+        "confidence": "high"
+      },
+      {
+        "id": "E_13_1_1",
+        "text": "प्रश्न : 1. चित्र में क्या दिखाई दे रहा है? 2. जिस व्यक्ति को चोट लगी है, उसे कैसा लग रहा होगा? 3. हमें अंधविश्वास नहीं करना चाहिए। क्यों?",
+        "topic_id": "T_13_1",
+        "page": 97,
+        "exercise_type": "oral_communication",
+        "confidence": "high"
+      },
+      {
+        "id": "E_13_1_2",
+        "text": "छात्रों के लिए सूचनाएँ: 1. पाठ के चित्र देखिए। चित्र के आधार पर कल्पना कीजिए कि पाठ में क्या बताया गया होगा? 2. पाठ पढ़िए। नए शब्द और वाक्य रेखांकित कीजिए। 3. नए शब्दों और वाक्यों के बारे में मित्रों से चर्चा कीजिए। 4. नए शब्दों के अर्थ शब्दकोश में ढूँढ़िए।",
+        "topic_id": "T_13_1",
+        "page": 97,
+        "exercise_type": "general_activity",
+        "confidence": "high"
+      },
+      {
+        "id": "E_13_1_3",
+        "text": "सुनिए-बोलिए 1. आप किस रेंगने वाले जानवर से डरते हैं और क्यों? 2. क्या आप ने कभी साँप देखा है? अगर देखा तो कहाँ?",
+        "topic_id": "T_13_1",
+        "page": 102,
+        "exercise_type": "oral_communication",
+        "confidence": "high"
+      },
+      {
+        "id": "E_13_1_4",
+        "text": "पढ़िए 1. जब साँप नारियल के खोल में घुस गया तो लड़के ने क्या किया? 2. बर्र के काटने पर लड़के को उसके नाना कहाँ ले गए? 3. बूढ़े आदमी ने साँप के काटने का क्या इलाज किया?",
+        "topic_id": "T_13_1",
+        "page": 102,
+        "exercise_type": "comprehension",
+        "confidence": "high"
+      },
+      {
+        "id": "E_13_1_5",
+        "text": "लिखिए 1. नाना लड़के को झाड़फूँक आदमी के पास क्यों ले गए होंगे? 2. किसी एक रेंगने वाले जानवर के बारे में लिखिए। 3. साँप के काटने पर हमें किसके पास इलाज के लिए जाना चाहिए और क्यों?",
+        "topic_id": "T_13_1",
+        "page": 102,
+        "exercise_type": "writing_practice",
+        "confidence": "high"
+      },
+      {
+        "id": "E_13_1_6",
+        "text": "शब्द भंडार नीचे कुछ शब्द दिए गए हैं। उन शब्दों में से कुछ शब्द घर से संबंधित हैं। उन पर घेरा लगाइए। अहाता आँगन बरामदा जीना अटारी आला घर सीढ़ी छत सड़क रसोई छज्जा दालान अस्तबल रहट नहर पुलिया जोहड़ डाकघर टाँड कमरा मुँडेर",
+        "topic_id": "T_13_1",
+        "page": 102,
+        "exercise_type": "general_activity",
+        "confidence": "high"
+      },
+      {
+        "id": "E_13_1_7",
+        "text": "अलग-अलग निशानों से पता चलता है कि बात कैसे कही गई होगी। अब नीचे लिखे वाक्यों में सही निशान लगाइए। अब इन्हें बोलकर देखिए। नानी चीख उठी साँप साँप धीरे-धीरे रेंग रहा था क्या तुम बाज़ार चलोगी चुपचाप बैठो हिलना-डुलना मत तुम्हें यह कहानी कैसी लगी अहा कितनी मीठी है",
+        "topic_id": "T_13_1",
+        "page": 103,
+        "exercise_type": "reading_exercise",
+        "confidence": "high"
+      },
+      {
+        "id": "E_13_1_8",
+        "text": "सृजनात्मक अभिव्यक्ति इस पाठ के आधार पर वार्तालाप कीजिए।",
+        "topic_id": "T_13_1",
+        "page": 103,
+        "exercise_type": "oral_communication",
+        "confidence": "high"
+      },
+      {
+        "id": "E_13_1_9",
+        "text": "प्रशंसा अंधविश्वासों के प्रति जागरूकता प्राप्त कर अपने साथियों को बताइए!",
+        "topic_id": "T_13_1",
+        "page": 103,
+        "exercise_type": "oral_communication",
+        "confidence": "high"
+      },
+      {
+        "id": "E_13_1_10",
+        "text": "भाषा की बात क्या कहेंगे आप लड़के को क्या कहेंगे? कारण देकर बताइए। निडर, नादान, होशियार, शरारती, डरपोक, शर्मीला (याद रखिए वह खोल में साँप लेकर भागा था।)",
+        "topic_id": "T_13_1",
+        "page": 103,
+        "exercise_type": "oral_communication",
+        "confidence": "high"
+      },
+      {
+        "id": "E_13_1_11",
+        "text": "क्या मैं ये कर सकता/सकती हूँ? हाँ (✓) नहीं (✕) 1. पाठ के बारे में बातचीत कर सकता/सकती हूँ। भाव बता सकता/सकती हूँ। 2. इस तरह के पाठ पढ़कर समझ सकता/सकती हूँ। 3. पाठ का सारांश अपने शब्दों में लिख सकता/सकती हूँ। 4. पाठ के शब्दों से वाक्य बना सकता/सकती हूँ। 5. पाठ के आधार पर अंधविश्वास को मिटाने के लिए भाषण दे सकता/सकती हूँ।",
+        "topic_id": "T_13_1",
+        "page": 104,
+        "exercise_type": "general_activity",
+        "confidence": "high"
+      },
+      {
+        "id": "E_13_1_12",
+        "text": "मुझे मेरी माँ तक पहुँचाइए। (Maze activity: Students must trace a path through a maze to help a boy reach his mother.)",
+        "topic_id": "T_13_1",
+        "page": 104,
+        "exercise_type": "art_activity",
+        "confidence": "high"
+      },
+      {
+        "id": "E_13_3_13",
+        "text": "Read the letter from Radha to her aunt (Mausi).",
+        "topic_id": "T_13_3",
+        "page": 106,
+        "exercise_type": "reading_activity",
+        "confidence": "high"
+      },
+      {
+        "id": "E_13_3_14",
+        "text": "Read the letter from Mahima to her aunt (Buaji).",
+        "topic_id": "T_13_3",
+        "page": 107,
+        "exercise_type": "reading_activity",
+        "confidence": "high"
+      },
+      {
+        "id": "E_14_1_1",
+        "text": "चित्र देखकर प्रश्नोत्तर (Observing the picture and answering questions): यह दृश्य कहाँ का है? बच्चे क्या कर रहे हैं? आपको कौन-से स्वाद पसंद हैं?",
+        "topic_id": "T_14_1",
+        "page": 108,
+        "exercise_type": "comprehension_questions",
+        "confidence": "high"
+      },
+      {
+        "id": "E_14_1_2",
+        "text": "छात्रों के लिए सूचनाएँ (Instructions for students): पाठ के चित्र देखकर कल्पना करना, पाठ पढ़ना, नए शब्द और वाक्य रेखांकित करना, मित्रों से चर्चा करना, और शब्दकोश में अर्थ ढूँढना।",
+        "topic_id": "T_14_1",
+        "page": 108,
+        "exercise_type": "general_activity",
+        "confidence": "high"
+      },
+      {
+        "id": "E_14_1_3",
+        "text": "सुनिए-बोलिए (Listen-Speak): Oral questions based on the poem \"मिर्च का मज़ा\", discussing the Kabuliwala's actions and the vegetable seller's thoughts.",
+        "topic_id": "T_14_1",
+        "page": 111,
+        "exercise_type": "oral_comprehension",
+        "confidence": "high"
+      },
+      {
+        "id": "E_14_1_4",
+        "text": "पढ़िए (Read): कविता की वे पंक्तियाँ छाँटकर लिखिए जिनसे काबुलीवाला के बोलने के तरीके, कंजूसी, मिर्च की तीखीपन, मिर्च के बारे में अज्ञानता और 25 पैसे की मिर्च की चाहत का पता चलता है।",
+        "topic_id": "T_14_1",
+        "page": 111,
+        "exercise_type": "reading_comprehension",
+        "confidence": "high"
+      },
+      {
+        "id": "E_14_1_5",
+        "text": "लिखिए (Write): किन-किन चीज़ों को देखकर आपके मुँह में पानी भर आता है? मिर्च से क्या-क्या चीजें बनाई जा सकती हैं?",
+        "topic_id": "T_14_1",
+        "page": 111,
+        "exercise_type": "writing_activity",
+        "confidence": "high"
+      },
+      {
+        "id": "E_14_2_1",
+        "text": "मुँह में पानी (Mouth watering): Discussing the idiom 'मुँह में पानी आना' and reflecting on personal experiences of what makes one's mouth water.",
+        "topic_id": "T_14_2",
+        "page": 112,
+        "exercise_type": "vocabulary_activity",
+        "confidence": "high"
+      },
+      {
+        "id": "E_14_2_2",
+        "text": "जल या जल? (Jal or Jal?): Activity on homonyms, identifying two meanings of 'जल' and creating sentences where given words (हार, आना, उत्तर, फल, मगर, पर) are used twice with different meanings.",
+        "topic_id": "T_14_2",
+        "page": 112,
+        "exercise_type": "vocabulary_activity",
+        "confidence": "high"
+      },
+      {
+        "id": "E_14_3_1",
+        "text": "अपने मन से बनाकर एक कविता यहाँ लिखिए (Write a poem of your own here).",
+        "topic_id": "T_14_3",
+        "page": 113,
+        "exercise_type": "creative_writing",
+        "confidence": "high"
+      },
+      {
+        "id": "E_14_4_1",
+        "text": "खाद्य पदार्थों का उपयोग (Use of food items): Discussion on how different food items have importance, but excess reduces their value, and how to use them wisely.",
+        "topic_id": "T_14_4",
+        "page": 113,
+        "exercise_type": "discussion_activity",
+        "confidence": "high"
+      },
+      {
+        "id": "E_14_5_1",
+        "text": "पंक्तियों को फिर से लिखिए (Rewrite the lines): Restructuring given sentences from the poem to demonstrate different sentence constructions.",
+        "topic_id": "T_14_5",
+        "page": 113,
+        "exercise_type": "language_activity",
+        "confidence": "high"
+      },
+      {
+        "id": "E_14_5_2",
+        "text": "चार आना (Four annas): Understanding old Indian currency (chavanni, athanni, ikanni, duanni) and their value in paise.",
+        "topic_id": "T_14_5",
+        "page": 114,
+        "exercise_type": "general_knowledge",
+        "confidence": "high"
+      },
+      {
+        "id": "E_14_5_3",
+        "text": "क्या मैं ये कर सकता/सकती हूँ? (Can I do this?): A self-assessment checklist for students to evaluate their ability to listen to poems, understand their meaning, explain them, make sentences, and write rhyming words.",
+        "topic_id": "T_14_5",
+        "page": 114,
+        "exercise_type": "self_assessment",
+        "confidence": "high"
+      },
+      {
+        "id": "E_14_6_1",
+        "text": "पेड़ के तने की छाप (Tree bark impression): Step-by-step instructions for a bark rubbing activity using different trees and wax colors, and sticking the impressions in a notebook.",
+        "topic_id": "T_14_6",
+        "page": 115,
+        "exercise_type": "art_activity",
+        "confidence": "high"
+      },
+      {
+        "id": "E_15_1_1",
+        "text": "चित्र में बच्चे क्या कर रहे हैं? पेड़ का जीवन में क्या महत्व है? यदि आप पौधा लगाते हैं तो आपको कैसा लगता है?",
+        "topic_id": "T_15_1",
+        "page": 116,
+        "exercise_type": "comprehension_questions",
+        "confidence": "high"
+      },
+      {
+        "id": "E_15_1_2",
+        "text": "पाठ के चित्र देखिए। चित्र के आधार पर कल्पना कीजिए कि पाठ में क्या बताया गया होगा? पाठ पढ़िए। नए शब्द और वाक्य रेखांकित कीजिए। नए शब्दों और वाक्यों के बारे में मित्रों से चर्चा कीजिए। नए शब्दों के अर्थ शब्दकोश में ढूँढिए।",
+        "topic_id": "T_15_1",
+        "page": 116,
+        "exercise_type": "general_activity",
+        "confidence": "high"
+      },
+      {
+        "id": "E_15_1_3",
+        "text": "तीन भाइयों की कहानी का पहला भाग पढ़ें, जिसमें वे आम के पेड़ के पास रुकते हैं।",
+        "topic_id": "T_15_1",
+        "page": 117,
+        "exercise_type": "story_reading",
+        "confidence": "high"
+      },
+      {
+        "id": "E_15_1_4",
+        "text": "तीन भाइयों की कहानी का दूसरा भाग पढ़ें, जिसमें दूसरा भाई केले के पेड़ के पास रुकता है।",
+        "topic_id": "T_15_1",
+        "page": 118,
+        "exercise_type": "story_reading",
+        "confidence": "high"
+      },
+      {
+        "id": "E_15_1_5",
+        "text": "तीन भाइयों की कहानी का तीसरा भाग पढ़ें, जिसमें तीसरा भाई नारियल के पेड़ के पास रुकता है और उसके उपयोगों के बारे में सोचता है।",
+        "topic_id": "T_15_1",
+        "page": 119,
+        "exercise_type": "story_reading",
+        "confidence": "high"
+      },
+      {
+        "id": "E_15_1_6",
+        "text": "सुनिए-बोलिए: इनमें से कौन-सी चीज़ किससे बनी है? (चित्रों में गुब्बारा, रस्सी, चटाई, हार, कटोरा, टोकरी दिखाई गई है)",
+        "topic_id": "T_15_1",
+        "page": 120,
+        "exercise_type": "listening_speaking",
+        "confidence": "high"
+      },
+      {
+        "id": "E_15_1_7",
+        "text": "किन फलों को छिलके के साथ नहीं खा सकते? कौन-से फल हर मौसम में मिलते हैं?",
+        "topic_id": "T_15_1",
+        "page": 121,
+        "exercise_type": "comprehension_questions",
+        "confidence": "high"
+      },
+      {
+        "id": "E_15_1_8",
+        "text": "पत्तियों के बारे में दिए गए वाक्यों को सही चित्र से मिलाइए और पत्ती का नाम लिखिए। (वाक्य: लंबी पतली पत्ती, नीचे से गोल आगे जाकर नुकीली, जिसके किनारे लहरदार हैं, गोल पत्ती)",
+        "topic_id": "T_15_1",
+        "page": 121,
+        "exercise_type": "matching_activity",
+        "confidence": "high"
+      },
+      {
+        "id": "E_15_1_9",
+        "text": "आम के फल का उपयोग कैसे होता है? केले के पत्ते किस काम आते हैं? नारियल के पेड़ से क्या-क्या लाभ हैं?",
+        "topic_id": "T_15_1",
+        "page": 121,
+        "exercise_type": "writing_activity",
+        "confidence": "high"
+      },
+      {
+        "id": "E_15_1_10",
+        "text": "शब्द भंडार: हम दाँतों को मंजन से माँजते हैं। इसीलिए इसे मंजन कहते हैं। अब सोचिए और लिखिए इनके नाम वे क्यों हैं?",
+        "topic_id": "T_15_1",
+        "page": 121,
+        "exercise_type": "vocabulary_activity",
+        "confidence": "high"
+      },
+      {
+        "id": "E_15_1_11",
+        "text": "शब्द भंडार: दातुन, छलनी, मथनी के नाम क्यों हैं, सोचिए और लिखिए।",
+        "topic_id": "T_15_1",
+        "page": 122,
+        "exercise_type": "vocabulary_activity",
+        "confidence": "high"
+      },
+      {
+        "id": "E_15_1_12",
+        "text": "सृजनात्मक अभिव्यक्ति: पाठ के आधार पर तीनों भाइयों के बीच वार्तालाप लिखिए।",
+        "topic_id": "T_15_1",
+        "page": 122,
+        "exercise_type": "creative_writing",
+        "confidence": "high"
+      },
+      {
+        "id": "E_15_1_13",
+        "text": "प्रशंसा: पेड़ों से हमें क्या लाभ हैं? पेड़ों के प्रति आभार व्यक्त करते हुए अपने विचार लिखिए।",
+        "topic_id": "T_15_1",
+        "page": 122,
+        "exercise_type": "writing_activity",
+        "confidence": "high"
+      },
+      {
+        "id": "E_15_1_14",
+        "text": "तुलना कीजिए: नारियल, आम और केले के पेड़ों की विशेषताओं (सबसे घना, सबसे ऊँचा, चढ़ने में सबसे आसान, सबसे मोटा तना, सबसे बड़े पत्ते, सबसे मीठा फल, फल खाना सबसे आसान) की तुलना करें और सही जगह पर (✓) का निशान लगाइए।",
+        "topic_id": "T_15_1",
+        "page": 122,
+        "exercise_type": "comparison_activity",
+        "confidence": "high"
+      },
+      {
+        "id": "E_15_1_15",
+        "text": "परियोजना कार्य: चलिए बनाएँ बधाई कार्ड। अपने आसपास के पेड़-पौधों से छोटी-छोटी फूल-पत्तियाँ इकट्ठी करके बधाई कार्ड बनाने की विधि का पालन करें।",
+        "topic_id": "T_15_1",
+        "page": 123,
+        "exercise_type": "project_activity",
+        "confidence": "high"
+      },
+      {
+        "id": "E_15_1_16",
+        "text": "क्या मैं ये कर सकता/सकती हूँ? (पाठ के बारे में बातचीत, पाठ पढ़कर समझना, पाठ का सारांश लिखना, पाठ के शब्दों से वाक्य बनाना, पेड़ की आत्मकथा लिखना) - हाँ या नहीं में उत्तर दें।",
+        "topic_id": "T_15_1",
+        "page": 123,
+        "exercise_type": "self_assessment",
+        "confidence": "high"
+      }
+    ],
+    "sidebars": [
+      {
+        "id": "S_1_1_1",
+        "text": "छात्रों की प्रगति हेतु सरकार का उपहार",
+        "topic_id": "T_1_1",
+        "page": 1
+      },
+      {
+        "id": "S_1_2_1",
+        "text": "छात्रों की प्रगति हेतु सरकार का उपहार",
+        "topic_id": "T_1_2",
+        "page": 2
+      },
+      {
+        "id": "S_1_4_1",
+        "text": "छात्रों की प्रगति हेतु सरकार का उपहार",
+        "topic_id": "T_1_4",
+        "page": 5
+      },
+      {
+        "id": "S_3_9_1",
+        "text": "छात्रों की प्रगति हेतु सरकार का उपहार",
+        "topic_id": "T_3_9",
+        "page": 23
+      },
+      {
+        "id": "S_5_8_1",
+        "text": "छात्रों की प्रगति हेतु सरकार का उपहार",
+        "topic_id": "T_5_8",
+        "page": 39
+      },
+      {
+        "id": "S_8_1_1",
+        "text": "छात्रों की प्रगति हेतु सरकार का उपकार",
+        "topic_id": "T_8_1",
+        "page": 57
+      },
+      {
+        "id": "S_12_8_1",
+        "text": "छात्रों की प्रगति हेतु सरकार का उपहार",
+        "topic_id": "T_12_8",
+        "page": 95
+      },
+      {
+        "id": "S_13_1_1",
+        "text": "छात्रों की प्रगति हेतु सरकार का उपहार",
+        "topic_id": "T_13_1",
+        "page": 97
+      },
+      {
+        "id": "S_14_6_1",
+        "text": "",
+        "topic_id": "T_14_6",
+        "page": 115
+      }
+    ]
+  },
+  "graphs": {
+    "chapter_structure": [
+      {
+        "from": "C_1",
+        "to": "T_1_1",
+        "type": "contains"
+      },
+      {
+        "from": "C_1",
+        "to": "T_1_2",
+        "type": "contains"
+      },
+      {
+        "from": "C_1",
+        "to": "T_1_3",
+        "type": "contains"
+      },
+      {
+        "from": "C_1",
+        "to": "T_1_4",
+        "type": "contains"
+      },
+      {
+        "from": "C_1",
+        "to": "T_1_5",
+        "type": "contains"
+      },
+      {
+        "from": "C_2",
+        "to": "T_2_1",
+        "type": "contains"
+      },
+      {
+        "from": "C_2",
+        "to": "T_2_2",
+        "type": "contains"
+      },
+      {
+        "from": "C_2",
+        "to": "T_2_3",
+        "type": "contains"
+      },
+      {
+        "from": "C_2",
+        "to": "T_2_4",
+        "type": "contains"
+      },
+      {
+        "from": "C_2",
+        "to": "T_2_5",
+        "type": "contains"
+      },
+      {
+        "from": "C_2",
+        "to": "T_2_6",
+        "type": "contains"
+      },
+      {
+        "from": "C_2",
+        "to": "T_2_7",
+        "type": "contains"
+      },
+      {
+        "from": "C_2",
+        "to": "T_2_8",
+        "type": "contains"
+      },
+      {
+        "from": "C_3",
+        "to": "T_3_placeholder_15",
+        "type": "contains"
+      },
+      {
+        "from": "C_3",
+        "to": "T_3_placeholder_16",
+        "type": "contains"
+      },
+      {
+        "from": "C_3",
+        "to": "T_3_placeholder_17",
+        "type": "contains"
+      },
+      {
+        "from": "C_3",
+        "to": "T_3_placeholder_18",
+        "type": "contains"
+      },
+      {
+        "from": "C_3",
+        "to": "T_3_placeholder_19",
+        "type": "contains"
+      },
+      {
+        "from": "C_3",
+        "to": "T_3_placeholder_20",
+        "type": "contains"
+      },
+      {
+        "from": "C_3",
+        "to": "T_3_placeholder_21",
+        "type": "contains"
+      },
+      {
+        "from": "C_3",
+        "to": "T_3_placeholder_22",
+        "type": "contains"
+      },
+      {
+        "from": "C_3",
+        "to": "T_3_9",
+        "type": "contains"
+      },
+      {
+        "from": "C_3",
+        "to": "T_3_10",
+        "type": "contains"
+      },
+      {
+        "from": "C_4",
+        "to": "T_4_1",
+        "type": "contains"
+      },
+      {
+        "from": "C_5",
+        "to": "T_5_1",
+        "type": "contains"
+      },
+      {
+        "from": "C_5",
+        "to": "T_5_2",
+        "type": "contains"
+      },
+      {
+        "from": "C_5",
+        "to": "T_5_3",
+        "type": "contains"
+      },
+      {
+        "from": "C_5",
+        "to": "T_5_4",
+        "type": "contains"
+      },
+      {
+        "from": "C_5",
+        "to": "T_5_5",
+        "type": "contains"
+      },
+      {
+        "from": "C_5",
+        "to": "T_5_6",
+        "type": "contains"
+      },
+      {
+        "from": "C_5",
+        "to": "T_5_7",
+        "type": "contains"
+      },
+      {
+        "from": "C_5",
+        "to": "T_5_8",
+        "type": "contains"
+      },
+      {
+        "from": "C_6",
+        "to": "T_6_1",
+        "type": "contains"
+      },
+      {
+        "from": "C_6",
+        "to": "T_6_2",
+        "type": "contains"
+      },
+      {
+        "from": "C_6",
+        "to": "T_6_3",
+        "type": "contains"
+      },
+      {
+        "from": "C_7",
+        "to": "T_7_1",
+        "type": "contains"
+      },
+      {
+        "from": "C_7",
+        "to": "T_7_2",
+        "type": "contains"
+      },
+      {
+        "from": "C_7",
+        "to": "T_7_3",
+        "type": "contains"
+      },
+      {
+        "from": "C_7",
+        "to": "T_7_4",
+        "type": "contains"
+      },
+      {
+        "from": "C_7",
+        "to": "T_7_5",
+        "type": "contains"
+      },
+      {
+        "from": "C_7",
+        "to": "T_7_6",
+        "type": "contains"
+      },
+      {
+        "from": "C_7",
+        "to": "T_7_7",
+        "type": "contains"
+      },
+      {
+        "from": "C_7",
+        "to": "T_7_8",
+        "type": "contains"
+      },
+      {
+        "from": "C_8",
+        "to": "T_8_1",
+        "type": "contains"
+      },
+      {
+        "from": "C_9",
+        "to": "T_9_1",
+        "type": "contains"
+      },
+      {
+        "from": "C_9",
+        "to": "T_9_2",
+        "type": "contains"
+      },
+      {
+        "from": "C_9",
+        "to": "T_9_3",
+        "type": "contains"
+      },
+      {
+        "from": "C_9",
+        "to": "T_9_4",
+        "type": "contains"
+      },
+      {
+        "from": "C_10",
+        "to": "T_10_1",
+        "type": "contains"
+      },
+      {
+        "from": "C_11",
+        "to": "T_11_1",
+        "type": "contains"
+      },
+      {
+        "from": "C_11",
+        "to": "T_11_2",
+        "type": "contains"
+      },
+      {
+        "from": "C_11",
+        "to": "T_11_3",
+        "type": "contains"
+      },
+      {
+        "from": "C_12",
+        "to": "T_12_1",
+        "type": "contains"
+      },
+      {
+        "from": "C_12",
+        "to": "T_12_2",
+        "type": "contains"
+      },
+      {
+        "from": "C_12",
+        "to": "T_12_3",
+        "type": "contains"
+      },
+      {
+        "from": "C_12",
+        "to": "T_12_4",
+        "type": "contains"
+      },
+      {
+        "from": "C_12",
+        "to": "T_12_5",
+        "type": "contains"
+      },
+      {
+        "from": "C_12",
+        "to": "T_12_6",
+        "type": "contains"
+      },
+      {
+        "from": "C_12",
+        "to": "T_12_7",
+        "type": "contains"
+      },
+      {
+        "from": "C_12",
+        "to": "T_12_8",
+        "type": "contains"
+      },
+      {
+        "from": "C_13",
+        "to": "T_13_1",
+        "type": "contains"
+      },
+      {
+        "from": "C_13",
+        "to": "T_13_2",
+        "type": "contains"
+      },
+      {
+        "from": "C_13",
+        "to": "T_13_3",
+        "type": "contains"
+      },
+      {
+        "from": "C_14",
+        "to": "T_14_1",
+        "type": "contains"
+      },
+      {
+        "from": "C_14",
+        "to": "T_14_2",
+        "type": "contains"
+      },
+      {
+        "from": "C_14",
+        "to": "T_14_3",
+        "type": "contains"
+      },
+      {
+        "from": "C_14",
+        "to": "T_14_4",
+        "type": "contains"
+      },
+      {
+        "from": "C_14",
+        "to": "T_14_5",
+        "type": "contains"
+      },
+      {
+        "from": "C_14",
+        "to": "T_14_6",
+        "type": "contains"
+      },
+      {
+        "from": "C_15",
+        "to": "T_15_1",
+        "type": "contains"
+      },
+      {
+        "from": "C_15",
+        "to": "T_15_2",
+        "type": "contains"
+      },
+      {
+        "from": "C_15",
+        "to": "T_15_3",
+        "type": "contains"
+      },
+      {
+        "from": "C_15",
+        "to": "T_15_4",
+        "type": "contains"
+      },
+      {
+        "from": "C_15",
+        "to": "T_15_5",
+        "type": "contains"
+      },
+      {
+        "from": "C_15",
+        "to": "T_15_6",
+        "type": "contains"
+      }
+    ],
+    "exercise_mapping": [
+      {
+        "from": "E_1_1_1",
+        "to": "T_1_1",
+        "type": "tests"
+      },
+      {
+        "from": "E_1_1_2",
+        "to": "T_1_1",
+        "type": "tests"
+      },
+      {
+        "from": "E_1_3_1",
+        "to": "T_1_3",
+        "type": "tests"
+      },
+      {
+        "from": "E_1_3_2",
+        "to": "T_1_3",
+        "type": "tests"
+      },
+      {
+        "from": "E_1_3_3",
+        "to": "T_1_3",
+        "type": "tests"
+      },
+      {
+        "from": "E_1_3_4",
+        "to": "T_1_3",
+        "type": "tests"
+      },
+      {
+        "from": "E_1_3_5",
+        "to": "T_1_3",
+        "type": "tests"
+      },
+      {
+        "from": "E_1_4_1",
+        "to": "T_1_4",
+        "type": "tests"
+      },
+      {
+        "from": "E_1_4_2",
+        "to": "T_1_4",
+        "type": "tests"
+      },
+      {
+        "from": "E_1_4_3",
+        "to": "T_1_4",
+        "type": "tests"
+      },
+      {
+        "from": "E_1_4_4",
+        "to": "T_1_4",
+        "type": "tests"
+      },
+      {
+        "from": "E_1_4_5",
+        "to": "T_1_4",
+        "type": "tests"
+      },
+      {
+        "from": "E_1_5_1",
+        "to": "T_1_5",
+        "type": "tests"
+      },
+      {
+        "from": "E_2_1_1",
+        "to": "T_2_1",
+        "type": "tests"
+      },
+      {
+        "from": "E_2_1_2",
+        "to": "T_2_1",
+        "type": "tests"
+      },
+      {
+        "from": "E_2_2_1",
+        "to": "T_2_2",
+        "type": "tests"
+      },
+      {
+        "from": "E_2_3_1",
+        "to": "T_2_3",
+        "type": "tests"
+      },
+      {
+        "from": "E_2_4_1",
+        "to": "T_2_4",
+        "type": "tests"
+      },
+      {
+        "from": "E_2_5_1",
+        "to": "T_2_5",
+        "type": "tests"
+      },
+      {
+        "from": "E_2_6_1",
+        "to": "T_2_6",
+        "type": "tests"
+      },
+      {
+        "from": "E_2_6_2",
+        "to": "T_2_6",
+        "type": "tests"
+      },
+      {
+        "from": "E_2_6_3",
+        "to": "T_2_6",
+        "type": "tests"
+      },
+      {
+        "from": "E_2_6_4",
+        "to": "T_2_6",
+        "type": "tests"
+      },
+      {
+        "from": "E_2_6_5",
+        "to": "T_2_6",
+        "type": "tests"
+      },
+      {
+        "from": "E_2_6_6",
+        "to": "T_2_6",
+        "type": "tests"
+      },
+      {
+        "from": "E_2_7_1",
+        "to": "T_2_7",
+        "type": "tests"
+      },
+      {
+        "from": "E_2_7_2",
+        "to": "T_2_7",
+        "type": "tests"
+      },
+      {
+        "from": "E_2_7_3",
+        "to": "T_2_7",
+        "type": "tests"
+      },
+      {
+        "from": "E_2_7_4",
+        "to": "T_2_7",
+        "type": "tests"
+      },
+      {
+        "from": "E_2_8_1",
+        "to": "T_2_8",
+        "type": "tests"
+      },
+      {
+        "from": "E_2_8_2",
+        "to": "T_2_8",
+        "type": "tests"
+      },
+      {
+        "from": "E_3_placeholder_15_1",
+        "to": "T_3_placeholder_15",
+        "type": "tests"
+      },
+      {
+        "from": "E_3_placeholder_16_1",
+        "to": "T_3_placeholder_16",
+        "type": "tests"
+      },
+      {
+        "from": "E_3_placeholder_17_1",
+        "to": "T_3_placeholder_17",
+        "type": "tests"
+      },
+      {
+        "from": "E_3_placeholder_18_1",
+        "to": "T_3_placeholder_18",
+        "type": "tests"
+      },
+      {
+        "from": "E_3_placeholder_19_1",
+        "to": "T_3_placeholder_19",
+        "type": "tests"
+      },
+      {
+        "from": "E_3_placeholder_20_1",
+        "to": "T_3_placeholder_20",
+        "type": "tests"
+      },
+      {
+        "from": "E_3_placeholder_21_1",
+        "to": "T_3_placeholder_21",
+        "type": "tests"
+      },
+      {
+        "from": "E_3_placeholder_22_1",
+        "to": "T_3_placeholder_22",
+        "type": "tests"
+      },
+      {
+        "from": "E_3_9_1",
+        "to": "T_3_9",
+        "type": "tests"
+      },
+      {
+        "from": "E_3_10_10",
+        "to": "T_3_10",
+        "type": "tests"
+      },
+      {
+        "from": "E_4_1_1",
+        "to": "T_4_1",
+        "type": "tests"
+      },
+      {
+        "from": "E_4_1_2",
+        "to": "T_4_1",
+        "type": "tests"
+      },
+      {
+        "from": "E_4_1_3",
+        "to": "T_4_1",
+        "type": "tests"
+      },
+      {
+        "from": "E_4_1_4",
+        "to": "T_4_1",
+        "type": "tests"
+      },
+      {
+        "from": "E_4_1_5",
+        "to": "T_4_1",
+        "type": "tests"
+      },
+      {
+        "from": "E_4_1_6",
+        "to": "T_4_1",
+        "type": "tests"
+      },
+      {
+        "from": "E_4_1_7",
+        "to": "T_4_1",
+        "type": "tests"
+      },
+      {
+        "from": "E_4_1_8",
+        "to": "T_4_1",
+        "type": "tests"
+      },
+      {
+        "from": "E_4_1_9",
+        "to": "T_4_1",
+        "type": "tests"
+      },
+      {
+        "from": "E_4_1_10",
+        "to": "T_4_1",
+        "type": "tests"
+      },
+      {
+        "from": "E_4_1_11",
+        "to": "T_4_1",
+        "type": "tests"
+      },
+      {
+        "from": "E_4_1_12",
+        "to": "T_4_1",
+        "type": "tests"
+      },
+      {
+        "from": "E_4_1_13",
+        "to": "T_4_1",
+        "type": "tests"
+      },
+      {
+        "from": "E_4_1_14",
+        "to": "T_4_1",
+        "type": "tests"
+      },
+      {
+        "from": "E_4_1_15",
+        "to": "T_4_1",
+        "type": "tests"
+      },
+      {
+        "from": "E_4_1_16",
+        "to": "T_4_1",
+        "type": "tests"
+      },
+      {
+        "from": "E_4_1_17",
+        "to": "T_4_1",
+        "type": "tests"
+      },
+      {
+        "from": "E_4_1_18",
+        "to": "T_4_1",
+        "type": "tests"
+      },
+      {
+        "from": "E_5_1_1",
+        "to": "T_5_1",
+        "type": "tests"
+      },
+      {
+        "from": "E_5_1_2",
+        "to": "T_5_1",
+        "type": "tests"
+      },
+      {
+        "from": "E_5_1_3",
+        "to": "T_5_3",
+        "type": "tests"
+      },
+      {
+        "from": "E_5_1_4",
+        "to": "T_5_3",
+        "type": "tests"
+      },
+      {
+        "from": "E_5_1_5",
+        "to": "T_5_3",
+        "type": "tests"
+      },
+      {
+        "from": "E_5_1_6",
+        "to": "T_5_4",
+        "type": "tests"
+      },
+      {
+        "from": "E_5_1_7",
+        "to": "T_5_4",
+        "type": "tests"
+      },
+      {
+        "from": "E_5_1_8",
+        "to": "T_5_5",
+        "type": "tests"
+      },
+      {
+        "from": "E_5_1_9",
+        "to": "T_5_5",
+        "type": "tests"
+      },
+      {
+        "from": "E_5_6_1",
+        "to": "T_5_6",
+        "type": "tests"
+      },
+      {
+        "from": "E_5_6_2",
+        "to": "T_5_6",
+        "type": "tests"
+      },
+      {
+        "from": "E_5_6_3",
+        "to": "T_5_6",
+        "type": "tests"
+      },
+      {
+        "from": "E_5_7_1",
+        "to": "T_5_7",
+        "type": "tests"
+      },
+      {
+        "from": "E_5_8_1",
+        "to": "T_5_8",
+        "type": "tests"
+      },
+      {
+        "from": "E_6_1_1",
+        "to": "T_6_1",
+        "type": "tests"
+      },
+      {
+        "from": "E_6_1_2",
+        "to": "T_6_1",
+        "type": "tests"
+      },
+      {
+        "from": "E_6_2_1",
+        "to": "T_6_2",
+        "type": "tests"
+      },
+      {
+        "from": "E_6_2_2",
+        "to": "T_6_2",
+        "type": "tests"
+      },
+      {
+        "from": "E_6_2_3",
+        "to": "T_6_2",
+        "type": "tests"
+      },
+      {
+        "from": "E_6_2_4",
+        "to": "T_6_2",
+        "type": "tests"
+      },
+      {
+        "from": "E_6_2_5",
+        "to": "T_6_2",
+        "type": "tests"
+      },
+      {
+        "from": "E_6_2_6",
+        "to": "T_6_2",
+        "type": "tests"
+      },
+      {
+        "from": "E_6_2_7",
+        "to": "T_6_2",
+        "type": "tests"
+      },
+      {
+        "from": "E_6_2_8",
+        "to": "T_6_2",
+        "type": "tests"
+      },
+      {
+        "from": "E_6_2_9",
+        "to": "T_6_2",
+        "type": "tests"
+      },
+      {
+        "from": "E_6_3_1",
+        "to": "T_6_3",
+        "type": "tests"
+      },
+      {
+        "from": "E_6_3_2",
+        "to": "T_6_3",
+        "type": "tests"
+      },
+      {
+        "from": "E_7_1_1",
+        "to": "T_7_1",
+        "type": "tests"
+      },
+      {
+        "from": "E_7_1_2",
+        "to": "T_7_1",
+        "type": "tests"
+      },
+      {
+        "from": "E_7_2_1",
+        "to": "T_7_2",
+        "type": "tests"
+      },
+      {
+        "from": "E_7_3_1",
+        "to": "T_7_3",
+        "type": "tests"
+      },
+      {
+        "from": "E_7_4_1",
+        "to": "T_7_4",
+        "type": "tests"
+      },
+      {
+        "from": "E_7_5_1",
+        "to": "T_7_5",
+        "type": "tests"
+      },
+      {
+        "from": "E_7_6_1",
+        "to": "T_7_6",
+        "type": "tests"
+      },
+      {
+        "from": "E_7_6_2",
+        "to": "T_7_6",
+        "type": "tests"
+      },
+      {
+        "from": "E_7_6_3",
+        "to": "T_7_6",
+        "type": "tests"
+      },
+      {
+        "from": "E_7_7_1",
+        "to": "T_7_7",
+        "type": "tests"
+      },
+      {
+        "from": "E_7_7_2",
+        "to": "T_7_7",
+        "type": "tests"
+      },
+      {
+        "from": "E_7_7_3",
+        "to": "T_7_7",
+        "type": "tests"
+      },
+      {
+        "from": "E_7_8_1",
+        "to": "T_7_8",
+        "type": "tests"
+      },
+      {
+        "from": "E_7_8_2",
+        "to": "T_7_8",
+        "type": "tests"
+      },
+      {
+        "from": "E_8_1_1",
+        "to": "T_8_1",
+        "type": "tests"
+      },
+      {
+        "from": "E_8_1_2",
+        "to": "T_8_1",
+        "type": "tests"
+      },
+      {
+        "from": "E_9_2_1",
+        "to": "T_9_2",
+        "type": "tests"
+      },
+      {
+        "from": "E_9_2_2",
+        "to": "T_9_2",
+        "type": "tests"
+      },
+      {
+        "from": "E_9_3_1",
+        "to": "T_9_3",
+        "type": "tests"
+      },
+      {
+        "from": "E_9_4_1",
+        "to": "T_9_4",
+        "type": "tests"
+      },
+      {
+        "from": "E_10_1_1",
+        "to": "T_10_1",
+        "type": "tests"
+      },
+      {
+        "from": "E_10_1_2",
+        "to": "T_10_1",
+        "type": "tests"
+      },
+      {
+        "from": "E_10_1_3",
+        "to": "T_10_1",
+        "type": "tests"
+      },
+      {
+        "from": "E_10_1_4",
+        "to": "T_10_1",
+        "type": "tests"
+      },
+      {
+        "from": "E_10_1_5",
+        "to": "T_10_1",
+        "type": "tests"
+      },
+      {
+        "from": "E_10_1_6",
+        "to": "T_10_1",
+        "type": "tests"
+      },
+      {
+        "from": "E_10_1_7",
+        "to": "T_10_1",
+        "type": "tests"
+      },
+      {
+        "from": "E_10_1_8",
+        "to": "T_10_1",
+        "type": "tests"
+      },
+      {
+        "from": "E_10_1_9",
+        "to": "T_10_1",
+        "type": "tests"
+      },
+      {
+        "from": "E_10_1_10",
+        "to": "T_10_1",
+        "type": "tests"
+      },
+      {
+        "from": "E_10_1_11",
+        "to": "T_10_1",
+        "type": "tests"
+      },
+      {
+        "from": "E_10_1_12",
+        "to": "T_10_1",
+        "type": "tests"
+      },
+      {
+        "from": "E_10_1_13",
+        "to": "T_10_1",
+        "type": "tests"
+      },
+      {
+        "from": "E_10_1_14",
+        "to": "T_10_1",
+        "type": "tests"
+      },
+      {
+        "from": "E_10_1_15",
+        "to": "T_10_1",
+        "type": "tests"
+      },
+      {
+        "from": "E_11_1_1",
+        "to": "T_11_1",
+        "type": "tests"
+      },
+      {
+        "from": "E_11_1_2",
+        "to": "T_11_1",
+        "type": "tests"
+      },
+      {
+        "from": "E_11_3_1",
+        "to": "T_11_3",
+        "type": "tests"
+      },
+      {
+        "from": "E_11_3_2",
+        "to": "T_11_3",
+        "type": "tests"
+      },
+      {
+        "from": "E_11_3_3",
+        "to": "T_11_3",
+        "type": "tests"
+      },
+      {
+        "from": "E_11_3_4",
+        "to": "T_11_3",
+        "type": "tests"
+      },
+      {
+        "from": "E_11_3_5",
+        "to": "T_11_3",
+        "type": "tests"
+      },
+      {
+        "from": "E_11_3_6",
+        "to": "T_11_3",
+        "type": "tests"
+      },
+      {
+        "from": "E_11_3_7",
+        "to": "T_11_3",
+        "type": "tests"
+      },
+      {
+        "from": "E_11_3_8",
+        "to": "T_11_3",
+        "type": "tests"
+      },
+      {
+        "from": "E_11_3_9",
+        "to": "T_11_3",
+        "type": "tests"
+      },
+      {
+        "from": "E_11_3_10",
+        "to": "T_11_3",
+        "type": "tests"
+      },
+      {
+        "from": "E_12_2_1",
+        "to": "T_12_2",
+        "type": "tests"
+      },
+      {
+        "from": "E_12_2_2",
+        "to": "T_12_2",
+        "type": "tests"
+      },
+      {
+        "from": "E_12_2_3",
+        "to": "T_12_2",
+        "type": "tests"
+      },
+      {
+        "from": "E_12_2_4",
+        "to": "T_12_2",
+        "type": "tests"
+      },
+      {
+        "from": "E_12_2_5",
+        "to": "T_12_2",
+        "type": "tests"
+      },
+      {
+        "from": "E_12_3_1",
+        "to": "T_12_3",
+        "type": "tests"
+      },
+      {
+        "from": "E_12_3_2",
+        "to": "T_12_3",
+        "type": "tests"
+      },
+      {
+        "from": "E_12_4_1",
+        "to": "T_12_4",
+        "type": "tests"
+      },
+      {
+        "from": "E_12_4_2",
+        "to": "T_12_4",
+        "type": "tests"
+      },
+      {
+        "from": "E_12_5_1",
+        "to": "T_12_5",
+        "type": "tests"
+      },
+      {
+        "from": "E_12_6_1",
+        "to": "T_12_6",
+        "type": "tests"
+      },
+      {
+        "from": "E_12_7_1",
+        "to": "T_12_7",
+        "type": "tests"
+      },
+      {
+        "from": "E_12_7_2",
+        "to": "T_12_7",
+        "type": "tests"
+      },
+      {
+        "from": "E_12_8_1",
+        "to": "T_12_8",
+        "type": "tests"
+      },
+      {
+        "from": "E_12_8_2",
+        "to": "T_12_8",
+        "type": "tests"
+      },
+      {
+        "from": "E_13_1_1",
+        "to": "T_13_1",
+        "type": "tests"
+      },
+      {
+        "from": "E_13_1_2",
+        "to": "T_13_1",
+        "type": "tests"
+      },
+      {
+        "from": "E_13_1_3",
+        "to": "T_13_1",
+        "type": "tests"
+      },
+      {
+        "from": "E_13_1_4",
+        "to": "T_13_1",
+        "type": "tests"
+      },
+      {
+        "from": "E_13_1_5",
+        "to": "T_13_1",
+        "type": "tests"
+      },
+      {
+        "from": "E_13_1_6",
+        "to": "T_13_1",
+        "type": "tests"
+      },
+      {
+        "from": "E_13_1_7",
+        "to": "T_13_1",
+        "type": "tests"
+      },
+      {
+        "from": "E_13_1_8",
+        "to": "T_13_1",
+        "type": "tests"
+      },
+      {
+        "from": "E_13_1_9",
+        "to": "T_13_1",
+        "type": "tests"
+      },
+      {
+        "from": "E_13_1_10",
+        "to": "T_13_1",
+        "type": "tests"
+      },
+      {
+        "from": "E_13_1_11",
+        "to": "T_13_1",
+        "type": "tests"
+      },
+      {
+        "from": "E_13_1_12",
+        "to": "T_13_1",
+        "type": "tests"
+      },
+      {
+        "from": "E_13_3_13",
+        "to": "T_13_3",
+        "type": "tests"
+      },
+      {
+        "from": "E_13_3_14",
+        "to": "T_13_3",
+        "type": "tests"
+      },
+      {
+        "from": "E_14_1_1",
+        "to": "T_14_1",
+        "type": "tests"
+      },
+      {
+        "from": "E_14_1_2",
+        "to": "T_14_1",
+        "type": "tests"
+      },
+      {
+        "from": "E_14_1_3",
+        "to": "T_14_1",
+        "type": "tests"
+      },
+      {
+        "from": "E_14_1_4",
+        "to": "T_14_1",
+        "type": "tests"
+      },
+      {
+        "from": "E_14_1_5",
+        "to": "T_14_1",
+        "type": "tests"
+      },
+      {
+        "from": "E_14_2_1",
+        "to": "T_14_2",
+        "type": "tests"
+      },
+      {
+        "from": "E_14_2_2",
+        "to": "T_14_2",
+        "type": "tests"
+      },
+      {
+        "from": "E_14_3_1",
+        "to": "T_14_3",
+        "type": "tests"
+      },
+      {
+        "from": "E_14_4_1",
+        "to": "T_14_4",
+        "type": "tests"
+      },
+      {
+        "from": "E_14_5_1",
+        "to": "T_14_5",
+        "type": "tests"
+      },
+      {
+        "from": "E_14_5_2",
+        "to": "T_14_5",
+        "type": "tests"
+      },
+      {
+        "from": "E_14_5_3",
+        "to": "T_14_5",
+        "type": "tests"
+      },
+      {
+        "from": "E_14_6_1",
+        "to": "T_14_6",
+        "type": "tests"
+      },
+      {
+        "from": "E_15_1_1",
+        "to": "T_15_1",
+        "type": "tests"
+      },
+      {
+        "from": "E_15_1_2",
+        "to": "T_15_1",
+        "type": "tests"
+      },
+      {
+        "from": "E_15_1_3",
+        "to": "T_15_1",
+        "type": "tests"
+      },
+      {
+        "from": "E_15_1_4",
+        "to": "T_15_1",
+        "type": "tests"
+      },
+      {
+        "from": "E_15_1_5",
+        "to": "T_15_1",
+        "type": "tests"
+      },
+      {
+        "from": "E_15_1_6",
+        "to": "T_15_1",
+        "type": "tests"
+      },
+      {
+        "from": "E_15_1_7",
+        "to": "T_15_1",
+        "type": "tests"
+      },
+      {
+        "from": "E_15_1_8",
+        "to": "T_15_1",
+        "type": "tests"
+      },
+      {
+        "from": "E_15_1_9",
+        "to": "T_15_1",
+        "type": "tests"
+      },
+      {
+        "from": "E_15_1_10",
+        "to": "T_15_1",
+        "type": "tests"
+      },
+      {
+        "from": "E_15_1_11",
+        "to": "T_15_1",
+        "type": "tests"
+      },
+      {
+        "from": "E_15_1_12",
+        "to": "T_15_1",
+        "type": "tests"
+      },
+      {
+        "from": "E_15_1_13",
+        "to": "T_15_1",
+        "type": "tests"
+      },
+      {
+        "from": "E_15_1_14",
+        "to": "T_15_1",
+        "type": "tests"
+      },
+      {
+        "from": "E_15_1_15",
+        "to": "T_15_1",
+        "type": "tests"
+      },
+      {
+        "from": "E_15_1_16",
+        "to": "T_15_1",
+        "type": "tests"
+      }
+    ],
+    "concept_dependencies": [
+      {
+        "from": "T_1_3",
+        "to": "T_1_2",
+        "type": "depends_on"
+      },
+      {
+        "from": "T_1_4",
+        "to": "T_1_2",
+        "type": "depends_on"
+      },
+      {
+        "from": "T_1_5",
+        "to": "T_1_2",
+        "type": "depends_on"
+      },
+      {
+        "from": "T_2_2",
+        "to": "T_1_5",
+        "type": "depends_on"
+      },
+      {
+        "from": "T_2_6",
+        "to": "T_2_5",
+        "type": "depends_on"
+      },
+      {
+        "from": "T_2_7",
+        "to": "T_2_6",
+        "type": "depends_on"
+      },
+      {
+        "from": "T_2_8",
+        "to": "T_2_7",
+        "type": "depends_on"
+      },
+      {
+        "from": "T_3_10",
+        "to": "T_2_5",
+        "type": "depends_on"
+      },
+      {
+        "from": "T_4_1",
+        "to": "T_1_2",
+        "type": "depends_on"
+      },
+      {
+        "from": "T_5_2",
+        "to": "T_3_10",
+        "type": "depends_on"
+      },
+      {
+        "from": "T_5_3",
+        "to": "T_5_2",
+        "type": "depends_on"
+      },
+      {
+        "from": "T_5_4",
+        "to": "T_5_2",
+        "type": "depends_on"
+      },
+      {
+        "from": "T_5_5",
+        "to": "T_5_2",
+        "type": "depends_on"
+      },
+      {
+        "from": "T_5_6",
+        "to": "T_5_5",
+        "type": "depends_on"
+      },
+      {
+        "from": "T_5_7",
+        "to": "T_5_6",
+        "type": "depends_on"
+      },
+      {
+        "from": "T_5_8",
+        "to": "T_5_2",
+        "type": "depends_on"
+      },
+      {
+        "from": "T_6_1",
+        "to": "T_4_1",
+        "type": "depends_on"
+      },
+      {
+        "from": "T_6_2",
+        "to": "T_6_1",
+        "type": "depends_on"
+      },
+      {
+        "from": "T_6_3",
+        "to": "T_5_8",
+        "type": "depends_on"
+      },
+      {
+        "from": "T_7_2",
+        "to": "T_6_3",
+        "type": "depends_on"
+      },
+      {
+        "from": "T_7_6",
+        "to": "T_7_5",
+        "type": "depends_on"
+      },
+      {
+        "from": "T_7_7",
+        "to": "T_7_6",
+        "type": "depends_on"
+      },
+      {
+        "from": "T_7_8",
+        "to": "T_7_7",
+        "type": "depends_on"
+      },
+      {
+        "from": "T_8_1",
+        "to": "T_7_5",
+        "type": "depends_on"
+      },
+      {
+        "from": "T_9_1",
+        "to": "T_8_1",
+        "type": "depends_on"
+      },
+      {
+        "from": "T_9_2",
+        "to": "T_9_1",
+        "type": "depends_on"
+      },
+      {
+        "from": "T_9_4",
+        "to": "T_8_1",
+        "type": "depends_on"
+      },
+      {
+        "from": "T_10_1",
+        "to": "T_9_1",
+        "type": "depends_on"
+      },
+      {
+        "from": "T_11_2",
+        "to": "T_10_1",
+        "type": "depends_on"
+      },
+      {
+        "from": "T_11_3",
+        "to": "T_11_2",
+        "type": "depends_on"
+      }
+    ]
+  },
+  "chapters": [],
+  "unresolved_chapters": []
+}

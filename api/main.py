@@ -407,29 +407,101 @@ def _infer_subject(book_name: str) -> str:
 DATA_DIR = PROJECT_ROOT / "data"
 
 _ontology_cache: dict = {}   # book_name -> ontology dict, lives for process lifetime
+_resolved_book_cache: dict = {}   # requested -> canonical seeded name
+
+
+def _list_seeded_books(db) -> list[str]:
+    names: set[str] = set()
+    try:
+        names.update(q.list_books(db) or [])
+    except Exception:
+        pass
+    if DATA_DIR.exists():
+        names.update(f.stem for f in DATA_DIR.glob("*.json"))
+    return sorted(names)
+
+
+def _resolve_book_name(db, requested: str) -> Optional[str]:
+    """Map a requested book name to an actual seeded one.
+
+    Tries exact match, then normalised variants (lowercase, spaces→_),
+    then common subject-language suffixes (_fl, fl, _sl, sl), then prefix match.
+    """
+    if requested in _resolved_book_cache:
+        return _resolved_book_cache[requested]
+
+    all_books = _list_seeded_books(db)
+    by_lower = {b.lower(): b for b in all_books}
+
+    def _try(name: str) -> Optional[str]:
+        if name in all_books:
+            return name
+        return by_lower.get(name.lower())
+
+    hit = _try(requested)
+    if hit:
+        _resolved_book_cache[requested] = hit
+        return hit
+
+    base = requested.strip().lower().replace("%20", " ").replace(" ", "_")
+    base = re.sub(r"_+", "_", base)
+    hit = _try(base)
+    if hit:
+        _resolved_book_cache[requested] = hit
+        return hit
+
+    for suffix in ("_fl", "fl", "_sl", "sl", "_first_language", "_second_language"):
+        hit = _try(f"{base}{suffix}")
+        if hit:
+            _resolved_book_cache[requested] = hit
+            return hit
+
+    prefix_hits = [b for b in all_books if b.lower().startswith(base)]
+    if prefix_hits:
+        # Prefer first-language variants when ambiguous
+        for pref_suffix in ("_fl", "fl"):
+            for b in prefix_hits:
+                if b.lower().endswith(pref_suffix):
+                    _resolved_book_cache[requested] = b
+                    return b
+        _resolved_book_cache[requested] = prefix_hits[0]
+        return prefix_hits[0]
+
+    return None
 
 
 def _get_ontology_or_404(db, book_name: str) -> dict:
     if book_name in _ontology_cache:
         return _ontology_cache[book_name]
 
+    resolved = _resolve_book_name(db, book_name) or book_name
+
+    if resolved in _ontology_cache:
+        _ontology_cache[book_name] = _ontology_cache[resolved]
+        return _ontology_cache[resolved]
+
     # Primary: Supabase
     try:
-        ontology = q.get_ontology_json(db, book_name)
+        ontology = q.get_ontology_json(db, resolved)
         if ontology is not None:
+            _ontology_cache[resolved] = ontology
             _ontology_cache[book_name] = ontology
             return ontology
     except Exception:
         pass
 
     # Fallback: committed data/ files
-    data_file = DATA_DIR / f"{book_name}.json"
+    data_file = DATA_DIR / f"{resolved}.json"
     if data_file.exists():
         ontology = json.loads(data_file.read_text(encoding="utf-8"))
+        _ontology_cache[resolved] = ontology
         _ontology_cache[book_name] = ontology
         return ontology
 
-    raise HTTPException(status_code=404, detail=f"Ontology not found for book '{book_name}'")
+    raise HTTPException(
+        status_code=404,
+        detail=f"Ontology not found for book '{book_name}' (resolved to '{resolved}')",
+    )
 
 
 def _get_topic_data(ontology: dict, chap_idx: int, topic_idx: int):

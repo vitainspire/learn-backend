@@ -1,0 +1,5830 @@
+{
+  "subject": "Grade3 English",
+  "language": "English",
+  "entities": {
+    "chapters": [
+      {
+        "id": "C_1",
+        "number": 1,
+        "title": "Bridging Gap Activity Pictures",
+        "page_start": 1,
+        "page_end": 14,
+        "confidence": 0.7,
+        "status": "partial"
+      },
+      {
+        "id": "C_2",
+        "number": 2,
+        "title": "Unit I TALKING TRAIN",
+        "page_start": 15,
+        "page_end": 15,
+        "confidence": 1.0,
+        "status": "verified"
+      },
+      {
+        "id": "C_3",
+        "number": 3,
+        "title": "Unit-2 SWAMY AND THE MAGIC BEANS",
+        "page_start": 16,
+        "page_end": 26,
+        "confidence": 1.0,
+        "status": "verified"
+      },
+      {
+        "id": "C_4",
+        "number": 4,
+        "title": "Unit-3 I Like It This Way",
+        "page_start": 27,
+        "page_end": 39,
+        "confidence": 1.0,
+        "status": "verified"
+      },
+      {
+        "id": "C_5",
+        "number": 5,
+        "title": "Unit-4 THE MOUSE AND THE PENCIL",
+        "page_start": 40,
+        "page_end": 54,
+        "confidence": 1.0,
+        "status": "verified"
+      },
+      {
+        "id": "C_6",
+        "number": 6,
+        "title": "Unit-5 THE LITTLE RED HEN",
+        "page_start": 55,
+        "page_end": 68,
+        "confidence": 1.0,
+        "status": "verified"
+      },
+      {
+        "id": "C_7",
+        "number": 7,
+        "title": "Unit-6 MARY AND THE THREE BEARS",
+        "page_start": 69,
+        "page_end": 81,
+        "confidence": 1.0,
+        "status": "verified"
+      },
+      {
+        "id": "C_8",
+        "number": 8,
+        "title": "Unit-7 THE ANIMAL SCHOOL",
+        "page_start": 82,
+        "page_end": 93,
+        "confidence": 1.0,
+        "status": "verified"
+      },
+      {
+        "id": "C_9",
+        "number": 9,
+        "title": "Unit 8 Birbal Outwits the Cheat",
+        "page_start": 94,
+        "page_end": 105,
+        "confidence": 1.0,
+        "status": "verified"
+      },
+      {
+        "id": "C_10",
+        "number": 10,
+        "title": "Appendix - I Texts for Listening",
+        "page_start": 106,
+        "page_end": 108,
+        "confidence": 1.0,
+        "status": "verified"
+      },
+      {
+        "id": "C_11",
+        "number": 11,
+        "title": "Appendix About the Textbook",
+        "page_start": 109,
+        "page_end": 116,
+        "confidence": 1.0,
+        "status": "verified"
+      }
+    ],
+    "topics": [
+      {
+        "id": "T_1_1",
+        "name": "Bridging Gap Activity Pictures",
+        "summary": "This topic presents a series of four distinct pictures, each accompanied by interactive questions designed to develop students' observational, descriptive, conversational, and story-telling skills. It aims to bridge learning gaps by encouraging verbal interaction and comprehension of visual information.",
+        "chapter_id": "C_1",
+        "page_start": 1,
+        "page_end": 4,
+        "prerequisites": []
+      },
+      {
+        "id": "T_2_1",
+        "name": "Introduction to Talking Train",
+        "summary": "Students observe a picture of a railway station, discuss what they see, and answer questions about the scene. They also engage in a listening activity to determine true or false statements about a train journey.",
+        "chapter_id": "C_2",
+        "page_start": 15,
+        "page_end": 15,
+        "prerequisites": []
+      },
+      {
+        "id": "T_2_2",
+        "name": "The Story \"Talking train\"",
+        "summary": "Students read a story about a talking train named Rail Raja, learning about its characteristics, the places it travels through, and its role in connecting people.",
+        "chapter_id": "C_2",
+        "page_start": 15,
+        "page_end": 15,
+        "prerequisites": []
+      },
+      {
+        "id": "T_2_3",
+        "name": "Comprehension and Vehicle Vocabulary",
+        "summary": "Students answer comprehension questions based on the \"Talking train\" story and engage in activities to identify, categorize, and write about different types of vehicles.",
+        "chapter_id": "C_2",
+        "page_start": 15,
+        "page_end": 15,
+        "prerequisites": [
+          "T_2_2"
+        ]
+      },
+      {
+        "id": "T_2_4",
+        "name": "Vocabulary - Travel Items and Opposites",
+        "summary": "Students expand their vocabulary by listing items needed for travel and identifying and writing opposite words.",
+        "chapter_id": "C_2",
+        "page_start": 15,
+        "page_end": 15,
+        "prerequisites": []
+      },
+      {
+        "id": "T_2_5",
+        "name": "Grammar - Using the linker \"and\"",
+        "summary": "Students learn about the conjunction \"and\" and practice using it to link words and phrases.",
+        "chapter_id": "C_2",
+        "page_start": 15,
+        "page_end": 15,
+        "prerequisites": []
+      },
+      {
+        "id": "T_2_6",
+        "name": "Writing",
+        "summary": "Students learn to read descriptions of objects, write their own descriptions based on pictures, and apply basic writing conventions such as using capital letters, full stops, and correct spelling in sentences.",
+        "chapter_id": "C_2",
+        "page_start": 15,
+        "page_end": 15,
+        "prerequisites": [
+          "T_2_2",
+          "T_2_5"
+        ]
+      },
+      {
+        "id": "T_2_7",
+        "name": "Project Work",
+        "summary": "Students engage in a hands-on craft activity to build a train using matchboxes, following step-by-step instructions. They also participate in a group discussion to share their creations and ideas for improvement.",
+        "chapter_id": "C_2",
+        "page_start": 15,
+        "page_end": 15,
+        "prerequisites": []
+      },
+      {
+        "id": "T_2_8",
+        "name": "B Reading - Be Safe!",
+        "summary": "Students read a short story, presented with illustrations, about a boy named Raju who gets injured while trying to board a running train. The story conveys a moral about the importance of following safety rules.",
+        "chapter_id": "C_2",
+        "page_start": 15,
+        "page_end": 15,
+        "prerequisites": [
+          "T_2_2"
+        ]
+      },
+      {
+        "id": "T_3_1",
+        "name": "Introduction to Swamy and the Magic Beans",
+        "summary": "This page introduces the unit with an illustration of a magician and prompts students to observe and discuss the picture, relating it to their own experiences with magic.",
+        "chapter_id": "C_3",
+        "page_start": 16,
+        "page_end": 16,
+        "prerequisites": []
+      },
+      {
+        "id": "T_3_2",
+        "name": "Picture and Listening Comprehension",
+        "summary": "This page presents another illustration related to the story and asks students to answer questions based on their observation. It also includes a listening comprehension activity based on an external text.",
+        "chapter_id": "C_3",
+        "page_start": 17,
+        "page_end": 17,
+        "prerequisites": []
+      },
+      {
+        "id": "T_3_3",
+        "name": "The Story: Swamy and the Magic Beans",
+        "summary": "This section presents the narrative of \"Swamy and the Magic Beans,\" detailing Swamy's discovery of the beanstalk, his climb to the castle, his encounter with the giant, and his acquisition of the magic hen and flute.",
+        "chapter_id": "C_3",
+        "page_start": 18,
+        "page_end": 20,
+        "prerequisites": []
+      },
+      {
+        "id": "T_3_4",
+        "name": "Comprehension and Vocabulary",
+        "summary": "This page includes exercises to test comprehension of the \"Swamy and the Magic Beans\" story and introduces vocabulary activities focusing on rhyming words.",
+        "chapter_id": "C_3",
+        "page_start": 21,
+        "page_end": 21,
+        "prerequisites": []
+      },
+      {
+        "id": "T_3_5",
+        "name": "Creative Thinking and Grammar: Naming Words",
+        "summary": "This section encourages creative thinking with a magic wand activity and introduces the concept of naming words (nouns) through examples from the story and classification exercises.",
+        "chapter_id": "C_3",
+        "page_start": 22,
+        "page_end": 23,
+        "prerequisites": []
+      },
+      {
+        "id": "T_3_6",
+        "name": "Writing: Dialogue Creation",
+        "summary": "This page provides a writing activity where students create a dialogue between Swamy and his mother based on the story's conclusion.",
+        "chapter_id": "C_3",
+        "page_start": 23,
+        "page_end": 23,
+        "prerequisites": []
+      },
+      {
+        "id": "T_3_7",
+        "name": "Oral Skills",
+        "summary": "This topic focuses on developing oral communication skills by describing a picture from the story and identifying instructions given by characters within the narrative.",
+        "chapter_id": "C_3",
+        "page_start": 24,
+        "page_end": 24,
+        "prerequisites": [
+          "T_3_3"
+        ]
+      },
+      {
+        "id": "T_3_8",
+        "name": "Conventions of Writing",
+        "summary": "This topic teaches students about basic writing conventions, specifically the use of capital letters and full stops in sentences, and understanding different types of instructions.",
+        "chapter_id": "C_3",
+        "page_start": 25,
+        "page_end": 25,
+        "prerequisites": [
+          "T_3_6"
+        ]
+      },
+      {
+        "id": "T_3_9",
+        "name": "Fun with Words",
+        "summary": "This topic introduces students to gender-specific nouns, categorizing them into 'He words' (male) and 'She words' (female).",
+        "chapter_id": "C_3",
+        "page_start": 25,
+        "page_end": 25,
+        "prerequisites": []
+      },
+      {
+        "id": "T_3_10",
+        "name": "The Magic Wand",
+        "summary": "This topic features a poem about a magic wand and a magic flute, followed by a creative writing activity to extend a rhyme.",
+        "chapter_id": "C_3",
+        "page_start": 26,
+        "page_end": 26,
+        "prerequisites": []
+      },
+      {
+        "id": "T_4_1",
+        "name": "I Like It This Way (Introductory Activity)",
+        "summary": "Students observe and compare pictures of a messy and a clean room, discussing differences and preferences related to cleanliness and order.",
+        "chapter_id": "C_4",
+        "page_start": 27,
+        "page_end": 27,
+        "prerequisites": []
+      },
+      {
+        "id": "T_4_2",
+        "name": "School and Home Activities",
+        "summary": "Students analyze a picture of a school scene and answer questions, then engage in a listening activity about Sita's after-school routine, answering comprehension questions based on the audio.",
+        "chapter_id": "C_4",
+        "page_start": 28,
+        "page_end": 28,
+        "prerequisites": []
+      },
+      {
+        "id": "T_4_3",
+        "name": "A Reading: I Like It This Way",
+        "summary": "Students read a story about Sita, her mother, and brother Raja, who work together to clean their messy room and organize their belongings. The story emphasizes the importance of cleanliness and order in daily life.",
+        "chapter_id": "C_4",
+        "page_start": 29,
+        "page_end": 32,
+        "prerequisites": []
+      },
+      {
+        "id": "T_4_4",
+        "name": "Comprehension",
+        "summary": "Students answer questions based on the story 'I Like It This Way' to demonstrate their understanding of the narrative and reflect on their own habits of keeping things clean and organized at home.",
+        "chapter_id": "C_4",
+        "page_start": 33,
+        "page_end": 33,
+        "prerequisites": [
+          "T_4_3"
+        ]
+      },
+      {
+        "id": "T_4_5",
+        "name": "Vocabulary",
+        "summary": "Students expand their vocabulary by identifying actions related to helping at home and practicing synonym replacement based on the story 'I Like It This Way'.",
+        "chapter_id": "C_4",
+        "page_start": 34,
+        "page_end": 34,
+        "prerequisites": [
+          "T_4_3"
+        ]
+      },
+      {
+        "id": "T_4_6",
+        "name": "Grammar",
+        "summary": "Students learn about prepositions (on, in, under) by reading example sentences from the story and then practice using them to answer questions about pictures and to form their own sentences.",
+        "chapter_id": "C_4",
+        "page_start": 35,
+        "page_end": 35,
+        "prerequisites": [
+          "T_4_3"
+        ]
+      },
+      {
+        "id": "T_4_7",
+        "name": "Writing",
+        "summary": "Students practice writing skills by describing a given picture and by creating a personal timetable for their evening activities.",
+        "chapter_id": "C_4",
+        "page_start": 36,
+        "page_end": 36,
+        "prerequisites": []
+      },
+      {
+        "id": "T_4_8",
+        "name": "Oral Skills",
+        "summary": "Students engage in a discussion about keeping their school clean during mid-day meals, practicing their oral communication and presentation skills.",
+        "chapter_id": "C_4",
+        "page_start": 37,
+        "page_end": 37,
+        "prerequisites": []
+      },
+      {
+        "id": "T_4_9",
+        "name": "Conventions of Writing",
+        "summary": "Students practice applying proper punctuation (capital letters, full stops, question marks) and correcting spelling errors by rewriting given sentences.",
+        "chapter_id": "C_4",
+        "page_start": 37,
+        "page_end": 37,
+        "prerequisites": []
+      },
+      {
+        "id": "T_4_10",
+        "name": "Fun with Words",
+        "summary": "Students engage in a word-building activity by combining given initial letters with common word endings to form new words.",
+        "chapter_id": "C_4",
+        "page_start": 37,
+        "page_end": 37,
+        "prerequisites": []
+      },
+      {
+        "id": "T_4_11",
+        "name": "B Reading",
+        "summary": "Students read and recite the poem \"Brother Has No Teeth\" and then answer comprehension questions related to the poem and general health habits.",
+        "chapter_id": "C_4",
+        "page_start": 38,
+        "page_end": 39,
+        "prerequisites": []
+      },
+      {
+        "id": "T_4_12",
+        "name": "Project Work",
+        "summary": "Students discuss good habits with their parents or friends, list five important habits, and then prepare a chart to present in class, categorizing habits for school and home.",
+        "chapter_id": "C_4",
+        "page_start": 39,
+        "page_end": 39,
+        "prerequisites": []
+      },
+      {
+        "id": "T_5_1",
+        "name": "Introduction to the story",
+        "summary": "This topic introduces the theme of the story through picture observation, discussion, and a listening activity, preparing students for the narrative.",
+        "chapter_id": "C_5",
+        "page_start": 40,
+        "page_end": 41,
+        "prerequisites": []
+      },
+      {
+        "id": "T_5_2",
+        "name": "The mouse and the pencil",
+        "summary": "Students read a story about a mouse who wants to bite a pencil, and how the pencil cleverly draws pictures to scare the mouse away.",
+        "chapter_id": "C_5",
+        "page_start": 42,
+        "page_end": 44,
+        "prerequisites": [
+          "T_5_1"
+        ]
+      },
+      {
+        "id": "T_5_3",
+        "name": "Comprehension",
+        "summary": "Students answer questions and complete a table based on the story \"The mouse and the pencil\" to demonstrate their understanding.",
+        "chapter_id": "C_5",
+        "page_start": 45,
+        "page_end": 45,
+        "prerequisites": [
+          "T_5_2"
+        ]
+      },
+      {
+        "id": "T_5_4",
+        "name": "Vocabulary",
+        "summary": "Students expand their vocabulary by listing drawing materials and food items, connecting to themes from the story.",
+        "chapter_id": "C_5",
+        "page_start": 46,
+        "page_end": 46,
+        "prerequisites": [
+          "T_5_2"
+        ]
+      },
+      {
+        "id": "T_5_5",
+        "name": "Grammar",
+        "summary": "This topic introduces adjectives (describing words) by highlighting examples from the story and provides exercises for students to practice using them in sentences.",
+        "chapter_id": "C_5",
+        "page_start": 47,
+        "page_end": 47,
+        "prerequisites": [
+          "T_5_2"
+        ]
+      },
+      {
+        "id": "T_5_6",
+        "name": "Adjectives and Opposites",
+        "summary": "This section focuses on identifying adjectives and their opposites through fill-in-the-blanks and matching exercises.",
+        "chapter_id": "C_5",
+        "page_start": 48,
+        "page_end": 48,
+        "prerequisites": []
+      },
+      {
+        "id": "T_5_7",
+        "name": "Writing about a Cat",
+        "summary": "Students are asked to draw a cat and then write a descriptive paragraph about it based on guiding questions.",
+        "chapter_id": "C_5",
+        "page_start": 49,
+        "page_end": 49,
+        "prerequisites": []
+      },
+      {
+        "id": "T_5_8",
+        "name": "Shapes and Oral Skills",
+        "summary": "This section includes activities on identifying shapes, colouring, reading shape names, and an oral guessing game.",
+        "chapter_id": "C_5",
+        "page_start": 50,
+        "page_end": 50,
+        "prerequisites": []
+      },
+      {
+        "id": "T_5_9",
+        "name": "Project Work: My Leafy Animals",
+        "summary": "A project-based activity where students create animals using leaves and write their names.",
+        "chapter_id": "C_5",
+        "page_start": 51,
+        "page_end": 51,
+        "prerequisites": []
+      },
+      {
+        "id": "T_5_10",
+        "name": "Writing Conventions and Word Play",
+        "summary": "This section covers describing a craft project, correcting sentences for punctuation and spelling, and a word completion activity.",
+        "chapter_id": "C_5",
+        "page_start": 52,
+        "page_end": 52,
+        "prerequisites": []
+      },
+      {
+        "id": "T_5_11",
+        "name": "The Lion and the Mouse Story (Part 1)",
+        "summary": "The first part of the classic fable \"The Lion and the Mouse\" for reading comprehension.",
+        "chapter_id": "C_5",
+        "page_start": 53,
+        "page_end": 53,
+        "prerequisites": []
+      },
+      {
+        "id": "T_5_12",
+        "name": "The Lion and the Mouse Story (Part 2)",
+        "summary": "The concluding part of the fable \"The Lion and the Mouse\" for reading comprehension.",
+        "chapter_id": "C_5",
+        "page_start": 54,
+        "page_end": 54,
+        "prerequisites": []
+      },
+      {
+        "id": "T_6_1",
+        "name": "Introduction to the theme of work/effort and story elements",
+        "summary": "Students observe pictures, discuss activities, and answer questions based on visual cues and a listening text, preparing for the story of the Little Red Hen.",
+        "chapter_id": "C_6",
+        "page_start": 55,
+        "page_end": 56,
+        "prerequisites": []
+      },
+      {
+        "id": "T_6_2",
+        "name": "The Little Red Hen Story",
+        "summary": "Students read the classic fable of the Little Red Hen, who performs all the work of planting, harvesting, milling, and baking wheat herself after her friends refuse to help, and then eats the bread alone.",
+        "chapter_id": "C_6",
+        "page_start": 57,
+        "page_end": 60,
+        "prerequisites": []
+      },
+      {
+        "id": "T_6_3",
+        "name": "Comprehension",
+        "summary": "Students answer questions and sequence events to demonstrate their understanding of \"The Little Red Hen\" story.",
+        "chapter_id": "C_6",
+        "page_start": 61,
+        "page_end": 61,
+        "prerequisites": [
+          "T_6_2"
+        ]
+      },
+      {
+        "id": "T_6_4",
+        "name": "Vocabulary",
+        "summary": "Students expand their vocabulary by identifying seeds that grow into plants and naming various birds and animals.",
+        "chapter_id": "C_6",
+        "page_start": 62,
+        "page_end": 62,
+        "prerequisites": [
+          "T_6_2"
+        ]
+      },
+      {
+        "id": "T_6_5",
+        "name": "Grammar: Action Words",
+        "summary": "Focuses on identifying and using action words (verbs) in sentences and associating them with pictures.",
+        "chapter_id": "C_6",
+        "page_start": 63,
+        "page_end": 63,
+        "prerequisites": []
+      },
+      {
+        "id": "T_6_6",
+        "name": "Writing: Food Items and Recipes",
+        "summary": "Activities related to writing about food items made from wheat and listing ingredients for a recipe.",
+        "chapter_id": "C_6",
+        "page_start": 64,
+        "page_end": 64,
+        "prerequisites": []
+      },
+      {
+        "id": "T_6_7",
+        "name": "Writing: Recipe Steps and Picture Description",
+        "summary": "Focuses on writing sequential steps for a recipe and describing a given picture.",
+        "chapter_id": "C_6",
+        "page_start": 65,
+        "page_end": 65,
+        "prerequisites": []
+      },
+      {
+        "id": "T_6_8",
+        "name": "Oral Skills, Conventions of Writing, and Palindromes",
+        "summary": "Covers speaking about a picture, correcting sentences for grammar and punctuation, and identifying palindromes.",
+        "chapter_id": "C_6",
+        "page_start": 66,
+        "page_end": 66,
+        "prerequisites": []
+      },
+      {
+        "id": "T_6_9",
+        "name": "Reading Comprehension: Dialogue",
+        "summary": "Involves reading a short dialogue and completing sentences based on its content.",
+        "chapter_id": "C_6",
+        "page_start": 67,
+        "page_end": 67,
+        "prerequisites": []
+      },
+      {
+        "id": "T_6_10",
+        "name": "Project Work: Planting a Seed",
+        "summary": "A project-based activity detailing the steps to plant a seed and encouraging students to describe the process.",
+        "chapter_id": "C_6",
+        "page_start": 68,
+        "page_end": 68,
+        "prerequisites": []
+      },
+      {
+        "id": "T_7_1",
+        "name": "Look at the picture.",
+        "summary": "Students observe pictures and discuss questions related to animal training and a girl playing with butterflies, and listen to a story introduction.",
+        "chapter_id": "C_7",
+        "page_start": 69,
+        "page_end": 70,
+        "prerequisites": []
+      },
+      {
+        "id": "T_7_2",
+        "name": "Mary and the three bears",
+        "summary": "Students read the story of Mary, who enters a house, eats payasam, tries chairs, and sleeps in beds belonging to three bears, eventually running away when the bears return.",
+        "chapter_id": "C_7",
+        "page_start": 71,
+        "page_end": 74,
+        "prerequisites": [
+          "T_7_1"
+        ]
+      },
+      {
+        "id": "T_7_3",
+        "name": "Comprehension",
+        "summary": "Students answer questions and arrange events to demonstrate understanding of the story \"Mary and the three bears\".",
+        "chapter_id": "C_7",
+        "page_start": 75,
+        "page_end": 75,
+        "prerequisites": [
+          "T_7_2"
+        ]
+      },
+      {
+        "id": "T_7_4",
+        "name": "Vocabulary",
+        "summary": "Students expand their vocabulary by identifying words related to furniture and listing special dishes.",
+        "chapter_id": "C_7",
+        "page_start": 75,
+        "page_end": 76,
+        "prerequisites": [
+          "T_7_2"
+        ]
+      },
+      {
+        "id": "T_7_5",
+        "name": "Grammar",
+        "summary": "Students learn about sentence structure by identifying meaningful and meaningless groups of words and rearranging words to form meaningful sentences.",
+        "chapter_id": "C_7",
+        "page_start": 76,
+        "page_end": 76,
+        "prerequisites": []
+      },
+      {
+        "id": "T_7_6",
+        "name": "Sentence Construction and Recipe Writing",
+        "summary": "Students practice matching sentence parts, listing ingredients for a recipe, writing recipe steps, and describing a picture.",
+        "chapter_id": "C_7",
+        "page_start": 77,
+        "page_end": 78,
+        "prerequisites": []
+      },
+      {
+        "id": "T_7_7",
+        "name": "Oral Skills and 'too...to' Usage",
+        "summary": "Students practice reading sentences and forming new sentences using the 'too...to' structure in various contexts, both orally and in writing.",
+        "chapter_id": "C_7",
+        "page_start": 79,
+        "page_end": 79,
+        "prerequisites": []
+      },
+      {
+        "id": "T_7_8",
+        "name": "Reading a Poem: Run",
+        "summary": "Students read a poem about running and engage in a creative writing activity by adding new lines to it.",
+        "chapter_id": "C_7",
+        "page_start": 80,
+        "page_end": 80,
+        "prerequisites": []
+      },
+      {
+        "id": "T_7_9",
+        "name": "Project Work: Our furniture",
+        "summary": "Students identify and describe furniture in their homes, including their uses and where they are kept.",
+        "chapter_id": "C_7",
+        "page_start": 81,
+        "page_end": 81,
+        "prerequisites": []
+      },
+      {
+        "id": "T_7_10",
+        "name": "Conventions of Writing",
+        "summary": "Students practice correcting sentences for proper capitalization and spelling errors.",
+        "chapter_id": "C_7",
+        "page_start": 81,
+        "page_end": 81,
+        "prerequisites": []
+      },
+      {
+        "id": "T_7_11",
+        "name": "Fun with Words: Question Words",
+        "summary": "Students learn common question words and practice forming questions using them.",
+        "chapter_id": "C_7",
+        "page_start": 81,
+        "page_end": 81,
+        "prerequisites": []
+      },
+      {
+        "id": "T_8_1",
+        "name": "Introduction to The Animal School",
+        "summary": "Students are introduced to the theme of an animal school through a picture and discussion questions.",
+        "chapter_id": "C_8",
+        "page_start": 82,
+        "page_end": 82,
+        "prerequisites": []
+      },
+      {
+        "id": "T_8_2",
+        "name": "Pre-reading and Listening Activities",
+        "summary": "Students engage in pre-reading activities by observing a picture and answering questions, followed by a listening comprehension exercise based on a story from the appendix.",
+        "chapter_id": "C_8",
+        "page_start": 83,
+        "page_end": 83,
+        "prerequisites": []
+      },
+      {
+        "id": "T_8_3",
+        "name": "The Animal School Story",
+        "summary": "Students read a story about various animals deciding to join a school to learn new skills, their experiences, and the eventual closure of the school due to its ineffectiveness in teaching natural skills.",
+        "chapter_id": "C_8",
+        "page_start": 84,
+        "page_end": 87,
+        "prerequisites": [
+          "T_8_1",
+          "T_8_2"
+        ]
+      },
+      {
+        "id": "T_8_4",
+        "name": "Comprehension and Vocabulary",
+        "summary": "Students answer comprehension questions based on the story, identify animal abilities and learning goals, expand their vocabulary related to school, and practice replacing words with synonyms.",
+        "chapter_id": "C_8",
+        "page_start": 88,
+        "page_end": 89,
+        "prerequisites": [
+          "T_8_3"
+        ]
+      },
+      {
+        "id": "T_8_5",
+        "name": "Grammar: Plurals",
+        "summary": "Students are introduced to the concept of plural nouns by reading examples from the story and learning that plurals indicate more than one item.",
+        "chapter_id": "C_8",
+        "page_start": 89,
+        "page_end": 89,
+        "prerequisites": [
+          "T_8_3"
+        ]
+      },
+      {
+        "id": "T_9_1",
+        "name": "Introduction to the Story",
+        "summary": "This topic introduces the story through visual analysis and discussion, encouraging students to observe pictures and predict events, followed by a listening activity related to the story's theme.",
+        "chapter_id": "C_9",
+        "page_start": 94,
+        "page_end": 95,
+        "prerequisites": []
+      },
+      {
+        "id": "T_9_2",
+        "name": "The Story: Birbal outwits the cheat",
+        "summary": "This topic presents the full story of how Birbal, Emperor Akbar's minister, cleverly resolves a dispute between Bajrang and Gopal regarding the sale of a well and its water.",
+        "chapter_id": "C_9",
+        "page_start": 96,
+        "page_end": 99,
+        "prerequisites": [
+          "T_9_1"
+        ]
+      },
+      {
+        "id": "T_9_3",
+        "name": "Comprehension",
+        "summary": "This topic assesses students' understanding of the story \"Birbal outwits the cheat\" through direct questions and true/false statements.",
+        "chapter_id": "C_9",
+        "page_start": 100,
+        "page_end": 100,
+        "prerequisites": [
+          "T_9_2"
+        ]
+      },
+      {
+        "id": "T_9_4",
+        "name": "Vocabulary",
+        "summary": "This topic expands students' vocabulary by introducing words related to a kingdom and exploring different sources and uses of water.",
+        "chapter_id": "C_9",
+        "page_start": 100,
+        "page_end": 101,
+        "prerequisites": []
+      },
+      {
+        "id": "T_9_5",
+        "name": "Grammar",
+        "summary": "This topic introduces students to identifying different types of nouns (characters, things, places) from the story.",
+        "chapter_id": "C_9",
+        "page_start": 101,
+        "page_end": 101,
+        "prerequisites": [
+          "T_9_2"
+        ]
+      },
+      {
+        "id": "T_9_6",
+        "name": "Grammar and Writing Practice",
+        "summary": "Activities focusing on identifying nouns and verbs, and practicing dialogue writing.",
+        "chapter_id": "C_9",
+        "page_start": 102,
+        "page_end": 102,
+        "prerequisites": []
+      },
+      {
+        "id": "T_9_7",
+        "name": "Oral Communication and Vocabulary",
+        "summary": "Activities to develop oral skills through role-play and expand vocabulary with a word game.",
+        "chapter_id": "C_9",
+        "page_start": 103,
+        "page_end": 103,
+        "prerequisites": []
+      },
+      {
+        "id": "T_9_8",
+        "name": "Project Work: Storytelling and Creative Writing",
+        "summary": "A project to create and present a story by drawing a picture and writing its narrative.",
+        "chapter_id": "C_9",
+        "page_start": 104,
+        "page_end": 104,
+        "prerequisites": []
+      },
+      {
+        "id": "T_9_9",
+        "name": "Reading and Story Comprehension",
+        "summary": "A reading passage about a story teller and an illustration depicting the scene.",
+        "chapter_id": "C_9",
+        "page_start": 105,
+        "page_end": 105,
+        "prerequisites": []
+      },
+      {
+        "id": "T_10_1",
+        "name": "TALKING TRAIN",
+        "summary": "This topic presents a short story about Mary and her parents at a railway station, where they hear an announcement about a delayed train. It is intended as a text for listening practice.",
+        "chapter_id": "C_10",
+        "page_start": 106,
+        "page_end": 106,
+        "prerequisites": []
+      },
+      {
+        "id": "T_10_2",
+        "name": "SWAMY AND THE MAGIC BEANS",
+        "summary": "This topic presents a short story about a poor boy named Swamy who trades his family's cow for magic beans. It is intended as a text for listening practice.",
+        "chapter_id": "C_10",
+        "page_start": 106,
+        "page_end": 106,
+        "prerequisites": []
+      },
+      {
+        "id": "T_10_3",
+        "name": "I Like It This Way",
+        "summary": "This topic presents a short story about Sita and her friends playing at her house after school. It is intended as a text for listening practice.",
+        "chapter_id": "C_10",
+        "page_start": 106,
+        "page_end": 106,
+        "prerequisites": []
+      },
+      {
+        "id": "T_10_4",
+        "name": "THE MOUSE AND THE PENCIL",
+        "summary": "This topic presents a short story about a pencil that comes to life and explores its surroundings while its owner, Chintu, is asleep. It is intended as a text for listening practice.",
+        "chapter_id": "C_10",
+        "page_start": 107,
+        "page_end": 107,
+        "prerequisites": []
+      },
+      {
+        "id": "T_10_5",
+        "name": "THE LITTLE RED HEN",
+        "summary": "This topic presents a short story about a diligent little red hen and her lazy friends (a pig, a duck, and a cat). It is intended as a text for listening practice.",
+        "chapter_id": "C_10",
+        "page_start": 107,
+        "page_end": 107,
+        "prerequisites": []
+      },
+      {
+        "id": "T_10_6",
+        "name": "MARY AND THE THREE BEARS",
+        "summary": "This topic presents a short story about a naughty girl named Mary who wanders into a forest and finds a house belonging to three bears. It is intended as a text for listening practice.",
+        "chapter_id": "C_10",
+        "page_start": 108,
+        "page_end": 108,
+        "prerequisites": []
+      },
+      {
+        "id": "T_10_7",
+        "name": "THE ANIMAL SCHOOL",
+        "summary": "This topic presents a short story about animals in a forest discussing a newly discovered animal school. It is intended as a text for listening practice.",
+        "chapter_id": "C_10",
+        "page_start": 108,
+        "page_end": 108,
+        "prerequisites": []
+      },
+      {
+        "id": "T_10_8",
+        "name": "BIRBAL OUTWITS THE CHEAT",
+        "summary": "This topic presents a short story about Birbal's cleverness in resolving a dispute over the sale of a well, where the seller tries to claim ownership of the water. It is intended as a text for listening practice.",
+        "chapter_id": "C_10",
+        "page_start": 108,
+        "page_end": 108,
+        "prerequisites": []
+      },
+      {
+        "id": "T_11_1",
+        "name": "Appendix - II About the Textbook",
+        "summary": "This section provides an overview of the textbook's development, academic standards, types of discourses, and assessment methods, specifically noting it is for Class III.",
+        "chapter_id": "C_11",
+        "page_start": 109,
+        "page_end": 110,
+        "prerequisites": []
+      },
+      {
+        "id": "T_11_2",
+        "name": "Wash away the germs",
+        "summary": "This topic provides practical instructions on hand hygiene to prevent the spread of germs.",
+        "chapter_id": "C_11",
+        "page_start": 111,
+        "page_end": 111,
+        "prerequisites": []
+      },
+      {
+        "id": "T_11_3",
+        "name": "General Service List - Common Words of English First 200 Words",
+        "summary": "This topic presents a comprehensive list of the first 200 most common words in English, intended for general service and vocabulary building.",
+        "chapter_id": "C_11",
+        "page_start": 111,
+        "page_end": 112,
+        "prerequisites": []
+      },
+      {
+        "id": "T_11_4",
+        "name": "TEXTBOOK DEVELOPMENT TEAM - 2012",
+        "summary": "This section acknowledges the individuals and teams involved in the creation and publication of the textbook in 2012, including advisors, editors, illustrators, and publication team members.",
+        "chapter_id": "C_11",
+        "page_start": 113,
+        "page_end": 114,
+        "prerequisites": []
+      },
+      {
+        "id": "T_11_5",
+        "name": "NOTES",
+        "summary": "These pages are provided for students or teachers to write down any additional notes or observations.",
+        "chapter_id": "C_11",
+        "page_start": 115,
+        "page_end": 116,
+        "prerequisites": []
+      }
+    ],
+    "subtopics": [
+      {
+        "id": "ST_1_1_1",
+        "topic_id": "T_1_1",
+        "name": "Bridging Gap Activity Picture - 1",
+        "summary": "Students observe a picture of children playing various outdoor games and answer questions to describe the scene, characters, and activities.",
+        "skill_type": "oral_communication",
+        "page_start": 1,
+        "page_end": 1
+      },
+      {
+        "id": "ST_1_1_2",
+        "topic_id": "T_1_1",
+        "name": "Bridging Gap Activity Picture - 2",
+        "summary": "Students analyze a picture depicting a multi-generational family scene, answering questions for description and engaging in a simulated conversation between characters.",
+        "skill_type": "oral_communication",
+        "page_start": 2,
+        "page_end": 2
+      },
+      {
+        "id": "ST_1_1_3",
+        "topic_id": "T_1_1",
+        "name": "Bridging Gap Activity Picture - 3",
+        "summary": "Students examine a picture of a boy and a dog on a street, answering descriptive questions and developing a short story based on the events depicted.",
+        "skill_type": "oral_communication",
+        "page_start": 3,
+        "page_end": 3
+      },
+      {
+        "id": "ST_1_1_4",
+        "topic_id": "T_1_1",
+        "name": "Bridging Gap Activity Picture - 4",
+        "summary": "Students use a picture of a vibrant natural scene with people and animals engaged in various activities to practice description, conversation, and story creation.",
+        "skill_type": "oral_communication",
+        "page_start": 4,
+        "page_end": 4
+      },
+      {
+        "id": "ST_2_1_1",
+        "topic_id": "T_2_1",
+        "name": "Observing a Railway Station Scene",
+        "summary": "Students look at a picture of a railway station and identify elements and activities within it.",
+        "skill_type": "recognition_skill",
+        "page_start": 15,
+        "page_end": 5
+      },
+      {
+        "id": "ST_2_1_2",
+        "topic_id": "T_2_1",
+        "name": "Discussing Railway Station Rules and Listening Comprehension",
+        "summary": "Students discuss rules at a railway station and listen to a text to answer true/false questions.",
+        "skill_type": "oral_communication",
+        "page_start": 15,
+        "page_end": 6
+      },
+      {
+        "id": "ST_2_2_1",
+        "topic_id": "T_2_2",
+        "name": "Reading the Story of Rail Raja",
+        "summary": "Students read the narrative from the perspective of a talking train, Rail Raja, describing itself and its journey.",
+        "skill_type": "reading_skill",
+        "page_start": 15,
+        "page_end": 9
+      },
+      {
+        "id": "ST_2_3_1",
+        "topic_id": "T_2_3",
+        "name": "Answering Comprehension Questions",
+        "summary": "Students answer questions to demonstrate understanding of the \"Talking train\" story.",
+        "skill_type": "comprehension_skill",
+        "page_start": 15,
+        "page_end": 10
+      },
+      {
+        "id": "ST_2_3_2",
+        "topic_id": "T_2_3",
+        "name": "Identifying and Writing About Vehicles",
+        "summary": "Students recognize various vehicles, indicate which ones they have traveled in or seen, and write about a favorite vehicle.",
+        "skill_type": "vocabulary_skill",
+        "page_start": 15,
+        "page_end": 10
+      },
+      {
+        "id": "ST_2_4_1",
+        "topic_id": "T_2_4",
+        "name": "Listing Travel Essentials",
+        "summary": "Students identify and list items that Laxmi should carry in her travel bag for a tour.",
+        "skill_type": "vocabulary_skill",
+        "page_start": 15,
+        "page_end": 11
+      },
+      {
+        "id": "ST_2_4_2",
+        "topic_id": "T_2_4",
+        "name": "Identifying and Writing Opposite Words",
+        "summary": "Students learn about opposite words and practice writing them for given examples.",
+        "skill_type": "vocabulary_skill",
+        "page_start": 15,
+        "page_end": 12
+      },
+      {
+        "id": "ST_2_5_1",
+        "topic_id": "T_2_5",
+        "name": "Understanding and Applying the Conjunction \"and\"",
+        "summary": "Students read examples of \"and\" used as a linker and then create their own phrases using it.",
+        "skill_type": "writing_skill",
+        "page_start": 15,
+        "page_end": 12
+      },
+      {
+        "id": "ST_2_6_1",
+        "topic_id": "T_2_6",
+        "name": "Reading a description",
+        "summary": "Students read a descriptive text about a train, identifying its characteristics and functions.",
+        "skill_type": "reading_skill",
+        "page_start": 15,
+        "page_end": 13
+      },
+      {
+        "id": "ST_2_6_2",
+        "topic_id": "T_2_6",
+        "name": "Writing a description",
+        "summary": "Students practice writing a few descriptive lines about a given picture (a bus).",
+        "skill_type": "writing_skill",
+        "page_start": 15,
+        "page_end": 13
+      },
+      {
+        "id": "ST_2_6_3",
+        "topic_id": "T_2_6",
+        "name": "Applying writing conventions",
+        "summary": "Students learn to correct sentences by applying rules for capital letters, full stops, and correct spelling.",
+        "skill_type": "writing_skill",
+        "page_start": 15,
+        "page_end": 13
+      },
+      {
+        "id": "ST_2_7_1",
+        "topic_id": "T_2_7",
+        "name": "Making a match box train",
+        "summary": "Students follow a sequence of steps to construct a model train using matchboxes and other simple materials.",
+        "skill_type": "art_skill",
+        "page_start": 15,
+        "page_end": 14
+      },
+      {
+        "id": "ST_2_7_2",
+        "topic_id": "T_2_7",
+        "name": "Group discussion on craft project",
+        "summary": "Students discuss their completed matchbox trains with peers, explaining their process and suggesting ways to enhance their creations.",
+        "skill_type": "oral_communication",
+        "page_start": 15,
+        "page_end": 14
+      },
+      {
+        "id": "ST_2_8_1",
+        "topic_id": "T_2_8",
+        "name": "Reading a narrative story about safety",
+        "summary": "Students read a story that illustrates the consequences of not following safety rules, specifically related to trains.",
+        "skill_type": "reading_skill",
+        "page_start": 15,
+        "page_end": 15
+      },
+      {
+        "id": "ST_2_8_2",
+        "topic_id": "T_2_8",
+        "name": "Understanding safety rules",
+        "summary": "Students comprehend the moral of the story, recognizing that rules are for safety and should be followed.",
+        "skill_type": "comprehension_skill",
+        "page_start": 15,
+        "page_end": 15
+      },
+      {
+        "id": "ST_3_3_1",
+        "topic_id": "T_3_3",
+        "name": "Swamy Climbs the Beanstalk",
+        "summary": "Swamy discovers a giant beanstalk and climbs it to reach a castle in the sky.",
+        "skill_type": "general_skill",
+        "page_start": 18,
+        "page_end": 18
+      },
+      {
+        "id": "ST_3_3_2",
+        "topic_id": "T_3_3",
+        "name": "Encounter with the Giant",
+        "summary": "Swamy enters the castle, hides from the giant, and observes the magic hen laying golden eggs and the magic flute singing.",
+        "skill_type": "general_skill",
+        "page_start": 19,
+        "page_end": 19
+      },
+      {
+        "id": "ST_3_3_3",
+        "topic_id": "T_3_3",
+        "name": "Escape and Happy Ending",
+        "summary": "Swamy takes the magic hen and flute while the giant sleeps, escapes down the beanstalk, and his mother helps him defeat the giant, leading to a happy life.",
+        "skill_type": "general_skill",
+        "page_start": 20,
+        "page_end": 20
+      },
+      {
+        "id": "ST_3_5_1",
+        "topic_id": "T_3_5",
+        "name": "Creative Wish Fulfillment",
+        "summary": "Students imagine having a magic wand and list things they would wish for.",
+        "skill_type": "general_skill",
+        "page_start": 22,
+        "page_end": 22
+      },
+      {
+        "id": "ST_3_5_2",
+        "topic_id": "T_3_5",
+        "name": "Introduction to Naming Words (Nouns)",
+        "summary": "This subtopic defines naming words (nouns) as names of living and non-living things, provides examples from the story, and includes exercises for identifying and classifying nouns.",
+        "skill_type": "general_skill",
+        "page_start": 22,
+        "page_end": 23
+      },
+      {
+        "id": "ST_3_7_1",
+        "topic_id": "T_3_7",
+        "name": "Describing a Picture",
+        "summary": "Students practice describing a picture from the story in 4-5 sentences, identifying characters, objects, and actions.",
+        "skill_type": "oral_communication",
+        "page_start": 24,
+        "page_end": 24
+      },
+      {
+        "id": "ST_3_7_2",
+        "topic_id": "T_3_7",
+        "name": "Identifying Instructions in a Story",
+        "summary": "Students read and identify specific instructions given by characters within the story context.",
+        "skill_type": "comprehension_skill",
+        "page_start": 24,
+        "page_end": 24
+      },
+      {
+        "id": "ST_3_8_1",
+        "topic_id": "T_3_8",
+        "name": "Understanding Instructions",
+        "summary": "Students learn to recognize and follow instructions given by different people, such as a teacher, mother, or friend.",
+        "skill_type": "comprehension_skill",
+        "page_start": 25,
+        "page_end": 25
+      },
+      {
+        "id": "ST_3_8_2",
+        "topic_id": "T_3_8",
+        "name": "Using Capital Letters and Full Stops",
+        "summary": "Students practice correcting sentences by applying proper capitalization at the beginning of sentences and for proper nouns, and using full stops at the end.",
+        "skill_type": "writing_skill",
+        "page_start": 25,
+        "page_end": 25
+      },
+      {
+        "id": "ST_3_9_1",
+        "topic_id": "T_3_9",
+        "name": "He words and She words",
+        "summary": "Students learn and identify pairs of nouns that represent male and female genders, such as 'man' and 'woman' or 'boy' and 'girl'.",
+        "skill_type": "vocabulary_skill",
+        "page_start": 25,
+        "page_end": 25
+      },
+      {
+        "id": "ST_3_10_1",
+        "topic_id": "T_3_10",
+        "name": "Reading a Poem",
+        "summary": "Students read and comprehend the poem \"The Magic Wand\" which describes the magical abilities of a wand and a flute.",
+        "skill_type": "reading_skill",
+        "page_start": 26,
+        "page_end": 26
+      },
+      {
+        "id": "ST_3_10_2",
+        "topic_id": "T_3_10",
+        "name": "Rhyme Extension",
+        "summary": "Students engage in creative writing by adding new lines to a given rhyme, maintaining the rhyming pattern.",
+        "skill_type": "writing_skill",
+        "page_start": 26,
+        "page_end": 26
+      },
+      {
+        "id": "ST_4_1_1",
+        "topic_id": "T_4_1",
+        "name": "Observing and Comparing Room States",
+        "summary": "Students identify and compare elements in two pictures depicting a messy and a clean room, noting differences in organization.",
+        "skill_type": "recognition_skill",
+        "page_start": 27,
+        "page_end": 27
+      },
+      {
+        "id": "ST_4_2_1",
+        "topic_id": "T_4_2",
+        "name": "Picture Analysis: School Scene",
+        "summary": "Students observe a picture of students leaving a primary school and answer questions about the scene and the activities depicted.",
+        "skill_type": "comprehension_skill",
+        "page_start": 28,
+        "page_end": 28
+      },
+      {
+        "id": "ST_4_2_2",
+        "topic_id": "T_4_2",
+        "name": "Listening Comprehension: After-School Routine",
+        "summary": "Students listen to a text (from Appendix-1) about Sita's activities after school and answer related comprehension questions, also reflecting on their own routines.",
+        "skill_type": "listening_skill",
+        "page_start": 28,
+        "page_end": 28
+      },
+      {
+        "id": "ST_4_3_1",
+        "topic_id": "T_4_3",
+        "name": "Reading the Story",
+        "summary": "Students read the story 'I Like It This Way' which describes Sita's messy room and her efforts to clean it with her mother's help, including dialogue and actions.",
+        "skill_type": "reading_skill",
+        "page_start": 29,
+        "page_end": 32
+      },
+      {
+        "id": "ST_4_3_2",
+        "topic_id": "T_4_3",
+        "name": "Story Narrative: Cleaning and Organizing",
+        "summary": "The story details Sita's journey from a messy room to an organized one, including folding clothes, putting away books, making a toy box, and the positive outcome of her efforts.",
+        "skill_type": "comprehension_skill",
+        "page_start": 29,
+        "page_end": 32
+      },
+      {
+        "id": "ST_4_4_1",
+        "topic_id": "T_4_4",
+        "name": "Story Comprehension Questions",
+        "summary": "Students answer true/false questions and open-ended questions about the events, characters, and plot of the story 'I Like It This Way'.",
+        "skill_type": "comprehension_skill",
+        "page_start": 33,
+        "page_end": 33
+      },
+      {
+        "id": "ST_4_4_2",
+        "topic_id": "T_4_4",
+        "name": "Personal Habits of Cleanliness",
+        "summary": "Students reflect on and list things they do at home to keep their room clean and where they store their belongings, completing a table.",
+        "skill_type": "general_skill",
+        "page_start": 33,
+        "page_end": 33
+      },
+      {
+        "id": "ST_4_5_1",
+        "topic_id": "T_4_5",
+        "name": "Helping Mother at Home",
+        "summary": "Students brainstorm and list various ways they help their mothers at home, using a mind map format to organize their ideas.",
+        "skill_type": "vocabulary_skill",
+        "page_start": 34,
+        "page_end": 34
+      },
+      {
+        "id": "ST_4_5_2",
+        "topic_id": "T_4_5",
+        "name": "Synonym Replacement",
+        "summary": "Students read thought bubbles containing sentences and replace underlined words with words of similar meaning found in the story 'I Like It This Way'.",
+        "skill_type": "vocabulary_skill",
+        "page_start": 34,
+        "page_end": 34
+      },
+      {
+        "id": "ST_4_6_1",
+        "topic_id": "T_4_6",
+        "name": "Introduction to Prepositions",
+        "summary": "Students are introduced to the prepositions 'on', 'in', and 'under' through example sentences.",
+        "skill_type": "recognition_skill",
+        "page_start": 35,
+        "page_end": 35
+      },
+      {
+        "id": "ST_4_7_1",
+        "topic_id": "T_4_7",
+        "name": "Describing a Picture",
+        "summary": "Students write sentences to describe the objects and scene depicted in an image.",
+        "skill_type": "writing_skill",
+        "page_start": 36,
+        "page_end": 36
+      },
+      {
+        "id": "ST_4_7_2",
+        "topic_id": "T_4_7",
+        "name": "Preparing a Timetable",
+        "summary": "Students create a personal timetable listing their evening activities and the corresponding times.",
+        "skill_type": "writing_skill",
+        "page_start": 36,
+        "page_end": 36
+      },
+      {
+        "id": "ST_4_8_1",
+        "topic_id": "T_4_8",
+        "name": "Discussion on School Cleanliness",
+        "summary": "Students discuss in pairs how to keep the school clean during mid-day meals and present their conversation to the class.",
+        "skill_type": "oral_communication",
+        "page_start": 37,
+        "page_end": 37
+      },
+      {
+        "id": "ST_4_9_1",
+        "topic_id": "T_4_9",
+        "name": "Punctuation and Spelling Correction",
+        "summary": "Students identify and correct errors in punctuation and spelling in provided sentences.",
+        "skill_type": "writing_skill",
+        "page_start": 37,
+        "page_end": 37
+      },
+      {
+        "id": "ST_4_10_1",
+        "topic_id": "T_4_10",
+        "name": "Word Building with Endings",
+        "summary": "Students complete a grid by forming words using specified initial letters and word endings.",
+        "skill_type": "vocabulary_skill",
+        "page_start": 37,
+        "page_end": 37
+      },
+      {
+        "id": "ST_4_11_1",
+        "topic_id": "T_4_11",
+        "name": "Poem Recitation: \"Brother Has No Teeth\"",
+        "summary": "Students listen to and recite the poem about a boy who loves sweets and has no teeth.",
+        "skill_type": "reading_skill",
+        "page_start": 38,
+        "page_end": 38
+      },
+      {
+        "id": "ST_4_11_2",
+        "topic_id": "T_4_11",
+        "name": "Poem Comprehension and Health Questions",
+        "summary": "Students answer questions based on the poem and general knowledge about healthy eating and dental hygiene.",
+        "skill_type": "comprehension_skill",
+        "page_start": 39,
+        "page_end": 39
+      },
+      {
+        "id": "ST_4_12_1",
+        "topic_id": "T_4_12",
+        "name": "Discussion on Good Habits",
+        "summary": "Students discuss with parents/friends to identify and list five good habits.",
+        "skill_type": "oral_communication",
+        "page_start": 39,
+        "page_end": 39
+      },
+      {
+        "id": "ST_4_12_2",
+        "topic_id": "T_4_12",
+        "name": "Charting and Presenting Good Habits",
+        "summary": "Students prepare a chart categorizing good habits for school and home, and present it in the classroom.",
+        "skill_type": "general_skill",
+        "page_start": 39,
+        "page_end": 39
+      },
+      {
+        "id": "ST_5_1_1",
+        "topic_id": "T_5_1",
+        "name": "Picture observation and discussion",
+        "summary": "Students observe a picture and discuss what they see, imagining conversations between objects.",
+        "skill_type": "oral_communication",
+        "page_start": 40,
+        "page_end": 40
+      },
+      {
+        "id": "ST_5_1_2",
+        "topic_id": "T_5_1",
+        "name": "Pre-reading discussion about mouse and pencil",
+        "summary": "Students look at a picture of a mouse and a pencil and discuss potential interactions between them.",
+        "skill_type": "oral_communication",
+        "page_start": 41,
+        "page_end": 41
+      },
+      {
+        "id": "ST_5_1_3",
+        "topic_id": "T_5_1",
+        "name": "Listening activity",
+        "summary": "Students listen to their teacher (or an audio text) and answer questions related to the story's beginning.",
+        "skill_type": "listening_skill",
+        "page_start": 41,
+        "page_end": 41
+      },
+      {
+        "id": "ST_5_2_1",
+        "topic_id": "T_5_2",
+        "name": "Reading the story",
+        "summary": "Students read the story \"The mouse and the pencil\" which describes the interaction between a mouse and a pencil.",
+        "skill_type": "reading_skill",
+        "page_start": 42,
+        "page_end": 44
+      },
+      {
+        "id": "ST_5_3_1",
+        "topic_id": "T_5_3",
+        "name": "Answering comprehension questions",
+        "summary": "Students answer direct and inferential questions about the story.",
+        "skill_type": "comprehension_skill",
+        "page_start": 45,
+        "page_end": 45
+      },
+      {
+        "id": "ST_5_3_2",
+        "topic_id": "T_5_3",
+        "name": "Completing a table based on the story",
+        "summary": "Students fill in missing information in a table, recalling details about the pencil's drawings and the mouse's reactions.",
+        "skill_type": "comprehension_skill",
+        "page_start": 45,
+        "page_end": 45
+      },
+      {
+        "id": "ST_5_4_1",
+        "topic_id": "T_5_4",
+        "name": "Identifying drawing materials",
+        "summary": "Students list various materials used for drawing and coloring.",
+        "skill_type": "vocabulary_skill",
+        "page_start": 46,
+        "page_end": 46
+      },
+      {
+        "id": "ST_5_4_2",
+        "topic_id": "T_5_4",
+        "name": "Identifying food items",
+        "summary": "Students recall and list different food items, relating to the mouse's hunger in the story.",
+        "skill_type": "vocabulary_skill",
+        "page_start": 46,
+        "page_end": 46
+      },
+      {
+        "id": "ST_5_5_1",
+        "topic_id": "T_5_5",
+        "name": "Introduction to describing words (adjectives)",
+        "summary": "Students read sentences from the story and learn how certain words describe nouns.",
+        "skill_type": "recognition_skill",
+        "page_start": 47,
+        "page_end": 47
+      },
+      {
+        "id": "ST_5_5_2",
+        "topic_id": "T_5_5",
+        "name": "Using adjectives to complete sentences",
+        "summary": "Students complete sentences by choosing appropriate describing words from a given list.",
+        "skill_type": "writing_skill",
+        "page_start": 47,
+        "page_end": 47
+      },
+      {
+        "id": "ST_5_5_3",
+        "topic_id": "T_5_5",
+        "name": "Rewriting sentences with adjectives",
+        "summary": "Students rewrite simple sentences by incorporating a given adjective to describe a noun.",
+        "skill_type": "writing_skill",
+        "page_start": 47,
+        "page_end": 47
+      },
+      {
+        "id": "ST_6_1_1",
+        "topic_id": "T_6_1",
+        "name": "Look at the picture.",
+        "summary": "Students observe a picture depicting various people engaged in different work activities.",
+        "skill_type": "recognition_skill",
+        "page_start": 55,
+        "page_end": 55
+      },
+      {
+        "id": "ST_6_1_2",
+        "topic_id": "T_6_1",
+        "name": "Look at the picture and answer the questions.",
+        "summary": "Students observe a picture featuring the Little Red Hen, a cat, a pig, and a duck, and answer questions about the time of day and animal activities.",
+        "skill_type": "oral_communication",
+        "page_start": 56,
+        "page_end": 56
+      },
+      {
+        "id": "ST_6_1_3",
+        "topic_id": "T_6_1",
+        "name": "Now listen to your teacher and answer the following questions.",
+        "summary": "Students listen to a text read by the teacher (from Appendix-1) and answer questions related to the story's themes of help, laziness, and learning new skills.",
+        "skill_type": "listening_skill",
+        "page_start": 56,
+        "page_end": 56
+      },
+      {
+        "id": "ST_6_2_1",
+        "topic_id": "T_6_2",
+        "name": "The little red hen",
+        "summary": "Students read the full story of the Little Red Hen and her lazy friends.",
+        "skill_type": "reading_skill",
+        "page_start": 57,
+        "page_end": 60
+      },
+      {
+        "id": "ST_6_3_1",
+        "topic_id": "T_6_3",
+        "name": "Answer the following questions.",
+        "summary": "Students answer direct and inferential questions about the story.",
+        "skill_type": "comprehension_skill",
+        "page_start": 61,
+        "page_end": 61
+      },
+      {
+        "id": "ST_6_3_2",
+        "topic_id": "T_6_3",
+        "name": "Write the following sentences in the order in which they appear in the story.",
+        "summary": "Students arrange jumbled sentences to reflect the correct chronological order of events in the story.",
+        "skill_type": "comprehension_skill",
+        "page_start": 61,
+        "page_end": 61
+      },
+      {
+        "id": "ST_6_4_1",
+        "topic_id": "T_6_4",
+        "name": "Think of some seeds which grow into plants.",
+        "summary": "Students identify and write the names of different seeds that grow into plants, with one example provided.",
+        "skill_type": "vocabulary_skill",
+        "page_start": 62,
+        "page_end": 62
+      },
+      {
+        "id": "ST_6_4_2",
+        "topic_id": "T_6_4",
+        "name": "Add a few more names of animals and birds you know.",
+        "summary": "Students list additional names of birds and animals, building on those encountered in the story.",
+        "skill_type": "vocabulary_skill",
+        "page_start": 62,
+        "page_end": 62
+      },
+      {
+        "id": "ST_7_1_1",
+        "topic_id": "T_7_1",
+        "name": "Discussion on animal training",
+        "summary": "Students discuss an image of animal trainers and a bear, considering ethical implications.",
+        "skill_type": "oral_communication",
+        "page_start": 69,
+        "page_end": 69
+      },
+      {
+        "id": "ST_7_1_2",
+        "topic_id": "T_7_1",
+        "name": "Picture observation and listening comprehension",
+        "summary": "Students observe a picture of a girl and answer questions, then listen to a story and answer related questions.",
+        "skill_type": "comprehension_skill",
+        "page_start": 70,
+        "page_end": 70
+      },
+      {
+        "id": "ST_7_2_1",
+        "topic_id": "T_7_2",
+        "name": "Mary eats payasam",
+        "summary": "Mary, feeling hungry, tastes payasam from three bowls, finding the third one \"just right\" and eating it all.",
+        "skill_type": "reading_skill",
+        "page_start": 71,
+        "page_end": 71
+      },
+      {
+        "id": "ST_7_2_2",
+        "topic_id": "T_7_2",
+        "name": "Mary tries chairs",
+        "summary": "Mary, feeling tired, tries three chairs, breaking the third one which was \"just right\".",
+        "skill_type": "reading_skill",
+        "page_start": 72,
+        "page_end": 72
+      },
+      {
+        "id": "ST_7_2_3",
+        "topic_id": "T_7_2",
+        "name": "Mary sleeps in beds and bears return",
+        "summary": "Mary goes upstairs, tries three beds, finds the third one \"just right\" and falls asleep. The three bears then enter their house.",
+        "skill_type": "reading_skill",
+        "page_start": 73,
+        "page_end": 73
+      },
+      {
+        "id": "ST_7_2_4",
+        "topic_id": "T_7_2",
+        "name": "Bears discover Mary and Mary runs away",
+        "summary": "The bears discover someone has eaten their payasam, sat on their chairs, and slept in their beds. Mary wakes up, sees the bears, and runs away terrified.",
+        "skill_type": "reading_skill",
+        "page_start": 74,
+        "page_end": 74
+      },
+      {
+        "id": "ST_7_3_1",
+        "topic_id": "T_7_3",
+        "name": "Arrange the events in the order of their happening in the story.",
+        "summary": "Students arrange key events from the story in chronological order.",
+        "skill_type": "comprehension_skill",
+        "page_start": 75,
+        "page_end": 75
+      },
+      {
+        "id": "ST_7_3_2",
+        "topic_id": "T_7_3",
+        "name": "Answer the following questions.",
+        "summary": "Students answer questions about Mary's actions and the bears' potential reactions.",
+        "skill_type": "comprehension_skill",
+        "page_start": 75,
+        "page_end": 75
+      },
+      {
+        "id": "ST_7_4_1",
+        "topic_id": "T_7_4",
+        "name": "Think of some more words related to furniture.",
+        "summary": "Students brainstorm and list words associated with furniture, building on the context of the story.",
+        "skill_type": "vocabulary_skill",
+        "page_start": 75,
+        "page_end": 75
+      },
+      {
+        "id": "ST_7_4_2",
+        "topic_id": "T_7_4",
+        "name": "Special dishes for special occasions",
+        "summary": "Students list special dishes their mothers prepare for special occasions, relating to the \"payasam\" in the story.",
+        "skill_type": "vocabulary_skill",
+        "page_start": 76,
+        "page_end": 76
+      },
+      {
+        "id": "ST_7_5_1",
+        "topic_id": "T_7_5",
+        "name": "Read the following. Do these group of words make any sense (meaning)?",
+        "summary": "Students read jumbled words and determine if they form a meaningful sentence, then read the correctly ordered words and confirm their meaning.",
+        "skill_type": "comprehension_skill",
+        "page_start": 76,
+        "page_end": 76
+      },
+      {
+        "id": "ST_7_5_2",
+        "topic_id": "T_7_5",
+        "name": "Change the order of the given words to make it meaningful.",
+        "summary": "Students practice sentence construction by rearranging jumbled words into grammatically correct and meaningful sentences.",
+        "skill_type": "writing_skill",
+        "page_start": 76,
+        "page_end": 76
+      },
+      {
+        "id": "ST_7_6_1",
+        "topic_id": "T_7_6",
+        "name": "Matching sentence parts",
+        "summary": "Students match sentence fragments from two columns to form complete and meaningful sentences.",
+        "skill_type": "writing_skill",
+        "page_start": 77,
+        "page_end": 77
+      },
+      {
+        "id": "ST_7_6_2",
+        "topic_id": "T_7_6",
+        "name": "Listing ingredients for a recipe",
+        "summary": "Students identify and list the necessary ingredients and their quantities for preparing a dish (payasam).",
+        "skill_type": "writing_skill",
+        "page_start": 77,
+        "page_end": 77
+      },
+      {
+        "id": "ST_7_6_3",
+        "topic_id": "T_7_6",
+        "name": "Writing recipe steps",
+        "summary": "Students write the sequential steps for preparing a dish using given clue words.",
+        "skill_type": "writing_skill",
+        "page_start": 78,
+        "page_end": 78
+      },
+      {
+        "id": "ST_7_6_4",
+        "topic_id": "T_7_6",
+        "name": "Describing a scene from a picture",
+        "summary": "Students observe a picture and write a description of the scene depicted, focusing on details of Mary's house.",
+        "skill_type": "writing_skill",
+        "page_start": 78,
+        "page_end": 78
+      },
+      {
+        "id": "ST_7_7_1",
+        "topic_id": "T_7_7",
+        "name": "Reading sentences from a story",
+        "summary": "Students read aloud sentences extracted from the story, focusing on expression and comprehension.",
+        "skill_type": "reading_skill",
+        "page_start": 79,
+        "page_end": 79
+      },
+      {
+        "id": "ST_7_7_2",
+        "topic_id": "T_7_7",
+        "name": "Applying 'too...to' in given situations",
+        "summary": "Students practice constructing sentences using the 'too...to' grammatical structure in response to various hypothetical situations.",
+        "skill_type": "oral_communication",
+        "page_start": 79,
+        "page_end": 79
+      },
+      {
+        "id": "ST_7_7_3",
+        "topic_id": "T_7_7",
+        "name": "Forming 'too...to' sentences based on pictures",
+        "summary": "Students observe pictures and create sentences using the 'too...to' structure to describe the depicted scenarios.",
+        "skill_type": "writing_skill",
+        "page_start": 79,
+        "page_end": 79
+      },
+      {
+        "id": "ST_7_8_1",
+        "topic_id": "T_7_8",
+        "name": "Reading and understanding a poem",
+        "summary": "Students read the poem \"Run\" by Mary Daunt, focusing on rhythm and comprehension.",
+        "skill_type": "reading_skill",
+        "page_start": 80,
+        "page_end": 80
+      },
+      {
+        "id": "ST_7_8_2",
+        "topic_id": "T_7_8",
+        "name": "Creative writing by adding lines to a poem",
+        "summary": "Students extend the poem by composing and adding new lines that fit the theme and structure.",
+        "skill_type": "writing_skill",
+        "page_start": 80,
+        "page_end": 80
+      },
+      {
+        "id": "ST_7_9_1",
+        "topic_id": "T_7_9",
+        "name": "Listing household furniture",
+        "summary": "Students list various pieces of furniture found in their own house or any other house.",
+        "skill_type": "writing_skill",
+        "page_start": 81,
+        "page_end": 81
+      },
+      {
+        "id": "ST_7_9_2",
+        "topic_id": "T_7_9",
+        "name": "Describing the use and location of furniture",
+        "summary": "Students complete a table by stating the purpose and typical location of different furniture items.",
+        "skill_type": "writing_skill",
+        "page_start": 81,
+        "page_end": 81
+      },
+      {
+        "id": "ST_7_10_1",
+        "topic_id": "T_7_10",
+        "name": "Correcting capitalization and spelling",
+        "summary": "Students rewrite given sentences, making necessary corrections to capitalization and spelling.",
+        "skill_type": "writing_skill",
+        "page_start": 81,
+        "page_end": 81
+      },
+      {
+        "id": "ST_7_11_1",
+        "topic_id": "T_7_11",
+        "name": "Identifying and reading question words",
+        "summary": "Students read and recognize a set of common words used to ask questions.",
+        "skill_type": "vocabulary_skill",
+        "page_start": 81,
+        "page_end": 81
+      },
+      {
+        "id": "ST_7_11_2",
+        "topic_id": "T_7_11",
+        "name": "Forming questions using question words",
+        "summary": "Students practice constructing questions using the previously identified question words.",
+        "skill_type": "oral_communication",
+        "page_start": 81,
+        "page_end": 81
+      },
+      {
+        "id": "ST_8_1_1",
+        "topic_id": "T_8_1",
+        "name": "Observing the classroom picture",
+        "summary": "Students observe a picture depicting various animals in a classroom setting and discuss what they see.",
+        "skill_type": "recognition_skill",
+        "page_start": 82,
+        "page_end": 82
+      },
+      {
+        "id": "ST_8_2_1",
+        "topic_id": "T_8_2",
+        "name": "Picture observation and discussion",
+        "summary": "Students observe a picture of animals in a natural environment and answer questions to stimulate discussion.",
+        "skill_type": "oral_communication",
+        "page_start": 83,
+        "page_end": 83
+      },
+      {
+        "id": "ST_8_2_2",
+        "topic_id": "T_8_2",
+        "name": "Listening comprehension",
+        "summary": "Students listen to a story from Appendix-1 and answer questions to demonstrate comprehension.",
+        "skill_type": "listening_skill",
+        "page_start": 83,
+        "page_end": 83
+      },
+      {
+        "id": "ST_8_3_1",
+        "topic_id": "T_8_3",
+        "name": "Reading \"The animal school\"",
+        "summary": "Students read the story \"The animal school\" which describes animals attempting to learn skills outside their natural abilities.",
+        "skill_type": "reading_skill",
+        "page_start": 84,
+        "page_end": 87
+      },
+      {
+        "id": "ST_8_4_1",
+        "topic_id": "T_8_4",
+        "name": "Answering comprehension questions",
+        "summary": "Students answer questions to demonstrate their understanding of the story \"The animal school\".",
+        "skill_type": "comprehension_skill",
+        "page_start": 88,
+        "page_end": 88
+      },
+      {
+        "id": "ST_8_4_2",
+        "topic_id": "T_8_4",
+        "name": "Identifying animal skills and learning goals",
+        "summary": "Students complete a table by listing what each animal could do naturally and what they wanted to learn at the school.",
+        "skill_type": "writing_skill",
+        "page_start": 88,
+        "page_end": 88
+      },
+      {
+        "id": "ST_8_4_3",
+        "topic_id": "T_8_4",
+        "name": "School-related vocabulary expansion",
+        "summary": "Students brainstorm and write down as many words as possible related to the concept of 'SCHOOL'.",
+        "skill_type": "vocabulary_skill",
+        "page_start": 88,
+        "page_end": 88
+      },
+      {
+        "id": "ST_8_4_4",
+        "topic_id": "T_8_4",
+        "name": "Replacing words with synonyms",
+        "summary": "Students identify and replace underlined words in sentences with appropriate synonyms found in the story.",
+        "skill_type": "vocabulary_skill",
+        "page_start": 89,
+        "page_end": 89
+      },
+      {
+        "id": "ST_8_4_5",
+        "topic_id": "T_8_4",
+        "name": "Identifying places and their purposes",
+        "summary": "Students complete sentences by naming different places based on their associated activities.",
+        "skill_type": "vocabulary_skill",
+        "page_start": 89,
+        "page_end": 89
+      },
+      {
+        "id": "ST_8_5_1",
+        "topic_id": "T_8_5",
+        "name": "Understanding plural nouns",
+        "summary": "Students read words from the story that are plural and learn the definition of plural nouns.",
+        "skill_type": "grammar_skill",
+        "page_start": 89,
+        "page_end": 89
+      },
+      {
+        "id": "ST_9_1_1",
+        "topic_id": "T_9_1",
+        "name": "Visual Analysis and Discussion (Pre-reading)",
+        "summary": "Students observe a sequence of pictures depicting a classroom incident and answer questions to develop observation and inference skills.",
+        "skill_type": "comprehension_skill",
+        "page_start": 94,
+        "page_end": 94
+      },
+      {
+        "id": "ST_9_1_2",
+        "topic_id": "T_9_1",
+        "name": "Listening and Discussion (Pre-reading)",
+        "summary": "Students analyze a picture related to the story's theme (a dispute over a well) and listen to a text to answer questions, preparing them for the main story.",
+        "skill_type": "listening_skill",
+        "page_start": 95,
+        "page_end": 95
+      },
+      {
+        "id": "ST_9_2_1",
+        "topic_id": "T_9_2",
+        "name": "Reading the Story",
+        "summary": "Students read the story of Birbal outwitting Bajrang, focusing on comprehension of the plot, characters, and dialogue.",
+        "skill_type": "reading_skill",
+        "page_start": 96,
+        "page_end": 99
+      },
+      {
+        "id": "ST_9_3_1",
+        "topic_id": "T_9_3",
+        "name": "Answering Questions",
+        "summary": "Students answer specific questions based on the story to demonstrate their understanding of key facts and events.",
+        "skill_type": "comprehension_skill",
+        "page_start": 100,
+        "page_end": 100
+      },
+      {
+        "id": "ST_9_3_2",
+        "topic_id": "T_9_3",
+        "name": "True or False Statements",
+        "summary": "Students evaluate statements related to the story and identify them as true or false, reinforcing their comprehension.",
+        "skill_type": "comprehension_skill",
+        "page_start": 100,
+        "page_end": 100
+      },
+      {
+        "id": "ST_9_4_1",
+        "topic_id": "T_9_4",
+        "name": "Words Related to Kingdom",
+        "summary": "Students learn and identify words associated with a kingdom, such as 'king' and 'minister'.",
+        "skill_type": "vocabulary_skill",
+        "page_start": 100,
+        "page_end": 100
+      },
+      {
+        "id": "ST_9_4_2",
+        "topic_id": "T_9_4",
+        "name": "Sources and Uses of Water",
+        "summary": "Students identify various sources of water and practice writing sentences about its uses.",
+        "skill_type": "vocabulary_skill",
+        "page_start": 101,
+        "page_end": 101
+      },
+      {
+        "id": "ST_9_5_1",
+        "topic_id": "T_9_5",
+        "name": "Identifying Nouns (Characters, Things, Places)",
+        "summary": "Students read words from the story and learn to categorize them as names of characters, things, or places.",
+        "skill_type": "recognition_skill",
+        "page_start": 101,
+        "page_end": 101
+      },
+      {
+        "id": "ST_10_1_1",
+        "topic_id": "T_10_1",
+        "name": "TALKING TRAIN Story",
+        "summary": "Students listen to a story about Mary waiting for her grandparents at a railway station and hearing an announcement about a delayed train.",
+        "skill_type": "listening_skill",
+        "page_start": 106,
+        "page_end": 106
+      },
+      {
+        "id": "ST_10_2_1",
+        "topic_id": "T_10_2",
+        "name": "SWAMY AND THE MAGIC BEANS Story",
+        "summary": "Students listen to the story of Swamy, a poor boy who exchanges his cow for magic beans, much to his mother's anger.",
+        "skill_type": "listening_skill",
+        "page_start": 106,
+        "page_end": 106
+      },
+      {
+        "id": "ST_10_3_1",
+        "topic_id": "T_10_3",
+        "name": "I Like It This Way Story",
+        "summary": "Students listen to a story about Sita inviting her friends Radha and Sania to play at her house after school, and their activities until it gets dark.",
+        "skill_type": "listening_skill",
+        "page_start": 106,
+        "page_end": 106
+      },
+      {
+        "id": "ST_10_4_1",
+        "topic_id": "T_10_4",
+        "name": "THE MOUSE AND THE PENCIL Story",
+        "summary": "Students listen to a story about a pencil that gains sentience and explores the room after its owner, Chintu, falls asleep.",
+        "skill_type": "listening_skill",
+        "page_start": 107,
+        "page_end": 107
+      },
+      {
+        "id": "ST_10_5_1",
+        "topic_id": "T_10_5",
+        "name": "THE LITTLE RED HEN Story",
+        "summary": "Students listen to the story of a little red hen who does all the work while her friends, a pig, a duck, and a cat, are lazy.",
+        "skill_type": "listening_skill",
+        "page_start": 107,
+        "page_end": 107
+      },
+      {
+        "id": "ST_10_6_1",
+        "topic_id": "T_10_6",
+        "name": "MARY AND THE THREE BEARS Story",
+        "summary": "Students listen to the story of Mary, a naughty girl with curly hair, who discovers a house in the forest and finds three bowls of payasam.",
+        "skill_type": "listening_skill",
+        "page_start": 108,
+        "page_end": 108
+      },
+      {
+        "id": "ST_10_7_1",
+        "topic_id": "T_10_7",
+        "name": "THE ANIMAL SCHOOL Story",
+        "summary": "Students listen to a story about various forest animals relaxing near a pond and learning about an animal school that teaches many skills.",
+        "skill_type": "listening_skill",
+        "page_start": 108,
+        "page_end": 108
+      },
+      {
+        "id": "ST_10_8_1",
+        "topic_id": "T_10_8",
+        "name": "BIRBAL OUTWITS THE CHEAT Story",
+        "summary": "Students listen to a story about a poor man named Bajrang who sells his well to Gopal, then tries to claim ownership of the water, leading to a dispute that Birbal must resolve.",
+        "skill_type": "listening_skill",
+        "page_start": 108,
+        "page_end": 108
+      },
+      {
+        "id": "ST_11_1_1",
+        "topic_id": "T_11_1",
+        "name": "Academic Standards",
+        "summary": "Outlines the six broad categories of academic standards expected from learners at the end of the academic year.",
+        "skill_type": "general_skill",
+        "page_start": 109,
+        "page_end": 109
+      },
+      {
+        "id": "ST_11_1_2",
+        "topic_id": "T_11_1",
+        "name": "Discourses for Oral and Written Form",
+        "summary": "Lists the types of discourses children should learn to construct both orally and in written form, including descriptions, conversations, stories, rhymes, recipes, slogans, posters, messages, and choreography.",
+        "skill_type": "general_skill",
+        "page_start": 109,
+        "page_end": 109
+      },
+      {
+        "id": "ST_11_1_3",
+        "topic_id": "T_11_1",
+        "name": "Textbook Structure Overview",
+        "summary": "Describes the textbook's structure, mentioning eight theme-based units, listening passages, two reading texts, and textual exercises covering vocabulary, grammar, writing, and project work.",
+        "skill_type": "general_skill",
+        "page_start": 109,
+        "page_end": 109
+      },
+      {
+        "id": "ST_11_1_4",
+        "topic_id": "T_11_1",
+        "name": "Assessment Types",
+        "summary": "Introduces the two types of assessments used: Formative assessment and Summative assessment.",
+        "skill_type": "general_skill",
+        "page_start": 109,
+        "page_end": 110
+      },
+      {
+        "id": "ST_11_1_5",
+        "topic_id": "T_11_1",
+        "name": "Formative Assessment Details",
+        "summary": "Explains the Formative assessment process, stating it is done four times a year and is based on four tools: Observation, Notebooks, Project work, and Slip tests.",
+        "skill_type": "general_skill",
+        "page_start": 110,
+        "page_end": 110
+      },
+      {
+        "id": "ST_11_1_6",
+        "topic_id": "T_11_1",
+        "name": "Criteria for awarding marks under each tool",
+        "summary": "Details the specific criteria for awarding marks for Observation, Notebooks, Projects, and Slip Tests, outlining what each tool assesses.",
+        "skill_type": "general_skill",
+        "page_start": 110,
+        "page_end": 110
+      },
+      {
+        "id": "ST_11_1_7",
+        "topic_id": "T_11_1",
+        "name": "Evidences for awarding marks",
+        "summary": "Lists the evidences used for awarding marks, including teacher's unit cum period plans reflecting oral performance and scripts of Slip Tests.",
+        "skill_type": "general_skill",
+        "page_start": 110,
+        "page_end": 110
+      },
+      {
+        "id": "ST_11_1_8",
+        "topic_id": "T_11_1",
+        "name": "Summative Assessment Details",
+        "summary": "Explains the Summative assessment process, stating it is conducted twice a year for 50 marks covering all academic standards, with 10 marks for oral test and 40 for written test.",
+        "skill_type": "general_skill",
+        "page_start": 110,
+        "page_end": 110
+      },
+      {
+        "id": "ST_11_2_1",
+        "topic_id": "T_11_2",
+        "name": "Handwashing Instructions",
+        "summary": "Provides a list of situations when one should wash hands to prevent the spread of germs, such as before eating, after touching sick people, after using the toilet, and after handling animals.",
+        "skill_type": "general_skill",
+        "page_start": 111,
+        "page_end": 111
+      },
+      {
+        "id": "ST_11_3_1",
+        "topic_id": "T_11_3",
+        "name": "First 200 Common English Words",
+        "summary": "A numbered list of 200 common English words, presented in columns across two pages.",
+        "skill_type": "vocabulary_skill",
+        "page_start": 111,
+        "page_end": 112
+      },
+      {
+        "id": "ST_11_4_1",
+        "topic_id": "T_11_4",
+        "name": "Advisors",
+        "summary": "Lists the names and affiliations of the advisors involved in the textbook development.",
+        "skill_type": "general_skill",
+        "page_start": 113,
+        "page_end": 113
+      },
+      {
+        "id": "ST_11_4_2",
+        "topic_id": "T_11_4",
+        "name": "Editors",
+        "summary": "Lists the names and affiliations of the editors involved in the textbook development.",
+        "skill_type": "general_skill",
+        "page_start": 113,
+        "page_end": 113
+      },
+      {
+        "id": "ST_11_4_3",
+        "topic_id": "T_11_4",
+        "name": "Illustrators",
+        "summary": "Lists the names and affiliations of the illustrators involved in the textbook development.",
+        "skill_type": "general_skill",
+        "page_start": 113,
+        "page_end": 113
+      },
+      {
+        "id": "ST_11_4_4",
+        "topic_id": "T_11_4",
+        "name": "Textbook Publication Team",
+        "summary": "Lists the names and affiliations of the members of the textbook publication team.",
+        "skill_type": "general_skill",
+        "page_start": 114,
+        "page_end": 114
+      },
+      {
+        "id": "ST_11_4_5",
+        "topic_id": "T_11_4",
+        "name": "QR CODE TEAM",
+        "summary": "Mentions the QR Code Team and includes a QR code for digital content.",
+        "skill_type": "general_skill",
+        "page_start": 114,
+        "page_end": 114
+      },
+      {
+        "id": "ST_11_5_1",
+        "topic_id": "T_11_5",
+        "name": "Blank Notes Page",
+        "summary": "A page with horizontal lines provided for writing notes.",
+        "skill_type": "writing_skill",
+        "page_start": 115,
+        "page_end": 116
+      }
+    ],
+    "exercises": [
+      {
+        "id": "E_1_1_1",
+        "text": "1. Who do you see in the picture? 2. What are they doing? 3. Where are they playing? 4. What are they playing with?",
+        "topic_id": "T_1_1",
+        "page": 1,
+        "exercise_type": "oral_communication",
+        "confidence": "high"
+      },
+      {
+        "id": "E_1_1_2",
+        "text": "Interactive questions for description: 1. Who do you see in the picture? 2. Where are they? 3. What are they doing? 4. What things do you see in the picture?",
+        "topic_id": "T_1_1",
+        "page": 2,
+        "exercise_type": "oral_communication",
+        "confidence": "high"
+      },
+      {
+        "id": "E_1_1_3",
+        "text": "Interactive questions for conversation: 1. Who are the characters speaking? (select any two characters from the picture) 2. Who would speak first? 3. What would the first character say? 4. What would be the second character's response?",
+        "topic_id": "T_1_1",
+        "page": 2,
+        "exercise_type": "oral_communication",
+        "confidence": "high"
+      },
+      {
+        "id": "E_1_1_4",
+        "text": "Interactive questions for description: 1. Who do you see in the picture? 2. What happened to the dog in the picture? 3. What would the boy do now?",
+        "topic_id": "T_1_1",
+        "page": 3,
+        "exercise_type": "oral_communication",
+        "confidence": "high"
+      },
+      {
+        "id": "E_1_1_5",
+        "text": "Interactive questions for story: 1. What is happening in the picture? 2. What would have happened before? 3. What would happen next? 4. What title would you suggest to this story?",
+        "topic_id": "T_1_1",
+        "page": 3,
+        "exercise_type": "oral_communication",
+        "confidence": "high"
+      },
+      {
+        "id": "E_1_1_6",
+        "text": "Students are instructed to use the provided picture (Picture - 4) for producing description, conversation, and story.",
+        "topic_id": "T_1_1",
+        "page": 4,
+        "exercise_type": "oral_communication",
+        "confidence": "high"
+      },
+      {
+        "id": "E_2_1_1",
+        "text": "I. Look at the picture. Is there anything special about the train? 1. Name the things you see in the picture. 2. How many people are there? 3. What are the people doing?",
+        "topic_id": "T_2_1",
+        "page": 5,
+        "exercise_type": "oral_communication",
+        "confidence": "high"
+      },
+      {
+        "id": "E_2_1_2",
+        "text": "II. A. Look at the picture and answer the questions. 1. What different things are the people doing in the picture? 2. What are the various rules that we follow while we are at a railway station?",
+        "topic_id": "T_2_1",
+        "page": 6,
+        "exercise_type": "oral_communication",
+        "confidence": "high"
+      },
+      {
+        "id": "E_2_1_3",
+        "text": "B. Now listen to your teacher and say whether the following statements are true or false. (Note: Listening text is in Appendix-1) Tick (✓) the statements that are true. 1. The Godavari Express was on time. 2. The correct arrival time of the train was 9 p.m. 3. The train was coming from Vijayawada.",
+        "topic_id": "T_2_1",
+        "page": 6,
+        "exercise_type": "listening_activity",
+        "confidence": "high"
+      },
+      {
+        "id": "E_2_2_1",
+        "text": "What are the different places through which a train travels?",
+        "topic_id": "T_2_2",
+        "page": 7,
+        "exercise_type": "oral_communication",
+        "confidence": "high"
+      },
+      {
+        "id": "E_2_2_2",
+        "text": "Why does the guard wave a green or a red flag?",
+        "topic_id": "T_2_2",
+        "page": 9,
+        "exercise_type": "oral_communication",
+        "confidence": "high"
+      },
+      {
+        "id": "E_2_3_1",
+        "text": "A. Answer the following questions. 1. Who is the speaker? 2. What places does Rail Raja pass through? 3. What is the most interesting thing about Rail Raja? 4. Have you ever travelled by a train? If yes, which places have you visited?",
+        "topic_id": "T_2_3",
+        "page": 10,
+        "exercise_type": "comprehension",
+        "confidence": "high"
+      },
+      {
+        "id": "E_2_3_2",
+        "text": "B. Read the names of the vehicles given below. Tick the names of vehicles you have travelled by. Underline the names of vehicles that you have seen in reality. (List of vehicles: an auto-rickshaw, an aeroplane, a car, a boat, a motor cycle, a bicycle, a truck, a bus, a helicopter, a lorry, a ship, a van, a bullock cart, a train, a jeep.)",
+        "topic_id": "T_2_3",
+        "page": 10,
+        "exercise_type": "general_activity",
+        "confidence": "high"
+      },
+      {
+        "id": "E_2_3_3",
+        "text": "Write the names of vehicles you know. 1. ____ 2. ____ 3. ____ 4. ____ 5. ____ 6. ____",
+        "topic_id": "T_2_3",
+        "page": 10,
+        "exercise_type": "writing_practice",
+        "confidence": "high"
+      },
+      {
+        "id": "E_2_3_4",
+        "text": "Write 2-3 lines about any vehicle you like.",
+        "topic_id": "T_2_3",
+        "page": 10,
+        "exercise_type": "writing_practice",
+        "confidence": "high"
+      },
+      {
+        "id": "E_2_4_1",
+        "text": "A. Laxmi is going to Delhi on a tour with parents. Tell her what things she should carry with her. Write them on the balloons given below. You can add more balloons if you want. (Image shows \"Laxmi's travel bag\" with balloons, one filled with \"a tooth paste\")",
+        "topic_id": "T_2_4",
+        "page": 11,
+        "exercise_type": "writing_practice",
+        "confidence": "high"
+      },
+      {
+        "id": "E_2_4_2",
+        "text": "B. In the story we came across some opposite words Ex: 1) rich x poor 2) old x young Write the opposites of the following words. 1. yes x ____ 2. small x ____ 3. take x ____ 4. inside x ____ 5. right x ____ 6. question x ____",
+        "topic_id": "T_2_4",
+        "page": 12,
+        "exercise_type": "writing_practice",
+        "confidence": "high"
+      },
+      {
+        "id": "E_2_5_1",
+        "text": "Read the following phrases taken from the story. • the rich and the poor • the young and the old • the healthy and the unhealthy",
+        "topic_id": "T_2_5",
+        "page": 12,
+        "exercise_type": "reading_exercise",
+        "confidence": "high"
+      },
+      {
+        "id": "E_2_5_2",
+        "text": "A. Make phrases using the linker ‘and’. 1. a cup, a saucer : ____ 2. a bat, a ball : ____ 3. black, white : ____ 4. good, bad : ____ 5. a mouse, a pencil : ____",
+        "topic_id": "T_2_5",
+        "page": 12,
+        "exercise_type": "writing_practice",
+        "confidence": "high"
+      },
+      {
+        "id": "E_2_6_1",
+        "text": "A. Look at the picture given. Read the description. This is a train. It has many wheels. It runs on rails. It is very long. It carries people to their places.",
+        "topic_id": "T_2_6",
+        "page": 13,
+        "exercise_type": "reading_exercise",
+        "confidence": "high"
+      },
+      {
+        "id": "E_2_6_2",
+        "text": "B. Look at the picture given. Write a few lines describing the picture.",
+        "topic_id": "T_2_6",
+        "page": 13,
+        "exercise_type": "writing_practice",
+        "confidence": "high"
+      },
+      {
+        "id": "E_2_6_3",
+        "text": "Read the following sentences. Make necessary changes using capital letters, full stop (.) and correct spelling. 1. my name is rail raja 2. i am your frend.",
+        "topic_id": "T_2_6",
+        "page": 13,
+        "exercise_type": "writing_practice",
+        "confidence": "high"
+      },
+      {
+        "id": "E_2_7_1",
+        "text": "A. The following steps will help you in making a match box train. 1. Take some empty match boxes. 2. Pull the drawers out a little from the boxes. 3. Insert the drawer of one box into the other. 4. You can use buttons/lids of cool drink bottles as wheels. 5. The match box train is ready.",
+        "topic_id": "T_2_7",
+        "page": 14,
+        "exercise_type": "art_activity",
+        "confidence": "high"
+      },
+      {
+        "id": "E_2_7_2",
+        "text": "B. Work in groups. Tell others in the group how you made the match box train and how you will make it more beautiful. Ex. I took empty match boxes.",
+        "topic_id": "T_2_7",
+        "page": 14,
+        "exercise_type": "oral_communication",
+        "confidence": "high"
+      },
+      {
+        "id": "E_2_8_1",
+        "text": "Read the story \"Be Safe!\" One day Raju was late to the station. He tried to board the running train. But, he missed it and fell on the platform. He broke his leg and was taken to a hospital. Rules are for our safety. I follow the rules to be safe.",
+        "topic_id": "T_2_8",
+        "page": 15,
+        "exercise_type": "reading_exercise",
+        "confidence": "high"
+      },
+      {
+        "id": "E_3_1_1",
+        "text": "Look at the picture of a magician and answer questions about his actions and personal experiences with magic tricks.",
+        "topic_id": "T_3_1",
+        "page": 16,
+        "exercise_type": "picture_comprehension",
+        "confidence": "high"
+      },
+      {
+        "id": "E_3_2_1",
+        "text": "Look at the picture showing a boy, a cow, and an old man, and answer questions about the characters and their actions.",
+        "topic_id": "T_3_2",
+        "page": 17,
+        "exercise_type": "picture_comprehension",
+        "confidence": "high"
+      },
+      {
+        "id": "E_3_2_2",
+        "text": "Listen to the teacher (using text from Appendix-1) and answer questions related to Swamy's mother, the strange man, and the magic beans exchange.",
+        "topic_id": "T_3_2",
+        "page": 17,
+        "exercise_type": "listening_comprehension",
+        "confidence": "high"
+      },
+      {
+        "id": "E_3_4_1",
+        "text": "Answer questions based on the story \"Swamy and the Magic Beans.\"",
+        "topic_id": "T_3_4",
+        "page": 21,
+        "exercise_type": "comprehension_questions",
+        "confidence": "high"
+      },
+      {
+        "id": "E_3_4_2",
+        "text": "Match phrases related to the story.",
+        "topic_id": "T_3_4",
+        "page": 21,
+        "exercise_type": "matching",
+        "confidence": "high"
+      },
+      {
+        "id": "E_3_4_3",
+        "text": "Find and write words from a given list that rhyme with specific words from the story.",
+        "topic_id": "T_3_4",
+        "page": 21,
+        "exercise_type": "vocabulary_rhyming",
+        "confidence": "high"
+      },
+      {
+        "id": "E_3_6_1",
+        "text": "Write a dialogue between Swamy and his mother about the magic hen and flute, imagining what they would say to each other.",
+        "topic_id": "T_3_6",
+        "page": 23,
+        "exercise_type": "dialogue_writing",
+        "confidence": "high"
+      },
+      {
+        "id": "E_3_7_1",
+        "text": "B. Look at the picture given on page 19. Describe the picture in 4-5 sentences.",
+        "topic_id": "T_3_7",
+        "page": 24,
+        "exercise_type": "oral_communication",
+        "confidence": "high"
+      },
+      {
+        "id": "E_3_7_2",
+        "text": "Where is Swamy in the picture? (place) What are the different things you see in the picture? What is Swami doing? What is the giant doing?",
+        "topic_id": "T_3_7",
+        "page": 24,
+        "exercise_type": "oral_communication",
+        "confidence": "high"
+      },
+      {
+        "id": "E_3_7_3",
+        "text": "Read the following.",
+        "topic_id": "T_3_7",
+        "page": 24,
+        "exercise_type": "reading_exercise",
+        "confidence": "high"
+      },
+      {
+        "id": "E_3_8_1",
+        "text": "Make corrections using capital letters and fullstop(.), wherever necessary. Rewrite the following sentences. 1. swamy saw a beautiful castle 2. the giant came after swamy.",
+        "topic_id": "T_3_8",
+        "page": 25,
+        "exercise_type": "writing_practice",
+        "confidence": "high"
+      },
+      {
+        "id": "E_3_9_1",
+        "text": "Read the following.",
+        "topic_id": "T_3_9",
+        "page": 25,
+        "exercise_type": "reading_exercise",
+        "confidence": "high"
+      },
+      {
+        "id": "E_3_10_1",
+        "text": "B Reading",
+        "topic_id": "T_3_10",
+        "page": 26,
+        "exercise_type": "reading_exercise",
+        "confidence": "high"
+      },
+      {
+        "id": "E_3_10_2",
+        "text": "B. Add lines to the rhyme I have a magic pot,",
+        "topic_id": "T_3_10",
+        "page": 26,
+        "exercise_type": "writing_practice",
+        "confidence": "high"
+      },
+      {
+        "id": "E_4_1_1",
+        "text": "I. Look at the picture.",
+        "topic_id": "T_4_1",
+        "page": 27,
+        "exercise_type": "general_activity",
+        "confidence": "high"
+      },
+      {
+        "id": "E_4_1_2",
+        "text": "1. What things do you see in the above pictures?",
+        "topic_id": "T_4_1",
+        "page": 27,
+        "exercise_type": "oral_communication",
+        "confidence": "high"
+      },
+      {
+        "id": "E_4_1_3",
+        "text": "2. What is the difference between the two pictures?",
+        "topic_id": "T_4_1",
+        "page": 27,
+        "exercise_type": "oral_communication",
+        "confidence": "high"
+      },
+      {
+        "id": "E_4_1_4",
+        "text": "3. Which one do you like? Why?",
+        "topic_id": "T_4_1",
+        "page": 27,
+        "exercise_type": "oral_communication",
+        "confidence": "high"
+      },
+      {
+        "id": "E_4_2_1",
+        "text": "II A. Look at the picture and answer the questions.",
+        "topic_id": "T_4_2",
+        "page": 28,
+        "exercise_type": "oral_communication",
+        "confidence": "high"
+      },
+      {
+        "id": "E_4_2_2",
+        "text": "1. What is this picture about?",
+        "topic_id": "T_4_2",
+        "page": 28,
+        "exercise_type": "oral_communication",
+        "confidence": "high"
+      },
+      {
+        "id": "E_4_2_3",
+        "text": "2. What are the people doing?/What are the students doing?",
+        "topic_id": "T_4_2",
+        "page": 28,
+        "exercise_type": "oral_communication",
+        "confidence": "high"
+      },
+      {
+        "id": "E_4_2_4",
+        "text": "B. Listen to your teacher and answer the questions.",
+        "topic_id": "T_4_2",
+        "page": 28,
+        "exercise_type": "listening_activity",
+        "confidence": "high"
+      },
+      {
+        "id": "E_4_2_5",
+        "text": "1. What did Sita ask her friends?",
+        "topic_id": "T_4_2",
+        "page": 28,
+        "exercise_type": "listening_activity",
+        "confidence": "high"
+      },
+      {
+        "id": "E_4_2_6",
+        "text": "2. What did Sita do after going home?",
+        "topic_id": "T_4_2",
+        "page": 28,
+        "exercise_type": "listening_activity",
+        "confidence": "high"
+      },
+      {
+        "id": "E_4_2_7",
+        "text": "3. Why did her friends go away after playing for some time?",
+        "topic_id": "T_4_2",
+        "page": 28,
+        "exercise_type": "listening_activity",
+        "confidence": "high"
+      },
+      {
+        "id": "E_4_2_8",
+        "text": "4. What do you do in the evening after school?",
+        "topic_id": "T_4_2",
+        "page": 28,
+        "exercise_type": "oral_communication",
+        "confidence": "high"
+      },
+      {
+        "id": "E_4_4_1",
+        "text": "A. Answer the following questions.",
+        "topic_id": "T_4_4",
+        "page": 33,
+        "exercise_type": "comprehension",
+        "confidence": "high"
+      },
+      {
+        "id": "E_4_4_2",
+        "text": "1. Write Yes or No.",
+        "topic_id": "T_4_4",
+        "page": 33,
+        "exercise_type": "fill_in_the_blank",
+        "confidence": "high"
+      },
+      {
+        "id": "E_4_4_3",
+        "text": "a. The room was clean in the beginning. ( )",
+        "topic_id": "T_4_4",
+        "page": 33,
+        "exercise_type": "fill_in_the_blank",
+        "confidence": "high"
+      },
+      {
+        "id": "E_4_4_4",
+        "text": "b. Sita put her toys in the cupboard. ( )",
+        "topic_id": "T_4_4",
+        "page": 33,
+        "exercise_type": "fill_in_the_blank",
+        "confidence": "high"
+      },
+      {
+        "id": "E_4_4_5",
+        "text": "c. Sita put her books in the school bag. ( )",
+        "topic_id": "T_4_4",
+        "page": 33,
+        "exercise_type": "fill_in_the_blank",
+        "confidence": "high"
+      },
+      {
+        "id": "E_4_4_6",
+        "text": "d. Mother sent Raja to buy toys. ( )",
+        "topic_id": "T_4_4",
+        "page": 33,
+        "exercise_type": "fill_in_the_blank",
+        "confidence": "high"
+      },
+      {
+        "id": "E_4_4_7",
+        "text": "e. Sita and her mother made a toy box together. ( )",
+        "topic_id": "T_4_4",
+        "page": 33,
+        "exercise_type": "fill_in_the_blank",
+        "confidence": "high"
+      },
+      {
+        "id": "E_4_4_8",
+        "text": "2. What things did Sita do to keep her room clean?",
+        "topic_id": "T_4_4",
+        "page": 33,
+        "exercise_type": "comprehension",
+        "confidence": "high"
+      },
+      {
+        "id": "E_4_4_9",
+        "text": "3. What things do you do at home to keep your room clean?",
+        "topic_id": "T_4_4",
+        "page": 33,
+        "exercise_type": "oral_communication",
+        "confidence": "high"
+      },
+      {
+        "id": "E_4_4_10",
+        "text": "B. Write the things you have at home. Where do you keep them?",
+        "topic_id": "T_4_4",
+        "page": 33,
+        "exercise_type": "writing_practice",
+        "confidence": "high"
+      },
+      {
+        "id": "E_4_4_11",
+        "text": "S.No. Things at Home Where do you keep them? 1 Clothes Shelf",
+        "topic_id": "T_4_4",
+        "page": 33,
+        "exercise_type": "writing_practice",
+        "confidence": "high"
+      },
+      {
+        "id": "E_4_5_1",
+        "text": "A. Sita did so many things to help her mother. What things do you do to help your mother?",
+        "topic_id": "T_4_5",
+        "page": 34,
+        "exercise_type": "oral_communication",
+        "confidence": "high"
+      },
+      {
+        "id": "E_4_5_2",
+        "text": "B. Sita is thinking. Read her thoughts. Replace the underlined words with the similar meaning from the story.",
+        "topic_id": "T_4_5",
+        "page": 34,
+        "exercise_type": "vocabulary_exercise",
+        "confidence": "high"
+      },
+      {
+        "id": "E_4_5_3",
+        "text": "I want a new dress.",
+        "topic_id": "T_4_5",
+        "page": 34,
+        "exercise_type": "vocabulary_exercise",
+        "confidence": "high"
+      },
+      {
+        "id": "E_4_5_4",
+        "text": "I kept my clothes in the cupboard.",
+        "topic_id": "T_4_5",
+        "page": 34,
+        "exercise_type": "vocabulary_exercise",
+        "confidence": "high"
+      },
+      {
+        "id": "E_4_5_5",
+        "text": "I want to buy play things.",
+        "topic_id": "T_4_5",
+        "page": 34,
+        "exercise_type": "vocabulary_exercise",
+        "confidence": "high"
+      },
+      {
+        "id": "E_4_5_6",
+        "text": "I will put my things in order.",
+        "topic_id": "T_4_5",
+        "page": 34,
+        "exercise_type": "vocabulary_exercise",
+        "confidence": "high"
+      },
+      {
+        "id": "E_4_6_1",
+        "text": "A. Look at the pictures given below and answer the following in full sentences. 1. Where is the cat? 2. Where is the dog? 3. Where are the shoes?",
+        "topic_id": "T_4_6",
+        "page": 35,
+        "exercise_type": "comprehension",
+        "confidence": "high"
+      },
+      {
+        "id": "E_4_6_2",
+        "text": "B. Make your own sentences using: on : in : under :",
+        "topic_id": "T_4_6",
+        "page": 35,
+        "exercise_type": "writing_practice",
+        "confidence": "high"
+      },
+      {
+        "id": "E_4_7_1",
+        "text": "A. Look at the picture given below. Write a few sentences about the picture.",
+        "topic_id": "T_4_7",
+        "page": 36,
+        "exercise_type": "writing_practice",
+        "confidence": "high"
+      },
+      {
+        "id": "E_4_7_2",
+        "text": "B. Prepare a timetable for the things you do in the evening. S.No. | Time | What I do? 1 | 4.30 p.m. | I change my clothes 2 | | 3 | | 4 | | 5 | |",
+        "topic_id": "T_4_7",
+        "page": 36,
+        "exercise_type": "writing_practice",
+        "confidence": "high"
+      },
+      {
+        "id": "E_4_8_1",
+        "text": "During mid-day meals, how do you like to keep your school clean? Sit in pairs, discuss and present the conversation in your class.",
+        "topic_id": "T_4_8",
+        "page": 37,
+        "exercise_type": "oral_communication",
+        "confidence": "high"
+      },
+      {
+        "id": "E_4_9_1",
+        "text": "Read the following passage. Make necessary corrections using proper punctuation {capital letter, full stop(.), question mark (?) and spelling}. Rewrite the sentences. 1. amma, i need a knew notebook for english? 2. where shall i keep these toys amma.",
+        "topic_id": "T_4_9",
+        "page": 37,
+        "exercise_type": "writing_practice",
+        "confidence": "high"
+      },
+      {
+        "id": "E_4_10_1",
+        "text": "Make words using the endings given. letter | an | at | in | it | un b | ban | | | | f | | | | | r | | | | | p | | | | | s | | | | |",
+        "topic_id": "T_4_10",
+        "page": 37,
+        "exercise_type": "writing_practice",
+        "confidence": "high"
+      },
+      {
+        "id": "E_4_11_1",
+        "text": "A. Listen and recite the poem. Brother Has No Teeth Sita's brother loves sweets, More than carrots and beets. Sweets for breakfast, Munch Munch Munch. Sweets for lunch, Munch Munch Munch. Sweets for supper too, Not one, but two by two. Sita's brother is very tall. But has no teeth at all. Ha ha ha ha! Ha ha ha! Laughs everyone at Raja!",
+        "topic_id": "T_4_11",
+        "page": 38,
+        "exercise_type": "reading_exercise",
+        "confidence": "high"
+      },
+      {
+        "id": "E_4_11_2",
+        "text": "B. Answer the following. 1. How did Sita's brother lose his teeth? 2. Name some food items that are good for our health. 3. What must we do to keep our teeth healthy and clean? 4. Name some healthy food items you like to eat.",
+        "topic_id": "T_4_11",
+        "page": 39,
+        "exercise_type": "comprehension",
+        "confidence": "high"
+      },
+      {
+        "id": "E_4_12_1",
+        "text": "Discuss with your parents/friends and list out five good habits we need to follow. 1. What things we should do in the morning? 2. What things we should do to help our mother/father? 3. What things we should do at school? 4. What things we should do before eating meals? 5. What things should we do to help our friends / classmates?",
+        "topic_id": "T_4_12",
+        "page": 39,
+        "exercise_type": "oral_communication",
+        "confidence": "high"
+      },
+      {
+        "id": "E_4_12_2",
+        "text": "Prepare a chart and present it in your classroom. S.No. | at school | at home 1 | | 2 | | 3 | | 4 | | 5 | |",
+        "topic_id": "T_4_12",
+        "page": 39,
+        "exercise_type": "general_activity",
+        "confidence": "high"
+      },
+      {
+        "id": "E_5_1_1",
+        "text": "I. Look at the picture.",
+        "topic_id": "T_5_1",
+        "page": 40,
+        "exercise_type": "general_activity",
+        "confidence": "high"
+      },
+      {
+        "id": "E_5_1_2",
+        "text": "1. Have you ever seen or heard of a bat and a book as shown in the picture?",
+        "topic_id": "T_5_1",
+        "page": 40,
+        "exercise_type": "oral_communication",
+        "confidence": "high"
+      },
+      {
+        "id": "E_5_1_3",
+        "text": "2. If they were to talk with each other, what would they talk?",
+        "topic_id": "T_5_1",
+        "page": 40,
+        "exercise_type": "oral_communication",
+        "confidence": "high"
+      },
+      {
+        "id": "E_5_1_4",
+        "text": "II A. Look at the picture and answer the questions.",
+        "topic_id": "T_5_1",
+        "page": 41,
+        "exercise_type": "general_activity",
+        "confidence": "high"
+      },
+      {
+        "id": "E_5_1_5",
+        "text": "1. What do you see in the picture?",
+        "topic_id": "T_5_1",
+        "page": 41,
+        "exercise_type": "oral_communication",
+        "confidence": "high"
+      },
+      {
+        "id": "E_5_1_6",
+        "text": "2. What do you think the rat would do with the pencil?",
+        "topic_id": "T_5_1",
+        "page": 41,
+        "exercise_type": "oral_communication",
+        "confidence": "high"
+      },
+      {
+        "id": "E_5_1_7",
+        "text": "3. What do you think the pencil could do to the rat?",
+        "topic_id": "T_5_1",
+        "page": 41,
+        "exercise_type": "oral_communication",
+        "confidence": "high"
+      },
+      {
+        "id": "E_5_1_8",
+        "text": "B. Listen to your teacher and answer the questions.",
+        "topic_id": "T_5_1",
+        "page": 41,
+        "exercise_type": "listening_activity",
+        "confidence": "high"
+      },
+      {
+        "id": "E_5_1_9",
+        "text": "1. What do you think the pencil saw?",
+        "topic_id": "T_5_1",
+        "page": 41,
+        "exercise_type": "comprehension",
+        "confidence": "high"
+      },
+      {
+        "id": "E_5_1_10",
+        "text": "2. According to you, what would the pencil do now?",
+        "topic_id": "T_5_1",
+        "page": 41,
+        "exercise_type": "comprehension",
+        "confidence": "high"
+      },
+      {
+        "id": "E_5_2_1",
+        "text": "What do you think the pencil is drawing?",
+        "topic_id": "T_5_2",
+        "page": 43,
+        "exercise_type": "oral_communication",
+        "confidence": "high"
+      },
+      {
+        "id": "E_5_3_1",
+        "text": "A. Answer the following questions:",
+        "topic_id": "T_5_3",
+        "page": 45,
+        "exercise_type": "comprehension",
+        "confidence": "high"
+      },
+      {
+        "id": "E_5_3_2",
+        "text": "1. Why did the mouse run away looking at the picture?",
+        "topic_id": "T_5_3",
+        "page": 45,
+        "exercise_type": "comprehension",
+        "confidence": "high"
+      },
+      {
+        "id": "E_5_3_3",
+        "text": "2. If you were the mouse, what would you do?",
+        "topic_id": "T_5_3",
+        "page": 45,
+        "exercise_type": "comprehension",
+        "confidence": "high"
+      },
+      {
+        "id": "E_5_3_4",
+        "text": "3. The pencil drew a ___________ circle.",
+        "topic_id": "T_5_3",
+        "page": 45,
+        "exercise_type": "fill_in_the_blank",
+        "confidence": "high"
+      },
+      {
+        "id": "E_5_3_5",
+        "text": "4. The pencil drew three little things inside the __________.",
+        "topic_id": "T_5_3",
+        "page": 45,
+        "exercise_type": "fill_in_the_blank",
+        "confidence": "high"
+      },
+      {
+        "id": "E_5_3_6",
+        "text": "5. Finally, the pencil drew a __________.",
+        "topic_id": "T_5_3",
+        "page": 45,
+        "exercise_type": "fill_in_the_blank",
+        "confidence": "high"
+      },
+      {
+        "id": "E_5_3_7",
+        "text": "B. Complete the following table as directed.",
+        "topic_id": "T_5_3",
+        "page": 45,
+        "exercise_type": "fill_in_the_blank",
+        "confidence": "high"
+      },
+      {
+        "id": "E_5_3_8",
+        "text": "When the pencil drew: a big circle / The mouse asked: “.......................................?”",
+        "topic_id": "T_5_3",
+        "page": 45,
+        "exercise_type": "fill_in_the_blank",
+        "confidence": "high"
+      },
+      {
+        "id": "E_5_3_9",
+        "text": "When the pencil drew: a bigger circle under the first one. / The mouse asked: “.......................................?”",
+        "topic_id": "T_5_3",
+        "page": 45,
+        "exercise_type": "fill_in_the_blank",
+        "confidence": "high"
+      },
+      {
+        "id": "E_5_3_10",
+        "text": "When the pencil drew: three little things inside small circle. / The mouse asked: “.......................................?”",
+        "topic_id": "T_5_3",
+        "page": 45,
+        "exercise_type": "fill_in_the_blank",
+        "confidence": "high"
+      },
+      {
+        "id": "E_5_4_1",
+        "text": "A. The pencil drew a picture of a cat. If you want to draw a beautiful, colourful picture, what materials do you need? Write them. One is done for you.",
+        "topic_id": "T_5_4",
+        "page": 46,
+        "exercise_type": "writing_practice",
+        "confidence": "high"
+      },
+      {
+        "id": "E_5_4_2",
+        "text": "B. In the story, the mouse was hungry. It was thinking of different food items. What food items do you remember when you are hungry?",
+        "topic_id": "T_5_4",
+        "page": 46,
+        "exercise_type": "writing_practice",
+        "confidence": "high"
+      },
+      {
+        "id": "E_5_5_1",
+        "text": "Read the following sentences from the story.",
+        "topic_id": "T_5_5",
+        "page": 47,
+        "exercise_type": "reading_exercise",
+        "confidence": "high"
+      },
+      {
+        "id": "E_5_5_2",
+        "text": "A. Complete the sentences using the words given.",
+        "topic_id": "T_5_5",
+        "page": 47,
+        "exercise_type": "fill_in_the_blank",
+        "confidence": "high"
+      },
+      {
+        "id": "E_5_5_3",
+        "text": "1. I have a .......................... bag.",
+        "topic_id": "T_5_5",
+        "page": 47,
+        "exercise_type": "fill_in_the_blank",
+        "confidence": "high"
+      },
+      {
+        "id": "E_5_5_4",
+        "text": "2. Priya likes .......................... roses.",
+        "topic_id": "T_5_5",
+        "page": 47,
+        "exercise_type": "fill_in_the_blank",
+        "confidence": "high"
+      },
+      {
+        "id": "E_5_5_5",
+        "text": "3. We are buying .......................... apples.",
+        "topic_id": "T_5_5",
+        "page": 47,
+        "exercise_type": "fill_in_the_blank",
+        "confidence": "high"
+      },
+      {
+        "id": "E_5_5_6",
+        "text": "4. Gita has two mangoes, she gave me .......................... mango.",
+        "topic_id": "T_5_5",
+        "page": 47,
+        "exercise_type": "fill_in_the_blank",
+        "confidence": "high"
+      },
+      {
+        "id": "E_5_5_7",
+        "text": "B. Rewrite the given sentences using the words given.",
+        "topic_id": "T_5_5",
+        "page": 47,
+        "exercise_type": "writing_practice",
+        "confidence": "high"
+      },
+      {
+        "id": "E_5_5_8",
+        "text": "1. Sham is a boy. (fat)",
+        "topic_id": "T_5_5",
+        "page": 47,
+        "exercise_type": "writing_practice",
+        "confidence": "high"
+      },
+      {
+        "id": "E_5_5_9",
+        "text": "2. Kamala is a girl. (tall)",
+        "topic_id": "T_5_5",
+        "page": 47,
+        "exercise_type": "writing_practice",
+        "confidence": "high"
+      },
+      {
+        "id": "E_5_5_10",
+        "text": "3. My sister has a doll. (lovely)",
+        "topic_id": "T_5_5",
+        "page": 47,
+        "exercise_type": "writing_practice",
+        "confidence": "high"
+      },
+      {
+        "id": "E_5_5_11",
+        "text": "4. Manasa ate bananas. (three)",
+        "topic_id": "T_5_5",
+        "page": 47,
+        "exercise_type": "writing_practice",
+        "confidence": "high"
+      },
+      {
+        "id": "E_5_6_35",
+        "text": "Look at the picture and fill in the blanks choosing from the words given (fat, old, pink, big, short).",
+        "topic_id": "T_5_6",
+        "page": 48,
+        "exercise_type": "fill_in_the_blanks",
+        "confidence": "high"
+      },
+      {
+        "id": "E_5_6_36",
+        "text": "Read the words given. Write their opposites in the table.",
+        "topic_id": "T_5_6",
+        "page": 48,
+        "exercise_type": "write",
+        "confidence": "high"
+      },
+      {
+        "id": "E_5_6_37",
+        "text": "Draw your own cat, inspired by the story of the pencil drawing a cat.",
+        "topic_id": "T_5_7",
+        "page": 49,
+        "exercise_type": "draw",
+        "confidence": "high"
+      },
+      {
+        "id": "E_5_6_38",
+        "text": "Write a description of your cat using the provided questions as prompts (name, colour, care, enjoyment).",
+        "topic_id": "T_5_7",
+        "page": 49,
+        "exercise_type": "write",
+        "confidence": "high"
+      },
+      {
+        "id": "E_5_6_39",
+        "text": "If the pencil draws a square, what will the mouse ask? Fill in the blanks choosing from bread, biscuit, cake, chocolate.",
+        "topic_id": "T_5_8",
+        "page": 50,
+        "exercise_type": "fill_in_the_blanks",
+        "confidence": "high"
+      },
+      {
+        "id": "E_5_6_40",
+        "text": "Colour the shapes (circle, square, cone) and read the words given.",
+        "topic_id": "T_5_8",
+        "page": 50,
+        "exercise_type": "colour",
+        "confidence": "high"
+      },
+      {
+        "id": "E_5_6_41",
+        "text": "Play an oral guessing game: hide something in your hand and ask your friend to guess what it is, using 'Yes' or 'No' answers.",
+        "topic_id": "T_5_8",
+        "page": 50,
+        "exercise_type": "oral_activity",
+        "confidence": "high"
+      },
+      {
+        "id": "E_5_6_42",
+        "text": "Look at the pictures of different animals made using leaves. Choose one you like and make your own animal.",
+        "topic_id": "T_5_9",
+        "page": 51,
+        "exercise_type": "art_activity",
+        "confidence": "high"
+      },
+      {
+        "id": "E_5_6_43",
+        "text": "Write the names of the leafy animals shown in the pictures.",
+        "topic_id": "T_5_9",
+        "page": 51,
+        "exercise_type": "write",
+        "confidence": "high"
+      },
+      {
+        "id": "E_5_6_44",
+        "text": "Describe your 'leafy animal' mentioning the different leaves you have used for the different parts of its body.",
+        "topic_id": "T_5_10",
+        "page": 52,
+        "exercise_type": "write",
+        "confidence": "high"
+      },
+      {
+        "id": "E_5_6_45",
+        "text": "Make necessary corrections using proper punctuation (capital letter, and spelling) and rewrite the given sentences.",
+        "topic_id": "T_5_10",
+        "page": 52,
+        "exercise_type": "write",
+        "confidence": "high"
+      },
+      {
+        "id": "E_5_6_46",
+        "text": "Fill in the blanks using the same letter two times to complete the words.",
+        "topic_id": "T_5_10",
+        "page": 52,
+        "exercise_type": "fill_in_the_blanks",
+        "confidence": "high"
+      },
+      {
+        "id": "E_5_6_47",
+        "text": "Read the first part of the story \"The lion and the mouse\".",
+        "topic_id": "T_5_11",
+        "page": 53,
+        "exercise_type": "read",
+        "confidence": "high"
+      },
+      {
+        "id": "E_5_6_48",
+        "text": "Read the second part of the story \"The lion and the mouse\".",
+        "topic_id": "T_5_12",
+        "page": 54,
+        "exercise_type": "read",
+        "confidence": "high"
+      },
+      {
+        "id": "E_6_1_1",
+        "text": "I. Look at the picture. What are the different people doing in the picture?",
+        "topic_id": "T_6_1",
+        "page": 55,
+        "exercise_type": "oral_communication",
+        "confidence": "high"
+      },
+      {
+        "id": "E_6_1_2",
+        "text": "II. A. Look at the picture and answer the questions. What time of the day is it? What are the animals doing?",
+        "topic_id": "T_6_1",
+        "page": 56,
+        "exercise_type": "oral_communication",
+        "confidence": "high"
+      },
+      {
+        "id": "E_6_1_3",
+        "text": "B. Now listen to your teacher and answer the following questions. (Note : Listening text is in Appendix-1) 1. How did the hen help her friends? 2. Name the birds and animals who are lazy in the story. 3. Can the hen do something to make them work? 4. How can we help our friends to be active and learn new skills?",
+        "topic_id": "T_6_1",
+        "page": 56,
+        "exercise_type": "listening_activity",
+        "confidence": "high"
+      },
+      {
+        "id": "E_6_2_1",
+        "text": "A Reading The little red hen One day the little red hen found a grain of wheat. “Who will plant this grain of wheat?” she asked. “Not I,” quacked the duck. “Not I,” grunted the pig. “Not I,” purred the cat.",
+        "topic_id": "T_6_2",
+        "page": 57,
+        "exercise_type": "reading_exercise",
+        "confidence": "high"
+      },
+      {
+        "id": "E_6_2_2",
+        "text": "So, the little red hen planted the grain. It soon grew into a plant. It was full of wheat. “Who’ll help me cut the stalk of wheat?” asked the hen. The Pig grunted, “Not I.” “Not I,” purred the cat. “Not I,” quacked the duck. So, the little red hen cut the stalk and took out all the grains of wheat.",
+        "topic_id": "T_6_2",
+        "page": 58,
+        "exercise_type": "reading_exercise",
+        "confidence": "high"
+      },
+      {
+        "id": "E_6_2_3",
+        "text": "“Who’ll take the wheat to the mill?” asked the hen. “Not I,” the Pig grunted. “Not I,” purred the cat. “Not I,” quacked the duck. So the little red hen took the wheat to the mill. The miller ground it into flour. The hen made bread with the wheat flour. She called the duck, the pig and the cat. She wanted to teach them a lesson. What lesson, do you think, the hen would teach them?",
+        "topic_id": "T_6_2",
+        "page": 59,
+        "exercise_type": "reading_exercise",
+        "confidence": "high"
+      },
+      {
+        "id": "E_6_2_4",
+        "text": "“Who’s going to eat the bread?” asked the hen. “I will,” grunted the pig.“I will,” quacked the duck. “I will,” purred the cat. “No, you will not. I planted the grain. I cut the grain. I got it ground. I made the bread. So, I’ll eat all the bread,” said the little red hen. And she started eating. “We’re sorry. We’ll not be lazy from today. Please give us something to eat.” said the pig, the duck and the cat.",
+        "topic_id": "T_6_2",
+        "page": 60,
+        "exercise_type": "reading_exercise",
+        "confidence": "high"
+      },
+      {
+        "id": "E_6_3_1",
+        "text": "A. Answer the following questions. 1. What did the little red hen do with the grain? 2. Where did the little red hen take the wheat? 3. What would you do if you were in the hen’s place?",
+        "topic_id": "T_6_3",
+        "page": 61,
+        "exercise_type": "comprehension",
+        "confidence": "high"
+      },
+      {
+        "id": "E_6_3_2",
+        "text": "B. Write the following sentences in the order in which they appear in the story. The little red hen cut the wheat. The little red hen ate the bread. The miller ground the wheat into flour. The little red hen took the wheat to the mill. The little red hen planted the grain. The little red hen found a grain of wheat.",
+        "topic_id": "T_6_3",
+        "page": 61,
+        "exercise_type": "writing_practice",
+        "confidence": "high"
+      },
+      {
+        "id": "E_6_4_1",
+        "text": "A. One day the little red hen found a grain of wheat. She planted it and it soon grew into a plant. Now think of some seeds which grow into plants. Write their names below. One is done for you. (Image shows a central bubble \"seeds which grow into plants\" with surrounding bubbles, one filled with \"a mango\" and others blank for students to fill.)",
+        "topic_id": "T_6_4",
+        "page": 62,
+        "exercise_type": "fill_in_the_blank",
+        "confidence": "high"
+      },
+      {
+        "id": "E_6_4_2",
+        "text": "B. We have come across some animals and birds in the story. Add a few more names of animals and birds you know. (Table with columns \"birds\" and \"animals\". Birds: 1. a hen, 2. a duck, 3-8 blank. Animals: 1. a cat, 2. a pig, 3-8 blank.)",
+        "topic_id": "T_6_4",
+        "page": 62,
+        "exercise_type": "fill_in_the_blank",
+        "confidence": "high"
+      },
+      {
+        "id": "E_6_5_12",
+        "text": "Read and observe the underlined action words (verbs) in sentences.",
+        "topic_id": "T_6_5",
+        "page": 63,
+        "exercise_type": "read",
+        "confidence": "high"
+      },
+      {
+        "id": "E_6_5_13",
+        "text": "Write the actions done by different animals and birds in the story.",
+        "topic_id": "T_6_5",
+        "page": 63,
+        "exercise_type": "write",
+        "confidence": "high"
+      },
+      {
+        "id": "E_6_5_14",
+        "text": "Tick the right action word for each picture.",
+        "topic_id": "T_6_5",
+        "page": 63,
+        "exercise_type": "match",
+        "confidence": "high"
+      },
+      {
+        "id": "E_6_5_15",
+        "text": "Tick the right action word for each picture (continuation).",
+        "topic_id": "T_6_6",
+        "page": 64,
+        "exercise_type": "match",
+        "confidence": "high"
+      },
+      {
+        "id": "E_6_5_16",
+        "text": "Write other food items that can be made with wheat flour.",
+        "topic_id": "T_6_6",
+        "page": 64,
+        "exercise_type": "write",
+        "confidence": "high"
+      },
+      {
+        "id": "E_6_5_17",
+        "text": "List the ingredients needed to make a chapati.",
+        "topic_id": "T_6_6",
+        "page": 64,
+        "exercise_type": "write",
+        "confidence": "high"
+      },
+      {
+        "id": "E_6_5_18",
+        "text": "Write the steps required to make chapati using the clues provided.",
+        "topic_id": "T_6_7",
+        "page": 65,
+        "exercise_type": "write",
+        "confidence": "high"
+      },
+      {
+        "id": "E_6_5_19",
+        "text": "Colour the picture of a village scene and write 3 or 4 sentences about it.",
+        "topic_id": "T_6_7",
+        "page": 65,
+        "exercise_type": "colour",
+        "confidence": "high"
+      },
+      {
+        "id": "E_6_5_20",
+        "text": "Talk about the picture given on the previous page, identifying animals and their actions.",
+        "topic_id": "T_6_8",
+        "page": 66,
+        "exercise_type": "listen",
+        "confidence": "high"
+      },
+      {
+        "id": "E_6_5_21",
+        "text": "Read sentences and make necessary changes using question marks, capital letters, and correct spelling.",
+        "topic_id": "T_6_8",
+        "page": 66,
+        "exercise_type": "write",
+        "confidence": "high"
+      },
+      {
+        "id": "E_6_5_22",
+        "text": "Read and observe words that read the same in both directions (palindromes).",
+        "topic_id": "T_6_8",
+        "page": 66,
+        "exercise_type": "read",
+        "confidence": "high"
+      },
+      {
+        "id": "E_6_5_23",
+        "text": "Read the dialogue titled \"Good morning Mrs. Hen\".",
+        "topic_id": "T_6_9",
+        "page": 67,
+        "exercise_type": "read",
+        "confidence": "high"
+      },
+      {
+        "id": "E_6_5_24",
+        "text": "Add lines to complete sentences based on the dialogue read.",
+        "topic_id": "T_6_9",
+        "page": 67,
+        "exercise_type": "fill in",
+        "confidence": "high"
+      },
+      {
+        "id": "E_6_5_25",
+        "text": "Read the steps that help to plant a seed.",
+        "topic_id": "T_6_10",
+        "page": 68,
+        "exercise_type": "read",
+        "confidence": "high"
+      },
+      {
+        "id": "E_6_5_26",
+        "text": "Tell your friends and write about how you got the sapling from the seed.",
+        "topic_id": "T_6_10",
+        "page": 68,
+        "exercise_type": "write",
+        "confidence": "high"
+      },
+      {
+        "id": "E_7_1_1",
+        "text": "I. Look at the picture. 1. What do you think the two animal trainers in the picture are trying to do? 2. Where do these events take place? 3. Have you ever seen such events happen? 4. Is it ok to make animals perform such tricks for the amusement of human beings? Discuss.",
+        "topic_id": "T_7_1",
+        "page": 69,
+        "exercise_type": "oral_communication",
+        "confidence": "high"
+      },
+      {
+        "id": "E_7_1_2",
+        "text": "II. A. Look at the picture and answer the questions. 1. What do you think the girl is trying to do? 2. Where do you think the girl is?",
+        "topic_id": "T_7_1",
+        "page": 70,
+        "exercise_type": "oral_communication",
+        "confidence": "high"
+      },
+      {
+        "id": "E_7_1_3",
+        "text": "B. Listen to your teacher and answer the questions. (Note: Listening text is in Appendix-1) 1. Why do you think Mary entered the house? 2. Whose house it might be? 3. How did she reach the house? 4. What would you do if you were in Mary’s place?",
+        "topic_id": "T_7_1",
+        "page": 70,
+        "exercise_type": "listening_activity",
+        "confidence": "high"
+      },
+      {
+        "id": "E_7_3_1",
+        "text": "A. Arrange the events in the order of their happening in the story. Mary broke a chair. Mary slept on the bed. Mary ran out of the house. Mary ate payasam. The three bears returned home.",
+        "topic_id": "T_7_3",
+        "page": 75,
+        "exercise_type": "comprehension",
+        "confidence": "high"
+      },
+      {
+        "id": "E_7_3_2",
+        "text": "B. Answer the following questions. 1. Why did Mary eat the payasam from the third bowl? 2. Do you think the bears will follow Mary? Why? 3. Will Mary visit the bear’s house again? Why?",
+        "topic_id": "T_7_3",
+        "page": 75,
+        "exercise_type": "comprehension",
+        "confidence": "high"
+      },
+      {
+        "id": "E_7_4_1",
+        "text": "A. Mary found different pieces of furniture in the bear’s house. Think of some more words related to furniture. (Activity involves filling a diagram with \"furniture\" in the center and \"a table\" as an example, with empty bubbles for more words.)",
+        "topic_id": "T_7_4",
+        "page": 75,
+        "exercise_type": "general_activity",
+        "confidence": "high"
+      },
+      {
+        "id": "E_7_4_2",
+        "text": "B. One day, a special dish payasam was prepared in the bears’ house. What special dishes would your mother prepare on special occasions at your home? (Activity involves filling 6 blanks with dish names.)",
+        "topic_id": "T_7_4",
+        "page": 76,
+        "exercise_type": "general_activity",
+        "confidence": "high"
+      },
+      {
+        "id": "E_7_5_1",
+        "text": "Read the following. 1. was/hungry/Mary/very 2. up/Mary/woke Do these group of words make any sense (meaning)? No, they don't. Now, read the same group of words. But the order has changed. 1. Mary was very hungry. 2. Mary woke up. Do these group of words make any sense (meaning)? Yes, they do.",
+        "topic_id": "T_7_5",
+        "page": 76,
+        "exercise_type": "reading_exercise",
+        "confidence": "high"
+      },
+      {
+        "id": "E_7_5_2",
+        "text": "A. Change the order of the given words to make it meaningful. 1. girl/ the / is/reading 2. the/ boy/ a book/ has 3. dog/ ran/ the 4. fisherman/ the / came",
+        "topic_id": "T_7_5",
+        "page": 76,
+        "exercise_type": "writing_practice",
+        "confidence": "high"
+      },
+      {
+        "id": "E_7_6_1",
+        "text": "B. Match the following to make sentences.",
+        "topic_id": "T_7_6",
+        "page": 77,
+        "exercise_type": "matching_exercise",
+        "confidence": "high"
+      },
+      {
+        "id": "E_7_6_2",
+        "text": "A. If you want to make payasam, what items (ingredients) would you need? How much (quantity) do you need?",
+        "topic_id": "T_7_6",
+        "page": 77,
+        "exercise_type": "fill_in_the_blank",
+        "confidence": "high"
+      },
+      {
+        "id": "E_7_6_3",
+        "text": "How do you prepare payasam? Use the following clues to write the steps. (roast, boil, add, stir, serve)",
+        "topic_id": "T_7_6",
+        "page": 78,
+        "exercise_type": "writing_practice",
+        "confidence": "high"
+      },
+      {
+        "id": "E_7_6_4",
+        "text": "B. Describe Mary's house.",
+        "topic_id": "T_7_6",
+        "page": 78,
+        "exercise_type": "writing_practice",
+        "confidence": "high"
+      },
+      {
+        "id": "E_7_7_1",
+        "text": "Read the following sentences taken from the story.",
+        "topic_id": "T_7_7",
+        "page": 79,
+        "exercise_type": "reading_exercise",
+        "confidence": "high"
+      },
+      {
+        "id": "E_7_7_2",
+        "text": "Read the situations given below and say sentences using ‘too…to’.",
+        "topic_id": "T_7_7",
+        "page": 79,
+        "exercise_type": "oral_communication",
+        "confidence": "high"
+      },
+      {
+        "id": "E_7_7_3",
+        "text": "Look at the picture. Make sentences using ‘too…to’. One is done for you.",
+        "topic_id": "T_7_7",
+        "page": 79,
+        "exercise_type": "writing_practice",
+        "confidence": "high"
+      },
+      {
+        "id": "E_7_8_1",
+        "text": "Run",
+        "topic_id": "T_7_8",
+        "page": 80,
+        "exercise_type": "reading_exercise",
+        "confidence": "high"
+      },
+      {
+        "id": "E_7_8_2",
+        "text": "B. Add lines.",
+        "topic_id": "T_7_8",
+        "page": 80,
+        "exercise_type": "writing_practice",
+        "confidence": "high"
+      },
+      {
+        "id": "E_7_9_1",
+        "text": "List out the furniture in your house or in any body’s house you wish.",
+        "topic_id": "T_7_9",
+        "page": 81,
+        "exercise_type": "writing_practice",
+        "confidence": "high"
+      },
+      {
+        "id": "E_7_9_2",
+        "text": "Fill in the following table. What do you use these things for?",
+        "topic_id": "T_7_9",
+        "page": 81,
+        "exercise_type": "fill_in_the_blank",
+        "confidence": "high"
+      },
+      {
+        "id": "E_7_10_1",
+        "text": "Make corrections using capital letters and correct spelling, wherever necessary. Rewrite the following sentences.",
+        "topic_id": "T_7_10",
+        "page": 81,
+        "exercise_type": "writing_practice",
+        "confidence": "high"
+      },
+      {
+        "id": "E_7_11_1",
+        "text": "Read the following words. We use these words to ask questions.",
+        "topic_id": "T_7_11",
+        "page": 81,
+        "exercise_type": "reading_exercise",
+        "confidence": "high"
+      },
+      {
+        "id": "E_7_11_2",
+        "text": "Try making questions with the above words.",
+        "topic_id": "T_7_11",
+        "page": 81,
+        "exercise_type": "oral_communication",
+        "confidence": "high"
+      },
+      {
+        "id": "E_8_1_1",
+        "text": "I. Look at the picture. 1. What do you see in the picture? 2. Where do you see these animals? 3. Why are they sitting in the class?",
+        "topic_id": "T_8_1",
+        "page": 82,
+        "exercise_type": "oral_communication",
+        "confidence": "high"
+      },
+      {
+        "id": "E_8_2_1",
+        "text": "II. A. Look at the picture and answer the questions. 1. Why are all the animals looking up at the crow? 2. What do you think the crow is saying?",
+        "topic_id": "T_8_2",
+        "page": 83,
+        "exercise_type": "oral_communication",
+        "confidence": "high"
+      },
+      {
+        "id": "E_8_2_2",
+        "text": "B. Listen to the story and answer the questions. (Note : Listening text is in Appendix-1) 1. Why did all the animals want to join the animal school? 2. What would the duck like to learn in that school? 3. Who would be the teachers of that school?",
+        "topic_id": "T_8_2",
+        "page": 83,
+        "exercise_type": "listening_activity",
+        "confidence": "high"
+      },
+      {
+        "id": "E_8_3_1",
+        "text": "A Reading The animal school All the animals wanted to learn something new. So they decided to join the school. The duck thought, “I can swim very well but I cannot run like other animals. Let me join the school and learn to run faster.” The rabbit thought, “Though I can run very fast, I cannot swim in water. If I learn to swim, I can play in water. Let me join this school.” The squirrel thought, “Though I can climb trees, sometimes I cannot escape from my enemies. I want to join this school to learn flying.” The cat thought, “I cannot dig the soil. If I learn to dig, rats cannot escape from me.” So, all of them went to the school. The rat was the principal of the school. They all got admission in the animal school except the cat. Digging and burrowing were not taught in the school. The duck was excellent in swimming. But, he got less marks in flying and was poor in running. So, he stayed after school to practise running. He practised until his webbed feet were badly wounded. So he became poor in swimming. The rabbit was good at running but he had to learn swimming. So, he practised swimming and forgot running. The squirrel was excellent in climbing. She practised flying and neglected climbing. At the end of the year, the animals did not learn anything but forgot their own skills. Finally, the animals and birds had a meeting. They decided that such schools are not useful. Schools must help students to improve their natural skills. So, they closed the animal school.",
+        "topic_id": "T_8_3",
+        "page": 84,
+        "exercise_type": "reading_exercise",
+        "confidence": "high"
+      },
+      {
+        "id": "E_8_4_1",
+        "text": "A. Answer the following questions. 1. Why did the squirrel join the animal school? 2. What did the duck try to learn in the school? 3. Why did the animals and birds neglect their natural skills?",
+        "topic_id": "T_8_4",
+        "page": 88,
+        "exercise_type": "comprehension",
+        "confidence": "high"
+      },
+      {
+        "id": "E_8_4_2",
+        "text": "B. Write what each animal \"can do\" and \"wanted to learn\". One is done for you. S.no. Animal Can do Wanted to learn 1 duck swimming running 2 rabbit 3 squirrel 4 cat",
+        "topic_id": "T_8_4",
+        "page": 88,
+        "exercise_type": "fill_in_the_blank",
+        "confidence": "high"
+      },
+      {
+        "id": "E_8_4_3",
+        "text": "A. Write as many words as possible related to SCHOOL.",
+        "topic_id": "T_8_4",
+        "page": 88,
+        "exercise_type": "writing_practice",
+        "confidence": "high"
+      },
+      {
+        "id": "E_8_4_4",
+        "text": "B. Pick out the words from the story to replace the underlined words. Rewrite the sentences. (excellent, good, forgot, escape) 1. The rabbit was not bad at running. 2. The duck was not poor in swimming. 3. I can run fast, so I do not get caught. 4. The animals could not remember their own skills.",
+        "topic_id": "T_8_4",
+        "page": 89,
+        "exercise_type": "writing_practice",
+        "confidence": "high"
+      },
+      {
+        "id": "E_8_4_5",
+        "text": "C. The place where the animals went to learn was the animal school. We also go to different places to do different things. 1. The place where we go to buy vegetables is ___________ 2. The place where we go to worship God is ___________ 3. The place where we go to read books is ___________ 4. The place where we go to watch films is ___________",
+        "topic_id": "T_8_4",
+        "page": 89,
+        "exercise_type": "fill_in_the_blank",
+        "confidence": "high"
+      },
+      {
+        "id": "E_8_5_1",
+        "text": "Read the following words from the story. animals trees rats birds These words show that they are more than one in number. Such words are called Plurals.",
+        "topic_id": "T_8_5",
+        "page": 89,
+        "exercise_type": "reading_exercise",
+        "confidence": "high"
+      },
+      {
+        "id": "E_9_1_1",
+        "text": "I. Look at the pictures. 1. What are the children doing? 2. What is the boy complaining about? 3. What do you think the teacher would do?",
+        "topic_id": "T_9_1",
+        "page": 94,
+        "exercise_type": "oral_communication",
+        "confidence": "high"
+      },
+      {
+        "id": "E_9_1_2",
+        "text": "II. A. Look at the picture and answer the questions. 1. Who do you think are these people in the picture? 2. Where are they? 3. Can you guess what is happening?",
+        "topic_id": "T_9_1",
+        "page": 95,
+        "exercise_type": "oral_communication",
+        "confidence": "high"
+      },
+      {
+        "id": "E_9_1_3",
+        "text": "B. Listen to your teacher and answer the questions. 1. How can you say that Bajrang was greedy? 2. Will Bajrang succeed in the quarrel? Why? 3. When you quarrel with your friend, how do you solve it?",
+        "topic_id": "T_9_1",
+        "page": 95,
+        "exercise_type": "listening_activity",
+        "confidence": "high"
+      },
+      {
+        "id": "E_9_3_1",
+        "text": "A. Answer the following questions. 1. Who was known for his wit and wisdom? 2. What was Bajrang's complaint about Gopal? 3. What lesson did Bajrang learn?",
+        "topic_id": "T_9_3",
+        "page": 100,
+        "exercise_type": "comprehension",
+        "confidence": "high"
+      },
+      {
+        "id": "E_9_3_2",
+        "text": "B. Write true or false. 1. Birbal was Akbar's minister. ( ) 2. Bajrang sold water to Gopal. ( ) 3. Gopal was innocent. ( ) 4. Bajrang wanted to cheat Gopal. ( ) 5. Gopal gave money for water. ( )",
+        "topic_id": "T_9_3",
+        "page": 100,
+        "exercise_type": "comprehension",
+        "confidence": "high"
+      },
+      {
+        "id": "E_9_4_1",
+        "text": "A. In olden days, a person who ruled a kingdom was called a 'king'. Write more words related to kingdom. (Activity involves filling in a mind map with \"kingdom\" in the center, \"a king\" and \"a minister\" already connected, and three empty bubbles for more words.)",
+        "topic_id": "T_9_4",
+        "page": 100,
+        "exercise_type": "writing_practice",
+        "confidence": "high"
+      },
+      {
+        "id": "E_9_4_2",
+        "text": "B. In the story, Gopal used the water from the well. What other sources of water do you know? Read the following. (Images shown: river, water tap, lake, hand pump, well, canal)",
+        "topic_id": "T_9_4",
+        "page": 101,
+        "exercise_type": "recognition_skill",
+        "confidence": "high"
+      },
+      {
+        "id": "E_9_4_3",
+        "text": "Write 3-4 sentences on uses of water.",
+        "topic_id": "T_9_4",
+        "page": 101,
+        "exercise_type": "writing_practice",
+        "confidence": "high"
+      },
+      {
+        "id": "E_9_5_1",
+        "text": "A. Read the following words from the story. Akbar, Gopal, throne, well and court are the names of the characters, things and places.",
+        "topic_id": "T_9_5",
+        "page": 101,
+        "exercise_type": "reading_exercise",
+        "confidence": "high"
+      },
+      {
+        "id": "E_9_6_10",
+        "text": "Write any three names of persons, places and things you know.",
+        "topic_id": "T_9_6",
+        "page": 102,
+        "exercise_type": "write",
+        "confidence": "high"
+      },
+      {
+        "id": "E_9_6_11",
+        "text": "Read the following actions from the story (went, sold, paid, complain) and write any three actions in the following places: school, home, playground.",
+        "topic_id": "T_9_6",
+        "page": 102,
+        "exercise_type": "write",
+        "confidence": "high"
+      },
+      {
+        "id": "E_9_6_12",
+        "text": "Write a conversation between you and your teacher to complain about a stolen pen.",
+        "topic_id": "T_9_6",
+        "page": 102,
+        "exercise_type": "write",
+        "confidence": "high"
+      },
+      {
+        "id": "E_9_6_13",
+        "text": "Enact the possible conversation between Bajrang and Gopal after Bajrang was outwitted by Birbal.",
+        "topic_id": "T_9_7",
+        "page": 103,
+        "exercise_type": "role_play",
+        "confidence": "high"
+      },
+      {
+        "id": "E_9_6_14",
+        "text": "Add dialogues and enact the roles in different scenes from the story 'Birbal Outwits the Cheat' (At Gopal's home, At Akbar's court).",
+        "topic_id": "T_9_7",
+        "page": 103,
+        "exercise_type": "role_play",
+        "confidence": "high"
+      },
+      {
+        "id": "E_9_6_15",
+        "text": "Play a word game: write another four-letter word starting with the last letter of the given word (e.g., king, goat, tail, lion).",
+        "topic_id": "T_9_7",
+        "page": 103,
+        "exercise_type": "write",
+        "confidence": "high"
+      },
+      {
+        "id": "E_9_6_16",
+        "text": "Draw a picture related to a story thought up in groups.",
+        "topic_id": "T_9_8",
+        "page": 104,
+        "exercise_type": "draw",
+        "confidence": "high"
+      },
+      {
+        "id": "E_9_6_17",
+        "text": "Write a story based on the drawn picture, describing what happened before, what is happening in the picture, and what will happen at the end.",
+        "topic_id": "T_9_8",
+        "page": 104,
+        "exercise_type": "write",
+        "confidence": "high"
+      },
+      {
+        "id": "E_9_6_18",
+        "text": "Read the story titled \"And then thurrrr.........\" about a story teller and birds.",
+        "topic_id": "T_9_9",
+        "page": 105,
+        "exercise_type": "read",
+        "confidence": "high"
+      },
+      {
+        "id": "E_9_6_19",
+        "text": "Observe the illustration of a man telling a story to children under a tree, with birds flying.",
+        "topic_id": "T_9_9",
+        "page": 105,
+        "exercise_type": "art_activity",
+        "confidence": "high"
+      },
+      {
+        "id": "E_10_1_1",
+        "text": "Listen to the story \"TALKING TRAIN\" about Mary and the train announcement.",
+        "topic_id": "T_10_1",
+        "page": 106,
+        "exercise_type": "listening_activity",
+        "confidence": "high"
+      },
+      {
+        "id": "E_10_2_1",
+        "text": "Listen to the story \"SWAMY AND THE MAGIC BEANS\".",
+        "topic_id": "T_10_2",
+        "page": 106,
+        "exercise_type": "listening_activity",
+        "confidence": "high"
+      },
+      {
+        "id": "E_10_3_1",
+        "text": "Listen to the story \"I Like It This Way\".",
+        "topic_id": "T_10_3",
+        "page": 106,
+        "exercise_type": "listening_activity",
+        "confidence": "high"
+      },
+      {
+        "id": "E_10_4_1",
+        "text": "Listen to the story \"THE MOUSE AND THE PENCIL\".",
+        "topic_id": "T_10_4",
+        "page": 107,
+        "exercise_type": "listening_activity",
+        "confidence": "high"
+      },
+      {
+        "id": "E_10_5_1",
+        "text": "Listen to the story \"THE LITTLE RED HEN\".",
+        "topic_id": "T_10_5",
+        "page": 107,
+        "exercise_type": "listening_activity",
+        "confidence": "high"
+      },
+      {
+        "id": "E_10_6_1",
+        "text": "Listen to the story \"MARY AND THE THREE BEARS\".",
+        "topic_id": "T_10_6",
+        "page": 108,
+        "exercise_type": "listening_activity",
+        "confidence": "high"
+      },
+      {
+        "id": "E_10_7_1",
+        "text": "Listen to the story \"THE ANIMAL SCHOOL\".",
+        "topic_id": "T_10_7",
+        "page": 108,
+        "exercise_type": "listening_activity",
+        "confidence": "high"
+      },
+      {
+        "id": "E_10_8_1",
+        "text": "Listen to the story \"BIRBAL OUTWITS THE CHEAT\".",
+        "topic_id": "T_10_8",
+        "page": 108,
+        "exercise_type": "listening_activity",
+        "confidence": "high"
+      },
+      {
+        "id": "E_11_4_1",
+        "text": "QR code with ID Z9XZS6 is present. No description of linked content is visible.",
+        "topic_id": "T_11_4",
+        "page": 114,
+        "exercise_type": "general_activity",
+        "confidence": "high"
+      }
+    ],
+    "sidebars": [
+      {
+        "id": "S_1_1_1",
+        "text": "Note to the teacher:- The pictures given for bridging activities are meant for classroom interaction in order to equip the children to acquire basic language competencies and familiarise with the primary discourses i.e., description, conversation and story writing. The transaction process suggested is - whole class, group and individual activity. These pictures can be used for writing descriptions, conversations and stories. The teacher can also make use of some more pictures which have scope for interaction. The teacher may refer the teacher's handbook for detailed process.",
+        "topic_id": "T_1_1",
+        "page": 1
+      },
+      {
+        "id": "S_1_1_2",
+        "text": "QR code activity: F3Y5Q7",
+        "topic_id": "T_1_1",
+        "page": 1
+      },
+      {
+        "id": "S_1_1_3",
+        "text": "QR code activity: A8N8D7",
+        "topic_id": "T_1_1",
+        "page": 2
+      },
+      {
+        "id": "S_1_1_4",
+        "text": "QR code activity: X9U1T9",
+        "topic_id": "T_1_1",
+        "page": 3
+      },
+      {
+        "id": "S_1_1_5",
+        "text": "QR code activity: D5L3P4",
+        "topic_id": "T_1_1",
+        "page": 4
+      },
+      {
+        "id": "S_1_1_6",
+        "text": "Note: Use this picture for producing description, conversation and story.",
+        "topic_id": "T_1_1",
+        "page": 4
+      },
+      {
+        "id": "S_2_1_1",
+        "text": "QR code activity: 18C1V4",
+        "topic_id": "T_2_1",
+        "page": 5
+      },
+      {
+        "id": "S_2_5_1",
+        "text": "In the 1st phrase, and is used to link ‘the rich’ and ‘the poor’. In the 2nd phrase, and is used to link ‘the young’ and ‘the old’. In the 3rd phrase, and is used to link ‘the healthy’ and ‘the unhealthy’.",
+        "topic_id": "T_2_5",
+        "page": 12
+      },
+      {
+        "id": "S_2_7_1",
+        "text": "QR code activity: K6P3W7",
+        "topic_id": "T_2_7",
+        "page": 14
+      },
+      {
+        "id": "S_4_1_1",
+        "text": "QR code: R3J7Y9",
+        "topic_id": "T_4_1",
+        "page": 27
+      },
+      {
+        "id": "S_4_2_1",
+        "text": "Note : Listening text is in Appendix-1",
+        "topic_id": "T_4_2",
+        "page": 28
+      },
+      {
+        "id": "S_4_4_1",
+        "text": "QR code: 9T814K3",
+        "topic_id": "T_4_4",
+        "page": 33
+      },
+      {
+        "id": "S_5_1_1",
+        "text": "QR code activity: F8EGJ7",
+        "topic_id": "T_5_1",
+        "page": 40
+      },
+      {
+        "id": "S_5_3_1",
+        "text": "QR code activity: U3D3A6",
+        "topic_id": "T_5_3",
+        "page": 45
+      },
+      {
+        "id": "S_6_1_1",
+        "text": "QR code activity: F1V3C1",
+        "topic_id": "T_6_1",
+        "page": 55
+      },
+      {
+        "id": "S_7_1_1",
+        "text": "QR code activity: VIT928",
+        "topic_id": "T_7_1",
+        "page": 69
+      },
+      {
+        "id": "S_7_5_1",
+        "text": "QR code activity: Y1R5B5",
+        "topic_id": "T_7_5",
+        "page": 76
+      },
+      {
+        "id": "S_8_1_1",
+        "text": "QR code activity: H1M7A9",
+        "topic_id": "T_8_1",
+        "page": 82
+      },
+      {
+        "id": "S_8_3_1",
+        "text": "We work according to our unique qualities and abilities",
+        "topic_id": "T_8_3",
+        "page": 87
+      },
+      {
+        "id": "S_8_4_1",
+        "text": "QR code activity: M4D5G9",
+        "topic_id": "T_8_4",
+        "page": 88
+      },
+      {
+        "id": "S_9_1_1",
+        "text": "QR code activity: A3KSZ1",
+        "topic_id": "T_9_1",
+        "page": 94
+      },
+      {
+        "id": "S_9_1_2",
+        "text": "Note : Listening text is in Appendix-I",
+        "topic_id": "T_9_1",
+        "page": 95
+      },
+      {
+        "id": "S_9_3_1",
+        "text": "QR code activity: T3G7Y5",
+        "topic_id": "T_9_3",
+        "page": 100
+      }
+    ]
+  },
+  "graphs": {
+    "chapter_structure": [
+      {
+        "from": "C_1",
+        "to": "T_1_1",
+        "type": "contains"
+      },
+      {
+        "from": "C_2",
+        "to": "T_2_1",
+        "type": "contains"
+      },
+      {
+        "from": "C_2",
+        "to": "T_2_2",
+        "type": "contains"
+      },
+      {
+        "from": "C_2",
+        "to": "T_2_3",
+        "type": "contains"
+      },
+      {
+        "from": "C_2",
+        "to": "T_2_4",
+        "type": "contains"
+      },
+      {
+        "from": "C_2",
+        "to": "T_2_5",
+        "type": "contains"
+      },
+      {
+        "from": "C_2",
+        "to": "T_2_6",
+        "type": "contains"
+      },
+      {
+        "from": "C_2",
+        "to": "T_2_7",
+        "type": "contains"
+      },
+      {
+        "from": "C_2",
+        "to": "T_2_8",
+        "type": "contains"
+      },
+      {
+        "from": "C_3",
+        "to": "T_3_1",
+        "type": "contains"
+      },
+      {
+        "from": "C_3",
+        "to": "T_3_2",
+        "type": "contains"
+      },
+      {
+        "from": "C_3",
+        "to": "T_3_3",
+        "type": "contains"
+      },
+      {
+        "from": "C_3",
+        "to": "T_3_4",
+        "type": "contains"
+      },
+      {
+        "from": "C_3",
+        "to": "T_3_5",
+        "type": "contains"
+      },
+      {
+        "from": "C_3",
+        "to": "T_3_6",
+        "type": "contains"
+      },
+      {
+        "from": "C_3",
+        "to": "T_3_7",
+        "type": "contains"
+      },
+      {
+        "from": "C_3",
+        "to": "T_3_8",
+        "type": "contains"
+      },
+      {
+        "from": "C_3",
+        "to": "T_3_9",
+        "type": "contains"
+      },
+      {
+        "from": "C_3",
+        "to": "T_3_10",
+        "type": "contains"
+      },
+      {
+        "from": "C_4",
+        "to": "T_4_1",
+        "type": "contains"
+      },
+      {
+        "from": "C_4",
+        "to": "T_4_2",
+        "type": "contains"
+      },
+      {
+        "from": "C_4",
+        "to": "T_4_3",
+        "type": "contains"
+      },
+      {
+        "from": "C_4",
+        "to": "T_4_4",
+        "type": "contains"
+      },
+      {
+        "from": "C_4",
+        "to": "T_4_5",
+        "type": "contains"
+      },
+      {
+        "from": "C_4",
+        "to": "T_4_6",
+        "type": "contains"
+      },
+      {
+        "from": "C_4",
+        "to": "T_4_7",
+        "type": "contains"
+      },
+      {
+        "from": "C_4",
+        "to": "T_4_8",
+        "type": "contains"
+      },
+      {
+        "from": "C_4",
+        "to": "T_4_9",
+        "type": "contains"
+      },
+      {
+        "from": "C_4",
+        "to": "T_4_10",
+        "type": "contains"
+      },
+      {
+        "from": "C_4",
+        "to": "T_4_11",
+        "type": "contains"
+      },
+      {
+        "from": "C_4",
+        "to": "T_4_12",
+        "type": "contains"
+      },
+      {
+        "from": "C_5",
+        "to": "T_5_1",
+        "type": "contains"
+      },
+      {
+        "from": "C_5",
+        "to": "T_5_2",
+        "type": "contains"
+      },
+      {
+        "from": "C_5",
+        "to": "T_5_3",
+        "type": "contains"
+      },
+      {
+        "from": "C_5",
+        "to": "T_5_4",
+        "type": "contains"
+      },
+      {
+        "from": "C_5",
+        "to": "T_5_5",
+        "type": "contains"
+      },
+      {
+        "from": "C_5",
+        "to": "T_5_6",
+        "type": "contains"
+      },
+      {
+        "from": "C_5",
+        "to": "T_5_7",
+        "type": "contains"
+      },
+      {
+        "from": "C_5",
+        "to": "T_5_8",
+        "type": "contains"
+      },
+      {
+        "from": "C_5",
+        "to": "T_5_9",
+        "type": "contains"
+      },
+      {
+        "from": "C_5",
+        "to": "T_5_10",
+        "type": "contains"
+      },
+      {
+        "from": "C_5",
+        "to": "T_5_11",
+        "type": "contains"
+      },
+      {
+        "from": "C_5",
+        "to": "T_5_12",
+        "type": "contains"
+      },
+      {
+        "from": "C_6",
+        "to": "T_6_1",
+        "type": "contains"
+      },
+      {
+        "from": "C_6",
+        "to": "T_6_2",
+        "type": "contains"
+      },
+      {
+        "from": "C_6",
+        "to": "T_6_3",
+        "type": "contains"
+      },
+      {
+        "from": "C_6",
+        "to": "T_6_4",
+        "type": "contains"
+      },
+      {
+        "from": "C_6",
+        "to": "T_6_5",
+        "type": "contains"
+      },
+      {
+        "from": "C_6",
+        "to": "T_6_6",
+        "type": "contains"
+      },
+      {
+        "from": "C_6",
+        "to": "T_6_7",
+        "type": "contains"
+      },
+      {
+        "from": "C_6",
+        "to": "T_6_8",
+        "type": "contains"
+      },
+      {
+        "from": "C_6",
+        "to": "T_6_9",
+        "type": "contains"
+      },
+      {
+        "from": "C_6",
+        "to": "T_6_10",
+        "type": "contains"
+      },
+      {
+        "from": "C_7",
+        "to": "T_7_1",
+        "type": "contains"
+      },
+      {
+        "from": "C_7",
+        "to": "T_7_2",
+        "type": "contains"
+      },
+      {
+        "from": "C_7",
+        "to": "T_7_3",
+        "type": "contains"
+      },
+      {
+        "from": "C_7",
+        "to": "T_7_4",
+        "type": "contains"
+      },
+      {
+        "from": "C_7",
+        "to": "T_7_5",
+        "type": "contains"
+      },
+      {
+        "from": "C_7",
+        "to": "T_7_6",
+        "type": "contains"
+      },
+      {
+        "from": "C_7",
+        "to": "T_7_7",
+        "type": "contains"
+      },
+      {
+        "from": "C_7",
+        "to": "T_7_8",
+        "type": "contains"
+      },
+      {
+        "from": "C_7",
+        "to": "T_7_9",
+        "type": "contains"
+      },
+      {
+        "from": "C_7",
+        "to": "T_7_10",
+        "type": "contains"
+      },
+      {
+        "from": "C_7",
+        "to": "T_7_11",
+        "type": "contains"
+      },
+      {
+        "from": "C_8",
+        "to": "T_8_1",
+        "type": "contains"
+      },
+      {
+        "from": "C_8",
+        "to": "T_8_2",
+        "type": "contains"
+      },
+      {
+        "from": "C_8",
+        "to": "T_8_3",
+        "type": "contains"
+      },
+      {
+        "from": "C_8",
+        "to": "T_8_4",
+        "type": "contains"
+      },
+      {
+        "from": "C_8",
+        "to": "T_8_5",
+        "type": "contains"
+      },
+      {
+        "from": "C_9",
+        "to": "T_9_1",
+        "type": "contains"
+      },
+      {
+        "from": "C_9",
+        "to": "T_9_2",
+        "type": "contains"
+      },
+      {
+        "from": "C_9",
+        "to": "T_9_3",
+        "type": "contains"
+      },
+      {
+        "from": "C_9",
+        "to": "T_9_4",
+        "type": "contains"
+      },
+      {
+        "from": "C_9",
+        "to": "T_9_5",
+        "type": "contains"
+      },
+      {
+        "from": "C_9",
+        "to": "T_9_6",
+        "type": "contains"
+      },
+      {
+        "from": "C_9",
+        "to": "T_9_7",
+        "type": "contains"
+      },
+      {
+        "from": "C_9",
+        "to": "T_9_8",
+        "type": "contains"
+      },
+      {
+        "from": "C_9",
+        "to": "T_9_9",
+        "type": "contains"
+      },
+      {
+        "from": "C_10",
+        "to": "T_10_1",
+        "type": "contains"
+      },
+      {
+        "from": "C_10",
+        "to": "T_10_2",
+        "type": "contains"
+      },
+      {
+        "from": "C_10",
+        "to": "T_10_3",
+        "type": "contains"
+      },
+      {
+        "from": "C_10",
+        "to": "T_10_4",
+        "type": "contains"
+      },
+      {
+        "from": "C_10",
+        "to": "T_10_5",
+        "type": "contains"
+      },
+      {
+        "from": "C_10",
+        "to": "T_10_6",
+        "type": "contains"
+      },
+      {
+        "from": "C_10",
+        "to": "T_10_7",
+        "type": "contains"
+      },
+      {
+        "from": "C_10",
+        "to": "T_10_8",
+        "type": "contains"
+      },
+      {
+        "from": "C_11",
+        "to": "T_11_1",
+        "type": "contains"
+      },
+      {
+        "from": "C_11",
+        "to": "T_11_2",
+        "type": "contains"
+      },
+      {
+        "from": "C_11",
+        "to": "T_11_3",
+        "type": "contains"
+      },
+      {
+        "from": "C_11",
+        "to": "T_11_4",
+        "type": "contains"
+      },
+      {
+        "from": "C_11",
+        "to": "T_11_5",
+        "type": "contains"
+      }
+    ],
+    "exercise_mapping": [
+      {
+        "from": "E_1_1_1",
+        "to": "T_1_1",
+        "type": "tests"
+      },
+      {
+        "from": "E_1_1_2",
+        "to": "T_1_1",
+        "type": "tests"
+      },
+      {
+        "from": "E_1_1_3",
+        "to": "T_1_1",
+        "type": "tests"
+      },
+      {
+        "from": "E_1_1_4",
+        "to": "T_1_1",
+        "type": "tests"
+      },
+      {
+        "from": "E_1_1_5",
+        "to": "T_1_1",
+        "type": "tests"
+      },
+      {
+        "from": "E_1_1_6",
+        "to": "T_1_1",
+        "type": "tests"
+      },
+      {
+        "from": "E_2_1_1",
+        "to": "T_2_1",
+        "type": "tests"
+      },
+      {
+        "from": "E_2_1_2",
+        "to": "T_2_1",
+        "type": "tests"
+      },
+      {
+        "from": "E_2_1_3",
+        "to": "T_2_1",
+        "type": "tests"
+      },
+      {
+        "from": "E_2_2_1",
+        "to": "T_2_2",
+        "type": "tests"
+      },
+      {
+        "from": "E_2_2_2",
+        "to": "T_2_2",
+        "type": "tests"
+      },
+      {
+        "from": "E_2_3_1",
+        "to": "T_2_3",
+        "type": "tests"
+      },
+      {
+        "from": "E_2_3_2",
+        "to": "T_2_3",
+        "type": "tests"
+      },
+      {
+        "from": "E_2_3_3",
+        "to": "T_2_3",
+        "type": "tests"
+      },
+      {
+        "from": "E_2_3_4",
+        "to": "T_2_3",
+        "type": "tests"
+      },
+      {
+        "from": "E_2_4_1",
+        "to": "T_2_4",
+        "type": "tests"
+      },
+      {
+        "from": "E_2_4_2",
+        "to": "T_2_4",
+        "type": "tests"
+      },
+      {
+        "from": "E_2_5_1",
+        "to": "T_2_5",
+        "type": "tests"
+      },
+      {
+        "from": "E_2_5_2",
+        "to": "T_2_5",
+        "type": "tests"
+      },
+      {
+        "from": "E_2_6_1",
+        "to": "T_2_6",
+        "type": "tests"
+      },
+      {
+        "from": "E_2_6_2",
+        "to": "T_2_6",
+        "type": "tests"
+      },
+      {
+        "from": "E_2_6_3",
+        "to": "T_2_6",
+        "type": "tests"
+      },
+      {
+        "from": "E_2_7_1",
+        "to": "T_2_7",
+        "type": "tests"
+      },
+      {
+        "from": "E_2_7_2",
+        "to": "T_2_7",
+        "type": "tests"
+      },
+      {
+        "from": "E_2_8_1",
+        "to": "T_2_8",
+        "type": "tests"
+      },
+      {
+        "from": "E_3_1_1",
+        "to": "T_3_1",
+        "type": "tests"
+      },
+      {
+        "from": "E_3_2_1",
+        "to": "T_3_2",
+        "type": "tests"
+      },
+      {
+        "from": "E_3_2_2",
+        "to": "T_3_2",
+        "type": "tests"
+      },
+      {
+        "from": "E_3_4_1",
+        "to": "T_3_4",
+        "type": "tests"
+      },
+      {
+        "from": "E_3_4_2",
+        "to": "T_3_4",
+        "type": "tests"
+      },
+      {
+        "from": "E_3_4_3",
+        "to": "T_3_4",
+        "type": "tests"
+      },
+      {
+        "from": "E_3_6_1",
+        "to": "T_3_6",
+        "type": "tests"
+      },
+      {
+        "from": "E_3_7_1",
+        "to": "T_3_7",
+        "type": "tests"
+      },
+      {
+        "from": "E_3_7_2",
+        "to": "T_3_7",
+        "type": "tests"
+      },
+      {
+        "from": "E_3_7_3",
+        "to": "T_3_7",
+        "type": "tests"
+      },
+      {
+        "from": "E_3_8_1",
+        "to": "T_3_8",
+        "type": "tests"
+      },
+      {
+        "from": "E_3_9_1",
+        "to": "T_3_9",
+        "type": "tests"
+      },
+      {
+        "from": "E_3_10_1",
+        "to": "T_3_10",
+        "type": "tests"
+      },
+      {
+        "from": "E_3_10_2",
+        "to": "T_3_10",
+        "type": "tests"
+      },
+      {
+        "from": "E_4_1_1",
+        "to": "T_4_1",
+        "type": "tests"
+      },
+      {
+        "from": "E_4_1_2",
+        "to": "T_4_1",
+        "type": "tests"
+      },
+      {
+        "from": "E_4_1_3",
+        "to": "T_4_1",
+        "type": "tests"
+      },
+      {
+        "from": "E_4_1_4",
+        "to": "T_4_1",
+        "type": "tests"
+      },
+      {
+        "from": "E_4_2_1",
+        "to": "T_4_2",
+        "type": "tests"
+      },
+      {
+        "from": "E_4_2_2",
+        "to": "T_4_2",
+        "type": "tests"
+      },
+      {
+        "from": "E_4_2_3",
+        "to": "T_4_2",
+        "type": "tests"
+      },
+      {
+        "from": "E_4_2_4",
+        "to": "T_4_2",
+        "type": "tests"
+      },
+      {
+        "from": "E_4_2_5",
+        "to": "T_4_2",
+        "type": "tests"
+      },
+      {
+        "from": "E_4_2_6",
+        "to": "T_4_2",
+        "type": "tests"
+      },
+      {
+        "from": "E_4_2_7",
+        "to": "T_4_2",
+        "type": "tests"
+      },
+      {
+        "from": "E_4_2_8",
+        "to": "T_4_2",
+        "type": "tests"
+      },
+      {
+        "from": "E_4_4_1",
+        "to": "T_4_4",
+        "type": "tests"
+      },
+      {
+        "from": "E_4_4_2",
+        "to": "T_4_4",
+        "type": "tests"
+      },
+      {
+        "from": "E_4_4_3",
+        "to": "T_4_4",
+        "type": "tests"
+      },
+      {
+        "from": "E_4_4_4",
+        "to": "T_4_4",
+        "type": "tests"
+      },
+      {
+        "from": "E_4_4_5",
+        "to": "T_4_4",
+        "type": "tests"
+      },
+      {
+        "from": "E_4_4_6",
+        "to": "T_4_4",
+        "type": "tests"
+      },
+      {
+        "from": "E_4_4_7",
+        "to": "T_4_4",
+        "type": "tests"
+      },
+      {
+        "from": "E_4_4_8",
+        "to": "T_4_4",
+        "type": "tests"
+      },
+      {
+        "from": "E_4_4_9",
+        "to": "T_4_4",
+        "type": "tests"
+      },
+      {
+        "from": "E_4_4_10",
+        "to": "T_4_4",
+        "type": "tests"
+      },
+      {
+        "from": "E_4_4_11",
+        "to": "T_4_4",
+        "type": "tests"
+      },
+      {
+        "from": "E_4_5_1",
+        "to": "T_4_5",
+        "type": "tests"
+      },
+      {
+        "from": "E_4_5_2",
+        "to": "T_4_5",
+        "type": "tests"
+      },
+      {
+        "from": "E_4_5_3",
+        "to": "T_4_5",
+        "type": "tests"
+      },
+      {
+        "from": "E_4_5_4",
+        "to": "T_4_5",
+        "type": "tests"
+      },
+      {
+        "from": "E_4_5_5",
+        "to": "T_4_5",
+        "type": "tests"
+      },
+      {
+        "from": "E_4_5_6",
+        "to": "T_4_5",
+        "type": "tests"
+      },
+      {
+        "from": "E_4_6_1",
+        "to": "T_4_6",
+        "type": "tests"
+      },
+      {
+        "from": "E_4_6_2",
+        "to": "T_4_6",
+        "type": "tests"
+      },
+      {
+        "from": "E_4_7_1",
+        "to": "T_4_7",
+        "type": "tests"
+      },
+      {
+        "from": "E_4_7_2",
+        "to": "T_4_7",
+        "type": "tests"
+      },
+      {
+        "from": "E_4_8_1",
+        "to": "T_4_8",
+        "type": "tests"
+      },
+      {
+        "from": "E_4_9_1",
+        "to": "T_4_9",
+        "type": "tests"
+      },
+      {
+        "from": "E_4_10_1",
+        "to": "T_4_10",
+        "type": "tests"
+      },
+      {
+        "from": "E_4_11_1",
+        "to": "T_4_11",
+        "type": "tests"
+      },
+      {
+        "from": "E_4_11_2",
+        "to": "T_4_11",
+        "type": "tests"
+      },
+      {
+        "from": "E_4_12_1",
+        "to": "T_4_12",
+        "type": "tests"
+      },
+      {
+        "from": "E_4_12_2",
+        "to": "T_4_12",
+        "type": "tests"
+      },
+      {
+        "from": "E_5_1_1",
+        "to": "T_5_1",
+        "type": "tests"
+      },
+      {
+        "from": "E_5_1_2",
+        "to": "T_5_1",
+        "type": "tests"
+      },
+      {
+        "from": "E_5_1_3",
+        "to": "T_5_1",
+        "type": "tests"
+      },
+      {
+        "from": "E_5_1_4",
+        "to": "T_5_1",
+        "type": "tests"
+      },
+      {
+        "from": "E_5_1_5",
+        "to": "T_5_1",
+        "type": "tests"
+      },
+      {
+        "from": "E_5_1_6",
+        "to": "T_5_1",
+        "type": "tests"
+      },
+      {
+        "from": "E_5_1_7",
+        "to": "T_5_1",
+        "type": "tests"
+      },
+      {
+        "from": "E_5_1_8",
+        "to": "T_5_1",
+        "type": "tests"
+      },
+      {
+        "from": "E_5_1_9",
+        "to": "T_5_1",
+        "type": "tests"
+      },
+      {
+        "from": "E_5_1_10",
+        "to": "T_5_1",
+        "type": "tests"
+      },
+      {
+        "from": "E_5_2_1",
+        "to": "T_5_2",
+        "type": "tests"
+      },
+      {
+        "from": "E_5_3_1",
+        "to": "T_5_3",
+        "type": "tests"
+      },
+      {
+        "from": "E_5_3_2",
+        "to": "T_5_3",
+        "type": "tests"
+      },
+      {
+        "from": "E_5_3_3",
+        "to": "T_5_3",
+        "type": "tests"
+      },
+      {
+        "from": "E_5_3_4",
+        "to": "T_5_3",
+        "type": "tests"
+      },
+      {
+        "from": "E_5_3_5",
+        "to": "T_5_3",
+        "type": "tests"
+      },
+      {
+        "from": "E_5_3_6",
+        "to": "T_5_3",
+        "type": "tests"
+      },
+      {
+        "from": "E_5_3_7",
+        "to": "T_5_3",
+        "type": "tests"
+      },
+      {
+        "from": "E_5_3_8",
+        "to": "T_5_3",
+        "type": "tests"
+      },
+      {
+        "from": "E_5_3_9",
+        "to": "T_5_3",
+        "type": "tests"
+      },
+      {
+        "from": "E_5_3_10",
+        "to": "T_5_3",
+        "type": "tests"
+      },
+      {
+        "from": "E_5_4_1",
+        "to": "T_5_4",
+        "type": "tests"
+      },
+      {
+        "from": "E_5_4_2",
+        "to": "T_5_4",
+        "type": "tests"
+      },
+      {
+        "from": "E_5_5_1",
+        "to": "T_5_5",
+        "type": "tests"
+      },
+      {
+        "from": "E_5_5_2",
+        "to": "T_5_5",
+        "type": "tests"
+      },
+      {
+        "from": "E_5_5_3",
+        "to": "T_5_5",
+        "type": "tests"
+      },
+      {
+        "from": "E_5_5_4",
+        "to": "T_5_5",
+        "type": "tests"
+      },
+      {
+        "from": "E_5_5_5",
+        "to": "T_5_5",
+        "type": "tests"
+      },
+      {
+        "from": "E_5_5_6",
+        "to": "T_5_5",
+        "type": "tests"
+      },
+      {
+        "from": "E_5_5_7",
+        "to": "T_5_5",
+        "type": "tests"
+      },
+      {
+        "from": "E_5_5_8",
+        "to": "T_5_5",
+        "type": "tests"
+      },
+      {
+        "from": "E_5_5_9",
+        "to": "T_5_5",
+        "type": "tests"
+      },
+      {
+        "from": "E_5_5_10",
+        "to": "T_5_5",
+        "type": "tests"
+      },
+      {
+        "from": "E_5_5_11",
+        "to": "T_5_5",
+        "type": "tests"
+      },
+      {
+        "from": "E_5_6_35",
+        "to": "T_5_6",
+        "type": "tests"
+      },
+      {
+        "from": "E_5_6_36",
+        "to": "T_5_6",
+        "type": "tests"
+      },
+      {
+        "from": "E_5_6_37",
+        "to": "T_5_7",
+        "type": "tests"
+      },
+      {
+        "from": "E_5_6_38",
+        "to": "T_5_7",
+        "type": "tests"
+      },
+      {
+        "from": "E_5_6_39",
+        "to": "T_5_8",
+        "type": "tests"
+      },
+      {
+        "from": "E_5_6_40",
+        "to": "T_5_8",
+        "type": "tests"
+      },
+      {
+        "from": "E_5_6_41",
+        "to": "T_5_8",
+        "type": "tests"
+      },
+      {
+        "from": "E_5_6_42",
+        "to": "T_5_9",
+        "type": "tests"
+      },
+      {
+        "from": "E_5_6_43",
+        "to": "T_5_9",
+        "type": "tests"
+      },
+      {
+        "from": "E_5_6_44",
+        "to": "T_5_10",
+        "type": "tests"
+      },
+      {
+        "from": "E_5_6_45",
+        "to": "T_5_10",
+        "type": "tests"
+      },
+      {
+        "from": "E_5_6_46",
+        "to": "T_5_10",
+        "type": "tests"
+      },
+      {
+        "from": "E_5_6_47",
+        "to": "T_5_11",
+        "type": "tests"
+      },
+      {
+        "from": "E_5_6_48",
+        "to": "T_5_12",
+        "type": "tests"
+      },
+      {
+        "from": "E_6_1_1",
+        "to": "T_6_1",
+        "type": "tests"
+      },
+      {
+        "from": "E_6_1_2",
+        "to": "T_6_1",
+        "type": "tests"
+      },
+      {
+        "from": "E_6_1_3",
+        "to": "T_6_1",
+        "type": "tests"
+      },
+      {
+        "from": "E_6_2_1",
+        "to": "T_6_2",
+        "type": "tests"
+      },
+      {
+        "from": "E_6_2_2",
+        "to": "T_6_2",
+        "type": "tests"
+      },
+      {
+        "from": "E_6_2_3",
+        "to": "T_6_2",
+        "type": "tests"
+      },
+      {
+        "from": "E_6_2_4",
+        "to": "T_6_2",
+        "type": "tests"
+      },
+      {
+        "from": "E_6_3_1",
+        "to": "T_6_3",
+        "type": "tests"
+      },
+      {
+        "from": "E_6_3_2",
+        "to": "T_6_3",
+        "type": "tests"
+      },
+      {
+        "from": "E_6_4_1",
+        "to": "T_6_4",
+        "type": "tests"
+      },
+      {
+        "from": "E_6_4_2",
+        "to": "T_6_4",
+        "type": "tests"
+      },
+      {
+        "from": "E_6_5_12",
+        "to": "T_6_5",
+        "type": "tests"
+      },
+      {
+        "from": "E_6_5_13",
+        "to": "T_6_5",
+        "type": "tests"
+      },
+      {
+        "from": "E_6_5_14",
+        "to": "T_6_5",
+        "type": "tests"
+      },
+      {
+        "from": "E_6_5_15",
+        "to": "T_6_6",
+        "type": "tests"
+      },
+      {
+        "from": "E_6_5_16",
+        "to": "T_6_6",
+        "type": "tests"
+      },
+      {
+        "from": "E_6_5_17",
+        "to": "T_6_6",
+        "type": "tests"
+      },
+      {
+        "from": "E_6_5_18",
+        "to": "T_6_7",
+        "type": "tests"
+      },
+      {
+        "from": "E_6_5_19",
+        "to": "T_6_7",
+        "type": "tests"
+      },
+      {
+        "from": "E_6_5_20",
+        "to": "T_6_8",
+        "type": "tests"
+      },
+      {
+        "from": "E_6_5_21",
+        "to": "T_6_8",
+        "type": "tests"
+      },
+      {
+        "from": "E_6_5_22",
+        "to": "T_6_8",
+        "type": "tests"
+      },
+      {
+        "from": "E_6_5_23",
+        "to": "T_6_9",
+        "type": "tests"
+      },
+      {
+        "from": "E_6_5_24",
+        "to": "T_6_9",
+        "type": "tests"
+      },
+      {
+        "from": "E_6_5_25",
+        "to": "T_6_10",
+        "type": "tests"
+      },
+      {
+        "from": "E_6_5_26",
+        "to": "T_6_10",
+        "type": "tests"
+      },
+      {
+        "from": "E_7_1_1",
+        "to": "T_7_1",
+        "type": "tests"
+      },
+      {
+        "from": "E_7_1_2",
+        "to": "T_7_1",
+        "type": "tests"
+      },
+      {
+        "from": "E_7_1_3",
+        "to": "T_7_1",
+        "type": "tests"
+      },
+      {
+        "from": "E_7_3_1",
+        "to": "T_7_3",
+        "type": "tests"
+      },
+      {
+        "from": "E_7_3_2",
+        "to": "T_7_3",
+        "type": "tests"
+      },
+      {
+        "from": "E_7_4_1",
+        "to": "T_7_4",
+        "type": "tests"
+      },
+      {
+        "from": "E_7_4_2",
+        "to": "T_7_4",
+        "type": "tests"
+      },
+      {
+        "from": "E_7_5_1",
+        "to": "T_7_5",
+        "type": "tests"
+      },
+      {
+        "from": "E_7_5_2",
+        "to": "T_7_5",
+        "type": "tests"
+      },
+      {
+        "from": "E_7_6_1",
+        "to": "T_7_6",
+        "type": "tests"
+      },
+      {
+        "from": "E_7_6_2",
+        "to": "T_7_6",
+        "type": "tests"
+      },
+      {
+        "from": "E_7_6_3",
+        "to": "T_7_6",
+        "type": "tests"
+      },
+      {
+        "from": "E_7_6_4",
+        "to": "T_7_6",
+        "type": "tests"
+      },
+      {
+        "from": "E_7_7_1",
+        "to": "T_7_7",
+        "type": "tests"
+      },
+      {
+        "from": "E_7_7_2",
+        "to": "T_7_7",
+        "type": "tests"
+      },
+      {
+        "from": "E_7_7_3",
+        "to": "T_7_7",
+        "type": "tests"
+      },
+      {
+        "from": "E_7_8_1",
+        "to": "T_7_8",
+        "type": "tests"
+      },
+      {
+        "from": "E_7_8_2",
+        "to": "T_7_8",
+        "type": "tests"
+      },
+      {
+        "from": "E_7_9_1",
+        "to": "T_7_9",
+        "type": "tests"
+      },
+      {
+        "from": "E_7_9_2",
+        "to": "T_7_9",
+        "type": "tests"
+      },
+      {
+        "from": "E_7_10_1",
+        "to": "T_7_10",
+        "type": "tests"
+      },
+      {
+        "from": "E_7_11_1",
+        "to": "T_7_11",
+        "type": "tests"
+      },
+      {
+        "from": "E_7_11_2",
+        "to": "T_7_11",
+        "type": "tests"
+      },
+      {
+        "from": "E_8_1_1",
+        "to": "T_8_1",
+        "type": "tests"
+      },
+      {
+        "from": "E_8_2_1",
+        "to": "T_8_2",
+        "type": "tests"
+      },
+      {
+        "from": "E_8_2_2",
+        "to": "T_8_2",
+        "type": "tests"
+      },
+      {
+        "from": "E_8_3_1",
+        "to": "T_8_3",
+        "type": "tests"
+      },
+      {
+        "from": "E_8_4_1",
+        "to": "T_8_4",
+        "type": "tests"
+      },
+      {
+        "from": "E_8_4_2",
+        "to": "T_8_4",
+        "type": "tests"
+      },
+      {
+        "from": "E_8_4_3",
+        "to": "T_8_4",
+        "type": "tests"
+      },
+      {
+        "from": "E_8_4_4",
+        "to": "T_8_4",
+        "type": "tests"
+      },
+      {
+        "from": "E_8_4_5",
+        "to": "T_8_4",
+        "type": "tests"
+      },
+      {
+        "from": "E_8_5_1",
+        "to": "T_8_5",
+        "type": "tests"
+      },
+      {
+        "from": "E_9_1_1",
+        "to": "T_9_1",
+        "type": "tests"
+      },
+      {
+        "from": "E_9_1_2",
+        "to": "T_9_1",
+        "type": "tests"
+      },
+      {
+        "from": "E_9_1_3",
+        "to": "T_9_1",
+        "type": "tests"
+      },
+      {
+        "from": "E_9_3_1",
+        "to": "T_9_3",
+        "type": "tests"
+      },
+      {
+        "from": "E_9_3_2",
+        "to": "T_9_3",
+        "type": "tests"
+      },
+      {
+        "from": "E_9_4_1",
+        "to": "T_9_4",
+        "type": "tests"
+      },
+      {
+        "from": "E_9_4_2",
+        "to": "T_9_4",
+        "type": "tests"
+      },
+      {
+        "from": "E_9_4_3",
+        "to": "T_9_4",
+        "type": "tests"
+      },
+      {
+        "from": "E_9_5_1",
+        "to": "T_9_5",
+        "type": "tests"
+      },
+      {
+        "from": "E_9_6_10",
+        "to": "T_9_6",
+        "type": "tests"
+      },
+      {
+        "from": "E_9_6_11",
+        "to": "T_9_6",
+        "type": "tests"
+      },
+      {
+        "from": "E_9_6_12",
+        "to": "T_9_6",
+        "type": "tests"
+      },
+      {
+        "from": "E_9_6_13",
+        "to": "T_9_7",
+        "type": "tests"
+      },
+      {
+        "from": "E_9_6_14",
+        "to": "T_9_7",
+        "type": "tests"
+      },
+      {
+        "from": "E_9_6_15",
+        "to": "T_9_7",
+        "type": "tests"
+      },
+      {
+        "from": "E_9_6_16",
+        "to": "T_9_8",
+        "type": "tests"
+      },
+      {
+        "from": "E_9_6_17",
+        "to": "T_9_8",
+        "type": "tests"
+      },
+      {
+        "from": "E_9_6_18",
+        "to": "T_9_9",
+        "type": "tests"
+      },
+      {
+        "from": "E_9_6_19",
+        "to": "T_9_9",
+        "type": "tests"
+      },
+      {
+        "from": "E_10_1_1",
+        "to": "T_10_1",
+        "type": "tests"
+      },
+      {
+        "from": "E_10_2_1",
+        "to": "T_10_2",
+        "type": "tests"
+      },
+      {
+        "from": "E_10_3_1",
+        "to": "T_10_3",
+        "type": "tests"
+      },
+      {
+        "from": "E_10_4_1",
+        "to": "T_10_4",
+        "type": "tests"
+      },
+      {
+        "from": "E_10_5_1",
+        "to": "T_10_5",
+        "type": "tests"
+      },
+      {
+        "from": "E_10_6_1",
+        "to": "T_10_6",
+        "type": "tests"
+      },
+      {
+        "from": "E_10_7_1",
+        "to": "T_10_7",
+        "type": "tests"
+      },
+      {
+        "from": "E_10_8_1",
+        "to": "T_10_8",
+        "type": "tests"
+      },
+      {
+        "from": "E_11_4_1",
+        "to": "T_11_4",
+        "type": "tests"
+      }
+    ],
+    "concept_dependencies": [
+      {
+        "from": "T_2_6",
+        "to": "T_2_2",
+        "type": "depends_on"
+      },
+      {
+        "from": "T_2_6",
+        "to": "T_2_5",
+        "type": "depends_on"
+      },
+      {
+        "from": "T_2_8",
+        "to": "T_2_2",
+        "type": "depends_on"
+      },
+      {
+        "from": "T_3_7",
+        "to": "T_3_3",
+        "type": "depends_on"
+      },
+      {
+        "from": "T_3_8",
+        "to": "T_3_6",
+        "type": "depends_on"
+      },
+      {
+        "from": "T_4_4",
+        "to": "T_4_3",
+        "type": "depends_on"
+      },
+      {
+        "from": "T_4_5",
+        "to": "T_4_3",
+        "type": "depends_on"
+      },
+      {
+        "from": "T_5_2",
+        "to": "T_5_1",
+        "type": "depends_on"
+      },
+      {
+        "from": "T_5_3",
+        "to": "T_5_2",
+        "type": "depends_on"
+      },
+      {
+        "from": "T_5_4",
+        "to": "T_5_2",
+        "type": "depends_on"
+      },
+      {
+        "from": "T_5_5",
+        "to": "T_5_2",
+        "type": "depends_on"
+      },
+      {
+        "from": "T_6_3",
+        "to": "T_6_2",
+        "type": "depends_on"
+      },
+      {
+        "from": "ST_6_3_1",
+        "to": "T_6_2",
+        "type": "depends_on"
+      },
+      {
+        "from": "ST_6_3_2",
+        "to": "T_6_2",
+        "type": "depends_on"
+      },
+      {
+        "from": "T_6_4",
+        "to": "T_6_2",
+        "type": "depends_on"
+      },
+      {
+        "from": "ST_6_4_2",
+        "to": "T_6_2",
+        "type": "depends_on"
+      },
+      {
+        "from": "T_7_2",
+        "to": "T_7_1",
+        "type": "depends_on"
+      },
+      {
+        "from": "T_7_3",
+        "to": "T_7_2",
+        "type": "depends_on"
+      },
+      {
+        "from": "T_7_4",
+        "to": "T_7_2",
+        "type": "depends_on"
+      },
+      {
+        "from": "T_9_3",
+        "to": "T_9_2",
+        "type": "depends_on"
+      },
+      {
+        "from": "T_9_5",
+        "to": "T_9_2",
+        "type": "depends_on"
+      },
+      {
+        "from": "T_3_9",
+        "to": "T_3_5",
+        "type": "depends_on"
+      },
+      {
+        "from": "T_5_5",
+        "to": "T_3_5",
+        "type": "depends_on"
+      },
+      {
+        "from": "T_6_5",
+        "to": "T_3_5",
+        "type": "depends_on"
+      },
+      {
+        "from": "T_8_5",
+        "to": "T_3_5",
+        "type": "depends_on"
+      },
+      {
+        "from": "T_9_5",
+        "to": "T_3_5",
+        "type": "depends_on"
+      },
+      {
+        "from": "T_5_6",
+        "to": "T_5_5",
+        "type": "depends_on"
+      },
+      {
+        "from": "T_5_7",
+        "to": "T_5_5",
+        "type": "depends_on"
+      },
+      {
+        "from": "T_9_6",
+        "to": "T_6_5",
+        "type": "depends_on"
+      },
+      {
+        "from": "T_9_6",
+        "to": "T_9_5",
+        "type": "depends_on"
+      },
+      {
+        "from": "T_7_5",
+        "to": "T_2_5",
+        "type": "depends_on"
+      },
+      {
+        "from": "T_7_5",
+        "to": "T_4_6",
+        "type": "depends_on"
+      },
+      {
+        "from": "T_4_9",
+        "to": "T_3_8",
+        "type": "depends_on"
+      },
+      {
+        "from": "T_5_10",
+        "to": "T_4_9",
+        "type": "depends_on"
+      },
+      {
+        "from": "T_6_8",
+        "to": "T_5_10",
+        "type": "depends_on"
+      },
+      {
+        "from": "T_7_10",
+        "to": "T_6_8",
+        "type": "depends_on"
+      },
+      {
+        "from": "T_3_6",
+        "to": "T_2_6",
+        "type": "depends_on"
+      },
+      {
+        "from": "T_4_7",
+        "to": "T_3_6",
+        "type": "depends_on"
+      },
+      {
+        "from": "T_5_7",
+        "to": "T_4_7",
+        "type": "depends_on"
+      },
+      {
+        "from": "T_6_7",
+        "to": "T_5_7",
+        "type": "depends_on"
+      },
+      {
+        "from": "T_7_9",
+        "to": "T_6_7",
+        "type": "depends_on"
+      },
+      {
+        "from": "T_9_8",
+        "to": "T_7_6",
+        "type": "depends_on"
+      },
+      {
+        "from": "T_6_7",
+        "to": "T_6_6",
+        "type": "depends_on"
+      },
+      {
+        "from": "T_6_10",
+        "to": "T_6_7",
+        "type": "depends_on"
+      },
+      {
+        "from": "T_7_6",
+        "to": "T_6_7",
+        "type": "depends_on"
+      },
+      {
+        "from": "T_5_12",
+        "to": "T_5_11",
+        "type": "depends_on"
+      }
+    ]
+  },
+  "chapters": [],
+  "unresolved_chapters": []
+}
