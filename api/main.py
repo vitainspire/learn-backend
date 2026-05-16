@@ -9,7 +9,7 @@ from fastapi import FastAPI, HTTPException, Depends, Header, Request
 from fastapi.responses import FileResponse, Response
 from fastapi.exceptions import RequestValidationError
 from fastapi.staticfiles import StaticFiles
-from pydantic import BaseModel
+from pydantic import BaseModel, field_validator
 from datetime import datetime
 
 import sys
@@ -50,8 +50,15 @@ app.mount("/output", StaticFiles(directory=str(OUTPUT_DIR)), name="output")
 # Request models
 # ---------------------------------------------------------------------------
 
-class LessonPlanRequest(BaseModel):
-    grade: str
+class _GradeCoerceMixin(BaseModel):
+    grade: Union[str, int]
+
+    @field_validator("grade", mode="before")
+    @classmethod
+    def coerce_grade_to_str(cls, v):
+        return str(v)
+
+class LessonPlanRequest(_GradeCoerceMixin):
     book: str
     chapter_idx: int
     topic_idx: int
@@ -69,8 +76,7 @@ class TeachTopicRequest(BaseModel):
     topic_idx: int
     teacher_id: str = "00000000-0000-0000-0000-000000000001"
 
-class StudyPlanRequest(BaseModel):
-    grade: str
+class StudyPlanRequest(_GradeCoerceMixin):
     book: str
     chapter_idx: int
     topic_idx: int
@@ -94,8 +100,7 @@ class QuizSubmission(BaseModel):
 class VisualGuideRequest(BaseModel):
     lesson_plan: dict
 
-class ElementaryLessonRequest(BaseModel):
-    grade: str
+class ElementaryLessonRequest(_GradeCoerceMixin):
     subject: str
     topic: str
     duration: int
@@ -108,10 +113,9 @@ class ElementaryLessonRequest(BaseModel):
     student_profile: Optional[dict] = None  # inline fallback
     learning_gaps: Optional[list] = None
 
-class WorksheetRequest(BaseModel):
+class WorksheetRequest(_GradeCoerceMixin):
     lesson_plan: Union[dict, str]
     topic_name: str
-    grade: str
     subject: str
     num_questions: Optional[int] = 15
     difficulty: Optional[str] = "mixed"
@@ -125,11 +129,10 @@ class GradeWorksheetRequest(BaseModel):
     worksheet: dict          # original worksheet JSON from /api/generate-worksheet
     student_answers: dict    # {str(question_number): student_answer}
 
-class SubmitRecoveryWorksheetRequest(BaseModel):
+class SubmitRecoveryWorksheetRequest(_GradeCoerceMixin):
     student_id:     str
     teacher_id:     Optional[str] = None
     topic_name:     str
-    grade:          str
     subject:        str
     worksheet:      dict   # original recovery worksheet JSON
     student_answers: dict  # {str(question_number): student_answer}
@@ -140,30 +143,27 @@ class AssignWorksheetRequest(BaseModel):
     pass_threshold: int           = 60
     due_date:       Optional[str] = None   # ISO date string e.g. "2026-05-10"
 
-class AnswerFeedbackRequest(BaseModel):
+class AnswerFeedbackRequest(_GradeCoerceMixin):
     question:        str
     question_type:   str          # mcq, fill_blank, short_answer, true_false, match
     student_answer:  str
     correct_answer:  str
-    grade:           str
     subject:         Optional[str] = ""
     hint:            Optional[str] = ""
     rubric:          Optional[str] = ""
 
-class RecoveryWorksheetRequest(BaseModel):
+class RecoveryWorksheetRequest(_GradeCoerceMixin):
     student_id: Optional[str] = None
     topic_name: str
-    grade: str
     subject: str
     learning_gaps: Optional[list[str]] = None
     num_questions: Optional[int] = 10
     difficulty: Optional[str] = "easy"
     focus_areas: Optional[list[str]] = None
 
-class QuizGenerationRequest(BaseModel):
+class QuizGenerationRequest(_GradeCoerceMixin):
     lesson_plan: Optional[dict] = None
     topic_name: str
-    grade: str
     subject: str
     book: Optional[str] = None
     chapter_idx: Optional[int] = None
@@ -220,8 +220,7 @@ class UpdateStudentRequest(BaseModel):
 
 # --- Week planning ---
 
-class WeekPlanCreateRequest(BaseModel):
-    grade: str
+class WeekPlanCreateRequest(_GradeCoerceMixin):
     subject: str
     week_start_date: str          # "YYYY-MM-DD" (must be a Monday)
     concepts: list[str]           # unordered list; AI will sequence them
