@@ -1825,6 +1825,19 @@ _STORY_VALUES = [
     "Leadership",
 ]
 
+_FALLBACK_STORIES = {
+    "Perseverance": {"title": "The Last Climb", "emoji": "🧗", "story": "Mia had tried to reach the summit six times. Every attempt ended in storm clouds and turned-back boots. On the seventh try, her legs screamed and her pack felt like concrete. She stopped, breathed, and took one more step — then another. When the clouds parted and the peak stood beneath her feet, she understood that the mountain hadn't changed. She had.", "lesson": "The Lesson: Perseverance means the summit is never really the mountain — it's the version of yourself willing to take one more step.", "value": "Perseverance"},
+    "Empathy": {"title": "The Borrowed Umbrella", "emoji": "☂️", "story": "On a rainy afternoon, Leo noticed the new kid standing alone at the bus stop, soaked through. Leo only had one umbrella. He walked over and held it above them both, arriving home damp but not minding at all. The next week, the new kid saved Leo a seat on the bus without being asked.", "lesson": "The Lesson: Empathy is giving someone shelter even when it means getting a little wet yourself.", "value": "Empathy"},
+    "Courage": {"title": "Speak Up", "emoji": "🦁", "story": "Everyone laughed when the answer was wrong — everyone except Priya. She raised her hand slowly, her heart hammering. 'That wasn't funny,' she said quietly. The laughter stopped. It took only five words, but those five words made the classroom feel safer for everyone in it.", "lesson": "The Lesson: Courage isn't the absence of fear — it's doing the right thing while your heart is still hammering.", "value": "Courage"},
+    "Kindness": {"title": "The Extra Slice", "emoji": "🍕", "story": "At the team lunch, Nico noticed Yusuf had forgotten his money and was staring quietly at the table. Without saying anything, Nico slid his own tray over so both of them could reach it. Yusuf never forgot. Three months later, when Nico missed the science notes, Yusuf's hand-written copy was already waiting on his desk.", "lesson": "The Lesson: Kindness is an investment that always pays forward.", "value": "Kindness"},
+    "Honesty": {"title": "The Broken Trophy", "emoji": "🏆", "story": "The trophy fell in an empty room and only Sam knew. He could say nothing — nobody would ever find out. But at dinner, his stomach churned so badly he couldn't eat. He told the coach first thing in the morning. The coach replaced the trophy, but said the best thing Sam had done all season was walk into her office.", "lesson": "The Lesson: Honesty is the only story you can live with comfortably.", "value": "Honesty"},
+    "Teamwork": {"title": "Eight Hands, One Kite", "emoji": "🪁", "story": "Four kids, four different ideas, and one very tangled kite string. They argued for ten minutes. Then Zara said, 'Let's try mine first, then yours.' They took turns. The kite that finally rose was made of bits from every plan — and it flew higher than any of them had imagined alone.", "lesson": "The Lesson: Teamwork means your idea doesn't have to win for the team to succeed.", "value": "Teamwork"},
+    "Creativity": {"title": "The Empty Canvas", "emoji": "🎨", "story": "Every student had the same white paper and the same set of paints. But when Jordan looked at the white square, she didn't see blankness — she saw a problem waiting for an unusual solution. She painted upside-down, signed the corner at the top. The art teacher had never flipped a graded paper before.", "lesson": "The Lesson: Creativity is seeing the blank page as an invitation, not an obstacle.", "value": "Creativity"},
+    "Resilience": {"title": "After the Score", "emoji": "⚽", "story": "Carlos missed the penalty in the final minute. His team lost. He sat on the grass long after everyone left. Then he stood up, collected the ball, and kicked it into the empty net — once, twice, a hundred times — until the darkness came. The next season, he scored in the final minute.", "lesson": "The Lesson: Resilience is what you do after the whistle blows and the crowd goes home.", "value": "Resilience"},
+    "Patience": {"title": "The Seedling Window", "emoji": "🌱", "story": "Every morning before school, Aisha watered her seedling and checked for a sprout. Nothing. For three weeks — nothing. She kept watering. On the twenty-second day, a tiny green curl pushed through the soil. Her mother said some things don't grow faster just because you want them to. Aisha finally understood what her mother meant.", "lesson": "The Lesson: Patience is trusting that the right things grow on their own schedule.", "value": "Patience"},
+    "Leadership": {"title": "Nobody's Waiting", "emoji": "🧭", "story": "The group stood at the trailhead arguing about which path to take. Minutes passed. Omar didn't know which path was right either — but he knew that standing still was definitely wrong. He picked the wider trail, said 'we can always turn back,' and started walking. The others followed. They reached the viewpoint with an hour to spare.", "lesson": "The Lesson: Leadership is starting to move when everyone is waiting for someone else to go first.", "value": "Leadership"},
+}
+
 @app.post("/api/student/daily-story")
 async def generate_daily_story(req: DailyStoryRequest):
     """
@@ -1858,13 +1871,19 @@ RULES:
   "value": "{value}"
 }}"""
 
-    result = safe_generate_content(
-        prompt,
-        is_json=True,
-        config={"max_output_tokens": 1024, "temperature": 0.85},
-        tier="fast",
-    )
-    return result
+    try:
+        result = safe_generate_content(
+            prompt,
+            is_json=True,
+            config={"max_output_tokens": 2048, "temperature": 0.85},
+            tier="fast",
+        )
+        if isinstance(result, dict) and result.get("story"):
+            return result
+        raise ValueError("Empty or invalid story returned by AI")
+    except Exception as e:
+        print(f"[daily-story] AI generation failed ({e}), returning fallback story for '{value}'")
+        return _FALLBACK_STORIES.get(value, _FALLBACK_STORIES["Perseverance"])
 
 
 @app.get("/api/student/{student_id}/study-plans")
