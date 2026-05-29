@@ -4,10 +4,10 @@ OpenRouter API client: model selection, JSON repair, and rate-limited generation
 OpenRouter is OpenAI-compatible — all AI calls funnel through here.
 
 Default tier → model mapping (override any tier via env var):
-  fast      → google/gemini-2.5-flash-lite   (paid, fast + multimodal)
-  quality   → google/gemini-2.5-flash        (paid, best JSON quality)
-  reasoning → google/gemini-2.5-flash        (paid, strong reasoning)
-  vision    → google/gemini-2.5-flash-lite   (paid, image+text)
+  fast      → google/gemini-2.5-flash   (paid, fast + multimodal)
+  quality   → google/gemini-2.5-flash   (paid, best JSON quality)
+  reasoning → google/gemini-2.5-flash   (paid, strong reasoning)
+  vision    → google/gemini-2.5-flash   (paid, image+text)
 """
 import os
 import json
