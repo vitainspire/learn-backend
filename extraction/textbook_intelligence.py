@@ -3,7 +3,6 @@ import json
 import fitz  # PyMuPDF
 from pathlib import Path
 from datetime import datetime
-import requests
 import sys, os
 sys.path.insert(0, os.path.dirname(os.path.dirname(__file__)))
 try:
@@ -14,6 +13,7 @@ try:
     from core.models import get_default_teacher, get_default_student
 except ImportError:
     get_default_teacher = get_default_student = None
+from services.ai_client import safe_generate_content as _ai_call
 
 # ── Config ────────────────────────────────────────────────────────────────────
 try:
@@ -21,12 +21,6 @@ try:
     load_dotenv(Path(__file__).resolve().parent.parent.parent / ".env")
 except ImportError:
     pass
-
-OPENROUTER_API_KEY = os.environ.get("OPENROUTER_API_KEY")
-if not OPENROUTER_API_KEY:
-    raise EnvironmentError("OPENROUTER_API_KEY is not set. Add it to your .env file.")
-OPENROUTER_MODEL = os.environ.get("OPENROUTER_MODEL", "google/gemini-2.5-flash")
-_OPENROUTER_URL  = "https://openrouter.ai/api/v1/chat/completions"
 
 TOC_PROMPT = """
 Analyze the following textbook Table of Contents (TOC) and extract the chapters.
@@ -45,7 +39,6 @@ Format as JSON:
 TOC TEXT:
 {text}
 """
-
 
 # ── PDF Extraction ────────────────────────────────────────────────────────────
 
@@ -93,40 +86,17 @@ def detect_chapters(pdf_path: str):
     base_delay = 5
     
     print(f"[PDF] Sending {len(toc_text)} characters of TOC to AI for parsing...")
-    raw_text = None
-    for attempt in range(max_retries):
-        try:
-            resp = requests.post(
-                _OPENROUTER_URL,
-                headers={"Authorization": f"Bearer {OPENROUTER_API_KEY}", "Content-Type": "application/json"},
-                json={
-                    "model": OPENROUTER_MODEL,
-                    "messages": [
-                        {"role": "system", "content": "You must respond with valid JSON only. No markdown fences, no preamble."},
-                        {"role": "user", "content": TOC_PROMPT.format(text=toc_text)},
-                    ],
-                    "max_tokens": 4096,
-                    "temperature": 0.2,
-                },
-                timeout=120,
-            )
-            resp.raise_for_status()
-            raw_text = resp.json()["choices"][0]["message"]["content"]
-            break
-        except Exception as e:
-            if "429" in str(e) and attempt < max_retries - 1:
-                sleep_time = base_delay * (2 ** attempt)
-                print(f"[RETRY] TOC Rate limited (429). Retrying in {sleep_time}s...")
-                time.sleep(sleep_time)
-            else:
-                print(f"[ERROR] TOC detection failed: {e}")
-                raise e
-
     try:
-        toc_data = json.loads(raw_text or "{}")
-        chapters_raw = toc_data.get('chapters', [])
-    except:
-        print("[ERROR] Failed to parse TOC JSON. Falling back to regex.")
+        toc_data = _ai_call(
+            TOC_PROMPT.format(text=toc_text),
+            config={"max_output_tokens": 4096, "temperature": 0.1},
+            is_json=True,
+            max_retries=max_retries,
+            tier="fast",
+        )
+        chapters_raw = toc_data.get("chapters", [])
+    except Exception as e:
+        print(f"[ERROR] TOC detection failed: {e}. Falling back to regex.")
         return []
 
     if not chapters_raw:
@@ -450,102 +420,91 @@ def generate_ontology(pdf_path: str, output_dir: str = "output"):
         "chapters": [] # Legacy support
     }
     
-    for idx, chunk in enumerate(chunks):
+    import time
+    import threading
+    from concurrent.futures import ThreadPoolExecutor, as_completed
+
+    merge_lock = threading.Lock()
+
+    def _run_stage(prompt_template, idx, chunk):
+        chap_ctx = f"Chapter Number: {idx+1}, Title: {chunk['title']}"
+        return _ai_call(
+            prompt_template.format(text=chunk["text"], chapter_context=chap_ctx),
+            config={"max_output_tokens": 65536, "temperature": 0.2},
+            is_json=True,
+            max_retries=5,
+            tier="quality",
+        )
+
+    def _merge_data(chunk_data):
+        chunk_entities = chunk_data.get('entities', {})
+        for key in ["chapters", "topics", "exercises", "sidebars"]:
+            existing_ids = {e['id'] for e in full_ontology['entities'][key]}
+            for entity in chunk_entities.get(key, []):
+                if entity.get('id') not in existing_ids:
+                    if key == "topics":
+                        inline_subtopics = entity.pop("subtopics", [])
+                        st_existing = {e['id'] for e in full_ontology['entities']['subtopics']}
+                        for st in inline_subtopics:
+                            st['topic_id'] = entity['id']
+                            if st.get('id') not in st_existing:
+                                full_ontology['entities']['subtopics'].append(st)
+                                st_existing.add(st.get('id'))
+                    full_ontology['entities'][key].append(entity)
+                    existing_ids.add(entity.get('id'))
+
+        st_existing = {e['id'] for e in full_ontology['entities']['subtopics']}
+        for st in chunk_entities.get('subtopics', []):
+            if st.get('id') not in st_existing:
+                full_ontology['entities']['subtopics'].append(st)
+                st_existing.add(st.get('id'))
+
+        new_graphs = chunk_data.get('graphs', {})
+        for graph_key in ["chapter_structure", "exercise_mapping", "concept_dependencies"]:
+            if graph_key not in full_ontology['graphs']:
+                full_ontology['graphs'][graph_key] = []
+            existing_edges = {(e['from'], e['to'], e.get('type')) for e in full_ontology['graphs'][graph_key]}
+            for edge in new_graphs.get(graph_key, []):
+                edge_tuple = (edge.get('from'), edge.get('to'), edge.get('type'))
+                if edge_tuple not in existing_edges:
+                    full_ontology['graphs'][graph_key].append(edge)
+                    existing_edges.add(edge_tuple)
+
+    def process_single_chapter(idx, chunk):
         print(f"[AI] Analyzing {chunk['title']} ({idx+1}/{len(chunks)})...")
-        
-        def run_stage(prompt_template, stage_name):
-            print(f"  -> {stage_name}...")
-            import time
-            max_retries = 5
-            base_delay = 5  # seconds
-            for attempt in range(max_retries):
-                try:
-                    chap_ctx = f"Chapter Number: {idx+1}, Title: {chunk['title']}"
-                    api_resp = requests.post(
-                        _OPENROUTER_URL,
-                        headers={"Authorization": f"Bearer {OPENROUTER_API_KEY}", "Content-Type": "application/json"},
-                        json={
-                            "model": OPENROUTER_MODEL,
-                            "messages": [
-                                {"role": "system", "content": "You must respond with valid JSON only. No markdown fences, no preamble."},
-                                {"role": "user", "content": prompt_template.format(text=chunk['text'], chapter_context=chap_ctx)},
-                            ],
-                            "max_tokens": 65536,
-                            "temperature": 0.2,
-                        },
-                        timeout=180,
-                    )
-                    api_resp.raise_for_status()
-                    raw = api_resp.json()["choices"][0]["message"]["content"]
-                    return robust_json_parse(raw), raw
-                except Exception as e:
-                    if "429" in str(e) and attempt < max_retries - 1:
-                        sleep_time = base_delay * (2 ** attempt)
-                        print(f"     [RETRY] Rate limited (429). Retrying in {sleep_time}s...")
-                        time.sleep(sleep_time)
-                    else:
-                        raise e
-            return {}, ""
-
-        def merge_data(chunk_data):
-            chunk_entities = chunk_data.get('entities', {})
-            # Merge Entities (lift subtopics out of topics into their own list)
-            for key in ["chapters", "topics", "exercises", "sidebars"]:
-                existing_ids = {e['id'] for e in full_ontology['entities'][key]}
-                for entity in chunk_entities.get(key, []):
-                    if entity.get('id') not in existing_ids:
-                        # Extract inline subtopics before storing the topic
-                        if key == "topics":
-                            inline_subtopics = entity.pop("subtopics", [])
-                            st_existing = {e['id'] for e in full_ontology['entities']['subtopics']}
-                            for st in inline_subtopics:
-                                st['topic_id'] = entity['id']
-                                if st.get('id') not in st_existing:
-                                    full_ontology['entities']['subtopics'].append(st)
-                                    st_existing.add(st.get('id'))
-                        full_ontology['entities'][key].append(entity)
-                        existing_ids.add(entity.get('id'))
-
-            # Also handle top-level subtopics if AI returns them separately
-            st_existing = {e['id'] for e in full_ontology['entities']['subtopics']}
-            for st in chunk_entities.get('subtopics', []):
-                if st.get('id') not in st_existing:
-                    full_ontology['entities']['subtopics'].append(st)
-                    st_existing.add(st.get('id'))
-
-            # Merge Graphs
-            new_graphs = chunk_data.get('graphs', {})
-            for graph_key in ["chapter_structure", "exercise_mapping", "concept_dependencies"]:
-                if graph_key not in full_ontology['graphs']:
-                    full_ontology['graphs'][graph_key] = []
-                existing_edges = {(e['from'], e['to'], e.get('type')) for e in full_ontology['graphs'][graph_key]}
-                for edge in new_graphs.get(graph_key, []):
-                    edge_tuple = (edge.get('from'), edge.get('to'), edge.get('type'))
-                    if edge_tuple not in existing_edges:
-                        full_ontology['graphs'][graph_key].append(edge)
-                        existing_edges.add(edge_tuple)
-
         try:
-            # Stage 1: Chapters
-            data_s1, raw_s1 = run_stage(STAGE1_PROMPT, "Stage 1: Chapters")
-            merge_data(data_s1)
-            
-            # Stage 2: Topics
-            data_s2, raw_s2 = run_stage(STAGE2_PROMPT, "Stage 2: Topics & Dependencies")
-            merge_data(data_s2)
-            
-            # Stage 3: Exercises
-            data_s3, raw_s3 = run_stage(STAGE3_PROMPT, "Stage 3: Exercises & Details")
-            merge_data(data_s3)
-
-            # Update Legacy Structure for compatibility
-            rebuild_legacy_chapters(full_ontology)
-
+            d1 = _run_stage(STAGE1_PROMPT, idx, chunk)
+            d2 = _run_stage(STAGE2_PROMPT, idx, chunk)
+            d3 = _run_stage(STAGE3_PROMPT, idx, chunk)
+            return idx, d1, d2, d3
         except Exception as e:
-            print(f"[ERROR] Failed to parse chapter {idx+1} JSON: {e}")
+            print(f"[ERROR] Chapter {idx+1} failed: {e}")
             error_log = job_dir / f"error_chunk_{idx+1}.txt"
             error_log.write_text(f"Exception: {e}", encoding="utf-8")
-            print(f"      Log saved to {error_log}")
+            return idx, {}, {}, {}
+
+    # Free tier: 3 workers max — paid tier: raise to 5
+    MAX_WORKERS = 3
+
+    all_results = {}
+    with ThreadPoolExecutor(max_workers=MAX_WORKERS) as executor:
+        futures = {
+            executor.submit(process_single_chapter, idx, chunk): idx
+            for idx, chunk in enumerate(chunks)
+        }
+        for future in as_completed(futures):
+            idx, d1, d2, d3 = future.result()
+            all_results[idx] = (d1, d2, d3)
+
+    # Merge in chapter order, then rebuild legacy structure once
+    for idx in sorted(all_results.keys()):
+        d1, d2, d3 = all_results[idx]
+        with merge_lock:
+            _merge_data(d1)
+            _merge_data(d2)
+            _merge_data(d3)
+
+    rebuild_legacy_chapters(full_ontology)
 
     # Final Merge & Sort
     # Final Merge & Sort

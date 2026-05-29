@@ -1,26 +1,22 @@
 """
-Configuration for NVIDIA VLM and other services
+Configuration — all AI calls now go through OpenRouter.
 """
 import os
 from dotenv import load_dotenv
 
-# Load environment variables
 load_dotenv()
 
-class NVIDIAConfig:
-    """NVIDIA API configuration"""
-    vlm_key = os.getenv("NVIDIA_VLM_KEY", "")
-    
+
 class OpenRouterConfig:
-    """OpenRouter API configuration"""
     api_key = os.getenv("OPENROUTER_API_KEY", "")
-    model = os.getenv("OPENROUTER_MODEL", "google/gemini-2.5-flash")
+    model_fast      = os.getenv("OPENROUTER_MODEL_FAST",      "deepseek/deepseek-v4-flash:free")
+    model_quality   = os.getenv("OPENROUTER_MODEL_QUALITY",   "nvidia/nemotron-3-super-120b-a12b:free")
+    model_reasoning = os.getenv("OPENROUTER_MODEL_REASONING", "nvidia/nemotron-3-super-120b-a12b:free")
+    model_vision    = os.getenv("OPENROUTER_MODEL_VISION",    "moonshotai/kimi-k2.6:free")
+
 
 class Config:
-    """Main configuration class"""
-    nvidia = NVIDIAConfig()
     openrouter = OpenRouterConfig()
-    # Legacy alias kept for any code still referencing config.gemini
-    gemini = OpenRouterConfig()
+
 
 config = Config()

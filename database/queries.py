@@ -754,6 +754,46 @@ def get_weekly_summary(db, week_plan_id: str) -> Optional[dict]:
 
 
 # ---------------------------------------------------------------------------
+# Teacher notifications
+# ---------------------------------------------------------------------------
+
+def create_teacher_notification(
+    db,
+    teacher_id: str,
+    type_: str,
+    message: str,
+    topic_name: Optional[str] = None,
+    payload: Optional[dict] = None,
+) -> None:
+    db.table("teacher_notifications").insert({
+        "teacher_id": teacher_id,
+        "type": type_,
+        "message": message,
+        "topic_name": topic_name,
+        "payload": payload or {},
+        "is_read": False,
+    }).execute()
+
+
+def get_teacher_notifications(db, teacher_id: str) -> list[dict]:
+    resp = (
+        db.table("teacher_notifications")
+        .select("*")
+        .eq("teacher_id", teacher_id)
+        .eq("is_read", False)
+        .order("created_at", desc=True)
+        .execute()
+    )
+    return resp.data if resp and resp.data else []
+
+
+def clear_teacher_notifications(db, teacher_id: str) -> None:
+    db.table("teacher_notifications").update({"is_read": True}).eq(
+        "teacher_id", teacher_id
+    ).eq("is_read", False).execute()
+
+
+# ---------------------------------------------------------------------------
 # Study Plans & Quiz History
 # ---------------------------------------------------------------------------
 

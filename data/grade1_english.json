@@ -1,1051 +1,2075 @@
 {
   "subject": "Grade1 English",
+  "schema_version": "4.0",
+  "page_index": "dual",
   "entities": {
     "chapters": [
       {
         "id": "C_1",
         "number": 1,
-        "title": "AMMU AND HER FAMILY",
-        "page_start": 11,
-        "page_end": 28,
+        "title": "Ammu and Her Family",
+        "pdf_page_start": 10,
+        "pdf_page_end": 27,
+        "book_page_start": 1,
+        "book_page_end": 18,
         "activity_summary": [
-          "OTHER"
-        ]
-      },
-      {
-        "id": "C_2",
-        "number": 2,
-        "title": "GOING TO SCHOOL",
-        "page_start": 29,
-        "page_end": 42,
-        "activity_summary": [
-          "OTHER"
-        ]
-      },
-      {
-        "id": "C_3",
-        "number": 3,
-        "title": "AMMU’S SCHOOL",
-        "page_start": 43,
-        "page_end": 60,
-        "activity_summary": [
-          "OTHER"
+          "Coloring pictures of family",
+          "Identifying family members and their names",
+          "Singing songs about family and the alphabet",
+          "Drawing personal home and school",
+          "Writing one's own name",
+          "Practicing letter formation for A, B, C, D"
         ]
       },
       {
         "id": "C_4",
         "number": 4,
         "title": "AMMU AND HER FRIENDS AT HER SCHOOL",
-        "page_start": 61,
-        "page_end": 68,
+        "pdf_page_start": 51,
+        "pdf_page_end": 68,
+        "book_page_start": 51,
+        "book_page_end": 68,
         "activity_summary": [
-          "OTHER"
+          "Coloring pictures of Ammu and friends at school",
+          "Observing and describing various school activities",
+          "Story comprehension about a pet squirrel in the classroom",
+          "Identifying and expressing favorite colors",
+          "Naming and coloring clothes",
+          "Learning about hygiene practices like washing hands, legs, and face",
+          "Singing songs related to hygiene and school activities",
+          "Identifying and naming parts of the body",
+          "Drawing and discussing personal pets",
+          "Practicing letter recognition and writing for M, N, O, P"
         ]
       },
       {
-        "id": "C_5",
-        "number": 5,
-        "title": "THINGS I DO",
-        "page_start": 69,
-        "page_end": 98,
-        "activity_summary": [
-          "OTHER"
-        ]
-      },
-      {
-        "id": "C_6",
-        "number": 6,
-        "title": "AT THE ZOO",
-        "page_start": 99,
-        "page_end": 116,
-        "activity_summary": [
-          "OTHER"
-        ]
-      },
-      {
-        "id": "C_7",
+        "id": "C_2",
         "number": 7,
         "title": "FRUITS AND VEGETABLES",
-        "page_start": 117,
-        "page_end": 133,
+        "pdf_page_start": 107,
+        "pdf_page_end": 119,
+        "book_page_start": 107,
+        "book_page_end": 119,
         "activity_summary": [
-          "OTHER"
+          "Colouring pictures of fruits and vegetables",
+          "Answering questions about a market visit",
+          "Discussing food preferences and healthy eating habits",
+          "Singing a song about fruits",
+          "Categorizing various food items as fruits or vegetables",
+          "Reading a story about vegetables competing for an award"
         ]
+      }
+    ],
+    "concept_nodes": [
+      {
+        "id": "CN_LOGICAL_REASONING",
+        "label": "LOGICAL_REASONING",
+        "description": "Skills involving identification, classification, pattern recognition, and understanding relationships."
       },
       {
-        "id": "C_8",
-        "number": 8,
-        "title": "About the Textbook",
-        "page_start": 124,
-        "page_end": 126,
-        "activity_summary": [
-          "OTHER"
-        ]
+        "id": "CN_NUMBER_SENSE",
+        "label": "NUMBER_SENSE",
+        "description": "Understanding quantities, counting, and number relationships."
+      },
+      {
+        "id": "CN_VISUAL_PATTERNING",
+        "label": "VISUAL_PATTERNING",
+        "description": "Recognizing, creating, and representing visual forms and spatial arrangements."
       }
     ],
     "topics": [
       {
         "id": "T_1_1",
-        "name": "AMMU AND HER FAMILY",
-        "summary": "This unit introduces Ammu, her family members, and her pet squirrel, Bittu. It covers basic family identification, personal introductions, and the initial letters of the alphabet (A-D) through songs and activities.",
+        "name": "Introducing Ammu's Family",
+        "summary": "This topic introduces Ammu, her family members, and their daily life through a narrative and visual context, encouraging students to observe and identify characters.",
+        "embedding_text": "Grade 1 English: Ammu and Her Family — Introducing Ammu's Family: Students learn to identify Ammu and her family members through a story and visual cues, fostering observational and identification skills.",
         "chapter_id": "C_1",
-        "page_start": 11,
-        "page_end": 28,
+        "pdf_page_start": 10,
+        "pdf_page_end": 12,
+        "book_page_start": 1,
+        "book_page_end": 3,
         "prerequisites": [],
-        "canonical_type": "OTHER",
+        "canonical_type": "STORY",
         "concepts": [
-          "LETTER_RECOGNITION"
-        ]
+          "LOGICAL_REASONING"
+        ],
+        "concept_ids": [
+          "CN_LOGICAL_REASONING"
+        ],
+        "related_concepts": [],
+        "reinforces": [],
+        "difficulty_level": 1,
+        "cognitive_level": "understand",
+        "instruction_mode": [
+          "visual",
+          "story"
+        ],
+        "common_misconceptions": [],
+        "mastery_signals": [
+          "Can point out and name Ammu and other family members in the picture",
+          "Can describe simple actions depicted in the story"
+        ],
+        "assessment_indicators": [
+          "Answers questions about who is in the picture and what they are doing"
+        ],
+        "engagement_style": "narrative",
+        "frustration_risk": "low",
+        "visual_assets": [],
+        "interactive_assets": [],
+        "simulation_assets": []
       },
       {
-        "id": "T_2_1",
-        "name": "GOING TO SCHOOL",
-        "summary": "This unit describes Ammu and Bittu's journey to school, focusing on different modes of transport and identifying various places in their neighborhood. It continues the alphabet learning with letters E-H.",
-        "chapter_id": "C_2",
-        "page_start": 29,
-        "page_end": 42,
+        "id": "T_1_2",
+        "name": "Ammu and Bittu the Squirrel",
+        "summary": "This topic presents a short story about Ammu's interaction with a squirrel named Bittu and her dog, focusing on simple dialogue and narrative comprehension.",
+        "embedding_text": "Grade 1 English: Ammu and Her Family — Ammu and Bittu the Squirrel: Students engage with a story featuring Ammu, her dog, and a squirrel, practicing dialogue comprehension and narrative sequencing.",
+        "chapter_id": "C_1",
+        "pdf_page_start": 13,
+        "pdf_page_end": 15,
+        "book_page_start": 4,
+        "book_page_end": 6,
         "prerequisites": [
           "T_1_1"
         ],
-        "canonical_type": "OTHER",
+        "canonical_type": "STORY",
         "concepts": [
-          "LETTER_RECOGNITION"
-        ]
+          "LOGICAL_REASONING"
+        ],
+        "concept_ids": [
+          "CN_LOGICAL_REASONING"
+        ],
+        "related_concepts": [],
+        "reinforces": [],
+        "difficulty_level": 1,
+        "cognitive_level": "understand",
+        "instruction_mode": [
+          "visual",
+          "story"
+        ],
+        "common_misconceptions": [],
+        "mastery_signals": [
+          "Can retell the main events of the story",
+          "Can identify the characters involved in the dialogue"
+        ],
+        "assessment_indicators": [
+          "Answers questions about character actions and dialogue"
+        ],
+        "engagement_style": "narrative",
+        "frustration_risk": "low",
+        "visual_assets": [],
+        "interactive_assets": [],
+        "simulation_assets": []
       },
       {
-        "id": "T_3_1",
-        "name": "AMMU’S SCHOOL",
-        "summary": "This unit narrates Bittu's mischievous adventure in Ammu's classroom, where he spreads colors and interacts with Ammu's friends. It teaches about classroom objects, colors, and continues alphabet learning with letters I-L.",
-        "chapter_id": "C_3",
-        "page_start": 43,
-        "page_end": 60,
+        "id": "T_1_3",
+        "name": "Identifying Family Members and Names",
+        "summary": "Students learn to identify and name different family members, including their specific names, through a song and direct questions, reinforcing vocabulary and social roles.",
+        "embedding_text": "Grade 1 English: Ammu and Her Family — Identifying Family Members and Names: Students learn to recognize and name family roles and specific names through a song and interactive questions, enhancing vocabulary and social understanding.",
+        "chapter_id": "C_1",
+        "pdf_page_start": 16,
+        "pdf_page_end": 18,
+        "book_page_start": 7,
+        "book_page_end": 9,
         "prerequisites": [
-          "T_2_1"
+          "T_1_1"
         ],
-        "canonical_type": "OTHER",
+        "canonical_type": "CONCEPT",
         "concepts": [
-          "LETTER_RECOGNITION",
-          "CREATIVE_EXPRESSION"
-        ]
+          "LOGICAL_REASONING"
+        ],
+        "concept_ids": [
+          "CN_LOGICAL_REASONING"
+        ],
+        "related_concepts": [],
+        "reinforces": [],
+        "difficulty_level": 2,
+        "cognitive_level": "understand",
+        "instruction_mode": [
+          "visual",
+          "story",
+          "discussion"
+        ],
+        "common_misconceptions": [],
+        "mastery_signals": [
+          "Can correctly identify and name Ammu's family members",
+          "Can sing the family song accurately"
+        ],
+        "assessment_indicators": [
+          "Answers questions about who is singing and the names of family members"
+        ],
+        "engagement_style": "narrative",
+        "frustration_risk": "low",
+        "visual_assets": [],
+        "interactive_assets": [],
+        "simulation_assets": []
+      },
+      {
+        "id": "T_1_4",
+        "name": "Personal Family Identification",
+        "summary": "This topic provides activities for students to identify and count their own family members, connecting the learned concepts to their personal lives.",
+        "embedding_text": "Grade 1 English: Ammu and Her Family — Personal Family Identification: Students engage in activities to identify and count their own family members, applying concepts of family roles and number sense to their personal context.",
+        "chapter_id": "C_1",
+        "pdf_page_start": 19,
+        "pdf_page_end": 20,
+        "book_page_start": 10,
+        "book_page_end": 11,
+        "prerequisites": [
+          "T_1_3"
+        ],
+        "canonical_type": "EXERCISE",
+        "concepts": [
+          "LOGICAL_REASONING",
+          "NUMBER_SENSE"
+        ],
+        "concept_ids": [
+          "CN_LOGICAL_REASONING",
+          "CN_NUMBER_SENSE"
+        ],
+        "related_concepts": [],
+        "reinforces": [
+          "T_1_3"
+        ],
+        "difficulty_level": 2,
+        "cognitive_level": "apply",
+        "instruction_mode": [
+          "visual",
+          "hands_on"
+        ],
+        "common_misconceptions": [],
+        "mastery_signals": [
+          "Can correctly list and count their own family members",
+          "Can differentiate between various family roles"
+        ],
+        "assessment_indicators": [
+          "Completes the family member identification chart",
+          "Accurately counts the number of family members"
+        ],
+        "engagement_style": "procedural",
+        "frustration_risk": "low",
+        "visual_assets": [],
+        "interactive_assets": [],
+        "simulation_assets": []
+      },
+      {
+        "id": "T_1_5",
+        "name": "Representing Personal Spaces",
+        "summary": "This topic encourages students to draw and describe their home and school, fostering personal connection, creative expression, and spatial representation skills.",
+        "embedding_text": "Grade 1 English: Ammu and Her Family — Representing Personal Spaces: Students draw and describe their home and school, developing spatial representation and personal connection to their environment.",
+        "chapter_id": "C_1",
+        "pdf_page_start": 21,
+        "pdf_page_end": 22,
+        "book_page_start": 12,
+        "book_page_end": 13,
+        "prerequisites": [],
+        "canonical_type": "ACTIVITY",
+        "concepts": [
+          "VISUAL_PATTERNING"
+        ],
+        "concept_ids": [
+          "CN_VISUAL_PATTERNING"
+        ],
+        "related_concepts": [],
+        "reinforces": [],
+        "difficulty_level": 1,
+        "cognitive_level": "create",
+        "instruction_mode": [
+          "visual",
+          "hands_on"
+        ],
+        "common_misconceptions": [],
+        "mastery_signals": [
+          "Can draw a recognizable representation of their home or school",
+          "Can verbally describe features of their drawing"
+        ],
+        "assessment_indicators": [
+          "Produces a drawing of their home or school",
+          "Writes a simple sentence about their drawing"
+        ],
+        "engagement_style": "exploratory",
+        "frustration_risk": "low",
+        "visual_assets": [],
+        "interactive_assets": [],
+        "simulation_assets": []
+      },
+      {
+        "id": "T_1_6",
+        "name": "Name Recognition and Personalization",
+        "summary": "This topic focuses on recognizing names of characters from the story and personalizing the learning by drawing a self-portrait and writing one's own name.",
+        "embedding_text": "Grade 1 English: Ammu and Her Family — Name Recognition and Personalization: Students practice recognizing character names and personalize learning by drawing themselves and writing their own name, reinforcing self-identification and literacy.",
+        "chapter_id": "C_1",
+        "pdf_page_start": 23,
+        "pdf_page_end": 24,
+        "book_page_start": 14,
+        "book_page_end": 15,
+        "prerequisites": [
+          "T_1_2"
+        ],
+        "canonical_type": "CONCEPT",
+        "concepts": [
+          "LOGICAL_REASONING"
+        ],
+        "concept_ids": [
+          "CN_LOGICAL_REASONING"
+        ],
+        "related_concepts": [],
+        "reinforces": [],
+        "difficulty_level": 1,
+        "cognitive_level": "apply",
+        "instruction_mode": [
+          "visual",
+          "hands_on"
+        ],
+        "common_misconceptions": [],
+        "mastery_signals": [
+          "Can correctly match names to characters",
+          "Can write their own name legibly"
+        ],
+        "assessment_indicators": [
+          "Identifies names associated with pictures",
+          "Draws a self-portrait and writes their name"
+        ],
+        "engagement_style": "procedural",
+        "frustration_risk": "low",
+        "visual_assets": [],
+        "interactive_assets": [],
+        "simulation_assets": []
+      },
+      {
+        "id": "T_1_7",
+        "name": "Alphabet Introduction (A-D)",
+        "summary": "This topic introduces the first four letters of the English alphabet (A, B, C, D) through songs, visual examples of words starting with these letters, and writing practice.",
+        "embedding_text": "Grade 1 English: Ammu and Her Family — Alphabet Introduction (A-D): Students learn to recognize and write the letters A, B, C, and D through songs, visual aids, and copying exercises, building foundational literacy skills.",
+        "chapter_id": "C_1",
+        "pdf_page_start": 25,
+        "pdf_page_end": 27,
+        "book_page_start": 16,
+        "book_page_end": 18,
+        "prerequisites": [],
+        "canonical_type": "CONCEPT",
+        "concepts": [
+          "LOGICAL_REASONING"
+        ],
+        "concept_ids": [
+          "CN_LOGICAL_REASONING"
+        ],
+        "related_concepts": [],
+        "reinforces": [],
+        "difficulty_level": 1,
+        "cognitive_level": "remember",
+        "instruction_mode": [
+          "visual",
+          "hands_on",
+          "story"
+        ],
+        "common_misconceptions": [
+          "Students may confuse uppercase and lowercase letters",
+          "Students may struggle with correct letter formation"
+        ],
+        "mastery_signals": [
+          "Can identify uppercase and lowercase forms of A, B, C, D",
+          "Can correctly write the letters A, B, C, D",
+          "Can associate words with their initial letter sounds"
+        ],
+        "assessment_indicators": [
+          "Completes letter copying exercises accurately",
+          "Participates in alphabet songs"
+        ],
+        "engagement_style": "repetitive",
+        "frustration_risk": "low",
+        "visual_assets": [],
+        "interactive_assets": [],
+        "simulation_assets": []
       },
       {
         "id": "T_4_1",
-        "name": "AMMU AND HER FRIENDS AT HER SCHOOL",
-        "summary": "This unit focuses on the aftermath of Bittu's color-spreading incident, emphasizing cleanliness, identifying body parts, and discussing various activities performed at school. It continues alphabet learning with letters M-P.",
+        "name": "Chapter Introduction: Ammu and Her Friends",
+        "summary": "Introduces the chapter theme of Ammu and her friends at school through a coloring activity, setting the context for the unit.",
+        "embedding_text": "Grade 1 English: Ammu and Her Friends at Her School — Chapter Introduction: Ammu and Her Friends: Students are introduced to the chapter's theme by coloring a picture of Ammu and her friends at school.",
         "chapter_id": "C_4",
-        "page_start": 61,
-        "page_end": 78,
-        "prerequisites": [
-          "T_3_1"
-        ],
-        "canonical_type": "OTHER",
-        "concepts": [
-          "LETTER_RECOGNITION",
-          "CREATIVE_EXPRESSION",
-          "ORAL_COMMUNICATION"
-        ]
-      },
-      {
-        "id": "T_5_1",
-        "name": "THINGS I DO",
-        "summary": "This unit explores Ammu's daily routine, good habits, and personal belongings. It also covers the family's preparation for a trip to the zoo and continues alphabet learning with letters Q-T.",
-        "chapter_id": "C_5",
-        "page_start": 79,
-        "page_end": 98,
-        "prerequisites": [
-          "T_1_1"
-        ],
-        "canonical_type": "OTHER",
-        "concepts": [
-          "LETTER_RECOGNITION"
-        ]
-      },
-      {
-        "id": "T_6_1",
-        "name": "AT THE ZOO",
-        "summary": "This unit describes Ammu's family visit to the zoo, where they learn about various animals and birds, meet Bittu's monkey friend Tinku, and share food. It concludes the alphabet learning with letters U-Z.",
-        "chapter_id": "C_6",
-        "page_start": 99,
-        "page_end": 116,
-        "prerequisites": [
-          "T_5_1"
-        ],
-        "canonical_type": "OTHER",
-        "concepts": [
-          "LETTER_RECOGNITION"
-        ]
-      },
-      {
-        "id": "T_7_1",
-        "name": "FRUITS AND VEGETABLES",
-        "summary": "This unit introduces Ammu's visit to the market, her initial dislike for bitter gourd, and her grandmother's explanation of the importance of eating all fruits and vegetables. It includes Bittu's song about fruits and an activity to classify them.",
-        "chapter_id": "C_7",
-        "page_start": 117,
-        "page_end": 123,
-        "prerequisites": [
-          "T_1_1"
-        ],
-        "canonical_type": "OTHER",
-        "concepts": [
-          "GENERAL"
-        ]
-      },
-      {
-        "id": "T_8_1",
-        "name": "ABOUT THE TEXTBOOK",
-        "summary": "This section provides meta-information about the textbook, outlining its academic standards, salient features, and guidelines for formative and summative assessments.",
-        "chapter_id": "C_8",
-        "page_start": 124,
-        "page_end": 126,
+        "pdf_page_start": 51,
+        "pdf_page_end": 51,
+        "book_page_start": 51,
+        "book_page_end": 51,
         "prerequisites": [],
-        "canonical_type": "OTHER",
+        "canonical_type": "ACTIVITY",
         "concepts": [
-          "GENERAL"
-        ]
+          "VISUAL_PATTERNING"
+        ],
+        "concept_ids": [
+          "CN_VISUAL_PATTERNING"
+        ],
+        "related_concepts": [],
+        "reinforces": [],
+        "difficulty_level": 1,
+        "cognitive_level": "apply",
+        "instruction_mode": [
+          "visual",
+          "hands_on"
+        ],
+        "common_misconceptions": [],
+        "mastery_signals": [
+          "Can color within lines",
+          "Can identify key figures in the picture"
+        ],
+        "assessment_indicators": [
+          "Completes the coloring activity neatly"
+        ],
+        "engagement_style": "visual",
+        "frustration_risk": "low",
+        "visual_assets": [],
+        "interactive_assets": [],
+        "simulation_assets": []
+      },
+      {
+        "id": "T_4_2",
+        "name": "Observing School Activities",
+        "summary": "Students observe and describe various activities children are engaged in at school, such as dancing and studying, enhancing observational and comprehension skills.",
+        "embedding_text": "Grade 1 English: Ammu and Her Friends at Her School — Observing School Activities: Students identify and describe various activities performed by children in a school setting, enhancing observational skills.",
+        "chapter_id": "C_4",
+        "pdf_page_start": 52,
+        "pdf_page_end": 53,
+        "book_page_start": 52,
+        "book_page_end": 53,
+        "prerequisites": [],
+        "canonical_type": "CONCEPT",
+        "concepts": [
+          "LOGICAL_REASONING"
+        ],
+        "concept_ids": [
+          "CN_LOGICAL_REASONING"
+        ],
+        "related_concepts": [],
+        "reinforces": [],
+        "difficulty_level": 1,
+        "cognitive_level": "understand",
+        "instruction_mode": [
+          "visual",
+          "discussion"
+        ],
+        "common_misconceptions": [],
+        "mastery_signals": [
+          "Can accurately describe actions in the picture",
+          "Can answer questions about the scene"
+        ],
+        "assessment_indicators": [
+          "Identifies multiple activities shown in the illustrations"
+        ],
+        "engagement_style": "visual",
+        "frustration_risk": "low",
+        "visual_assets": [],
+        "interactive_assets": [],
+        "simulation_assets": []
+      },
+      {
+        "id": "T_4_3",
+        "name": "Teacher's Arrival and Hiding Bittu",
+        "summary": "Describes the scenario where Ammu hides her pet squirrel, Bittu, as the teacher enters the classroom, and the teacher's instruction not to bring pets, teaching about classroom rules.",
+        "embedding_text": "Grade 1 English: Ammu and Her Friends at Her School — Teacher's Arrival and Hiding Bittu: Students learn about classroom rules and consequences through a story where Ammu hides her pet squirrel from the teacher.",
+        "chapter_id": "C_4",
+        "pdf_page_start": 54,
+        "pdf_page_end": 54,
+        "book_page_start": 54,
+        "book_page_end": 54,
+        "prerequisites": [],
+        "canonical_type": "STORY",
+        "concepts": [
+          "LOGICAL_REASONING"
+        ],
+        "concept_ids": [
+          "CN_LOGICAL_REASONING"
+        ],
+        "related_concepts": [],
+        "reinforces": [],
+        "difficulty_level": 2,
+        "cognitive_level": "understand",
+        "instruction_mode": [
+          "visual",
+          "story",
+          "discussion"
+        ],
+        "common_misconceptions": [
+          "Students might not understand why pets are not allowed in school."
+        ],
+        "mastery_signals": [
+          "Can retell the story sequence",
+          "Can explain the teacher's instruction"
+        ],
+        "assessment_indicators": [
+          "Answers comprehension questions about the story's events and characters' actions"
+        ],
+        "engagement_style": "narrative",
+        "frustration_risk": "low",
+        "visual_assets": [],
+        "interactive_assets": [],
+        "simulation_assets": []
+      },
+      {
+        "id": "T_4_4",
+        "name": "Washing Off Colors",
+        "summary": "The teacher instructs the children to wash off the colors that Bittu spread, emphasizing cleanliness and following instructions after a playful incident.",
+        "embedding_text": "Grade 1 English: Ammu and Her Friends at Her School — Washing Off Colors: Students learn about cleanliness and following instructions as the teacher directs them to wash off colors after a playful incident.",
+        "chapter_id": "C_4",
+        "pdf_page_start": 55,
+        "pdf_page_end": 55,
+        "book_page_start": 55,
+        "book_page_end": 55,
+        "prerequisites": [],
+        "canonical_type": "STORY",
+        "concepts": [
+          "LOGICAL_REASONING"
+        ],
+        "concept_ids": [
+          "CN_LOGICAL_REASONING"
+        ],
+        "related_concepts": [],
+        "reinforces": [],
+        "difficulty_level": 2,
+        "cognitive_level": "understand",
+        "instruction_mode": [
+          "visual",
+          "story",
+          "discussion"
+        ],
+        "common_misconceptions": [],
+        "mastery_signals": [
+          "Can identify the problem and solution in the story",
+          "Understands the importance of washing"
+        ],
+        "assessment_indicators": [
+          "Explains why the children need to wash the colors"
+        ],
+        "engagement_style": "narrative",
+        "frustration_risk": "low",
+        "visual_assets": [],
+        "interactive_assets": [],
+        "simulation_assets": []
+      },
+      {
+        "id": "T_4_5",
+        "name": "Identifying Favorite Colors",
+        "summary": "Children express their favorite colors and identify colors on their bodies, linking personal preference with color recognition and basic self-description.",
+        "embedding_text": "Grade 1 English: Ammu and Her Friends at Her School — Identifying Favorite Colors: Students practice identifying and expressing their favorite colors, connecting color names to objects and personal preferences.",
+        "chapter_id": "C_4",
+        "pdf_page_start": 56,
+        "pdf_page_end": 56,
+        "book_page_start": 56,
+        "book_page_end": 56,
+        "prerequisites": [],
+        "canonical_type": "ACTIVITY",
+        "concepts": [
+          "VISUAL_PATTERNING"
+        ],
+        "concept_ids": [
+          "CN_VISUAL_PATTERNING"
+        ],
+        "related_concepts": [],
+        "reinforces": [],
+        "difficulty_level": 1,
+        "cognitive_level": "apply",
+        "instruction_mode": [
+          "visual",
+          "discussion"
+        ],
+        "common_misconceptions": [],
+        "mastery_signals": [
+          "Can name several colors",
+          "Can state their favorite color"
+        ],
+        "assessment_indicators": [
+          "Correctly identifies colors on their body or objects"
+        ],
+        "engagement_style": "exploratory",
+        "frustration_risk": "low",
+        "visual_assets": [],
+        "interactive_assets": [],
+        "simulation_assets": []
+      },
+      {
+        "id": "T_4_6",
+        "name": "Coloring and Naming Colors",
+        "summary": "Students are asked to name and color pictures of clothes, and identify various colors in a mind-map format, reinforcing color vocabulary and visual association.",
+        "embedding_text": "Grade 1 English: Ammu and Her Friends at Her School — Coloring and Naming Colors: Students practice color recognition and naming by coloring clothes and identifying different colors in a visual exercise.",
+        "chapter_id": "C_4",
+        "pdf_page_start": 57,
+        "pdf_page_end": 57,
+        "book_page_start": 57,
+        "book_page_end": 57,
+        "prerequisites": [],
+        "canonical_type": "ACTIVITY",
+        "concepts": [
+          "VISUAL_PATTERNING"
+        ],
+        "concept_ids": [
+          "CN_VISUAL_PATTERNING"
+        ],
+        "related_concepts": [],
+        "reinforces": [],
+        "difficulty_level": 1,
+        "cognitive_level": "apply",
+        "instruction_mode": [
+          "visual",
+          "hands_on"
+        ],
+        "common_misconceptions": [],
+        "mastery_signals": [
+          "Can name common colors",
+          "Can color objects appropriately"
+        ],
+        "assessment_indicators": [
+          "Accurately names and colors the clothing items",
+          "Lists multiple colors"
+        ],
+        "engagement_style": "visual",
+        "frustration_risk": "low",
+        "visual_assets": [],
+        "interactive_assets": [],
+        "simulation_assets": []
+      },
+      {
+        "id": "T_4_7",
+        "name": "Washing at the Water Tap",
+        "summary": "Children wash their hands, legs, and face at a water tap, identifying body parts and colors associated with them, promoting hygiene awareness and vocabulary.",
+        "embedding_text": "Grade 1 English: Ammu and Her Friends at Her School — Washing at the Water Tap: Students observe and describe children washing at a tap, identifying body parts and colors, promoting hygiene awareness.",
+        "chapter_id": "C_4",
+        "pdf_page_start": 58,
+        "pdf_page_end": 58,
+        "book_page_start": 58,
+        "book_page_end": 58,
+        "prerequisites": [],
+        "canonical_type": "STORY",
+        "concepts": [
+          "LOGICAL_REASONING"
+        ],
+        "concept_ids": [
+          "CN_LOGICAL_REASONING"
+        ],
+        "related_concepts": [],
+        "reinforces": [],
+        "difficulty_level": 2,
+        "cognitive_level": "understand",
+        "instruction_mode": [
+          "visual",
+          "discussion"
+        ],
+        "common_misconceptions": [],
+        "mastery_signals": [
+          "Can identify body parts being washed",
+          "Understands the purpose of washing"
+        ],
+        "assessment_indicators": [
+          "Answers questions about the children's actions and dialogue"
+        ],
+        "engagement_style": "narrative",
+        "frustration_risk": "low",
+        "visual_assets": [],
+        "interactive_assets": [],
+        "simulation_assets": []
+      },
+      {
+        "id": "T_4_8",
+        "name": "Washing Hands and Face Song",
+        "summary": "Students sing a song about washing hands and face, reinforcing hygiene practices through a musical and action-based activity.",
+        "embedding_text": "Grade 1 English: Ammu and Her Friends at Her School — Washing Hands and Face Song: Students learn and sing a song about personal hygiene, specifically washing hands and face, with accompanying actions.",
+        "chapter_id": "C_4",
+        "pdf_page_start": 59,
+        "pdf_page_end": 59,
+        "book_page_start": 59,
+        "book_page_end": 59,
+        "prerequisites": [],
+        "canonical_type": "ACTIVITY",
+        "concepts": [
+          "LOGICAL_REASONING"
+        ],
+        "concept_ids": [
+          "CN_LOGICAL_REASONING"
+        ],
+        "related_concepts": [],
+        "reinforces": [],
+        "difficulty_level": 1,
+        "cognitive_level": "apply",
+        "instruction_mode": [
+          "hands_on",
+          "discussion"
+        ],
+        "common_misconceptions": [],
+        "mastery_signals": [
+          "Can sing the song with actions",
+          "Can identify who is washing"
+        ],
+        "assessment_indicators": [
+          "Participates in singing and performing actions"
+        ],
+        "engagement_style": "procedural",
+        "frustration_risk": "low",
+        "visual_assets": [],
+        "interactive_assets": [],
+        "simulation_assets": []
+      },
+      {
+        "id": "T_4_9",
+        "name": "Extending the Washing Song",
+        "summary": "Students extend a song about washing by adding lines for different body parts, practicing creative writing and reinforcing hygiene vocabulary.",
+        "embedding_text": "Grade 1 English: Ammu and Her Friends at Her School — Extending the Washing Song: Students creatively add new lines to a song about washing, focusing on different body parts and promoting language development.",
+        "chapter_id": "C_4",
+        "pdf_page_start": 60,
+        "pdf_page_end": 60,
+        "book_page_start": 60,
+        "book_page_end": 60,
+        "prerequisites": [
+          "T_4_8"
+        ],
+        "canonical_type": "ACTIVITY",
+        "concepts": [
+          "LOGICAL_REASONING"
+        ],
+        "concept_ids": [
+          "CN_LOGICAL_REASONING"
+        ],
+        "related_concepts": [],
+        "reinforces": [],
+        "difficulty_level": 2,
+        "cognitive_level": "create",
+        "instruction_mode": [
+          "hands_on",
+          "discussion"
+        ],
+        "common_misconceptions": [
+          "Students might struggle with rhyming or fitting new words into the song structure."
+        ],
+        "mastery_signals": [
+          "Can generate new lines for the song",
+          "Uses appropriate vocabulary for body parts"
+        ],
+        "assessment_indicators": [
+          "Creates new verses that fit the song's theme and rhythm"
+        ],
+        "engagement_style": "exploratory",
+        "frustration_risk": "medium",
+        "visual_assets": [],
+        "interactive_assets": [],
+        "simulation_assets": []
+      },
+      {
+        "id": "T_4_10",
+        "name": "Identifying Body Parts",
+        "summary": "Students identify and write the names of various body parts, promoting anatomical vocabulary and understanding of personal hygiene.",
+        "embedding_text": "Grade 1 English: Ammu and Her Friends at Her School — Identifying Body Parts: Students learn and write the names of different body parts, reinforcing vocabulary and understanding the importance of keeping the body clean.",
+        "chapter_id": "C_4",
+        "pdf_page_start": 61,
+        "pdf_page_end": 61,
+        "book_page_start": 61,
+        "book_page_end": 61,
+        "prerequisites": [],
+        "canonical_type": "CONCEPT",
+        "concepts": [
+          "LOGICAL_REASONING"
+        ],
+        "concept_ids": [
+          "CN_LOGICAL_REASONING"
+        ],
+        "related_concepts": [],
+        "reinforces": [],
+        "difficulty_level": 2,
+        "cognitive_level": "apply",
+        "instruction_mode": [
+          "visual",
+          "hands_on"
+        ],
+        "common_misconceptions": [
+          "Students may misspell body part names."
+        ],
+        "mastery_signals": [
+          "Can correctly label body parts",
+          "Can pronounce body part names"
+        ],
+        "assessment_indicators": [
+          "Accurately writes the names of body parts on a diagram"
+        ],
+        "engagement_style": "procedural",
+        "frustration_risk": "low",
+        "visual_assets": [],
+        "interactive_assets": [],
+        "simulation_assets": []
+      },
+      {
+        "id": "T_4_11",
+        "name": "Apologizing for Bringing a Pet",
+        "summary": "Ammu apologizes to the teacher for bringing her pet to class, demonstrating understanding of rules and expressing regret, teaching social etiquette.",
+        "embedding_text": "Grade 1 English: Ammu and Her Friends at Her School — Apologizing for Bringing a Pet: Students learn about classroom rules and the importance of apologizing when rules are broken, through Ammu's interaction with her teacher.",
+        "chapter_id": "C_4",
+        "pdf_page_start": 62,
+        "pdf_page_end": 62,
+        "book_page_start": 62,
+        "book_page_end": 62,
+        "prerequisites": [
+          "T_4_3"
+        ],
+        "canonical_type": "STORY",
+        "concepts": [
+          "LOGICAL_REASONING"
+        ],
+        "concept_ids": [
+          "CN_LOGICAL_REASONING"
+        ],
+        "related_concepts": [],
+        "reinforces": [],
+        "difficulty_level": 2,
+        "cognitive_level": "understand",
+        "instruction_mode": [
+          "visual",
+          "story",
+          "discussion"
+        ],
+        "common_misconceptions": [
+          "Students might not understand the concept of apology or why it's necessary."
+        ],
+        "mastery_signals": [
+          "Can explain why Ammu apologized",
+          "Understands the teacher's instruction"
+        ],
+        "assessment_indicators": [
+          "Answers questions about the dialogue and the lesson learned"
+        ],
+        "engagement_style": "narrative",
+        "frustration_risk": "low",
+        "visual_assets": [],
+        "interactive_assets": [],
+        "simulation_assets": []
+      },
+      {
+        "id": "T_4_12",
+        "name": "Drawing and Talking About Pets",
+        "summary": "Students are encouraged to draw their pets and discuss them, fostering personal expression, communication skills, and connection to the story's theme.",
+        "embedding_text": "Grade 1 English: Ammu and Her Friends at Her School — Drawing and Talking About Pets: Students engage in creative expression by drawing their pets and developing oral communication skills by talking about them.",
+        "chapter_id": "C_4",
+        "pdf_page_start": 63,
+        "pdf_page_end": 63,
+        "book_page_start": 63,
+        "book_page_end": 63,
+        "prerequisites": [],
+        "canonical_type": "ACTIVITY",
+        "concepts": [
+          "LOGICAL_REASONING"
+        ],
+        "concept_ids": [
+          "CN_LOGICAL_REASONING"
+        ],
+        "related_concepts": [],
+        "reinforces": [],
+        "difficulty_level": 2,
+        "cognitive_level": "create",
+        "instruction_mode": [
+          "hands_on",
+          "discussion"
+        ],
+        "common_misconceptions": [],
+        "mastery_signals": [
+          "Can draw a recognizable pet",
+          "Can describe their pet using simple sentences"
+        ],
+        "assessment_indicators": [
+          "Presents a drawing and shares a few sentences about their pet"
+        ],
+        "engagement_style": "exploratory",
+        "frustration_risk": "low",
+        "visual_assets": [],
+        "interactive_assets": [],
+        "simulation_assets": []
+      },
+      {
+        "id": "T_4_13",
+        "name": "Activities at School",
+        "summary": "Introduces various activities children do at school, such as reading, writing, talking, and playing, reinforcing vocabulary and understanding of school life.",
+        "embedding_text": "Grade 1 English: Ammu and Her Friends at Her School — Activities at School: Students learn about and identify common activities performed at school, including reading, writing, talking, and playing, expanding their vocabulary.",
+        "chapter_id": "C_4",
+        "pdf_page_start": 64,
+        "pdf_page_end": 64,
+        "book_page_start": 64,
+        "book_page_end": 64,
+        "prerequisites": [],
+        "canonical_type": "CONCEPT",
+        "concepts": [
+          "LOGICAL_REASONING"
+        ],
+        "concept_ids": [
+          "CN_LOGICAL_REASONING"
+        ],
+        "related_concepts": [],
+        "reinforces": [],
+        "difficulty_level": 1,
+        "cognitive_level": "understand",
+        "instruction_mode": [
+          "visual",
+          "discussion"
+        ],
+        "common_misconceptions": [],
+        "mastery_signals": [
+          "Can name different school activities",
+          "Can identify activities from pictures"
+        ],
+        "assessment_indicators": [
+          "Matches activity words to corresponding images"
+        ],
+        "engagement_style": "visual",
+        "frustration_risk": "low",
+        "visual_assets": [],
+        "interactive_assets": [],
+        "simulation_assets": []
+      },
+      {
+        "id": "T_4_14",
+        "name": "Extending School Activities Song",
+        "summary": "Students add lines to a song about school activities, including eating, drinking, singing, and dancing, promoting creative expression and vocabulary related to daily routines.",
+        "embedding_text": "Grade 1 English: Ammu and Her Friends at Her School — Extending School Activities Song: Students creatively add new lines to a song about various school activities like eating, drinking, singing, and dancing, enhancing language skills.",
+        "chapter_id": "C_4",
+        "pdf_page_start": 65,
+        "pdf_page_end": 65,
+        "book_page_start": 65,
+        "book_page_end": 65,
+        "prerequisites": [
+          "T_4_13"
+        ],
+        "canonical_type": "ACTIVITY",
+        "concepts": [
+          "LOGICAL_REASONING"
+        ],
+        "concept_ids": [
+          "CN_LOGICAL_REASONING"
+        ],
+        "related_concepts": [],
+        "reinforces": [],
+        "difficulty_level": 2,
+        "cognitive_level": "create",
+        "instruction_mode": [
+          "hands_on",
+          "discussion"
+        ],
+        "common_misconceptions": [
+          "Students might struggle with rhyming or maintaining the song's rhythm."
+        ],
+        "mastery_signals": [
+          "Can generate new lines for the song about school activities",
+          "Uses action verbs correctly"
+        ],
+        "assessment_indicators": [
+          "Creates new verses that fit the song's theme and structure"
+        ],
+        "engagement_style": "exploratory",
+        "frustration_risk": "medium",
+        "visual_assets": [],
+        "interactive_assets": [],
+        "simulation_assets": []
+      },
+      {
+        "id": "T_4_15",
+        "name": "Categorizing School Activities",
+        "summary": "Students choose from a list of activities and write them in boxes corresponding to pictures of children performing those actions at school, reinforcing vocabulary and observational skills.",
+        "embedding_text": "Grade 1 English: Ammu and Her Friends at Her School — Categorizing School Activities: Students identify and match various school activities from a given list to corresponding images, reinforcing vocabulary and observational skills.",
+        "chapter_id": "C_4",
+        "pdf_page_start": 66,
+        "pdf_page_end": 66,
+        "book_page_start": 66,
+        "book_page_end": 66,
+        "prerequisites": [
+          "T_4_13"
+        ],
+        "canonical_type": "EXERCISE",
+        "concepts": [
+          "LOGICAL_REASONING"
+        ],
+        "concept_ids": [
+          "CN_LOGICAL_REASONING"
+        ],
+        "related_concepts": [],
+        "reinforces": [],
+        "difficulty_level": 2,
+        "cognitive_level": "apply",
+        "instruction_mode": [
+          "visual",
+          "hands_on"
+        ],
+        "common_misconceptions": [
+          "Students might misinterpret the actions in the pictures."
+        ],
+        "mastery_signals": [
+          "Can correctly match activities to images",
+          "Can read and understand activity words"
+        ],
+        "assessment_indicators": [
+          "Accurately fills in the boxes with the correct activity words"
+        ],
+        "engagement_style": "procedural",
+        "frustration_risk": "low",
+        "visual_assets": [],
+        "interactive_assets": [],
+        "simulation_assets": []
+      },
+      {
+        "id": "T_4_16",
+        "name": "Letter Recognition Song (M, N, O, P)",
+        "summary": "Students sing a song that helps them identify letters M, N, O, P and associate them with corresponding words like 'Mat', 'monkey', 'Net', 'nest', 'Ox', 'owl', 'Pen', and 'pencil', enhancing phonological awareness and vocabulary.",
+        "embedding_text": "Grade 1 English: Ammu and Her Friends at Her School — Letter Recognition Song (M, N, O, P): Students learn to identify and associate letters M, N, O, P with specific words through a song, enhancing phonological awareness and vocabulary.",
+        "chapter_id": "C_4",
+        "pdf_page_start": 67,
+        "pdf_page_end": 67,
+        "book_page_start": 67,
+        "book_page_end": 67,
+        "prerequisites": [],
+        "canonical_type": "ACTIVITY",
+        "concepts": [
+          "LOGICAL_REASONING",
+          "VISUAL_PATTERNING"
+        ],
+        "concept_ids": [
+          "CN_LOGICAL_REASONING",
+          "CN_VISUAL_PATTERNING"
+        ],
+        "related_concepts": [],
+        "reinforces": [],
+        "difficulty_level": 1,
+        "cognitive_level": "remember",
+        "instruction_mode": [
+          "discussion",
+          "hands_on"
+        ],
+        "common_misconceptions": [
+          "Students might confuse similar-looking letters or sounds."
+        ],
+        "mastery_signals": [
+          "Can identify letters M, N, O, P",
+          "Can name words starting with these letters"
+        ],
+        "assessment_indicators": [
+          "Sings the song and correctly points to the letters/words"
+        ],
+        "engagement_style": "narrative",
+        "frustration_risk": "low",
+        "visual_assets": [],
+        "interactive_assets": [],
+        "simulation_assets": []
+      },
+      {
+        "id": "T_4_17",
+        "name": "Reading and Copying Letters (M, N, O, P)",
+        "summary": "Students practice reading and copying uppercase and lowercase letters M, N, O, P, along with associated words and pictures, developing early literacy and fine motor skills.",
+        "embedding_text": "Grade 1 English: Ammu and Her Friends at Her School — Reading and Copying Letters (M, N, O, P): Students practice letter recognition and handwriting by reading and copying uppercase and lowercase letters M, N, O, P and related vocabulary.",
+        "chapter_id": "C_4",
+        "pdf_page_start": 68,
+        "pdf_page_end": 68,
+        "book_page_start": 68,
+        "book_page_end": 68,
+        "prerequisites": [
+          "T_4_16"
+        ],
+        "canonical_type": "EXERCISE",
+        "concepts": [
+          "LOGICAL_REASONING",
+          "VISUAL_PATTERNING"
+        ],
+        "concept_ids": [
+          "CN_LOGICAL_REASONING",
+          "CN_VISUAL_PATTERNING"
+        ],
+        "related_concepts": [],
+        "reinforces": [],
+        "difficulty_level": 1,
+        "cognitive_level": "apply",
+        "instruction_mode": [
+          "visual",
+          "hands_on"
+        ],
+        "common_misconceptions": [
+          "Students might struggle with correct letter formation or spacing."
+        ],
+        "mastery_signals": [
+          "Can correctly write uppercase and lowercase letters",
+          "Can read the associated words"
+        ],
+        "assessment_indicators": [
+          "Accurately copies letters and words into the provided spaces"
+        ],
+        "engagement_style": "repetitive",
+        "frustration_risk": "low",
+        "visual_assets": [],
+        "interactive_assets": [],
+        "simulation_assets": []
+      },
+      {
+        "id": "T_1_8",
+        "name": "Concluding the Zoo Visit",
+        "summary": "The story concludes with Ammu's family leaving the zoo and saying goodbye to Tinku, reinforcing narrative sequence.",
+        "embedding_text": "Grade 1 General Knowledge: AT THE ZOO — Concluding the Zoo Visit: Students follow the narrative sequence of a story as Ammu's family departs from the zoo, practicing comprehension skills.",
+        "chapter_id": "C_1",
+        "pdf_page_start": 103,
+        "pdf_page_end": 104,
+        "book_page_start": 102,
+        "book_page_end": 103,
+        "prerequisites": [],
+        "canonical_type": "STORY",
+        "concepts": [
+          "LOGICAL_REASONING"
+        ],
+        "concept_ids": [
+          "CN_LOGICAL_REASONING"
+        ],
+        "related_concepts": [],
+        "reinforces": [],
+        "difficulty_level": 1,
+        "cognitive_level": "understand",
+        "instruction_mode": [
+          "story",
+          "visual"
+        ],
+        "common_misconceptions": [],
+        "mastery_signals": [
+          "Recalls the ending of the story",
+          "Understands the concept of farewell"
+        ],
+        "assessment_indicators": [
+          "Answers questions about the story's conclusion"
+        ],
+        "engagement_style": "narrative",
+        "frustration_risk": "low",
+        "visual_assets": [],
+        "interactive_assets": [],
+        "simulation_assets": []
+      },
+      {
+        "id": "T_1_9",
+        "name": "Alphabet Recognition and Handwriting (U-Z)",
+        "summary": "Students engage in a song and tracing activity to learn and practice the letters U, V, W, X, Y, Z and associated vocabulary.",
+        "embedding_text": "Grade 1 General Knowledge: AT THE ZOO — Alphabet Recognition and Handwriting (U-Z): Students learn letter identification, phonics, and handwriting for the final letters of the alphabet through songs and tracing exercises.",
+        "chapter_id": "C_1",
+        "pdf_page_start": 105,
+        "pdf_page_end": 106,
+        "book_page_start": 104,
+        "book_page_end": 105,
+        "prerequisites": [],
+        "canonical_type": "ACTIVITY",
+        "concepts": [
+          "VISUAL_PATTERNING",
+          "LOGICAL_REASONING"
+        ],
+        "concept_ids": [
+          "CN_VISUAL_PATTERNING",
+          "CN_LOGICAL_REASONING"
+        ],
+        "related_concepts": [],
+        "reinforces": [],
+        "difficulty_level": 2,
+        "cognitive_level": "apply",
+        "instruction_mode": [
+          "visual",
+          "hands_on",
+          "auditory"
+        ],
+        "common_misconceptions": [
+          "Students may confuse similar-looking letters like V and W"
+        ],
+        "mastery_signals": [
+          "Correctly identifies and writes letters",
+          "Associates letters with corresponding words"
+        ],
+        "assessment_indicators": [
+          "Traces letters accurately",
+          "Copies words legibly"
+        ],
+        "engagement_style": "repetitive",
+        "frustration_risk": "low",
+        "visual_assets": [],
+        "interactive_assets": [],
+        "simulation_assets": []
+      },
+      {
+        "id": "T_1_10",
+        "name": "Alphabetical Order and Fine Motor Skills (Dot-to-Dot)",
+        "summary": "Students connect dots in alphabetical order from 'a' to 'z' to reveal an animal, then color it and write its name.",
+        "embedding_text": "Grade 1 General Knowledge: AT THE ZOO — Alphabetical Order and Fine Motor Skills (Dot-to-Dot): Students practice sequencing the alphabet and develop fine motor skills by connecting dots to form an animal.",
+        "chapter_id": "C_1",
+        "pdf_page_start": 107,
+        "pdf_page_end": 107,
+        "book_page_start": 106,
+        "book_page_end": 106,
+        "prerequisites": [],
+        "canonical_type": "ACTIVITY",
+        "concepts": [
+          "VISUAL_PATTERNING",
+          "LOGICAL_REASONING"
+        ],
+        "concept_ids": [
+          "CN_VISUAL_PATTERNING",
+          "CN_LOGICAL_REASONING"
+        ],
+        "related_concepts": [],
+        "reinforces": [],
+        "difficulty_level": 2,
+        "cognitive_level": "apply",
+        "instruction_mode": [
+          "hands_on",
+          "visual"
+        ],
+        "common_misconceptions": [
+          "Students may skip letters or connect dots out of order"
+        ],
+        "mastery_signals": [
+          "Connects dots in correct alphabetical sequence",
+          "Identifies the formed animal"
+        ],
+        "assessment_indicators": [
+          "Completes the dot-to-dot puzzle accurately"
+        ],
+        "engagement_style": "exploratory",
+        "frustration_risk": "low",
+        "visual_assets": [],
+        "interactive_assets": [],
+        "simulation_assets": []
+      },
+      {
+        "id": "T_2_1",
+        "name": "Identifying Fruits and Vegetables through Coloring",
+        "summary": "Students color outlines of common fruits and vegetables, reinforcing visual recognition.",
+        "embedding_text": "Grade 1 General Knowledge: FRUITS AND VEGETABLES — Identifying Fruits and Vegetables through Coloring: Students practice visual recognition and fine motor skills by coloring pictures of various fruits and vegetables.",
+        "chapter_id": "C_2",
+        "pdf_page_start": 107,
+        "pdf_page_end": 107,
+        "book_page_start": 107,
+        "book_page_end": 107,
+        "prerequisites": [],
+        "canonical_type": "ACTIVITY",
+        "concepts": [
+          "VISUAL_PATTERNING"
+        ],
+        "concept_ids": [
+          "CN_VISUAL_PATTERNING"
+        ],
+        "related_concepts": [],
+        "reinforces": [],
+        "difficulty_level": 1,
+        "cognitive_level": "apply",
+        "instruction_mode": [
+          "visual",
+          "hands_on"
+        ],
+        "common_misconceptions": [],
+        "mastery_signals": [
+          "Colors within lines",
+          "Identifies the items correctly"
+        ],
+        "assessment_indicators": [
+          "Completes coloring tasks accurately"
+        ],
+        "engagement_style": "exploratory",
+        "frustration_risk": "low",
+        "visual_assets": [],
+        "interactive_assets": [],
+        "simulation_assets": []
+      },
+      {
+        "id": "T_2_2",
+        "name": "Visiting a Market",
+        "summary": "A narrative about Ammu visiting a market, observing various fruits and vegetables, and answering questions about the scene.",
+        "embedding_text": "Grade 1 General Knowledge: FRUITS AND VEGETABLES — Visiting a Market: Students comprehend a story about a market visit, identifying different fruits and vegetables and answering related questions.",
+        "chapter_id": "C_2",
+        "pdf_page_start": 108,
+        "pdf_page_end": 109,
+        "book_page_start": 108,
+        "book_page_end": 109,
+        "prerequisites": [],
+        "canonical_type": "STORY",
+        "concepts": [
+          "LOGICAL_REASONING",
+          "VISUAL_PATTERNING"
+        ],
+        "concept_ids": [
+          "CN_LOGICAL_REASONING",
+          "CN_VISUAL_PATTERNING"
+        ],
+        "related_concepts": [],
+        "reinforces": [],
+        "difficulty_level": 2,
+        "cognitive_level": "understand",
+        "instruction_mode": [
+          "story",
+          "visual",
+          "discussion"
+        ],
+        "common_misconceptions": [],
+        "mastery_signals": [
+          "Recalls details from the market scene",
+          "Identifies various produce"
+        ],
+        "assessment_indicators": [
+          "Answers comprehension questions about the market visit"
+        ],
+        "engagement_style": "narrative",
+        "frustration_risk": "low",
+        "visual_assets": [],
+        "interactive_assets": [],
+        "simulation_assets": []
+      },
+      {
+        "id": "T_2_3",
+        "name": "Expressing Food Preferences",
+        "summary": "A dialogue where Ammu expresses her dislike for bitter gourd curry, exploring personal tastes and family interactions.",
+        "embedding_text": "Grade 1 General Knowledge: FRUITS AND VEGETABLES — Expressing Food Preferences: Students understand a dialogue about food preferences, learning to express likes and dislikes in a social context.",
+        "chapter_id": "C_2",
+        "pdf_page_start": 110,
+        "pdf_page_end": 110,
+        "book_page_start": 110,
+        "book_page_end": 110,
+        "prerequisites": [],
+        "canonical_type": "STORY",
+        "concepts": [
+          "LOGICAL_REASONING"
+        ],
+        "concept_ids": [
+          "CN_LOGICAL_REASONING"
+        ],
+        "related_concepts": [],
+        "reinforces": [],
+        "difficulty_level": 1,
+        "cognitive_level": "understand",
+        "instruction_mode": [
+          "story",
+          "visual",
+          "discussion"
+        ],
+        "common_misconceptions": [],
+        "mastery_signals": [
+          "Identifies Ammu's food preference",
+          "Explains why Ammu is not eating"
+        ],
+        "assessment_indicators": [
+          "Answers questions about the dialogue and characters' feelings"
+        ],
+        "engagement_style": "narrative",
+        "frustration_risk": "low",
+        "visual_assets": [],
+        "interactive_assets": [],
+        "simulation_assets": []
+      },
+      {
+        "id": "T_2_4",
+        "name": "Importance of Healthy Eating",
+        "summary": "Ammu's grandmother explains the health benefits of eating fruits and vegetables, encouraging healthy habits.",
+        "embedding_text": "Grade 1 General Knowledge: FRUITS AND VEGETABLES — Importance of Healthy Eating: Students learn about the benefits of consuming fruits and vegetables through a dialogue with Ammu's grandmother, promoting healthy lifestyle choices.",
+        "chapter_id": "C_2",
+        "pdf_page_start": 111,
+        "pdf_page_end": 111,
+        "book_page_start": 111,
+        "book_page_end": 111,
+        "prerequisites": [],
+        "canonical_type": "CONCEPT",
+        "concepts": [
+          "LOGICAL_REASONING"
+        ],
+        "concept_ids": [
+          "CN_LOGICAL_REASONING"
+        ],
+        "related_concepts": [],
+        "reinforces": [],
+        "difficulty_level": 2,
+        "cognitive_level": "understand",
+        "instruction_mode": [
+          "story",
+          "visual",
+          "discussion"
+        ],
+        "common_misconceptions": [
+          "Students may not understand the long-term benefits of healthy eating"
+        ],
+        "mastery_signals": [
+          "Explains why fruits and vegetables are good for health",
+          "Recalls grandmother's advice"
+        ],
+        "assessment_indicators": [
+          "Answers questions about the importance of healthy food"
+        ],
+        "engagement_style": "narrative",
+        "frustration_risk": "low",
+        "visual_assets": [],
+        "interactive_assets": [],
+        "simulation_assets": []
+      },
+      {
+        "id": "T_2_5",
+        "name": "Describing Fruits through Song",
+        "summary": "A song about apples and grapes, describing their appearance, taste, and shape, enhancing fruit identification and descriptive vocabulary.",
+        "embedding_text": "Grade 1 General Knowledge: FRUITS AND VEGETABLES — Describing Fruits through Song: Students learn descriptive vocabulary and fruit characteristics by singing a song about apples and grapes.",
+        "chapter_id": "C_2",
+        "pdf_page_start": 112,
+        "pdf_page_end": 112,
+        "book_page_start": 112,
+        "book_page_end": 112,
+        "prerequisites": [],
+        "canonical_type": "ACTIVITY",
+        "concepts": [
+          "LOGICAL_REASONING"
+        ],
+        "concept_ids": [
+          "CN_LOGICAL_REASONING"
+        ],
+        "related_concepts": [
+          "CN_VISUAL_PATTERNING"
+        ],
+        "reinforces": [],
+        "difficulty_level": 1,
+        "cognitive_level": "remember",
+        "instruction_mode": [
+          "auditory",
+          "visual"
+        ],
+        "common_misconceptions": [],
+        "mastery_signals": [
+          "Sings the song correctly",
+          "Identifies apples and grapes"
+        ],
+        "assessment_indicators": [
+          "Recalls descriptive words for fruits"
+        ],
+        "engagement_style": "exploratory",
+        "frustration_risk": "low",
+        "visual_assets": [],
+        "interactive_assets": [],
+        "simulation_assets": []
+      },
+      {
+        "id": "T_2_6",
+        "name": "Categorizing Fruits and Vegetables",
+        "summary": "Students sort a list of food items into categories of 'fruits' and 'vegetables', developing classification skills.",
+        "embedding_text": "Grade 1 General Knowledge: FRUITS AND VEGETABLES — Categorizing Fruits and Vegetables: Students develop logical reasoning and classification skills by sorting various food items into 'fruits' and 'vegetables'.",
+        "chapter_id": "C_2",
+        "pdf_page_start": 113,
+        "pdf_page_end": 113,
+        "book_page_start": 113,
+        "book_page_end": 113,
+        "prerequisites": [],
+        "canonical_type": "EXERCISE",
+        "concepts": [
+          "LOGICAL_REASONING"
+        ],
+        "concept_ids": [
+          "CN_LOGICAL_REASONING"
+        ],
+        "related_concepts": [],
+        "reinforces": [],
+        "difficulty_level": 2,
+        "cognitive_level": "apply",
+        "instruction_mode": [
+          "hands_on",
+          "visual"
+        ],
+        "common_misconceptions": [
+          "Students may confuse fruits that are commonly used as vegetables (e.g., tomato, brinjal)"
+        ],
+        "mastery_signals": [
+          "Correctly categorizes all items",
+          "Explains reasoning for categorization"
+        ],
+        "assessment_indicators": [
+          "Accurately places items under 'fruits' or 'vegetables' headings"
+        ],
+        "engagement_style": "procedural",
+        "frustration_risk": "low",
+        "visual_assets": [],
+        "interactive_assets": [],
+        "simulation_assets": []
+      },
+      {
+        "id": "T_2_7",
+        "name": "Story: Princess Tomato's Award",
+        "summary": "A story about different vegetables (bitter gourd, lady's finger, red chilli, potato) presenting their qualities to win an award, teaching about attributes and self-presentation.",
+        "embedding_text": "Grade 1 General Knowledge: FRUITS AND VEGETABLES — Story: Princess Tomato's Award: Students engage with a narrative where vegetables describe their unique qualities, fostering comprehension and understanding of descriptive attributes.",
+        "chapter_id": "C_2",
+        "pdf_page_start": 114,
+        "pdf_page_end": 119,
+        "book_page_start": 114,
+        "book_page_end": 119,
+        "prerequisites": [],
+        "canonical_type": "STORY",
+        "concepts": [
+          "LOGICAL_REASONING"
+        ],
+        "concept_ids": [
+          "CN_LOGICAL_REASONING"
+        ],
+        "related_concepts": [],
+        "reinforces": [],
+        "difficulty_level": 2,
+        "cognitive_level": "understand",
+        "instruction_mode": [
+          "story",
+          "visual",
+          "discussion"
+        ],
+        "common_misconceptions": [],
+        "mastery_signals": [
+          "Recalls the claims of each vegetable",
+          "Identifies the main characters"
+        ],
+        "assessment_indicators": [
+          "Answers questions about the story's plot and characters"
+        ],
+        "engagement_style": "narrative",
+        "frustration_risk": "low",
+        "visual_assets": [],
+        "interactive_assets": [],
+        "simulation_assets": []
       }
     ],
     "subtopics": [
       {
         "id": "ST_1_1_1",
-        "name": "Introduction to Ammu and Her Family",
-        "summary": "Ammu, her family, and her puppy Doggy are introduced, along with the first encounter with the squirrel.",
-        "page_start": 11,
-        "page_end": 14,
+        "name": "Coloring Ammu and her family",
+        "summary": "An activity where students color a picture of Ammu and her family.",
+        "pdf_page_start": 10,
+        "pdf_page_end": 10,
+        "book_page_start": 1,
+        "book_page_end": 1,
         "topic_id": "T_1_1"
       },
       {
         "id": "ST_1_1_2",
-        "name": "Ammu Meets Bittu the Squirrel",
-        "summary": "Ammu and the talking squirrel, Bittu, introduce themselves and Bittu decides to stay with Ammu.",
-        "page_start": 15,
-        "page_end": 16,
+        "name": "Ammu's daily life and family interactions",
+        "summary": "A visual narrative depicting Ammu's interactions with her family members in various settings.",
+        "pdf_page_start": 11,
+        "pdf_page_end": 12,
+        "book_page_start": 2,
+        "book_page_end": 3,
         "topic_id": "T_1_1"
       },
       {
-        "id": "ST_1_1_3",
-        "name": "Identifying Family Members and Their Names",
-        "summary": "Ammu sings about her family members and introduces their names to Bittu.",
-        "page_start": 17,
-        "page_end": 19,
-        "topic_id": "T_1_1"
+        "id": "ST_1_2_1",
+        "name": "Doggy chasing Bittu",
+        "summary": "A scene depicting Ammu's dog chasing the squirrel, Bittu.",
+        "pdf_page_start": 13,
+        "pdf_page_end": 13,
+        "book_page_start": 4,
+        "book_page_end": 4,
+        "topic_id": "T_1_2"
       },
       {
-        "id": "ST_1_1_4",
-        "name": "My Family, Home, and School Activities",
-        "summary": "Interactive activities for children to identify their family members, and draw their home and school.",
-        "page_start": 20,
-        "page_end": 23,
-        "topic_id": "T_1_1"
+        "id": "ST_1_2_2",
+        "name": "Bittu and Ammu introduce themselves",
+        "summary": "Dialogue between Ammu and Bittu where they introduce their names.",
+        "pdf_page_start": 14,
+        "pdf_page_end": 14,
+        "book_page_start": 5,
+        "book_page_end": 5,
+        "topic_id": "T_1_2"
       },
       {
-        "id": "ST_1_1_5",
-        "name": "Reading My Name",
-        "summary": "Introduces the concept of names for Ammu, Bittu, Doggy, and Chintu, with an activity for the child to write their own name.",
-        "page_start": 24,
-        "page_end": 25,
-        "topic_id": "T_1_1"
+        "id": "ST_1_2_3",
+        "name": "Bittu's stay with Ammu",
+        "summary": "Dialogue about Bittu staying with Ammu and identifying family members.",
+        "pdf_page_start": 15,
+        "pdf_page_end": 15,
+        "book_page_start": 6,
+        "book_page_end": 6,
+        "topic_id": "T_1_2"
       },
       {
-        "id": "ST_1_1_6",
-        "name": "Alphabet Song (Letters A-D)",
-        "summary": "A song and copying exercise to introduce and practice the letters A, B, C, and D.",
-        "page_start": 26,
-        "page_end": 28,
-        "topic_id": "T_1_1"
+        "id": "ST_1_3_1",
+        "name": "Singing about family roles",
+        "summary": "A song that helps students learn about different family members and their roles.",
+        "pdf_page_start": 16,
+        "pdf_page_end": 16,
+        "book_page_start": 7,
+        "book_page_end": 7,
+        "topic_id": "T_1_3"
       },
       {
-        "id": "ST_2_1_1",
-        "name": "Ammu and Bittu's Journey to School",
-        "summary": "Introduction to the theme of going to school and observing the surroundings from the bus.",
-        "page_start": 29,
-        "page_end": 31,
-        "topic_id": "T_2_1"
+        "id": "ST_1_3_2",
+        "name": "Learning specific names of Ammu's family",
+        "summary": "Introduces the specific names of Ammu's grandfather, grandmother, father, mother, and brother.",
+        "pdf_page_start": 17,
+        "pdf_page_end": 18,
+        "book_page_start": 8,
+        "book_page_end": 9,
+        "topic_id": "T_1_3"
       },
       {
-        "id": "ST_2_1_2",
-        "name": "Identifying Vehicles and Transport",
-        "summary": "Ammu and Bittu observe and name different vehicles like bus, car, scooter, jeep, cycle, and auto, including a song about vehicles.",
-        "page_start": 32,
-        "page_end": 35,
-        "topic_id": "T_2_1"
+        "id": "ST_1_6_1",
+        "name": "Matching names to characters",
+        "summary": "Students identify and read the names of Ammu, Bittu, Chintu, and Doggy.",
+        "pdf_page_start": 23,
+        "pdf_page_end": 23,
+        "book_page_start": 14,
+        "book_page_end": 14,
+        "topic_id": "T_1_6"
       },
       {
-        "id": "ST_2_1_3",
-        "name": "Places Near Ammu's School",
-        "summary": "Ammu shows Bittu various community places near the school, such as a hospital, bank, post office, and kirana shop.",
-        "page_start": 36,
-        "page_end": 39,
-        "topic_id": "T_2_1"
+        "id": "ST_1_6_2",
+        "name": "Drawing and writing one's own name",
+        "summary": "An activity for students to draw their own picture and write their name.",
+        "pdf_page_start": 24,
+        "pdf_page_end": 24,
+        "book_page_start": 15,
+        "book_page_end": 15,
+        "topic_id": "T_1_6"
       },
       {
-        "id": "ST_2_1_4",
-        "name": "Alphabet Song (Letters E-H)",
-        "summary": "A song and activities to introduce and practice the letters E, F, G, and H.",
-        "page_start": 40,
-        "page_end": 42,
-        "topic_id": "T_2_1"
+        "id": "ST_1_7_1",
+        "name": "Singing alphabet songs with associated words",
+        "summary": "Songs introducing letters A, B, C, D and words that start with them (e.g., Apple, Bat, Cat, Dog).",
+        "pdf_page_start": 25,
+        "pdf_page_end": 25,
+        "book_page_start": 16,
+        "book_page_end": 16,
+        "topic_id": "T_1_7"
       },
       {
-        "id": "ST_3_1_1",
-        "name": "Arrival at School and Meeting Eswar",
-        "summary": "Ammu and Bittu arrive at school and meet Ammu's friend Eswar as the school bell rings.",
-        "page_start": 43,
-        "page_end": 46,
-        "topic_id": "T_3_1"
+        "id": "ST_1_7_2",
+        "name": "Reading and copying letters and words",
+        "summary": "Practice in reading and writing uppercase and lowercase letters A, B, C, D, along with associated words.",
+        "pdf_page_start": 26,
+        "pdf_page_end": 26,
+        "book_page_start": 17,
+        "book_page_end": 17,
+        "topic_id": "T_1_7"
       },
       {
-        "id": "ST_3_1_2",
-        "name": "Bittu's Classroom Adventure",
-        "summary": "Bittu explores the classroom while Ammu is at prayer, leading to children trying to catch him.",
-        "page_start": 47,
-        "page_end": 51,
-        "topic_id": "T_3_1"
+        "id": "ST_1_7_3",
+        "name": "General alphabet song",
+        "summary": "A song to reinforce the entire alphabet sequence.",
+        "pdf_page_start": 27,
+        "pdf_page_end": 27,
+        "book_page_start": 18,
+        "book_page_end": 18,
+        "topic_id": "T_1_7"
       },
       {
-        "id": "ST_3_1_3",
-        "name": "Bittu the Painter: Colors and Body Parts",
-        "summary": "Bittu accidentally spreads colors on children, leading to a song about colors on body parts and Ammu catching him.",
-        "page_start": 52,
-        "page_end": 56,
-        "topic_id": "T_3_1"
+        "id": "ST_1_9_1",
+        "name": "Singing the Alphabet Song (U-Z)",
+        "summary": "A song to help students remember the letters U, V, W, X, Y, Z and their sounds.",
+        "pdf_page_start": 105,
+        "pdf_page_end": 105,
+        "book_page_start": 104,
+        "book_page_end": 104,
+        "topic_id": "T_1_9"
       },
       {
-        "id": "ST_3_1_4",
-        "name": "Ammu's Friends (Activity)",
-        "summary": "An activity to copy the names of Ammu's friends and write the names of one's own friends.",
-        "page_start": 57,
-        "page_end": 57,
-        "topic_id": "T_3_1"
+        "id": "ST_1_9_2",
+        "name": "Tracing and Copying Letters and Words",
+        "summary": "Practice tracing and copying uppercase and lowercase letters U-Z, along with associated vocabulary words.",
+        "pdf_page_start": 106,
+        "pdf_page_end": 106,
+        "book_page_start": 105,
+        "book_page_end": 105,
+        "topic_id": "T_1_9"
       },
       {
-        "id": "ST_3_1_5",
-        "name": "Alphabet Song (Letters I-L)",
-        "summary": "A song and activities to introduce and practice the letters I, J, K, and L.",
-        "page_start": 58,
-        "page_end": 60,
-        "topic_id": "T_3_1"
+        "id": "ST_2_7_1",
+        "name": "Ammu asks for a story",
+        "summary": "Ammu asks her grandmother for a story about fruits and vegetables.",
+        "pdf_page_start": 114,
+        "pdf_page_end": 114,
+        "book_page_start": 114,
+        "book_page_end": 114,
+        "topic_id": "T_2_7"
       },
       {
-        "id": "ST_4_1_1",
-        "name": "Teacher's Arrival and Washing Colors",
-        "summary": "The teacher instructs children to wash off the colors, leading to a discussion about favorite colors.",
-        "page_start": 61,
-        "page_end": 65,
-        "topic_id": "T_4_1"
+        "id": "ST_2_7_2",
+        "name": "Introduction to Princess Tomato's Award",
+        "summary": "The story begins with Mr. Pumpkin and Princess Tomato hosting an award for the most well-behaved vegetable.",
+        "pdf_page_start": 115,
+        "pdf_page_end": 115,
+        "book_page_start": 115,
+        "book_page_end": 115,
+        "topic_id": "T_2_7"
       },
       {
-        "id": "ST_4_1_2",
-        "name": "Learning About Colors",
-        "summary": "Children identify and name different colors through pictures and activities.",
-        "page_start": 66,
-        "page_end": 67,
-        "topic_id": "T_4_1"
+        "id": "ST_2_7_3",
+        "name": "Bitter Gourd's Claim",
+        "summary": "Bitter gourd presents itself, highlighting its health benefits.",
+        "pdf_page_start": 116,
+        "pdf_page_end": 116,
+        "book_page_start": 116,
+        "book_page_end": 116,
+        "topic_id": "T_2_7"
       },
       {
-        "id": "ST_4_1_3",
-        "name": "Washing and Identifying Body Parts",
-        "summary": "Children wash their hands, face, and legs, and learn to name various body parts through a song and activity.",
-        "page_start": 68,
-        "page_end": 68,
-        "topic_id": "T_4_1"
+        "id": "ST_2_7_4",
+        "name": "Lady's Finger's Claim",
+        "summary": "Lady's finger presents itself, claiming to make people clever.",
+        "pdf_page_start": 117,
+        "pdf_page_end": 117,
+        "book_page_start": 117,
+        "book_page_end": 117,
+        "topic_id": "T_2_7"
       },
       {
-        "id": "ST_4_1_4",
-        "name": "Apology and Pet Discussion",
-        "summary": "Ammu apologizes to the teacher for bringing Bittu to class, and children are encouraged to draw their pets.",
-        "page_start": 72,
-        "page_end": 72,
-        "topic_id": "T_4_1"
+        "id": "ST_2_7_5",
+        "name": "Red Chilli's Claim",
+        "summary": "Red chilli presents itself, emphasizing its ability to add taste to curries.",
+        "pdf_page_start": 118,
+        "pdf_page_end": 118,
+        "book_page_start": 118,
+        "book_page_end": 118,
+        "topic_id": "T_2_7"
       },
       {
-        "id": "ST_4_1_5",
-        "name": "Activities We Do at School",
-        "summary": "A song and activity about various activities like reading, writing, talking, playing, eating, and drinking at school.",
-        "page_start": 74,
-        "page_end": 74,
-        "topic_id": "T_4_1"
-      },
-      {
-        "id": "ST_4_1_6",
-        "name": "Alphabet Song (Letters M-P)",
-        "summary": "A song and copying exercise to introduce and practice the letters M, N, O, and P.",
-        "page_start": 77,
-        "page_end": 77,
-        "topic_id": "T_4_1"
-      },
-      {
-        "id": "ST_5_1_1",
-        "name": "Ammu's Daily Routine and Good Habits",
-        "summary": "Ammu's morning routine, teaching Bittu good habits like brushing, bathing, and eating, and the family preparing for a trip.",
-        "page_start": 79,
-        "page_end": 86,
-        "topic_id": "T_5_1"
-      },
-      {
-        "id": "ST_5_1_2",
-        "name": "Personal Belongings and Things I Use",
-        "summary": "Ammu and Bittu discuss their bags and the various items they keep or use daily, including a song about Bittu's bag.",
-        "page_start": 87,
-        "page_end": 92,
-        "topic_id": "T_5_1"
-      },
-      {
-        "id": "ST_5_1_3",
-        "name": "Planning and Traveling to the Zoo",
-        "summary": "Ammu's family gets ready and travels to the zoo, emphasizing safety rules.",
-        "page_start": 93,
-        "page_end": 96,
-        "topic_id": "T_5_1"
-      },
-      {
-        "id": "ST_5_1_4",
-        "name": "Alphabet Song (Letters Q-T)",
-        "summary": "A song and copying exercise to introduce and practice the letters Q, R, S, and T.",
-        "page_start": 97,
-        "page_end": 98,
-        "topic_id": "T_5_1"
-      },
-      {
-        "id": "ST_6_1_1",
-        "name": "Zoo Visit and Observing Animals",
-        "summary": "Ammu's family enters the zoo, observes animals like giraffes and zebras, and identifies various animals through riddles and pictures.",
-        "page_start": 99,
-        "page_end": 106,
-        "topic_id": "T_6_1"
-      },
-      {
-        "id": "ST_6_1_2",
-        "name": "Identifying Birds",
-        "summary": "Ammu and Bittu learn about different birds like parrots, peacocks, sparrows, crows, cranes, and ducks.",
-        "page_start": 107,
-        "page_end": 108,
-        "topic_id": "T_6_1"
-      },
-      {
-        "id": "ST_6_1_3",
-        "name": "Meeting Tinku and Sharing Food",
-        "summary": "Bittu introduces Ammu to his monkey friend Tinku, and they share food, discussing different food items.",
-        "page_start": 109,
-        "page_end": 111,
-        "topic_id": "T_6_1"
-      },
-      {
-        "id": "ST_6_1_4",
-        "name": "Leaving the Zoo",
-        "summary": "Ammu's family leaves the zoo, and Bittu says goodbye to Tinku.",
-        "page_start": 112,
-        "page_end": 113,
-        "topic_id": "T_6_1"
-      },
-      {
-        "id": "ST_6_1_5",
-        "name": "Alphabet Song (Letters U-Z)",
-        "summary": "A song and activities to introduce and practice the letters U, V, W, X, Y, and Z, concluding the alphabet series.",
-        "page_start": 114,
-        "page_end": 116,
-        "topic_id": "T_6_1"
-      },
-      {
-        "id": "ST_7_1_1",
-        "name": "Introduction to Fruits and Vegetables",
-        "summary": "The unit begins with Ammu's visit to the market, introducing various fruits and vegetables.",
-        "page_start": 117,
-        "page_end": 119,
-        "topic_id": "T_7_1"
-      },
-      {
-        "id": "ST_7_1_2",
-        "name": "Ammu's Dislike and Grandmother's Advice",
-        "summary": "Ammu expresses her dislike for bitter gourd, and her grandmother explains the health benefits and importance of eating all fruits and vegetables.",
-        "page_start": 120,
-        "page_end": 121,
-        "topic_id": "T_7_1"
-      },
-      {
-        "id": "ST_7_1_3",
-        "name": "Learning About Fruits and Vegetables",
-        "summary": "Bittu sings a song about fruits, followed by an activity to read, look at pictures, and classify various fruits and vegetables.",
-        "page_start": 122,
-        "page_end": 123,
-        "topic_id": "T_7_1"
-      },
-      {
-        "id": "ST_8_1_1",
-        "name": "Academic Standards",
-        "summary": "Details the expected learning outcomes and five broad categories of academic standards for Class 1 learners.",
-        "page_start": 124,
-        "page_end": 124,
-        "topic_id": "T_8_1"
-      },
-      {
-        "id": "ST_8_1_2",
-        "name": "Salient Features of the New Textbook",
-        "summary": "Describes the structural and pedagogical features of the textbook, including unit design, narrative approach, and activity types.",
-        "page_start": 124,
-        "page_end": 125,
-        "topic_id": "T_8_1"
-      },
-      {
-        "id": "ST_8_1_3",
-        "name": "Assessment Guidelines",
-        "summary": "Explains the continuous and comprehensive assessment approach, differentiating between formative and summative assessments and their criteria.",
-        "page_start": 125,
-        "page_end": 126,
-        "topic_id": "T_8_1"
+        "id": "ST_2_7_6",
+        "name": "Potato's Claim",
+        "summary": "Potato presents itself, asserting its popularity.",
+        "pdf_page_start": 119,
+        "pdf_page_end": 119,
+        "book_page_start": 119,
+        "book_page_end": 119,
+        "topic_id": "T_2_7"
       }
     ],
     "exercises": [
       {
         "id": "E_1_1_1",
-        "text": "Colour the picture.",
+        "text": "This exercise tests comprehension of the introductory story by asking students to identify characters and actions in the provided picture.",
         "topic_id": "T_1_1",
-        "page": 11
+        "pdf_page": 12,
+        "book_page": 3,
+        "difficulty_level": 1,
+        "cognitive_level": "understand"
       },
       {
-        "id": "E_1_1_2",
-        "text": "1. Who are there in the picture? 2. What are they doing? 3. What else do you see in the picture?",
-        "topic_id": "T_1_1",
-        "page": 13
+        "id": "E_1_2_1",
+        "text": "This exercise assesses comprehension of the narrative about the squirrel and dog by asking questions about the events and characters.",
+        "topic_id": "T_1_2",
+        "pdf_page": 13,
+        "book_page": 4,
+        "difficulty_level": 1,
+        "cognitive_level": "understand"
       },
       {
-        "id": "E_1_1_3",
-        "text": "1. Will Doggy catch the squirrel? 2. What would Ammu do?",
-        "topic_id": "T_1_1",
-        "page": 14
+        "id": "E_1_2_2",
+        "text": "This exercise evaluates understanding of the dialogue between Ammu and Bittu by asking about their conversation.",
+        "topic_id": "T_1_2",
+        "pdf_page": 14,
+        "book_page": 5,
+        "difficulty_level": 1,
+        "cognitive_level": "understand"
       },
       {
-        "id": "E_1_1_4",
-        "text": "1. What is Bittu asking Ammu? 2. What is Ammu saying to Bittu?",
-        "topic_id": "T_1_1",
-        "page": 15
+        "id": "E_1_2_3",
+        "text": "This exercise tests comprehension of the dialogue and social interaction by asking students to infer responses in a conversation between Ammu and Bittu.",
+        "topic_id": "T_1_2",
+        "pdf_page": 15,
+        "book_page": 6,
+        "difficulty_level": 2,
+        "cognitive_level": "apply"
       },
       {
-        "id": "E_1_1_5",
-        "text": "1. What would Ammu say now? 2. What would Bittu say to Ammu?",
-        "topic_id": "T_1_1",
-        "page": 16
+        "id": "E_1_3_1",
+        "text": "This exercise assesses comprehension of the family song by asking students to identify the people mentioned and the subject of the song.",
+        "topic_id": "T_1_3",
+        "pdf_page": 16,
+        "book_page": 7,
+        "difficulty_level": 1,
+        "cognitive_level": "understand"
       },
       {
-        "id": "E_1_1_6",
-        "text": "1. Who are these people? 2. What is Ammu singing about her grandmother and mother?",
-        "topic_id": "T_1_1",
-        "page": 17
+        "id": "E_1_3_2",
+        "text": "This exercise prompts students to recall and state the names of Ammu's family members and reflect on their own family members' names.",
+        "topic_id": "T_1_3",
+        "pdf_page": 17,
+        "book_page": 8,
+        "difficulty_level": 2,
+        "cognitive_level": "recall"
       },
       {
-        "id": "E_1_1_7",
-        "text": "1. What is Bittu asking Ammu? 2. What is Ammu singing about?",
-        "topic_id": "T_1_1",
-        "page": 19
+        "id": "E_1_4_1",
+        "text": "This activity requires students to identify and list their own family members from a given selection, applying classification skills.",
+        "topic_id": "T_1_4",
+        "pdf_page": 19,
+        "book_page": 10,
+        "difficulty_level": 2,
+        "cognitive_level": "apply"
       },
       {
-        "id": "E_1_1_8",
-        "text": "Who are there in your family? Choose from the list and write who are there in your family.",
-        "topic_id": "T_1_1",
-        "page": 20
+        "id": "E_1_4_2",
+        "text": "This activity asks students to tick the family members who live in their home and then count the total number of family members, combining identification and basic counting skills.",
+        "topic_id": "T_1_4",
+        "pdf_page": 20,
+        "book_page": 11,
+        "difficulty_level": 2,
+        "cognitive_level": "apply"
       },
       {
-        "id": "E_1_1_9",
-        "text": "Tick () against the people who live in your home. How many members are there in your family?",
-        "topic_id": "T_1_1",
-        "page": 21
-      },
-      {
-        "id": "E_1_1_10",
-        "text": "Draw the picture of your house and colour it.",
-        "topic_id": "T_1_1",
-        "page": 22
-      },
-      {
-        "id": "E_1_1_11",
-        "text": "Draw the picture of your school and colour it.",
-        "topic_id": "T_1_1",
-        "page": 23
-      },
-      {
-        "id": "E_1_1_12",
-        "text": "Draw or paste your picture and write your name here.",
-        "topic_id": "T_1_1",
-        "page": 25
-      },
-      {
-        "id": "E_1_1_13",
-        "text": "Read and copy",
-        "topic_id": "T_1_1",
-        "page": 27
-      },
-      {
-        "id": "E_2_1_1",
-        "text": "Colour the picture.",
-        "topic_id": "T_2_1",
-        "page": 29
-      },
-      {
-        "id": "E_2_1_2",
-        "text": "1. How do you go to school? 2. What do you see in the picture? 3. What do you see on your way to school? 4. Will Ammu take Bittu to school?",
-        "topic_id": "T_2_1",
-        "page": 30
-      },
-      {
-        "id": "E_2_1_3",
-        "text": "1. What is Bittu asking Ammu ? 2. What is Ammu saying to Bittu?",
-        "topic_id": "T_2_1",
-        "page": 32
-      },
-      {
-        "id": "E_2_1_4",
-        "text": "Draw the picture of a vehicle you like. Name it, colour it and say about it.",
-        "topic_id": "T_2_1",
-        "page": 34
-      },
-      {
-        "id": "E_2_1_5",
-        "text": "Say and write the names of the vehicles.",
-        "topic_id": "T_2_1",
-        "page": 35
-      },
-      {
-        "id": "E_2_1_6",
-        "text": "1. Where are Ammu and Bittu now? 2. What are the places near the school?",
-        "topic_id": "T_2_1",
-        "page": 36
-      },
-      {
-        "id": "E_2_1_7",
-        "text": "Say the names of the places.",
-        "topic_id": "T_2_1",
-        "page": 37
-      },
-      {
-        "id": "E_2_1_8",
-        "text": "Look at the picture and talk about it. Where is the auto? Where is the dog? Where is the car?",
-        "topic_id": "T_2_1",
-        "page": 38
-      },
-      {
-        "id": "E_2_1_9",
-        "text": "Collect the pictures of any two vehicles and paste them here. Write their names and talk about them in the group.",
-        "topic_id": "T_2_1",
-        "page": 39
-      },
-      {
-        "id": "E_2_1_10",
-        "text": "Read and copy",
-        "topic_id": "T_2_1",
-        "page": 41
-      },
-      {
-        "id": "E_2_1_11",
-        "text": "Colour the cubes that have the same letter as in the circle.",
-        "topic_id": "T_2_1",
-        "page": 42
-      },
-      {
-        "id": "E_3_1_1",
-        "text": "Colour the picture.",
-        "topic_id": "T_3_1",
-        "page": 43
-      },
-      {
-        "id": "E_3_1_2",
-        "text": "1. What is Bittu thinking? 2. Who is Eswar? 3. What is Eswar saying to Ammu?",
-        "topic_id": "T_3_1",
-        "page": 46
-      },
-      {
-        "id": "E_3_1_3",
-        "text": "1. Where is Bittu? 2. What would he do now?",
-        "topic_id": "T_3_1",
-        "page": 47
-      },
-      {
-        "id": "E_3_1_4",
-        "text": "1. What did Bittu see in the class room? 2. What things do you have in your classroom?",
-        "topic_id": "T_3_1",
-        "page": 48
-      },
-      {
-        "id": "E_3_1_5",
-        "text": "1. What are the children doing? 2. What are they saying? 3. What would Bittu do now?",
-        "topic_id": "T_3_1",
-        "page": 49
-      },
-      {
-        "id": "E_3_1_6",
-        "text": "1. Where is Bittu now? 2. Will Eswar catch Bittu?",
-        "topic_id": "T_3_1",
-        "page": 50
-      },
-      {
-        "id": "E_3_1_7",
-        "text": "1. Who are the children in the picture? 2. What is Bittu doing? 3. What are the children doing? 4. What is Ammu doing?",
-        "topic_id": "T_3_1",
-        "page": 51
-      },
-      {
-        "id": "E_3_1_8",
-        "text": "1. Where is Bittu in the first picture? 2. What is Hari saying? 3. Where is Bittu in the second picture? 4. What is Ganga saying?",
-        "topic_id": "T_3_1",
-        "page": 52
-      },
-      {
-        "id": "E_3_1_9",
-        "text": "Sing your song What is Bittu doing?",
-        "topic_id": "T_3_1",
-        "page": 53
-      },
-      {
-        "id": "E_3_1_10",
-        "text": "1. What is Ammu saying to Bittu? 2. Will Bittu go back into Ammu’s bag?",
-        "topic_id": "T_3_1",
-        "page": 54
-      },
-      {
-        "id": "E_3_1_11",
-        "text": "1. Why is Bittu jumping here and there? 2. What is Ammu saying to Bittu? 3. What would Bittu do now?",
-        "topic_id": "T_3_1",
-        "page": 55
-      },
-      {
-        "id": "E_3_1_12",
-        "text": "1. What is Ammu thinking now? 2. Where would she keep Bittu? 3. Will the teacher see Bittu?",
-        "topic_id": "T_3_1",
-        "page": 56
-      },
-      {
-        "id": "E_3_1_13",
-        "text": "Copy the names of Ammu’s friends. Write the names of your friends.",
-        "topic_id": "T_3_1",
-        "page": 57
-      },
-      {
-        "id": "E_3_1_14",
-        "text": "Read and copy",
-        "topic_id": "T_3_1",
-        "page": 59
-      },
-      {
-        "id": "E_3_1_15",
-        "text": "Match the small letters with their capital letters and colour them.",
-        "topic_id": "T_3_1",
-        "page": 60
+        "id": "E_1_7_1",
+        "text": "This exercise provides practice in reading and copying the uppercase and lowercase forms of letters A, B, C, D, along with associated words.",
+        "topic_id": "T_1_7",
+        "pdf_page": 26,
+        "book_page": 17,
+        "difficulty_level": 1,
+        "cognitive_level": "apply"
       },
       {
         "id": "E_4_1_1",
         "text": "Colour the picture.",
         "topic_id": "T_4_1",
-        "page": 61
+        "pdf_page": 51,
+        "book_page": 51,
+        "difficulty_level": 1,
+        "cognitive_level": "apply"
       },
       {
-        "id": "E_4_1_2",
+        "id": "E_4_2_1",
         "text": "1. What are the children doing? 2. What are the things you do at school?",
-        "topic_id": "T_4_1",
-        "page": 62
+        "topic_id": "T_4_2",
+        "pdf_page": 52,
+        "book_page": 52,
+        "difficulty_level": 1,
+        "cognitive_level": "understand"
       },
       {
-        "id": "E_4_1_3",
+        "id": "E_4_3_1",
         "text": "1. What is Ammu doing? 2. What is she saying to Bittu? 3. What would the teacher say?",
-        "topic_id": "T_4_1",
-        "page": 64
+        "topic_id": "T_4_3",
+        "pdf_page": 54,
+        "book_page": 54,
+        "difficulty_level": 2,
+        "cognitive_level": "understand"
       },
       {
-        "id": "E_4_1_4",
+        "id": "E_4_4_1",
         "text": "1. What do you see in the picture? 2. What is the teacher saying? 3. Will the children say anything? 4. What would they do now?",
-        "topic_id": "T_4_1",
-        "page": 65
+        "topic_id": "T_4_4",
+        "pdf_page": 55,
+        "book_page": 55,
+        "difficulty_level": 2,
+        "cognitive_level": "understand"
       },
       {
-        "id": "E_4_1_5",
+        "id": "E_4_5_1",
         "text": "1. Where are the children going? 2. What are they saying? 3. Which colour do you like?",
-        "topic_id": "T_4_1",
-        "page": 66
+        "topic_id": "T_4_5",
+        "pdf_page": 56,
+        "book_page": 56,
+        "difficulty_level": 1,
+        "cognitive_level": "apply"
       },
       {
-        "id": "E_4_1_6",
-        "text": "What are these? Name them. Colour the pictures and name the colours. What colours can you name? I like .................... .",
-        "topic_id": "T_4_1",
-        "page": 67
+        "id": "E_4_6_1",
+        "text": "What are these? Name them. Colour the pictures and name the colours. What colours can you name?",
+        "topic_id": "T_4_6",
+        "pdf_page": 57,
+        "book_page": 57,
+        "difficulty_level": 1,
+        "cognitive_level": "apply"
       },
       {
-        "id": "E_4_1_7",
+        "id": "E_4_7_1",
         "text": "1. Where are the children now? 2. What are they doing? 3. What is Fatima saying to Ganga? 4. What is Ganga saying to Fatima?",
-        "topic_id": "T_4_1",
-        "page": 68
+        "topic_id": "T_4_7",
+        "pdf_page": 58,
+        "book_page": 58,
+        "difficulty_level": 2,
+        "cognitive_level": "understand"
       },
       {
-        "id": "E_4_1_8",
+        "id": "E_4_8_1",
         "text": "1) Who is washing the hands? 2) Who is washing the face?",
-        "topic_id": "T_4_1",
-        "page": 69
+        "topic_id": "T_4_8",
+        "pdf_page": 59,
+        "book_page": 59,
+        "difficulty_level": 1,
+        "cognitive_level": "understand"
       },
       {
-        "id": "E_4_1_9",
-        "text": "Add lines to the song and sing. What is Hari singing? What is Ganga singing?",
-        "topic_id": "T_4_1",
-        "page": 70
+        "id": "E_4_9_1",
+        "text": "Add lines to the song and sing. What is Hari singing? Wash... This is the way ...ear What is Ganga singing?",
+        "topic_id": "T_4_9",
+        "pdf_page": 60,
+        "book_page": 60,
+        "difficulty_level": 2,
+        "cognitive_level": "create"
       },
       {
-        "id": "E_4_1_10",
-        "text": "Write the names of the body parts.",
-        "topic_id": "T_4_1",
-        "page": 71
+        "id": "E_4_10_1",
+        "text": "Write the names of the body parts. nose mouth hand leg eye neck head fingers knee shoulder",
+        "topic_id": "T_4_10",
+        "pdf_page": 61,
+        "book_page": 61,
+        "difficulty_level": 2,
+        "cognitive_level": "apply"
       },
       {
-        "id": "E_4_1_11",
+        "id": "E_4_11_1",
         "text": "1) What is the teacher saying to Ammu? 2) What is Ammu saying?",
-        "topic_id": "T_4_1",
-        "page": 72
+        "topic_id": "T_4_11",
+        "pdf_page": 62,
+        "book_page": 62,
+        "difficulty_level": 2,
+        "cognitive_level": "understand"
       },
       {
-        "id": "E_4_1_12",
+        "id": "E_4_12_1",
         "text": "Draw your pet and talk about it.",
-        "topic_id": "T_4_1",
-        "page": 73
+        "topic_id": "T_4_12",
+        "pdf_page": 63,
+        "book_page": 63,
+        "difficulty_level": 2,
+        "cognitive_level": "create"
       },
       {
-        "id": "E_4_1_13",
-        "text": "Add lines and sing the song.",
-        "topic_id": "T_4_1",
-        "page": 75
+        "id": "E_4_14_1",
+        "text": "Add lines and sing the song. We are at school, ... eating ... drinking ... singing ... dancing",
+        "topic_id": "T_4_14",
+        "pdf_page": 65,
+        "book_page": 65,
+        "difficulty_level": 2,
+        "cognitive_level": "create"
       },
       {
-        "id": "E_4_1_14",
-        "text": "What are these children doing? Choose from the list and write in the boxes.",
-        "topic_id": "T_4_1",
-        "page": 76
+        "id": "E_4_15_1",
+        "text": "What are these children doing? Choose from the list and write in the boxes. eating drinking reading skipping playing dancing",
+        "topic_id": "T_4_15",
+        "pdf_page": 66,
+        "book_page": 66,
+        "difficulty_level": 2,
+        "cognitive_level": "apply"
       },
       {
-        "id": "E_4_1_15",
-        "text": "Read and copy",
-        "topic_id": "T_4_1",
-        "page": 78
+        "id": "E_4_17_1",
+        "text": "Read and copy (letters M, N, O, P and associated words like Mango, monkey, Net, nest, Ox, owl, Pen, pencil).",
+        "topic_id": "T_4_17",
+        "pdf_page": 68,
+        "book_page": 68,
+        "difficulty_level": 1,
+        "cognitive_level": "apply"
       },
       {
-        "id": "E_5_1_1",
-        "text": "Colour the pictures.",
-        "topic_id": "T_5_1",
-        "page": 79
+        "id": "E_1_5_1",
+        "text": "Identify birds based on descriptions like 'It has green feathers. It has a red beak.' (parrot) and 'It has a blue neck. It has colourful feathers.' (peacock).",
+        "topic_id": "T_1_5",
+        "pdf_page": 98,
+        "book_page": 97,
+        "difficulty_level": 2,
+        "cognitive_level": "apply"
       },
       {
-        "id": "E_5_1_2",
-        "text": "1. Who are these people? 2. What are they doing? 3. What are the things you do at home?",
-        "topic_id": "T_5_1",
-        "page": 80
+        "id": "E_1_5_2",
+        "text": "Look at the birds (crow, sparrow, crane, duck) and talk about their features like black feathers, sharp beak, grey feathers, small beak, white feathers, long legs, flat beak.",
+        "topic_id": "T_1_5",
+        "pdf_page": 99,
+        "book_page": 98,
+        "difficulty_level": 1,
+        "cognitive_level": "remember"
       },
       {
-        "id": "E_5_1_3",
-        "text": "1. Where are Ammu and Bittu now? 2. Why is Bittu scared? 3. How can Ammu keep Bittu safe? 4. What do you do when you are scared?",
-        "topic_id": "T_5_1",
-        "page": 82
+        "id": "E_1_6_1",
+        "text": "Answer questions about what is seen in the picture, who Ammu's new friend is, and if Bittu will go with Tinku.",
+        "topic_id": "T_1_6",
+        "pdf_page": 100,
+        "book_page": 99,
+        "difficulty_level": 1,
+        "cognitive_level": "understand"
       },
       {
-        "id": "E_5_1_4",
-        "text": "What would Ammu say? Who would you go to when you are scared?",
-        "topic_id": "T_5_1",
-        "page": 83
+        "id": "E_1_6_2",
+        "text": "Answer questions about what food they eat, what Tinku likes to eat, and what food you like.",
+        "topic_id": "T_1_6",
+        "pdf_page": 101,
+        "book_page": 100,
+        "difficulty_level": 1,
+        "cognitive_level": "understand"
       },
       {
-        "id": "E_5_1_5",
-        "text": "1. What is Ammu’s mother doing? 2. What is her father doing? 3. What is Ammu saying to Bittu? 4. What would Bittu say to Ammu?",
-        "topic_id": "T_5_1",
-        "page": 84
+        "id": "E_1_8_1",
+        "text": "Answer questions about where Ammu's family is now, what Bittu and Ammu are saying to Tinku, and what Tinku is saying to Bittu and Ammu.",
+        "topic_id": "T_1_8",
+        "pdf_page": 104,
+        "book_page": 103,
+        "difficulty_level": 1,
+        "cognitive_level": "understand"
       },
       {
-        "id": "E_5_1_6",
-        "text": "1. What does Ammu ask Bittu to do? 2. What do you see in this picture? 3. How do you take care of your body?",
-        "topic_id": "T_5_1",
-        "page": 85
+        "id": "E_1_9_1",
+        "text": "Sing a song about the letters U, V, W, X, Y, Z and words associated with them (umbrella, van, watch, X-mas, yak, zoo).",
+        "topic_id": "T_1_9",
+        "pdf_page": 105,
+        "book_page": 104,
+        "difficulty_level": 1,
+        "cognitive_level": "remember"
       },
       {
-        "id": "E_5_1_7",
-        "text": "Add lines to the song and sing. Talk about the things you do.",
-        "topic_id": "T_5_1",
-        "page": 86
+        "id": "E_1_9_2",
+        "text": "Read and copy the letters U, V, W, X, Y, Z and associated words (umbrella, uniform, van, vase, watch, well, X-mas tree, X-ray, yak, yellow, zebra, zip).",
+        "topic_id": "T_1_9",
+        "pdf_page": 106,
+        "book_page": 105,
+        "difficulty_level": 2,
+        "cognitive_level": "apply"
       },
       {
-        "id": "E_5_1_8",
-        "text": "Ammu has a bag. What is Ammu going to do? Talk about the picture. 1. What is Ammu saying to Bittu? 2. What does Bittu want? 3. What would Bittu keep in his bag?",
-        "topic_id": "T_5_1",
-        "page": 87
+        "id": "E_1_10_1",
+        "text": "Join the dots from 'a' to 'z' to get an animal, color it, and write its name in the given box.",
+        "topic_id": "T_1_10",
+        "pdf_page": 107,
+        "book_page": 106,
+        "difficulty_level": 2,
+        "cognitive_level": "apply"
       },
       {
-        "id": "E_5_1_9",
-        "text": "1. What do you see in these pictures? 2. What do you do every day?",
-        "topic_id": "T_5_1",
-        "page": 88
+        "id": "E_2_1_1",
+        "text": "Colour the pictures of an eggplant, pumpkin, pear, peach, bananas, and apple.",
+        "topic_id": "T_2_1",
+        "pdf_page": 107,
+        "book_page": 107,
+        "difficulty_level": 1,
+        "cognitive_level": "apply"
       },
       {
-        "id": "E_5_1_10",
-        "text": "Draw the pictures of any two things you use. Colour them and write their names.",
-        "topic_id": "T_5_1",
-        "page": 90
+        "id": "E_2_2_1",
+        "text": "Answer questions about where Ammu is now, if you have ever been to a market, what fruits and vegetables are seen in the picture, and if you grow any of these at home.",
+        "topic_id": "T_2_2",
+        "pdf_page": 108,
+        "book_page": 108,
+        "difficulty_level": 1,
+        "cognitive_level": "understand"
       },
       {
-        "id": "E_5_1_11",
-        "text": "Add lines to the song and sing.",
-        "topic_id": "T_5_1",
-        "page": 92
+        "id": "E_2_3_1",
+        "text": "Answer questions about what happened to Ammu, why she is not eating, and if it is right for Ammu to leave the table.",
+        "topic_id": "T_2_3",
+        "pdf_page": 110,
+        "book_page": 110,
+        "difficulty_level": 1,
+        "cognitive_level": "understand"
       },
       {
-        "id": "E_5_1_12",
-        "text": "1. Who are these people? 2. What are they doing? 3. What is father saying to Ammu?",
-        "topic_id": "T_5_1",
-        "page": 93
+        "id": "E_2_4_1",
+        "text": "Answer questions about what grandmother is doing, what she told Ammu, and why it is good to eat all fruits and vegetables.",
+        "topic_id": "T_2_4",
+        "pdf_page": 111,
+        "book_page": 111,
+        "difficulty_level": 1,
+        "cognitive_level": "understand"
       },
       {
-        "id": "E_5_1_13",
-        "text": "1. What did mother ask Ammu? 2. What did Ammu tell her mother?",
-        "topic_id": "T_5_1",
-        "page": 94
+        "id": "E_2_5_1",
+        "text": "Sing Bittu's song about apples (big, round, red, sweet) and grapes (round, small, green, sour).",
+        "topic_id": "T_2_5",
+        "pdf_page": 112,
+        "book_page": 112,
+        "difficulty_level": 1,
+        "cognitive_level": "remember"
       },
       {
-        "id": "E_5_1_14",
-        "text": "1. Who is carrying Chintu? 2. What is father doing? 3. What is Bittu asking Ammu?",
-        "topic_id": "T_5_1",
-        "page": 95
+        "id": "E_2_6_1",
+        "text": "Read the words (pomegranate, watermelon, tomato, bitter gourd, cabbage, carrot, grapes, banana, brinjal, apple, mango, lady's fingers, custard apple, potato, pumpkin) and write them under the headings 'Names of the fruits' and 'Names of the vegetables'.",
+        "topic_id": "T_2_6",
+        "pdf_page": 113,
+        "book_page": 113,
+        "difficulty_level": 2,
+        "cognitive_level": "apply"
       },
       {
-        "id": "E_5_1_15",
-        "text": "1. Why did father ask for another auto? 2. Why is it important to follow safety rules?",
-        "topic_id": "T_5_1",
-        "page": 96
-      },
-      {
-        "id": "E_5_1_16",
-        "text": "Read and copy",
-        "topic_id": "T_5_1",
-        "page": 98
-      },
-      {
-        "id": "E_6_1_1",
-        "text": "Colour the pictures.",
-        "topic_id": "T_6_1",
-        "page": 99
-      },
-      {
-        "id": "E_6_1_2",
-        "text": "1. What animals do you see in the picture? 2. Have you ever been to a zoo?",
-        "topic_id": "T_6_1",
-        "page": 101
-      },
-      {
-        "id": "E_6_1_3",
-        "text": "1. What is Bittu saying? 2. What are Ammu and her father talking about?",
-        "topic_id": "T_6_1",
-        "page": 102
-      },
-      {
-        "id": "E_6_1_4",
-        "text": "1. What did Ammu ask Bittu? 2. What did Bittu tell Ammu about the zebra? 3. Have you ever seen a zebra?",
-        "topic_id": "T_6_1",
-        "page": 103
-      },
-      {
-        "id": "E_6_1_5",
-        "text": "It is big. It has a long trunk. What is it? It is tall. It has a long neck. What is it?",
-        "topic_id": "T_6_1",
-        "page": 104
-      },
-      {
-        "id": "E_6_1_6",
-        "text": "Look at the pictures of animals and talk about them.",
-        "topic_id": "T_6_1",
-        "page": 105
-      },
-      {
-        "id": "E_6_1_7",
-        "text": "Write the names of the animals you know.",
-        "topic_id": "T_6_1",
-        "page": 106
-      },
-      {
-        "id": "E_6_1_8",
-        "text": "It has green feathers. It has a red beak. Which bird is it? This is a .......................... It has a blue neck. It has colourful feathers. Which bird is it? This is a .......................... 1. What do you call these birds? 2. What is Ammu saying about these birds?",
-        "topic_id": "T_6_1",
-        "page": 107
-      },
-      {
-        "id": "E_6_1_9",
-        "text": "Look at the birds and talk about them.",
-        "topic_id": "T_6_1",
-        "page": 108
-      },
-      {
-        "id": "E_6_1_10",
-        "text": "1. What do you see in the picture? 2. Who is Ammu's new friend? 3. Will Bittu go with Tinku?",
-        "topic_id": "T_6_1",
-        "page": 109
-      },
-      {
-        "id": "E_6_1_11",
-        "text": "1. What food do they eat? 2. What food does Tinku like to eat? 3. What food do you like?",
-        "topic_id": "T_6_1",
-        "page": 110
-      },
-      {
-        "id": "E_6_1_12",
-        "text": "Write names of the food items in the blanks.",
-        "topic_id": "T_6_1",
-        "page": 111
-      },
-      {
-        "id": "E_6_1_13",
-        "text": "Look at the picture. What do you see? Talk about it to your friends.",
-        "topic_id": "T_6_1",
-        "page": 112
-      },
-      {
-        "id": "E_6_1_14",
-        "text": "1. Where is Ammu's family now? 2. What are Bittu and Ammu saying to Tinku? 3. What's Tinku saying to Bittu and Ammu?",
-        "topic_id": "T_6_1",
-        "page": 113
-      },
-      {
-        "id": "E_6_1_15",
-        "text": "Read and copy",
-        "topic_id": "T_6_1",
-        "page": 115
-      },
-      {
-        "id": "E_6_1_16",
-        "text": "Join the dots from ‘a’ to ‘z’ to get an animal and colour it. Write its name in the given box.",
-        "topic_id": "T_6_1",
-        "page": 116
-      },
-      {
-        "id": "E_7_1_1",
-        "text": "1. What does Ammu ask her grandmother? 2. What kind of stories do you like?",
-        "topic_id": "T_7_1",
-        "page": 114
-      },
-      {
-        "id": "E_7_1_2",
-        "text": "Colour the pictures.",
-        "topic_id": "T_7_1",
-        "page": 117
-      },
-      {
-        "id": "E_7_1_3",
-        "text": "1. Where is Ammu now? 2. Have you ever been to a market? 3. What fruits and vegetables do you see in the picture? 4. Do you grow any of these at home?",
-        "topic_id": "T_7_1",
-        "page": 118
-      },
-      {
-        "id": "E_7_1_4",
-        "text": "1. Why isn't Ammu eating anything? 2. What is grandmother asking Ammu? 3. Is it right for Ammu to leave the table?",
-        "topic_id": "T_7_1",
-        "page": 120
-      },
-      {
-        "id": "E_7_1_5",
-        "text": "1. What is grandmother doing? 2. What did she tell Ammu? 3. Why is it good to eat all fruits and vegetables?",
-        "topic_id": "T_7_1",
-        "page": 121
-      },
-      {
-        "id": "E_7_1_6",
-        "text": "Read the words and look at the pictures. Write the names of the fruits and the vegetables under its heading in the table.",
-        "topic_id": "T_7_1",
-        "page": 123
+        "id": "E_2_7_1",
+        "text": "Answer questions about what Ammu asks her grandmother and what kind of stories you like.",
+        "topic_id": "T_2_7",
+        "pdf_page": 114,
+        "book_page": 114,
+        "difficulty_level": 1,
+        "cognitive_level": "understand"
       }
     ],
     "sidebars": []
@@ -1053,43 +2077,288 @@
   "graphs": {
     "chapter_structure": [
       {
-        "from": "C_8",
+        "from": "C_1",
         "to": "T_1_1",
         "type": "contains"
       },
       {
-        "from": "C_8",
-        "to": "T_2_1",
+        "from": "C_1",
+        "to": "T_1_2",
         "type": "contains"
       },
       {
-        "from": "C_8",
-        "to": "T_3_1",
+        "from": "C_1",
+        "to": "T_1_3",
         "type": "contains"
       },
       {
-        "from": "C_8",
+        "from": "C_1",
+        "to": "T_1_4",
+        "type": "contains"
+      },
+      {
+        "from": "C_1",
+        "to": "T_1_5",
+        "type": "contains"
+      },
+      {
+        "from": "C_1",
+        "to": "T_1_6",
+        "type": "contains"
+      },
+      {
+        "from": "C_1",
+        "to": "T_1_7",
+        "type": "contains"
+      },
+      {
+        "from": "T_1_1",
+        "to": "ST_1_1_1",
+        "type": "contains"
+      },
+      {
+        "from": "T_1_1",
+        "to": "ST_1_1_2",
+        "type": "contains"
+      },
+      {
+        "from": "T_1_2",
+        "to": "ST_1_2_1",
+        "type": "contains"
+      },
+      {
+        "from": "T_1_2",
+        "to": "ST_1_2_2",
+        "type": "contains"
+      },
+      {
+        "from": "T_1_2",
+        "to": "ST_1_2_3",
+        "type": "contains"
+      },
+      {
+        "from": "T_1_3",
+        "to": "ST_1_3_1",
+        "type": "contains"
+      },
+      {
+        "from": "T_1_3",
+        "to": "ST_1_3_2",
+        "type": "contains"
+      },
+      {
+        "from": "T_1_6",
+        "to": "ST_1_6_1",
+        "type": "contains"
+      },
+      {
+        "from": "T_1_6",
+        "to": "ST_1_6_2",
+        "type": "contains"
+      },
+      {
+        "from": "T_1_7",
+        "to": "ST_1_7_1",
+        "type": "contains"
+      },
+      {
+        "from": "T_1_7",
+        "to": "ST_1_7_2",
+        "type": "contains"
+      },
+      {
+        "from": "T_1_7",
+        "to": "ST_1_7_3",
+        "type": "contains"
+      },
+      {
+        "from": "C_4",
         "to": "T_4_1",
         "type": "contains"
       },
       {
-        "from": "C_8",
-        "to": "T_5_1",
+        "from": "C_4",
+        "to": "T_4_2",
         "type": "contains"
       },
       {
-        "from": "C_8",
-        "to": "T_6_1",
+        "from": "C_4",
+        "to": "T_4_3",
         "type": "contains"
       },
       {
-        "from": "C_8",
-        "to": "T_7_1",
+        "from": "C_4",
+        "to": "T_4_4",
         "type": "contains"
       },
       {
-        "from": "C_8",
-        "to": "T_8_1",
+        "from": "C_4",
+        "to": "T_4_5",
+        "type": "contains"
+      },
+      {
+        "from": "C_4",
+        "to": "T_4_6",
+        "type": "contains"
+      },
+      {
+        "from": "C_4",
+        "to": "T_4_7",
+        "type": "contains"
+      },
+      {
+        "from": "C_4",
+        "to": "T_4_8",
+        "type": "contains"
+      },
+      {
+        "from": "C_4",
+        "to": "T_4_9",
+        "type": "contains"
+      },
+      {
+        "from": "C_4",
+        "to": "T_4_10",
+        "type": "contains"
+      },
+      {
+        "from": "C_4",
+        "to": "T_4_11",
+        "type": "contains"
+      },
+      {
+        "from": "C_4",
+        "to": "T_4_12",
+        "type": "contains"
+      },
+      {
+        "from": "C_4",
+        "to": "T_4_13",
+        "type": "contains"
+      },
+      {
+        "from": "C_4",
+        "to": "T_4_14",
+        "type": "contains"
+      },
+      {
+        "from": "C_4",
+        "to": "T_4_15",
+        "type": "contains"
+      },
+      {
+        "from": "C_4",
+        "to": "T_4_16",
+        "type": "contains"
+      },
+      {
+        "from": "C_4",
+        "to": "T_4_17",
+        "type": "contains"
+      },
+      {
+        "from": "C_1",
+        "to": "T_1_8",
+        "type": "contains"
+      },
+      {
+        "from": "C_1",
+        "to": "T_1_9",
+        "type": "contains"
+      },
+      {
+        "from": "C_1",
+        "to": "T_1_10",
+        "type": "contains"
+      },
+      {
+        "from": "T_1_3",
+        "to": "ST_1_3_3",
+        "type": "contains"
+      },
+      {
+        "from": "T_1_5",
+        "to": "ST_1_5_1",
+        "type": "contains"
+      },
+      {
+        "from": "T_1_5",
+        "to": "ST_1_5_2",
+        "type": "contains"
+      },
+      {
+        "from": "T_1_9",
+        "to": "ST_1_9_1",
+        "type": "contains"
+      },
+      {
+        "from": "T_1_9",
+        "to": "ST_1_9_2",
+        "type": "contains"
+      },
+      {
+        "from": "C_2",
+        "to": "T_2_1",
+        "type": "contains"
+      },
+      {
+        "from": "C_2",
+        "to": "T_2_2",
+        "type": "contains"
+      },
+      {
+        "from": "C_2",
+        "to": "T_2_3",
+        "type": "contains"
+      },
+      {
+        "from": "C_2",
+        "to": "T_2_4",
+        "type": "contains"
+      },
+      {
+        "from": "C_2",
+        "to": "T_2_5",
+        "type": "contains"
+      },
+      {
+        "from": "C_2",
+        "to": "T_2_6",
+        "type": "contains"
+      },
+      {
+        "from": "C_2",
+        "to": "T_2_7",
+        "type": "contains"
+      },
+      {
+        "from": "T_2_7",
+        "to": "ST_2_7_1",
+        "type": "contains"
+      },
+      {
+        "from": "T_2_7",
+        "to": "ST_2_7_2",
+        "type": "contains"
+      },
+      {
+        "from": "T_2_7",
+        "to": "ST_2_7_3",
+        "type": "contains"
+      },
+      {
+        "from": "T_2_7",
+        "to": "ST_2_7_4",
+        "type": "contains"
+      },
+      {
+        "from": "T_2_7",
+        "to": "ST_2_7_5",
+        "type": "contains"
+      },
+      {
+        "from": "T_2_7",
+        "to": "ST_2_7_6",
         "type": "contains"
       }
     ],
@@ -1100,883 +2369,667 @@
         "type": "tests"
       },
       {
-        "from": "E_1_1_2",
-        "to": "T_1_1",
-        "type": "tests"
-      },
-      {
-        "from": "E_1_1_3",
-        "to": "T_1_1",
-        "type": "tests"
-      },
-      {
-        "from": "E_1_1_4",
-        "to": "T_1_1",
-        "type": "tests"
-      },
-      {
-        "from": "E_1_1_5",
-        "to": "T_1_1",
-        "type": "tests"
-      },
-      {
-        "from": "E_1_1_6",
-        "to": "T_1_1",
-        "type": "tests"
-      },
-      {
-        "from": "E_1_1_7",
-        "to": "T_1_1",
-        "type": "tests"
-      },
-      {
-        "from": "E_1_1_8",
-        "to": "T_1_1",
-        "type": "tests"
-      },
-      {
-        "from": "E_1_1_9",
-        "to": "T_1_1",
-        "type": "tests"
-      },
-      {
-        "from": "E_1_1_10",
-        "to": "T_1_1",
-        "type": "tests"
-      },
-      {
-        "from": "E_1_1_11",
-        "to": "T_1_1",
-        "type": "tests"
-      },
-      {
-        "from": "E_1_1_12",
-        "to": "T_1_1",
-        "type": "tests"
-      },
-      {
-        "from": "E_1_1_13",
-        "to": "T_1_1",
-        "type": "tests"
-      },
-      {
         "from": "E_1_2_1",
-        "to": "T_2_1",
+        "to": "T_1_2",
         "type": "tests"
       },
       {
         "from": "E_1_2_2",
-        "to": "T_2_1",
+        "to": "T_1_2",
         "type": "tests"
       },
       {
         "from": "E_1_2_3",
-        "to": "T_2_1",
-        "type": "tests"
-      },
-      {
-        "from": "E_1_2_4",
-        "to": "T_2_1",
-        "type": "tests"
-      },
-      {
-        "from": "E_1_2_5",
-        "to": "T_2_1",
-        "type": "tests"
-      },
-      {
-        "from": "E_1_2_6",
-        "to": "T_2_1",
-        "type": "tests"
-      },
-      {
-        "from": "E_1_2_7",
-        "to": "T_2_1",
-        "type": "tests"
-      },
-      {
-        "from": "E_1_2_8",
-        "to": "T_2_1",
-        "type": "tests"
-      },
-      {
-        "from": "E_1_2_9",
-        "to": "T_2_1",
-        "type": "tests"
-      },
-      {
-        "from": "E_1_2_10",
-        "to": "T_2_1",
-        "type": "tests"
-      },
-      {
-        "from": "E_1_2_11",
-        "to": "T_2_1",
+        "to": "T_1_2",
         "type": "tests"
       },
       {
         "from": "E_1_3_1",
-        "to": "T_3_1",
+        "to": "T_1_3",
         "type": "tests"
       },
       {
         "from": "E_1_3_2",
-        "to": "T_3_1",
-        "type": "tests"
-      },
-      {
-        "from": "E_1_3_3",
-        "to": "T_3_1",
-        "type": "tests"
-      },
-      {
-        "from": "E_1_3_4",
-        "to": "T_3_1",
-        "type": "tests"
-      },
-      {
-        "from": "E_1_3_5",
-        "to": "T_3_1",
-        "type": "tests"
-      },
-      {
-        "from": "E_1_3_6",
-        "to": "T_3_1",
-        "type": "tests"
-      },
-      {
-        "from": "E_1_3_7",
-        "to": "T_3_1",
-        "type": "tests"
-      },
-      {
-        "from": "E_1_3_8",
-        "to": "T_3_1",
-        "type": "tests"
-      },
-      {
-        "from": "E_1_3_9",
-        "to": "T_3_1",
-        "type": "tests"
-      },
-      {
-        "from": "E_1_3_10",
-        "to": "T_3_1",
-        "type": "tests"
-      },
-      {
-        "from": "E_1_3_11",
-        "to": "T_3_1",
-        "type": "tests"
-      },
-      {
-        "from": "E_1_3_12",
-        "to": "T_3_1",
-        "type": "tests"
-      },
-      {
-        "from": "E_1_3_13",
-        "to": "T_3_1",
-        "type": "tests"
-      },
-      {
-        "from": "E_1_3_14",
-        "to": "T_3_1",
-        "type": "tests"
-      },
-      {
-        "from": "E_1_3_15",
-        "to": "T_3_1",
+        "to": "T_1_3",
         "type": "tests"
       },
       {
         "from": "E_1_4_1",
-        "to": "T_4_1",
+        "to": "T_1_4",
         "type": "tests"
       },
       {
         "from": "E_1_4_2",
-        "to": "T_4_1",
-        "type": "tests"
-      },
-      {
-        "from": "E_1_4_3",
-        "to": "T_4_1",
-        "type": "tests"
-      },
-      {
-        "from": "E_1_4_4",
-        "to": "T_4_1",
-        "type": "tests"
-      },
-      {
-        "from": "E_1_4_5",
-        "to": "T_4_1",
-        "type": "tests"
-      },
-      {
-        "from": "E_1_4_6",
-        "to": "T_4_1",
-        "type": "tests"
-      },
-      {
-        "from": "E_1_4_7",
-        "to": "T_4_1",
-        "type": "tests"
-      },
-      {
-        "from": "E_1_4_8",
-        "to": "T_4_1",
-        "type": "tests"
-      },
-      {
-        "from": "E_1_4_9",
-        "to": "T_4_1",
-        "type": "tests"
-      },
-      {
-        "from": "E_1_4_10",
-        "to": "T_4_1",
-        "type": "tests"
-      },
-      {
-        "from": "E_1_4_11",
-        "to": "T_4_1",
-        "type": "tests"
-      },
-      {
-        "from": "E_1_4_12",
-        "to": "T_4_1",
-        "type": "tests"
-      },
-      {
-        "from": "E_1_4_13",
-        "to": "T_4_1",
-        "type": "tests"
-      },
-      {
-        "from": "E_1_4_14",
-        "to": "T_4_1",
-        "type": "tests"
-      },
-      {
-        "from": "E_1_4_15",
-        "to": "T_4_1",
-        "type": "tests"
-      },
-      {
-        "from": "E_1_5_1",
-        "to": "T_5_1",
-        "type": "tests"
-      },
-      {
-        "from": "E_1_5_2",
-        "to": "T_5_1",
-        "type": "tests"
-      },
-      {
-        "from": "E_1_5_3",
-        "to": "T_5_1",
-        "type": "tests"
-      },
-      {
-        "from": "E_1_5_4",
-        "to": "T_5_1",
-        "type": "tests"
-      },
-      {
-        "from": "E_1_5_5",
-        "to": "T_5_1",
-        "type": "tests"
-      },
-      {
-        "from": "E_1_5_6",
-        "to": "T_5_1",
-        "type": "tests"
-      },
-      {
-        "from": "E_1_5_7",
-        "to": "T_5_1",
-        "type": "tests"
-      },
-      {
-        "from": "E_1_5_8",
-        "to": "T_5_1",
-        "type": "tests"
-      },
-      {
-        "from": "E_1_5_9",
-        "to": "T_5_1",
-        "type": "tests"
-      },
-      {
-        "from": "E_1_5_10",
-        "to": "T_5_1",
-        "type": "tests"
-      },
-      {
-        "from": "E_1_5_11",
-        "to": "T_5_1",
-        "type": "tests"
-      },
-      {
-        "from": "E_1_5_12",
-        "to": "T_5_1",
-        "type": "tests"
-      },
-      {
-        "from": "E_1_5_13",
-        "to": "T_5_1",
-        "type": "tests"
-      },
-      {
-        "from": "E_1_5_14",
-        "to": "T_5_1",
-        "type": "tests"
-      },
-      {
-        "from": "E_1_5_15",
-        "to": "T_5_1",
-        "type": "tests"
-      },
-      {
-        "from": "E_1_5_16",
-        "to": "T_5_1",
-        "type": "tests"
-      },
-      {
-        "from": "E_1_6_1",
-        "to": "T_6_1",
-        "type": "tests"
-      },
-      {
-        "from": "E_1_6_2",
-        "to": "T_6_1",
-        "type": "tests"
-      },
-      {
-        "from": "E_1_6_3",
-        "to": "T_6_1",
-        "type": "tests"
-      },
-      {
-        "from": "E_1_6_4",
-        "to": "T_6_1",
-        "type": "tests"
-      },
-      {
-        "from": "E_1_6_5",
-        "to": "T_6_1",
-        "type": "tests"
-      },
-      {
-        "from": "E_1_6_6",
-        "to": "T_6_1",
-        "type": "tests"
-      },
-      {
-        "from": "E_1_6_7",
-        "to": "T_6_1",
-        "type": "tests"
-      },
-      {
-        "from": "E_1_6_8",
-        "to": "T_6_1",
-        "type": "tests"
-      },
-      {
-        "from": "E_1_6_9",
-        "to": "T_6_1",
-        "type": "tests"
-      },
-      {
-        "from": "E_1_6_10",
-        "to": "T_6_1",
-        "type": "tests"
-      },
-      {
-        "from": "E_1_6_11",
-        "to": "T_6_1",
-        "type": "tests"
-      },
-      {
-        "from": "E_1_6_12",
-        "to": "T_6_1",
-        "type": "tests"
-      },
-      {
-        "from": "E_1_6_13",
-        "to": "T_6_1",
-        "type": "tests"
-      },
-      {
-        "from": "E_1_6_14",
-        "to": "T_6_1",
-        "type": "tests"
-      },
-      {
-        "from": "E_1_6_15",
-        "to": "T_6_1",
-        "type": "tests"
-      },
-      {
-        "from": "E_1_6_16",
-        "to": "T_6_1",
+        "to": "T_1_4",
         "type": "tests"
       },
       {
         "from": "E_1_7_1",
-        "to": "T_7_1",
+        "to": "T_1_7",
         "type": "tests"
       },
       {
-        "from": "E_1_7_2",
-        "to": "T_7_1",
+        "from": "E_4_1_1",
+        "to": "T_4_1",
         "type": "tests"
       },
       {
-        "from": "E_1_7_3",
-        "to": "T_7_1",
+        "from": "E_4_2_1",
+        "to": "T_4_2",
         "type": "tests"
       },
       {
-        "from": "E_1_7_4",
-        "to": "T_7_1",
+        "from": "E_4_3_1",
+        "to": "T_4_3",
         "type": "tests"
       },
       {
-        "from": "E_1_7_5",
-        "to": "T_7_1",
+        "from": "E_4_4_1",
+        "to": "T_4_4",
         "type": "tests"
       },
       {
-        "from": "E_1_7_6",
-        "to": "T_7_1",
+        "from": "E_4_5_1",
+        "to": "T_4_5",
+        "type": "tests"
+      },
+      {
+        "from": "E_4_6_1",
+        "to": "T_4_6",
+        "type": "tests"
+      },
+      {
+        "from": "E_4_7_1",
+        "to": "T_4_7",
+        "type": "tests"
+      },
+      {
+        "from": "E_4_8_1",
+        "to": "T_4_8",
+        "type": "tests"
+      },
+      {
+        "from": "E_4_9_1",
+        "to": "T_4_9",
+        "type": "tests"
+      },
+      {
+        "from": "E_4_10_1",
+        "to": "T_4_10",
+        "type": "tests"
+      },
+      {
+        "from": "E_4_11_1",
+        "to": "T_4_11",
+        "type": "tests"
+      },
+      {
+        "from": "E_4_12_1",
+        "to": "T_4_12",
+        "type": "tests"
+      },
+      {
+        "from": "E_4_14_1",
+        "to": "T_4_14",
+        "type": "tests"
+      },
+      {
+        "from": "E_4_15_1",
+        "to": "T_4_15",
+        "type": "tests"
+      },
+      {
+        "from": "E_4_17_1",
+        "to": "T_4_17",
+        "type": "tests"
+      },
+      {
+        "from": "E_1_5_1",
+        "to": "T_1_5",
+        "type": "tests"
+      },
+      {
+        "from": "E_1_5_2",
+        "to": "T_1_5",
+        "type": "tests"
+      },
+      {
+        "from": "E_1_6_1",
+        "to": "T_1_6",
+        "type": "tests"
+      },
+      {
+        "from": "E_1_6_2",
+        "to": "T_1_6",
+        "type": "tests"
+      },
+      {
+        "from": "E_1_8_1",
+        "to": "T_1_8",
+        "type": "tests"
+      },
+      {
+        "from": "E_1_9_1",
+        "to": "T_1_9",
+        "type": "tests"
+      },
+      {
+        "from": "E_1_9_2",
+        "to": "T_1_9",
+        "type": "tests"
+      },
+      {
+        "from": "E_1_10_1",
+        "to": "T_1_10",
+        "type": "tests"
+      },
+      {
+        "from": "E_2_1_1",
+        "to": "T_2_1",
+        "type": "tests"
+      },
+      {
+        "from": "E_2_2_1",
+        "to": "T_2_2",
+        "type": "tests"
+      },
+      {
+        "from": "E_2_3_1",
+        "to": "T_2_3",
+        "type": "tests"
+      },
+      {
+        "from": "E_2_4_1",
+        "to": "T_2_4",
+        "type": "tests"
+      },
+      {
+        "from": "E_2_5_1",
+        "to": "T_2_5",
+        "type": "tests"
+      },
+      {
+        "from": "E_2_6_1",
+        "to": "T_2_6",
+        "type": "tests"
+      },
+      {
+        "from": "E_2_7_1",
+        "to": "T_2_7",
         "type": "tests"
       }
     ],
     "concept_dependencies": [
       {
-        "from": "T_2_1",
+        "from": "T_1_2",
         "to": "T_1_1",
-        "type": "prerequisite"
+        "type": "requires"
       },
       {
-        "from": "T_3_1",
+        "from": "T_1_3",
+        "to": "T_1_1",
+        "type": "requires"
+      },
+      {
+        "from": "T_1_4",
+        "to": "T_1_3",
+        "type": "requires"
+      },
+      {
+        "from": "T_1_6",
+        "to": "T_1_2",
+        "type": "requires"
+      },
+      {
+        "from": "T_4_9",
+        "to": "T_4_8",
+        "type": "requires"
+      },
+      {
+        "from": "T_4_11",
+        "to": "T_4_3",
+        "type": "requires"
+      },
+      {
+        "from": "T_4_14",
+        "to": "T_4_13",
+        "type": "requires"
+      },
+      {
+        "from": "T_4_15",
+        "to": "T_4_13",
+        "type": "requires"
+      },
+      {
+        "from": "T_4_17",
+        "to": "T_4_16",
+        "type": "requires"
+      }
+    ],
+    "assessment_linkage": [
+      {
+        "from": "E_1_1_1",
+        "to": "T_1_1",
+        "type": "assesses"
+      },
+      {
+        "from": "E_1_2_1",
+        "to": "T_1_2",
+        "type": "assesses"
+      },
+      {
+        "from": "E_1_2_2",
+        "to": "T_1_2",
+        "type": "assesses"
+      },
+      {
+        "from": "E_1_2_3",
+        "to": "T_1_2",
+        "type": "assesses"
+      },
+      {
+        "from": "E_1_3_1",
+        "to": "T_1_3",
+        "type": "assesses"
+      },
+      {
+        "from": "E_1_3_2",
+        "to": "T_1_3",
+        "type": "assesses"
+      },
+      {
+        "from": "E_1_4_1",
+        "to": "T_1_4",
+        "type": "assesses"
+      },
+      {
+        "from": "E_1_4_2",
+        "to": "T_1_4",
+        "type": "assesses"
+      },
+      {
+        "from": "E_1_7_1",
+        "to": "T_1_7",
+        "type": "assesses"
+      },
+      {
+        "from": "T_1_4",
+        "to": "T_1_3",
+        "type": "reinforces"
+      },
+      {
+        "from": "E_4_1_1",
+        "to": "T_4_1",
+        "type": "assesses"
+      },
+      {
+        "from": "E_4_2_1",
+        "to": "T_4_2",
+        "type": "assesses"
+      },
+      {
+        "from": "E_4_3_1",
+        "to": "T_4_3",
+        "type": "assesses"
+      },
+      {
+        "from": "E_4_4_1",
+        "to": "T_4_4",
+        "type": "assesses"
+      },
+      {
+        "from": "E_4_5_1",
+        "to": "T_4_5",
+        "type": "assesses"
+      },
+      {
+        "from": "E_4_6_1",
+        "to": "T_4_6",
+        "type": "assesses"
+      },
+      {
+        "from": "E_4_7_1",
+        "to": "T_4_7",
+        "type": "assesses"
+      },
+      {
+        "from": "E_4_8_1",
+        "to": "T_4_8",
+        "type": "assesses"
+      },
+      {
+        "from": "E_4_9_1",
+        "to": "T_4_9",
+        "type": "assesses"
+      },
+      {
+        "from": "E_4_10_1",
+        "to": "T_4_10",
+        "type": "assesses"
+      },
+      {
+        "from": "E_4_11_1",
+        "to": "T_4_11",
+        "type": "assesses"
+      },
+      {
+        "from": "E_4_12_1",
+        "to": "T_4_12",
+        "type": "assesses"
+      },
+      {
+        "from": "E_4_14_1",
+        "to": "T_4_14",
+        "type": "assesses"
+      },
+      {
+        "from": "E_4_15_1",
+        "to": "T_4_15",
+        "type": "assesses"
+      },
+      {
+        "from": "E_4_17_1",
+        "to": "T_4_17",
+        "type": "assesses"
+      },
+      {
+        "from": "E_1_5_1",
+        "to": "T_1_5",
+        "type": "assesses"
+      },
+      {
+        "from": "E_1_5_2",
+        "to": "T_1_5",
+        "type": "assesses"
+      },
+      {
+        "from": "E_1_6_1",
+        "to": "T_1_6",
+        "type": "assesses"
+      },
+      {
+        "from": "E_1_6_2",
+        "to": "T_1_6",
+        "type": "assesses"
+      },
+      {
+        "from": "E_1_8_1",
+        "to": "T_1_8",
+        "type": "assesses"
+      },
+      {
+        "from": "E_1_9_1",
+        "to": "T_1_9",
+        "type": "assesses"
+      },
+      {
+        "from": "E_1_9_2",
+        "to": "T_1_9",
+        "type": "assesses"
+      },
+      {
+        "from": "E_1_10_1",
+        "to": "T_1_10",
+        "type": "assesses"
+      },
+      {
+        "from": "E_2_1_1",
         "to": "T_2_1",
-        "type": "prerequisite"
+        "type": "assesses"
+      },
+      {
+        "from": "E_2_2_1",
+        "to": "T_2_2",
+        "type": "assesses"
+      },
+      {
+        "from": "E_2_3_1",
+        "to": "T_2_3",
+        "type": "assesses"
+      },
+      {
+        "from": "E_2_4_1",
+        "to": "T_2_4",
+        "type": "assesses"
+      },
+      {
+        "from": "E_2_5_1",
+        "to": "T_2_5",
+        "type": "assesses"
+      },
+      {
+        "from": "E_2_6_1",
+        "to": "T_2_6",
+        "type": "assesses"
+      },
+      {
+        "from": "E_2_7_1",
+        "to": "T_2_7",
+        "type": "assesses"
+      }
+    ],
+    "concept_reinforcement": [
+      {
+        "from": "T_1_1",
+        "to": "CN_LOGICAL_REASONING",
+        "type": "activates"
+      },
+      {
+        "from": "T_1_2",
+        "to": "CN_LOGICAL_REASONING",
+        "type": "activates"
+      },
+      {
+        "from": "T_1_3",
+        "to": "CN_LOGICAL_REASONING",
+        "type": "activates"
+      },
+      {
+        "from": "T_1_4",
+        "to": "CN_LOGICAL_REASONING",
+        "type": "activates"
+      },
+      {
+        "from": "T_1_4",
+        "to": "CN_NUMBER_SENSE",
+        "type": "activates"
+      },
+      {
+        "from": "T_1_5",
+        "to": "CN_VISUAL_PATTERNING",
+        "type": "activates"
+      },
+      {
+        "from": "T_1_6",
+        "to": "CN_LOGICAL_REASONING",
+        "type": "activates"
+      },
+      {
+        "from": "T_1_7",
+        "to": "CN_LOGICAL_REASONING",
+        "type": "activates"
       },
       {
         "from": "T_4_1",
-        "to": "T_3_1",
-        "type": "prerequisite"
+        "to": "CN_VISUAL_PATTERNING",
+        "type": "activates"
       },
       {
-        "from": "T_5_1",
-        "to": "T_1_1",
-        "type": "prerequisite"
+        "from": "T_4_2",
+        "to": "CN_LOGICAL_REASONING",
+        "type": "activates"
       },
       {
-        "from": "T_6_1",
-        "to": "T_5_1",
-        "type": "prerequisite"
+        "from": "T_4_3",
+        "to": "CN_LOGICAL_REASONING",
+        "type": "activates"
       },
       {
-        "from": "T_7_1",
-        "to": "T_1_1",
-        "type": "prerequisite"
+        "from": "T_4_4",
+        "to": "CN_LOGICAL_REASONING",
+        "type": "activates"
+      },
+      {
+        "from": "T_4_5",
+        "to": "CN_VISUAL_PATTERNING",
+        "type": "activates"
+      },
+      {
+        "from": "T_4_6",
+        "to": "CN_VISUAL_PATTERNING",
+        "type": "activates"
+      },
+      {
+        "from": "T_4_7",
+        "to": "CN_LOGICAL_REASONING",
+        "type": "activates"
+      },
+      {
+        "from": "T_4_8",
+        "to": "CN_LOGICAL_REASONING",
+        "type": "activates"
+      },
+      {
+        "from": "T_4_9",
+        "to": "CN_LOGICAL_REASONING",
+        "type": "activates"
+      },
+      {
+        "from": "T_4_10",
+        "to": "CN_LOGICAL_REASONING",
+        "type": "activates"
+      },
+      {
+        "from": "T_4_11",
+        "to": "CN_LOGICAL_REASONING",
+        "type": "activates"
+      },
+      {
+        "from": "T_4_12",
+        "to": "CN_LOGICAL_REASONING",
+        "type": "activates"
+      },
+      {
+        "from": "T_4_13",
+        "to": "CN_LOGICAL_REASONING",
+        "type": "activates"
+      },
+      {
+        "from": "T_4_14",
+        "to": "CN_LOGICAL_REASONING",
+        "type": "activates"
+      },
+      {
+        "from": "T_4_15",
+        "to": "CN_LOGICAL_REASONING",
+        "type": "activates"
+      },
+      {
+        "from": "T_4_16",
+        "to": "CN_LOGICAL_REASONING",
+        "type": "activates"
+      },
+      {
+        "from": "T_4_16",
+        "to": "CN_VISUAL_PATTERNING",
+        "type": "activates"
+      },
+      {
+        "from": "T_4_17",
+        "to": "CN_LOGICAL_REASONING",
+        "type": "activates"
+      },
+      {
+        "from": "T_4_17",
+        "to": "CN_VISUAL_PATTERNING",
+        "type": "activates"
+      },
+      {
+        "from": "T_1_1",
+        "to": "CN_VISUAL_PATTERNING",
+        "type": "activates"
+      },
+      {
+        "from": "T_1_4",
+        "to": "CN_VISUAL_PATTERNING",
+        "type": "activates"
+      },
+      {
+        "from": "T_1_5",
+        "to": "CN_LOGICAL_REASONING",
+        "type": "activates"
+      },
+      {
+        "from": "T_1_7",
+        "to": "CN_VISUAL_PATTERNING",
+        "type": "activates"
+      },
+      {
+        "from": "T_1_8",
+        "to": "CN_LOGICAL_REASONING",
+        "type": "activates"
+      },
+      {
+        "from": "T_1_9",
+        "to": "CN_VISUAL_PATTERNING",
+        "type": "activates"
+      },
+      {
+        "from": "T_1_9",
+        "to": "CN_LOGICAL_REASONING",
+        "type": "activates"
+      },
+      {
+        "from": "T_1_10",
+        "to": "CN_VISUAL_PATTERNING",
+        "type": "activates"
+      },
+      {
+        "from": "T_1_10",
+        "to": "CN_LOGICAL_REASONING",
+        "type": "activates"
+      },
+      {
+        "from": "T_2_1",
+        "to": "CN_VISUAL_PATTERNING",
+        "type": "activates"
+      },
+      {
+        "from": "T_2_2",
+        "to": "CN_LOGICAL_REASONING",
+        "type": "activates"
+      },
+      {
+        "from": "T_2_2",
+        "to": "CN_VISUAL_PATTERNING",
+        "type": "activates"
+      },
+      {
+        "from": "T_2_3",
+        "to": "CN_LOGICAL_REASONING",
+        "type": "activates"
+      },
+      {
+        "from": "T_2_4",
+        "to": "CN_LOGICAL_REASONING",
+        "type": "activates"
+      },
+      {
+        "from": "T_2_5",
+        "to": "CN_LOGICAL_REASONING",
+        "type": "activates"
+      },
+      {
+        "from": "T_2_6",
+        "to": "CN_LOGICAL_REASONING",
+        "type": "activates"
+      },
+      {
+        "from": "T_2_7",
+        "to": "CN_LOGICAL_REASONING",
+        "type": "activates"
       }
     ]
   },
-  "chapters": [
-    {
-      "chapter_number": 1,
-      "chapter_title": "About the Textbook",
-      "page_start": 124,
-      "page_end": 126,
-      "topics": [
-        {
-          "topic_name": "AMMU AND HER FAMILY",
-          "concept_summary": "This unit introduces Ammu, her family members, and her pet squirrel, Bittu. It covers basic family identification, personal introductions, and the initial letters of the alphabet (A-D) through songs and activities.",
-          "page_start": 11,
-          "page_end": 28,
-          "subtopics": [
-            {
-              "subtopic_name": "Introduction to Ammu and Her Family",
-              "summary": "Ammu, her family, and her puppy Doggy are introduced, along with the first encounter with the squirrel.",
-              "page_start": 11,
-              "page_end": 14
-            },
-            {
-              "subtopic_name": "Ammu Meets Bittu the Squirrel",
-              "summary": "Ammu and the talking squirrel, Bittu, introduce themselves and Bittu decides to stay with Ammu.",
-              "page_start": 15,
-              "page_end": 16
-            },
-            {
-              "subtopic_name": "Identifying Family Members and Their Names",
-              "summary": "Ammu sings about her family members and introduces their names to Bittu.",
-              "page_start": 17,
-              "page_end": 19
-            },
-            {
-              "subtopic_name": "My Family, Home, and School Activities",
-              "summary": "Interactive activities for children to identify their family members, and draw their home and school.",
-              "page_start": 20,
-              "page_end": 23
-            },
-            {
-              "subtopic_name": "Reading My Name",
-              "summary": "Introduces the concept of names for Ammu, Bittu, Doggy, and Chintu, with an activity for the child to write their own name.",
-              "page_start": 24,
-              "page_end": 25
-            },
-            {
-              "subtopic_name": "Alphabet Song (Letters A-D)",
-              "summary": "A song and copying exercise to introduce and practice the letters A, B, C, and D.",
-              "page_start": 26,
-              "page_end": 28
-            }
-          ],
-          "details_and_sidebars": [],
-          "prerequisites": [],
-          "original_exercises": [],
-          "status": "untaught",
-          "last_taught_date": null
-        },
-        {
-          "topic_name": "GOING TO SCHOOL",
-          "concept_summary": "This unit describes Ammu and Bittu's journey to school, focusing on different modes of transport and identifying various places in their neighborhood. It continues the alphabet learning with letters E-H.",
-          "page_start": 29,
-          "page_end": 42,
-          "subtopics": [
-            {
-              "subtopic_name": "Ammu and Bittu's Journey to School",
-              "summary": "Introduction to the theme of going to school and observing the surroundings from the bus.",
-              "page_start": 29,
-              "page_end": 31
-            },
-            {
-              "subtopic_name": "Identifying Vehicles and Transport",
-              "summary": "Ammu and Bittu observe and name different vehicles like bus, car, scooter, jeep, cycle, and auto, including a song about vehicles.",
-              "page_start": 32,
-              "page_end": 35
-            },
-            {
-              "subtopic_name": "Places Near Ammu's School",
-              "summary": "Ammu shows Bittu various community places near the school, such as a hospital, bank, post office, and kirana shop.",
-              "page_start": 36,
-              "page_end": 39
-            },
-            {
-              "subtopic_name": "Alphabet Song (Letters E-H)",
-              "summary": "A song and activities to introduce and practice the letters E, F, G, and H.",
-              "page_start": 40,
-              "page_end": 42
-            }
-          ],
-          "details_and_sidebars": [],
-          "prerequisites": [
-            "T_1_1"
-          ],
-          "original_exercises": [],
-          "status": "untaught",
-          "last_taught_date": null
-        },
-        {
-          "topic_name": "AMMU’S SCHOOL",
-          "concept_summary": "This unit narrates Bittu's mischievous adventure in Ammu's classroom, where he spreads colors and interacts with Ammu's friends. It teaches about classroom objects, colors, and continues alphabet learning with letters I-L.",
-          "page_start": 43,
-          "page_end": 60,
-          "subtopics": [
-            {
-              "subtopic_name": "Arrival at School and Meeting Eswar",
-              "summary": "Ammu and Bittu arrive at school and meet Ammu's friend Eswar as the school bell rings.",
-              "page_start": 43,
-              "page_end": 46
-            },
-            {
-              "subtopic_name": "Bittu's Classroom Adventure",
-              "summary": "Bittu explores the classroom while Ammu is at prayer, leading to children trying to catch him.",
-              "page_start": 47,
-              "page_end": 51
-            },
-            {
-              "subtopic_name": "Bittu the Painter: Colors and Body Parts",
-              "summary": "Bittu accidentally spreads colors on children, leading to a song about colors on body parts and Ammu catching him.",
-              "page_start": 52,
-              "page_end": 56
-            },
-            {
-              "subtopic_name": "Ammu's Friends (Activity)",
-              "summary": "An activity to copy the names of Ammu's friends and write the names of one's own friends.",
-              "page_start": 57,
-              "page_end": 57
-            },
-            {
-              "subtopic_name": "Alphabet Song (Letters I-L)",
-              "summary": "A song and activities to introduce and practice the letters I, J, K, and L.",
-              "page_start": 58,
-              "page_end": 60
-            }
-          ],
-          "details_and_sidebars": [],
-          "prerequisites": [
-            "T_1_2"
-          ],
-          "original_exercises": [],
-          "status": "untaught",
-          "last_taught_date": null
-        },
-        {
-          "topic_name": "AMMU AND HER FRIENDS AT HER SCHOOL",
-          "concept_summary": "This unit focuses on the aftermath of Bittu's color-spreading incident, emphasizing cleanliness, identifying body parts, and discussing various activities performed at school. It continues alphabet learning with letters M-P.",
-          "page_start": 61,
-          "page_end": 78,
-          "subtopics": [
-            {
-              "subtopic_name": "Teacher's Arrival and Washing Colors",
-              "summary": "The teacher instructs children to wash off the colors, leading to a discussion about favorite colors.",
-              "page_start": 61,
-              "page_end": 65
-            },
-            {
-              "subtopic_name": "Learning About Colors",
-              "summary": "Children identify and name different colors through pictures and activities.",
-              "page_start": 66,
-              "page_end": 67
-            },
-            {
-              "subtopic_name": "Washing and Identifying Body Parts",
-              "summary": "Children wash their hands, face, and legs, and learn to name various body parts through a song and activity.",
-              "page_start": 68,
-              "page_end": 71
-            },
-            {
-              "subtopic_name": "Apology and Pet Discussion",
-              "summary": "Ammu apologizes to the teacher for bringing Bittu to class, and children are encouraged to draw their pets.",
-              "page_start": 72,
-              "page_end": 73
-            },
-            {
-              "subtopic_name": "Activities We Do at School",
-              "summary": "A song and activity about various activities like reading, writing, talking, playing, eating, and drinking at school.",
-              "page_start": 74,
-              "page_end": 76
-            },
-            {
-              "subtopic_name": "Alphabet Song (Letters M-P)",
-              "summary": "A song and copying exercise to introduce and practice the letters M, N, O, and P.",
-              "page_start": 77,
-              "page_end": 78
-            }
-          ],
-          "details_and_sidebars": [],
-          "prerequisites": [
-            "T_1_3"
-          ],
-          "original_exercises": [],
-          "status": "untaught",
-          "last_taught_date": null
-        },
-        {
-          "topic_name": "THINGS I DO",
-          "concept_summary": "This unit explores Ammu's daily routine, good habits, and personal belongings. It also covers the family's preparation for a trip to the zoo and continues alphabet learning with letters Q-T.",
-          "page_start": 79,
-          "page_end": 98,
-          "subtopics": [
-            {
-              "subtopic_name": "Ammu's Daily Routine and Good Habits",
-              "summary": "Ammu's morning routine, teaching Bittu good habits like brushing, bathing, and eating, and the family preparing for a trip.",
-              "page_start": 79,
-              "page_end": 86
-            },
-            {
-              "subtopic_name": "Personal Belongings and Things I Use",
-              "summary": "Ammu and Bittu discuss their bags and the various items they keep or use daily, including a song about Bittu's bag.",
-              "page_start": 87,
-              "page_end": 92
-            },
-            {
-              "subtopic_name": "Planning and Traveling to the Zoo",
-              "summary": "Ammu's family gets ready and travels to the zoo, emphasizing safety rules.",
-              "page_start": 93,
-              "page_end": 96
-            },
-            {
-              "subtopic_name": "Alphabet Song (Letters Q-T)",
-              "summary": "A song and copying exercise to introduce and practice the letters Q, R, S, and T.",
-              "page_start": 97,
-              "page_end": 98
-            }
-          ],
-          "details_and_sidebars": [],
-          "prerequisites": [
-            "T_1_1"
-          ],
-          "original_exercises": [],
-          "status": "untaught",
-          "last_taught_date": null
-        },
-        {
-          "topic_name": "AT THE ZOO",
-          "concept_summary": "This unit describes Ammu's family visit to the zoo, where they learn about various animals and birds, meet Bittu's monkey friend Tinku, and share food. It concludes the alphabet learning with letters U-Z.",
-          "page_start": 99,
-          "page_end": 116,
-          "subtopics": [
-            {
-              "subtopic_name": "Zoo Visit and Observing Animals",
-              "summary": "Ammu's family enters the zoo, observes animals like giraffes and zebras, and identifies various animals through riddles and pictures.",
-              "page_start": 99,
-              "page_end": 106
-            },
-            {
-              "subtopic_name": "Identifying Birds",
-              "summary": "Ammu and Bittu learn about different birds like parrots, peacocks, sparrows, crows, cranes, and ducks.",
-              "page_start": 107,
-              "page_end": 108
-            },
-            {
-              "subtopic_name": "Meeting Tinku and Sharing Food",
-              "summary": "Bittu introduces Ammu to his monkey friend Tinku, and they share food, discussing different food items.",
-              "page_start": 109,
-              "page_end": 111
-            },
-            {
-              "subtopic_name": "Leaving the Zoo",
-              "summary": "Ammu's family leaves the zoo, and Bittu says goodbye to Tinku.",
-              "page_start": 112,
-              "page_end": 113
-            },
-            {
-              "subtopic_name": "Alphabet Song (Letters U-Z)",
-              "summary": "A song and activities to introduce and practice the letters U, V, W, X, Y, and Z, concluding the alphabet series.",
-              "page_start": 114,
-              "page_end": 116
-            }
-          ],
-          "details_and_sidebars": [],
-          "prerequisites": [
-            "T_1_5"
-          ],
-          "original_exercises": [],
-          "status": "untaught",
-          "last_taught_date": null
-        },
-        {
-          "topic_name": "FRUITS AND VEGETABLES",
-          "concept_summary": "This unit introduces Ammu's visit to the market, her initial dislike for bitter gourd, and her grandmother's explanation of the importance of eating all fruits and vegetables. It includes Bittu's song about fruits and an activity to classify them.",
-          "page_start": 117,
-          "page_end": 123,
-          "subtopics": [
-            {
-              "subtopic_name": "Introduction to Fruits and Vegetables",
-              "summary": "The unit begins with Ammu's visit to the market, introducing various fruits and vegetables.",
-              "page_start": 117,
-              "page_end": 119
-            },
-            {
-              "subtopic_name": "Ammu's Dislike and Grandmother's Advice",
-              "summary": "Ammu expresses her dislike for bitter gourd, and her grandmother explains the health benefits and importance of eating all fruits and vegetables.",
-              "page_start": 120,
-              "page_end": 121
-            },
-            {
-              "subtopic_name": "Learning About Fruits and Vegetables",
-              "summary": "Bittu sings a song about fruits, followed by an activity to read, look at pictures, and classify various fruits and vegetables.",
-              "page_start": 122,
-              "page_end": 123
-            }
-          ],
-          "details_and_sidebars": [],
-          "prerequisites": [
-            "T_1_1"
-          ],
-          "original_exercises": [],
-          "status": "untaught",
-          "last_taught_date": null
-        },
-        {
-          "topic_name": "ABOUT THE TEXTBOOK",
-          "concept_summary": "This section provides meta-information about the textbook, outlining its academic standards, salient features, and guidelines for formative and summative assessments.",
-          "page_start": 124,
-          "page_end": 126,
-          "subtopics": [
-            {
-              "subtopic_name": "Academic Standards",
-              "summary": "Details the expected learning outcomes and five broad categories of academic standards for Class 1 learners.",
-              "page_start": 124,
-              "page_end": 124
-            },
-            {
-              "subtopic_name": "Salient Features of the New Textbook",
-              "summary": "Describes the structural and pedagogical features of the textbook, including unit design, narrative approach, and activity types.",
-              "page_start": 124,
-              "page_end": 125
-            },
-            {
-              "subtopic_name": "Assessment Guidelines",
-              "summary": "Explains the continuous and comprehensive assessment approach, differentiating between formative and summative assessments and their criteria.",
-              "page_start": 125,
-              "page_end": 126
-            }
-          ],
-          "details_and_sidebars": [],
-          "prerequisites": [],
-          "original_exercises": [],
-          "status": "untaught",
-          "last_taught_date": null
-        }
-      ]
-    },
-    {
-      "chapter_number": 2,
-      "chapter_title": "AMMU AND HER FAMILY",
-      "page_start": 11,
-      "page_end": 28,
-      "topics": []
-    },
-    {
-      "chapter_number": 3,
-      "chapter_title": "GOING TO SCHOOL",
-      "page_start": 29,
-      "page_end": 42,
-      "topics": []
-    },
-    {
-      "chapter_number": 4,
-      "chapter_title": "AMMU’S SCHOOL",
-      "page_start": 43,
-      "page_end": 60,
-      "topics": []
-    },
-    {
-      "chapter_number": 5,
-      "chapter_title": "AMMU AND HER FRIENDS AT HER SCHOOL",
-      "page_start": 61,
-      "page_end": 68,
-      "topics": []
-    },
-    {
-      "chapter_number": 6,
-      "chapter_title": "THINGS I DO",
-      "page_start": 69,
-      "page_end": 98,
-      "topics": []
-    },
-    {
-      "chapter_number": 7,
-      "chapter_title": "AT THE ZOO",
-      "page_start": 99,
-      "page_end": 116,
-      "topics": []
-    },
-    {
-      "chapter_number": 8,
-      "chapter_title": "FRUITS AND VEGETABLES",
-      "page_start": 117,
-      "page_end": 133,
-      "topics": []
-    }
-  ]
+  "chapters": []
 }

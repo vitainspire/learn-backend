@@ -1,11 +1,14 @@
 import os
 import json
 import re
+import uuid
+import asyncio
 import tempfile
 from pathlib import Path
 from typing import Optional, Union
+from concurrent.futures import ThreadPoolExecutor
 
-from fastapi import FastAPI, HTTPException, Depends, Header, Request
+from fastapi import FastAPI, HTTPException, Depends, Header, Request, UploadFile, File, Form
 from fastapi.responses import FileResponse, Response
 from fastapi.exceptions import RequestValidationError
 from fastapi.staticfiles import StaticFiles
@@ -267,6 +270,12 @@ class UpdateDayRequest(BaseModel):
     concept_name: str
 
 
+class IngestRequest(BaseModel):
+    pdf_path: str              # path relative to project root, e.g. "textbooks/GRADE-5/grade5_maths.pdf"
+    book_name: Optional[str] = None  # output file stem; defaults to the PDF filename stem
+    workers: Optional[int] = 3
+
+
 class SignupRequest(BaseModel):
     email: str
     password: str
@@ -429,9 +438,43 @@ def _infer_subject(book_name: str) -> str:
 
 
 DATA_DIR = PROJECT_ROOT / "data"
+UPLOADS_DIR = PROJECT_ROOT / "tmp_uploads"
 
 _ontology_cache: dict = {}   # book_name -> ontology dict, lives for process lifetime
 _resolved_book_cache: dict = {}   # requested -> canonical seeded name
+
+# ── Ingest job state ────────────────────────────────────────────────────────
+_ingest_jobs: dict[str, dict] = {}   # job_id -> job dict
+_ingest_executor = ThreadPoolExecutor(max_workers=2, thread_name_prefix="ingest")
+
+
+def _run_ingest(job_id: str, pdf_path: str, book_name: str, workers: int) -> None:
+    """Blocking extraction worker — runs in _ingest_executor thread pool."""
+    _ingest_jobs[job_id]["status"] = "running"
+    try:
+        from extraction.vision_extract import extract_with_vision
+        result = extract_with_vision(pdf_path, output_dir=str(DATA_DIR), workers=workers)
+        _ingest_jobs[job_id].update({
+            "status": "done",
+            "finished_at": datetime.utcnow().isoformat() + "Z",
+            "summary": {
+                "chapters":      len(result.get("entities", {}).get("chapters", [])),
+                "concept_nodes": len(result.get("entities", {}).get("concept_nodes", [])),
+                "topics":        len(result.get("entities", {}).get("topics", [])),
+                "subtopics":     len(result.get("entities", {}).get("subtopics", [])),
+                "exercises":     len(result.get("entities", {}).get("exercises", [])),
+                "output_file":   str(DATA_DIR / f"{book_name}.json"),
+            },
+        })
+        # Bust cache so the next ontology request picks up the new file
+        _ontology_cache.pop(book_name, None)
+        _resolved_book_cache.clear()
+    except Exception as exc:
+        _ingest_jobs[job_id].update({
+            "status": "failed",
+            "finished_at": datetime.utcnow().isoformat() + "Z",
+            "error": str(exc),
+        })
 
 
 def _list_seeded_books(db) -> list[str]:
@@ -613,6 +656,113 @@ def _serialize_plan(plan: dict) -> dict:
         "reasoning": plan.get("reasoning"),
         "days": [_serialize_day(d) for d in days],
     }
+
+
+# ---------------------------------------------------------------------------
+# Ingest — run vision_extract pipeline on a textbook PDF
+# ---------------------------------------------------------------------------
+
+def _make_job(job_id: str, book_name: str, pdf_path: str) -> dict:
+    return {
+        "job_id":      job_id,
+        "status":      "pending",
+        "book_name":   book_name,
+        "pdf_path":    pdf_path,
+        "started_at":  datetime.utcnow().isoformat() + "Z",
+        "finished_at": None,
+        "summary":     None,
+        "error":       None,
+    }
+
+
+@app.post("/api/ingest", status_code=202)
+async def ingest_textbook(req: IngestRequest):
+    """
+    Start a vision extraction job for a textbook already on disk.
+
+    - **pdf_path**: path relative to the project root
+      (e.g. `"textbooks/GRADE-5/grade5_maths.pdf"`)
+    - **book_name**: output stem written to `data/<book_name>.json`
+      (defaults to the PDF filename stem)
+    - **workers**: parallel chapter workers (default 3)
+
+    Returns immediately with a `job_id`.
+    Poll `GET /api/ingest/{job_id}` for status.
+    """
+    pdf_abs = PROJECT_ROOT / req.pdf_path
+    if not pdf_abs.exists():
+        raise HTTPException(status_code=404, detail=f"PDF not found at '{req.pdf_path}'")
+
+    book_name = req.book_name or pdf_abs.stem
+    job_id    = str(uuid.uuid4())
+    job       = _make_job(job_id, book_name, str(pdf_abs))
+    _ingest_jobs[job_id] = job
+
+    loop = asyncio.get_event_loop()
+    loop.run_in_executor(_ingest_executor, _run_ingest, job_id, str(pdf_abs), book_name, req.workers or 3)
+
+    return {
+        "job_id":   job_id,
+        "status":   "pending",
+        "book_name": book_name,
+        "message":  f"Ingestion started. Poll GET /api/ingest/{job_id} for status.",
+    }
+
+
+@app.post("/api/ingest/upload", status_code=202)
+async def ingest_upload(
+    file: UploadFile = File(..., description="PDF textbook to ingest"),
+    book_name: Optional[str] = Form(None, description="Output book name stem (default: filename stem)"),
+    workers: int = Form(3, description="Parallel chapter workers"),
+):
+    """
+    Upload a PDF and start vision extraction on it.
+
+    Multipart form fields:
+    - **file**: the PDF
+    - **book_name**: optional output stem
+    - **workers**: parallel chapter workers (default 3)
+
+    Returns immediately with a `job_id`.
+    Poll `GET /api/ingest/{job_id}` for status.
+    """
+    if not file.filename or not file.filename.lower().endswith(".pdf"):
+        raise HTTPException(status_code=400, detail="Only PDF files are accepted")
+
+    stem = book_name or Path(file.filename).stem
+    UPLOADS_DIR.mkdir(parents=True, exist_ok=True)
+    dest = UPLOADS_DIR / f"{stem}.pdf"
+    dest.write_bytes(await file.read())
+
+    job_id = str(uuid.uuid4())
+    job    = _make_job(job_id, stem, str(dest))
+    _ingest_jobs[job_id] = job
+
+    loop = asyncio.get_event_loop()
+    loop.run_in_executor(_ingest_executor, _run_ingest, job_id, str(dest), stem, workers)
+
+    return {
+        "job_id":    job_id,
+        "status":    "pending",
+        "book_name": stem,
+        "message":   f"Ingestion started. Poll GET /api/ingest/{job_id} for status.",
+    }
+
+
+@app.get("/api/ingest")
+async def list_ingest_jobs():
+    """List all ingest jobs (most recent first)."""
+    jobs = sorted(_ingest_jobs.values(), key=lambda j: j["started_at"], reverse=True)
+    return {"count": len(jobs), "jobs": jobs}
+
+
+@app.get("/api/ingest/{job_id}")
+async def get_ingest_job(job_id: str):
+    """Get the status and summary of an ingest job."""
+    job = _ingest_jobs.get(job_id)
+    if not job:
+        raise HTTPException(status_code=404, detail=f"Job '{job_id}' not found")
+    return job
 
 
 # ---------------------------------------------------------------------------
@@ -1015,6 +1165,8 @@ async def api_generate_lesson_plan(
     gaps = cg.find_learning_gaps(student_prof_obj, topic["topic_name"])
 
     duration_int = int("".join(filter(str.isdigit, req.duration))) if req.duration else 45
+
+    print(f"[DEBUG lesson-plan] lesson_type received: {req.lesson_type!r}", flush=True)
 
     plan = generate_elementary_lesson_plan(
         topic_name=topic["topic_name"],
@@ -1890,6 +2042,33 @@ async def get_student_quiz_history(student_id: str, limit: int = 50, db = Depend
 # ---------------------------------------------------------------------------
 # Visual / PPTX generation (no DB needed)
 # ---------------------------------------------------------------------------
+
+@app.post("/api/generate-image")
+async def api_generate_image(request: Request):
+    """Generate a single image from a text prompt using the HF/Gemini/Imagen fallback chain."""
+    from services.image_service import generate_image
+    import base64
+
+    body = await request.json()
+    prompt = body.get("prompt", "").strip()
+    if not prompt:
+        raise HTTPException(status_code=400, detail="prompt is required")
+
+    img_dir = OUTPUT_DIR / "generated_images"
+    img_dir.mkdir(parents=True, exist_ok=True)
+    save_path = img_dir / f"img_{uuid.uuid4().hex[:8]}.png"
+
+    success = await generate_image(prompt, save_path)
+
+    if not success or not save_path.exists():
+        raise HTTPException(status_code=500, detail="Image generation failed after all providers")
+
+    image_bytes = save_path.read_bytes()
+    b64 = base64.b64encode(image_bytes).decode()
+    save_path.unlink(missing_ok=True)
+
+    return {"success": True, "image": f"data:image/png;base64,{b64}"}
+
 
 @app.post("/api/generate-picture-book")
 async def api_generate_picture_book(req: VisualGuideRequest):

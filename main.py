@@ -1,11 +1,15 @@
 import os
 import json
 import re
+import uuid
+import base64
+import asyncio
 import tempfile
 from pathlib import Path
 from typing import Optional, Union
+from concurrent.futures import ThreadPoolExecutor
 
-from fastapi import FastAPI, HTTPException, Depends, Request
+from fastapi import FastAPI, HTTPException, Depends, Request, UploadFile, File, Form
 from fastapi.responses import HTMLResponse, FileResponse, Response
 from fastapi.exceptions import RequestValidationError
 from fastapi.staticfiles import StaticFiles
@@ -13,7 +17,7 @@ from pydantic import BaseModel, BeforeValidator
 from typing import Annotated
 
 GradeStr = Annotated[str, BeforeValidator(str)]
-from datetime import datetime
+from datetime import datetime, timedelta, time as dt_time, timezone
 
 import sys
 sys.path.insert(0, os.path.dirname(os.path.dirname(__file__)))
@@ -31,6 +35,14 @@ from database.connection import get_db, get_admin_db
 import database.queries as q
 
 app = FastAPI(title="Inspire Education API")
+
+# Celery — gracefully optional so the server still starts without Redis
+try:
+    from celery_app import celery_app as _celery
+    CELERY_AVAILABLE = True
+except Exception:
+    _celery = None
+    CELERY_AVAILABLE = False
 
 @app.exception_handler(RequestValidationError)
 async def validation_exception_handler(request: Request, exc: RequestValidationError):
@@ -58,6 +70,8 @@ class LessonPlanRequest(BaseModel):
     duration: str
     subject: Optional[str] = None
     region: Optional[str] = None
+    lesson_type: Optional[str] = "activity"
+    teacher_id: Optional[str] = None
     teacher_profile: Optional[dict] = None
     student_profile: Optional[dict] = None
 
@@ -99,6 +113,7 @@ class ElementaryLessonRequest(BaseModel):
     book: Optional[str] = None
     chapter_idx: Optional[int] = None
     topic_idx: Optional[int] = None
+    lesson_type: Optional[str] = "activity"
     teacher_profile: Optional[dict] = None
     student_profile: Optional[dict] = None
     learning_gaps: Optional[list] = None
@@ -164,6 +179,19 @@ class PostClassFeedbackRequest(BaseModel):
 class UpdateDayRequest(BaseModel):
     concept_name: str
 
+class IngestRequest(BaseModel):
+    pdf_path: str              # relative to project root, e.g. "textbooks/GRADE-5/grade5_maths.pdf"
+    book_name: Optional[str] = None  # output stem; defaults to PDF filename stem
+    workers: Optional[int] = 5
+
+
+class LessonScheduleSettings(BaseModel):
+    lesson_type: Optional[str] = "activity"          # lecture | activity | storytelling
+    duration: Optional[int] = 45                     # minutes
+    activity_preference: Optional[str] = "worksheets"
+    difficulty_preference: Optional[str] = "medium"
+    generate_time_hour: Optional[int] = 6            # UTC hour to trigger generation (0-23)
+
 
 # ---------------------------------------------------------------------------
 # Helpers
@@ -208,9 +236,46 @@ def _infer_subject(book_name: str) -> str:
     return "General"
 
 
-DATA_DIR = PROJECT_ROOT / "data"
+DATA_DIR    = PROJECT_ROOT / "data"
+UPLOADS_DIR = PROJECT_ROOT / "tmp_uploads"
 
 _resolved_book_cache: dict = {}   # requested -> canonical seeded name
+
+# ── Ingest job state ────────────────────────────────────────────────────────
+# ThreadPoolExecutor handles queueing automatically: max 2 run concurrently,
+# additional submissions wait in the executor's internal queue until a slot frees.
+_ingest_jobs: dict[str, dict] = {}
+_ingest_executor = ThreadPoolExecutor(max_workers=5, thread_name_prefix="ingest")
+
+
+def _run_ingest(job_id: str, pdf_path: str, book_name: str, workers: int) -> None:
+    _ingest_jobs[job_id].update({
+        "status": "running",
+        "queue_position": 0,
+        "started_at": datetime.utcnow().isoformat() + "Z",
+    })
+    try:
+        from extraction.vision_extract import extract_with_vision
+        result = extract_with_vision(pdf_path, output_dir=str(DATA_DIR), workers=workers)
+        _ingest_jobs[job_id].update({
+            "status": "done",
+            "finished_at": datetime.utcnow().isoformat() + "Z",
+            "summary": {
+                "chapters":      len(result.get("entities", {}).get("chapters", [])),
+                "concept_nodes": len(result.get("entities", {}).get("concept_nodes", [])),
+                "topics":        len(result.get("entities", {}).get("topics", [])),
+                "subtopics":     len(result.get("entities", {}).get("subtopics", [])),
+                "exercises":     len(result.get("entities", {}).get("exercises", [])),
+                "output_file":   str(DATA_DIR / f"{book_name}.json"),
+            },
+        })
+        _resolved_book_cache.clear()
+    except Exception as exc:
+        _ingest_jobs[job_id].update({
+            "status": "failed",
+            "finished_at": datetime.utcnow().isoformat() + "Z",
+            "error": str(exc),
+        })
 
 
 def _list_seeded_books(db) -> list[str]:
@@ -477,54 +542,68 @@ async def search_ontology_topics(book_name: str, q: str = "", db=Depends(get_db)
 
 @app.post("/api/generate-lesson-plan")
 async def api_generate_lesson_plan(req: LessonPlanRequest, db = Depends(get_admin_db)):
-    ontology = _get_ontology_or_404(db, req.book)
-
+    import traceback
     try:
-        chapter, topic = _get_topic_data(ontology, req.chapter_idx, req.topic_idx)
-    except (IndexError, KeyError):
-        raise HTTPException(status_code=400, detail="Invalid chapter or topic index")
+        ontology = _get_ontology_or_404(db, req.book)
 
-    subject = req.subject or _infer_subject(req.book)
+        try:
+            chapter, topic = _get_topic_data(ontology, req.chapter_idx, req.topic_idx)
+        except (IndexError, KeyError):
+            raise HTTPException(status_code=400, detail="Invalid chapter or topic index")
 
-    cg = ConceptGraph(ontology)
-    student_prof_obj = StudentProfile(**req.student_profile) if req.student_profile else get_default_student()
-    gaps = cg.find_learning_gaps(student_prof_obj, topic["topic_name"])
+        subject = req.subject or _infer_subject(req.book)
 
-    duration_int = int("".join(filter(str.isdigit, req.duration))) if req.duration else 45
+        cg = ConceptGraph(ontology)
+        student_prof_obj = StudentProfile(**req.student_profile) if req.student_profile else get_default_student()
+        gaps = cg.find_learning_gaps(student_prof_obj, topic["topic_name"])
 
-    plan = generate_elementary_lesson_plan(
-        topic_name=topic["topic_name"],
-        grade=req.grade,
-        subject=subject,
-        duration=duration_int,
-        ontology_context=_enrich_topic_context(ontology, topic),
-        teacher_profile=req.teacher_profile,
-        student_profile=req.student_profile,
-        learning_gaps=gaps,
-        region=req.region or "",
-    )
-    if isinstance(plan, dict) and req.region:
-        plan["region"] = req.region
+        duration_int = int("".join(filter(str.isdigit, req.duration))) if req.duration else 45
 
-    db_topic = q.get_topic_by_index(db, req.book, req.chapter_idx, req.topic_idx)
-    teacher  = q.get_default_teacher_db(db)
+        print(f"[DEBUG lesson-plan] book={req.book!r} chapter={req.chapter_idx} topic={req.topic_idx} topic_name={topic.get('topic_name')!r} lesson_type={req.lesson_type!r}", flush=True)
 
-    lp = q.save_lesson_plan(
-        db,
-        teacher_id=teacher["id"] if teacher else None,
-        topic_id=db_topic["id"] if db_topic else None,
-        topic_name=topic["topic_name"],
-        grade=req.grade,
-        subject=subject,
-        duration_minutes=duration_int,
-        plan_json=plan,
-    )
+        plan = generate_elementary_lesson_plan(
+            topic_name=topic["topic_name"],
+            grade=req.grade,
+            subject=subject,
+            duration=duration_int,
+            ontology_context=_enrich_topic_context(ontology, topic),
+            teacher_profile=req.teacher_profile,
+            student_profile=req.student_profile,
+            learning_gaps=gaps,
+            region=req.region or "",
+            lesson_type=req.lesson_type or "activity",
+        )
 
-    topic_dir = OUTPUT_DIR / req.book / topic["topic_name"].replace(" ", "_").lower()
-    topic_dir.mkdir(parents=True, exist_ok=True)
-    (topic_dir / "lesson_plan.json").write_text(json.dumps(plan, indent=2), encoding="utf-8")
+        if isinstance(plan, dict) and req.region:
+            plan["region"] = req.region
 
-    return {"plan": plan, "lesson_plan_id": lp["id"]}
+        db_topic = q.get_topic_by_index(db, req.book, req.chapter_idx, req.topic_idx)
+        teacher  = q.get_default_teacher_db(db)
+
+        lp = q.save_lesson_plan(
+            db,
+            teacher_id=teacher["id"] if teacher else None,
+            topic_id=db_topic["id"] if db_topic else None,
+            topic_name=topic["topic_name"],
+            grade=req.grade,
+            subject=subject,
+            duration_minutes=duration_int,
+            plan_json=plan,
+        )
+
+        topic_dir = OUTPUT_DIR / req.book / topic["topic_name"].replace(" ", "_").lower()
+        topic_dir.mkdir(parents=True, exist_ok=True)
+        (topic_dir / "lesson_plan.json").write_text(json.dumps(plan, indent=2), encoding="utf-8")
+
+        return {"plan": plan, "lesson_plan_id": lp["id"]}
+
+    except HTTPException:
+        raise
+    except RuntimeError as e:
+        raise HTTPException(status_code=503, detail=str(e))
+    except Exception as e:
+        print(f"[ERROR] /api/generate-lesson-plan unhandled: {type(e).__name__}: {e}\n{traceback.format_exc()}", flush=True)
+        raise HTTPException(status_code=500, detail=f"{type(e).__name__}: {e}")
 
 
 @app.post("/api/generate-elementary-lesson-plan")
@@ -538,16 +617,25 @@ async def api_generate_elementary_lesson_plan(req: ElementaryLessonRequest, db =
         except Exception:
             pass
 
-    plan = generate_elementary_lesson_plan(
-        topic_name=req.topic,
-        grade=req.grade,
-        subject=req.subject,
-        duration=req.duration,
-        ontology_context=ontology_context,
-        teacher_profile=req.teacher_profile,
-        student_profile=req.student_profile,
-        learning_gaps=req.learning_gaps,
-    )
+    print(f"[DEBUG elementary-lesson-plan] lesson_type received: {req.lesson_type!r}", flush=True)
+
+    try:
+        plan = generate_elementary_lesson_plan(
+            topic_name=req.topic,
+            grade=req.grade,
+            subject=req.subject,
+            duration=req.duration,
+            ontology_context=ontology_context,
+            teacher_profile=req.teacher_profile,
+            student_profile=req.student_profile,
+            learning_gaps=req.learning_gaps,
+            lesson_type=req.lesson_type or "activity",
+        )
+    except RuntimeError as e:
+        raise HTTPException(status_code=503, detail=str(e))
+    except Exception as e:
+        print(f"[ERROR] Lesson plan generation failed: {e}")
+        raise HTTPException(status_code=500, detail=f"AI generation failed: {e}")
 
     db_topic = q.get_topic_by_index(db, req.book, req.chapter_idx, req.topic_idx) if req.book else None
     teacher  = q.get_default_teacher_db(db)
@@ -1263,6 +1351,282 @@ async def get_week_summary(plan_id: str, db = Depends(get_db)):
     if not summary:
         raise HTTPException(status_code=404, detail="Summary not yet generated. POST to generate it first.")
     return {"summary": summary["summary_json"]}
+
+
+# ---------------------------------------------------------------------------
+# Celery — schedule auto-generation for a whole week
+# ---------------------------------------------------------------------------
+
+@app.post("/api/teacher/week-plan/{plan_id}/schedule")
+async def schedule_auto_generation(
+    plan_id: str,
+    settings: LessonScheduleSettings,
+    db=Depends(get_db),
+):
+    if not CELERY_AVAILABLE:
+        raise HTTPException(status_code=503, detail="Celery/Redis not available — start Redis and the Celery worker first")
+
+    plan = q.get_week_plan(db, plan_id)
+    if not plan:
+        raise HTTPException(status_code=404, detail="Week plan not found")
+
+    teacher = q.get_default_teacher_db(db)
+    teacher_id = teacher["id"] if teacher else None
+
+    week_start = datetime.strptime(plan["week_start_date"][:10], "%Y-%m-%d")
+
+    # Day IDs already queued (status still pending but task already sent)
+    existing = plan.get("auto_generate_settings") or {}
+    already_scheduled_day_ids: set = set(existing.get("scheduled_day_ids", []))
+
+    # Carry forward any task_ids that are still pending (not yet run)
+    existing_task_map: dict = existing.get("task_id_map", {})  # {day_id: task_id}
+
+    scheduled = []
+
+    for day in plan.get("week_plan_days", []):
+        # Skip days already in a terminal/in-progress state
+        if day.get("status") in ("taught", "partial", "lesson_ready", "generating"):
+            continue
+
+        # Skip days that already have a queued task waiting to fire
+        if day["id"] in already_scheduled_day_ids:
+            continue
+
+        lesson_date = week_start + timedelta(days=day["day_of_week"])
+        eta = datetime.combine(
+            lesson_date,
+            dt_time(settings.generate_time_hour or 6, 0),
+        ).replace(tzinfo=timezone.utc)
+
+        # Past the scheduled window for today — don't re-trigger
+        now = datetime.now(timezone.utc)
+        if eta.date() == now.date() and eta < now:
+            # Already past today's generation window; only run if nothing was
+            # generated yet and the day has never been scheduled before
+            if day["id"] in already_scheduled_day_ids:
+                continue
+
+        run_now = eta <= now
+
+        task = _celery.send_task(
+            "tasks.generate_daily_lesson_plan",
+            args=[day["id"], teacher_id, settings.model_dump()],
+            eta=None if run_now else eta,
+        )
+
+        existing_task_map[day["id"]] = task.id
+        already_scheduled_day_ids.add(day["id"])
+
+        scheduled.append({
+            "day_id":        day["id"],
+            "concept":       day["concept_name"],
+            "scheduled_for": "immediate" if run_now else eta.isoformat(),
+            "task_id":       task.id,
+        })
+
+    # Persist updated settings + task map for idempotency and cancellation
+    db.table("week_plans").update({
+        "auto_generate_settings": {
+            **settings.model_dump(),
+            "task_ids":            list(existing_task_map.values()),
+            "task_id_map":         existing_task_map,
+            "scheduled_day_ids":   list(already_scheduled_day_ids),
+        }
+    }).eq("id", plan_id).execute()
+
+    return {"scheduled": len(scheduled), "tasks": scheduled}
+
+
+@app.delete("/api/teacher/week-plan/{plan_id}/schedule")
+async def cancel_auto_generation(plan_id: str, db=Depends(get_db)):
+    if not CELERY_AVAILABLE:
+        raise HTTPException(status_code=503, detail="Celery/Redis not available")
+
+    plan = q.get_week_plan(db, plan_id)
+    if not plan:
+        raise HTTPException(status_code=404, detail="Week plan not found")
+
+    task_ids = (plan.get("auto_generate_settings") or {}).get("task_ids", [])
+    for task_id in task_ids:
+        _celery.control.revoke(task_id, terminate=True)
+
+    db.table("week_plans").update({"auto_generate_settings": None}).eq("id", plan_id).execute()
+    return {"cancelled": len(task_ids), "status": "cancelled"}
+
+
+# ---------------------------------------------------------------------------
+# Teacher notifications
+# ---------------------------------------------------------------------------
+
+@app.get("/api/teacher/notifications")
+async def get_teacher_notifications(db=Depends(get_admin_db)):
+    teacher = q.get_default_teacher_db(db)
+    if not teacher:
+        return {"notifications": []}
+    return {"notifications": q.get_teacher_notifications(db, teacher["id"])}
+
+
+@app.post("/api/teacher/notifications/clear")
+async def clear_teacher_notifications(db=Depends(get_admin_db)):
+    teacher = q.get_default_teacher_db(db)
+    if teacher:
+        q.clear_teacher_notifications(db, teacher["id"])
+    return {"status": "ok"}
+
+
+# ---------------------------------------------------------------------------
+# Ingest — run vision_extract pipeline on a textbook PDF
+# ---------------------------------------------------------------------------
+
+def _make_ingest_job(job_id: str, book_name: str, pdf_path: str, queue_position: int = 0) -> dict:
+    return {
+        "job_id":         job_id,
+        "status":         "queued",
+        "queue_position": queue_position,   # 1 = next up, 0 = running
+        "book_name":      book_name,
+        "pdf_path":       pdf_path,
+        "queued_at":      datetime.utcnow().isoformat() + "Z",
+        "started_at":     None,
+        "finished_at":    None,
+        "summary":        None,
+        "error":          None,
+    }
+
+
+@app.post("/api/ingest-book", status_code=202)
+@app.post("/api/admin/ingest-book", status_code=202)
+async def ingest_book_upload(
+    file: UploadFile = File(..., description="PDF textbook to ingest"),
+    book_name: Optional[str] = Form(None),
+    workers: int = Form(5),
+):
+    """
+    Upload a PDF and start vision extraction.
+    Accepts multipart/form-data with fields: file (PDF), book_name (optional), workers (optional).
+    Returns immediately — poll GET /api/ingest/{job_id} for status.
+    """
+    if not file.filename or not file.filename.lower().endswith(".pdf"):
+        raise HTTPException(status_code=400, detail="Only PDF files are accepted")
+
+    stem = book_name or Path(file.filename).stem
+    UPLOADS_DIR.mkdir(parents=True, exist_ok=True)
+    dest = UPLOADS_DIR / f"{stem}.pdf"
+    dest.write_bytes(await file.read())
+
+    job_id = str(uuid.uuid4())
+    _ingest_jobs[job_id] = _make_ingest_job(job_id, stem, str(dest))
+    _ingest_executor.submit(_run_ingest, job_id, str(dest), stem, workers)
+
+    return {
+        "job_id":    job_id,
+        "status":    "queued",
+        "book_name": stem,
+        "message":   f"Queued. Poll GET /api/ingest/{job_id} for status.",
+    }
+
+
+@app.post("/api/ingest", status_code=202)
+async def ingest_textbook(req: IngestRequest):
+    """
+    Start vision extraction for a PDF already on disk.
+    pdf_path is relative to the project root, e.g. "textbooks/GRADE-5/grade5_maths.pdf".
+    Returns immediately — poll GET /api/ingest/{job_id} for status.
+    """
+    pdf_abs = PROJECT_ROOT / req.pdf_path
+    if not pdf_abs.exists():
+        raise HTTPException(status_code=404, detail=f"PDF not found at '{req.pdf_path}'")
+
+    book_name = req.book_name or pdf_abs.stem
+    job_id    = str(uuid.uuid4())
+    _ingest_jobs[job_id] = _make_ingest_job(job_id, book_name, str(pdf_abs))
+    _ingest_executor.submit(_run_ingest, job_id, str(pdf_abs), book_name, req.workers or 5)
+
+    return {
+        "job_id":    job_id,
+        "status":    "queued",
+        "book_name": book_name,
+        "message":   f"Queued. Poll GET /api/ingest/{job_id} for status.",
+    }
+
+
+@app.post("/api/ingest/upload", status_code=202)
+async def ingest_upload(
+    file: UploadFile = File(..., description="PDF textbook to ingest"),
+    book_name: Optional[str] = Form(None),
+    workers: int = Form(5),
+):
+    """
+    Upload a PDF and start vision extraction.
+    Returns immediately — poll GET /api/ingest/{job_id} for status.
+    """
+    if not file.filename or not file.filename.lower().endswith(".pdf"):
+        raise HTTPException(status_code=400, detail="Only PDF files are accepted")
+
+    stem = book_name or Path(file.filename).stem
+    UPLOADS_DIR.mkdir(parents=True, exist_ok=True)
+    dest = UPLOADS_DIR / f"{stem}.pdf"
+    dest.write_bytes(await file.read())
+
+    job_id = str(uuid.uuid4())
+    _ingest_jobs[job_id] = _make_ingest_job(job_id, stem, str(dest))
+    _ingest_executor.submit(_run_ingest, job_id, str(dest), stem, workers)
+
+    return {
+        "job_id":    job_id,
+        "status":    "queued",
+        "book_name": stem,
+        "message":   f"Queued. Poll GET /api/ingest/{job_id} for status.",
+    }
+
+
+@app.get("/api/ingest")
+async def list_ingest_jobs():
+    """List all ingest jobs grouped by status, most recently queued first."""
+    jobs = sorted(_ingest_jobs.values(), key=lambda j: j["queued_at"], reverse=True)
+    return {
+        "count": len(jobs),
+        "queued":  sum(1 for j in jobs if j["status"] == "queued"),
+        "running": sum(1 for j in jobs if j["status"] == "running"),
+        "done":    sum(1 for j in jobs if j["status"] == "done"),
+        "failed":  sum(1 for j in jobs if j["status"] == "failed"),
+        "jobs": jobs,
+    }
+
+
+@app.get("/api/ingest/{job_id}")
+async def get_ingest_job(job_id: str):
+    """Get status and result of a specific ingest job."""
+    job = _ingest_jobs.get(job_id)
+    if not job:
+        raise HTTPException(status_code=404, detail=f"Job '{job_id}' not found")
+    return job
+
+
+@app.post("/api/generate-image")
+async def api_generate_image(request: Request):
+    """Generate a single image from a text prompt using the HF/Gemini/Imagen fallback chain."""
+    from services.image_service import generate_image
+
+    body = await request.json()
+    prompt = body.get("prompt", "").strip()
+    if not prompt:
+        raise HTTPException(status_code=400, detail="prompt is required")
+
+    img_dir = OUTPUT_DIR / "generated_images"
+    img_dir.mkdir(parents=True, exist_ok=True)
+    save_path = img_dir / f"img_{uuid.uuid4().hex[:8]}.png"
+
+    success = await generate_image(prompt, save_path)
+
+    if not success or not save_path.exists():
+        raise HTTPException(status_code=500, detail="Image generation failed after all providers")
+
+    image_bytes = save_path.read_bytes()
+    b64 = base64.b64encode(image_bytes).decode()
+    save_path.unlink(missing_ok=True)
+
+    return {"success": True, "image": f"data:image/png;base64,{b64}"}
 
 
 if __name__ == "__main__":
