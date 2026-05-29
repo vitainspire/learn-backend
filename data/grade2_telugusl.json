@@ -1,0 +1,4144 @@
+{
+  "subject": "Grade2 Telugusl",
+  "language": "Telugu",
+  "entities": {
+    "chapters": [
+      {
+        "id": "C_20",
+        "number": 1,
+        "title": "9. రైతు (ే)",
+        "page_start": 1,
+        "page_end": 1,
+        "confidence": 1.0,
+        "status": "verified"
+      },
+      {
+        "id": "C_1",
+        "number": 2,
+        "title": "భారతమాత",
+        "page_start": 2,
+        "page_end": 2,
+        "confidence": 1.0,
+        "status": "verified"
+      },
+      {
+        "id": "C_2",
+        "number": 3,
+        "title": "చల్ చల్ గుర్రం",
+        "page_start": 3,
+        "page_end": 3,
+        "confidence": 1.0,
+        "status": "verified"
+      },
+      {
+        "id": "C_3",
+        "number": 4,
+        "title": "ఎందుకురా?",
+        "page_start": 4,
+        "page_end": 4,
+        "confidence": 1.0,
+        "status": "verified"
+      },
+      {
+        "id": "C_4",
+        "number": 5,
+        "title": "ఏది మేలు?",
+        "page_start": 5,
+        "page_end": 5,
+        "confidence": 1.0,
+        "status": "verified"
+      },
+      {
+        "id": "C_5",
+        "number": 6,
+        "title": "పల్లె",
+        "page_start": 6,
+        "page_end": 9,
+        "confidence": 1.0,
+        "status": "verified"
+      },
+      {
+        "id": "C_7",
+        "number": 7,
+        "title": "ఇల్లు",
+        "page_start": 10,
+        "page_end": 13,
+        "confidence": 1.0,
+        "status": "verified"
+      },
+      {
+        "id": "C_9",
+        "number": 8,
+        "title": "వర్ణమాల",
+        "page_start": 14,
+        "page_end": 15,
+        "confidence": 1.0,
+        "status": "verified"
+      },
+      {
+        "id": "C_10",
+        "number": 9,
+        "title": "సరళ పదాలు",
+        "page_start": 16,
+        "page_end": 17,
+        "confidence": 1.0,
+        "status": "verified"
+      },
+      {
+        "id": "C_6",
+        "number": 10,
+        "title": "సంత",
+        "page_start": 18,
+        "page_end": 20,
+        "confidence": 1.0,
+        "status": "verified"
+      },
+      {
+        "id": "C_12",
+        "number": 11,
+        "title": "వాన (౦)",
+        "page_start": 21,
+        "page_end": 24,
+        "confidence": 1.0,
+        "status": "verified"
+      },
+      {
+        "id": "C_13",
+        "number": 12,
+        "title": "మిరపకాయ (ా)",
+        "page_start": 25,
+        "page_end": 29,
+        "confidence": 1.0,
+        "status": "verified"
+      },
+      {
+        "id": "C_14",
+        "number": 13,
+        "title": "చీమ (ి)",
+        "page_start": 30,
+        "page_end": 41,
+        "confidence": 1.0,
+        "status": "verified"
+      },
+      {
+        "id": "C_17",
+        "number": 14,
+        "title": "గృహం (ూ)",
+        "page_start": 42,
+        "page_end": 43,
+        "confidence": 1.0,
+        "status": "verified"
+      },
+      {
+        "id": "C_15",
+        "number": 15,
+        "title": "కుందేలు (ీ)",
+        "page_start": 44,
+        "page_end": 45,
+        "confidence": 1.0,
+        "status": "verified"
+      },
+      {
+        "id": "C_18",
+        "number": 16,
+        "title": "నెమలి (ృ)",
+        "page_start": 46,
+        "page_end": 49,
+        "confidence": 1.0,
+        "status": "verified"
+      },
+      {
+        "id": "C_19",
+        "number": 17,
+        "title": "జడ (ె)",
+        "page_start": 50,
+        "page_end": 57,
+        "confidence": 1.0,
+        "status": "verified"
+      },
+      {
+        "id": "C_21",
+        "number": 18,
+        "title": "గొడుగు (ై)",
+        "page_start": 58,
+        "page_end": 61,
+        "confidence": 1.0,
+        "status": "verified"
+      },
+      {
+        "id": "C_22",
+        "number": 19,
+        "title": "కోతి (ొ)",
+        "page_start": 62,
+        "page_end": 65,
+        "confidence": 1.0,
+        "status": "verified"
+      },
+      {
+        "id": "C_23",
+        "number": 20,
+        "title": "గౌను (ో)",
+        "page_start": 66,
+        "page_end": 66,
+        "confidence": 1.0,
+        "status": "verified"
+      },
+      {
+        "id": "C_16",
+        "number": 21,
+        "title": "పూలు (ు)",
+        "page_start": 0,
+        "page_end": 0,
+        "confidence": 1.0,
+        "status": "verified"
+      }
+    ],
+    "topics": [
+      {
+        "id": "T_1_1",
+        "name": "భారతమాత",
+        "summary": "This topic introduces a patriotic poem/song about India (Bharat Mata) and its symbols, encouraging students to sing and discuss its meaning.",
+        "chapter_id": "C_1",
+        "page_start": 2,
+        "page_end": 2,
+        "prerequisites": []
+      },
+      {
+        "id": "T_2_1",
+        "name": "గుర్రం పాట",
+        "summary": "This topic presents a descriptive Telugu rhyme about a horse, detailing its features and the actions of riding it. It also includes discussion prompts for children to share their experiences with play and songs.",
+        "chapter_id": "C_2",
+        "page_start": 3,
+        "page_end": 3,
+        "prerequisites": []
+      },
+      {
+        "id": "T_3_1",
+        "name": "ఎందుకురా?",
+        "summary": "This topic introduces a poem structured as a series of \"why\" questions, prompting students to think about the reasons behind natural phenomena and human activities depicted in the accompanying illustration.",
+        "chapter_id": "C_3",
+        "page_start": 4,
+        "page_end": 4,
+        "prerequisites": []
+      },
+      {
+        "id": "T_4_1",
+        "name": "ఏది మేలు?",
+        "summary": "This topic introduces a poem that explores the concept of \"what is good\" in various settings such as a village, forest, path, and town, emphasizing the beauty of nature, community, and livelihood.",
+        "chapter_id": "C_4",
+        "page_start": 5,
+        "page_end": 5,
+        "prerequisites": []
+      },
+      {
+        "id": "T_5_1",
+        "name": "పల్లె",
+        "summary": "This topic introduces students to a village scene through a large illustration and encourages oral discussion about its elements and activities.",
+        "chapter_id": "C_5",
+        "page_start": 6,
+        "page_end": 7,
+        "prerequisites": []
+      },
+      {
+        "id": "T_6_1",
+        "name": "సంత",
+        "summary": "Students are introduced to the concept of a market (సంత) through a large illustration depicting various activities, vendors, goods, and animals. They are encouraged to observe the scene and answer questions related to it, fostering observation and oral communication skills.",
+        "chapter_id": "C_6",
+        "page_start": 18,
+        "page_end": 18,
+        "prerequisites": []
+      },
+      {
+        "id": "T_7_1",
+        "name": "ఇల్లు",
+        "summary": "This topic introduces students to the concept of a house and family life through a detailed illustration and related questions, encouraging observation and discussion about family roles and activities.",
+        "chapter_id": "C_7",
+        "page_start": 10,
+        "page_end": 11,
+        "prerequisites": []
+      },
+      {
+        "id": "T_8_1",
+        "name": "4) ఆటస్థలం",
+        "summary": "This topic introduces students to the concept of a playground, identifying various play equipment, and discussing activities children engage in at a playground.",
+        "chapter_id": "C_16",
+        "page_start": 12,
+        "page_end": 13,
+        "prerequisites": []
+      },
+      {
+        "id": "T_9_1",
+        "name": "వర్ణమాల",
+        "summary": "Students are introduced to the Telugu alphabet, including vowels (అచ్చులు) and consonants (హల్లులు), and practice reading and writing them through various exercises.",
+        "chapter_id": "C_9",
+        "page_start": 14,
+        "page_end": 15,
+        "prerequisites": []
+      },
+      {
+        "id": "T_10_1",
+        "name": "సరళ పదాలు",
+        "summary": "This topic introduces students to simple words (సరళ పదాలు) through reading, identifying letters within words, and writing the names of common objects.",
+        "chapter_id": "C_10",
+        "page_start": 16,
+        "page_end": 17,
+        "prerequisites": [
+          "T_9_1"
+        ]
+      },
+      {
+        "id": "T_11_1",
+        "name": "గుణింతాల పరిచయం",
+        "summary": "This topic introduces students to Telugu vowel signs (గుణింతపు గుర్తులు) and their corresponding sounds. Students learn to identify, read, and write words containing these vowel signs.",
+        "chapter_id": "C_6",
+        "page_start": 18,
+        "page_end": 20,
+        "prerequisites": [
+          "T_9_1",
+          "T_10_1"
+        ]
+      },
+      {
+        "id": "T_12_1",
+        "name": "వాన పద్యం",
+        "summary": "Students read a poem about rain, describing its sounds and effects, and discuss their observations and feelings related to rain.",
+        "chapter_id": "C_12",
+        "page_start": 21,
+        "page_end": 21,
+        "prerequisites": []
+      },
+      {
+        "id": "T_12_2",
+        "name": "'ం' అక్షర పరిచయం మరియు అభ్యాసం",
+        "summary": "Students learn to identify, read, and write words containing the anusvara 'ం' through various exercises including sentence identification, word recognition, matching, and writing practice.",
+        "chapter_id": "C_12",
+        "page_start": 22,
+        "page_end": 24,
+        "prerequisites": []
+      },
+      {
+        "id": "T_13_1",
+        "name": "మిరపకాయ (ా) పరిచయం",
+        "summary": "Students are introduced to the 'ా' (aa matra) vowel sign through a poem about a chili pepper and related oral activities.",
+        "chapter_id": "C_13",
+        "page_start": 25,
+        "page_end": 25,
+        "prerequisites": []
+      },
+      {
+        "id": "T_13_2",
+        "name": "అక్షరాలలో 'ా' గుణింతం గుర్తింపు",
+        "summary": "Students practice identifying and differentiating the 'ా' (aa matra) vowel sign in words and letters through various reading and recognition exercises.",
+        "chapter_id": "C_13",
+        "page_start": 26,
+        "page_end": 26,
+        "prerequisites": [
+          "T_13_1"
+        ]
+      },
+      {
+        "id": "T_13_3",
+        "name": "బొమ్మలు - పదాలు జతపరచడం మరియు 'ా' గుణింతం రాయడం",
+        "summary": "Students match pictures to words and practice writing letters with the 'ా' vowel sign.",
+        "chapter_id": "C_13",
+        "page_start": 27,
+        "page_end": 27,
+        "prerequisites": [
+          "T_13_2"
+        ]
+      },
+      {
+        "id": "T_13_4",
+        "name": "పదాలు రాయడం మరియు 'ా' గుణింతం మార్పు",
+        "summary": "Students practice writing names for pictures, modifying words by adding 'ా' to specific letters, and forming words based on clues.",
+        "chapter_id": "C_13",
+        "page_start": 28,
+        "page_end": 28,
+        "prerequisites": [
+          "T_13_3"
+        ]
+      },
+      {
+        "id": "T_13_5",
+        "name": "పదాల నిర్మాణం మరియు సృజనాత్మకత",
+        "summary": "Students form words from a grid of letters and engage in a creative oral activity based on a picture of animals.",
+        "chapter_id": "C_13",
+        "page_start": 29,
+        "page_end": 29,
+        "prerequisites": [
+          "T_13_4"
+        ]
+      },
+      {
+        "id": "T_14_1",
+        "name": "చీమ (ి) పరిచయం",
+        "summary": "This topic introduces the chapter \"చీమ (ి)\" and the 'ి' vowel sign through a poem about ants and related oral discussion.",
+        "chapter_id": "C_14",
+        "page_start": 30,
+        "page_end": 30,
+        "prerequisites": []
+      },
+      {
+        "id": "T_14_2",
+        "name": "'ి' గుణింతం పదాల గుర్తింపు",
+        "summary": "Students practice reading words with the 'ి' vowel sign, identify its presence in letters, and distinguish it from other sounds.",
+        "chapter_id": "C_14",
+        "page_start": 31,
+        "page_end": 31,
+        "prerequisites": [
+          "T_14_1"
+        ]
+      },
+      {
+        "id": "T_14_3",
+        "name": "'ి' గుణింతం పదాల రచన",
+        "summary": "Students practice writing words and sentences that incorporate the 'ి' vowel sign through matching, adding the vowel sign to consonants, and forming words from given letters.",
+        "chapter_id": "C_14",
+        "page_start": 32,
+        "page_end": 32,
+        "prerequisites": [
+          "T_14_2"
+        ]
+      },
+      {
+        "id": "T_14_4",
+        "name": "సృజనాత్మకత",
+        "summary": "This topic engages students in creative activities, including completing sentences based on pictures and a coloring activity.",
+        "chapter_id": "C_14",
+        "page_start": 33,
+        "page_end": 33,
+        "prerequisites": [
+          "T_14_3"
+        ]
+      },
+      {
+        "id": "T_15_1",
+        "name": "కుండ (ు)",
+        "summary": "Introduction to the Telugu letter 'కు' and the 'ు' vowel sound, using the word 'కుండ' (pot). Includes a poem, reading, writing, and creative activities.",
+        "chapter_id": "C_15",
+        "page_start": 44,
+        "page_end": 44,
+        "prerequisites": []
+      },
+      {
+        "id": "T_16_1",
+        "name": "పూలు ( ూ )",
+        "summary": "Poem and discussion about flowers, featuring an illustration of children and Ganesha.",
+        "chapter_id": "C_16",
+        "page_start": 38,
+        "page_end": 38,
+        "prerequisites": []
+      },
+      {
+        "id": "T_16_2",
+        "name": "చదవండి",
+        "summary": "Reading activities focusing on identifying differences in letters, forming words from grids, and circling specific letters in words.",
+        "chapter_id": "C_16",
+        "page_start": 39,
+        "page_end": 39,
+        "prerequisites": []
+      },
+      {
+        "id": "T_16_3",
+        "name": "రాయండి",
+        "summary": "Writing activities including adding a specific vowel sound to letters, naming pictures, and combining letters to form words.",
+        "chapter_id": "C_16",
+        "page_start": 40,
+        "page_end": 40,
+        "prerequisites": []
+      },
+      {
+        "id": "T_16_4",
+        "name": "సృజనాత్మకత",
+        "summary": "Creative activities involving forming words from a central letter and a coloring activity.",
+        "chapter_id": "C_16",
+        "page_start": 41,
+        "page_end": 41,
+        "prerequisites": []
+      },
+      {
+        "id": "T_17_1",
+        "name": "గృహం (ూ) - పరిచయం మరియు పండుగలు",
+        "summary": "Introduces the concept of a house, family, and describes how festivals like Diwali are celebrated, with an accompanying illustration.",
+        "chapter_id": "C_17",
+        "page_start": 42,
+        "page_end": 42,
+        "prerequisites": []
+      },
+      {
+        "id": "T_17_2",
+        "name": "అక్షర జ్ఞానం మరియు పద నిర్మాణం",
+        "summary": "Focuses on reading, writing, and identifying Telugu letters, particularly those with 'ృ' (ru) sound, and forming words.",
+        "chapter_id": "C_17",
+        "page_start": 43,
+        "page_end": 43,
+        "prerequisites": []
+      },
+      {
+        "id": "T_18_1",
+        "name": "నెమలి (ృ) గేయం",
+        "summary": "This topic introduces the chapter with a poem about a peacock dancing in the rain, its feather, and Lord Krishna. It serves as an introduction to the 'ృ' vowel sound through context.",
+        "chapter_id": "C_18",
+        "page_start": 46,
+        "page_end": 46,
+        "prerequisites": []
+      },
+      {
+        "id": "T_18_2",
+        "name": "చదవండి",
+        "summary": "This topic contains various reading and recognition exercises, including identifying lines from the poem, circling specific characters in words, differentiating between similar-sounding letters, and reading letters from grids to form words.",
+        "chapter_id": "C_18",
+        "page_start": 47,
+        "page_end": 47,
+        "prerequisites": []
+      },
+      {
+        "id": "T_18_3",
+        "name": "రాయండి",
+        "summary": "This topic focuses on writing practice, including sentence completion, modifying letters with specific marks, writing names for pictures, and forming words using the 'ృ' vowel mark.",
+        "chapter_id": "C_18",
+        "page_start": 48,
+        "page_end": 49,
+        "prerequisites": []
+      },
+      {
+        "id": "T_18_4",
+        "name": "సృజనాత్మకత",
+        "summary": "This topic includes a creative art activity related to the chapter's theme of the peacock.",
+        "chapter_id": "C_18",
+        "page_start": 49,
+        "page_end": 49,
+        "prerequisites": []
+      },
+      {
+        "id": "T_19_1",
+        "name": "జే జే (ె) గేయం",
+        "summary": "A patriotic song/poem about India, featuring Bharat Mata and people, introducing the 'ె' vowel sound.",
+        "chapter_id": "C_19",
+        "page_start": 50,
+        "page_end": 50,
+        "prerequisites": []
+      },
+      {
+        "id": "T_19_2",
+        "name": "చదవండి: 'ె' గుణింతం పదాలు",
+        "summary": "Reading practice for words containing the 'ె' vowel sound, including syllable and word recognition.",
+        "chapter_id": "C_19",
+        "page_start": 51,
+        "page_end": 51,
+        "prerequisites": []
+      },
+      {
+        "id": "T_19_3",
+        "name": "రాయండి: 'ె' గుణింతం అక్షరాలు, పదాలు",
+        "summary": "Writing practice for syllables and words with the 'ె' vowel, including identifying and naming objects.",
+        "chapter_id": "C_19",
+        "page_start": 52,
+        "page_end": 52,
+        "prerequisites": []
+      },
+      {
+        "id": "T_19_4",
+        "name": "రాయండి, ఖాళీలు పూరించండి, రంగులు వేయండి",
+        "summary": "Further writing practice, fill-in-the-blanks with 'ె' vowel syllables, and a creative coloring activity.",
+        "chapter_id": "C_19",
+        "page_start": 53,
+        "page_end": 53,
+        "prerequisites": []
+      },
+      {
+        "id": "T_20_1",
+        "name": "రైతు గురించి పరిచయం మరియు 'ె' అక్షర జ్ఞానం",
+        "summary": "This topic introduces students to the importance and role of a farmer through a simple poem. It also focuses on developing foundational Telugu reading and writing skills, including poem comprehension, word identification, differentiation of similar-sounding letters, and extensive practice with the 'e-karam' (ె) vowel sign through various reading, writing, and creative exercises.",
+        "chapter_id": "C_20",
+        "page_start": 1,
+        "page_end": 1,
+        "prerequisites": []
+      },
+      {
+        "id": "T_21_1",
+        "name": "గొడుగు గేయం",
+        "summary": "Introduction to the chapter with a poem about an umbrella and related discussion activities.",
+        "chapter_id": "C_21",
+        "page_start": 58,
+        "page_end": 58,
+        "prerequisites": []
+      },
+      {
+        "id": "T_21_2",
+        "name": "'ె', 'ై' గుణింతాల గుర్తింపు, పద పఠనం",
+        "summary": "Exercises focused on reading, identifying, and differentiating words with 'ె' and 'ై' vowel signs.",
+        "chapter_id": "C_21",
+        "page_start": 59,
+        "page_end": 59,
+        "prerequisites": []
+      },
+      {
+        "id": "T_21_3",
+        "name": "'ె', 'ై' గుణింతాల రచన, బొమ్మల పేర్లు",
+        "summary": "Writing practice for 'ె' and 'ై' vowel signs and identifying objects from pictures.",
+        "chapter_id": "C_21",
+        "page_start": 60,
+        "page_end": 60,
+        "prerequisites": []
+      },
+      {
+        "id": "T_21_4",
+        "name": "'ె', 'ై' పద రచన, సృజనాత్మకత",
+        "summary": "Further writing practice with 'ె' and 'ై' words and a creative craft activity to make an umbrella.",
+        "chapter_id": "C_21",
+        "page_start": 61,
+        "page_end": 61,
+        "prerequisites": []
+      },
+      {
+        "id": "T_22_1",
+        "name": "కోతి (ొ) గేయం",
+        "summary": "This topic introduces the 'ొ' vowel sound through a poem about a monkey and encourages students to discuss their observations about monkeys.",
+        "chapter_id": "C_22",
+        "page_start": 62,
+        "page_end": 62,
+        "prerequisites": []
+      },
+      {
+        "id": "T_22_2",
+        "name": "‘ొ’ మరియు ‘ో’ గుణింతాల పఠనం",
+        "summary": "This topic focuses on reading practice, helping students recognize and differentiate between words containing the 'ొ' and 'ో' vowel signs.",
+        "chapter_id": "C_22",
+        "page_start": 63,
+        "page_end": 63,
+        "prerequisites": [
+          "T_11_1"
+        ]
+      },
+      {
+        "id": "T_22_3",
+        "name": "‘ొ’ మరియు ‘ో’ గుణింతాల రచన",
+        "summary": "This topic provides writing practice for words containing 'ొ' and 'ో' vowel signs, including sentence completion and picture-based word writing.",
+        "chapter_id": "C_22",
+        "page_start": 64,
+        "page_end": 64,
+        "prerequisites": [
+          "T_22_2"
+        ]
+      },
+      {
+        "id": "T_22_4",
+        "name": "‘ొ’ మరియు ‘ో’ పదాలతో సృజనాత్మకత",
+        "summary": "This topic encourages creative expression through writing words with 'ొ' and 'ో' vowel signs, identifying words in a grid, and orally describing a picture.",
+        "chapter_id": "C_22",
+        "page_start": 65,
+        "page_end": 65,
+        "prerequisites": [
+          "T_22_3"
+        ]
+      },
+      {
+        "id": "T_23_1",
+        "name": "గౌను",
+        "summary": "Students listen to and discuss a short poem about a girl named Gautami and her new gown, which introduces the 'ో' vowel sound.",
+        "chapter_id": "C_23",
+        "page_start": 66,
+        "page_end": 66,
+        "prerequisites": []
+      },
+      {
+        "id": "T_23_2",
+        "name": "'ో' అక్షర పరిచయం, పదాలు, వాక్యాలు",
+        "summary": "Students practice recognizing, reading, and writing words and sentences containing the 'ో' vowel sign, along with a review of other vowel signs.",
+        "chapter_id": "C_23",
+        "page_start": 67,
+        "page_end": 67,
+        "prerequisites": []
+      },
+      {
+        "id": "T_23_3",
+        "name": "సృజనాత్మకత",
+        "summary": "Students engage in a creative activity involving storytelling and writing based on a given picture.",
+        "chapter_id": "C_23",
+        "page_start": 72,
+        "page_end": 72,
+        "prerequisites": []
+      },
+      {
+        "id": "T_23_4",
+        "name": "రెండవ తరగతి పూర్తయినప్పటికి సాధించాల్సిన సామర్థ్యాలు, అభ్యసనఫలాలు",
+        "summary": "This section outlines the key abilities and learning outcomes expected of students by the completion of the second grade, categorized into listening, speaking, reading, writing, and creativity.",
+        "chapter_id": "C_23",
+        "page_start": 73,
+        "page_end": 73,
+        "prerequisites": []
+      },
+      {
+        "id": "T_23_5",
+        "name": "పాఠ్యపుస్తక అభివృద్ధి బృందం - 2019",
+        "summary": "This section lists the individuals and committees involved in the development and publication of the textbook for the year 2019.",
+        "chapter_id": "C_23",
+        "page_start": 74,
+        "page_end": 74,
+        "prerequisites": []
+      },
+      {
+        "id": "T_23_6",
+        "name": "నోట్స్",
+        "summary": "This page provides blank lined space for students or teachers to write notes.",
+        "chapter_id": "C_23",
+        "page_start": 76,
+        "page_end": 76,
+        "prerequisites": []
+      }
+    ],
+    "subtopics": [
+      {
+        "id": "ST_1_1_1",
+        "topic_id": "T_1_1",
+        "name": "భారతమాత గేయం",
+        "summary": "A poem/song describing various aspects of India, such as shining stars, hoisting the tricolor flag, listening to the sounds of nature, praising the country's glory, ringing bells, offering garlands to the golden mother, singing the national anthem, and offering prayers to Bharat Mata.",
+        "skill_type": "reading_skill",
+        "page_start": 2,
+        "page_end": 2
+      },
+      {
+        "id": "ST_3_1_1",
+        "topic_id": "T_3_1",
+        "name": "ఎందుకురా? (Why?)",
+        "summary": "Students read a poem that asks \"why\" questions about the sun shining, clouds forming, rain falling, ponds filling, crops growing, people living, and fostering goodness. The poem encourages inquiry into the natural world and human existence.",
+        "skill_type": "reading_skill",
+        "page_start": 4,
+        "page_end": 4
+      },
+      {
+        "id": "ST_4_1_1",
+        "topic_id": "T_4_1",
+        "name": "ఏది మేలు? (గేయం)",
+        "summary": "A poem describing the goodness found in different places: a village with its residents, a forest with its trees and birds, a path with its trees and birds, and a town with its cattle and crops. It encourages appreciation for one's surroundings.",
+        "skill_type": "reading_skill",
+        "page_start": 5,
+        "page_end": 5
+      },
+      {
+        "id": "ST_5_1_1",
+        "topic_id": "T_5_1",
+        "name": "చిత్రం చూసి మాట్లాడండి",
+        "summary": "Students observe a detailed illustration depicting a village scene and engage in oral discussion by answering questions related to the picture and their own knowledge of villages.",
+        "skill_type": "oral_communication",
+        "page_start": 6,
+        "page_end": 7
+      },
+      {
+        "id": "ST_6_1_1",
+        "topic_id": "T_6_1",
+        "name": "మార్కెట్ దృశ్యాన్ని పరిశీలించడం",
+        "summary": "Students observe a detailed illustration of a market, identifying different elements like people, goods, and activities.",
+        "skill_type": "recognition_skill",
+        "page_start": 18,
+        "page_end": 9
+      },
+      {
+        "id": "ST_6_1_2",
+        "topic_id": "T_6_1",
+        "name": "సంత గురించి ప్రశ్నలకు సమాధానం ఇవ్వడం",
+        "summary": "Students answer questions based on their observation of the market scene and their general knowledge about local markets.",
+        "skill_type": "comprehension_skill",
+        "page_start": 18,
+        "page_end": 8
+      },
+      {
+        "id": "ST_7_1_1",
+        "topic_id": "T_7_1",
+        "name": "ఇంట్లో కుటుంబ సభ్యులు",
+        "summary": "A large illustration depicting various family members (mother, father, grandparents, children) engaged in daily activities within a house, such as cooking, drying clothes, and eating.",
+        "skill_type": "recognition_skill",
+        "page_start": 10,
+        "page_end": 11
+      },
+      {
+        "id": "ST_8_1_1",
+        "topic_id": "T_8_1",
+        "name": "ఆటస్థలం పరిచయం",
+        "summary": "Students observe images of a playground and discuss the activities and equipment seen, answering questions about their own experiences.",
+        "skill_type": "general_skill",
+        "page_start": 12,
+        "page_end": 13
+      },
+      {
+        "id": "ST_9_1_1",
+        "topic_id": "T_9_1",
+        "name": "తెలుగు వర్ణమాల పరిచయం - అచ్చులు, హల్లులు",
+        "summary": "Students learn to recognize and read the complete Telugu alphabet, categorized into vowels (అచ్చులు) and consonants (హల్లులు).",
+        "skill_type": "recognition_skill",
+        "page_start": 14,
+        "page_end": 14
+      },
+      {
+        "id": "ST_10_1_1",
+        "topic_id": "T_10_1",
+        "name": "బొమ్మల పేర్లు చదవడం మరియు అక్షరాలను గుర్తించడం",
+        "summary": "Students read the names of various pictures and identify the individual letters within those words.",
+        "skill_type": "recognition_skill",
+        "page_start": 16,
+        "page_end": 16
+      },
+      {
+        "id": "ST_10_1_2",
+        "topic_id": "T_10_1",
+        "name": "పదాలను చదవడం మరియు పునరావృత అక్షరాలను గుర్తించడం",
+        "summary": "Students read lists of simple words and identify which letter appears most frequently in each set of words.",
+        "skill_type": "reading_skill",
+        "page_start": 17,
+        "page_end": 17
+      },
+      {
+        "id": "ST_10_1_3",
+        "topic_id": "T_10_1",
+        "name": "బొమ్మల పేర్లు రాయడం",
+        "summary": "Students practice writing simple words by identifying pictures and writing their corresponding names.",
+        "skill_type": "writing_skill",
+        "page_start": 17,
+        "page_end": 17
+      },
+      {
+        "id": "ST_11_1_1",
+        "topic_id": "T_11_1",
+        "name": "అక్షరాలను, గుణింతపు గుర్తులను చదవడం",
+        "summary": "Students learn to read individual letters and understand how to pronounce the vowel signs associated with them.",
+        "skill_type": "recognition_skill",
+        "page_start": 18,
+        "page_end": 18
+      },
+      {
+        "id": "ST_11_1_2",
+        "topic_id": "T_11_1",
+        "name": "బొమ్మలు, పదాల నుండి గుణింతపు గుర్తులను గుర్తించడం",
+        "summary": "Students identify the vowel signs present in words, often with the aid of accompanying pictures.",
+        "skill_type": "recognition_skill",
+        "page_start": 18,
+        "page_end": 19
+      },
+      {
+        "id": "ST_11_1_3",
+        "topic_id": "T_11_1",
+        "name": "గుణింతపు గుర్తులను రాయడం మరియు పదాలను సృష్టించడం",
+        "summary": "Students practice writing vowel signs extracted from words and construct new words based on given vowel signs.",
+        "skill_type": "writing_skill",
+        "page_start": 20,
+        "page_end": 20
+      },
+      {
+        "id": "ST_12_1_1",
+        "topic_id": "T_12_1",
+        "name": "వాన పద్యం చదవడం",
+        "summary": "Students read a short poem titled \"వాన\" (Rain) which describes the sounds and imagery associated with rain.",
+        "skill_type": "reading_skill",
+        "page_start": 21,
+        "page_end": 21
+      },
+      {
+        "id": "ST_12_1_2",
+        "topic_id": "T_12_1",
+        "name": "వాన గురించి మాట్లాడండి",
+        "summary": "Students engage in an oral discussion, answering questions about what they observe in the rain picture and what they feel like doing when it rains.",
+        "skill_type": "oral_communication",
+        "page_start": 21,
+        "page_end": 21
+      },
+      {
+        "id": "ST_12_2_1",
+        "topic_id": "T_12_2",
+        "name": "వాక్యాలను గుర్తించడం",
+        "summary": "Students identify specific sentences from a given text and mark them.",
+        "skill_type": "recognition_skill",
+        "page_start": 22,
+        "page_end": 22
+      },
+      {
+        "id": "ST_12_2_2",
+        "topic_id": "T_12_2",
+        "name": "'ం' అక్షరాన్ని గుర్తించి రాయడం",
+        "summary": "Students identify the 'ం' (anusvara) sound in words and practice writing it.",
+        "skill_type": "writing_skill",
+        "page_start": 22,
+        "page_end": 22
+      },
+      {
+        "id": "ST_12_2_3",
+        "topic_id": "T_12_2",
+        "name": "అక్షరాలను చదివి పదాలు చెప్పడం",
+        "summary": "Students read letters from a grid and orally form words using them.",
+        "skill_type": "oral_communication",
+        "page_start": 22,
+        "page_end": 22
+      },
+      {
+        "id": "ST_12_2_4",
+        "topic_id": "T_12_2",
+        "name": "'ం' ఉన్న పదాలను గుర్తించడం",
+        "summary": "Students read a list of words and identify those that contain the 'ం' (anusvara) sound by circling the relevant letter.",
+        "skill_type": "recognition_skill",
+        "page_start": 22,
+        "page_end": 22
+      },
+      {
+        "id": "ST_12_2_5",
+        "topic_id": "T_12_2",
+        "name": "బొమ్మలకు సరైన పదాలను చదవడం",
+        "summary": "Students read a list of words and associate them with corresponding pictures, identifying the correct name for each image.",
+        "skill_type": "matching_exercise",
+        "page_start": 23,
+        "page_end": 23
+      },
+      {
+        "id": "ST_12_2_6",
+        "topic_id": "T_12_2",
+        "name": "అక్షరాలకు 'ం' చేర్చి రాయడం",
+        "summary": "Students practice writing letters by adding the 'ం' (anusvara) to them in a grid format.",
+        "skill_type": "writing_skill",
+        "page_start": 23,
+        "page_end": 23
+      },
+      {
+        "id": "ST_12_2_7",
+        "topic_id": "T_12_2",
+        "name": "బొమ్మలకు పేర్లు రాయడం",
+        "summary": "Students write the names of objects depicted in various pictures.",
+        "skill_type": "writing_skill",
+        "page_start": 24,
+        "page_end": 24
+      },
+      {
+        "id": "ST_12_2_8",
+        "topic_id": "T_12_2",
+        "name": "అక్షరాలకు 'ం' చేర్చి నిండు గళ్ళలో రాయడం",
+        "summary": "Students practice adding the 'ం' (anusvara) to given letters and writing the resulting forms in provided blank spaces.",
+        "skill_type": "writing_skill",
+        "page_start": 24,
+        "page_end": 24
+      },
+      {
+        "id": "ST_12_2_9",
+        "topic_id": "T_12_2",
+        "name": "గళ్ళలోని అక్షరాలతో పదాలు రాయడం",
+        "summary": "Students form and write words using a selection of letters provided in a grid.",
+        "skill_type": "writing_skill",
+        "page_start": 24,
+        "page_end": 24
+      },
+      {
+        "id": "ST_12_2_10",
+        "topic_id": "T_12_2",
+        "name": "వాన బొమ్మను పరిశీలించడం",
+        "summary": "Students observe a picture depicting children playing in the rain with lightning, and engage in a related activity as per the instruction.",
+        "skill_type": "general_skill",
+        "page_start": 24,
+        "page_end": 24
+      },
+      {
+        "id": "ST_13_1_1",
+        "topic_id": "T_13_1",
+        "name": "మిరపకాయ గేయం",
+        "summary": "Students read and understand a poem about a chili pepper.",
+        "skill_type": "reading_skill",
+        "page_start": 25,
+        "page_end": 25
+      },
+      {
+        "id": "ST_13_2_1",
+        "topic_id": "T_13_2",
+        "name": "గేయంలోని పదాలలో 'ా' గుర్తింపు",
+        "summary": "Students listen to words and phrases from the poem and identify the 'ా' vowel sign, recognizing differences between letters.",
+        "skill_type": "recognition_skill",
+        "page_start": 26,
+        "page_end": 26
+      },
+      {
+        "id": "ST_13_2_2",
+        "topic_id": "T_13_2",
+        "name": "అక్షరాల మధ్య తేడాలు",
+        "summary": "Students identify the difference between letters with and without the 'ా' vowel sign in given word pairs.",
+        "skill_type": "recognition_skill",
+        "page_start": 26,
+        "page_end": 26
+      },
+      {
+        "id": "ST_13_2_3",
+        "topic_id": "T_13_2",
+        "name": "గళ్ళలోని అక్షరాలను చదవడం",
+        "summary": "Students read letters from a grid, focusing on those with the 'ా' vowel sign, and identify words formed with them.",
+        "skill_type": "reading_skill",
+        "page_start": 26,
+        "page_end": 26
+      },
+      {
+        "id": "ST_13_2_4",
+        "topic_id": "T_13_2",
+        "name": "పదాలలో 'ా' ఉన్న అక్షరాలకు సున్నా చుట్టడం",
+        "summary": "Students read words and circle the letters that contain the 'ా' vowel sign.",
+        "skill_type": "recognition_skill",
+        "page_start": 26,
+        "page_end": 26
+      },
+      {
+        "id": "ST_13_3_1",
+        "topic_id": "T_13_3",
+        "name": "బొమ్మలు - పదాలు జతపరచండి",
+        "summary": "Students match given pictures to their corresponding words.",
+        "skill_type": "matching_skill",
+        "page_start": 27,
+        "page_end": 27
+      },
+      {
+        "id": "ST_13_3_2",
+        "topic_id": "T_13_3",
+        "name": "'ా' గుణింతం చేర్చి రాయడం",
+        "summary": "Students add the 'ా' vowel sign to given letters and write them in a grid.",
+        "skill_type": "writing_skill",
+        "page_start": 27,
+        "page_end": 27
+      },
+      {
+        "id": "ST_13_4_1",
+        "topic_id": "T_13_4",
+        "name": "బొమ్మలకు పేర్లు రాయండి",
+        "summary": "Students write the names of objects shown in pictures.",
+        "skill_type": "writing_skill",
+        "page_start": 28,
+        "page_end": 28
+      },
+      {
+        "id": "ST_13_4_2",
+        "topic_id": "T_13_4",
+        "name": "పదాలలో 'ా' గుణింతం చేర్చి రాయడం",
+        "summary": "Students read words and rewrite them by adding the 'ా' (aa matra) vowel sign to an underlined letter.",
+        "skill_type": "writing_skill",
+        "page_start": 28,
+        "page_end": 28
+      },
+      {
+        "id": "ST_13_4_3",
+        "topic_id": "T_13_4",
+        "name": "'ది' అక్షరం వచ్చు పదాలను రాయండి",
+        "summary": "Students write words that include the letter 'ది' based on given clues.",
+        "skill_type": "writing_skill",
+        "page_start": 28,
+        "page_end": 28
+      },
+      {
+        "id": "ST_13_5_1",
+        "topic_id": "T_13_5",
+        "name": "గళ్ళలోని అక్షరాలతో పదాలు రాయండి",
+        "summary": "Students form and write words using a given set of letters in a grid.",
+        "skill_type": "writing_skill",
+        "page_start": 29,
+        "page_end": 29
+      },
+      {
+        "id": "ST_13_5_2",
+        "topic_id": "T_13_5",
+        "name": "జంతువుల సంభాషణ",
+        "summary": "Students observe a picture of animals and imagine what they might be talking about, then discuss it.",
+        "skill_type": "oral_communication",
+        "page_start": 29,
+        "page_end": 29
+      },
+      {
+        "id": "ST_14_1_1",
+        "topic_id": "T_14_1",
+        "name": "చీమల గేయం",
+        "summary": "Students read a poem describing various characteristics of ants.",
+        "skill_type": "reading_skill",
+        "page_start": 30,
+        "page_end": 30
+      },
+      {
+        "id": "ST_14_2_1",
+        "topic_id": "T_14_2",
+        "name": "గేయం నుండి పదాల గుర్తింపు",
+        "summary": "Students identify and underline specific phrases from the previously read poem.",
+        "skill_type": "recognition_skill",
+        "page_start": 31,
+        "page_end": 31
+      },
+      {
+        "id": "ST_14_2_2",
+        "topic_id": "T_14_2",
+        "name": "'ి' అక్షర తేడా గుర్తింపు",
+        "summary": "Students identify and articulate the difference in pronunciation of underlined letters, focusing on the 'ి' vowel sign.",
+        "skill_type": "recognition_skill",
+        "page_start": 31,
+        "page_end": 31
+      },
+      {
+        "id": "ST_14_2_3",
+        "topic_id": "T_14_2",
+        "name": "'ి' గుణింత అక్షరాల పఠనం",
+        "summary": "Students read various consonants combined with the 'ి' vowel sign from a provided table.",
+        "skill_type": "reading_skill",
+        "page_start": 31,
+        "page_end": 31
+      },
+      {
+        "id": "ST_14_2_4",
+        "topic_id": "T_14_2",
+        "name": "'ి' పదాల వర్గీకరణ",
+        "summary": "Students read a list of words and classify letters by circling those with the 'ి' vowel sign and boxing those without it.",
+        "skill_type": "recognition_skill",
+        "page_start": 31,
+        "page_end": 31
+      },
+      {
+        "id": "ST_14_3_1",
+        "topic_id": "T_14_3",
+        "name": "పదాలు జతపరచి వాక్యాలు రాయడం",
+        "summary": "Students match words from two columns to form complete sentences and write them.",
+        "skill_type": "writing_skill",
+        "page_start": 32,
+        "page_end": 32
+      },
+      {
+        "id": "ST_14_3_2",
+        "topic_id": "T_14_3",
+        "name": "అక్షరాలకు 'ి' చేర్చి రాయడం",
+        "summary": "Students practice writing consonants by adding the 'ి' vowel sign to them.",
+        "skill_type": "writing_skill",
+        "page_start": 32,
+        "page_end": 32
+      },
+      {
+        "id": "ST_14_3_3",
+        "topic_id": "T_14_3",
+        "name": "అక్షరాలతో పదాలు రాయడం",
+        "summary": "Students form and write new words using a provided set of letters arranged in a grid.",
+        "skill_type": "writing_skill",
+        "page_start": 32,
+        "page_end": 32
+      },
+      {
+        "id": "ST_14_4_1",
+        "topic_id": "T_14_4",
+        "name": "బొమ్మలకు తగిన పదాలతో వాక్యాలు రాయడం",
+        "summary": "Students read sentences and complete them by identifying objects in accompanying pictures and writing their names.",
+        "skill_type": "writing_skill",
+        "page_start": 33,
+        "page_end": 33
+      },
+      {
+        "id": "ST_14_4_2",
+        "topic_id": "T_14_4",
+        "name": "బొమ్మలకు రంగులు వేయడం",
+        "summary": "Students color an illustration featuring a rabbit and a bear on a swing.",
+        "skill_type": "art_skill",
+        "page_start": 33,
+        "page_end": 33
+      },
+      {
+        "id": "ST_18_1_1",
+        "topic_id": "T_18_1",
+        "name": "గేయం చదవడం",
+        "summary": "Students read and recite the poem about the peacock.",
+        "skill_type": "reading_skill",
+        "page_start": 46,
+        "page_end": 46
+      },
+      {
+        "id": "ST_18_1_2",
+        "topic_id": "T_18_1",
+        "name": "నెమలి గురించి చర్చించడం",
+        "summary": "Students engage in an oral discussion about their experiences and feelings related to peacocks.",
+        "skill_type": "oral_communication",
+        "page_start": 46,
+        "page_end": 46
+      },
+      {
+        "id": "ST_18_2_1",
+        "topic_id": "T_18_2",
+        "name": "గేయంలోని వాక్యాలను గుర్తించడం",
+        "summary": "Students identify and underline specific sentences from the poem based on given prompts.",
+        "skill_type": "comprehension_skill",
+        "page_start": 47,
+        "page_end": 47
+      },
+      {
+        "id": "ST_18_2_2",
+        "topic_id": "T_18_2",
+        "name": "గేయంలోని పదాలలో 'O' అక్షరాన్ని గుర్తించడం",
+        "summary": "Students are instructed to circle the character 'O' within the poem for a list of provided words. (Note: The character 'O' is likely a placeholder for a specific vowel mark, possibly 'ృ' or 'ె', given the chapter context and example words).",
+        "skill_type": "recognition_skill",
+        "page_start": 47,
+        "page_end": 47
+      },
+      {
+        "id": "ST_18_2_3",
+        "topic_id": "T_18_2",
+        "name": "పదాలలో అక్షరాల తేడాలను గుర్తించడం",
+        "summary": "Students read pairs of words and identify the difference between their underlined letters, focusing on subtle sound or visual distinctions.",
+        "skill_type": "recognition_skill",
+        "page_start": 47,
+        "page_end": 47
+      },
+      {
+        "id": "ST_18_2_4",
+        "topic_id": "T_18_2",
+        "name": "గళ్ళలోని అక్షరాలను చదివి పదాలు చెప్పడం",
+        "summary": "Students read letters from two grids, one with basic consonants and another with consonants modified by the 'ృ' vowel mark, and are asked to say words formed with them.",
+        "skill_type": "reading_skill",
+        "page_start": 47,
+        "page_end": 47
+      },
+      {
+        "id": "ST_18_2_5",
+        "topic_id": "T_18_2",
+        "name": "గళ్ళలోని పదాలలో '=' ఉన్న అక్షరాలకు 'O' గీయడం",
+        "summary": "Students read words from a grid and circle the character 'O' for letters that have an '=' mark. (Note: 'O' and '=' are likely placeholders, and the words provided contain the 'ె' matra).",
+        "skill_type": "recognition_skill",
+        "page_start": 47,
+        "page_end": 47
+      },
+      {
+        "id": "ST_18_3_1",
+        "topic_id": "T_18_3",
+        "name": "వాక్యాలను చదివి పదాలను రాయడం",
+        "summary": "Students read sentences, identify and underline letters with an '=' mark, and then write the complete word in the provided blank.",
+        "skill_type": "writing_skill",
+        "page_start": 48,
+        "page_end": 48
+      },
+      {
+        "id": "ST_18_3_2",
+        "topic_id": "T_18_3",
+        "name": "గళ్ళలోని అక్షరాలకు '=' చేర్చి రాయడం",
+        "summary": "Students read letters from a grid and rewrite them in a new grid after adding an '=' mark to each letter. (Note: '=' is likely a placeholder for a specific vowel mark, possibly 'ృ' or 'ె').",
+        "skill_type": "writing_skill",
+        "page_start": 48,
+        "page_end": 48
+      },
+      {
+        "id": "ST_18_3_3",
+        "topic_id": "T_18_3",
+        "name": "బొమ్మల పేర్లను రాయడం",
+        "summary": "Students identify various pictures and write their corresponding names in Telugu.",
+        "skill_type": "writing_skill",
+        "page_start": 48,
+        "page_end": 48
+      },
+      {
+        "id": "ST_18_3_4",
+        "topic_id": "T_18_3",
+        "name": "గీత గీసిన అక్షరాలకు '=' చేర్చి పదాన్ని రాయడం",
+        "summary": "Students are given words with underlined letters and are instructed to add an '=' mark to the underlined letter, then write the new word formed. (Note: '=' is likely a placeholder for a specific vowel mark).",
+        "skill_type": "writing_skill",
+        "page_start": 49,
+        "page_end": 49
+      },
+      {
+        "id": "ST_18_3_5",
+        "topic_id": "T_18_3",
+        "name": "గుణింతపు అక్షరాలను కలుపుతూ పదాలను రాయడం",
+        "summary": "Students connect the central 'ృ' vowel mark with given consonants (కృ, మృ, తృ, పృ) to form and write new words, explicitly practicing the 'ృ' sound.",
+        "skill_type": "writing_skill",
+        "page_start": 49,
+        "page_end": 49
+      },
+      {
+        "id": "ST_18_4_1",
+        "topic_id": "T_18_4",
+        "name": "నెమలి పింఛానికి రంగులు వేయడం",
+        "summary": "Students are instructed to color a drawing of a peacock feather.",
+        "skill_type": "art_skill",
+        "page_start": 49,
+        "page_end": 49
+      },
+      {
+        "id": "ST_22_1_1",
+        "topic_id": "T_22_1",
+        "name": "గేయ పఠనం",
+        "summary": "Students read and recite a poem about a monkey.",
+        "skill_type": "reading_skill",
+        "page_start": 62,
+        "page_end": 62
+      },
+      {
+        "id": "ST_22_1_2",
+        "topic_id": "T_22_1",
+        "name": "కోతుల గురించి చర్చ",
+        "summary": "Students engage in an oral discussion about their experiences and knowledge regarding monkeys.",
+        "skill_type": "oral_communication",
+        "page_start": 62,
+        "page_end": 62
+      },
+      {
+        "id": "ST_22_2_1",
+        "topic_id": "T_22_2",
+        "name": "‘ొ’ గుణింతం గుర్తింపు",
+        "summary": "Students identify and circle the 'ొ' vowel sign in a given line of text.",
+        "skill_type": "recognition_skill",
+        "page_start": 63,
+        "page_end": 63
+      },
+      {
+        "id": "ST_22_2_2",
+        "topic_id": "T_22_2",
+        "name": "‘ొ’ మరియు ‘ో’ పదాల తేడాలు గుర్తించడం",
+        "summary": "Students read pairs of words containing 'ొ' and 'ో' vowel signs and identify the phonetic differences.",
+        "skill_type": "reading_skill",
+        "page_start": 63,
+        "page_end": 63
+      },
+      {
+        "id": "ST_22_2_3",
+        "topic_id": "T_22_2",
+        "name": "‘ొ’ మరియు ‘ో’ అక్షర, పద పఠనం",
+        "summary": "Students read individual letters and a list of words that include the 'ొ' and 'ో' vowel signs.",
+        "skill_type": "reading_skill",
+        "page_start": 63,
+        "page_end": 63
+      },
+      {
+        "id": "ST_22_2_4",
+        "topic_id": "T_22_2",
+        "name": "‘ొ’ మరియు ‘ో’ అక్షరాల కింద గీత గీయడం",
+        "summary": "Students read a list of words and underline the letters that contain the 'ొ' or 'ో' vowel signs.",
+        "skill_type": "recognition_skill",
+        "page_start": 63,
+        "page_end": 63
+      },
+      {
+        "id": "ST_22_3_1",
+        "topic_id": "T_22_3",
+        "name": "‘ొ’ పదాలతో వాక్యాలు పూర్తి చేయడం",
+        "summary": "Students read sentences and write the appropriate word containing 'ొ' in the provided blank.",
+        "skill_type": "writing_skill",
+        "page_start": 64,
+        "page_end": 64
+      },
+      {
+        "id": "ST_22_3_2",
+        "topic_id": "T_22_3",
+        "name": "‘ొ’ మరియు ‘ో’ పదాల రచన",
+        "summary": "Students practice writing words that include the 'ొ' and 'ో' vowel signs, based on a given set of letters.",
+        "skill_type": "writing_skill",
+        "page_start": 64,
+        "page_end": 64
+      },
+      {
+        "id": "ST_22_3_3",
+        "topic_id": "T_22_3",
+        "name": "బొమ్మల ఆధారంగా పదాలు రాయడం",
+        "summary": "Students identify objects in pictures and write their corresponding Telugu names.",
+        "skill_type": "writing_skill",
+        "page_start": 64,
+        "page_end": 64
+      },
+      {
+        "id": "ST_22_4_1",
+        "topic_id": "T_22_4",
+        "name": "‘ొ’ మరియు ‘ో’ గుణింతంతో పదాల రచన",
+        "summary": "Students write words that incorporate the 'ొ' and 'ో' vowel signs.",
+        "skill_type": "writing_skill",
+        "page_start": 65,
+        "page_end": 65
+      },
+      {
+        "id": "ST_22_4_2",
+        "topic_id": "T_22_4",
+        "name": "గళ్ళలోని పదాలను గుర్తించి రాయడం",
+        "summary": "Students identify hidden words within a letter grid and write them down.",
+        "skill_type": "writing_skill",
+        "page_start": 65,
+        "page_end": 65
+      },
+      {
+        "id": "ST_22_4_3",
+        "topic_id": "T_22_4",
+        "name": "బొమ్మ ఆధారంగా మాట్లాడండి",
+        "summary": "Students describe a given picture using five sentences and provide an explanation.",
+        "skill_type": "oral_communication",
+        "page_start": 65,
+        "page_end": 65
+      },
+      {
+        "id": "ST_23_1_1",
+        "topic_id": "T_23_1",
+        "name": "గౌను కథ",
+        "summary": "Students read and understand the story of Gautami's new gown.",
+        "skill_type": "comprehension_skill",
+        "page_start": 66,
+        "page_end": 66
+      },
+      {
+        "id": "ST_23_2_1",
+        "topic_id": "T_23_2",
+        "name": "గేయం నుండి వాక్యాలు గుర్తించడం",
+        "summary": "Students identify and circle specific sentences from the poem.",
+        "skill_type": "recognition_skill",
+        "page_start": 67,
+        "page_end": 67
+      },
+      {
+        "id": "ST_23_2_2",
+        "topic_id": "T_23_2",
+        "name": "'ో' గుణింత పదాలు చదవడం",
+        "summary": "Students read words containing the 'ో' vowel sign and underline the 'ో' letter.",
+        "skill_type": "reading_skill",
+        "page_start": 67,
+        "page_end": 67
+      },
+      {
+        "id": "ST_23_2_3",
+        "topic_id": "T_23_2",
+        "name": "బొమ్మ-పదం జతపరచడం",
+        "summary": "Students match pictures with given words.",
+        "skill_type": "matching_exercise",
+        "page_start": 68,
+        "page_end": 67
+      },
+      {
+        "id": "ST_23_2_4",
+        "topic_id": "T_23_2",
+        "name": "వాక్యాలు పూర్తిచేయడం",
+        "summary": "Students complete sentences based on the poem.",
+        "skill_type": "comprehension_skill",
+        "page_start": 68,
+        "page_end": 67
+      },
+      {
+        "id": "ST_23_2_5",
+        "topic_id": "T_23_2",
+        "name": "గుణింత అక్షరాల తేడాను గుర్తించడం",
+        "summary": "Students identify the difference between 'ె' and 'ే' vowel signs and 'ొ' and 'ో' vowel signs, and practice writing letters with these signs.",
+        "skill_type": "writing_skill",
+        "page_start": 69,
+        "page_end": 67
+      },
+      {
+        "id": "ST_23_2_6",
+        "topic_id": "T_23_2",
+        "name": "బొమ్మల పేర్లు రాయడం",
+        "summary": "Students write the names of objects shown in pictures.",
+        "skill_type": "writing_skill",
+        "page_start": 69,
+        "page_end": 67
+      },
+      {
+        "id": "ST_23_2_7",
+        "topic_id": "T_23_2",
+        "name": "బొమ్మల ఆధారంగా వాక్యాలు పూరించడం",
+        "summary": "Students fill in the blanks in sentences based on actions depicted in pictures.",
+        "skill_type": "writing_skill",
+        "page_start": 70,
+        "page_end": 67
+      },
+      {
+        "id": "ST_23_2_8",
+        "topic_id": "T_23_2",
+        "name": "పదాలతో వాక్యాలు రాయడం",
+        "summary": "Students read given words and construct sentences using them.",
+        "skill_type": "writing_skill",
+        "page_start": 70,
+        "page_end": 67
+      },
+      {
+        "id": "ST_23_2_9",
+        "topic_id": "T_23_2",
+        "name": "గుణింత పదాలు రాయడం",
+        "summary": "Students practice writing words using 'ొ', 'ో', 'ౌ', 'ం', 'ః' vowel signs in a grid.",
+        "skill_type": "writing_skill",
+        "page_start": 71,
+        "page_end": 67
+      },
+      {
+        "id": "ST_23_3_1",
+        "topic_id": "T_23_3",
+        "name": "చిత్రం ఆధారంగా కథ చెప్పడం, రాయడం",
+        "summary": "Students observe a picture and create a story, then write it down.",
+        "skill_type": "art_skill",
+        "page_start": 72,
+        "page_end": 72
+      },
+      {
+        "id": "ST_23_4_1",
+        "topic_id": "T_23_4",
+        "name": "వినడం, మాట్లాడడం",
+        "summary": "Lists outcomes related to listening and speaking skills for Grade 2.",
+        "skill_type": "listening_skill",
+        "page_start": 73,
+        "page_end": 73
+      },
+      {
+        "id": "ST_23_4_2",
+        "topic_id": "T_23_4",
+        "name": "చదవడం",
+        "summary": "Lists outcomes related to reading skills for Grade 2.",
+        "skill_type": "reading_skill",
+        "page_start": 73,
+        "page_end": 73
+      },
+      {
+        "id": "ST_23_4_3",
+        "topic_id": "T_23_4",
+        "name": "రాయడం",
+        "summary": "Lists outcomes related to writing skills for Grade 2.",
+        "skill_type": "writing_skill",
+        "page_start": 73,
+        "page_end": 73
+      },
+      {
+        "id": "ST_23_4_4",
+        "topic_id": "T_23_4",
+        "name": "సృజనాత్మకత",
+        "summary": "Lists outcomes related to creative skills for Grade 2.",
+        "skill_type": "art_skill",
+        "page_start": 73,
+        "page_end": 73
+      },
+      {
+        "id": "ST_23_5_1",
+        "topic_id": "T_23_5",
+        "name": "సలహాదారులు",
+        "summary": "Lists the advisors for the textbook development.",
+        "skill_type": "general_skill",
+        "page_start": 74,
+        "page_end": 74
+      },
+      {
+        "id": "ST_23_5_2",
+        "topic_id": "T_23_5",
+        "name": "రూపకల్పన బృందం",
+        "summary": "Lists the members of the design team responsible for the textbook.",
+        "skill_type": "general_skill",
+        "page_start": 74,
+        "page_end": 74
+      },
+      {
+        "id": "ST_23_5_3",
+        "topic_id": "T_23_5",
+        "name": "చిత్రకారులు",
+        "summary": "Lists the illustrators who contributed to the textbook.",
+        "skill_type": "general_skill",
+        "page_start": 75,
+        "page_end": 74
+      },
+      {
+        "id": "ST_23_5_4",
+        "topic_id": "T_23_5",
+        "name": "పాఠ్యపుస్తక ప్రచురణ కమిటీ",
+        "summary": "Lists the members of the textbook publication committee.",
+        "skill_type": "general_skill",
+        "page_start": 75,
+        "page_end": 74
+      },
+      {
+        "id": "ST_23_6_1",
+        "topic_id": "T_23_6",
+        "name": "నోట్స్",
+        "summary": "A blank lined page for general note-taking.",
+        "skill_type": "general_skill",
+        "page_start": 76,
+        "page_end": 76
+      }
+    ],
+    "exercises": [
+      {
+        "id": "E_1_1_1",
+        "text": "I. పాడండి",
+        "topic_id": "T_1_1",
+        "page": 2,
+        "exercise_type": "reading_exercise",
+        "confidence": "high"
+      },
+      {
+        "id": "E_1_1_2",
+        "text": "మాట్లాడండి :- 1) చిత్రంలోని పిల్లలు ఏమి చేస్తున్నారు? 2) ఈ పాట ద్వారా మీరు ఏమి తెలుసుకున్నారు?",
+        "topic_id": "T_1_1",
+        "page": 2,
+        "exercise_type": "oral_communication",
+        "confidence": "high"
+      },
+      {
+        "id": "E_2_1_1",
+        "text": "చిత్రంలోని పిల్లలు ఏమి చేస్తున్నారు?",
+        "topic_id": "T_2_1",
+        "page": 3,
+        "exercise_type": "discussion",
+        "confidence": "medium"
+      },
+      {
+        "id": "E_2_1_2",
+        "text": "మీరు వేటితో ఆడుకుంటారు?",
+        "topic_id": "T_2_1",
+        "page": 3,
+        "exercise_type": "discussion",
+        "confidence": "medium"
+      },
+      {
+        "id": "E_2_1_3",
+        "text": "ఆడుకుంటూ పాడే పాటలేవి?",
+        "topic_id": "T_2_1",
+        "page": 3,
+        "exercise_type": "discussion",
+        "confidence": "medium"
+      },
+      {
+        "id": "E_3_1_1",
+        "text": "మాట్లాడండి :- 1) వానలు ఎందుకు కురువాలి? 2) ఏయే పనులు ఉన్నవి? 3) పంటలు ఎవరు పండిస్తారు?",
+        "topic_id": "T_3_1",
+        "page": 4,
+        "exercise_type": "oral_communication",
+        "confidence": "high"
+      },
+      {
+        "id": "E_4_1_1",
+        "text": "మాట్లాడండి :- 1) మీ ఊరి గురించి చెప్పండి. 2) మీ ఇల్లు ఎక్కడ ఉన్నది? 3) మీ వీధి ఎలా ఉంటుంది?",
+        "topic_id": "T_4_1",
+        "page": 5,
+        "exercise_type": "oral_communication",
+        "confidence": "high"
+      },
+      {
+        "id": "E_5_1_1",
+        "text": "1) చిత్రంలో ఏమేమి ఉన్నవి? 2) వారు ఏమి చేస్తున్నారు? ఏమి మాట్లాడుతున్నారు? 3) మీకు తెలిసిన పల్లె గురించి చెప్పండి. 4) మీకు తెలిసిన పల్లె గురించి చెప్పండి.",
+        "topic_id": "T_5_1",
+        "page": 6,
+        "exercise_type": "oral_communication",
+        "confidence": "high"
+      },
+      {
+        "id": "E_6_1_1",
+        "text": "1) చిత్రంలో ఏమేమి కనిపిస్తున్నాయి?",
+        "topic_id": "T_6_1",
+        "page": 8,
+        "exercise_type": "oral_communication",
+        "confidence": "high"
+      },
+      {
+        "id": "E_6_1_2",
+        "text": "2) చిత్రంలోవారు ఏమి చేస్తున్నారు?",
+        "topic_id": "T_6_1",
+        "page": 8,
+        "exercise_type": "oral_communication",
+        "confidence": "high"
+      },
+      {
+        "id": "E_6_1_3",
+        "text": "3) మీ ఊరిలో ఎలాంటివి అమ్ముతారు?",
+        "topic_id": "T_6_1",
+        "page": 8,
+        "exercise_type": "oral_communication",
+        "confidence": "high"
+      },
+      {
+        "id": "E_6_1_4",
+        "text": "4) మీ ఊరి సంతలో ఏమేమి ఉంటాయి?",
+        "topic_id": "T_6_1",
+        "page": 8,
+        "exercise_type": "oral_communication",
+        "confidence": "high"
+      },
+      {
+        "id": "E_6_1_5",
+        "text": "Observe the market scene, which is a continuation of the illustration from page 8, showing various vendors, goods, and animals like dogs, horses, and cows.",
+        "topic_id": "T_6_1",
+        "page": 9,
+        "exercise_type": "general_activity",
+        "confidence": "high"
+      },
+      {
+        "id": "E_7_1_1",
+        "text": "1) చిత్రంలో ఎవరెవరు ఉన్నారు?",
+        "topic_id": "T_7_1",
+        "page": 10,
+        "exercise_type": "oral_communication",
+        "confidence": "high"
+      },
+      {
+        "id": "E_7_1_2",
+        "text": "2) వారు ఏం చేస్తున్నారు?",
+        "topic_id": "T_7_1",
+        "page": 10,
+        "exercise_type": "oral_communication",
+        "confidence": "high"
+      },
+      {
+        "id": "E_7_1_3",
+        "text": "3) మీ ఇంట్లో ఎవరెవరు ఉంటారు?",
+        "topic_id": "T_7_1",
+        "page": 10,
+        "exercise_type": "oral_communication",
+        "confidence": "high"
+      },
+      {
+        "id": "E_7_1_4",
+        "text": "4) మీ ఇంట్లో ఎవరెవరు ఏమిచేస్తారు?",
+        "topic_id": "T_7_1",
+        "page": 10,
+        "exercise_type": "oral_communication",
+        "confidence": "high"
+      },
+      {
+        "id": "E_8_1_1",
+        "text": "1) పిల్లలు ఎక్కడ ఆడుకుంటున్నారు? 2) మీరు ఎక్కడ ఆడుకుంటారు? 3) మీరు ఏమేమి ఆటలు ఆడతారు? 4) మీరు చూసిన పార్కు గురించి చెప్పండి.",
+        "topic_id": "T_8_1",
+        "page": 12,
+        "exercise_type": "oral_communication",
+        "confidence": "high"
+      },
+      {
+        "id": "E_8_1_2",
+        "text": "Students observe the image of a playground with children playing on a seesaw and swing, and a Ferris wheel in the background. This page is likely for visual discussion and identification of playground elements.",
+        "topic_id": "T_8_1",
+        "page": 13,
+        "exercise_type": "general_activity",
+        "confidence": "high"
+      },
+      {
+        "id": "E_9_1_1",
+        "text": "అ) కింది వర్ణమాలను చూడండి. అక్షరాలను చదవండి.",
+        "topic_id": "T_9_1",
+        "page": 14,
+        "exercise_type": "reading_exercise",
+        "confidence": "high"
+      },
+      {
+        "id": "E_9_1_2",
+        "text": "ఆ) కింది ఖాళీలలో సరైన అక్షరాలను రాయండి.",
+        "topic_id": "T_9_1",
+        "page": 15,
+        "exercise_type": "fill_in_the_blank",
+        "confidence": "high"
+      },
+      {
+        "id": "E_9_1_3",
+        "text": "ఇ) కింది అక్షరాలను చదవండి. వాటి ముందు, తరువాత అక్షరాలను రాయండి.",
+        "topic_id": "T_9_1",
+        "page": 15,
+        "exercise_type": "writing_practice",
+        "confidence": "high"
+      },
+      {
+        "id": "E_10_1_1",
+        "text": "అ) కింది బొమ్మలు పేర్లు చదువండి. వాటి అక్షరాలను వర్గమూలలో చూపండి.",
+        "topic_id": "T_10_1",
+        "page": 16,
+        "exercise_type": "reading_exercise",
+        "confidence": "high"
+      },
+      {
+        "id": "E_10_1_2",
+        "text": "ఆ) కింది పదాలను చదువండి. వీటిలో ఏ అక్షరం ఎక్కువసార్లు వచ్చిందో చెప్పండి.",
+        "topic_id": "T_10_1",
+        "page": 17,
+        "exercise_type": "reading_exercise",
+        "confidence": "high"
+      },
+      {
+        "id": "E_10_1_3",
+        "text": "ఇ) కింది బొమ్మల పేర్లు రాయండి.",
+        "topic_id": "T_10_1",
+        "page": 17,
+        "exercise_type": "writing_practice",
+        "confidence": "high"
+      },
+      {
+        "id": "E_11_1_1",
+        "text": "అ) కింది అక్షరాలను చదవండి. వాటి కింది గుర్తులను ఎలా పలుకుతారో తెలుసుకోండి.",
+        "topic_id": "T_11_1",
+        "page": 18,
+        "exercise_type": "reading_exercise",
+        "confidence": "high"
+      },
+      {
+        "id": "E_11_1_2",
+        "text": "ఆ) కింది బొమ్మలను చూడండి. వాటి పేర్లు చదవండి. గుణింతపు గుర్తుతోని అక్షరాన్ని కనుక్కోండి.",
+        "topic_id": "T_11_1",
+        "page": 18,
+        "exercise_type": "recognition_skill",
+        "confidence": "high"
+      },
+      {
+        "id": "E_11_1_3",
+        "text": "ఇ) కింది పట్టికలోని పదాలను చదవండి. గుణింతపు గుర్తుతోని అక్షరంలోని గుణింతపు గుర్తును రాయండి.",
+        "topic_id": "T_11_1",
+        "page": 20,
+        "exercise_type": "writing_practice",
+        "confidence": "high"
+      },
+      {
+        "id": "E_11_1_4",
+        "text": "ఈ) కింది పట్టికలోని గుణింతపు గుర్తులను చూడండి. ఒక్కొక్క గుణింతానికి ఒక పదం రాయండి.",
+        "topic_id": "T_11_1",
+        "page": 20,
+        "exercise_type": "writing_practice",
+        "confidence": "high"
+      },
+      {
+        "id": "E_12_1_1",
+        "text": "మిల మిల మెరుపుల వాన ఫెళ ఫెళ ఉరుముల వాన టప టప చినుకుల వాన చిటపట కురిసిన వాన పిల్లలు తడిసిన వాన పదపద విడిచిన వాన",
+        "topic_id": "T_12_1",
+        "page": 21,
+        "exercise_type": "reading_exercise",
+        "confidence": "high"
+      },
+      {
+        "id": "E_12_1_2",
+        "text": "వినండి - మాట్లాడండి. అ) పై బొమ్మలో ఏమేమి కనబడుతున్నాయి? ఆ) వాన పడుతుంటే మీకేమి చేయాలనిపిస్తుంది?",
+        "topic_id": "T_12_1",
+        "page": 21,
+        "exercise_type": "oral_communication",
+        "confidence": "high"
+      },
+      {
+        "id": "E_12_2_1",
+        "text": "అ) గీతలో కింది వాక్యాలు ఎక్కడ ఉన్నాయో గుర్తించండి. వాటికి 'O' చుట్టండి. 1) మిల మిల మెరుపుల వాన 2) చిటపట కురిసిన వాన 3) పదపద విడిచిన వాన",
+        "topic_id": "T_12_2",
+        "page": 22,
+        "exercise_type": "recognition_skill",
+        "confidence": "high"
+      },
+      {
+        "id": "E_12_2_2",
+        "text": "ఆ) కింది పదాలలో గీత గీసిన అక్షరాలకు సున్న చుట్టి రాయండి. వాన - వాన, కం - కం, బం - బం, మం - మం, పం - పం",
+        "topic_id": "T_12_2",
+        "page": 22,
+        "exercise_type": "writing_practice",
+        "confidence": "high"
+      },
+      {
+        "id": "E_12_2_3",
+        "text": "ఇ) పైనున్న కింది గళ్ళలోని అక్షరాలను తేడాలో చదవండి. వాటితో ఏర్పడే పదాలను చెప్పండి. (Grid of letters is provided for this activity.)",
+        "topic_id": "T_12_2",
+        "page": 22,
+        "exercise_type": "oral_communication",
+        "confidence": "high"
+      },
+      {
+        "id": "E_12_2_4",
+        "text": "ఈ) కింది పదాలను చదవండి. 'ం' ఉన్న అక్షరాలకు 'O' చుట్టండి. వాన, పాట, జాడ, పార, వాన, పంక, మరుగు, పాత, పాప, పనస, గణం, పాతం, దానం, పారం, దారం, పగడ, పాదం, వానం, పారం, నాగరం, అంబరం, అంబం, అంగం, అంబరం, పలకలు, అంబరం, కందాయం, మందారం, పటాపట, పటాపట",
+        "topic_id": "T_12_2",
+        "page": 22,
+        "exercise_type": "recognition_skill",
+        "confidence": "high"
+      },
+      {
+        "id": "E_12_2_5",
+        "text": "అ) కింది బొమ్మలకు సరైన పేరు చదవండి. (Pictures: Guava, Necklace, Girl, Clouds, Moon. Words provided for matching: వాన, అంబరం, చందమామ, మేఘం, పలకలు)",
+        "topic_id": "T_12_2",
+        "page": 23,
+        "exercise_type": "matching_exercise",
+        "confidence": "high"
+      },
+      {
+        "id": "E_12_2_6",
+        "text": "అ) పై గళ్ళలోని అక్షరాలను చదవండి. వాటికి 'ం' చేర్చి కింది గళ్ళలో రాయండి. (Grid of letters is provided for this activity.)",
+        "topic_id": "T_12_2",
+        "page": 23,
+        "exercise_type": "writing_practice",
+        "confidence": "high"
+      },
+      {
+        "id": "E_12_2_7",
+        "text": "అ) కింది బొమ్మలకు పేర్లు రాయండి.",
+        "topic_id": "T_12_2",
+        "page": 24,
+        "exercise_type": "writing_practice",
+        "confidence": "high"
+      },
+      {
+        "id": "E_12_2_8",
+        "text": "ఆ) కింది అక్షరాలకు 'ం' చేర్చండి. వాటిని రాయండి. కింది నిండు గళ్ళలో రాయండి.",
+        "topic_id": "T_12_2",
+        "page": 24,
+        "exercise_type": "writing_practice",
+        "confidence": "high"
+      },
+      {
+        "id": "E_12_2_9",
+        "text": "ఇ) కింది గళ్ళలోని అక్షరాలతో పదాలను రాయండి. (Grid of letters is provided for this activity.)",
+        "topic_id": "T_12_2",
+        "page": 24,
+        "exercise_type": "writing_practice",
+        "confidence": "high"
+      },
+      {
+        "id": "E_12_2_10",
+        "text": "అ) బొమ్మలోని గదుల్లోని అక్షరాలను చదవండి. (Activity based on the visual: Children playing in the rain with lightning.)",
+        "topic_id": "T_12_2",
+        "page": 24,
+        "exercise_type": "general_activity",
+        "confidence": "high"
+      },
+      {
+        "id": "E_13_1_1",
+        "text": "వినండి - మాట్లాడండి అ) మిరపకాయ ఎలా ఉంటుంది? దీనితో ఏం చేస్తారు? ఆ) మీరు మిరపకాయ బజ్జీలు తిన్నారా? మీకు ఏమేమి బజ్జీలు తెలుసో చెప్పండి.",
+        "topic_id": "T_13_1",
+        "page": 25,
+        "exercise_type": "oral_communication",
+        "confidence": "high"
+      },
+      {
+        "id": "E_13_2_1",
+        "text": "అ) గేయంలోని పదాలు, మాటలు వినండి. అక్షరాల మధ్య తేడాలను గుర్తించండి. మాత్రా గుర్తు 'ా' ను గుర్తించండి. 1) మిరపకాయ మిరపకాయ పచ్చగుంటది 2) మిరపకాయ బజ్జిలంటే రుచిగ ఉంటది 3) కారిక, పచ్చడి, బజ్జి, రుచి",
+        "topic_id": "T_13_2",
+        "page": 26,
+        "exercise_type": "listening_activity",
+        "confidence": "high"
+      },
+      {
+        "id": "E_13_2_2",
+        "text": "ఆ) కింది పదాలలో గీత గీసిన అక్షరాల మధ్య తేడాలను చెప్పండి. పలక - పాలకు బల - బాలా",
+        "topic_id": "T_13_2",
+        "page": 26,
+        "exercise_type": "recognition_skill",
+        "confidence": "high"
+      },
+      {
+        "id": "E_13_2_3",
+        "text": "ఇ) పక్కనున్న కింది గళ్ళలోని అక్షరాలను తేడా లేకుండా చదవండి. వాటితో ఏర్పడే పదాలను చెప్పండి.",
+        "topic_id": "T_13_2",
+        "page": 26,
+        "exercise_type": "reading_exercise",
+        "confidence": "high"
+      },
+      {
+        "id": "E_13_2_4",
+        "text": "ఈ) కింది పదాలు చదవండి. 'ా' ఉన్న అక్షరాలకు 'O' గీయండి.",
+        "topic_id": "T_13_2",
+        "page": 26,
+        "exercise_type": "general_activity",
+        "confidence": "high"
+      },
+      {
+        "id": "E_13_3_1",
+        "text": "అ) కింది బొమ్మలకు సరైన పదాలతో జతపరచండి.",
+        "topic_id": "T_13_3",
+        "page": 27,
+        "exercise_type": "matching_exercise",
+        "confidence": "high"
+      },
+      {
+        "id": "E_13_3_2",
+        "text": "ఆ) గీతల్లోని అక్షరాలను చదవండి. వాటికి 'ా' చేర్చి కింది గళ్ళలో రాయండి.",
+        "topic_id": "T_13_3",
+        "page": 27,
+        "exercise_type": "writing_practice",
+        "confidence": "high"
+      },
+      {
+        "id": "E_13_4_1",
+        "text": "అ) కింది బొమ్మలకు పేర్లు రాయండి.",
+        "topic_id": "T_13_4",
+        "page": 28,
+        "exercise_type": "writing_practice",
+        "confidence": "high"
+      },
+      {
+        "id": "E_13_4_2",
+        "text": "ఆ) కింది పదాలను చదవండి. ఆ పదాలలో గీతగీసిన అక్షరానికి 'ా' (గుడి) చేర్చి రాయండి.",
+        "topic_id": "T_13_4",
+        "page": 28,
+        "exercise_type": "writing_practice",
+        "confidence": "high"
+      },
+      {
+        "id": "E_13_4_3",
+        "text": "ఇ) సూచనల ఆధారంగా 'ది' అక్షరం వచ్చు పదాలను రాయండి.",
+        "topic_id": "T_13_4",
+        "page": 28,
+        "exercise_type": "writing_practice",
+        "confidence": "high"
+      },
+      {
+        "id": "E_13_5_1",
+        "text": "అ) గళ్ళలోని అక్షరాలతో పదాలను రాయండి.",
+        "topic_id": "T_13_5",
+        "page": 29,
+        "exercise_type": "writing_practice",
+        "confidence": "high"
+      },
+      {
+        "id": "E_13_5_2",
+        "text": "అ) బొమ్మను చూసి జంతువులు ఏం మాట్లాడుకుంటున్నాయో చెప్పండి.",
+        "topic_id": "T_13_5",
+        "page": 29,
+        "exercise_type": "oral_communication",
+        "confidence": "high"
+      },
+      {
+        "id": "E_14_1_1",
+        "text": "అ) గేయాన్ని రాగంతో పాడండి.",
+        "topic_id": "T_14_1",
+        "page": 30,
+        "exercise_type": "oral_communication",
+        "confidence": "high"
+      },
+      {
+        "id": "E_14_1_2",
+        "text": "ఆ) మీరు ఏయే చీమలను చూశారు? ఎక్కడ చూశారు?",
+        "topic_id": "T_14_1",
+        "page": 30,
+        "exercise_type": "oral_communication",
+        "confidence": "high"
+      },
+      {
+        "id": "E_14_2_1",
+        "text": "అ) కింది పదాలు ఎక్కడ ఉన్నాయో గుర్తించి వాటి కింద గీత గీయండి. 1) చిట్టి చిట్టి చీమలు 2) కలిసి నడిచే చీమలు 3) చీమలండి చీమలు 4) చిటుకున కుట్టే చీమలు",
+        "topic_id": "T_14_2",
+        "page": 31,
+        "exercise_type": "reading_exercise",
+        "confidence": "high"
+      },
+      {
+        "id": "E_14_2_2",
+        "text": "ఆ) కింది పదాలలో గీత గీసిన అక్షరాలకు తేడా గుర్తించండి. చెప్పండి. చింత - చిరుత",
+        "topic_id": "T_14_2",
+        "page": 31,
+        "exercise_type": "comprehension",
+        "confidence": "high"
+      },
+      {
+        "id": "E_14_2_3",
+        "text": "ఇ) పట్టికను, కింది గళ్ళలోని అక్షరాలను తేడాతో చదవండి. వాటితో ఏర్పడే పదాలను చెప్పండి. (Table with క, కి, గ, గి, చ, చి, జ, జి, ట, టి, డ, డి, త, తి, ద, ది, న, ని, ప, పి, బ, బి, మ, మి, య, యి, ర, రి, ల, లి, వ, వి, శ, శి, ష, షి, స, సి, హ, హి, ళ, ళి, క్ష, క్షి, ఱ, ఱి)",
+        "topic_id": "T_14_2",
+        "page": 31,
+        "exercise_type": "reading_exercise",
+        "confidence": "high"
+      },
+      {
+        "id": "E_14_2_4",
+        "text": "ఈ) కింది పదాలను చదవండి. 'ి' ఉన్న అక్షరాలకు 'O' చుట్టండి. 'ి' లేని అక్షరాలకు [ ] చుట్టండి. కిరీటం, సిరి, నీలం, పీక, పిడికిలి, సింహం, నిమిషం, నిధి, కిటికీ, పిడి, చిలక, కిరణం, కిలో, చిరుత, కిరీటం, సుమిత్ర, కిరణం, కిరీటం",
+        "topic_id": "T_14_2",
+        "page": 31,
+        "exercise_type": "general_activity",
+        "confidence": "high"
+      },
+      {
+        "id": "E_14_3_1",
+        "text": "అ) కింది పదాలను జతపరిచి గీతలో రాయండి. గాలి, సిరి, కలి, పాప, కాయ, చీమ (left column) అరిచింది, చినిగింది, నడిచింది, పాకింది, అంబరాడింది, కానింది (right column). Example: 1) చీమ పాకింది",
+        "topic_id": "T_14_3",
+        "page": 32,
+        "exercise_type": "writing_practice",
+        "confidence": "high"
+      },
+      {
+        "id": "E_14_3_2",
+        "text": "ఆ) పై గళ్ళలోని అక్షరాలను 'ి' చేర్చి కింది గళ్ళలో రాయండి. (Table of క, గ, చ, జ, ట, డ, త, ద, న, ప, బ, మ, య, ర, ల, వ, శ, ష, స, హ, ళ, క్ష, ఱ to be converted to కి, గి, చి, జి, టి, డి, తి, ది, ని, పి, బి, మి, యి, రి, లి, వి, శి, షి, సి, హి, ళి, క్షి, ఱి)",
+        "topic_id": "T_14_3",
+        "page": 32,
+        "exercise_type": "writing_practice",
+        "confidence": "high"
+      },
+      {
+        "id": "E_14_3_3",
+        "text": "ఇ) కింది గళ్ళలోని అక్షరాలతో పదాలు రాయండి. (Table of letters: లా ళి పి డి, త గి ని ల, కి డి ణ ణ, ర డి ప నా)",
+        "topic_id": "T_14_3",
+        "page": 32,
+        "exercise_type": "writing_practice",
+        "confidence": "high"
+      },
+      {
+        "id": "E_14_4_1",
+        "text": "అ) కింది వాక్యాలకు చదవండి. బొమ్మలకు తగిన పదాలతో వాక్యాలు రాయండి. 1) నాకు [picture of custard apple] ఇష్టం. 2) రాజు తలపై [picture of crown] ఉన్నది. 3) కొత్త [picture of brick] బాగుంది. 4) దేవుని ముందు [picture of lamp] ఉంది.",
+        "topic_id": "T_14_4",
+        "page": 33,
+        "exercise_type": "fill_in_the_blank",
+        "confidence": "high"
+      },
+      {
+        "id": "E_14_4_2",
+        "text": "ఆ) బొమ్మలకు రంగులు వేయండి. (Picture of rabbit and bear on a swing.)",
+        "topic_id": "T_14_4",
+        "page": 33,
+        "exercise_type": "art_activity",
+        "confidence": "high"
+      },
+      {
+        "id": "E_15_1_1",
+        "text": "వినండి - మాట్లాడండి: (అ) గేయాన్ని పాడండి. (ఆ) కుండను ఎక్కడ చూశారు? కుండతో ఏం చేస్తారు?",
+        "topic_id": "T_15_1",
+        "page": 34,
+        "exercise_type": "listening_speaking",
+        "confidence": "high"
+      },
+      {
+        "id": "E_15_1_2",
+        "text": "చదవండి: (అ) కింది వాక్యాలు చదవండి. వాటిలో 'కుండ' పదానికి గుండ్రంగా గీత గీయండి.",
+        "topic_id": "T_15_1",
+        "page": 35,
+        "exercise_type": "reading_comprehension",
+        "confidence": "high"
+      },
+      {
+        "id": "E_15_1_3",
+        "text": "చదవండి: (ఆ) కింది పదాలు చదవండి. గీత గీసిన అక్షరాల మధ్య తేడాను గుర్తించి చదవండి. (కుండ - కొండ)",
+        "topic_id": "T_15_1",
+        "page": 35,
+        "exercise_type": "reading_comprehension",
+        "confidence": "high"
+      },
+      {
+        "id": "E_15_1_4",
+        "text": "చదవండి: (ఇ) పట్టికను, కింది అక్షరాలను చదవండి. వాటితో ఏర్పడే పదాలను చెప్పండి.",
+        "topic_id": "T_15_1",
+        "page": 35,
+        "exercise_type": "reading_comprehension",
+        "confidence": "high"
+      },
+      {
+        "id": "E_15_1_5",
+        "text": "చదవండి: (ఈ) కింది గుణింతపు పదాలను చదవండి 'ు' ఉన్న అక్షరాలకు 'O' గీయండి.",
+        "topic_id": "T_15_1",
+        "page": 35,
+        "exercise_type": "reading_comprehension",
+        "confidence": "high"
+      },
+      {
+        "id": "E_15_1_6",
+        "text": "రాయండి: (అ) పై గళ్ళలోని అక్షరాలతో 'ు' చేర్చి కింది గళ్ళలో రాయండి.",
+        "topic_id": "T_15_1",
+        "page": 36,
+        "exercise_type": "writing",
+        "confidence": "high"
+      },
+      {
+        "id": "E_15_1_7",
+        "text": "రాయండి: (ఆ) కింది బొమ్మలను చూడండి. వాటి పేర్లను రాయండి.",
+        "topic_id": "T_15_1",
+        "page": 36,
+        "exercise_type": "writing",
+        "confidence": "high"
+      },
+      {
+        "id": "E_15_1_8",
+        "text": "రాయండి: (ఇ) కింది అక్షరాలతో 'ు' చేర్చి రాయండి.",
+        "topic_id": "T_15_1",
+        "page": 36,
+        "exercise_type": "writing",
+        "confidence": "high"
+      },
+      {
+        "id": "E_15_1_9",
+        "text": "రాయండి: (ఈ) కింది గళ్ళలోని అక్షరాలతో పదాలు రాయండి.",
+        "topic_id": "T_15_1",
+        "page": 37,
+        "exercise_type": "writing",
+        "confidence": "high"
+      },
+      {
+        "id": "E_15_1_10",
+        "text": "సృజనాత్మకత: (అ) కుండ బొమ్మను గీయండి. రంగులు వేయండి. పేరు రాయండి.",
+        "topic_id": "T_15_1",
+        "page": 37,
+        "exercise_type": "art_activity",
+        "confidence": "high"
+      },
+      {
+        "id": "E_16_1_1",
+        "text": "తోటలోని విరిసి పూలు పరుమళాలు వెదజల్లే పూలు తోరణమందున మెరిసే పూలు దేవుని మొదలో మరిసే పూలు",
+        "topic_id": "T_16_1",
+        "page": 38,
+        "exercise_type": "poem_recitation",
+        "confidence": "high"
+      },
+      {
+        "id": "E_16_1_2",
+        "text": "వినండి - మాట్లాడండి అ) గూరూన్నూ పాడండి. ఆ) మీకు తెలిసిన పూల పేర్లు చెప్పండి. పూలతో ఏం చేస్తారు?",
+        "topic_id": "T_16_1",
+        "page": 38,
+        "exercise_type": "speaking_activity",
+        "confidence": "high"
+      },
+      {
+        "id": "E_16_2_1",
+        "text": "అ) కింది పదాలు చదవండి. నీటి గీసిన అక్షరాల మధ్య తేడాను గుర్తించండి.",
+        "topic_id": "T_16_2",
+        "page": 39,
+        "exercise_type": "reading_activity",
+        "confidence": "high"
+      },
+      {
+        "id": "E_16_2_2",
+        "text": "ఆ) పైనున్న, కింది గళ్ళలోని అక్షరాలను తేడాలో చదవండి. వాటితో ఏర్పడే పదాలను చెప్పండి.",
+        "topic_id": "T_16_2",
+        "page": 39,
+        "exercise_type": "reading_activity",
+        "confidence": "high"
+      },
+      {
+        "id": "E_16_2_3",
+        "text": "ఇ) కింది గళ్ళలో పదాలను-చదవండి 'ూ' ఉన్న అక్షరాలకు 'O' చుట్టండి.",
+        "topic_id": "T_16_2",
+        "page": 39,
+        "exercise_type": "reading_activity",
+        "confidence": "high"
+      },
+      {
+        "id": "E_16_2_4",
+        "text": "ఈ) కింది వాక్యాలను చదవండి. 1) బంతి పూలు బాగా పూసినవి. 2) కూడికి దూరం కాదు. 3) నూరు రూపాయలు చూచావా?",
+        "topic_id": "T_16_2",
+        "page": 39,
+        "exercise_type": "reading_activity",
+        "confidence": "high"
+      },
+      {
+        "id": "E_16_3_1",
+        "text": "అ) పై గళ్ళలోని అక్షరాలను చదవండి. వాటికి 'ూ' చేర్చి కింది గళ్ళలో రాయండి.",
+        "topic_id": "T_16_3",
+        "page": 40,
+        "exercise_type": "writing_activity",
+        "confidence": "high"
+      },
+      {
+        "id": "E_16_3_2",
+        "text": "ఆ) కింది బొమ్మలను చూడండి. వాటి పేర్లు రాయండి.",
+        "topic_id": "T_16_3",
+        "page": 40,
+        "exercise_type": "writing_activity",
+        "confidence": "high"
+      },
+      {
+        "id": "E_16_3_3",
+        "text": "ఇ) కింది గీత గీసిన అక్షరాలను కలిపి పదాలు రాయండి. 1) పూలు - 2) గూడు - 3) దూది - 4) కూజ - 5) దూరం - 6) నూరు -",
+        "topic_id": "T_16_3",
+        "page": 40,
+        "exercise_type": "writing_activity",
+        "confidence": "high"
+      },
+      {
+        "id": "E_16_4_1",
+        "text": "ఈ) కింది అక్షరాలను కలుపుతూ పదాలను రాయండి.",
+        "topic_id": "T_16_4",
+        "page": 41,
+        "exercise_type": "writing_activity",
+        "confidence": "high"
+      },
+      {
+        "id": "E_16_4_2",
+        "text": "అ) కింది బొమ్మను చూడండి. రంగులు వేయండి.",
+        "topic_id": "T_16_4",
+        "page": 41,
+        "exercise_type": "art_activity",
+        "confidence": "high"
+      },
+      {
+        "id": "E_17_1_1",
+        "text": "వినండి - మాట్లాడండి: పండుగల గురించి చర్చించండి.",
+        "topic_id": "T_17_1",
+        "page": 42,
+        "exercise_type": "speaking_activity",
+        "confidence": "high"
+      },
+      {
+        "id": "E_17_1_2",
+        "text": "చదవండి: 'ృ' అక్షరంతో కూడిన పదాలు మరియు వాక్యాలు చదవడం, అక్షరాలను గుర్తించడం.",
+        "topic_id": "T_17_2",
+        "page": 43,
+        "exercise_type": "reading_activity",
+        "confidence": "high"
+      },
+      {
+        "id": "E_17_1_3",
+        "text": "రాయండి: ఋ, ౠ, ృ, ౄ అక్షరాలతో కూడిన పదాలను గుర్తించి, రాయడం.",
+        "topic_id": "T_17_2",
+        "page": 44,
+        "exercise_type": "writing_activity",
+        "confidence": "high"
+      },
+      {
+        "id": "E_17_1_4",
+        "text": "రాయండి: అక్షరాలను కలిపి పదాలు రాయడం మరియు బొమ్మల పేర్లు రాయడం.",
+        "topic_id": "T_17_2",
+        "page": 45,
+        "exercise_type": "writing_activity",
+        "confidence": "high"
+      },
+      {
+        "id": "E_17_1_5",
+        "text": "గీయండి: బొమ్మకు రంగులు వేయండి.",
+        "topic_id": "T_17_2",
+        "page": 45,
+        "exercise_type": "art_activity",
+        "confidence": "high"
+      },
+      {
+        "id": "E_18_1_1",
+        "text": "అ) గేయాన్ని పాడండి.",
+        "topic_id": "T_18_1",
+        "page": 46,
+        "exercise_type": "reading_exercise",
+        "confidence": "high"
+      },
+      {
+        "id": "E_18_1_2",
+        "text": "ఆ) నెమలిని ఎప్పుడైనా చూశారా? చూసినప్పుడు మీకేలా అనిపించింది? ఎందుకు?",
+        "topic_id": "T_18_1",
+        "page": 46,
+        "exercise_type": "oral_communication",
+        "confidence": "high"
+      },
+      {
+        "id": "E_18_2_1",
+        "text": "అ) కింది వాక్యాలకు గేయంలోని గీత గీయండి. 1) కృష్ణుని తలపై ఉంటానన్నది. 2) మురిసిన పాప ఏమన్నది?",
+        "topic_id": "T_18_2",
+        "page": 47,
+        "exercise_type": "comprehension",
+        "confidence": "high"
+      },
+      {
+        "id": "E_18_2_2",
+        "text": "ఆ) కింది పదాలకు గేయంలోని 'O' గీయండి. నెమలి చెయ్యమన్నది",
+        "topic_id": "T_18_2",
+        "page": 47,
+        "exercise_type": "recognition_skill",
+        "confidence": "high"
+      },
+      {
+        "id": "E_18_2_3",
+        "text": "ఇ) కింది పదాలు చదవండి. గీత గీసిన అక్షరాల మధ్య తేడాను గుర్తించండి. నమలు - నెమలి",
+        "topic_id": "T_18_2",
+        "page": 47,
+        "exercise_type": "recognition_skill",
+        "confidence": "high"
+      },
+      {
+        "id": "E_18_2_4",
+        "text": "ఈ) పైనున్న, కింది గళ్ళలోని అక్షరాలను తేడాలో చదవండి. వాటితో ఏర్పడే పదాలను చెప్పండి. క గ చ జ ట డ త ద న ప బ కృ గృ చృ జృ టృ డృ తృ దృ నృ పృ బృ మ య ర ల వ శ ష స హ ళ క్ష మృ యృ రృ లృ వృ శృ షృ సృ హృ ళృ క్షృ",
+        "topic_id": "T_18_2",
+        "page": 47,
+        "exercise_type": "reading_exercise",
+        "confidence": "high"
+      },
+      {
+        "id": "E_18_2_5",
+        "text": "ఉ) కింది గళ్ళలోని పదాలను చదవండి. '=' ఉన్న అక్షరాలకు 'O' గీయండి. కెంపు దెరువు మెరుపు నెరువు గెలుపు దెన రెలుపు దెంబు పెరుగ నెలు వెంకట నెలు దెంబు పెరుగ బెంకాయ దెరుకు దెరువు బెరుకు నెంజెంబు తెంజెంబు",
+        "topic_id": "T_18_2",
+        "page": 47,
+        "exercise_type": "recognition_skill",
+        "confidence": "high"
+      },
+      {
+        "id": "E_18_3_1",
+        "text": "అ) కింది వాక్యాలను చదవండి. '=' ఉన్న అక్షరాల కింద గీత గీయండి. ఆ పదాన్ని ( )లో రాయండి. 1) బెంజా దొరకదు. ( ) 2) కెంజలు మెరువదు. ( ) 3) జానకలు కరవదు. ( ) 4) దెంజలు నిండదు. ( )",
+        "topic_id": "T_18_3",
+        "page": 48,
+        "exercise_type": "fill_in_the_blank",
+        "confidence": "high"
+      },
+      {
+        "id": "E_18_3_2",
+        "text": "ఆ) పై గళ్ళలోని అక్షరాలను చదవండి. వాటికి '=' చేర్చి కింది గళ్ళలో రాయండి. క గ చ జ ట డ త ద న ప బ మ య ర ల వ శ ష స హ ళ క్ష (Empty grid for student to fill)",
+        "topic_id": "T_18_3",
+        "page": 48,
+        "exercise_type": "writing_practice",
+        "confidence": "high"
+      },
+      {
+        "id": "E_18_3_3",
+        "text": "ఇ) కింది బొమ్మలను చూడండి. వాటి పేర్లను రాయండి. (Pictures: Bridge, Camel, Indian Flag, Peacock, Green Chillies)",
+        "topic_id": "T_18_3",
+        "page": 48,
+        "exercise_type": "writing_practice",
+        "confidence": "high"
+      },
+      {
+        "id": "E_18_3_4",
+        "text": "అ) కింది గీత గీసిన అక్షరాలకు '=', చేర్చి పదాన్ని రాయండి. 1) అకు - _____ 2) అంకు - _____ 3) కరటం - _____ 4) కంకు - _____ 5) కలుగు - _____ 6) కడ - _____ 7) కడుకు - _____ 8) కందాం - _____",
+        "topic_id": "T_18_3",
+        "page": 49,
+        "exercise_type": "writing_practice",
+        "confidence": "high"
+      },
+      {
+        "id": "E_18_3_5",
+        "text": "ఆ) కింది గుణింతపు అక్షరాలను కలుపుతూ పదాలను రాయండి. (Visual: Central 'ృ' connected to కృ, మృ, తృ, పృ)",
+        "topic_id": "T_18_3",
+        "page": 49,
+        "exercise_type": "writing_practice",
+        "confidence": "high"
+      },
+      {
+        "id": "E_18_4_1",
+        "text": "అ) కింది నెమలి పింఛానికి రంగులు వేయండి.",
+        "topic_id": "T_18_4",
+        "page": 49,
+        "exercise_type": "art_activity",
+        "confidence": "high"
+      },
+      {
+        "id": "E_19_1_1",
+        "text": "గేయం వినండి మరియు గేయం గురించి మాట్లాడండి. (అ) గేయాన్ని పాడండి. (ఆ) ఈ పాఠంలో ఎవరిని గురించి ఉన్నది?",
+        "topic_id": "T_19_1",
+        "page": 50,
+        "exercise_type": "listening_speaking",
+        "confidence": "high"
+      },
+      {
+        "id": "E_19_2_1",
+        "text": "(అ) కింది పదాలతో గీసిన అక్షరాలను చేర్చి చదవండి. (ఆ) కింది గళ్ళలోని అక్షరాలను చేర్చి చదవండి. వాటితో ఏర్పడే పదాలను చెప్పండి.",
+        "topic_id": "T_19_2",
+        "page": 51,
+        "exercise_type": "reading",
+        "confidence": "high"
+      },
+      {
+        "id": "E_19_2_2",
+        "text": "(ఇ) కింది పదాలను చదవండి. 'ె' అక్షరం కింది గీత గీయండి.",
+        "topic_id": "T_19_2",
+        "page": 51,
+        "exercise_type": "reading",
+        "confidence": "high"
+      },
+      {
+        "id": "E_19_3_1",
+        "text": "(అ) పై గళ్ళలోని అక్షరాలను చదవండి. వాటికి 'ె' చేర్చి కింది గళ్ళలో రాయండి.",
+        "topic_id": "T_19_3",
+        "page": 52,
+        "exercise_type": "writing",
+        "confidence": "high"
+      },
+      {
+        "id": "E_19_3_2",
+        "text": "(ఆ) బొమ్మలకు పేర్లు రాయండి.",
+        "topic_id": "T_19_3",
+        "page": 52,
+        "exercise_type": "writing",
+        "confidence": "high"
+      },
+      {
+        "id": "E_19_4_1",
+        "text": "(ఇ) మీకు తెలిసిన 'ె' గుణింత పదాలను రాయండి.",
+        "topic_id": "T_19_4",
+        "page": 53,
+        "exercise_type": "writing",
+        "confidence": "high"
+      },
+      {
+        "id": "E_19_4_2",
+        "text": "(ఈ) కింది ఖాళీలలో సరైన అక్షరాలను రాయండి. (జే, గే, నే, చే, ళే, తే, హే)",
+        "topic_id": "T_19_4",
+        "page": 53,
+        "exercise_type": "fill_in_the_blanks",
+        "confidence": "high"
+      },
+      {
+        "id": "E_19_4_3",
+        "text": "(అ) కింది ఏనుగు బొమ్మకు రంగులు వేయండి.",
+        "topic_id": "T_19_4",
+        "page": 53,
+        "exercise_type": "art_activity",
+        "confidence": "high"
+      },
+      {
+        "id": "E_20_1_1",
+        "text": "గీయాన్ని పాడండి.",
+        "topic_id": "T_20_1",
+        "page": 1,
+        "exercise_type": "comprehension_oral",
+        "confidence": "medium"
+      },
+      {
+        "id": "E_20_1_2",
+        "text": "ఈ గీయంలో ఎవరి గురించి ఉన్నది?",
+        "topic_id": "T_20_1",
+        "page": 1,
+        "exercise_type": "comprehension_oral",
+        "confidence": "medium"
+      },
+      {
+        "id": "E_20_1_3",
+        "text": "కింది వాక్యాలు గీయంలో గుర్తించి వాటి కింద గీత గీయండి. 1) ఆకలి తీర్చే మన రైతు. 2) నేలను దున్నే మన రైతు.",
+        "topic_id": "T_20_1",
+        "page": 2,
+        "exercise_type": "comprehension_text_identification",
+        "confidence": "medium"
+      },
+      {
+        "id": "E_20_1_4",
+        "text": "కింది పదాలు గీయంలో గుర్తించి ‘O’ చుట్టండి. రైతు, బంధువు",
+        "topic_id": "T_20_1",
+        "page": 2,
+        "exercise_type": "word_identification",
+        "confidence": "medium"
+      },
+      {
+        "id": "E_20_1_5",
+        "text": "కింది పదాలు చదవండి. గీత గీసిన అక్షరాల మధ్య తేడాను గుర్తించండి. రవి - రథం",
+        "topic_id": "T_20_1",
+        "page": 2,
+        "exercise_type": "phonics_differentiation",
+        "confidence": "medium"
+      },
+      {
+        "id": "E_20_1_6",
+        "text": "పైనున్న కింది గళ్ళలోని అక్షరాలను తేడాతో చదవండి. వాటితో ఏర్పడే పదాలను చెప్పండి.",
+        "topic_id": "T_20_1",
+        "page": 2,
+        "exercise_type": "letter_recognition_and_word_formation",
+        "confidence": "medium"
+      },
+      {
+        "id": "E_20_1_7",
+        "text": "కింది గుణింత పదాలు చదవండి. ‘ె’ ఉన్న అక్షరాలకు ‘O’ చుట్టండి. రైతులు, రైలు, దెసం, దెవం, పెనలు, పెరగి, పెదవు, పెదగ, దెరం, దెలి, దెలుక, దెలు",
+        "topic_id": "T_20_1",
+        "page": 2,
+        "exercise_type": "vowel_sign_identification",
+        "confidence": "medium"
+      },
+      {
+        "id": "E_20_1_8",
+        "text": "కింది ఖాళీలను పూరించండి. ‘ె’ ఉన్న పదాలు రాయండి. 1) పశువులకు మేత దొరుకుతుంది. 2) పైరు పచ్చబడుతుంది. 3) చేతికి చేమకు అందంగా ఉంది.",
+        "topic_id": "T_20_1",
+        "page": 3,
+        "exercise_type": "fill_in_the_blanks_writing",
+        "confidence": "medium"
+      },
+      {
+        "id": "E_20_1_9",
+        "text": "పై గళ్ళలోని అక్షరాలను చదవండి. వాటికి చేర్చి కింది గళ్ళలో రాయండి.",
+        "topic_id": "T_20_1",
+        "page": 3,
+        "exercise_type": "letter_writing_practice",
+        "confidence": "medium"
+      },
+      {
+        "id": "E_20_1_10",
+        "text": "కింది బొమ్మలు చూడండి. వాటి పేర్లు రాయండి.",
+        "topic_id": "T_20_1",
+        "page": 3,
+        "exercise_type": "picture_naming_writing",
+        "confidence": "medium"
+      },
+      {
+        "id": "E_20_1_11",
+        "text": "కింది గీత గీసిన అక్షరాలకు ‘ె’ చేర్చి పదాలను రాయండి. 1) కవం - ____ 2) దొరగి - ____ 3) అను - ____ 4) కక - ____ 5) రథ - ____ 6) పరాగ - ____ 7) మరాక - ____ 8) తల - ____",
+        "topic_id": "T_20_1",
+        "page": 4,
+        "exercise_type": "vowel_sign_addition_writing",
+        "confidence": "medium"
+      },
+      {
+        "id": "E_20_1_12",
+        "text": "కింది గళ్ళలోని అక్షరాలతో పదాలను రాయండి.",
+        "topic_id": "T_20_1",
+        "page": 4,
+        "exercise_type": "word_formation_from_grid",
+        "confidence": "medium"
+      },
+      {
+        "id": "E_20_1_13",
+        "text": "అక్షరాలతో రైలు బొమ్మను తయారుచేయండి. దాని గురించి చెప్పండి.",
+        "topic_id": "T_20_1",
+        "page": 4,
+        "exercise_type": "creative_activity",
+        "confidence": "medium"
+      },
+      {
+        "id": "E_21_1_1",
+        "text": "గేయాన్ని పాడండి.",
+        "topic_id": "T_21_1",
+        "page": 58,
+        "exercise_type": "listening_speaking",
+        "confidence": "high"
+      },
+      {
+        "id": "E_21_1_2",
+        "text": "మీ ఇంట్లో గొడుగు ఉందా? దానిని ఎప్పుడెప్పుడు వాడతారో చెప్పండి?",
+        "topic_id": "T_21_1",
+        "page": 58,
+        "exercise_type": "speaking",
+        "confidence": "high"
+      },
+      {
+        "id": "E_21_2_1",
+        "text": "గీతలోని అక్షరాలను 'ె', 'ై' గుణింతం గల అక్షరాలను గుర్తించి గీత గీయండి. చదవండి.",
+        "topic_id": "T_21_2",
+        "page": 59,
+        "exercise_type": "reading_identification",
+        "confidence": "high"
+      },
+      {
+        "id": "E_21_2_2",
+        "text": "కింది పదాలను చదవండి. తేడాలను గుర్తించండి.",
+        "topic_id": "T_21_2",
+        "page": 59,
+        "exercise_type": "reading_identification",
+        "confidence": "high"
+      },
+      {
+        "id": "E_21_2_3",
+        "text": "పై గీతలోని అక్షరాలను, కింది గళ్ళలోని అక్షరాలను చదవండి. తేడాలను గుర్తించండి. వాటితో వచ్చే పదాలను చెప్పండి.",
+        "topic_id": "T_21_2",
+        "page": 59,
+        "exercise_type": "reading_speaking",
+        "confidence": "high"
+      },
+      {
+        "id": "E_21_2_4",
+        "text": "'ె', 'ై' గుణింతం గల పదాలను చదవండి. 'ె', 'ై' ఉన్న అక్షరాల కింద గీత గీయండి.",
+        "topic_id": "T_21_2",
+        "page": 59,
+        "exercise_type": "reading_identification",
+        "confidence": "high"
+      },
+      {
+        "id": "E_21_3_1",
+        "text": "కింది వాక్యాలను చదవండి. వీటిలో 'ె', 'ై' ఉన్న పదాలను ( ) లో రాయండి.",
+        "topic_id": "T_21_3",
+        "page": 60,
+        "exercise_type": "writing_identification",
+        "confidence": "high"
+      },
+      {
+        "id": "E_21_3_2",
+        "text": "పై గళ్ళలోని అక్షరాలను చదవండి. వాటికి 'ె', 'ై' కింది గళ్ళలో రాయండి.",
+        "topic_id": "T_21_3",
+        "page": 60,
+        "exercise_type": "writing",
+        "confidence": "high"
+      },
+      {
+        "id": "E_21_3_3",
+        "text": "కింది బొమ్మల పేర్లు రాయండి.",
+        "topic_id": "T_21_3",
+        "page": 60,
+        "exercise_type": "writing_identification",
+        "confidence": "high"
+      },
+      {
+        "id": "E_21_4_1",
+        "text": "'ె', 'ై' గుణింతంతో వచ్చే పదాలను రాయండి.",
+        "topic_id": "T_21_4",
+        "page": 61,
+        "exercise_type": "writing",
+        "confidence": "high"
+      },
+      {
+        "id": "E_21_4_2",
+        "text": "బొమ్మలకు అక్షరాలు ఎదురుగా పదాలను కలిపి రాయండి.",
+        "topic_id": "T_21_4",
+        "page": 61,
+        "exercise_type": "writing_matching",
+        "confidence": "high"
+      },
+      {
+        "id": "E_21_4_3",
+        "text": "పలక, కాగితంతో గొడుగును తయారుచేయండి.",
+        "topic_id": "T_21_4",
+        "page": 61,
+        "exercise_type": "art_activity",
+        "confidence": "high"
+      },
+      {
+        "id": "E_22_1_1",
+        "text": "గేయాన్ని పాడండి.",
+        "topic_id": "T_22_1",
+        "page": 62,
+        "exercise_type": "reading_exercise",
+        "confidence": "high"
+      },
+      {
+        "id": "E_22_1_2",
+        "text": "మీరెప్పుడైనా కోతులను చూశారా? ఎక్కడ చూశారు?",
+        "topic_id": "T_22_1",
+        "page": 62,
+        "exercise_type": "oral_communication",
+        "confidence": "high"
+      },
+      {
+        "id": "E_22_1_3",
+        "text": "కోతులు ఏమిటి తింటాయి?",
+        "topic_id": "T_22_1",
+        "page": 62,
+        "exercise_type": "oral_communication",
+        "confidence": "high"
+      },
+      {
+        "id": "E_22_2_1",
+        "text": "అ) గీతలో ‘ొ’, గుణింతం వరకు గుండ్రంగా గీత గీయండి. చదవండి.",
+        "topic_id": "T_22_2",
+        "page": 63,
+        "exercise_type": "general_activity",
+        "confidence": "high"
+      },
+      {
+        "id": "E_22_2_2",
+        "text": "ఆ) కింది పదాలను చదవండి. తేడాలను గుర్తించండి. కొడుకు - కోడెలు గొడుగు - గోడ పొగ - పోక",
+        "topic_id": "T_22_2",
+        "page": 63,
+        "exercise_type": "reading_exercise",
+        "confidence": "high"
+      },
+      {
+        "id": "E_22_2_3",
+        "text": "ఇ) కింది అక్షరాలను చదవండి. ‘ొ’, ‘ో’ గుణింతం ఉన్న పదాలను చదవండి. అక్షరాలు: క, గ, చ, జ, ట, డ, త, ద, న, ప, బ, మ, య, ర, ల, వ, శ, ష, స, హ, ళ, క్ష, ఱ గుణింతాలు: కొ, గో, చో, జో, టో, డో, తో, దో, నో, పో, బో, మో, యో, రో, లో, వో, శో, షో, సో, హో, ళో, క్షో, ఱో పదాలు: కొలువు, గొలుసు, పొగరు, తొలకరి, కొలత, గొంతు, పొదలు, తొడుగు, కొండ, గొంగళి, పొగడ, తొండము, కొరత, గొడుగు, పొదరిల్లు, తొండ",
+        "topic_id": "T_22_2",
+        "page": 63,
+        "exercise_type": "reading_exercise",
+        "confidence": "high"
+      },
+      {
+        "id": "E_22_2_4",
+        "text": "ఈ) కింది పదాలను చదవండి. ‘ొ’, ‘ో’ అక్షరాలు కింద గీత గీయండి. కొలువు, గొలుసు, పొగరు, తొలకరి, కొలత, గొంతు, పొదలు, తొడుగు, కొండ, గొంగళి, పొగడ, తొండము, కొరత, గొడుగు, పొదరిల్లు, తొండ",
+        "topic_id": "T_22_2",
+        "page": 63,
+        "exercise_type": "general_activity",
+        "confidence": "high"
+      },
+      {
+        "id": "E_22_3_1",
+        "text": "అ) కింది వాక్యాలను చదవండి. ‘ొ’, ఉన్న పదాన్ని ( )లో రాయండి. 1) కొండ మీద కోతి ఎగిరింది. ( ) 2) పాపాయి చేతులకు గాజులు తొడిగింది. ( ) 3) నెమలి తోక అందంగా ఉంది. ( ) 4) తాతయ్య మనుమలతో తోటలో నడిచింది. ( )",
+        "topic_id": "T_22_3",
+        "page": 64,
+        "exercise_type": "fill_in_the_blank",
+        "confidence": "high"
+      },
+      {
+        "id": "E_22_3_2",
+        "text": "ఆ) కింది అక్షరాలను చదవండి. ‘ొ’, ‘ో’ ఉన్న పదాలను రాయండి. అక్షరాలు: క, గ, చ, జ, ట, డ, త, ద, న, ప, బ, మ, య, ర, ల, వ, శ, ష, స, హ, ళ, క్ష, ఱ గుణింతాలు: కొ, గో, చో, జో, టో, డో, తో, దో, నో, పో, బో, మో, యో, రో, లో, వో, శో, షో, సో, హో, ళో, క్షో, ఱో",
+        "topic_id": "T_22_3",
+        "page": 64,
+        "exercise_type": "writing_practice",
+        "confidence": "high"
+      },
+      {
+        "id": "E_22_3_3",
+        "text": "ఇ) కింది బొమ్మలు చూసి రాయండి. 1) [Picture of a hen] 2) [Picture of a coat] 3) [Picture of a pot] 4) [Picture of a necklace]",
+        "topic_id": "T_22_3",
+        "page": 64,
+        "exercise_type": "writing_practice",
+        "confidence": "high"
+      },
+      {
+        "id": "E_22_4_1",
+        "text": "అ) ‘ొ’, ‘ో’ గుణింతంతో వచ్చే పదాలను రాయండి.",
+        "topic_id": "T_22_4",
+        "page": 65,
+        "exercise_type": "writing_practice",
+        "confidence": "high"
+      },
+      {
+        "id": "E_22_4_2",
+        "text": "ఆ) గళ్ళలోని పదాలను గుర్తించండి. రాయండి. గళ్ళలోని అక్షరాలు: కొ డ మ ళో క ళ గొ డ న డో ల క ప డో ర హ",
+        "topic_id": "T_22_4",
+        "page": 65,
+        "exercise_type": "writing_practice",
+        "confidence": "high"
+      },
+      {
+        "id": "E_22_4_3",
+        "text": "ఇ) కింది బొమ్మ ఆధారంగా ఐదు వాక్యాలు మాట్లాడండి. వివరించి చెప్పండి. [Picture of monkey and woman/child]",
+        "topic_id": "T_22_4",
+        "page": 65,
+        "exercise_type": "oral_communication",
+        "confidence": "high"
+      },
+      {
+        "id": "E_23_1_1",
+        "text": "వినండి - మాట్లాడండి అ) పాఠం బొమ్మలో ఏమేమి కనబడుతున్నాయి? ఆ) కొత్త బట్టలు మీరు ఎప్పుడెప్పుడు వేసుకుంటారు?",
+        "topic_id": "T_23_1",
+        "page": 66,
+        "exercise_type": "oral_communication",
+        "confidence": "high"
+      },
+      {
+        "id": "E_23_2_1",
+        "text": "అ) గేయంలో కొన్ని వాక్యాలు ఎక్కడ ఉన్నాయో గుర్తించండి. వాటికి 'O' చుట్టండి. 1) గౌతమి పుట్టిన రోజంట 2) అమ్మ గౌనును తెచ్చిందంట 3) చక్కని గౌను చూసిందంట",
+        "topic_id": "T_23_2",
+        "page": 67,
+        "exercise_type": "comprehension",
+        "confidence": "high"
+      },
+      {
+        "id": "E_23_2_2",
+        "text": "ఆ) కింది పదాలను చదవండి. 'ో' అక్షరాల కింద గీత గీయండి. త్రోవ, మోస, చోర, భోగి, తోడ, తోడు, తోరి, భోజ, మ్రోగి, తోరు, తోరా, మోరో, భోజనం, మోదం, గోరం, తోమది, మోసరు, మోరువం, మోరులు, మోనిస, భోజనం, చోళకం, సోమరి, తోరలు, గోమయ",
+        "topic_id": "T_23_2",
+        "page": 67,
+        "exercise_type": "recognition_skill",
+        "confidence": "high"
+      },
+      {
+        "id": "E_23_2_3",
+        "text": "ఇ) కింది బొమ్మలకు పదాలతో జతపరచి గీతతో రాయండి. (Pictures: A pile of rice, A green gown, A horse, A ship. Words provided: తోక, మోక, మోరు, గోను)",
+        "topic_id": "T_23_2",
+        "page": 68,
+        "exercise_type": "matching_exercise",
+        "confidence": "high"
+      },
+      {
+        "id": "E_23_2_4",
+        "text": "ఈ) కింది వాక్యాలకు సరైన పదంతో జతపరచండి. 1) గౌను కొత్తది కావాలంట 2) అమ్మ గౌనును తెచ్చిందంట 3) గౌతమి పుట్టిన రోజంట 4) చక్కని గౌను చూసిందంట 5) గౌతమి ఎంతో మురిసిందంట 6) అది కావాలని అడిగిందంట",
+        "topic_id": "T_23_2",
+        "page": 68,
+        "exercise_type": "fill_in_the_blank",
+        "confidence": "high"
+      },
+      {
+        "id": "E_23_2_5",
+        "text": "అ) పై గళ్ళలోని అక్షరాలకు, కింది గళ్ళలోని అక్షరాలను చదవండి. తేడాను గుర్తించండి. వాటితో వచ్చే పదాలను చెప్పండి. రాయండి. (Grids showing consonants with 'ె' and 'ే' vowel signs)",
+        "topic_id": "T_23_2",
+        "page": 69,
+        "exercise_type": "writing_practice",
+        "confidence": "high"
+      },
+      {
+        "id": "E_23_2_6",
+        "text": "ఆ) కింది గళ్ళలోని అక్షరాలకు 'ొ', 'ో' చేర్చి రాయండి. (Grids showing consonants to which 'ొ' and 'ో' vowel signs are to be added)",
+        "topic_id": "T_23_2",
+        "page": 69,
+        "exercise_type": "writing_practice",
+        "confidence": "high"
+      },
+      {
+        "id": "E_23_2_7",
+        "text": "ఇ) కింది బొమ్మల పేర్లు రాయండి. (Pictures: Red cap, Ship, Hot air balloon, Green gown)",
+        "topic_id": "T_23_2",
+        "page": 69,
+        "exercise_type": "writing_practice",
+        "confidence": "high"
+      },
+      {
+        "id": "E_23_2_8",
+        "text": "అ) కింది వాక్యాలతో ఖాళీలు పూరించి కింది వాక్యాలను రాయండి. 1) తోడేలు _____. (Picture of a wolf howling) 2) మోనిస _____. (Picture of a girl smiling) 3) చోళకం _____. (Picture of a dog barking) 4) మోరో _____. (Picture of a peacock dancing)",
+        "topic_id": "T_23_2",
+        "page": 70,
+        "exercise_type": "fill_in_the_blank",
+        "confidence": "high"
+      },
+      {
+        "id": "E_23_2_9",
+        "text": "ఆ) కింది గళ్ళలోని పదాలను చదవండి. వాటితో వాక్యాలు చెప్పండి. రాయండి. (Words in grid: అందరం, గోపురం, మోదం, మోనిస, గోను, మోరు, గోను, రంగు, సేవకు, తోరి, సేవ, గురువుకు)",
+        "topic_id": "T_23_2",
+        "page": 70,
+        "exercise_type": "writing_practice",
+        "confidence": "high"
+      },
+      {
+        "id": "E_23_2_10",
+        "text": "అ) కింది గళ్ళలో గుణింత పదాలు రాయండి. (Grids with columns headed by 'ొ', 'ో', 'ౌ', 'ం', 'ః' for writing words)",
+        "topic_id": "T_23_2",
+        "page": 71,
+        "exercise_type": "writing_practice",
+        "confidence": "high"
+      },
+      {
+        "id": "E_23_3_1",
+        "text": "అ) కింది చిత్రం చూడండి. చిత్రం ఆధారంగా కథను చెప్పండి. రాయండి. (Picture shows a tree with a face, a rabbit, a squirrel, a monkey, and birds)",
+        "topic_id": "T_23_3",
+        "page": 72,
+        "exercise_type": "oral_communication",
+        "confidence": "high"
+      }
+    ],
+    "sidebars": [
+      {
+        "id": "S_1_1_1",
+        "text": "విద్యార్థుల వికాసానికి ప్రభుత్వ కానుక",
+        "topic_id": "T_1_1",
+        "page": 2
+      },
+      {
+        "id": "S_3_1_1",
+        "text": "విద్యార్థుల వికాసానికి ప్రభుత్వ కానుక",
+        "topic_id": "T_3_1",
+        "page": 4
+      },
+      {
+        "id": "S_4_1_1",
+        "text": "విద్యార్థుల వికాసానికి ప్రభుత్వ కానుక",
+        "topic_id": "T_4_1",
+        "page": 5
+      },
+      {
+        "id": "S_9_1_1",
+        "text": "విద్యార్థుల వికాసానికి ప్రభుత్వ కానుక",
+        "topic_id": "T_9_1",
+        "page": 14
+      },
+      {
+        "id": "S_10_1_1",
+        "text": "విద్యావిధాన విభాగానికి ప్రభుత్వ కానుక",
+        "topic_id": "T_10_1",
+        "page": 16
+      },
+      {
+        "id": "S_11_1_1",
+        "text": "విద్యార్థుల వికాసానికి ప్రభుత్వ బాధ్యత",
+        "topic_id": "T_11_1",
+        "page": 18
+      },
+      {
+        "id": "S_12_1_1",
+        "text": "విద్యార్థుల వికాసానికి ప్రభుత్వ కానుక",
+        "topic_id": "T_12_1",
+        "page": 21
+      },
+      {
+        "id": "S_12_2_1",
+        "text": "విద్యార్థుల వికాసానికి ప్రభుత్వ కానుక",
+        "topic_id": "T_12_2",
+        "page": 22
+      },
+      {
+        "id": "S_22_1_1",
+        "text": "విద్యార్థుల వికాసానికి ప్రభుత్వ కానుక",
+        "topic_id": "T_22_1",
+        "page": 62
+      },
+      {
+        "id": "S_22_2_1",
+        "text": "విద్యార్థుల వికాసానికి ప్రభుత్వ కానుక",
+        "topic_id": "T_22_2",
+        "page": 63
+      },
+      {
+        "id": "S_22_3_1",
+        "text": "విద్యార్థుల వికాసానికి ప్రభుత్వ కానుక",
+        "topic_id": "T_22_3",
+        "page": 64
+      },
+      {
+        "id": "S_22_4_1",
+        "text": "విద్యార్థుల వికాసానికి ప్రభుత్వ కానుక",
+        "topic_id": "T_22_4",
+        "page": 65
+      }
+    ]
+  },
+  "graphs": {
+    "chapter_structure": [
+      {
+        "from": "C_1",
+        "to": "T_1_1",
+        "type": "contains"
+      },
+      {
+        "from": "C_2",
+        "to": "T_2_1",
+        "type": "contains"
+      },
+      {
+        "from": "C_3",
+        "to": "T_3_1",
+        "type": "contains"
+      },
+      {
+        "from": "C_4",
+        "to": "T_4_1",
+        "type": "contains"
+      },
+      {
+        "from": "C_5",
+        "to": "T_5_1",
+        "type": "contains"
+      },
+      {
+        "from": "C_6",
+        "to": "T_6_1",
+        "type": "contains"
+      },
+      {
+        "from": "C_7",
+        "to": "T_7_1",
+        "type": "contains"
+      },
+      {
+        "from": "C_8",
+        "to": "T_8_1",
+        "type": "contains"
+      },
+      {
+        "from": "C_9",
+        "to": "T_9_1",
+        "type": "contains"
+      },
+      {
+        "from": "C_10",
+        "to": "T_10_1",
+        "type": "contains"
+      },
+      {
+        "from": "C_11",
+        "to": "T_11_1",
+        "type": "contains"
+      },
+      {
+        "from": "C_12",
+        "to": "T_12_1",
+        "type": "contains"
+      },
+      {
+        "from": "C_12",
+        "to": "T_12_2",
+        "type": "contains"
+      },
+      {
+        "from": "C_13",
+        "to": "T_13_1",
+        "type": "contains"
+      },
+      {
+        "from": "C_13",
+        "to": "T_13_2",
+        "type": "contains"
+      },
+      {
+        "from": "C_13",
+        "to": "T_13_3",
+        "type": "contains"
+      },
+      {
+        "from": "C_13",
+        "to": "T_13_4",
+        "type": "contains"
+      },
+      {
+        "from": "C_13",
+        "to": "T_13_5",
+        "type": "contains"
+      },
+      {
+        "from": "C_14",
+        "to": "T_14_1",
+        "type": "contains"
+      },
+      {
+        "from": "C_14",
+        "to": "T_14_2",
+        "type": "contains"
+      },
+      {
+        "from": "C_14",
+        "to": "T_14_3",
+        "type": "contains"
+      },
+      {
+        "from": "C_14",
+        "to": "T_14_4",
+        "type": "contains"
+      },
+      {
+        "from": "C_15",
+        "to": "T_15_1",
+        "type": "contains"
+      },
+      {
+        "from": "C_16",
+        "to": "T_16_1",
+        "type": "contains"
+      },
+      {
+        "from": "C_16",
+        "to": "T_16_2",
+        "type": "contains"
+      },
+      {
+        "from": "C_16",
+        "to": "T_16_3",
+        "type": "contains"
+      },
+      {
+        "from": "C_16",
+        "to": "T_16_4",
+        "type": "contains"
+      },
+      {
+        "from": "C_17",
+        "to": "T_17_1",
+        "type": "contains"
+      },
+      {
+        "from": "C_17",
+        "to": "T_17_2",
+        "type": "contains"
+      },
+      {
+        "from": "C_18",
+        "to": "T_18_1",
+        "type": "contains"
+      },
+      {
+        "from": "C_18",
+        "to": "T_18_2",
+        "type": "contains"
+      },
+      {
+        "from": "C_18",
+        "to": "T_18_3",
+        "type": "contains"
+      },
+      {
+        "from": "C_18",
+        "to": "T_18_4",
+        "type": "contains"
+      },
+      {
+        "from": "C_19",
+        "to": "T_19_1",
+        "type": "contains"
+      },
+      {
+        "from": "C_19",
+        "to": "T_19_2",
+        "type": "contains"
+      },
+      {
+        "from": "C_19",
+        "to": "T_19_3",
+        "type": "contains"
+      },
+      {
+        "from": "C_19",
+        "to": "T_19_4",
+        "type": "contains"
+      },
+      {
+        "from": "C_20",
+        "to": "T_20_1",
+        "type": "contains"
+      },
+      {
+        "from": "C_21",
+        "to": "T_21_1",
+        "type": "contains"
+      },
+      {
+        "from": "C_21",
+        "to": "T_21_2",
+        "type": "contains"
+      },
+      {
+        "from": "C_21",
+        "to": "T_21_3",
+        "type": "contains"
+      },
+      {
+        "from": "C_21",
+        "to": "T_21_4",
+        "type": "contains"
+      },
+      {
+        "from": "C_22",
+        "to": "T_22_1",
+        "type": "contains"
+      },
+      {
+        "from": "C_22",
+        "to": "T_22_2",
+        "type": "contains"
+      },
+      {
+        "from": "C_22",
+        "to": "T_22_3",
+        "type": "contains"
+      },
+      {
+        "from": "C_22",
+        "to": "T_22_4",
+        "type": "contains"
+      },
+      {
+        "from": "C_23",
+        "to": "T_23_1",
+        "type": "contains"
+      },
+      {
+        "from": "C_23",
+        "to": "T_23_2",
+        "type": "contains"
+      },
+      {
+        "from": "C_23",
+        "to": "T_23_3",
+        "type": "contains"
+      },
+      {
+        "from": "C_23",
+        "to": "T_23_4",
+        "type": "contains"
+      },
+      {
+        "from": "C_23",
+        "to": "T_23_5",
+        "type": "contains"
+      },
+      {
+        "from": "C_23",
+        "to": "T_23_6",
+        "type": "contains"
+      }
+    ],
+    "exercise_mapping": [
+      {
+        "from": "E_1_1_1",
+        "to": "T_1_1",
+        "type": "tests"
+      },
+      {
+        "from": "E_1_1_2",
+        "to": "T_1_1",
+        "type": "tests"
+      },
+      {
+        "from": "E_2_1_1",
+        "to": "T_2_1",
+        "type": "tests"
+      },
+      {
+        "from": "E_2_1_2",
+        "to": "T_2_1",
+        "type": "tests"
+      },
+      {
+        "from": "E_2_1_3",
+        "to": "T_2_1",
+        "type": "tests"
+      },
+      {
+        "from": "E_3_1_1",
+        "to": "T_3_1",
+        "type": "tests"
+      },
+      {
+        "from": "E_4_1_1",
+        "to": "T_4_1",
+        "type": "tests"
+      },
+      {
+        "from": "E_5_1_1",
+        "to": "T_5_1",
+        "type": "tests"
+      },
+      {
+        "from": "E_6_1_1",
+        "to": "T_6_1",
+        "type": "tests"
+      },
+      {
+        "from": "E_6_1_2",
+        "to": "T_6_1",
+        "type": "tests"
+      },
+      {
+        "from": "E_6_1_3",
+        "to": "T_6_1",
+        "type": "tests"
+      },
+      {
+        "from": "E_6_1_4",
+        "to": "T_6_1",
+        "type": "tests"
+      },
+      {
+        "from": "E_6_1_5",
+        "to": "T_6_1",
+        "type": "tests"
+      },
+      {
+        "from": "E_7_1_1",
+        "to": "T_7_1",
+        "type": "tests"
+      },
+      {
+        "from": "E_7_1_2",
+        "to": "T_7_1",
+        "type": "tests"
+      },
+      {
+        "from": "E_7_1_3",
+        "to": "T_7_1",
+        "type": "tests"
+      },
+      {
+        "from": "E_7_1_4",
+        "to": "T_7_1",
+        "type": "tests"
+      },
+      {
+        "from": "E_8_1_1",
+        "to": "T_8_1",
+        "type": "tests"
+      },
+      {
+        "from": "E_8_1_2",
+        "to": "T_8_1",
+        "type": "tests"
+      },
+      {
+        "from": "E_9_1_1",
+        "to": "T_9_1",
+        "type": "tests"
+      },
+      {
+        "from": "E_9_1_2",
+        "to": "T_9_1",
+        "type": "tests"
+      },
+      {
+        "from": "E_9_1_3",
+        "to": "T_9_1",
+        "type": "tests"
+      },
+      {
+        "from": "E_10_1_1",
+        "to": "T_10_1",
+        "type": "tests"
+      },
+      {
+        "from": "E_10_1_2",
+        "to": "T_10_1",
+        "type": "tests"
+      },
+      {
+        "from": "E_10_1_3",
+        "to": "T_10_1",
+        "type": "tests"
+      },
+      {
+        "from": "E_11_1_1",
+        "to": "T_11_1",
+        "type": "tests"
+      },
+      {
+        "from": "E_11_1_2",
+        "to": "T_11_1",
+        "type": "tests"
+      },
+      {
+        "from": "E_11_1_3",
+        "to": "T_11_1",
+        "type": "tests"
+      },
+      {
+        "from": "E_11_1_4",
+        "to": "T_11_1",
+        "type": "tests"
+      },
+      {
+        "from": "E_12_1_1",
+        "to": "T_12_1",
+        "type": "tests"
+      },
+      {
+        "from": "E_12_1_2",
+        "to": "T_12_1",
+        "type": "tests"
+      },
+      {
+        "from": "E_12_2_1",
+        "to": "T_12_2",
+        "type": "tests"
+      },
+      {
+        "from": "E_12_2_2",
+        "to": "T_12_2",
+        "type": "tests"
+      },
+      {
+        "from": "E_12_2_3",
+        "to": "T_12_2",
+        "type": "tests"
+      },
+      {
+        "from": "E_12_2_4",
+        "to": "T_12_2",
+        "type": "tests"
+      },
+      {
+        "from": "E_12_2_5",
+        "to": "T_12_2",
+        "type": "tests"
+      },
+      {
+        "from": "E_12_2_6",
+        "to": "T_12_2",
+        "type": "tests"
+      },
+      {
+        "from": "E_12_2_7",
+        "to": "T_12_2",
+        "type": "tests"
+      },
+      {
+        "from": "E_12_2_8",
+        "to": "T_12_2",
+        "type": "tests"
+      },
+      {
+        "from": "E_12_2_9",
+        "to": "T_12_2",
+        "type": "tests"
+      },
+      {
+        "from": "E_12_2_10",
+        "to": "T_12_2",
+        "type": "tests"
+      },
+      {
+        "from": "E_13_1_1",
+        "to": "T_13_1",
+        "type": "tests"
+      },
+      {
+        "from": "E_13_2_1",
+        "to": "T_13_2",
+        "type": "tests"
+      },
+      {
+        "from": "E_13_2_2",
+        "to": "T_13_2",
+        "type": "tests"
+      },
+      {
+        "from": "E_13_2_3",
+        "to": "T_13_2",
+        "type": "tests"
+      },
+      {
+        "from": "E_13_2_4",
+        "to": "T_13_2",
+        "type": "tests"
+      },
+      {
+        "from": "E_13_3_1",
+        "to": "T_13_3",
+        "type": "tests"
+      },
+      {
+        "from": "E_13_3_2",
+        "to": "T_13_3",
+        "type": "tests"
+      },
+      {
+        "from": "E_13_4_1",
+        "to": "T_13_4",
+        "type": "tests"
+      },
+      {
+        "from": "E_13_4_2",
+        "to": "T_13_4",
+        "type": "tests"
+      },
+      {
+        "from": "E_13_4_3",
+        "to": "T_13_4",
+        "type": "tests"
+      },
+      {
+        "from": "E_13_5_1",
+        "to": "T_13_5",
+        "type": "tests"
+      },
+      {
+        "from": "E_13_5_2",
+        "to": "T_13_5",
+        "type": "tests"
+      },
+      {
+        "from": "E_14_1_1",
+        "to": "T_14_1",
+        "type": "tests"
+      },
+      {
+        "from": "E_14_1_2",
+        "to": "T_14_1",
+        "type": "tests"
+      },
+      {
+        "from": "E_14_2_1",
+        "to": "T_14_2",
+        "type": "tests"
+      },
+      {
+        "from": "E_14_2_2",
+        "to": "T_14_2",
+        "type": "tests"
+      },
+      {
+        "from": "E_14_2_3",
+        "to": "T_14_2",
+        "type": "tests"
+      },
+      {
+        "from": "E_14_2_4",
+        "to": "T_14_2",
+        "type": "tests"
+      },
+      {
+        "from": "E_14_3_1",
+        "to": "T_14_3",
+        "type": "tests"
+      },
+      {
+        "from": "E_14_3_2",
+        "to": "T_14_3",
+        "type": "tests"
+      },
+      {
+        "from": "E_14_3_3",
+        "to": "T_14_3",
+        "type": "tests"
+      },
+      {
+        "from": "E_14_4_1",
+        "to": "T_14_4",
+        "type": "tests"
+      },
+      {
+        "from": "E_14_4_2",
+        "to": "T_14_4",
+        "type": "tests"
+      },
+      {
+        "from": "E_15_1_1",
+        "to": "T_15_1",
+        "type": "tests"
+      },
+      {
+        "from": "E_15_1_2",
+        "to": "T_15_1",
+        "type": "tests"
+      },
+      {
+        "from": "E_15_1_3",
+        "to": "T_15_1",
+        "type": "tests"
+      },
+      {
+        "from": "E_15_1_4",
+        "to": "T_15_1",
+        "type": "tests"
+      },
+      {
+        "from": "E_15_1_5",
+        "to": "T_15_1",
+        "type": "tests"
+      },
+      {
+        "from": "E_15_1_6",
+        "to": "T_15_1",
+        "type": "tests"
+      },
+      {
+        "from": "E_15_1_7",
+        "to": "T_15_1",
+        "type": "tests"
+      },
+      {
+        "from": "E_15_1_8",
+        "to": "T_15_1",
+        "type": "tests"
+      },
+      {
+        "from": "E_15_1_9",
+        "to": "T_15_1",
+        "type": "tests"
+      },
+      {
+        "from": "E_15_1_10",
+        "to": "T_15_1",
+        "type": "tests"
+      },
+      {
+        "from": "E_16_1_1",
+        "to": "T_16_1",
+        "type": "tests"
+      },
+      {
+        "from": "E_16_1_2",
+        "to": "T_16_1",
+        "type": "tests"
+      },
+      {
+        "from": "E_16_2_1",
+        "to": "T_16_2",
+        "type": "tests"
+      },
+      {
+        "from": "E_16_2_2",
+        "to": "T_16_2",
+        "type": "tests"
+      },
+      {
+        "from": "E_16_2_3",
+        "to": "T_16_2",
+        "type": "tests"
+      },
+      {
+        "from": "E_16_2_4",
+        "to": "T_16_2",
+        "type": "tests"
+      },
+      {
+        "from": "E_16_3_1",
+        "to": "T_16_3",
+        "type": "tests"
+      },
+      {
+        "from": "E_16_3_2",
+        "to": "T_16_3",
+        "type": "tests"
+      },
+      {
+        "from": "E_16_3_3",
+        "to": "T_16_3",
+        "type": "tests"
+      },
+      {
+        "from": "E_16_4_1",
+        "to": "T_16_4",
+        "type": "tests"
+      },
+      {
+        "from": "E_16_4_2",
+        "to": "T_16_4",
+        "type": "tests"
+      },
+      {
+        "from": "E_17_1_1",
+        "to": "T_17_1",
+        "type": "tests"
+      },
+      {
+        "from": "E_17_1_2",
+        "to": "T_17_2",
+        "type": "tests"
+      },
+      {
+        "from": "E_17_1_3",
+        "to": "T_17_2",
+        "type": "tests"
+      },
+      {
+        "from": "E_17_1_4",
+        "to": "T_17_2",
+        "type": "tests"
+      },
+      {
+        "from": "E_17_1_5",
+        "to": "T_17_2",
+        "type": "tests"
+      },
+      {
+        "from": "E_18_1_1",
+        "to": "T_18_1",
+        "type": "tests"
+      },
+      {
+        "from": "E_18_1_2",
+        "to": "T_18_1",
+        "type": "tests"
+      },
+      {
+        "from": "E_18_2_1",
+        "to": "T_18_2",
+        "type": "tests"
+      },
+      {
+        "from": "E_18_2_2",
+        "to": "T_18_2",
+        "type": "tests"
+      },
+      {
+        "from": "E_18_2_3",
+        "to": "T_18_2",
+        "type": "tests"
+      },
+      {
+        "from": "E_18_2_4",
+        "to": "T_18_2",
+        "type": "tests"
+      },
+      {
+        "from": "E_18_2_5",
+        "to": "T_18_2",
+        "type": "tests"
+      },
+      {
+        "from": "E_18_3_1",
+        "to": "T_18_3",
+        "type": "tests"
+      },
+      {
+        "from": "E_18_3_2",
+        "to": "T_18_3",
+        "type": "tests"
+      },
+      {
+        "from": "E_18_3_3",
+        "to": "T_18_3",
+        "type": "tests"
+      },
+      {
+        "from": "E_18_3_4",
+        "to": "T_18_3",
+        "type": "tests"
+      },
+      {
+        "from": "E_18_3_5",
+        "to": "T_18_3",
+        "type": "tests"
+      },
+      {
+        "from": "E_18_4_1",
+        "to": "T_18_4",
+        "type": "tests"
+      },
+      {
+        "from": "E_19_1_1",
+        "to": "T_19_1",
+        "type": "tests"
+      },
+      {
+        "from": "E_19_2_1",
+        "to": "T_19_2",
+        "type": "tests"
+      },
+      {
+        "from": "E_19_2_2",
+        "to": "T_19_2",
+        "type": "tests"
+      },
+      {
+        "from": "E_19_3_1",
+        "to": "T_19_3",
+        "type": "tests"
+      },
+      {
+        "from": "E_19_3_2",
+        "to": "T_19_3",
+        "type": "tests"
+      },
+      {
+        "from": "E_19_4_1",
+        "to": "T_19_4",
+        "type": "tests"
+      },
+      {
+        "from": "E_19_4_2",
+        "to": "T_19_4",
+        "type": "tests"
+      },
+      {
+        "from": "E_19_4_3",
+        "to": "T_19_4",
+        "type": "tests"
+      },
+      {
+        "from": "E_20_1_1",
+        "to": "T_20_1",
+        "type": "tests"
+      },
+      {
+        "from": "E_20_1_2",
+        "to": "T_20_1",
+        "type": "tests"
+      },
+      {
+        "from": "E_20_1_3",
+        "to": "T_20_1",
+        "type": "tests"
+      },
+      {
+        "from": "E_20_1_4",
+        "to": "T_20_1",
+        "type": "tests"
+      },
+      {
+        "from": "E_20_1_5",
+        "to": "T_20_1",
+        "type": "tests"
+      },
+      {
+        "from": "E_20_1_6",
+        "to": "T_20_1",
+        "type": "tests"
+      },
+      {
+        "from": "E_20_1_7",
+        "to": "T_20_1",
+        "type": "tests"
+      },
+      {
+        "from": "E_20_1_8",
+        "to": "T_20_1",
+        "type": "tests"
+      },
+      {
+        "from": "E_20_1_9",
+        "to": "T_20_1",
+        "type": "tests"
+      },
+      {
+        "from": "E_20_1_10",
+        "to": "T_20_1",
+        "type": "tests"
+      },
+      {
+        "from": "E_20_1_11",
+        "to": "T_20_1",
+        "type": "tests"
+      },
+      {
+        "from": "E_20_1_12",
+        "to": "T_20_1",
+        "type": "tests"
+      },
+      {
+        "from": "E_20_1_13",
+        "to": "T_20_1",
+        "type": "tests"
+      },
+      {
+        "from": "E_21_1_1",
+        "to": "T_21_1",
+        "type": "tests"
+      },
+      {
+        "from": "E_21_1_2",
+        "to": "T_21_1",
+        "type": "tests"
+      },
+      {
+        "from": "E_21_2_1",
+        "to": "T_21_2",
+        "type": "tests"
+      },
+      {
+        "from": "E_21_2_2",
+        "to": "T_21_2",
+        "type": "tests"
+      },
+      {
+        "from": "E_21_2_3",
+        "to": "T_21_2",
+        "type": "tests"
+      },
+      {
+        "from": "E_21_2_4",
+        "to": "T_21_2",
+        "type": "tests"
+      },
+      {
+        "from": "E_21_3_1",
+        "to": "T_21_3",
+        "type": "tests"
+      },
+      {
+        "from": "E_21_3_2",
+        "to": "T_21_3",
+        "type": "tests"
+      },
+      {
+        "from": "E_21_3_3",
+        "to": "T_21_3",
+        "type": "tests"
+      },
+      {
+        "from": "E_21_4_1",
+        "to": "T_21_4",
+        "type": "tests"
+      },
+      {
+        "from": "E_21_4_2",
+        "to": "T_21_4",
+        "type": "tests"
+      },
+      {
+        "from": "E_21_4_3",
+        "to": "T_21_4",
+        "type": "tests"
+      },
+      {
+        "from": "E_22_1_1",
+        "to": "T_22_1",
+        "type": "tests"
+      },
+      {
+        "from": "E_22_1_2",
+        "to": "T_22_1",
+        "type": "tests"
+      },
+      {
+        "from": "E_22_1_3",
+        "to": "T_22_1",
+        "type": "tests"
+      },
+      {
+        "from": "E_22_2_1",
+        "to": "T_22_2",
+        "type": "tests"
+      },
+      {
+        "from": "E_22_2_2",
+        "to": "T_22_2",
+        "type": "tests"
+      },
+      {
+        "from": "E_22_2_3",
+        "to": "T_22_2",
+        "type": "tests"
+      },
+      {
+        "from": "E_22_2_4",
+        "to": "T_22_2",
+        "type": "tests"
+      },
+      {
+        "from": "E_22_3_1",
+        "to": "T_22_3",
+        "type": "tests"
+      },
+      {
+        "from": "E_22_3_2",
+        "to": "T_22_3",
+        "type": "tests"
+      },
+      {
+        "from": "E_22_3_3",
+        "to": "T_22_3",
+        "type": "tests"
+      },
+      {
+        "from": "E_22_4_1",
+        "to": "T_22_4",
+        "type": "tests"
+      },
+      {
+        "from": "E_22_4_2",
+        "to": "T_22_4",
+        "type": "tests"
+      },
+      {
+        "from": "E_22_4_3",
+        "to": "T_22_4",
+        "type": "tests"
+      },
+      {
+        "from": "E_23_1_1",
+        "to": "T_23_1",
+        "type": "tests"
+      },
+      {
+        "from": "E_23_2_1",
+        "to": "T_23_2",
+        "type": "tests"
+      },
+      {
+        "from": "E_23_2_2",
+        "to": "T_23_2",
+        "type": "tests"
+      },
+      {
+        "from": "E_23_2_3",
+        "to": "T_23_2",
+        "type": "tests"
+      },
+      {
+        "from": "E_23_2_4",
+        "to": "T_23_2",
+        "type": "tests"
+      },
+      {
+        "from": "E_23_2_5",
+        "to": "T_23_2",
+        "type": "tests"
+      },
+      {
+        "from": "E_23_2_6",
+        "to": "T_23_2",
+        "type": "tests"
+      },
+      {
+        "from": "E_23_2_7",
+        "to": "T_23_2",
+        "type": "tests"
+      },
+      {
+        "from": "E_23_2_8",
+        "to": "T_23_2",
+        "type": "tests"
+      },
+      {
+        "from": "E_23_2_9",
+        "to": "T_23_2",
+        "type": "tests"
+      },
+      {
+        "from": "E_23_2_10",
+        "to": "T_23_2",
+        "type": "tests"
+      },
+      {
+        "from": "E_23_3_1",
+        "to": "T_23_3",
+        "type": "tests"
+      }
+    ],
+    "concept_dependencies": [
+      {
+        "from": "T_10_1",
+        "to": "T_9_1",
+        "type": "depends_on"
+      },
+      {
+        "from": "T_11_1",
+        "to": "T_9_1",
+        "type": "depends_on"
+      },
+      {
+        "from": "T_11_1",
+        "to": "T_10_1",
+        "type": "depends_on"
+      },
+      {
+        "from": "T_13_2",
+        "to": "T_13_1",
+        "type": "depends_on"
+      },
+      {
+        "from": "T_13_3",
+        "to": "T_13_2",
+        "type": "depends_on"
+      },
+      {
+        "from": "T_13_4",
+        "to": "T_13_3",
+        "type": "depends_on"
+      },
+      {
+        "from": "T_13_5",
+        "to": "T_13_4",
+        "type": "depends_on"
+      },
+      {
+        "from": "T_22_2",
+        "to": "T_11_1",
+        "type": "depends_on"
+      },
+      {
+        "from": "T_22_3",
+        "to": "T_22_2",
+        "type": "depends_on"
+      },
+      {
+        "from": "T_22_4",
+        "to": "T_22_3",
+        "type": "depends_on"
+      },
+      {
+        "from": "T_12_2",
+        "to": "T_9_1",
+        "type": "depends_on"
+      },
+      {
+        "from": "T_13_1",
+        "to": "T_11_1",
+        "type": "depends_on"
+      },
+      {
+        "from": "T_14_1",
+        "to": "T_11_1",
+        "type": "depends_on"
+      },
+      {
+        "from": "T_15_1",
+        "to": "T_11_1",
+        "type": "depends_on"
+      },
+      {
+        "from": "T_16_1",
+        "to": "T_11_1",
+        "type": "depends_on"
+      },
+      {
+        "from": "T_18_1",
+        "to": "T_11_1",
+        "type": "depends_on"
+      },
+      {
+        "from": "T_19_1",
+        "to": "T_11_1",
+        "type": "depends_on"
+      },
+      {
+        "from": "T_21_2",
+        "to": "T_11_1",
+        "type": "depends_on"
+      },
+      {
+        "from": "T_22_1",
+        "to": "T_11_1",
+        "type": "depends_on"
+      },
+      {
+        "from": "T_14_2",
+        "to": "T_14_1",
+        "type": "depends_on"
+      },
+      {
+        "from": "T_14_3",
+        "to": "T_14_2",
+        "type": "depends_on"
+      },
+      {
+        "from": "T_16_2",
+        "to": "T_16_1",
+        "type": "depends_on"
+      },
+      {
+        "from": "T_16_3",
+        "to": "T_16_2",
+        "type": "depends_on"
+      },
+      {
+        "from": "T_18_2",
+        "to": "T_18_1",
+        "type": "depends_on"
+      },
+      {
+        "from": "T_18_3",
+        "to": "T_18_2",
+        "type": "depends_on"
+      },
+      {
+        "from": "T_19_2",
+        "to": "T_19_1",
+        "type": "depends_on"
+      },
+      {
+        "from": "T_19_3",
+        "to": "T_19_2",
+        "type": "depends_on"
+      },
+      {
+        "from": "T_20_1",
+        "to": "T_19_1",
+        "type": "depends_on"
+      },
+      {
+        "from": "T_21_3",
+        "to": "T_21_2",
+        "type": "depends_on"
+      },
+      {
+        "from": "T_21_4",
+        "to": "T_21_3",
+        "type": "depends_on"
+      },
+      {
+        "from": "T_22_2",
+        "to": "T_22_1",
+        "type": "depends_on"
+      },
+      {
+        "from": "T_23_2",
+        "to": "T_22_2",
+        "type": "depends_on"
+      },
+      {
+        "from": "T_14_3",
+        "to": "T_10_1",
+        "type": "depends_on"
+      }
+    ]
+  },
+  "chapters": [],
+  "unresolved_chapters": []
+}
