@@ -112,6 +112,108 @@ def generate_study_plan(
 #     )
 
 
+def _normalize_lesson_plan(plan: dict) -> dict:
+    """
+    Maps activity/storytelling JSON schemas → the shape the renderer expects.
+
+    activity prompt produces:
+      explore.student_instructions[]  → explore.student_prompt  (joined)
+      explore.guiding_questions[]     → explore.teacher_questions
+      elaborate.task_1                → elaborate.we_do.activity_description
+      elaborate.task_2                → elaborate.you_do.activity_description
+
+    storytelling prompt produces:
+      explore.scene / explore.student_prompt_scene → explore.student_prompt
+      elaborate.practice_scene / elaborate.challenge_scene
+    """
+    if not isinstance(plan, dict):
+        return plan
+
+    # ── Explore ────────────────────────────────────────────────────────────────
+    explore = plan.get("explore", {})
+    if isinstance(explore, dict):
+        # activity schema: student_instructions list → student_prompt string
+        if not explore.get("student_prompt") and explore.get("student_instructions"):
+            steps = explore["student_instructions"]
+            if isinstance(steps, list):
+                explore["student_prompt"] = " → ".join(str(s) for s in steps)
+
+        # storytelling schema
+        if not explore.get("student_prompt"):
+            for key in ("student_prompt_scene", "scene", "scene_prompt", "student_scene"):
+                if explore.get(key):
+                    explore["student_prompt"] = explore[key]
+                    break
+
+        # teacher_talk_track fallback
+        if not explore.get("teacher_talk_track"):
+            for key in ("teacher_actions", "narration", "teacher_narration"):
+                val = explore.get(key)
+                if val:
+                    explore["teacher_talk_track"] = " ".join(val) if isinstance(val, list) else str(val)
+                    break
+
+        # board_visual_plan fallback
+        if not explore.get("board_visual_plan"):
+            explore["board_visual_plan"] = explore.get("materials_setup") or explore.get("scene_setup") or ""
+
+        plan["explore"] = explore
+
+    # ── Elaborate ──────────────────────────────────────────────────────────────
+    elaborate = plan.get("elaborate", {})
+    if isinstance(elaborate, dict):
+        we_do  = elaborate.get("we_do")  or {}
+        you_do = elaborate.get("you_do") or {}
+
+        # activity schema: task_1 / task_2 → we_do / you_do
+        task_1 = elaborate.get("task_1") or elaborate.get("guided_task") or elaborate.get("practice_scene") or {}
+        task_2 = elaborate.get("task_2") or elaborate.get("challenge_task") or elaborate.get("challenge_scene") or {}
+
+        if isinstance(task_1, dict) and not we_do.get("activity_description"):
+            we_do["activity_description"] = (
+                task_1.get("what_students_do") or task_1.get("description") or
+                task_1.get("scene") or task_1.get("student_actions") or ""
+            )
+            we_do["teacher_talk_track"] = we_do.get("teacher_talk_track") or (
+                " ".join(elaborate.get("teacher_actions", [])) if isinstance(elaborate.get("teacher_actions"), list)
+                else str(elaborate.get("teacher_actions") or "")
+            )
+
+        if isinstance(task_2, dict) and not you_do.get("activity_description"):
+            you_do["activity_description"] = (
+                task_2.get("what_students_do") or task_2.get("description") or
+                task_2.get("scene") or task_2.get("student_actions") or ""
+            )
+            you_do["teacher_talk_track"] = you_do.get("teacher_talk_track") or ""
+
+        elaborate["we_do"]  = we_do
+        elaborate["you_do"] = you_do
+        plan["elaborate"]   = elaborate
+
+    # ── Explain ────────────────────────────────────────────────────────────────
+    explain = plan.get("explain", {})
+    if isinstance(explain, dict):
+        # activity prompt uses sub_segments list OR flat fields
+        if not explain.get("sub_segments"):
+            title = (
+                explain.get("connect_to_activity") or
+                explain.get("concept_explanation") or
+                explain.get("narration") or ""
+            )
+            body  = explain.get("concept_explanation") or explain.get("narration") or ""
+            if title or body:
+                explain["sub_segments"] = [{
+                    "segment_title":    title[:80] if title else "Core Concept",
+                    "teacher_talk_track": body or title,
+                    "duration_minutes": explain.get("duration_minutes", 8),
+                    "board_visual_plan": explain.get("board_visual_plan") or "",
+                    "examples": explain.get("examples") or [],
+                }]
+        plan["explain"] = explain
+
+    return plan
+
+
 def generate_elementary_lesson_plan(
     topic_name: str,
     grade: str,
@@ -185,7 +287,7 @@ def generate_elementary_lesson_plan(
         lesson_type=lesson_type,
     )
 
-    return safe_generate_content(
+    raw = safe_generate_content(
         prompt,
         is_json=True,
         # The elementary schema includes teacher talk tracks, misconception shields,
@@ -193,6 +295,7 @@ def generate_elementary_lesson_plan(
         config={"max_output_tokens": 16384, "temperature": 0.5},
         model=_get_elementary_model(),
     )
+    return _normalize_lesson_plan(raw)
 
 
 def _validate_and_fix_worksheet(worksheet: dict) -> dict:
