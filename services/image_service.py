@@ -2,14 +2,13 @@
 Image generation for worksheet questions.
 
 Generation strategy (tried in order, first success wins):
-  1. OpenRouter Gemini 2.5 Flash Image        — ~$0.0025/image (primary)
-  2. OpenRouter Gemini 3.1 Flash Image Preview — ~$0.003/image (fallback)
-  3. Hugging Face FLUX.1-schnell              — free, fast
-  4. Gemini image model (direct Google API)   — free quota
-  5. Imagen 4 Fast (direct Google API)        — free quota
-  6. Replicate FLUX Schnell                   — 50 free/month
-  7. Stability AI SD3                         — 25 free/month
-  8. Pollinations.ai                          — last resort (no key required)
+  1. OpenRouter (gemini-2.5-flash-image, riverflow-v2-fast, riverflow-v2-standard, flux.2-pro)
+  2. Hugging Face FLUX.1-schnell              — free, fast
+  3. Gemini image model (direct Google API)   — free quota
+  4. Imagen 4 Fast (direct Google API)        — free quota
+  5. Replicate FLUX Schnell                   — 50 free/month
+  6. Stability AI SD3                         — 25 free/month
+  7. Pollinations.ai                          — last resort (no key required)
 
 The caller (enrich_worksheet_with_images) never raises — every failure is
 logged and skipped so the worksheet is always returned intact.
@@ -168,16 +167,18 @@ async def _imagen4_generate(prompt: str, save_path: Path) -> bool:
 
 # Cheapest image-gen models on OpenRouter (May 2026), tried in order:
 _OPENROUTER_IMAGE_MODELS = [
-    "google/gemini-2.5-flash-image",          # ~$0.0025/image
-    "google/gemini-3.1-flash-image-preview",  # ~$0.003/image
+    "google/gemini-2.5-flash-image",              # ~$0.0025/image (token-based)
+    "sourceful/riverflow-v2-fast-preview",        # $0.03/image flat
+    "sourceful/riverflow-v2-standard-preview",    # $0.035/image flat
+    "black-forest-labs/flux.2-pro",               # ~$0.008/image at 512x512
 ]
-_OPENROUTER_IMAGE_URL = "https://openrouter.ai/api/v1/images/generations"
+_OPENROUTER_IMAGE_URL = "https://openrouter.ai/api/v1/chat/completions"
 
 
 async def _openrouter_image_generate(prompt: str, save_path: Path) -> bool:
     """
-    Calls OpenRouter's image generation endpoint with the cheapest Gemini
-    image models. Returns True and writes PNG on first success.
+    Calls OpenRouter's chat completions endpoint with modalities=["image"].
+    Tries models cheapest-first. Returns True and writes PNG on first success.
     """
     try:
         from services.ai_client import OPENROUTER_API_KEY
@@ -201,10 +202,8 @@ async def _openrouter_image_generate(prompt: str, save_path: Path) -> bool:
                     headers=headers,
                     json={
                         "model": model_id,
-                        "prompt": full_prompt,
-                        "n": 1,
-                        "size": "512x512",
-                        "response_format": "b64_json",
+                        "messages": [{"role": "user", "content": full_prompt}],
+                        "modalities": ["image"],
                     },
                     timeout=60,
                 )
@@ -212,25 +211,40 @@ async def _openrouter_image_generate(prompt: str, save_path: Path) -> bool:
                     print(f"[IMAGE] OpenRouter ({model_id}) returned {r.status_code}: {r.text[:120]}")
                     continue
 
-                data = r.json().get("data", [])
-                if not data:
-                    continue
+                resp_data = r.json()
+                message = (resp_data.get("choices") or [{}])[0].get("message", {})
 
-                b64 = data[0].get("b64_json")
-                if b64:
-                    save_path.parent.mkdir(parents=True, exist_ok=True)
-                    save_path.write_bytes(base64.b64decode(b64))
-                    print(f"[IMAGE] OpenRouter ({model_id}) OK: {save_path.name}")
-                    return True
-
-                url = data[0].get("url")
-                if url:
-                    img_r = await client.get(url, timeout=30)
-                    if img_r.status_code == 200:
+                # Primary: response.images (as in the OpenRouter SDK docs)
+                for img in message.get("images") or []:
+                    data_url = img.get("image_url", {}).get("url", "")
+                    if data_url.startswith("data:"):
+                        b64 = data_url.split(",", 1)[1]
                         save_path.parent.mkdir(parents=True, exist_ok=True)
-                        save_path.write_bytes(img_r.content)
-                        print(f"[IMAGE] OpenRouter ({model_id}) OK (URL): {save_path.name}")
+                        save_path.write_bytes(base64.b64decode(b64))
+                        print(f"[IMAGE] OpenRouter ({model_id}) OK: {save_path.name}")
                         return True
+                    if data_url.startswith("http"):
+                        img_r = await client.get(data_url, timeout=30)
+                        if img_r.status_code == 200:
+                            save_path.parent.mkdir(parents=True, exist_ok=True)
+                            save_path.write_bytes(img_r.content)
+                            print(f"[IMAGE] OpenRouter ({model_id}) OK (URL): {save_path.name}")
+                            return True
+
+                # Fallback: image embedded in content parts
+                content = message.get("content") or []
+                if isinstance(content, list):
+                    for part in content:
+                        if part.get("type") == "image_url":
+                            data_url = part.get("image_url", {}).get("url", "")
+                            if data_url.startswith("data:"):
+                                b64 = data_url.split(",", 1)[1]
+                                save_path.parent.mkdir(parents=True, exist_ok=True)
+                                save_path.write_bytes(base64.b64decode(b64))
+                                print(f"[IMAGE] OpenRouter ({model_id}) OK (content part): {save_path.name}")
+                                return True
+
+                print(f"[IMAGE] OpenRouter ({model_id}): no image found in response. Keys: {list(message.keys())}")
 
             except Exception as e:
                 print(f"[IMAGE] OpenRouter ({model_id}) error: {e}")
