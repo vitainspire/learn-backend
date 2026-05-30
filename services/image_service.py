@@ -2,9 +2,9 @@
 Image generation for worksheet questions.
 
 Generation strategy (tried in order, first success wins):
-  1. Hugging Face FLUX.1-schnell              — free, fast
-  2. OpenRouter Gemini 2.5 Flash Image        — ~$0.0025/image (cheapest paid)
-  3. OpenRouter Gemini 3.1 Flash Image Preview — ~$0.003/image (fallback paid)
+  1. OpenRouter Gemini 2.5 Flash Image        — ~$0.0025/image (primary)
+  2. OpenRouter Gemini 3.1 Flash Image Preview — ~$0.003/image (fallback)
+  3. Hugging Face FLUX.1-schnell              — free, fast
   4. Gemini image model (direct Google API)   — free quota
   5. Imagen 4 Fast (direct Google API)        — free quota
   6. Replicate FLUX Schnell                   — 50 free/month
@@ -419,18 +419,18 @@ async def _stability_generate(prompt: str, save_path: Path) -> bool:
 async def generate_image(prompt: str, save_path: Path) -> bool:
     """
     Fallback chain (first success wins):
-      HuggingFace → OpenRouter Gemini Flash Image → Gemini direct API
+      OpenRouter Gemini Flash Image → HuggingFace → Gemini direct API
       → Imagen 4 Fast → Replicate → Stability AI → Pollinations.ai
     """
     print(f"[IMAGE] Generating: {prompt[:60]}…")
 
-    if await _huggingface_generate(prompt, save_path):
-        return True
-    print("[IMAGE] HuggingFace failed — trying OpenRouter image models…")
-
     if await _openrouter_image_generate(prompt, save_path):
         return True
-    print("[IMAGE] OpenRouter failed — trying Gemini 2.5 Flash Image (direct)…")
+    print("[IMAGE] OpenRouter failed — trying HuggingFace…")
+
+    if await _huggingface_generate(prompt, save_path):
+        return True
+    print("[IMAGE] HuggingFace failed — trying Gemini 2.5 Flash Image (direct)…")
 
     if await _gemini_generate(prompt, save_path):
         return True
