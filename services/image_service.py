@@ -2,11 +2,14 @@
 Image generation for worksheet questions.
 
 Generation strategy (tried in order, first success wins):
-  1. Hugging Face FLUX.1-schnell  — primary (free, fast)
-  2. Gemini image model           — fallback if HF fails
-  3. Replicate FLUX Schnell       — fallback (50 free/month)
-  4. Stability AI SD3             — fallback (25 free/month)
-  5. Pollinations.ai              — last resort (no key required)
+  1. Hugging Face FLUX.1-schnell              — free, fast
+  2. OpenRouter Gemini 2.5 Flash Image        — ~$0.0025/image (cheapest paid)
+  3. OpenRouter Gemini 3.1 Flash Image Preview — ~$0.003/image (fallback paid)
+  4. Gemini image model (direct Google API)   — free quota
+  5. Imagen 4 Fast (direct Google API)        — free quota
+  6. Replicate FLUX Schnell                   — 50 free/month
+  7. Stability AI SD3                         — 25 free/month
+  8. Pollinations.ai                          — last resort (no key required)
 
 The caller (enrich_worksheet_with_images) never raises — every failure is
 logged and skipped so the worksheet is always returned intact.
@@ -159,6 +162,80 @@ async def _imagen4_generate(prompt: str, save_path: Path) -> bool:
     except Exception as e:
         print(f"[IMAGE] Imagen4 error: {e}")
         return False
+
+
+# ── OpenRouter Image Generation ───────────────────────────────────────────────
+
+# Cheapest image-gen models on OpenRouter (May 2026), tried in order:
+_OPENROUTER_IMAGE_MODELS = [
+    "google/gemini-2.5-flash-image",          # ~$0.0025/image
+    "google/gemini-3.1-flash-image-preview",  # ~$0.003/image
+]
+_OPENROUTER_IMAGE_URL = "https://openrouter.ai/api/v1/images/generations"
+
+
+async def _openrouter_image_generate(prompt: str, save_path: Path) -> bool:
+    """
+    Calls OpenRouter's image generation endpoint with the cheapest Gemini
+    image models. Returns True and writes PNG on first success.
+    """
+    try:
+        from services.ai_client import OPENROUTER_API_KEY
+    except ImportError:
+        return False
+    if not OPENROUTER_API_KEY:
+        return False
+
+    headers = {
+        "Authorization": f"Bearer {OPENROUTER_API_KEY}",
+        "Content-Type": "application/json",
+    }
+    full_prompt = f"{prompt}, {_STYLE}"
+
+    async with httpx.AsyncClient() as client:
+        for model_id in _OPENROUTER_IMAGE_MODELS:
+            try:
+                await _rate_limit("openrouter_image")
+                r = await client.post(
+                    _OPENROUTER_IMAGE_URL,
+                    headers=headers,
+                    json={
+                        "model": model_id,
+                        "prompt": full_prompt,
+                        "n": 1,
+                        "size": "512x512",
+                        "response_format": "b64_json",
+                    },
+                    timeout=60,
+                )
+                if r.status_code != 200:
+                    print(f"[IMAGE] OpenRouter ({model_id}) returned {r.status_code}: {r.text[:120]}")
+                    continue
+
+                data = r.json().get("data", [])
+                if not data:
+                    continue
+
+                b64 = data[0].get("b64_json")
+                if b64:
+                    save_path.parent.mkdir(parents=True, exist_ok=True)
+                    save_path.write_bytes(base64.b64decode(b64))
+                    print(f"[IMAGE] OpenRouter ({model_id}) OK: {save_path.name}")
+                    return True
+
+                url = data[0].get("url")
+                if url:
+                    img_r = await client.get(url, timeout=30)
+                    if img_r.status_code == 200:
+                        save_path.parent.mkdir(parents=True, exist_ok=True)
+                        save_path.write_bytes(img_r.content)
+                        print(f"[IMAGE] OpenRouter ({model_id}) OK (URL): {save_path.name}")
+                        return True
+
+            except Exception as e:
+                print(f"[IMAGE] OpenRouter ({model_id}) error: {e}")
+
+    return False
 
 
 # ── Hugging Face ──────────────────────────────────────────────────────────────
@@ -342,14 +419,18 @@ async def _stability_generate(prompt: str, save_path: Path) -> bool:
 async def generate_image(prompt: str, save_path: Path) -> bool:
     """
     Fallback chain (first success wins):
-      HuggingFace → Gemini 2.5 Flash Image → Imagen 4 Fast
-      → Replicate → Stability AI → Pollinations.ai
+      HuggingFace → OpenRouter Gemini Flash Image → Gemini direct API
+      → Imagen 4 Fast → Replicate → Stability AI → Pollinations.ai
     """
     print(f"[IMAGE] Generating: {prompt[:60]}…")
 
     if await _huggingface_generate(prompt, save_path):
         return True
-    print("[IMAGE] HuggingFace failed — trying Gemini 2.5 Flash Image…")
+    print("[IMAGE] HuggingFace failed — trying OpenRouter image models…")
+
+    if await _openrouter_image_generate(prompt, save_path):
+        return True
+    print("[IMAGE] OpenRouter failed — trying Gemini 2.5 Flash Image (direct)…")
 
     if await _gemini_generate(prompt, save_path):
         return True
