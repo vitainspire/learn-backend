@@ -18,7 +18,7 @@ from datetime import datetime
 import sys
 sys.path.insert(0, os.path.dirname(os.path.dirname(__file__)))
 
-from services.ai_services import generate_elementary_lesson_plan, generate_study_plan, generate_worksheet, generate_recovery_worksheet, generate_quiz
+from services.ai_services import generate_elementary_lesson_plan, generate_study_plan, generate_worksheet, generate_recovery_worksheet, generate_quiz, recommend_lesson_type, build_ai_teaching_notes
 from services.visual_guide_service import generate_visual_guide_from_plan, generate_picture_book
 from core.models import StudentProfile, get_default_student
 from engines.progress_engine import calculate_mastery
@@ -44,6 +44,7 @@ STATIC_DIR.mkdir(exist_ok=True)
 app.mount("/static", StaticFiles(directory=str(STATIC_DIR)), name="static")
 OUTPUT_DIR = PROJECT_ROOT / "output"
 OUTPUT_DIR.mkdir(exist_ok=True)
+app.mount("/output", StaticFiles(directory=str(OUTPUT_DIR)), name="output")
 
 
 # ---------------------------------------------------------------------------
@@ -58,6 +59,7 @@ class LessonPlanRequest(BaseModel):
     duration: str
     subject: Optional[str] = None
     region: Optional[str] = None
+    lesson_type: Optional[str] = None  # lecture | activity | storytelling — AI recommends if omitted
     teacher_profile: Optional[dict] = None
     student_profile: Optional[dict] = None
 
@@ -99,9 +101,18 @@ class ElementaryLessonRequest(BaseModel):
     book: Optional[str] = None
     chapter_idx: Optional[int] = None
     topic_idx: Optional[int] = None
+    region: Optional[str] = None
+    lesson_type: Optional[str] = None  # lecture | activity | storytelling — AI recommends if omitted
     teacher_profile: Optional[dict] = None
     student_profile: Optional[dict] = None
     learning_gaps: Optional[list] = None
+
+
+class RecommendLessonTypeRequest(BaseModel):
+    topic: str
+    grade: GradeStr
+    subject: str
+    teacher_profile: Optional[dict] = None
 
 class WorksheetRequest(BaseModel):
     lesson_plan: Union[dict, str]
@@ -270,6 +281,20 @@ def _resolve_book_name(db, requested: str) -> Optional[str]:
         return prefix_hits[0]
 
     return None
+
+
+def _strip_image_data(obj):
+    """Recursively remove all *image_data fields from a plan before DB save."""
+    if isinstance(obj, dict):
+        keys_to_del = [k for k in obj if k.endswith("image_data")]
+        for k in keys_to_del:
+            del obj[k]
+        for v in obj.values():
+            _strip_image_data(v)
+    elif isinstance(obj, list):
+        for item in obj:
+            _strip_image_data(item)
+    return obj
 
 
 def _get_ontology_or_404(db, book_name: str) -> dict:
@@ -492,7 +517,23 @@ async def api_generate_lesson_plan(req: LessonPlanRequest, db = Depends(get_admi
 
     duration_int = int("".join(filter(str.isdigit, req.duration))) if req.duration else 45
 
-    plan = generate_elementary_lesson_plan(
+    # Resolve lesson type — recommend if not provided
+    lesson_type_recommendation = None
+    lesson_type = req.lesson_type
+    if not lesson_type:
+        lesson_type_recommendation = recommend_lesson_type(
+            topic_name=topic["topic_name"],
+            grade=req.grade,
+            subject=subject,
+            teacher_profile=req.teacher_profile,
+        )
+        lesson_type = lesson_type_recommendation.get("recommended_lesson_type", "activity")
+
+    topic_dir = OUTPUT_DIR / req.book / topic["topic_name"].replace(" ", "_").lower()
+    topic_dir.mkdir(parents=True, exist_ok=True)
+    images_dir = topic_dir / "images"
+
+    plan = await generate_elementary_lesson_plan(
         topic_name=topic["topic_name"],
         grade=req.grade,
         subject=subject,
@@ -502,13 +543,29 @@ async def api_generate_lesson_plan(req: LessonPlanRequest, db = Depends(get_admi
         student_profile=req.student_profile,
         learning_gaps=gaps,
         region=req.region or "",
+        lesson_type=lesson_type,
+        output_dir=str(images_dir),
     )
-    if isinstance(plan, dict) and req.region:
-        plan["region"] = req.region
+
+    if isinstance(plan, dict):
+        if req.region:
+            plan["region"] = req.region
+        # Inject live ai_teaching_notes from class mastery data
+        mastery_stats = q.get_class_mastery_stats(db)
+        at_risk = q.get_at_risk_students(db)
+        plan["ai_teaching_notes"] = build_ai_teaching_notes(
+            topic_name=topic["topic_name"],
+            grade=req.grade,
+            mastery_stats=mastery_stats,
+            at_risk_students=at_risk,
+        )
 
     db_topic = q.get_topic_by_index(db, req.book, req.chapter_idx, req.topic_idx)
     teacher  = q.get_default_teacher_db(db)
 
+    # Strip image_data before DB save to avoid large payloads
+    import copy
+    plan_for_db = _strip_image_data(copy.deepcopy(plan)) if isinstance(plan, dict) else plan
     lp = q.save_lesson_plan(
         db,
         teacher_id=teacher["id"] if teacher else None,
@@ -517,14 +574,15 @@ async def api_generate_lesson_plan(req: LessonPlanRequest, db = Depends(get_admi
         grade=req.grade,
         subject=subject,
         duration_minutes=duration_int,
-        plan_json=plan,
+        plan_json=plan_for_db,
     )
 
-    topic_dir = OUTPUT_DIR / req.book / topic["topic_name"].replace(" ", "_").lower()
-    topic_dir.mkdir(parents=True, exist_ok=True)
     (topic_dir / "lesson_plan.json").write_text(json.dumps(plan, indent=2), encoding="utf-8")
 
-    return {"plan": plan, "lesson_plan_id": lp["id"]}
+    response = {"plan": plan, "lesson_plan_id": lp["id"]}
+    if lesson_type_recommendation:
+        response["lesson_type_recommendation"] = lesson_type_recommendation
+    return response
 
 
 @app.post("/api/generate-elementary-lesson-plan")
@@ -538,7 +596,23 @@ async def api_generate_elementary_lesson_plan(req: ElementaryLessonRequest, db =
         except Exception:
             pass
 
-    plan = generate_elementary_lesson_plan(
+    # Resolve lesson type — recommend if not provided
+    lesson_type_recommendation = None
+    lesson_type = req.lesson_type
+    if not lesson_type:
+        lesson_type_recommendation = recommend_lesson_type(
+            topic_name=req.topic,
+            grade=req.grade,
+            subject=req.subject,
+            teacher_profile=req.teacher_profile,
+        )
+        lesson_type = lesson_type_recommendation.get("recommended_lesson_type", "activity")
+
+    topic_dir = OUTPUT_DIR / "elementary" / req.topic.replace(" ", "_").lower()
+    topic_dir.mkdir(parents=True, exist_ok=True)
+    images_dir = topic_dir / "images"
+
+    plan = await generate_elementary_lesson_plan(
         topic_name=req.topic,
         grade=req.grade,
         subject=req.subject,
@@ -547,11 +621,27 @@ async def api_generate_elementary_lesson_plan(req: ElementaryLessonRequest, db =
         teacher_profile=req.teacher_profile,
         student_profile=req.student_profile,
         learning_gaps=req.learning_gaps,
+        region=req.region or "",
+        lesson_type=lesson_type,
+        output_dir=str(images_dir),
     )
+
+    if isinstance(plan, dict):
+        # Inject live ai_teaching_notes from class mastery data
+        mastery_stats = q.get_class_mastery_stats(db)
+        at_risk = q.get_at_risk_students(db)
+        plan["ai_teaching_notes"] = build_ai_teaching_notes(
+            topic_name=req.topic,
+            grade=req.grade,
+            mastery_stats=mastery_stats,
+            at_risk_students=at_risk,
+        )
 
     db_topic = q.get_topic_by_index(db, req.book, req.chapter_idx, req.topic_idx) if req.book else None
     teacher  = q.get_default_teacher_db(db)
 
+    import copy
+    plan_for_db = _strip_image_data(copy.deepcopy(plan)) if isinstance(plan, dict) else plan
     lp = q.save_lesson_plan(
         db,
         teacher_id=teacher["id"] if teacher else None,
@@ -560,14 +650,36 @@ async def api_generate_elementary_lesson_plan(req: ElementaryLessonRequest, db =
         grade=req.grade,
         subject=req.subject,
         duration_minutes=req.duration,
-        plan_json=plan,
+        plan_json=plan_for_db,
     )
 
-    topic_dir = OUTPUT_DIR / "elementary" / req.topic.replace(" ", "_").lower()
-    topic_dir.mkdir(parents=True, exist_ok=True)
     (topic_dir / f"lesson_plan_grade{req.grade}.json").write_text(json.dumps(plan, indent=2), encoding="utf-8")
 
-    return {"plan": plan, "lesson_plan_id": lp["id"]}
+    response = {"plan": plan, "lesson_plan_id": lp["id"]}
+    if lesson_type_recommendation:
+        response["lesson_type_recommendation"] = lesson_type_recommendation
+    return response
+
+
+# ---------------------------------------------------------------------------
+# Lesson type recommendation
+# ---------------------------------------------------------------------------
+
+@app.post("/api/recommend-lesson-type")
+async def api_recommend_lesson_type(req: RecommendLessonTypeRequest):
+    """
+    Recommends the best lesson type (lecture | activity | storytelling) for a topic.
+    Returns confidence score, alternatives, and reasoning.
+    Does not generate a full lesson plan — use this to let the teacher preview and confirm
+    the lesson type before calling generate-lesson-plan.
+    """
+    recommendation = recommend_lesson_type(
+        topic_name=req.topic,
+        grade=req.grade,
+        subject=req.subject,
+        teacher_profile=req.teacher_profile,
+    )
+    return recommendation
 
 
 # ---------------------------------------------------------------------------

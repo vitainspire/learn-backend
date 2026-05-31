@@ -114,107 +114,30 @@ def generate_study_plan(
 
 def _normalize_lesson_plan(plan: dict) -> dict:
     """
-    Maps activity/storytelling JSON schemas → the shape the renderer expects.
-
-    activity prompt produces:
-      explore.student_instructions[]  → explore.student_prompt  (joined)
-      explore.guiding_questions[]     → explore.teacher_questions
-      elaborate.task_1                → elaborate.we_do.activity_description
-      elaborate.task_2                → elaborate.you_do.activity_description
-
-    storytelling prompt produces:
-      explore.scene / explore.student_prompt_scene → explore.student_prompt
-      elaborate.practice_scene / elaborate.challenge_scene
+    Light normalization pass on lesson plan output.
+    The three prompt schemas (lecture / activity / storytelling) now produce
+    structurally distinct JSON — this function only adds missing top-level
+    fields that downstream consumers expect, without reshaping the core phases.
     """
     if not isinstance(plan, dict):
         return plan
 
-    # ── Explore ────────────────────────────────────────────────────────────────
-    explore = plan.get("explore", {})
-    if isinstance(explore, dict):
-        # activity schema: student_instructions list → student_prompt string
-        if not explore.get("student_prompt") and explore.get("student_instructions"):
-            steps = explore["student_instructions"]
-            if isinstance(steps, list):
-                explore["student_prompt"] = " → ".join(str(s) for s in steps)
+    # Ensure lesson_type is present at the top level
+    if not plan.get("lesson_type"):
+        plan["lesson_type"] = "activity"
 
-        # storytelling schema
-        if not explore.get("student_prompt"):
-            for key in ("student_prompt_scene", "scene", "scene_prompt", "student_scene"):
-                if explore.get(key):
-                    explore["student_prompt"] = explore[key]
-                    break
-
-        # teacher_talk_track fallback
-        if not explore.get("teacher_talk_track"):
-            for key in ("teacher_actions", "narration", "teacher_narration"):
-                val = explore.get(key)
-                if val:
-                    explore["teacher_talk_track"] = " ".join(val) if isinstance(val, list) else str(val)
-                    break
-
-        # board_visual_plan fallback
-        if not explore.get("board_visual_plan"):
-            explore["board_visual_plan"] = explore.get("materials_setup") or explore.get("scene_setup") or ""
-
-        plan["explore"] = explore
-
-    # ── Elaborate ──────────────────────────────────────────────────────────────
-    elaborate = plan.get("elaborate", {})
-    if isinstance(elaborate, dict):
-        we_do  = elaborate.get("we_do")  or {}
-        you_do = elaborate.get("you_do") or {}
-
-        # activity schema: task_1 / task_2 → we_do / you_do
-        task_1 = elaborate.get("task_1") or elaborate.get("guided_task") or elaborate.get("practice_scene") or {}
-        task_2 = elaborate.get("task_2") or elaborate.get("challenge_task") or elaborate.get("challenge_scene") or {}
-
-        if isinstance(task_1, dict) and not we_do.get("activity_description"):
-            we_do["activity_description"] = (
-                task_1.get("what_students_do") or task_1.get("description") or
-                task_1.get("scene") or task_1.get("student_actions") or ""
-            )
-            we_do["teacher_talk_track"] = we_do.get("teacher_talk_track") or (
-                " ".join(elaborate.get("teacher_actions", [])) if isinstance(elaborate.get("teacher_actions"), list)
-                else str(elaborate.get("teacher_actions") or "")
-            )
-
-        if isinstance(task_2, dict) and not you_do.get("activity_description"):
-            you_do["activity_description"] = (
-                task_2.get("what_students_do") or task_2.get("description") or
-                task_2.get("scene") or task_2.get("student_actions") or ""
-            )
-            you_do["teacher_talk_track"] = you_do.get("teacher_talk_track") or ""
-
-        elaborate["we_do"]  = we_do
-        elaborate["you_do"] = you_do
-        plan["elaborate"]   = elaborate
-
-    # ── Explain ────────────────────────────────────────────────────────────────
-    explain = plan.get("explain", {})
-    if isinstance(explain, dict):
-        # activity prompt uses sub_segments list OR flat fields
-        if not explain.get("sub_segments"):
-            title = (
-                explain.get("connect_to_activity") or
-                explain.get("concept_explanation") or
-                explain.get("narration") or ""
-            )
-            body  = explain.get("concept_explanation") or explain.get("narration") or ""
-            if title or body:
-                explain["sub_segments"] = [{
-                    "segment_title":    title[:80] if title else "Core Concept",
-                    "teacher_talk_track": body or title,
-                    "duration_minutes": explain.get("duration_minutes", 8),
-                    "board_visual_plan": explain.get("board_visual_plan") or "",
-                    "examples": explain.get("examples") or [],
-                }]
-        plan["explain"] = explain
+    # Flatten lesson_info fields to top level for backwards-compatibility
+    # (some consumers read plan["grade"] directly)
+    info = plan.get("lesson_info", {})
+    if isinstance(info, dict):
+        for field in ("subject", "grade", "topic", "duration_minutes"):
+            if field not in plan and field in info:
+                plan[field] = info[field]
 
     return plan
 
 
-def generate_elementary_lesson_plan(
+async def generate_elementary_lesson_plan(
     topic_name: str,
     grade: str,
     subject: str,
@@ -225,6 +148,7 @@ def generate_elementary_lesson_plan(
     learning_gaps: list | None = None,
     region: str = "",
     lesson_type: str = "activity",
+    output_dir: str | None = None,
 ):
     """
     Generates a story-driven, energy-managed lesson plan for Grades 1–5.
@@ -295,7 +219,14 @@ def generate_elementary_lesson_plan(
         config={"max_output_tokens": 16384, "temperature": 0.5},
         model=_get_elementary_model(),
     )
-    return _normalize_lesson_plan(raw)
+    plan = _normalize_lesson_plan(raw)
+
+    if output_dir and isinstance(plan, dict):
+        from services.image_service import enrich_lesson_plan_with_images
+        from pathlib import Path
+        plan = await enrich_lesson_plan_with_images(plan, Path(output_dir))
+
+    return plan
 
 
 def _validate_and_fix_worksheet(worksheet: dict) -> dict:
@@ -433,6 +364,141 @@ async def generate_worksheet(
 
 if __name__ == "__main__":
     print("AI Co-Teacher Services Loaded.")
+
+
+def recommend_lesson_type(
+    topic_name: str,
+    grade: str,
+    subject: str,
+    teacher_profile: dict | None = None,
+) -> dict:
+    """
+    Recommends the best lesson type (lecture | activity | storytelling) for a topic.
+    Returns: { recommended_lesson_type, confidence, alternatives, reasoning }
+    Teacher profile teaching_style overrides heuristics when provided.
+    """
+    teacher_style_note = ""
+    if teacher_profile:
+        style = teacher_profile.get("teaching_style", "")
+        if style in ("lecture", "activity", "storytelling"):
+            teacher_style_note = f"\nTeacher's preferred style: {style}. Weight this preference heavily in your recommendation."
+
+    prompt = f"""You are an expert elementary education consultant.
+Recommend the best lesson type for teaching this specific topic to Grade {grade} students.
+
+Topic: {topic_name}
+Subject: {subject}
+Grade: {grade}{teacher_style_note}
+
+The three lesson types and when each works best:
+
+"activity"
+  Use when: Students can physically touch, observe, sort, measure, build, or experiment with something related to the topic.
+  Signs this fits: The topic involves a process, a physical object, or a pattern students can discover themselves.
+  Example signals: classification, measurement, construction, observation, comparison, cause-and-effect with tangible objects.
+
+"storytelling"
+  Use when: The concept is best understood through empathy, imagination, or a character's experience rather than direct instruction or hands-on work.
+  Signs this fits: The topic involves values, emotions, natural phenomena told as a journey, social situations, or concepts that young children (Grade 1–3) grasp better through narrative.
+  Example signals: how/why something happens in nature, moral or ethical concepts, historical narratives, concepts hard to demonstrate physically but easy to feel through a story.
+
+"lecture"
+  Use when: The topic requires precise definitions, rules, or abstract relationships that must be explained clearly before students can do anything with them.
+  Signs this fits: The topic is definitional, rule-based, procedural, or has technical vocabulary that needs to be established first.
+  Example signals: grammar rules, mathematical operations with exact procedures, scientific terminology, formal definitions.
+
+Reasoning process — think through these four questions about the topic:
+1. Can students physically interact with or observe this concept? → favours activity
+2. Can this concept be experienced through a character's story or journey? → favours storytelling
+3. Does this concept require a clear definition or rule before students can engage with it? → favours lecture
+4. Are students in Grade 1–3? → raise storytelling and activity scores; lower lecture score
+
+Teacher preference overrides all reasoning if provided.
+
+Return a JSON object ONLY — no markdown, no prose:
+{{
+  "recommended_lesson_type": "lecture | activity | storytelling",
+  "confidence": 0.0,
+  "alternatives": [
+    {{"type": "second best type", "score": 0.0}},
+    {{"type": "third type", "score": 0.0}}
+  ],
+  "reasoning": "one sentence explaining what it is about THIS specific topic that makes this lesson type the best fit"
+}}"""
+
+    raw = safe_generate_content(
+        prompt,
+        is_json=True,
+        config={"max_output_tokens": 512, "temperature": 0.2},
+        tier="fast",
+    )
+    if not isinstance(raw, dict) or "recommended_lesson_type" not in raw:
+        return {
+            "recommended_lesson_type": "activity",
+            "confidence": 0.7,
+            "alternatives": [
+                {"type": "storytelling", "score": 0.6},
+                {"type": "lecture", "score": 0.4},
+            ],
+            "reasoning": "Default recommendation — activity works well for most elementary topics.",
+        }
+    return raw
+
+
+def build_ai_teaching_notes(
+    topic_name: str,
+    grade: str,
+    mastery_stats: list,
+    at_risk_students: list,
+) -> dict:
+    """
+    Builds ai_teaching_notes from real class mastery data.
+    Pure logic — no AI call. Pulls live student data into the lesson plan.
+
+    mastery_stats: list of {topic, avg_mastery, students_struggling}
+    at_risk_students: list of {student_id, name, avg_mastery, frustration}
+    """
+    low_mastery_topics = [
+        s["topic"] for s in mastery_stats
+        if s.get("avg_mastery", 1.0) < 0.6
+    ][:3]
+
+    avg_class_mastery = (
+        sum(s.get("avg_mastery", 0) for s in mastery_stats) / len(mastery_stats)
+        if mastery_stats else None
+    )
+
+    if avg_class_mastery is None:
+        expected_difficulty = "Unknown — no prior data available"
+        suggested_pacing = "Start at moderate pace; run a quick warm-up check to calibrate."
+    elif avg_class_mastery >= 0.75:
+        expected_difficulty = "Low"
+        suggested_pacing = "Class is well-prepared. Move at a normal pace and lean into challenge activities."
+    elif avg_class_mastery >= 0.55:
+        expected_difficulty = "Medium"
+        suggested_pacing = "Moderate pace. Pause after the Explain phase to check understanding before Elaborate."
+    else:
+        expected_difficulty = "High"
+        suggested_pacing = "Slow pace. Use concrete objects and short segments. Build in extra time for misconceptions."
+
+    at_risk_labels = []
+    for s in at_risk_students[:5]:
+        name = s.get("name") or s.get("student_id", "Unknown")
+        mastery = s.get("avg_mastery")
+        frustrated = (s.get("frustration") or 0) > 0.6
+        label = name
+        if mastery is not None:
+            label += f" (mastery: {mastery:.0%})"
+        if frustrated:
+            label += " — high frustration"
+        at_risk_labels.append(label)
+
+    return {
+        "students_at_risk": at_risk_labels,
+        "topics_to_reinforce": low_mastery_topics,
+        "expected_difficulty": expected_difficulty,
+        "suggested_pacing": suggested_pacing,
+    }
 
 
 def generate_recovery_worksheet(

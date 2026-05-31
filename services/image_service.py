@@ -469,6 +469,78 @@ async def generate_image(prompt: str, save_path: Path) -> bool:
     return False
 
 
+def _collect_image_prompts(obj, path: str, results: list):
+    """
+    Recursively walk a lesson plan dict and collect every field whose name
+    ends with 'image_prompt' that contains a non-empty string.
+    Appends (parent_dict, field_name, dot_path) to `results`.
+    """
+    if isinstance(obj, dict):
+        for key, val in obj.items():
+            child_path = f"{path}.{key}" if path else key
+            if key.endswith("image_prompt") and isinstance(val, str) and val.strip():
+                results.append((obj, key, child_path))
+            else:
+                _collect_image_prompts(val, child_path, results)
+    elif isinstance(obj, list):
+        for i, item in enumerate(obj):
+            _collect_image_prompts(item, f"{path}[{i}]", results)
+
+
+async def enrich_lesson_plan_with_images(plan: dict, output_dir: Path) -> dict:
+    """
+    Find every ``*image_prompt`` field in the lesson plan, generate an image
+    for it, and write ``image_path`` (web path) and ``image_data`` (base64)
+    as sibling fields in the same dict.
+
+    Works for any lesson type — uses recursive field discovery, not hardcoded paths.
+    Never raises — failures are logged and the plan is always returned intact.
+    """
+    output_dir = Path(output_dir)
+    output_dir.mkdir(parents=True, exist_ok=True)
+    project_root = Path(__file__).resolve().parent.parent
+
+    tasks: list[tuple[dict, str, str]] = []
+    _collect_image_prompts(plan, "", tasks)
+
+    if not tasks:
+        print("[IMAGE] No image_prompt fields found in lesson plan.")
+        return plan
+
+    print(f"[IMAGE] Lesson plan: generating {len(tasks)} image(s) ...")
+
+    async def _process(idx: int, parent: dict, field: str, dot_path: str):
+        prompt = parent[field].strip()
+        # Build a safe filename from the dot-path
+        safe = dot_path.replace(".", "_").replace("[", "_").replace("]", "").strip("_")
+        save_path = output_dir / f"lesson_{safe}.png"
+
+        # Stagger requests — 2 s apart
+        await asyncio.sleep(idx * 2.0)
+
+        success = await generate_image(prompt, save_path)
+        if success:
+            try:
+                try:
+                    rel = save_path.relative_to(project_root)
+                    web_path = "/" + str(rel).replace("\\", "/")
+                except ValueError:
+                    web_path = "/" + save_path.name
+                # Derive the sibling key prefix (strip _prompt suffix)
+                base_key = field[: -len("image_prompt")]          # e.g. "show_" or ""
+                parent[f"{base_key}image_path"] = web_path
+                with open(save_path, "rb") as fh:
+                    parent[f"{base_key}image_data"] = base64.b64encode(fh.read()).decode()
+                print(f"[IMAGE] OK  {dot_path} -> {save_path.name}")
+            except Exception as e:
+                print(f"[IMAGE] Path error for {dot_path}: {e}")
+        else:
+            print(f"[IMAGE] FAIL {dot_path}")
+
+    await asyncio.gather(*(_process(i, p, f, dp) for i, (p, f, dp) in enumerate(tasks)))
+    return plan
+
+
 async def enrich_worksheet_with_images(worksheet: dict, output_dir: Path) -> dict:
     """
     For every question that carries an ``image_prompt`` field, generate an

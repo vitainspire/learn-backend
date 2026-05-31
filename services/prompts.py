@@ -900,100 +900,149 @@ CURRICULUM CONTEXT:
 Return ONLY the JSON object. No markdown. No extra text. Never truncate."""
 
     # ------------------------------------------------------------------ #
-    # LECTURE — direct instruction, board work, scripted explanation      #
+    # LECTURE — direct instruction, concept explanation, guided practice  #
     # ------------------------------------------------------------------ #
     if lesson_type == "lecture":
         return f"""Create a 5E LECTURE lesson plan for: {topic_name}
 
 {common_header}
 
-This is a LECTURE-style lesson. The teacher is the primary explainer.
-Content is delivered through clear verbal instruction, board demonstrations, and worked examples.
-Students observe, take notes, answer targeted questions, and practise with teacher guidance.
-There are NO hands-on experiments and NO story elements.
+LECTURE LESSON — the 5E structure is FIXED. Every phase is present.
+The content inside each phase follows this exact pattern:
+  ENGAGE   → Teacher shows something + asks questions. Students share ideas.
+  EXPLORE  → Teacher shows animation / video / image. Students observe and discuss.
+  EXPLAIN  → Main teaching: teacher explains each concept, uses visuals, asks guided questions.
+  ELABORATE→ Students complete a practice activity. Advanced challenge for fast finishers.
+  EVALUATE → 5 MCQs + 2 short-answer questions + exit ticket.
 
 Return a single valid JSON object with EXACTLY this structure:
 
 {{
   "lesson_title": "string",
   "lesson_type": "lecture",
-  "grade": "{grade}",
-  "subject": "{subject}",
-  "duration_minutes": {duration},
-  "materials_needed": ["whiteboard or blackboard", "chalk or marker", "any other needed item"],
-
-  "underlying_concept": "2–3 sentences: what students should truly understand",
+  "lesson_info": {{
+    "subject": "{subject}",
+    "grade": "{grade}",
+    "topic": "{topic_name}",
+    "duration_minutes": {duration},
+    "learning_outcomes": [
+      "Students will be able to [Bloom's verb] [concept] — observable and measurable",
+      "second learning outcome"
+    ]
+  }},
 
   "engage": {{
+    "goal": "Spark curiosity",
     "duration_minutes": 5,
-    "hook": "a surprising fact, a real-world question, or a common misconception the teacher states aloud to grab attention",
-    "prior_knowledge_question": "exact question the teacher asks to find out what students already know",
-    "teacher_actions": ["exact words and actions — verbal, no props"],
-    "student_actions": ["students respond verbally or raise hands"],
-    "teacher_questions": ["exact question 1", "exact question 2"]
+    "teacher": {{
+      "show": "exactly what the teacher shows — a picture, image, or real object relevant to {topic_name}",
+      "show_image_prompt": "describe a clear, child-friendly illustration of the thing being shown — e.g. 'a dramatic rain cloud above a lake with sun shining' — used to generate the actual image",
+      "questions": [
+        "exact question 1 the teacher asks to activate prior knowledge",
+        "exact question 2 to provoke curiosity about {topic_name}"
+      ]
+    }},
+    "students": {{
+      "actions": ["Share ideas verbally", "Raise hands to respond", "Think-pair-share with a partner"]
+    }}
   }},
 
   "explore": {{
-    "duration_minutes": 10,
-    "demonstration_title": "short name of what the teacher demonstrates on the board",
-    "board_work": "exactly what the teacher writes or draws on the board step by step",
-    "worked_example": {{
-      "problem": "the example problem or scenario",
-      "solution": "the correct answer",
-      "think_aloud": "exact narration of the teacher's reasoning while solving — model every mental step"
+    "goal": "Observe before learning",
+    "duration_minutes": 8,
+    "teacher": {{
+      "show": "what to show — a short animation, video clip, or live demonstration relevant to {topic_name}",
+      "show_image_prompt": "describe an illustration of what is being shown in the exploration — e.g. 'animated diagram of clouds forming over an ocean'"
     }},
-    "teacher_actions": ["step-by-step teacher actions — demonstrate, write, narrate"],
-    "student_actions": ["students observe, copy board work, answer targeted questions"],
-    "comprehension_check": "one quick question mid-demonstration to verify students are following"
+    "students": {{
+      "actions": [
+        "Watch and observe carefully",
+        "Discuss with a partner: what did you notice?",
+        "Share one observation with the class"
+      ]
+    }}
   }},
 
   "explain": {{
-    "duration_minutes": 8,
-    "teacher_script": "full spoken explanation — write every sentence the teacher says to define, clarify, and connect the concept",
-    "board_summary": "the key definition or rule written on the board — exact text",
-    "teacher_actions": ["exact actions including what to write, underline, or circle on the board"],
-    "student_actions": ["students write the definition in their notebooks, repeat key terms"],
-    "examples": ["concrete example 1 the teacher gives verbally", "concrete example 2"],
-    "reasoning_question": "one 'why does this work?' question the teacher asks the class",
-    "misconceptions": [
-      {{"wrong_idea": "exact wrong statement a student might make", "correction": "exact teacher rebuttal"}}
-    ]
+    "goal": "Main teaching section",
+    "duration_minutes": 15,
+    "teacher": {{
+      "concepts": [
+        {{
+          "name": "first key concept in {topic_name}",
+          "explanation": "exact teacher explanation — every sentence the teacher says to define and clarify this concept",
+          "image_prompt": "a simple labelled diagram showing this concept — e.g. 'diagram of water evaporating from a lake surface with upward arrows labelled evaporation'"
+        }},
+        {{
+          "name": "second key concept",
+          "explanation": "exact teacher explanation",
+          "image_prompt": "a simple labelled diagram showing this second concept"
+        }}
+      ],
+      "visuals": [
+        "describe the diagram or board drawing the teacher uses",
+        "describe the PPT slide or visual aid"
+      ],
+      "guided_questions": [
+        "exact guided question 1 — checks understanding mid-explanation",
+        "exact guided question 2 — pushes deeper thinking"
+      ]
+    }}
   }},
 
   "elaborate": {{
+    "goal": "Apply understanding",
     "duration_minutes": 12,
-    "guided_problem_1": {{
-      "problem": "problem the teacher solves WITH the class — easier",
-      "teacher_actions": ["teacher narrates every step aloud while writing on the board"],
-      "student_actions": ["students solve simultaneously on slates or paper, then compare"]
+    "activity": {{
+      "description": "what students complete — e.g. a worksheet, labelling task, or problem set about {topic_name}",
+      "instructions": [
+        "step 1 — what students do first",
+        "step 2 — what students do next"
+      ]
     }},
-    "guided_problem_2": {{
-      "problem": "slightly harder problem — teacher prompts students to try first, then corrects",
-      "teacher_actions": ["teacher gives wait time, cold-calls, then models the correct method"],
-      "student_actions": ["students attempt independently, then watch the corrected solution"]
-    }},
-    "support_prompt": "exact words the teacher says when a student is stuck or gives a wrong answer"
+    "advanced_challenge": "harder task for fast finishers — requires applying {topic_name} to a new situation or explaining why"
   }},
 
   "evaluate": {{
+    "goal": "Check for understanding",
     "duration_minutes": 5,
-    "exit_task": "2–3 problems students solve independently on a slip of paper or slate — no help from teacher",
-    "exit_problems": [
-      {{"question": "problem 1", "answer": "correct answer"}},
-      {{"question": "problem 2", "answer": "correct answer"}}
+    "mcqs": [
+      {{"question": "MCQ 1 about {topic_name}", "options": ["A) ...", "B) ...", "C) ...", "D) ..."], "answer": "A"}},
+      {{"question": "MCQ 2", "options": ["A) ...", "B) ...", "C) ...", "D) ..."], "answer": "B"}},
+      {{"question": "MCQ 3", "options": ["A) ...", "B) ...", "C) ...", "D) ..."], "answer": "C"}},
+      {{"question": "MCQ 4", "options": ["A) ...", "B) ...", "C) ...", "D) ..."], "answer": "A"}},
+      {{"question": "MCQ 5", "options": ["A) ...", "B) ...", "C) ...", "D) ..."], "answer": "D"}}
     ],
-    "teacher_actions": ["circulate silently, observe, note which students struggle"],
-    "questions": [
-      {{"type": "concept", "question": "State the rule for [topic] in one sentence."}},
-      {{"type": "example", "question": "a solve-this problem"}},
-      {{"type": "reasoning", "question": "Why does [concept] work this way?"}}
+    "short_answers": [
+      {{"question": "short answer question 1 — requires 1–2 sentences", "model_answer": "expected answer"}},
+      {{"question": "short answer question 2", "model_answer": "expected answer"}}
+    ],
+    "exit_ticket": "one thing students write or say before leaving — e.g. 'Write one sentence explaining [concept]'"
+  }},
+
+  "teacher_notes": {{
+    "common_misconceptions": [
+      "exact wrong idea Grade {grade} students have about {topic_name}",
+      "a second common misconception at this grade"
+    ],
+    "teaching_tips": [
+      "a concrete, immediately usable tip for teaching {topic_name} to Grade {grade}",
+      "a second practical tip — pacing or engagement"
     ]
   }},
 
-  "parent_bridge": {{
-    "dismissal_line": "one sentence the teacher says at end of day",
-    "dinner_question": "one question parents ask their child tonight",
-    "home_activity": "one 2-minute activity families can do together"
+  "common_student_mistakes": [
+    "exact wrong statement Grade {grade} students make about {topic_name}",
+    "a second common mistake at this grade level"
+  ],
+  "possible_student_questions": [
+    "a question a student is likely to ask during this lesson",
+    "a 'why' or 'what if' follow-up question"
+  ],
+  "differentiated_learning": {{
+    "struggling_students": "specific adaptation — shorter steps, more examples, peer support",
+    "average_students": "standard approach with comprehension checks at key moments",
+    "advanced_students": "extension — harder problem or real-world application"
   }},
 
   "regional_vocabulary": []
@@ -1003,117 +1052,137 @@ Return a single valid JSON object with EXACTLY this structure:
 """
 
     # ------------------------------------------------------------------ #
-    # STORYTELLING — narrative arc, concept embedded in story events      #
+    # STORYTELLING — character-driven narrative, story-to-concept mapping #
     # ------------------------------------------------------------------ #
     if lesson_type == "storytelling":
         return f"""Create a 5E STORYTELLING lesson plan for: {topic_name}
 
 {common_header}
 
-This is a STORYTELLING-style lesson. The concept is taught through a narrative arc.
-A character faces a problem that the concept solves. Students live inside the story,
-make predictions at each pause, feel the discovery moment, and only then connect the
-story back to real academic language.
-There are NO hands-on experiments and NO direct lecture segments.
+STORYTELLING LESSON — the 5E structure is FIXED. Every phase is present.
+The content inside each phase follows this exact pattern:
+  ENGAGE   → Teacher introduces the character. Students listen.
+  EXPLORE  → Story begins. Pause questions. Students predict what happens next.
+  EXPLAIN  → Teacher maps story events to real concepts. Vocabulary introduced.
+  ELABORATE→ Students choose one option: draw / act out / create a new ending.
+  EVALUATE → Retelling activity + picture quiz + exit ticket.
 
 Return a single valid JSON object with EXACTLY this structure:
 
 {{
   "lesson_title": "string",
   "lesson_type": "storytelling",
-  "grade": "{grade}",
-  "subject": "{subject}",
-  "duration_minutes": {duration},
-  "materials_needed": ["any props, illustrations, or objects used to bring the story to life"],
-
-  "underlying_concept": "2–3 sentences: what students should truly understand",
-
-  "story_setup": {{
-    "characters": [
-      {{"name": "character name", "role": "how this character embodies or struggles with the concept"}},
-      {{"name": "second character or setting", "role": "narrative function"}}
-    ],
-    "story_blurb": "2–3 sentence book-blurb style description of the story arc — no spoilers"
+  "lesson_info": {{
+    "subject": "{subject}",
+    "grade": "{grade}",
+    "topic": "{topic_name}",
+    "duration_minutes": {duration},
+    "learning_outcomes": [
+      "Students will be able to [Bloom's verb] [concept] through the story",
+      "second learning outcome"
+    ]
   }},
 
+  "characters": [
+    {{
+      "name": "main character name — relatable, age-appropriate",
+      "role": "how this character experiences the concept in the story",
+      "image_prompt": "a cute, child-friendly cartoon illustration of this character — describe their appearance, expression, and setting in one sentence"
+    }},
+    {{
+      "name": "second character or element (e.g. Sun, Wind, Friend)",
+      "role": "narrative function — what this character causes or represents",
+      "image_prompt": "a simple cartoon illustration of this second character or element"
+    }}
+  ],
+
   "engage": {{
+    "goal": "Introduce the character and hook students into the story",
     "duration_minutes": 5,
-    "hook": "the vivid opening lines of the story the teacher reads or tells aloud — introduce the character and the problem",
-    "story_opening": "exact story text for the teacher to read word-for-word: setting, character introduction, conflict",
-    "teacher_actions": ["read with expression", "pause dramatically at the right moment", "make eye contact"],
-    "student_actions": ["listen, visualise the scene, raise hands to predict"],
-    "teacher_questions": ["What do you think will happen next?", "What would YOU do if you were [character]?"]
+    "teacher": {{
+      "introduction": "exact words the teacher says to introduce the character — e.g. 'Today we are going to meet [Name], a [description]...'"
+    }},
+    "students": {{
+      "actions": ["Listen attentively", "Look at the character illustration if shown", "Think about what might happen to the character"]
+    }}
   }},
 
   "explore": {{
+    "goal": "Story unfolds — concept appears through story events, not named yet",
     "duration_minutes": 10,
-    "story_arc_title": "name of the main story arc — the events where the concept appears in action",
-    "scenes": [
-      {{
-        "scene_title": "short scene name",
-        "narration": "exact story text — the concept is demonstrated through events, NOT named yet",
-        "concept_shown": "describe how this scene embodies the concept without stating it explicitly",
-        "pause_and_ask": "exact question to ask students before moving to the next scene"
-      }},
-      {{
-        "scene_title": "second scene — conflict deepens or pattern becomes clearer",
-        "narration": "exact story text",
-        "concept_shown": "what aspect of the concept this scene reveals",
-        "pause_and_ask": "exact question"
-      }}
+    "story_opening": "2–3 sentence story opening the teacher reads aloud — introduce setting and character's situation",
+    "story_continues": "3–4 sentences of rising action — the concept appears through what happens to the character, but is NOT named yet",
+    "scene_image_prompt": "an illustration of the key scene in the story — describe what is happening visually in one sentence, e.g. 'a tiny water droplet floating upward from a sparkling pond toward white clouds'",
+    "pause_questions": [
+      "What do you think is happening to [character]?",
+      "What do you think will happen next?"
     ],
-    "teacher_actions": ["narrate with pacing and expression", "pause at each scene break", "accept student predictions without confirming"],
-    "student_actions": ["make predictions", "discuss with a partner at pause points", "notice patterns in the story events"],
-    "guiding_questions": ["What pattern do you notice?", "Why do you think that keeps happening to [character]?"]
+    "students": {{
+      "actions": ["Listen to the story", "Predict what happens next", "Discuss with a partner at the pause"]
+    }}
   }},
 
   "explain": {{
+    "goal": "Link story events to real concepts — the aha moment",
     "duration_minutes": 8,
-    "revelation_scene": "the story moment when the character has the aha — exact narration of the breakthrough",
-    "bridge_script": "exact words the teacher says AFTER the revelation: 'What [character] just figured out has a real name — it is called...' Connect every story event to the concept.",
-    "concept_explanation": "clear, simple explanation using the story as the anchor",
-    "teacher_actions": ["narrate the revelation", "then pause the story and name the concept", "point back to each scene as evidence"],
-    "student_actions": ["restate in their own words what the character discovered", "write the concept name and one-line definition"],
-    "examples": ["story event as example 1", "a real-life parallel as example 2"],
-    "reasoning_question": "How did the story show us that [concept] works this way?",
-    "misconceptions": [
-      {{"wrong_idea": "what students often misread from the story", "correction": "exact teacher response using the story as evidence"}}
+    "teacher_bridge": "exact words linking the story to the concept — 'What just happened to [character] has a real name. It is called...'",
+    "story_concept_mapping": [
+      {{"story_event": "what happened in the story", "concept": "real concept name this event demonstrates"}},
+      {{"story_event": "second story event", "concept": "second concept"}},
+      {{"story_event": "third story event if needed", "concept": "third concept"}}
+    ],
+    "vocabulary": [
+      "key concept word 1",
+      "key concept word 2",
+      "key concept word 3"
     ]
   }},
 
   "elaborate": {{
+    "goal": "Students respond to the story in their own way",
     "duration_minutes": 10,
-    "teacher_actions": ["set up both tasks, keep students inside the story world"],
-    "student_actions": ["complete tasks using the story context as the frame"],
-    "task_1": {{
-      "label": "Story Retell",
-      "description": "pairs retell the story and identify the exact moment the concept appeared — easier, builds confidence",
-      "prompt": "Retell the story to your partner. Point to the exact scene where [character] used [concept]."
-    }},
-    "task_2": {{
-      "label": "Story Extension",
-      "description": "students solve a new problem inside the story world — harder, requires applying the concept",
-      "prompt": "exact challenge prompt set inside the story: '[Character] now faces [new problem]. Using what you know, what should [character] do?'"
-    }},
-    "incorrect_example": {{"example": "a wrong interpretation of the story or concept", "prompt": "What is wrong here? Use the story to explain."}}
+    "choice_activity": [
+      {{"option": "A", "title": "Draw It", "description": "Students draw the character's journey, labelling each stage with the concept name"}},
+      {{"option": "B", "title": "Act It Out", "description": "Students act out the story in pairs or small groups, playing the characters"}},
+      {{"option": "C", "title": "New Ending", "description": "Students write or draw a new ending where the character uses the concept in a different situation"}}
+    ]
   }},
 
   "evaluate": {{
-    "duration_minutes": 5,
-    "story_closing": "final lines of the story — resolution shows the concept working, ties back to the opening problem",
-    "teacher_actions": ["read the closing", "ask the exit questions"],
-    "questions": [
-      {{"type": "concept", "question": "Can you explain [topic] using something that happened in the story?"}},
-      {{"type": "connection", "question": "Where in your real life have you seen what [character] discovered?"}},
-      {{"type": "reasoning", "question": "If [character] had NOT known [concept], what would have gone wrong?"}}
-    ],
-    "student_takeaway": "students complete aloud or in writing: 'The story taught me that ___'"
+    "goal": "Check understanding through story recall and sequencing",
+    "duration_minutes": 7,
+    "retelling_activity": "instruction for retelling — e.g. 'Tell the story in order to your partner. Use the concept words.'",
+    "picture_quiz": "instruction for sequencing images — e.g. 'Arrange the story images in the correct order and label each with the concept name'",
+    "exit_ticket": "simple task — e.g. 'Draw your favourite part of the story and write one sentence explaining what [character] learned'"
   }},
 
-  "parent_bridge": {{
-    "dismissal_line": "one sentence the teacher says at end of day",
-    "dinner_question": "one story-related question parents ask their child tonight",
-    "home_activity": "families retell the story together or act out the concept as characters"
+  "teacher_notes": {{
+    "voice_modulation_tips": [
+      "specific tip for reading this story aloud — e.g. slow down at the key moment",
+      "how to use your voice to signal the aha moment"
+    ],
+    "places_to_pause": [
+      "exact moment in the story to pause and ask students to predict",
+      "second pause point"
+    ],
+    "questions_to_ask": [
+      "a discussion question for the class during the story",
+      "a question to ask after the explain phase"
+    ]
+  }},
+
+  "common_student_mistakes": [
+    "exact wrong idea Grade {grade} students have about {topic_name}",
+    "a second common misconception"
+  ],
+  "possible_student_questions": [
+    "a question a student is likely to ask about the story or concept",
+    "a 'why' or 'what if' follow-up question"
+  ],
+  "differentiated_learning": {{
+    "struggling_students": "specific adaptation for the story — shorter retelling, picture-only option, sentence starters",
+    "average_students": "standard approach — all three choice options available",
+    "advanced_students": "extension — write a sequel, or explain the concept to a younger student"
   }},
 
   "regional_vocabulary": []
@@ -1123,95 +1192,144 @@ Return a single valid JSON object with EXACTLY this structure:
 """
 
     # ------------------------------------------------------------------ #
-    # ACTIVITY — hands-on student discovery, manipulation, group work     #
+    # ACTIVITY — hands-on group work, teacher facilitates only            #
     # ------------------------------------------------------------------ #
     return f"""Create a 5E ACTIVITY-based lesson plan for: {topic_name}
 
 {common_header}
 
-This is an ACTIVITY-style lesson. Students learn by DOING.
-Every phase centres on students manipulating materials, experimenting, or applying the concept physically.
-The teacher facilitates and asks guiding questions — never lectures or tells students the answer during Explore.
-There are NO extended teacher explanations and NO story elements.
+ACTIVITY LESSON — the 5E structure is FIXED. Every phase is present.
+The content inside each phase follows this exact pattern:
+  ENGAGE   → Teacher brings a real object or does a quick demo. Students observe.
+  EXPLORE  → Students work in groups. Teacher facilitates ONLY — never gives the answer.
+  EXPLAIN  → Teacher discusses what students found and names the concept.
+  ELABORATE→ A named classroom game + differentiated cards (easy and challenge).
+  EVALUATE → Label-the-diagram worksheet + oral questions + exit ticket.
 
 Return a single valid JSON object with EXACTLY this structure:
 
 {{
   "lesson_title": "string",
   "lesson_type": "activity",
-  "grade": "{grade}",
-  "subject": "{subject}",
-  "duration_minutes": {duration},
-  "materials_needed": ["every physical item students or teacher will touch — be specific"],
+  "lesson_info": {{
+    "subject": "{subject}",
+    "grade": "{grade}",
+    "topic": "{topic_name}",
+    "duration_minutes": {duration},
+    "learning_outcomes": [
+      "Students will be able to [Bloom's verb] [concept] through hands-on exploration",
+      "second learning outcome"
+    ]
+  }},
 
-  "underlying_concept": "2–3 sentences: what students should truly understand",
+  "materials_needed": [
+    "every physical item students or the teacher will use — be specific (e.g. 'one real plant per group', 'label cards', 'worksheets')"
+  ],
 
   "engage": {{
+    "goal": "Hook students with a real object or demonstration",
     "duration_minutes": 5,
-    "hook": "a physical object shown, a surprising demo done, or a 'what do you think will happen?' moment — something students can touch or observe",
-    "teacher_actions": ["show the object or run the demo", "ask the hook question without revealing the answer"],
-    "student_actions": ["touch, observe, predict, discuss with a partner"],
-    "teacher_questions": ["What do you notice?", "What do you think will happen if we...?"]
+    "teacher": {{
+      "action": "exactly what the teacher brings or does — e.g. 'Bring a real plant to the front of the class'",
+      "image_prompt": "a clear cartoon illustration of the real object being shown — e.g. 'a potted plant with clearly visible roots, stem, leaves and flower, flat illustration style'",
+      "question": "exact question to ask students — e.g. 'What parts can you identify on this plant?'"
+    }},
+    "students": {{
+      "actions": ["Observe the object carefully", "Share what they notice", "Make a prediction"]
+    }}
   }},
 
   "explore": {{
+    "goal": "Students discover the concept through hands-on group work",
     "duration_minutes": 12,
-    "activity_title": "short descriptive name of the hands-on activity",
-    "grouping": "individual / pairs / groups of 3 — specify and why",
-    "materials_setup": "exactly how the teacher arranges materials before students begin",
-    "student_instructions": ["step 1 — what students physically do", "step 2", "step 3"],
-    "teacher_actions": ["circulate and observe", "ask guiding questions — do NOT give the answer or model the correct result"],
-    "student_actions": ["observable physical actions — sort, measure, build, record, test"],
-    "guiding_questions": ["What do you notice happening?", "Why do you think that is?", "What would change if you tried...?"],
-    "do_not_tell": "the exact thing the teacher must NOT say — students must discover it through doing"
+    "main_activity": {{
+      "grouping": "groups of 3–4 — specify size and why",
+      "student_tasks": [
+        "task 1 — what students physically do first",
+        "task 2 — what students do next",
+        "task 3 — what students record or produce"
+      ],
+      "teacher_role": "Facilitate only — circulate, ask guiding questions, do NOT give the answer or model the result",
+      "guiding_questions": [
+        "What do you notice?",
+        "Why do you think that happened?",
+        "What would change if you tried...?"
+      ],
+      "materials": ["item 1 per group", "item 2 per group"],
+      "image_prompt": "an illustration of children working in groups doing the hands-on activity — describe the scene in one sentence"
+    }}
   }},
 
   "explain": {{
+    "goal": "Name the concept using what students found",
     "duration_minutes": 8,
-    "connect_to_activity": "exact words the teacher says to link what students just did to the concept: 'When you did [action], you were actually seeing [concept] in action...'",
-    "concept_explanation": "clear, simple explanation anchored to what students experienced",
-    "teacher_actions": ["name the concept only AFTER students share their observations", "use their words before introducing academic vocabulary"],
-    "student_actions": ["share observations first", "then write the concept name and a one-line definition in their own words"],
-    "examples": ["the activity result as example 1", "a different real-life example of the same concept"],
-    "reasoning_question": "one 'why did that happen?' question connecting the physical result to the concept",
-    "misconceptions": [
-      {{"wrong_idea": "common wrong conclusion students draw from the activity", "correction": "exact teacher response pointing back to what they observed"}}
-    ]
+    "teacher": {{
+      "actions": [
+        "Ask groups to share what they observed before naming the concept",
+        "Explain the concept using the students' own words from the activity",
+        "Write the concept name and a one-line definition on the board"
+      ]
+    }},
+    "students": {{
+      "actions": [
+        "Share observations with the class",
+        "Write the concept name and definition in their notebooks"
+      ]
+    }}
   }},
 
   "elaborate": {{
+    "goal": "Apply through a game and differentiated challenge cards",
     "duration_minutes": 10,
-    "teacher_actions": ["set up task 1 materials", "give clear instructions", "transition to task 2"],
-    "student_actions": ["complete each task hands-on"],
-    "task_1": {{
-      "label": "Guided Application",
-      "description": "easier hands-on task — students apply the concept in a structured, guided context",
-      "what_students_do": "exact physical action or product"
+    "game": {{
+      "title": "a fun, specific game name related to {topic_name} — e.g. 'Plant Detective', 'Water Cycle Relay'",
+      "description": "how the game works — 2–3 sentences",
+      "instructions": ["step 1", "step 2", "step 3"],
+      "image_prompt": "a cheerful illustration showing children playing this game — describe the scene in one sentence"
     }},
-    "task_2": {{
-      "label": "Open Challenge",
-      "description": "harder open-ended task — students apply the concept to a new, unguided scenario",
-      "what_students_do": "exact physical action, creation, or problem to solve",
-      "extension_prompt": "bonus challenge for fast finishers"
-    }},
-    "incorrect_example": {{"example": "a wrong result or method", "prompt": "What went wrong here? How would you fix it?"}}
+    "differentiated_learning": {{
+      "easy_cards": "what the easy card asks students to do — simpler task, more scaffolding",
+      "challenge_cards": "what the challenge card asks students to do — harder task, less guidance"
+    }}
   }},
 
   "evaluate": {{
+    "goal": "Check understanding through labelling, oral questions, and exit ticket",
     "duration_minutes": 5,
-    "observable_product": "what students create, perform, or show to demonstrate understanding — draw, sort, build, label",
-    "teacher_actions": ["observe products", "ask exit questions individually or to the group"],
-    "questions": [
-      {{"type": "concept", "question": "Explain [topic] using what you did in today's activity."}},
-      {{"type": "application", "question": "Give one real-life example of [topic] you've seen outside school."}},
-      {{"type": "reasoning", "question": "What would happen if [key variable] changed? Why?"}}
+    "worksheet": "what the worksheet asks students to do — e.g. 'Label the diagram showing the parts of a plant'",
+    "oral_questions": [
+      "exact oral question 1 — e.g. 'Which part absorbs water?'",
+      "exact oral question 2"
+    ],
+    "exit_ticket": "short task — e.g. 'Name one plant part and write what it does'"
+  }},
+
+  "teacher_notes": {{
+    "safety_notes": [
+      "any safety consideration for this activity — or 'No safety concerns for this activity'"
+    ],
+    "common_mistakes": [
+      "exact mistake students make during this type of activity",
+      "a second common error to watch for"
+    ],
+    "facilitation_tips": [
+      "a specific tip for facilitating this activity without giving the answer",
+      "how to handle groups that finish early or fall behind"
     ]
   }},
 
-  "parent_bridge": {{
-    "dismissal_line": "one sentence the teacher says at end of day",
-    "dinner_question": "one question parents ask their child tonight",
-    "home_activity": "one 5-minute hands-on activity the family can do together at home"
+  "common_student_mistakes": [
+    "exact wrong idea Grade {grade} students have about {topic_name}",
+    "a second common misconception"
+  ],
+  "possible_student_questions": [
+    "a question a student is likely to ask during this activity",
+    "a 'why' or 'what if' follow-up question"
+  ],
+  "differentiated_learning": {{
+    "struggling_students": "specific adaptation — simpler materials, peer buddy, pre-labelled diagram",
+    "average_students": "standard approach — full activity with all tasks",
+    "advanced_students": "extension — challenge card or additional open investigation"
   }},
 
   "regional_vocabulary": []
