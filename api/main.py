@@ -15,7 +15,7 @@ from datetime import datetime
 import sys
 sys.path.insert(0, os.path.dirname(os.path.dirname(__file__)))
 
-from services.ai_services import generate_elementary_lesson_plan, generate_study_plan, generate_worksheet, generate_recovery_worksheet, generate_quiz, grade_worksheet_answers, get_answer_feedback
+from services.ai_services import generate_elementary_lesson_plan, generate_study_plan, generate_worksheet, generate_recovery_worksheet, generate_quiz, grade_worksheet_answers, get_answer_feedback, recommend_lesson_type, build_ai_teaching_notes
 from services.visual_guide_service import generate_visual_guide_from_plan, generate_picture_book
 from core.models import StudentProfile, get_default_student
 from engines.progress_engine import calculate_mastery
@@ -1016,7 +1016,7 @@ async def api_generate_lesson_plan(
 
     duration_int = int("".join(filter(str.isdigit, req.duration))) if req.duration else 45
 
-    plan = generate_elementary_lesson_plan(
+    plan = await generate_elementary_lesson_plan(
         topic_name=topic["topic_name"],
         grade=req.grade,
         subject=subject,
@@ -1081,7 +1081,7 @@ async def api_generate_elementary_lesson_plan(
     teacher_profile = _resolve_teacher_profile(db, req.teacher_id, req.teacher_profile)
     student_profile = _resolve_student_profile(db, req.student_id, req.student_profile)
 
-    plan = generate_elementary_lesson_plan(
+    plan = await generate_elementary_lesson_plan(
         topic_name=req.topic,
         grade=req.grade,
         subject=req.subject,
