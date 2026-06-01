@@ -1147,27 +1147,37 @@ async def api_generate_elementary_lesson_plan(
 
 
 # ---------------------------------------------------------------------------
-# Demo: Engagement lesson — no auth, no DB, direct generation
+# Engagement lesson — stateful, uses real subject/curriculum/class states
 # ---------------------------------------------------------------------------
 
-class DemoEngagementRequest(BaseModel):
+class EngagementLessonRequest(BaseModel):
     topic:            str
     subject:          str
     grade:            str
     duration_minutes: int = 45
-    interests:        list[str] = []   # ranked list, [0] = most popular
+    interests:        list[str] = []   # ranked by student count, [0] = most popular
     chapter:          Optional[str] = None
+    teacher_id:       Optional[str] = None
 
 
 @app.post("/api/demo/engagement-lesson")
-async def api_demo_engagement_lesson(req: DemoEngagementRequest):
+async def api_engagement_lesson(
+    req: EngagementLessonRequest,
+    db = Depends(get_admin_db),
+    current_user: Optional[dict] = Depends(get_current_user),
+):
     """
-    Stateless engagement lesson endpoint — no authentication or database required.
-    Uses the top interest from the ranked list as the single theme.
-    Returns the plan directly (no lesson_plan_id).
+    Engagement lesson endpoint — stateful (saves to DB).
+    Uses the real subject, grade, topic, and class interests from the frontend.
+    Picks interests[0] (majority) as the single theme for the engagement prompt.
+    Returns {plan, lesson_plan_id}.
     """
-    # Use the #1 ranked interest; fall back to empty (AI picks its own examples)
+    # #1 ranked interest becomes the sole theme for the lesson
     interest_theme = req.interests[0].strip().lower() if req.interests else ""
+
+    topic_dir = OUTPUT_DIR / "engagement" / req.topic.replace(" ", "_").lower()
+    topic_dir.mkdir(parents=True, exist_ok=True)
+    images_dir = topic_dir / "images"
 
     plan = await generate_engagement_lesson_plan(
         topic_name=req.topic,
@@ -1175,22 +1185,50 @@ async def api_demo_engagement_lesson(req: DemoEngagementRequest):
         subject=req.subject,
         duration=req.duration_minutes,
         interest_theme=interest_theme,
+        output_dir=str(images_dir),
     )
 
     if not isinstance(plan, dict):
-        from fastapi import HTTPException
-        raise HTTPException(status_code=500, detail="Generation failed — invalid response from AI")
+        raise HTTPException(status_code=500, detail="AI returned an invalid response")
 
-    # Flatten send_home_line from {line:'...'} to plain string for the modal renderer
+    # Flatten send_home_line object → string for the renderer
     shl = plan.get("send_home_line")
     if isinstance(shl, dict):
         plan["send_home_line"] = shl.get("line", "")
 
-    # Provide interests_used so the modal can render the chip list
+    # Provide interests_used array for the chip list
     if "interests_used" not in plan:
         plan["interests_used"] = [interest_theme] if interest_theme else []
 
-    return plan
+    # Resolve teacher
+    if current_user and current_user.get("role") == "teacher":
+        teacher_id = current_user["id"]
+    elif req.teacher_id and _UUID_RE.match(req.teacher_id):
+        teacher_id = req.teacher_id
+    else:
+        fallback = q.get_default_teacher_db(db)
+        teacher_id = fallback["id"] if fallback else None
+
+    # Strip image_data before DB save, keep in response
+    import copy as _copy
+    plan_for_db = _strip_image_data(_copy.deepcopy(plan))
+
+    lp = q.save_lesson_plan(
+        db,
+        teacher_id=teacher_id,
+        topic_id=None,
+        topic_name=req.topic,
+        grade=req.grade,
+        subject=req.subject,
+        duration_minutes=req.duration_minutes,
+        plan_json=plan_for_db,
+    )
+
+    (topic_dir / f"lesson_plan_{req.grade}.json").write_text(
+        json.dumps(plan_for_db, indent=2), encoding="utf-8"
+    )
+
+    return {"plan": plan, "lesson_plan_id": lp["id"]}
 
 
 # ---------------------------------------------------------------------------
