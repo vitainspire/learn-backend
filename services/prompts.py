@@ -1364,28 +1364,28 @@ ENGAGEMENT_LESSON_SCHEMA: dict = {
         "teacher_script": "exact words the teacher says — opens with a question or scenario using student interests. Must feel personal to THIS class.",
     },
     "interest_bridge": {
-        "goal": "2–3 vivid analogies connecting the topic to what students love",
+        "goal": "2–3 analogies connecting the topic to THE ONE chosen interest — all analogies use the same interest",
         "duration_minutes": "number — e.g. 7",
         "analogies": [
-            {"interest": "student interest name", "bridge": "specific analogy — how this interest maps to the topic"},
-            {"interest": "second student interest", "bridge": "second analogy"},
+            {"interest": "THE SINGLE chosen interest (same for every analogy)", "bridge": "first scenario — how a specific situation in that interest maps directly to the topic concept"},
+            {"interest": "THE SINGLE chosen interest again", "bridge": "second scenario — a different situation within the SAME interest that also maps to the topic"},
         ],
     },
     "core_explanation": {
-        "goal": "Teach step by step — every example uses student interests",
+        "goal": "Teach step by step — every example uses THE SINGLE chosen interest",
         "duration_minutes": "number — e.g. 15",
         "steps": [
-            {"step": "first teaching step", "interest_example": "exact example using a student interest"},
-            {"step": "second teaching step", "interest_example": "example using a different interest"},
+            {"step": "first teaching step", "interest_example": "exact example set inside the chosen interest world"},
+            {"step": "second teaching step", "interest_example": "another example still inside the SAME chosen interest — do NOT switch to a different interest"},
         ],
     },
     "class_activity": {
-        "goal": "Hands-on activity themed around student interests",
+        "goal": "Hands-on activity themed around THE SINGLE chosen interest",
         "duration_minutes": "number — e.g. 10",
-        "title": "activity name themed around student interests",
-        "description": "what students do — 2 sentences",
-        "instructions": ["step 1", "step 2", "step 3"],
-        "interest_connection": "one sentence — how the activity connects to their interests",
+        "title": "activity name — themed around the chosen interest",
+        "description": "what students do — 2 sentences, both inside the chosen interest world",
+        "instructions": ["step 1 — inside the interest theme", "step 2", "step 3"],
+        "interest_connection": "one sentence — how the activity connects to the chosen interest",
     },
     "quick_check": {
         "goal": "2 rapid questions set inside the interest theme",
@@ -1468,7 +1468,8 @@ Return a single valid JSON object with EXACTLY this structure:
 
 RULES:
 1. Every teacher_script must be speakable word-for-word.
-2. Every example, analogy, and question must reference the student interests.
-3. All 6 section duration_minutes must sum to exactly {duration}.
-4. Return ONLY the JSON object. No markdown. No extra text. Never truncate.
+2. ONE INTEREST ONLY: every example, analogy, activity, and question uses {interest_theme if interest_theme else "relatable grade-level examples"}. Never mention or use a different interest.
+3. In interest_bridge.analogies: the "interest" field in EVERY analogy object must be "{interest_theme if interest_theme else 'the chosen interest'}". Do not invent other interests.
+4. All 6 section duration_minutes must sum to exactly {duration}.
+5. Return ONLY the JSON object. No markdown. No extra text. Never truncate.
 """
