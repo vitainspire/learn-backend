@@ -1337,3 +1337,133 @@ Return a single valid JSON object with EXACTLY this structure:
 
 {common_rules}
 """
+
+
+# ─────────────────────────────────────────────────────────────────────────────
+# 6-Section Engagement Lesson Plan
+# Every example, analogy, and activity is driven by student interests.
+# ─────────────────────────────────────────────────────────────────────────────
+
+ENGAGEMENT_SYSTEM_PROMPT = """
+You are an expert teacher who makes any topic click by connecting it to what students love.
+Your lesson plans have 6 sections. Every example, analogy, and activity uses student interests
+— not generic textbook examples.
+OUTPUT: Return ONLY valid JSON. No markdown fences. No extra text. Never truncate.
+"""
+
+ENGAGEMENT_LESSON_SCHEMA: dict = {
+    "lesson_title": "string — catchy, interest-driven title",
+    "grade": "string",
+    "subject": "string",
+    "topic": "string",
+    "duration_minutes": "number",
+    "interest_theme": "string — student interests used throughout",
+    "opening_hook": {
+        "goal": "Grab attention in the first 60 seconds",
+        "duration_minutes": "number — e.g. 5",
+        "teacher_script": "exact words the teacher says — opens with a question or scenario using student interests. Must feel personal to THIS class.",
+    },
+    "interest_bridge": {
+        "goal": "2–3 vivid analogies connecting the topic to what students love",
+        "duration_minutes": "number — e.g. 7",
+        "analogies": [
+            {"interest": "student interest name", "bridge": "specific analogy — how this interest maps to the topic"},
+            {"interest": "second student interest", "bridge": "second analogy"},
+        ],
+    },
+    "core_explanation": {
+        "goal": "Teach step by step — every example uses student interests",
+        "duration_minutes": "number — e.g. 15",
+        "steps": [
+            {"step": "first teaching step", "interest_example": "exact example using a student interest"},
+            {"step": "second teaching step", "interest_example": "example using a different interest"},
+        ],
+    },
+    "class_activity": {
+        "goal": "Hands-on activity themed around student interests",
+        "duration_minutes": "number — e.g. 10",
+        "title": "activity name themed around student interests",
+        "description": "what students do — 2 sentences",
+        "instructions": ["step 1", "step 2", "step 3"],
+        "interest_connection": "one sentence — how the activity connects to their interests",
+    },
+    "quick_check": {
+        "goal": "2 rapid questions using interest-based contexts",
+        "duration_minutes": "number — e.g. 3",
+        "questions": [
+            {"question": "question using a student interest as context", "answer": "correct answer"},
+            {"question": "second question using a different interest", "answer": "correct answer"},
+        ],
+    },
+    "send_home_line": {
+        "goal": "One memorable line students carry home",
+        "duration_minutes": "number — e.g. 2",
+        "line": "one-liner connecting the topic to student interests — something they repeat at dinner",
+    },
+}
+
+
+def build_engagement_lesson_prompt(
+    topic_name: str,
+    grade: str,
+    subject: str,
+    duration: int,
+    interest_theme: str = "",
+    ontology_context: str = "",
+    teacher_ctx: str = "",
+    gap_ctx: str = "",
+) -> str:
+    """
+    Prompt for the 6-section engagement lesson plan.
+    interest_theme: comma-separated student interests (e.g. "cricket, anime, gaming").
+    When provided, every section must reference these interests.
+    When absent, AI uses grade-appropriate relatable examples.
+    """
+    interest_section = ""
+    if interest_theme:
+        interest_section = f"""
+CLASS INTERESTS — USE IN EVERY SECTION:
+This class loves: {interest_theme}
+
+RULE: Every example, analogy, question, and activity MUST reference at least one
+of these interests by name. Never use generic examples like "a student has 5 apples".
+"""
+
+    curriculum_section = (
+        ontology_context
+        if ontology_context
+        else "Use your internal knowledge of the curriculum for this topic and grade."
+    )
+
+    context_lines = "\n".join(filter(None, [teacher_ctx, gap_ctx]))
+    schema_str = json.dumps(ENGAGEMENT_LESSON_SCHEMA, indent=2)
+
+    return f"""Create a 6-section engagement lesson plan for: {topic_name}
+
+Topic:    {topic_name}
+Subject:  {subject}
+Grade:    {grade}
+Duration: {duration} minutes
+{interest_section}
+{context_lines}
+
+CURRICULUM CONTEXT:
+{curriculum_section}
+
+The lesson has EXACTLY 6 sections (fixed structure):
+  1. opening_hook     — grab attention in 60 seconds using student interests
+  2. interest_bridge  — 2–3 analogies connecting topic to what students love
+  3. core_explanation — step-by-step teaching, every example uses interests
+  4. class_activity   — hands-on activity themed around student interests
+  5. quick_check      — 2 rapid questions using interest-based contexts
+  6. send_home_line   — one memorable line students carry home
+
+Return a single valid JSON object with EXACTLY this structure:
+{schema_str}
+
+RULES:
+1. Every teacher_script must be speakable word-for-word.
+2. Every example, analogy, and question must reference the student interests.
+3. All 6 section duration_minutes must sum to exactly {duration}.
+4. Return ONLY the JSON object. No markdown. No extra text. Never truncate.
+"""

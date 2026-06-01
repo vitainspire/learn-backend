@@ -10,7 +10,9 @@ import re
 from services.ai_client import get_model, safe_generate_content
 from services.prompts import (
     ELEMENTARY_SYSTEM_PROMPT,
+    ENGAGEMENT_SYSTEM_PROMPT,
     build_elementary_lesson_prompt,
+    build_engagement_lesson_prompt,
     build_study_plan_prompt,
     build_worksheet_prompt,
     # Unused — not called by any active API endpoint:
@@ -364,6 +366,60 @@ async def generate_worksheet(
 
 if __name__ == "__main__":
     print("AI Co-Teacher Services Loaded.")
+
+
+async def generate_engagement_lesson_plan(
+    topic_name: str,
+    grade: str,
+    subject: str,
+    duration: int,
+    interest_theme: str = "",
+    ontology_context: str = "",
+    teacher_profile: dict | None = None,
+    learning_gaps: list | None = None,
+) -> dict:
+    """
+    Generates a 6-section engagement lesson plan.
+    Every example, analogy, and activity is driven by student interests
+    (passed via interest_theme, e.g. "cricket, anime, gaming").
+    When interest_theme is empty, the AI uses grade-appropriate examples.
+    """
+    teacher_ctx = ""
+    if teacher_profile:
+        lines = [
+            f"- Teaching style: {teacher_profile.get('teaching_style', 'hybrid')}",
+            f"- Instruction language: {teacher_profile.get('language', 'English')}",
+            f"- Difficulty preference: {teacher_profile.get('difficulty_preference', 'medium')}",
+        ]
+        teacher_ctx = "Teacher Profile:\n" + "\n".join(lines)
+
+    gap_ctx = f"Known learning gaps to address: {', '.join(learning_gaps)}" if learning_gaps else ""
+
+    prompt = build_engagement_lesson_prompt(
+        topic_name=topic_name,
+        grade=grade,
+        subject=subject,
+        duration=duration,
+        interest_theme=interest_theme,
+        ontology_context=ontology_context,
+        teacher_ctx=teacher_ctx,
+        gap_ctx=gap_ctx,
+    )
+
+    model = get_model("quality", system_instruction=ENGAGEMENT_SYSTEM_PROMPT)
+    raw = safe_generate_content(
+        prompt,
+        is_json=True,
+        config={"max_output_tokens": 8192, "temperature": 0.6},
+        model=model,
+    )
+
+    if not isinstance(raw, dict):
+        return {}
+
+    # Ensure interest_theme is always present in the response
+    raw.setdefault("interest_theme", interest_theme)
+    return raw
 
 
 def recommend_lesson_type(

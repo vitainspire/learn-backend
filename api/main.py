@@ -15,7 +15,7 @@ from datetime import datetime
 import sys
 sys.path.insert(0, os.path.dirname(os.path.dirname(__file__)))
 
-from services.ai_services import generate_elementary_lesson_plan, generate_study_plan, generate_worksheet, generate_recovery_worksheet, generate_quiz, grade_worksheet_answers, get_answer_feedback, recommend_lesson_type, build_ai_teaching_notes
+from services.ai_services import generate_elementary_lesson_plan, generate_engagement_lesson_plan, generate_study_plan, generate_worksheet, generate_recovery_worksheet, generate_quiz, grade_worksheet_answers, get_answer_feedback, recommend_lesson_type, build_ai_teaching_notes
 from services.visual_guide_service import generate_visual_guide_from_plan, generate_picture_book
 from core.models import StudentProfile, get_default_student
 from engines.progress_engine import calculate_mastery
@@ -65,11 +65,12 @@ class LessonPlanRequest(_GradeCoerceMixin):
     duration: str
     subject: Optional[str] = None
     region: Optional[str] = None
-    lesson_type: Optional[str] = "activity"  # "lecture" | "activity" | "storytelling"
-    teacher_id: Optional[str] = None       # fetch profile from DB
-    student_id: Optional[str] = None       # fetch profile from DB
-    teacher_profile: Optional[dict] = None  # inline fallback
-    student_profile: Optional[dict] = None  # inline fallback
+    lesson_type: Optional[str] = "activity"
+    interest_theme: Optional[str] = ""     # e.g. "cricket, anime, gaming"
+    teacher_id: Optional[str] = None
+    student_id: Optional[str] = None
+    teacher_profile: Optional[dict] = None
+    student_profile: Optional[dict] = None
 
 class TeachTopicRequest(BaseModel):
     book: str
@@ -108,11 +109,12 @@ class ElementaryLessonRequest(_GradeCoerceMixin):
     book: Optional[str] = None
     chapter_idx: Optional[int] = None
     topic_idx: Optional[int] = None
-    lesson_type: Optional[str] = "activity"  # "lecture" | "activity" | "storytelling"
-    teacher_id: Optional[str] = None       # fetch profile from DB
-    student_id: Optional[str] = None       # fetch profile from DB
-    teacher_profile: Optional[dict] = None  # inline fallback
-    student_profile: Optional[dict] = None  # inline fallback
+    lesson_type: Optional[str] = "activity"
+    interest_theme: Optional[str] = ""     # e.g. "cricket, anime, gaming"
+    teacher_id: Optional[str] = None
+    student_id: Optional[str] = None
+    teacher_profile: Optional[dict] = None
+    student_profile: Optional[dict] = None
     learning_gaps: Optional[list] = None
 
 class WorksheetRequest(_GradeCoerceMixin):
@@ -1031,20 +1033,16 @@ async def api_generate_lesson_plan(
 
     topic_dir = OUTPUT_DIR / req.book / topic["topic_name"].replace(" ", "_").lower()
     topic_dir.mkdir(parents=True, exist_ok=True)
-    images_dir = topic_dir / "images"
 
-    plan = await generate_elementary_lesson_plan(
+    plan = await generate_engagement_lesson_plan(
         topic_name=topic["topic_name"],
         grade=req.grade,
         subject=subject,
         duration=duration_int,
+        interest_theme=req.interest_theme or "",
         ontology_context=_enrich_topic_context(ontology, topic),
         teacher_profile=teacher_profile,
-        student_profile=student_profile,
         learning_gaps=gaps,
-        region=req.region or "",
-        lesson_type=req.lesson_type or "activity",
-        output_dir=str(images_dir),
     )
     if isinstance(plan, dict) and req.region:
         plan["region"] = req.region
@@ -1101,19 +1099,16 @@ async def api_generate_elementary_lesson_plan(
 
     topic_dir = OUTPUT_DIR / "elementary" / req.topic.replace(" ", "_").lower()
     topic_dir.mkdir(parents=True, exist_ok=True)
-    images_dir = topic_dir / "images"
 
-    plan = await generate_elementary_lesson_plan(
+    plan = await generate_engagement_lesson_plan(
         topic_name=req.topic,
         grade=req.grade,
         subject=req.subject,
         duration=req.duration,
+        interest_theme=req.interest_theme or "",
         ontology_context=ontology_context,
         teacher_profile=teacher_profile,
-        student_profile=student_profile,
         learning_gaps=req.learning_gaps,
-        lesson_type=req.lesson_type or "activity",
-        output_dir=str(images_dir),
     )
     if isinstance(plan, dict) and ontology_for_exercises:
         plan = _inject_exercise_content(plan, ontology_for_exercises)
