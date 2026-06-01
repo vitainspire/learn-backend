@@ -1209,10 +1209,7 @@ async def api_engagement_lesson(
         fallback = q.get_default_teacher_db(db)
         teacher_id = fallback["id"] if fallback else None
 
-    # Strip image_data before DB save, keep in response
-    import copy as _copy
-    plan_for_db = _strip_image_data(_copy.deepcopy(plan))
-
+    # Save the full plan including image_data so images survive server restarts
     lp = q.save_lesson_plan(
         db,
         teacher_id=teacher_id,
@@ -1221,11 +1218,11 @@ async def api_engagement_lesson(
         grade=req.grade,
         subject=req.subject,
         duration_minutes=req.duration_minutes,
-        plan_json=plan_for_db,
+        plan_json=plan,
     )
 
     (topic_dir / f"lesson_plan_{req.grade}.json").write_text(
-        json.dumps(plan_for_db, indent=2), encoding="utf-8"
+        json.dumps(plan, indent=2), encoding="utf-8"
     )
 
     return {"plan": plan, "lesson_plan_id": lp["id"]}
