@@ -1388,17 +1388,17 @@ ENGAGEMENT_LESSON_SCHEMA: dict = {
         "interest_connection": "one sentence — how the activity connects to their interests",
     },
     "quick_check": {
-        "goal": "2 rapid questions using interest-based contexts",
+        "goal": "2 rapid questions set inside the interest theme",
         "duration_minutes": "number — e.g. 3",
         "questions": [
-            {"question": "question using a student interest as context", "answer": "correct answer"},
-            {"question": "second question using a different interest", "answer": "correct answer"},
+            {"question": "question using the interest theme as context", "answer": "correct answer"},
+            {"question": "second question — still inside the same interest theme", "answer": "correct answer"},
         ],
     },
     "send_home_line": {
         "goal": "One memorable line students carry home",
         "duration_minutes": "number — e.g. 2",
-        "line": "one-liner connecting the topic to student interests — something they repeat at dinner",
+        "line": "one-liner connecting the topic to the interest theme — something they repeat at dinner",
     },
 }
 
@@ -1415,18 +1415,23 @@ def build_engagement_lesson_prompt(
 ) -> str:
     """
     Prompt for the 6-section engagement lesson plan.
-    interest_theme: comma-separated student interests (e.g. "cricket, anime, gaming").
-    When provided, every section must reference these interests.
+    interest_theme: a SINGLE student interest chosen by the teacher (e.g. "cricket").
+    This one interest is the sole theme of the entire lesson — every example,
+    analogy, question, and activity is built around it.
     When absent, AI uses grade-appropriate relatable examples.
     """
     interest_section = ""
     if interest_theme:
         interest_section = f"""
-CLASS INTERESTS — USE IN EVERY SECTION:
-This class loves: {interest_theme}
+THIS LESSON'S INTEREST THEME: {interest_theme}
 
-RULE: Every example, analogy, question, and activity MUST reference at least one
-of these interests by name. Never use generic examples like "a student has 5 apples".
+The teacher has chosen to build THIS lesson entirely around: {interest_theme}
+
+RULES (strictly enforced):
+- Every single example, analogy, question, and activity MUST use {interest_theme} as the context.
+- Do NOT mix in other interests. Only {interest_theme}.
+- Make every reference specific and vivid — not "a sport" but actual {interest_theme} scenarios.
+- Students who love {interest_theme} should feel this lesson was made specifically for them.
 """
 
     curriculum_section = (
