@@ -1358,10 +1358,12 @@ ENGAGEMENT_LESSON_SCHEMA: dict = {
     "topic": "string",
     "duration_minutes": "number",
     "interest_theme": "string — student interests used throughout",
+    "cover_image_prompt": "describe a vibrant child-friendly illustration of the interest theme — e.g. 'cartoon cricket players celebrating on a field, flat illustration, bright colours, white background'",
     "opening_hook": {
         "goal": "Grab attention in the first 60 seconds",
         "duration_minutes": "number — e.g. 5",
         "teacher_script": "exact words the teacher says — opens with a question or scenario using student interests. Must feel personal to THIS class.",
+        "image_prompt": "describe an illustration that visually captures the opening hook scenario — e.g. 'a cricket scoreboard showing a maths problem, cartoon style, white background'",
     },
     "interest_bridge": {
         "goal": "2–3 analogies connecting the topic to THE ONE chosen interest — all analogies use the same interest",
@@ -1386,6 +1388,7 @@ ENGAGEMENT_LESSON_SCHEMA: dict = {
         "description": "what students do — 2 sentences, both inside the chosen interest world",
         "instructions": ["step 1 — inside the interest theme", "step 2", "step 3"],
         "interest_connection": "one sentence — how the activity connects to the chosen interest",
+        "image_prompt": "describe an illustration of students doing this activity — e.g. 'children playing a cricket-themed maths game at their desks, cartoon style, bright classroom, white background'",
     },
     "quick_check": {
         "goal": "2 rapid questions set inside the interest theme",

@@ -1033,6 +1033,7 @@ async def api_generate_lesson_plan(
 
     topic_dir = OUTPUT_DIR / req.book / topic["topic_name"].replace(" ", "_").lower()
     topic_dir.mkdir(parents=True, exist_ok=True)
+    images_dir = topic_dir / "images"
 
     plan = await generate_engagement_lesson_plan(
         topic_name=topic["topic_name"],
@@ -1043,6 +1044,7 @@ async def api_generate_lesson_plan(
         ontology_context=_enrich_topic_context(ontology, topic),
         teacher_profile=teacher_profile,
         learning_gaps=gaps,
+        output_dir=str(images_dir),
     )
     if isinstance(plan, dict) and req.region:
         plan["region"] = req.region
@@ -1099,6 +1101,7 @@ async def api_generate_elementary_lesson_plan(
 
     topic_dir = OUTPUT_DIR / "elementary" / req.topic.replace(" ", "_").lower()
     topic_dir.mkdir(parents=True, exist_ok=True)
+    images_dir = topic_dir / "images"
 
     plan = await generate_engagement_lesson_plan(
         topic_name=req.topic,
@@ -1109,6 +1112,7 @@ async def api_generate_elementary_lesson_plan(
         ontology_context=ontology_context,
         teacher_profile=teacher_profile,
         learning_gaps=req.learning_gaps,
+        output_dir=str(images_dir),
     )
     if isinstance(plan, dict) and ontology_for_exercises:
         plan = _inject_exercise_content(plan, ontology_for_exercises)

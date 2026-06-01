@@ -377,6 +377,7 @@ async def generate_engagement_lesson_plan(
     ontology_context: str = "",
     teacher_profile: dict | None = None,
     learning_gaps: list | None = None,
+    output_dir: str | None = None,
 ) -> dict:
     """
     Generates a 6-section engagement lesson plan.
@@ -419,6 +420,12 @@ async def generate_engagement_lesson_plan(
 
     # Ensure interest_theme is always present in the response
     raw.setdefault("interest_theme", interest_theme)
+
+    if output_dir and isinstance(raw, dict):
+        from services.image_service import enrich_lesson_plan_with_images
+        from pathlib import Path
+        raw = await enrich_lesson_plan_with_images(raw, Path(output_dir))
+
     return raw
 
 
