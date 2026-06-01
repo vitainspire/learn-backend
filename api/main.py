@@ -547,6 +547,19 @@ def _get_topic_data(ontology: dict, chap_idx: int, topic_idx: int):
 _UUID_RE = re.compile(r'^[0-9a-f]{8}-[0-9a-f]{4}-[0-9a-f]{4}-[0-9a-f]{4}-[0-9a-f]{12}$', re.I)
 
 
+def _strip_image_data(obj):
+    """Recursively remove *image_data fields before DB save to avoid large payloads."""
+    if isinstance(obj, dict):
+        for k in [k for k in obj if k.endswith("image_data")]:
+            del obj[k]
+        for v in obj.values():
+            _strip_image_data(v)
+    elif isinstance(obj, list):
+        for item in obj:
+            _strip_image_data(item)
+    return obj
+
+
 def _resolve_teacher(db, teacher_id: Optional[str]) -> Optional[dict]:
     if teacher_id and _UUID_RE.match(teacher_id):
         teacher = q.get_teacher(db, teacher_id)
@@ -1016,6 +1029,10 @@ async def api_generate_lesson_plan(
 
     duration_int = int("".join(filter(str.isdigit, req.duration))) if req.duration else 45
 
+    topic_dir = OUTPUT_DIR / req.book / topic["topic_name"].replace(" ", "_").lower()
+    topic_dir.mkdir(parents=True, exist_ok=True)
+    images_dir = topic_dir / "images"
+
     plan = await generate_elementary_lesson_plan(
         topic_name=topic["topic_name"],
         grade=req.grade,
@@ -1027,6 +1044,7 @@ async def api_generate_lesson_plan(
         learning_gaps=gaps,
         region=req.region or "",
         lesson_type=req.lesson_type or "activity",
+        output_dir=str(images_dir),
     )
     if isinstance(plan, dict) and req.region:
         plan["region"] = req.region
@@ -1044,6 +1062,8 @@ async def api_generate_lesson_plan(
         fallback = q.get_default_teacher_db(db)
         teacher_id = fallback["id"] if fallback else None
 
+    import copy as _copy
+    plan_for_db = _strip_image_data(_copy.deepcopy(plan)) if isinstance(plan, dict) else plan
     lp = q.save_lesson_plan(
         db,
         teacher_id=teacher_id,
@@ -1052,12 +1072,10 @@ async def api_generate_lesson_plan(
         grade=req.grade,
         subject=subject,
         duration_minutes=duration_int,
-        plan_json=plan,
+        plan_json=plan_for_db,
     )
 
-    topic_dir = OUTPUT_DIR / req.book / topic["topic_name"].replace(" ", "_").lower()
-    topic_dir.mkdir(parents=True, exist_ok=True)
-    (topic_dir / "lesson_plan.json").write_text(json.dumps(plan, indent=2), encoding="utf-8")
+    (topic_dir / "lesson_plan.json").write_text(json.dumps(plan_for_db, indent=2), encoding="utf-8")
 
     return {"plan": plan, "lesson_plan_id": lp["id"]}
 
@@ -1081,6 +1099,10 @@ async def api_generate_elementary_lesson_plan(
     teacher_profile = _resolve_teacher_profile(db, req.teacher_id, req.teacher_profile)
     student_profile = _resolve_student_profile(db, req.student_id, req.student_profile)
 
+    topic_dir = OUTPUT_DIR / "elementary" / req.topic.replace(" ", "_").lower()
+    topic_dir.mkdir(parents=True, exist_ok=True)
+    images_dir = topic_dir / "images"
+
     plan = await generate_elementary_lesson_plan(
         topic_name=req.topic,
         grade=req.grade,
@@ -1091,6 +1113,7 @@ async def api_generate_elementary_lesson_plan(
         student_profile=student_profile,
         learning_gaps=req.learning_gaps,
         lesson_type=req.lesson_type or "activity",
+        output_dir=str(images_dir),
     )
     if isinstance(plan, dict) and ontology_for_exercises:
         plan = _inject_exercise_content(plan, ontology_for_exercises)
@@ -1106,6 +1129,8 @@ async def api_generate_elementary_lesson_plan(
         fallback = q.get_default_teacher_db(db)
         teacher_id = fallback["id"] if fallback else None
 
+    import copy as _copy
+    plan_for_db = _strip_image_data(_copy.deepcopy(plan)) if isinstance(plan, dict) else plan
     lp = q.save_lesson_plan(
         db,
         teacher_id=teacher_id,
@@ -1114,12 +1139,10 @@ async def api_generate_elementary_lesson_plan(
         grade=req.grade,
         subject=req.subject,
         duration_minutes=req.duration,
-        plan_json=plan,
+        plan_json=plan_for_db,
     )
 
-    topic_dir = OUTPUT_DIR / "elementary" / req.topic.replace(" ", "_").lower()
-    topic_dir.mkdir(parents=True, exist_ok=True)
-    (topic_dir / f"lesson_plan_grade{req.grade}.json").write_text(json.dumps(plan, indent=2), encoding="utf-8")
+    (topic_dir / f"lesson_plan_grade{req.grade}.json").write_text(json.dumps(plan_for_db, indent=2), encoding="utf-8")
 
     return {"plan": plan, "lesson_plan_id": lp["id"]}
 
