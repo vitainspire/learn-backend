@@ -1147,6 +1147,53 @@ async def api_generate_elementary_lesson_plan(
 
 
 # ---------------------------------------------------------------------------
+# Demo: Engagement lesson — no auth, no DB, direct generation
+# ---------------------------------------------------------------------------
+
+class DemoEngagementRequest(BaseModel):
+    topic:            str
+    subject:          str
+    grade:            str
+    duration_minutes: int = 45
+    interests:        list[str] = []   # ranked list, [0] = most popular
+    chapter:          Optional[str] = None
+
+
+@app.post("/api/demo/engagement-lesson")
+async def api_demo_engagement_lesson(req: DemoEngagementRequest):
+    """
+    Stateless engagement lesson endpoint — no authentication or database required.
+    Uses the top interest from the ranked list as the single theme.
+    Returns the plan directly (no lesson_plan_id).
+    """
+    # Use the #1 ranked interest; fall back to empty (AI picks its own examples)
+    interest_theme = req.interests[0].strip().lower() if req.interests else ""
+
+    plan = await generate_engagement_lesson_plan(
+        topic_name=req.topic,
+        grade=req.grade,
+        subject=req.subject,
+        duration=req.duration_minutes,
+        interest_theme=interest_theme,
+    )
+
+    if not isinstance(plan, dict):
+        from fastapi import HTTPException
+        raise HTTPException(status_code=500, detail="Generation failed — invalid response from AI")
+
+    # Flatten send_home_line from {line:'...'} to plain string for the modal renderer
+    shl = plan.get("send_home_line")
+    if isinstance(shl, dict):
+        plan["send_home_line"] = shl.get("line", "")
+
+    # Provide interests_used so the modal can render the chip list
+    if "interests_used" not in plan:
+        plan["interests_used"] = [interest_theme] if interest_theme else []
+
+    return plan
+
+
+# ---------------------------------------------------------------------------
 # Teach topic
 # ---------------------------------------------------------------------------
 
