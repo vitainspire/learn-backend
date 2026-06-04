@@ -1270,13 +1270,13 @@ async def api_ingest_book(
         tmp_path = tmp.name
 
     try:
-        # Run the ontology extraction pipeline
-        from extraction.textbook_intelligence import generate_ontology
+        # Run vision-based ontology extraction (handles all scripts / languages)
+        from extraction.vision_extraction import generate_ontology_vision
 
         out_dir = str(OUTPUT_DIR / "extracted" / book_name)
         Path(out_dir).mkdir(parents=True, exist_ok=True)
 
-        ontology = generate_ontology(tmp_path, out_dir)
+        ontology, _ = generate_ontology_vision(tmp_path, out_dir)
 
         if not ontology or not isinstance(ontology, dict):
             raise HTTPException(status_code=500, detail="Extraction returned empty ontology")
