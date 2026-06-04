@@ -5,7 +5,7 @@ import tempfile
 from pathlib import Path
 from typing import Optional, Union
 
-from fastapi import FastAPI, HTTPException, Depends, Header, Request
+from fastapi import FastAPI, HTTPException, Depends, Header, Request, UploadFile, File, Form
 from fastapi.responses import FileResponse, Response
 from fastapi.exceptions import RequestValidationError
 from fastapi.staticfiles import StaticFiles
@@ -1226,6 +1226,99 @@ async def api_engagement_lesson(
     )
 
     return {"plan": plan, "lesson_plan_id": lp["id"]}
+
+
+# ---------------------------------------------------------------------------
+# Ingest book — accept PDF upload, extract ontology, save to books table
+# ---------------------------------------------------------------------------
+
+_SUBJECT_MAP = {
+    "maths": "Mathematics", "math": "Mathematics",
+    "english": "English", "hindi": "Hindi", "telugu": "Telugu",
+    "tamil": "Tamil", "kannada": "Kannada",
+    "science": "Science", "evs": "Environmental Science",
+    "social": "Social Studies",
+}
+
+def _book_name_from(grade: str, subject: str) -> str:
+    """Normalise grade + subject into a canonical book name like 'grade1_maths'."""
+    g = str(grade).replace("Grade ", "").replace("grade", "").strip()
+    s = subject.lower().replace(" ", "_").replace("mathematics", "maths")
+    return f"grade{g}_{s}"
+
+
+@app.post("/api/ingest-book")
+async def api_ingest_book(
+    file:    UploadFile = File(...),
+    grade:   str        = Form(...),
+    subject: str        = Form(...),
+    db = Depends(get_admin_db),
+):
+    """
+    Accept a PDF textbook, extract its ontology, save to the books table.
+    Returns: { ontology: {...}, book_name: str, chapters: int, topics: int }
+    """
+    if not file.filename or not file.filename.lower().endswith(".pdf"):
+        raise HTTPException(status_code=400, detail="Only PDF files are supported")
+
+    book_name = _book_name_from(grade, subject)
+    subject_label = _SUBJECT_MAP.get(subject.lower().replace(" ", ""), subject)
+
+    # Save the uploaded PDF to a temp file
+    with tempfile.NamedTemporaryFile(suffix=".pdf", delete=False) as tmp:
+        tmp.write(await file.read())
+        tmp_path = tmp.name
+
+    try:
+        # Run the ontology extraction pipeline
+        from extraction.textbook_intelligence import generate_ontology
+
+        out_dir = str(OUTPUT_DIR / "extracted" / book_name)
+        Path(out_dir).mkdir(parents=True, exist_ok=True)
+
+        ontology = generate_ontology(tmp_path, out_dir)
+
+        if not ontology or not isinstance(ontology, dict):
+            raise HTTPException(status_code=500, detail="Extraction returned empty ontology")
+
+        # Count chapters and topics for the response
+        chapters_raw = ontology.get("chapters", ontology.get("entities", {}).get("chapters", []))
+        n_chapters   = len(chapters_raw)
+        n_topics     = sum(len(c.get("topics", [])) for c in chapters_raw)
+
+        # Build metadata
+        meta = {
+            "name":         book_name,
+            "title":        f"Grade {grade} {subject_label}",
+            "grade":        str(grade),
+            "subject":      subject_label,
+            "language":     "English",
+            "raw_ontology": ontology,
+        }
+
+        # Upsert into books table
+        db.table("books").upsert(meta, on_conflict="name").execute()
+
+        print(f"[INGEST] {book_name} — {n_chapters} chapters, {n_topics} topics saved to DB")
+
+        return {
+            "ontology":   ontology,
+            "book_name":  book_name,
+            "chapters":   n_chapters,
+            "topics":     n_topics,
+        }
+
+    except HTTPException:
+        raise
+    except Exception as e:
+        print(f"[INGEST] Error processing {book_name}: {e}")
+        raise HTTPException(status_code=500, detail=f"Extraction failed: {str(e)[:200]}")
+    finally:
+        # Clean up the temp PDF
+        try:
+            os.unlink(tmp_path)
+        except Exception:
+            pass
 
 
 # ---------------------------------------------------------------------------
