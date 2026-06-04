@@ -2,7 +2,9 @@ import os
 import json
 import re
 import tempfile
+import uuid
 from pathlib import Path
+from threading import Thread
 from typing import Optional, Union
 
 from fastapi import FastAPI, HTTPException, Depends, Header, Request, UploadFile, File, Form
@@ -1229,7 +1231,9 @@ async def api_engagement_lesson(
 
 
 # ---------------------------------------------------------------------------
-# Ingest book — accept PDF upload, extract ontology, save to books table
+# Ingest book — async job pattern (no timeouts on the client)
+# POST /api/ingest-book  → returns {job_id} immediately, runs in background
+# GET  /api/ingest/{job_id} → returns {status, message} or {status:"done"}
 # ---------------------------------------------------------------------------
 
 _SUBJECT_MAP = {
@@ -1240,85 +1244,115 @@ _SUBJECT_MAP = {
     "social": "Social Studies",
 }
 
+# In-memory job store  {job_id: {status, message, book_name, chapters, topics, error}}
+_INGEST_JOBS: dict = {}
+
+
 def _book_name_from(grade: str, subject: str) -> str:
-    """Normalise grade + subject into a canonical book name like 'grade1_maths'."""
     g = str(grade).replace("Grade ", "").replace("grade", "").strip()
     s = subject.lower().replace(" ", "_").replace("mathematics", "maths")
     return f"grade{g}_{s}"
 
 
-@app.post("/api/ingest-book")
-async def api_ingest_book(
-    file:    UploadFile = File(...),
-    grade:   str        = Form(...),
-    subject: str        = Form(...),
-    db = Depends(get_admin_db),
-):
-    """
-    Accept a PDF textbook, extract its ontology, save to the books table.
-    Returns: { ontology: {...}, book_name: str, chapters: int, topics: int }
-    """
-    if not file.filename or not file.filename.lower().endswith(".pdf"):
-        raise HTTPException(status_code=400, detail="Only PDF files are supported")
-
-    book_name = _book_name_from(grade, subject)
-    subject_label = _SUBJECT_MAP.get(subject.lower().replace(" ", ""), subject)
-
-    # Save the uploaded PDF to a temp file
-    with tempfile.NamedTemporaryFile(suffix=".pdf", delete=False) as tmp:
-        tmp.write(await file.read())
-        tmp_path = tmp.name
-
+def _run_ingest(job_id: str, tmp_path: str, book_name: str, grade: str,
+                subject_label: str, language: str, out_dir: str):
+    """Background worker — runs extraction and saves to DB."""
     try:
-        # Run vision-based ontology extraction (handles all scripts / languages)
         from extraction.vision_extraction import generate_ontology_vision
+        from database.connection import get_admin_db as _get_db
 
-        out_dir = str(OUTPUT_DIR / "extracted" / book_name)
-        Path(out_dir).mkdir(parents=True, exist_ok=True)
+        _INGEST_JOBS[job_id]["message"] = "Extracting ontology with vision AI..."
 
-        ontology, _ = generate_ontology_vision(tmp_path, out_dir)
+        ontology, _ = generate_ontology_vision(tmp_path, out_dir, language=language)
 
         if not ontology or not isinstance(ontology, dict):
-            raise HTTPException(status_code=500, detail="Extraction returned empty ontology")
+            raise ValueError("Extraction returned empty ontology")
 
-        # Count chapters and topics for the response
         chapters_raw = ontology.get("chapters", ontology.get("entities", {}).get("chapters", []))
         n_chapters   = len(chapters_raw)
         n_topics     = sum(len(c.get("topics", [])) for c in chapters_raw)
 
-        # Build metadata
+        _INGEST_JOBS[job_id]["message"] = f"Saving {n_chapters} chapters, {n_topics} topics to database..."
+
         meta = {
             "name":         book_name,
             "title":        f"Grade {grade} {subject_label}",
             "grade":        str(grade),
             "subject":      subject_label,
-            "language":     "English",
+            "language":     language,
             "raw_ontology": ontology,
         }
 
-        # Upsert into books table
+        db = _get_db()
         db.table("books").upsert(meta, on_conflict="name").execute()
 
-        print(f"[INGEST] {book_name} — {n_chapters} chapters, {n_topics} topics saved to DB")
+        _INGEST_JOBS[job_id].update({
+            "status":    "done",
+            "message":   f"Done — {n_chapters} chapters, {n_topics} topics",
+            "chapters":  n_chapters,
+            "topics":    n_topics,
+        })
+        print(f"[INGEST:{job_id}] {book_name} complete — {n_chapters} chapters, {n_topics} topics")
 
-        return {
-            "ontology":   ontology,
-            "book_name":  book_name,
-            "chapters":   n_chapters,
-            "topics":     n_topics,
-        }
-
-    except HTTPException:
-        raise
     except Exception as e:
-        print(f"[INGEST] Error processing {book_name}: {e}")
-        raise HTTPException(status_code=500, detail=f"Extraction failed: {str(e)[:200]}")
+        _INGEST_JOBS[job_id].update({"status": "failed", "error": str(e)[:400]})
+        print(f"[INGEST:{job_id}] FAILED: {e}")
     finally:
-        # Clean up the temp PDF
         try:
             os.unlink(tmp_path)
         except Exception:
             pass
+
+
+@app.post("/api/ingest-book")
+async def api_ingest_book(
+    file:     UploadFile = File(...),
+    grade:    str        = Form(...),
+    subject:  str        = Form(...),
+    language: str        = Form("auto"),
+):
+    """
+    Start a background book-ingestion job.
+    Returns {job_id, book_name} immediately — poll GET /api/ingest/{job_id} for status.
+    """
+    if not file.filename or not file.filename.lower().endswith(".pdf"):
+        raise HTTPException(status_code=400, detail="Only PDF files are supported")
+
+    book_name     = _book_name_from(grade, subject)
+    subject_label = _SUBJECT_MAP.get(subject.lower().replace(" ", ""), subject)
+    job_id        = str(uuid.uuid4())
+
+    # Save PDF to a temp file (must happen before returning — UploadFile is request-scoped)
+    with tempfile.NamedTemporaryFile(suffix=".pdf", delete=False) as tmp:
+        tmp.write(await file.read())
+        tmp_path = tmp.name
+
+    out_dir = str(OUTPUT_DIR / "extracted" / book_name)
+    Path(out_dir).mkdir(parents=True, exist_ok=True)
+
+    _INGEST_JOBS[job_id] = {
+        "status":    "running",
+        "message":   "Starting vision extraction...",
+        "book_name": book_name,
+    }
+
+    Thread(
+        target=_run_ingest,
+        args=(job_id, tmp_path, book_name, grade, subject_label, language, out_dir),
+        daemon=True,
+    ).start()
+
+    print(f"[INGEST:{job_id}] Started background job for {book_name}")
+    return {"job_id": job_id, "book_name": book_name, "status": "running"}
+
+
+@app.get("/api/ingest/{job_id}")
+async def api_ingest_status(job_id: str):
+    """Poll the status of a running ingest job."""
+    job = _INGEST_JOBS.get(job_id)
+    if not job:
+        raise HTTPException(status_code=404, detail=f"Job '{job_id}' not found")
+    return job
 
 
 # ---------------------------------------------------------------------------
