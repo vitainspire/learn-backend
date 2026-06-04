@@ -17,7 +17,9 @@ Output format is identical to textbook_intelligence.generate_ontology().
 import os
 import json
 import time
+import threading
 import re as _re
+from concurrent.futures import ThreadPoolExecutor, as_completed
 from pathlib import Path
 
 import base64
@@ -42,6 +44,7 @@ PAGE_DPI          = 150    # render DPI — 150 balances quality vs cost
 PAGE_BATCH_SIZE   = 7      # max pages per OpenRouter call; larger chapters are batched
 MAX_OUTPUT_TOKENS = 65536  # allow full extraction without truncation
 INTER_CALL_DELAY  = 4      # seconds between successive API calls
+CHAPTER_WORKERS   = 3      # chapters processed in parallel
 
 
 # ── Rendering ─────────────────────────────────────────────────────────────────
@@ -1460,76 +1463,111 @@ def generate_ontology_vision(
         except Exception:
             pass
 
+    # ── 3-worker parallel extraction ─────────────────────────────────────────
+    # Each worker opens its own fitz doc (PyMuPDF is not thread-safe on a
+    # shared document object). A lock serialises _merge + checkpoint writes.
+
+    merge_lock = threading.Lock()
+
+    def _process_chunk(idx: int, chunk: dict):
+        """
+        Extract one chapter. Returns (idx, data, label) on success or
+        (idx, None, 'failed') if all retry levels are exhausted.
+        Each call opens and closes its own fitz document.
+        """
+        if not chunk["pages"]:
+            return idx, {}, "empty"
+
+        thread_doc = fitz.open(pdf_path)
+        context = f"Chapter {idx+1}: '{chunk['title']}'"
+        prompt_levels = [
+            ("full",       lambda: None),
+            ("simplified", lambda: _simplified_prompt(idx + 1, language, context)),
+            ("minimal",    lambda: _minimal_prompt(idx + 1, language, context)),
+        ]
+
+        print(f"\n[VISION] Chapter {idx+1}/{len(chunks)}: {chunk['title']} ({len(chunk['pages'])} pages)")
+
+        try:
+            for level_idx, (label, simple_prompt_fn) in enumerate(prompt_levels):
+                try:
+                    if label == "full":
+                        data = extract_chapter_batched(
+                            thread_doc,
+                            pages=chunk["pages"],
+                            chap_num=idx + 1,
+                            chap_title=chunk["title"],
+                            language=language,
+                            global_chapter_list=global_chapter_list,
+                        )
+                    else:
+                        images = [render_page(thread_doc, p) for p in chunk["pages"] if p < len(thread_doc)]
+                        raw = call_gemini([simple_prompt_fn()] + images)
+                        data = robust_json_parse(raw)
+
+                    return idx, data, label
+
+                except Exception as exc:
+                    print(f"  [FAIL:{label}] Chapter {idx+1}: {exc}")
+                    if label == "minimal":
+                        (job_dir / f"error_chunk_{idx+1}.txt").write_text(str(exc), encoding="utf-8")
+                    if level_idx < len(prompt_levels) - 1:
+                        time.sleep(INTER_CALL_DELAY)
+
+            return idx, None, "failed"
+        finally:
+            thread_doc.close()
+
+    # Mark empty chapters immediately; collect chunks that need processing
+    pending = []
     for idx, chunk in enumerate(chunks):
         if idx in done_indices:
             print(f"[SKIP] Chapter {idx+1}/{len(chunks)}: {chunk['title']} (already done)")
             continue
-
         if not chunk["pages"]:
             print(f"[SKIP] Chapter {idx+1}: empty page range.")
-            done_indices.add(idx)
-            _save_checkpoint(job_dir, done_indices)
+            with merge_lock:
+                done_indices.add(idx)
+                _save_checkpoint(job_dir, done_indices)
             continue
+        pending.append((idx, chunk))
 
-        print(f"\n[VISION] Chapter {idx+1}/{len(chunks)}: {chunk['title']} ({len(chunk['pages'])} pages)")
+    print(f"\n[PARALLEL] Processing {len(pending)} chapters with {CHAPTER_WORKERS} workers...")
 
-        # 3-level retry: full → simplified → minimal
-        context = f"Chapter {idx+1}: '{chunk['title']}'"
-        prompt_levels = [
-            ("full",       lambda: None),          # use batched extractor for full
-            ("simplified", lambda: _simplified_prompt(idx+1, language, context)),
-            ("minimal",    lambda: _minimal_prompt(idx+1, language, context)),
-        ]
+    with ThreadPoolExecutor(max_workers=CHAPTER_WORKERS) as pool:
+        futures = {
+            pool.submit(_process_chunk, idx, chunk): idx
+            for idx, chunk in pending
+        }
 
-        success = False
-        for level_idx, (label, simple_prompt_fn) in enumerate(prompt_levels):
-            try:
-                if label == "full":
-                    data = extract_chapter_batched(
-                        doc,
-                        pages=chunk["pages"],
-                        chap_num=idx + 1,
-                        chap_title=chunk["title"],
-                        language=language,
-                        global_chapter_list=global_chapter_list,
-                    )
-                else:
-                    images = [render_page(doc, p) for p in chunk["pages"] if p < len(doc)]
-                    raw = call_gemini([simple_prompt_fn()] + images)
-                    data = robust_json_parse(raw)
+        for future in as_completed(futures):
+            idx, data, label = future.result()
 
+            if label == "empty":
+                with merge_lock:
+                    done_indices.add(idx)
+                    _save_checkpoint(job_dir, done_indices)
+                continue
+
+            if data is None:
+                print(f"  [ERROR] Chapter {idx+1} failed all retry levels. Moving on.")
+                continue
+
+            with merge_lock:
                 _merge(full_ontology, data)
-
-                # Incremental save after each successful chapter
                 ontology_path.write_text(
                     json.dumps(full_ontology, indent=2, ensure_ascii=False),
                     encoding="utf-8",
                 )
-
                 done_indices.add(idx)
                 _save_checkpoint(job_dir, done_indices)
 
                 e = full_ontology["entities"]
                 print(
-                    f"  [OK:{label}] Running total — "
-                    f"chapters: {len(e['chapters'])}, topics: {len(e['topics'])}, "
-                    f"subtopics: {len(e['subtopics'])}, exercises: {len(e['exercises'])}"
+                    f"  [OK:{label}] Chapter {idx+1} done — running total: "
+                    f"chapters={len(e['chapters'])}, topics={len(e['topics'])}, "
+                    f"subtopics={len(e['subtopics'])}, exercises={len(e['exercises'])}"
                 )
-                success = True
-                break
-
-            except Exception as exc:
-                print(f"  [FAIL:{label}] {exc}")
-                if label == "minimal":
-                    (job_dir / f"error_chunk_{idx+1}.txt").write_text(str(exc), encoding="utf-8")
-                if level_idx < len(prompt_levels) - 1:
-                    time.sleep(INTER_CALL_DELAY)
-
-        if not success:
-            print(f"  [ERROR] Chapter {idx+1} failed all retry levels. Moving on.")
-
-        if idx < len(chunks) - 1:
-            time.sleep(INTER_CALL_DELAY)
 
     # Final validation
     print("\n[VALIDATE] Running structural validation...")
