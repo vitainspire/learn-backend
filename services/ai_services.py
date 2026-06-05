@@ -150,6 +150,7 @@ async def generate_elementary_lesson_plan(
     learning_gaps: list | None = None,
     region: str = "",
     lesson_type: str = "activity",
+    interest_theme: str = "",
     output_dir: str | None = None,
 ):
     """
@@ -199,6 +200,10 @@ async def generate_elementary_lesson_plan(
         student_ctx = "Student Context:\n" + "\n".join(lines)
 
     gap_ctx = f"Known learning gaps to address: {', '.join(learning_gaps)}" if learning_gaps else ""
+
+    # Append class interest theme to student context so the prompt weaves it in
+    if interest_theme:
+        student_ctx = (student_ctx + "\n" if student_ctx else "") + f"Class Interest Theme: {interest_theme}"
 
     prompt = build_elementary_lesson_prompt(
         topic_name=topic_name,

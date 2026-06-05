@@ -3,6 +3,10 @@ import json
 import re
 import tempfile
 import uuid
+
+def _safe_dirname(name: str) -> str:
+    """Strip Windows-invalid path characters so topic names can be directory names."""
+    return re.sub(r'[<>:"/\\|?*]', '', name).replace(" ", "_").lower()
 from pathlib import Path
 from threading import Thread
 from typing import Optional, Union
@@ -11,6 +15,7 @@ from fastapi import FastAPI, HTTPException, Depends, Header, Request, UploadFile
 from fastapi.responses import FileResponse, Response
 from fastapi.exceptions import RequestValidationError
 from fastapi.staticfiles import StaticFiles
+from fastapi.middleware.cors import CORSMiddleware
 from pydantic import BaseModel, field_validator
 from datetime import datetime
 
@@ -30,6 +35,36 @@ from database.connection import get_db, get_admin_db
 import database.queries as q
 
 app = FastAPI(title="Inspire Education API")
+
+# Log which PDF parser is available at startup
+try:
+    import fitz  # type: ignore
+    print("[PDF] Primary parser: PyMuPDF (fitz)")
+except ImportError:
+    print("[PDF] Primary parser: pdfplumber (PyMuPDF unavailable — DLL issue on Windows)")
+except Exception as _pdf_err:
+    print(f"[PDF] Primary parser: pdfplumber (PyMuPDF failed: {_pdf_err})")
+
+# In-memory job store for book ingestion
+# job_id → { status, ontology, error, book_name }
+_ingest_jobs: dict = {}
+
+# book_name → ontology dict (populated when a job completes)
+_book_ontologies: dict = {}
+
+# Only allow requests from the frontend origin
+_ALLOWED_ORIGINS = [
+    o.strip() for o in
+    os.environ.get("ALLOWED_ORIGINS", "http://localhost:3001").split(",")
+    if o.strip()
+]
+app.add_middleware(
+    CORSMiddleware,
+    allow_origins=_ALLOWED_ORIGINS,
+    allow_credentials=True,
+    allow_methods=["GET", "POST", "PATCH", "DELETE"],
+    allow_headers=["Content-Type", "Authorization"],
+)
 
 @app.exception_handler(RequestValidationError)
 async def validation_exception_handler(request: Request, exc: RequestValidationError):
@@ -62,17 +97,19 @@ class _GradeCoerceMixin(BaseModel):
 
 class LessonPlanRequest(_GradeCoerceMixin):
     book: str
-    chapter_idx: int
-    topic_idx: int
+    chapter_idx: int = 0
+    topic_idx: int = 0
     duration: str
     subject: Optional[str] = None
     region: Optional[str] = None
-    lesson_type: Optional[str] = "activity"
+    lesson_type: Optional[str] = "activity"  # "lecture" | "activity" | "storytelling"
     interest_theme: Optional[str] = ""     # e.g. "cricket, anime, gaming"
     teacher_id: Optional[str] = None
     student_id: Optional[str] = None
     teacher_profile: Optional[dict] = None
     student_profile: Optional[dict] = None
+    topic_name: Optional[str] = None   # used when book has no pre-seeded curriculum
+    topic: Optional[str] = None        # alias accepted from some frontend callers
 
 class TeachTopicRequest(BaseModel):
     book: str
@@ -891,6 +928,287 @@ async def update_student(student_id: str, req: UpdateStudentRequest, db = Depend
 
 
 # ---------------------------------------------------------------------------
+# ---------------------------------------------------------------------------
+# Book Ingestion — PDF → Ontology
+# ---------------------------------------------------------------------------
+
+def _run_extraction(job_id: str, pdf_path: str, book_name: str):
+    """
+    Background thread: vision-based PDF → ontology using PyMuPDF + Gemini Vision.
+    Chapters are detected from the TOC, then extracted in parallel workers.
+    """
+    import traceback
+    import threading
+    from concurrent.futures import ThreadPoolExecutor, as_completed
+
+    try:
+        _ingest_jobs[job_id]["status"] = "processing"
+
+        import fitz  # PyMuPDF
+        from extraction.vision_extraction import (
+            detect_language_vision,
+            detect_chapters_vision,
+            extract_chapter_batched,
+            _merge,
+            validate_and_fix,
+            _infer_cross_chapter_deps,
+            _rebuild_legacy,
+        )
+
+        grade   = _ingest_jobs[job_id].get("grade", "")
+        subject = _ingest_jobs[job_id].get("subject", "")
+
+        # Step 1: language detection
+        _ingest_jobs[job_id]["status"] = "detecting_language"
+        print(f"[ingest] Detecting language from: {pdf_path}")
+        language = detect_language_vision(pdf_path)
+        print(f"[ingest] Language: {language}")
+
+        # Step 2: chapter detection
+        _ingest_jobs[job_id]["status"] = "detecting_chapters"
+        doc_main = fitz.open(pdf_path)
+        detected = detect_chapters_vision(pdf_path)
+
+        if not detected:
+            print("[ingest] No chapters detected — treating full PDF as one chunk.")
+            chunks = [{"title": subject or "Full Book", "pages": list(range(len(doc_main)))}]
+        else:
+            print(f"[ingest] {len(detected)} chapters detected.")
+            chunks = [
+                {
+                    "title": ch["title"],
+                    "pages": list(range(ch["start_page"], ch["end_page"] + 1)),
+                }
+                for ch in detected
+            ]
+        doc_main.close()
+
+        global_chapter_list = "\n".join(
+            f"  {i+1}. {ch['title']} (pages {ch['pages'][0]+1}–{ch['pages'][-1]+1})"
+            for i, ch in enumerate(chunks) if ch["pages"]
+        )
+
+        full_ontology = {
+            "subject": subject or book_name.replace("_", " ").title(),
+            "grade": grade,
+            "language": language,
+            "entities": {
+                "chapters": [], "topics": [], "subtopics": [],
+                "exercises": [], "sidebars": [],
+            },
+            "graphs": {
+                "chapter_structure": [], "exercise_mapping": [], "concept_dependencies": [],
+            },
+            "chapters": [],
+        }
+
+        # Step 3: parallel chapter extraction
+        _ingest_jobs[job_id]["status"] = "extracting"
+        _ingest_jobs[job_id]["progress"] = {"total": len(chunks), "done": 0}
+
+        done_lock  = threading.Lock()
+        done_count = [0]
+        MAX_WORKERS = min(3, len(chunks))  # cap parallel API calls
+
+        def _extract_one(args):
+            idx, chunk = args
+            if not chunk["pages"]:
+                return idx, None
+            # Each worker opens its own fitz.Document (MuPDF is not thread-safe)
+            worker_doc = fitz.open(pdf_path)
+            try:
+                print(f"[ingest][w{idx+1}] Chapter {idx+1}/{len(chunks)}: {chunk['title']} ({len(chunk['pages'])} pages)")
+                data = extract_chapter_batched(
+                    worker_doc,
+                    pages=chunk["pages"],
+                    chap_num=idx + 1,
+                    chap_title=chunk["title"],
+                    language=language,
+                    global_chapter_list=global_chapter_list,
+                )
+                return idx, data
+            except Exception as exc:
+                print(f"[ingest][w{idx+1}] Chapter {idx+1} failed: {exc}")
+                return idx, None
+            finally:
+                worker_doc.close()
+
+        ordered_results = [None] * len(chunks)
+        with ThreadPoolExecutor(max_workers=MAX_WORKERS) as pool:
+            futures = {pool.submit(_extract_one, (idx, chunk)): idx for idx, chunk in enumerate(chunks)}
+            for future in as_completed(futures):
+                idx, data = future.result()
+                ordered_results[idx] = data
+                with done_lock:
+                    done_count[0] += 1
+                    _ingest_jobs[job_id]["progress"]["done"] = done_count[0]
+                    print(f"[ingest] Progress: {done_count[0]}/{len(chunks)} chapters done")
+
+        # Step 4: merge in chapter order (single-threaded to keep IDs consistent)
+        for data in ordered_results:
+            if data:
+                _merge(full_ontology, data)
+
+        # Step 5: structural validation
+        print("[ingest] Running structural validation...")
+        full_ontology = validate_and_fix(full_ontology)
+
+        # Step 6: cross-chapter dependency inference
+        print("[ingest] Inferring cross-chapter dependencies...")
+        cross_deps     = _infer_cross_chapter_deps(full_ontology)
+        existing_edges = {(e["from"], e["to"]) for e in full_ontology["graphs"]["concept_dependencies"]}
+        for dep in cross_deps:
+            key = (dep.get("from"), dep.get("to"))
+            if key not in existing_edges:
+                full_ontology["graphs"]["concept_dependencies"].append(dep)
+                existing_edges.add(key)
+
+        # Step 7: rebuild legacy chapter list for API compatibility
+        _rebuild_legacy(full_ontology)
+
+        # Always roundtrip through JSON to guarantee pure JSON-safe types before storing.
+        # This converts any sets → sorted lists and any other non-serializable objects → str.
+        import json as _json
+        full_ontology = _json.loads(
+            _json.dumps(full_ontology, default=lambda o: sorted(o) if isinstance(o, set) else str(o))
+        )
+
+        chapters = len(full_ontology.get("entities", {}).get("chapters", []))
+        topics   = len(full_ontology.get("entities", {}).get("topics", []))
+        print(f"[ingest] job {job_id} done — {chapters} chapters, {topics} topics")
+
+        if chapters == 0:
+            raise ValueError(
+                "Extraction completed but produced 0 chapters. "
+                "All chapter extractions may have failed — check worker logs above."
+            )
+
+        # Set ontology BEFORE status so the poll endpoint never sees status=done with ontology=None
+        _ingest_jobs[job_id]["ontology"] = full_ontology
+        _ingest_jobs[job_id]["status"]   = "done"
+        # Populate the shared ontology cache so GET /api/ontology/{book_name} and
+        # all dependent endpoints (generate-lesson-plan, etc.) can find this book immediately.
+        _book_ontologies[book_name] = full_ontology
+        _ontology_cache[book_name]  = full_ontology
+
+    except Exception as e:
+        print(f"[ingest] job {job_id} failed: {e}\n{traceback.format_exc()}")
+        _ingest_jobs[job_id]["status"] = "failed"
+        _ingest_jobs[job_id]["error"]  = str(e)
+    finally:
+        try:
+            Path(pdf_path).unlink(missing_ok=True)
+        except Exception:
+            pass
+
+
+@app.post("/api/ingest-book")
+async def ingest_book(
+    file:     UploadFile = File(...),
+    grade:    str        = Form(...),
+    subject:  str        = Form(...),
+    language: str        = Form("English"),
+):
+    """
+    Receives a PDF, saves it to a temp file, starts background extraction,
+    and returns a job_id the frontend can poll.
+    """
+    import threading
+    import uuid
+
+    job_id    = str(uuid.uuid4())
+    book_name = f"grade{grade.replace(' ', '')}_{subject.lower().replace(' ', '_')}"
+
+    # Save uploaded PDF to a temp file
+    tmp_dir  = Path(tempfile.gettempdir()) / "edulearn_ingest"
+    tmp_dir.mkdir(parents=True, exist_ok=True)
+    pdf_path = str(tmp_dir / f"{job_id}.pdf")
+
+    try:
+        contents = await file.read()
+        with open(pdf_path, "wb") as f:
+            f.write(contents)
+    except Exception as e:
+        raise HTTPException(status_code=500, detail=f"File save failed: {e}")
+
+    # Register job
+    _ingest_jobs[job_id] = {
+        "status":    "queued",
+        "book_name": book_name,
+        "grade":     grade,
+        "subject":   subject,
+        "ontology":  None,
+        "error":     None,
+        "progress":  None,
+    }
+
+    # Start extraction in background thread (non-blocking)
+    thread = threading.Thread(
+        target=_run_extraction,
+        args=(job_id, pdf_path, book_name),
+        daemon=True,
+    )
+    thread.start()
+
+    return {"job_id": job_id, "book_name": book_name, "status": "queued"}
+
+
+@app.get("/api/ingest/{job_id}")
+async def get_ingest_status(job_id: str):
+    """Poll extraction job status. Returns ontology JSON when done."""
+    import json as _json
+    from fastapi.responses import JSONResponse
+
+    job = _ingest_jobs.get(job_id)
+    if not job:
+        raise HTTPException(status_code=404, detail="Job not found")
+
+    response = {
+        "job_id":    job_id,
+        "status":    job["status"],
+        "book_name": job.get("book_name", ""),
+        "progress":  job.get("progress"),
+    }
+
+    if job["status"] == "done":
+        ontology = job.get("ontology")
+        print(f"[ingest-get] {job_id}: status=done, ontology type={type(ontology).__name__}, truthy={bool(ontology)}")
+        if ontology:
+            entities = ontology.get("entities", {})
+            chapters = entities.get("chapters", [])
+            topics   = entities.get("topics", [])
+            response["chapter_count"] = len(chapters)
+            response["topic_count"]   = len(topics)
+            response["message"]       = "Extraction complete"
+            response["ontology"]      = ontology
+            try:
+                json_bytes = len(_json.dumps(ontology))
+                print(f"[ingest-get] {job_id}: ontology JSON size ~{json_bytes // 1024}KB, chapters={len(chapters)}, topics={len(topics)}")
+            except Exception as size_err:
+                print(f"[ingest-get] {job_id}: WARNING — ontology not JSON-serializable: {size_err}")
+                # Strip and re-clean before returning
+                response["ontology"] = _json.loads(
+                    _json.dumps(ontology, default=lambda o: sorted(o) if isinstance(o, set) else str(o))
+                )
+        else:
+            print(f"[ingest-get] {job_id}: status=done but ontology is empty/null — marking failed")
+            response["status"] = "failed"
+            response["error"]  = "Extraction completed but produced no ontology data"
+
+    elif job["status"] == "failed":
+        response["error"] = job.get("error", "Unknown error")
+
+    try:
+        return JSONResponse(content=response)
+    except Exception as enc_err:
+        print(f"[ingest-get] {job_id}: RESPONSE ENCODING FAILED: {enc_err}")
+        safe = {k: v for k, v in response.items() if k != "ontology"}
+        safe["error"] = f"Response encoding failed: {enc_err}"
+        safe["status"] = "failed"
+        return JSONResponse(content=safe, status_code=500)
+
+
+# ---------------------------------------------------------------------------
 # Books / ontology
 # ---------------------------------------------------------------------------
 
@@ -1012,48 +1330,74 @@ async def api_generate_lesson_plan(
     db=Depends(get_admin_db),
     current_user: Optional[dict] = Depends(get_current_user),
 ):
-    ontology = _get_ontology_or_404(db, req.book)
-
+    # Try to load the curriculum — gracefully fall back if book not found
+    ontology = None
+    topic_name_override = getattr(req, "topic_name", None) or getattr(req, "topic", None)
     try:
-        chapter, topic = _get_topic_data(ontology, req.chapter_idx, req.topic_idx)
-    except (IndexError, KeyError):
-        raise HTTPException(status_code=400, detail="Invalid chapter or topic index")
+        ontology = _get_ontology_or_404(db, req.book)
+    except HTTPException:
+        # Book not seeded — generate without curriculum context
+        if not topic_name_override:
+            raise HTTPException(
+                status_code=404,
+                detail=f"Book '{req.book}' not found and no topic_name provided. "
+                       "Please pass topic_name in the request body.",
+            )
 
     subject = req.subject or _infer_subject(req.book)
+    topic_name = topic_name_override
+
+    if ontology:
+        try:
+            chapter, topic_data = _get_topic_data(ontology, req.chapter_idx, req.topic_idx)
+            topic_name = topic_name or topic_data.get("topic_name", topic_name_override or subject)
+            ontology_context = _enrich_topic_context(ontology, topic_data)
+        except (IndexError, KeyError):
+            topic_name = topic_name or subject
+            ontology_context = ""
+    else:
+        topic_data    = {"topic_name": topic_name}
+        ontology_context = ""
+
+    if not topic_name:
+        raise HTTPException(status_code=400, detail="topic_name is required when book has no curriculum data")
 
     teacher_profile = _resolve_teacher_profile(db, req.teacher_id, req.teacher_profile)
     student_profile = _resolve_student_profile(db, req.student_id, req.student_profile)
 
-    cg = ConceptGraph(ontology)
-    student_prof_obj = StudentProfile(**{
-        k: v for k, v in (student_profile or {}).items()
-        if k in StudentProfile.__dataclass_fields__
-    }) if student_profile else get_default_student()
-    gaps = cg.find_learning_gaps(student_prof_obj, topic["topic_name"])
+    gaps = []
+    if ontology:
+        try:
+            cg = ConceptGraph(ontology)
+            student_prof_obj = StudentProfile(**{
+                k: v for k, v in (student_profile or {}).items()
+                if k in StudentProfile.__dataclass_fields__
+            }) if student_profile else get_default_student()
+            gaps = cg.find_learning_gaps(student_prof_obj, topic_name)
+        except Exception:
+            gaps = []
 
     duration_int = int("".join(filter(str.isdigit, req.duration))) if req.duration else 45
 
-    topic_dir = OUTPUT_DIR / req.book / topic["topic_name"].replace(" ", "_").lower()
-    topic_dir.mkdir(parents=True, exist_ok=True)
-    images_dir = topic_dir / "images"
-
-    plan = await generate_engagement_lesson_plan(
-        topic_name=topic["topic_name"],
+    plan = generate_elementary_lesson_plan(
+        topic_name=topic_name,
         grade=req.grade,
         subject=subject,
         duration=duration_int,
-        interest_theme=req.interest_theme or "",
-        ontology_context=_enrich_topic_context(ontology, topic),
+        ontology_context=ontology_context,
         teacher_profile=teacher_profile,
+        student_profile=student_profile,
         learning_gaps=gaps,
-        output_dir=str(images_dir),
+        region=req.region or "",
+        lesson_type=req.lesson_type or "activity",
+        interest_theme=req.interest_theme or "",
     )
     if isinstance(plan, dict) and req.region:
         plan["region"] = req.region
-    if isinstance(plan, dict):
+    if isinstance(plan, dict) and ontology:
         plan = _inject_exercise_content(plan, ontology)
 
-    db_topic = q.get_topic_by_index(db, req.book, req.chapter_idx, req.topic_idx)
+    db_topic = q.get_topic_by_index(db, req.book, req.chapter_idx, req.topic_idx) if ontology else None
 
     # Resolve teacher_id: authenticated user > request body > first teacher in DB
     if current_user and current_user["role"] == "teacher":
@@ -1070,14 +1414,16 @@ async def api_generate_lesson_plan(
         db,
         teacher_id=teacher_id,
         topic_id=db_topic["id"] if db_topic else None,
-        topic_name=topic["topic_name"],
+        topic_name=topic_name,
         grade=req.grade,
         subject=subject,
         duration_minutes=duration_int,
         plan_json=plan_for_db,
     )
 
-    (topic_dir / "lesson_plan.json").write_text(json.dumps(plan_for_db, indent=2), encoding="utf-8")
+    topic_dir = OUTPUT_DIR / req.book / _safe_dirname(topic_name)
+    topic_dir.mkdir(parents=True, exist_ok=True)
+    (topic_dir / "lesson_plan.json").write_text(json.dumps(plan, indent=2), encoding="utf-8")
 
     return {"plan": plan, "lesson_plan_id": lp["id"]}
 
@@ -1223,9 +1569,9 @@ async def api_engagement_lesson(
         plan_json=plan,
     )
 
-    (topic_dir / f"lesson_plan_{req.grade}.json").write_text(
-        json.dumps(plan, indent=2), encoding="utf-8"
-    )
+    topic_dir = OUTPUT_DIR / "elementary" / _safe_dirname(req.topic)
+    topic_dir.mkdir(parents=True, exist_ok=True)
+    (topic_dir / f"lesson_plan_grade{req.grade}.json").write_text(json.dumps(plan, indent=2), encoding="utf-8")
 
     return {"plan": plan, "lesson_plan_id": lp["id"]}
 
@@ -1449,7 +1795,7 @@ async def api_generate_study_plan(req: StudyPlanRequest, db = Depends(get_db)):
             plan_markdown=plan_md,
         )
 
-    topic_dir = OUTPUT_DIR / req.book / topic_name.replace(" ", "_").lower()
+    topic_dir = OUTPUT_DIR / req.book / _safe_dirname(topic_name)
     topic_dir.mkdir(parents=True, exist_ok=True)
     (topic_dir / f"study_plan_{student_id}.md").write_text(plan_md, encoding="utf-8")
 
@@ -1583,56 +1929,64 @@ async def get_teacher_dashboard(teacher_id: Optional[str] = None, admin_db = Dep
 @app.post("/api/class/pulse/generate-plan")
 async def generate_class_pulse_plan(req: PulseGeneratePlanRequest):
     """
-    Given students grouped by performance level, generate differentiated
-    focus topics, assignment types, and teaching strategies for each group.
+    Generates a focused intervention plan for weak students only (Struggling + Developing).
+    Proficient students are doing fine — no plan needed for them.
+    Goes deeper: per-student weak topics, specific re-teach steps, immediate actions.
     """
-    from services.ai_client import get_model, safe_generate_content
+    from services.ai_client import safe_generate_content
 
-    groups_summary = ""
-    for level, students in req.groups.items():
-        if students:
-            weak: list = []
-            for s in students:
-                weak.extend((s.get("weak_topics") or [])[:3])
-            # deduplicate while preserving order
-            seen: set = set()
-            weak_unique = [t for t in weak if not (t in seen or seen.add(t))][:5]
-            groups_summary += (
-                f"\n- {level.upper()} ({len(students)} students): "
-                f"weak topics = {', '.join(weak_unique) if weak_unique else 'none recorded'}"
-            )
+    struggling = req.groups.get("struggling", [])
+    developing  = req.groups.get("developing",  [])
+    weak_groups = [g for g in [("struggling", struggling), ("developing", developing)] if g[1]]
 
-    prompt = f"""You are an expert teacher assistant helping differentiate instruction.
+    if not weak_groups:
+        return {"plan": {"message": "All students are proficient — no intervention needed right now."}}
 
-Subject: {req.subject}, Grade: {req.grade}
-Recently taught topics: {', '.join(req.taught_topics) if req.taught_topics else 'not specified'}
+    # Build per-student detail for each weak group
+    student_detail = ""
+    for level, students in weak_groups:
+        student_detail += f"\n\n{level.upper()} STUDENTS ({len(students)}):\n"
+        for s in students:
+            weak = (s.get("weak_topics") or [])[:4]
+            student_detail += f"  - {s['name']}: weak in {', '.join(weak) if weak else 'general understanding'}\n"
 
-Class performance groups:{groups_summary}
+    prompt = f"""You are helping a teacher intervene for students who are falling behind.
 
-Generate targeted recommendations for each level. Return ONLY a JSON object with this structure:
+Subject: {req.subject} | Grade: {req.grade}
+Topics taught: {', '.join(req.taught_topics) if req.taught_topics else 'recent topics'}
+{student_detail}
+
+Create a FOCUSED intervention plan. Teachers are busy — make this scannable in 30 seconds.
+
+Rules:
+- Only cover Struggling and Developing students. Proficient students need no intervention.
+- Be SPECIFIC to these students' actual weak topics. No generic advice.
+- Each action must be something the teacher can do TOMORROW.
+- Keep each field short and direct.
+
+Return ONLY valid JSON:
 {{
   "struggling": {{
-    "focus_topics": ["topic1", "topic2", "topic3"],
-    "assignment_type": "recovery worksheet",
-    "teaching_strategy": "one clear sentence on how to teach this group",
-    "sample_activities": ["concrete activity 1", "concrete activity 2", "concrete activity 3"]
+    "student_count": {len(struggling)},
+    "core_problem": "One sentence: the specific concept these students are confused about",
+    "reteach_in_5_min": "Exactly what the teacher says/does at the start of class tomorrow to re-teach this",
+    "activity": "One hands-on activity (5–10 min) using everyday objects or examples",
+    "check_question": "One question to ask to know if they got it",
+    "recovery_topics": ["topic1", "topic2"]
   }},
   "developing": {{
-    "focus_topics": ["topic1", "topic2", "topic3"],
-    "assignment_type": "practice worksheet",
-    "teaching_strategy": "one clear sentence on how to teach this group",
-    "sample_activities": ["concrete activity 1", "concrete activity 2", "concrete activity 3"]
-  }},
-  "proficient": {{
-    "focus_topics": ["topic1", "topic2", "topic3"],
-    "assignment_type": "challenge worksheet",
-    "teaching_strategy": "one clear sentence on how to teach this group",
-    "sample_activities": ["concrete activity 1", "concrete activity 2", "concrete activity 3"]
+    "student_count": {len(developing)},
+    "core_problem": "One sentence: what they understand but are inconsistent on",
+    "consolidate_with": "One targeted exercise or task to solidify their understanding",
+    "activity": "One practice activity that challenges but doesn't overwhelm",
+    "check_question": "One question to confirm they are solid"
   }}
-}}"""
+}}
+
+Only include keys for groups that have students. If struggling is empty, omit it. Same for developing."""
 
     try:
-        result = safe_generate_content(prompt, is_json=True, tier="fast")
+        result = safe_generate_content(prompt, is_json=True, config={"max_output_tokens": 1024, "temperature": 0.4}, tier="fast")
         return {"plan": result}
     except Exception as e:
         raise HTTPException(status_code=500, detail=f"Plan generation failed: {str(e)}")
@@ -1649,7 +2003,7 @@ async def api_generate_worksheet(
     format: str = "json"  # "json" or "pdf"
 ):
     try:
-        topic_slug = req.topic_name.replace(" ", "_").lower()
+        topic_slug = _safe_dirname(req.topic_name)
         img_dir = str(OUTPUT_DIR / "worksheet_images" / topic_slug)
         # Changed back to await since generate_worksheet is async again (with HF image generation)
         worksheet = await generate_worksheet(
@@ -2042,6 +2396,8 @@ class DailyStoryRequest(BaseModel):
     interests: Optional[list] = []
     ambition: Optional[str] = None
     value_index: Optional[int] = 0   # caller rotates daily; 0–9
+    grade: Optional[str] = "5"       # student grade — controls language complexity
+    syllabus_topics: Optional[list] = []  # 1-2 current curriculum topics to weave in naturally
 
 _STORY_VALUES = [
     "Perseverance",
@@ -2072,34 +2428,119 @@ _FALLBACK_STORIES = {
 @app.post("/api/student/daily-story")
 async def generate_daily_story(req: DailyStoryRequest):
     """
-    Generate a short personalised story (200–250 words) that teaches a character
-    value, woven around the student's interests and ambition.
+    Generate an interactive branching story that teaches a character value.
+    The student reads a setup, makes a choice, sees what happens, then reflects.
+    Both choice paths lead to growth — there is no wrong answer.
     """
     from services.ai_client import safe_generate_content
 
-    value = _STORY_VALUES[int(req.value_index or 0) % len(_STORY_VALUES)]
+    value        = _STORY_VALUES[int(req.value_index or 0) % len(_STORY_VALUES)]
     interests_str = ", ".join(req.interests or ["adventure"]) or "adventure"
     ambition_str  = req.ambition or "achieving great things"
 
-    prompt = f"""Write a short story (200–250 words) for a school student.
+    # Grade-level language rules
+    try:
+        g = int(''.join(filter(str.isdigit, str(req.grade or "5"))))
+    except (ValueError, TypeError):
+        g = 5
 
-THEME: {value}
-INTERESTS TO WEAVE IN: {interests_str}
+    if g <= 2:
+        grade_rules = """GRADE 1-2 RULES — STRICT:
+- Use ONLY words a 6-7 year old knows. If in doubt, use a simpler word.
+- Maximum 5 words per sentence.
+- Setup: 3-4 sentences only.
+- Choices: 3-4 words each. Make them feel fun and obvious.
+- Continuation: 3-4 sentences only.
+- Reflection: One very simple question like "Have you ever felt like this?"
+- Lesson: One short sentence with simple words.
+- Write like you are talking to a young child — warm, playful, simple."""
+    elif g <= 4:
+        grade_rules = """GRADE 3-4 RULES — STRICT:
+- Use simple everyday words. Short sentences (under 12 words each).
+- Setup: 5-6 sentences only. Easy to follow.
+- Choices: 5-8 words each. Clear and easy to understand.
+- Continuation: 5-6 sentences only.
+- Reflection: One simple personal question.
+- Lesson: One clear sentence.
+- Tone: friendly, encouraging, like a good teacher."""
+    else:
+        grade_rules = """GRADE 5+ RULES:
+- Clear language, moderate length. Sentences under 15 words.
+- Setup: 6-8 sentences.
+- Choices: 8-12 words each, clear and meaningful.
+- Continuation: 6-8 sentences.
+- Reflection: One personal question connecting story to real life.
+- Lesson: One sentence, vivid."""
+
+    # Syllabus weave instruction
+    syllabus_topics = req.syllabus_topics or []
+    if syllabus_topics:
+        topic_pick = syllabus_topics[:2]
+        syllabus_note = f"""
+SYLLABUS WEAVE (important):
+The student is currently studying: {', '.join(topic_pick)}.
+Weave 1 of these concepts into the story NATURALLY — not as a lesson, just as context.
+The character uses it as part of the story world. Examples:
+- Fractions story: the character calculates a batting average as a fraction to solve a real problem.
+- Photosynthesis story: the character notices plants in the setting and it connects to what they're doing.
+- Multiplication: the character counts something in groups to figure something out.
+It should feel like the concept is part of the world, not taught. 1 mention is enough."""
+    else:
+        syllabus_note = ""
+
+    prompt = f"""Write an interactive branching story for a Grade {g} student.
+
+{grade_rules}
+{syllabus_note}
+
+VALUE TO TEACH: {value}
+STUDENT INTERESTS (use as the world/setting): {interests_str}
 STUDENT AMBITION: {ambition_str}
 
+STRUCTURE — follow this exactly:
+
+SETUP (80–100 words):
+Introduce a character in a world drawn from the student's interests.
+Build to a clear decision moment where the character must choose.
+End with a cliffhanger — the character is at the crossroads. Do NOT resolve it.
+
+CHOICES:
+Two short, clear options. Both are understandable choices — not obviously good vs bad.
+One choice shows the value ({value}) in action.
+The other shows what happens without it — but still ends with a moment of growth.
+
+CONTINUATIONS (60–80 words each):
+Choice A: The character acts with {value}. Show it playing out vividly. Short, punchy sentences.
+Choice B: The character doesn't show {value} at first — but the story shows them realising it was the better path. Still ends positively with a lesson learned.
+
+REFLECTION QUESTION:
+One short question asking the student to connect the story to their own life.
+Not academic — personal and easy to answer honestly.
+
+LESSON:
+One sentence. Names {value} directly. Links it to what happened in the story.
+
 RULES:
-- The story must feel personal — use the student's interests as the setting or characters.
-- The story must clearly demonstrate the value of {value} through actions, not lectures.
-- End with a one-sentence "The Lesson:" that names the value and how it helped the character.
-- Language: simple, vivid, engaging for ages 8–16.
-- Do NOT use generic school/classroom settings. Be imaginative.
-- Return ONLY valid JSON with this structure:
+- Set the ENTIRE story in the student's interest world ({interests_str}) — no school/classroom settings
+- Simple vivid language, short sentences
+- Both choice paths must feel real and meaningful
+- Return ONLY valid JSON:
 {{
-  "title": "Story title",
+  "title": "Story title — catchy, set in their interest world",
   "emoji": "one relevant emoji",
-  "story": "Full story text here...",
-  "lesson": "The Lesson: ...",
-  "value": "{value}"
+  "value": "{value}",
+  "setup": "The opening of the story — character, world, decision moment. Ends at the crossroads.",
+  "choice_prompt": "Short question asking what the character should do",
+  "choices": [
+    {{"id": "A", "label": "Short label for choice A — the {value} path"}},
+    {{"id": "B", "label": "Short label for choice B — the other path"}}
+  ],
+  "continuations": {{
+    "A": "What happens when they choose A. Shows {value} in action. Vivid and short.",
+    "B": "What happens when they choose B. Shows the lesson through the outcome. Still ends with growth."
+  }},
+  "reflection": "One personal question for the student — connects the story to their real life",
+  "lesson": "The Lesson: one sentence naming {value} and what it means based on this story."
 }}"""
 
     try:
@@ -2115,6 +2556,340 @@ RULES:
     except Exception as e:
         print(f"[daily-story] AI generation failed ({e}), returning fallback story for '{value}'")
         return _FALLBACK_STORIES.get(value, _FALLBACK_STORIES["Perseverance"])
+
+
+# ---------------------------------------------------------------------------
+# Story Reflection — Score + Save
+# ---------------------------------------------------------------------------
+
+class StoryReflectionRequest(BaseModel):
+    student_id:   str
+    value:        str                    # e.g. "Perseverance"
+    story_title:  Optional[str] = ""
+    choice_made:  Optional[str] = ""    # "A" or "B"
+    choice_label: Optional[str] = ""
+    reflection:   str
+    grade:        Optional[str] = "5"
+
+@app.post("/api/student/story-reflection")
+async def save_story_reflection(req: StoryReflectionRequest, db = Depends(get_db)):
+    """
+    Score a student's story reflection with AI (1-5) and save to Supabase.
+    Returns the score and one short encouraging feedback line.
+    """
+    from services.ai_client import safe_generate_content
+
+    # Skip scoring if reflection is too short
+    if not req.reflection or len(req.reflection.strip()) < 5:
+        return {"score": 0, "feedback": ""}
+
+    grade_note = ""
+    try:
+        g = int(''.join(filter(str.isdigit, str(req.grade or "5"))))
+        if g <= 2:   grade_note = "This is a Grade 1-2 student. Even one honest word is great."
+        elif g <= 4: grade_note = "This is a Grade 3-4 student."
+    except (ValueError, TypeError):
+        pass
+
+    score_prompt = f"""Score a student's reflection on a story about {req.value}.
+
+Student wrote: "{req.reflection}"
+
+{grade_note}
+
+Score 1-5:
+5 = Connected it clearly to their own real life. Shows they understood the value deeply.
+4 = Made a personal connection, mostly clear.
+3 = Some connection but vague or short.
+2 = Minimal response, off-topic.
+1 = Single word or doesn't engage.
+
+Also write ONE short feedback line (under 10 words) that is warm and encouraging — not a grade, a human response.
+
+Return ONLY valid JSON:
+{{"score": 3, "feedback": "That shows real self-awareness!"}}"""
+
+    try:
+        result = safe_generate_content(
+            score_prompt,
+            is_json=True,
+            config={"max_output_tokens": 128, "temperature": 0.4},
+            tier="fast",
+        )
+        score    = max(1, min(5, int(result.get("score", 3))))
+        feedback = result.get("feedback", "Great reflection!")
+    except Exception:
+        score, feedback = 3, "Great reflection!"
+
+    # Save to Supabase — graceful fail if table doesn't exist yet
+    try:
+        db.table("story_reflections").insert({
+            "student_id":   req.student_id,
+            "value":        req.value,
+            "story_title":  req.story_title or "",
+            "choice_made":  req.choice_made or "",
+            "choice_label": req.choice_label or "",
+            "reflection":   req.reflection,
+            "score":        score,
+            "feedback":     feedback,
+            "grade":        req.grade or "5",
+        }).execute()
+    except Exception as e:
+        print(f"[story-reflection] DB save skipped: {e}")
+
+    return {"score": score, "feedback": feedback}
+
+
+@app.get("/api/student/{student_id}/character-growth")
+async def get_character_growth(student_id: str, db = Depends(get_db)):
+    """
+    Returns a student's full reflection history + growth summary for
+    teachers to understand character development over time.
+    """
+    try:
+        result = db.table("story_reflections") \
+            .select("value, story_title, choice_label, reflection, score, feedback, created_at") \
+            .eq("student_id", student_id) \
+            .order("created_at", desc=True) \
+            .limit(50) \
+            .execute()
+        rows = result.data or []
+    except Exception:
+        rows = []
+
+    if not rows:
+        return {"reflections": [], "summary": None}
+
+    # Compute summary stats
+    scores       = [r["score"] for r in rows if r.get("score")]
+    avg_score    = round(sum(scores) / len(scores), 1) if scores else 0
+    value_counts: dict = {}
+    for r in rows:
+        v = r.get("value", "")
+        value_counts[v] = value_counts.get(v, 0) + 1
+    top_values = sorted(value_counts.items(), key=lambda x: x[1], reverse=True)[:3]
+
+    # Growth trend — compare first half vs second half avg score
+    trend = "steady"
+    if len(scores) >= 4:
+        mid   = len(scores) // 2
+        early = sum(scores[mid:]) / len(scores[mid:])
+        late  = sum(scores[:mid]) / len(scores[:mid])
+        if late - early >= 0.5:   trend = "growing"
+        elif early - late >= 0.5: trend = "needs support"
+
+    # Best reflection (highest score)
+    best = max(rows, key=lambda r: r.get("score", 0), default=None)
+
+    return {
+        "reflections": rows,
+        "summary": {
+            "total":      len(rows),
+            "avg_score":  avg_score,
+            "top_values": [v for v, _ in top_values],
+            "trend":      trend,
+            "best":       best,
+        }
+    }
+
+
+# ---------------------------------------------------------------------------
+# Demo — Engagement-Focused Lesson Plan Generator
+# ---------------------------------------------------------------------------
+
+class EngagementLessonRequest(BaseModel):
+    topic: str
+    grade: str
+    subject: str
+    duration: Optional[int] = 45
+    interests: Optional[list] = []      # e.g. ["cricket", "anime", "gaming"]
+    class_name: Optional[str] = ""
+
+@app.post("/api/demo/engagement-lesson")
+async def generate_engagement_lesson(req: EngagementLessonRequest):
+    """
+    Demo endpoint: generates a compact engagement card for a teacher.
+    The teacher is already a subject expert — they only need the engagement layer.
+    Output is a scannable card they can read in 30 seconds and use immediately.
+    """
+    from services.ai_client import safe_generate_content
+
+    interests_str   = ", ".join(req.interests) if req.interests else "general curiosity"
+    interests_json  = str(req.interests if req.interests else [])
+
+    prompt = f"""You are helping an expert teacher engage their class better.
+
+The teacher KNOWS {req.topic} deeply. Skip all subject explanation.
+Give them ONLY the engagement layer — how to make {req.topic} land for students who love {interests_str}.
+
+TOPIC: {req.topic}
+GRADE: {req.grade}
+CLASS LOVES: {interests_str}
+
+Rules:
+- Every line must be SPECIFIC to {req.topic} and {interests_str} — zero generic advice
+- Short, punchy sentences only
+- The "watch_for" field is the most important — tell the teacher the ONE mistake that will happen and exactly what to say when it does
+- The hook must be a direct question students can answer from their interest knowledge
+
+Return ONLY valid JSON:
+{{
+  "topic": "{req.topic}",
+  "grade": "{req.grade}",
+  "interests": {interests_json},
+  "hook": {{
+    "ask": "The exact question the teacher asks in the first 30 seconds — answerable from student interest knowledge, leads directly into the concept",
+    "expected": "What a student will shout back — show the teacher this so they know the hook worked"
+  }},
+  "bridges": [
+    {{"interest": "one interest", "say": "Exact teacher line connecting that interest to {req.topic} — one vivid sentence, not a metaphor, a real example"}},
+    {{"interest": "another interest", "say": "Another exact teacher line — different angle on the same concept"}}
+  ],
+  "activity": {{
+    "name": "3-5 word name",
+    "do": "One sentence — what students physically do using their interest as context",
+    "need": "whiteboard / paper / nothing"
+  }},
+  "watch_for": {{
+    "mistake": "The one wrong answer or confusion that WILL happen with this class on this topic",
+    "fix": "Exact words the teacher says to correct it — using their interests to make it click"
+  }},
+  "close": "The one sentence students carry home — connects {req.topic} to their world, makes them want to explain it to someone tonight"
+}}"""
+
+    result = safe_generate_content(
+        prompt,
+        is_json=True,
+        config={"max_output_tokens": 1024, "temperature": 0.7},
+        tier="fast",
+    )
+    return {"plan": result}
+
+
+# ---------------------------------------------------------------------------
+# Absent Student Auto Catch-Up
+# ---------------------------------------------------------------------------
+
+class AbsentCatchUpRequest(BaseModel):
+    grade: str
+    subject: str
+    class_name: Optional[str] = ""
+    topics_taught: Optional[list] = []      # lesson titles taught today
+    absent_students: Optional[list] = []    # list of student names who were absent
+
+@app.post("/api/teacher/absent-catchup")
+async def generate_absent_catchup(req: AbsentCatchUpRequest):
+    """
+    Generates a short catch-up card for each absent student.
+    Tells the student what they missed and gives them one practice question.
+    """
+    from services.ai_client import safe_generate_content
+
+    if not req.topics_taught or not req.absent_students:
+        return {"catchups": []}
+
+    topics_str   = ", ".join(req.topics_taught[:3])
+    students_str = ", ".join(req.absent_students[:10])
+
+    prompt = f"""Generate a short catch-up card for absent students.
+
+CLASS: {req.class_name or "the class"} | Grade {req.grade} | {req.subject}
+TOPICS TAUGHT TODAY: {topics_str}
+ABSENT STUDENTS: {students_str}
+
+Write ONE catch-up card that works for all absent students. Keep it simple and Grade {req.grade} appropriate.
+
+Return ONLY valid JSON:
+{{
+  "date_label": "today",
+  "topics_covered": ["{topics_str}"],
+  "summary": "2-3 simple sentences explaining what was taught. Grade {req.grade} language.",
+  "key_concept": "The single most important thing they need to know. One sentence.",
+  "practice_question": "One simple question to check if they understand. Grade {req.grade} level.",
+  "practice_answer": "The correct answer to the practice question."
+}}"""
+
+    result = safe_generate_content(
+        prompt,
+        is_json=True,
+        config={"max_output_tokens": 512, "temperature": 0.4},
+        tier="fast",
+    )
+    return {"catchup": result, "absent_students": req.absent_students}
+
+
+# ---------------------------------------------------------------------------
+# Re-teach Alert
+# ---------------------------------------------------------------------------
+
+class ReteachAlertRequest(BaseModel):
+    grade: str
+    subject: str
+    topic_name: str
+    questions: Optional[list] = []   # list of {question, correct_answer}
+    wrong_counts: Optional[list] = []  # list of {question_number, wrong_count, total_students}
+
+@app.post("/api/teacher/reteach-alert")
+async def generate_reteach_alert(req: ReteachAlertRequest):
+    """
+    Analyses which questions most students got wrong and generates
+    a specific re-teach tip for each problem area.
+    """
+    from services.ai_client import safe_generate_content
+
+    if not req.wrong_counts:
+        return {"alerts": []}
+
+    # Only flag questions where > 30% got it wrong
+    flagged = [w for w in req.wrong_counts if w.get("wrong_count", 0) / max(w.get("total_students", 1), 1) > 0.3]
+    if not flagged:
+        return {"alerts": [], "message": "Great results — no major patterns found."}
+
+    # Build question context
+    q_context = ""
+    for w in flagged[:5]:
+        qnum = w.get("question_number", "?")
+        wrong = w.get("wrong_count", 0)
+        total = w.get("total_students", 1)
+        pct   = round(wrong / total * 100)
+        # Find the question text if provided
+        q_text = ""
+        if req.questions:
+            for q in req.questions:
+                if str(q.get("number", "")) == str(qnum):
+                    q_text = q.get("question", "")
+                    break
+        q_context += f"\nQ{qnum} ({pct}% wrong): {q_text}"
+
+    prompt = f"""A teacher just graded worksheets for Grade {req.grade} {req.subject} — topic: {req.topic_name}.
+
+These questions had the most wrong answers:{q_context}
+
+For each flagged question, identify:
+1. What specific misconception caused most students to get it wrong
+2. One exact re-teach tip — a short activity or analogy the teacher can use TOMORROW in 3-5 minutes
+
+Return ONLY valid JSON:
+{{
+  "alerts": [
+    {{
+      "question_number": "1",
+      "wrong_percentage": 65,
+      "misconception": "Students are confusing X with Y — specific description",
+      "reteach_tip": "Tomorrow, start class with this 3-minute activity: [exact description]",
+      "quick_fix": "One sentence the teacher says to clarify it instantly"
+    }}
+  ],
+  "class_summary": "One sentence: the overall pattern across all mistakes"
+}}"""
+
+    result = safe_generate_content(
+        prompt,
+        is_json=True,
+        config={"max_output_tokens": 1024, "temperature": 0.4},
+        tier="fast",
+    )
+    return result
 
 
 @app.get("/api/student/{student_id}/study-plans")
@@ -2431,7 +3206,7 @@ async def submit_post_class_feedback(
     if req.needs_revisit and req.revisit_concept:
         try:
             # Set output directory for images
-            topic_slug = req.revisit_concept.replace(" ", "_").lower()
+            topic_slug = _safe_dirname(req.revisit_concept)
             img_dir = str(OUTPUT_DIR / "worksheet_images" / topic_slug)
             
             worksheet = await generate_worksheet(
