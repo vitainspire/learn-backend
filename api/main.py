@@ -1379,7 +1379,7 @@ async def api_generate_lesson_plan(
 
     duration_int = int("".join(filter(str.isdigit, req.duration))) if req.duration else 45
 
-    plan = generate_elementary_lesson_plan(
+    plan = await generate_elementary_lesson_plan(
         topic_name=topic_name,
         grade=req.grade,
         subject=subject,
